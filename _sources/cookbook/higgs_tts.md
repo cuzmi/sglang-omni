@@ -1,19 +1,7 @@
 # Higgs TTS
 
 [Higgs Audio v3 TTS](https://huggingface.co/bosonai/higgs-audio-v3-tts-4b)
-is a text-to-speech model from Boson AI built on a Qwen3-4B backbone. It generates
-24 kHz speech through 8 discrete codebooks and supports 100 languages, voice cloning from a
-reference clip, and fine-grained inline control over emotion, style, sound effects, and prosody.
-
-## Highlights
-
-- **Multilingual** — 100 languages with single-digit WER/CER
-- **Voice clone accuracy** — high-fidelity zero-shot speaker cloning from reference clips
-- **Inline control** via `<|emotion:…|>`, `<|style:…|>`, `<|sfx:…|>`, `<|prosody:…|>` tags
-
-The **100-language single-digit WER/CER** claim comes from our internal **Higgs-Multilingual** benchmark — an extension of FLEURS-102 covering 111 languages and dialects, of which Higgs Audio v3 TTS reaches single-digit WER/CER on 100.
-
-## Architecture
+is a text-to-speech model from Boson AI. It generates **24 kHz speech** and supports [**100+ languages**](https://huggingface.co/bosonai/higgs-audio-v3-tts-4b#supported-languages), voice cloning from a reference clip, and fine-grained **inline control** over emotion, style, sound effects, and prosody.
 
 ![Higgs Audio v3 Generation Architecture](../_static/image/higgs-architecture.png)
 
@@ -22,26 +10,48 @@ Higgs autoregressive decoder consumes interleaved text and audio tokens. Audio i
 | Component | Spec |
 |---|---|
 | Backbone | ~4B autoregressive decoder (36 L, hidden=2560, GQA 32/8) |
-| Audio tokens | 8 codebooks × 1026 vocab, delay pattern |
 | Multi-codebook embedding / head | Fused single-tensor, tied with text embedding |
 | Context length | 8,192 tokens (training sequence length) |
+| Audio tokens | 8 codebooks × 1026 vocab, delay pattern |
+| Sample rate | 24 kHz |
+| Frame rate | 25 fps (40 ms / frame) |
+
+## Evaluation Benchmarks
+
+### Multilingual Voice Clone
+
+We evaluate Higgs Audio v3 TTS on public multilingual TTS suites and our internal 111-language Higgs-Multilingual set, covering both common and lower-resource languages.
+
+WER / CER (↓, %), macro-averaged across each benchmark's language set (Higgs Audio v3 TTS; reproducible with original metrics and normalization):
+
+| Benchmark | Languages | WER/CER ↓ |
+|---|---:|---:|
+| Seed-TTS | 2 | 1.11 |
+| CV3 | 9 | 4.41 |
+| MiniMax-Multilingual | 23 | 2.74 |
+| Higgs-Multilingual | 111 | 3.61 |
+
+### Emergent TTS
+
+Win-rate (↑) per category on the Emergent TTS benchmark — judge preference vs a fixed baseline. Benchmark text is run verbatim (no inline control tags).
+
+| Category | Win-rate ↑ |
+|---|---:|
+| Overall | 53.65% |
+| Emotions | 53.75% |
+| Foreign Words | 48.75% |
+| Paralinguistics | 68.57% |
+| Complex Pronunciation | 25.10% |
+| Questions | 61.43% |
+| Syntactic Complexity | 60.71% |
 
 ## Prerequisites
 
-Install `sglang-omni` by following [Installation](../get_started/installation.md), then download the model:
+Install `sglang-omni` by following [Installation](../get_started/installation.md), then download and serve the model:
 
 ```bash
-# Higgs TTS model is private; export your HF token before downloading.
-export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 hf download bosonai/higgs-audio-v3-tts-4b
-hf download bosonai/higgs-audio-v2-tokenizer
-```
 
-## Server Configuration
-
-The pipeline is `preprocessing → audio_encoder → tts_engine → vocoder`.
-
-```bash
 sgl-omni serve \
   --model-path bosonai/higgs-audio-v3-tts-4b \
   --port 8000
@@ -245,10 +255,19 @@ Audio chunks have `"finish_reason": null` and carry audio data in `audio.data`. 
 
 ### Inline Control Tokens
 
-Embed control tokens directly in the `input` field. Tokens from different
-categories can be combined.
+All tags follow `<|category:value|>` syntax and can be inserted mid-utterance.
 
-Each request is a single **turn**, and two rules make control tokens reliable:
+- **Emotion** — `elation`, `amusement`, `enthusiasm`, `determination`, `pride`, `contentment`, `affection`, `relief`, `contemplation`, `confusion`, `surprise`, `awe`, `longing`, `arousal`, `anger`, `fear`, `disgust`, `bitterness`, `sadness`, `shame`, `helplessness`
+- **Style** — `singing`, `shouting`, `whispering`
+- **Sound effects** — `cough`, `laughter`, `crying`, `screaming`, `burping`, `humming`, `sigh`, `sniff`, `sneeze`
+- **Prosody**
+  - Speed — `speed_very_slow` (&approx;0.65×), `speed_slow` (&approx;0.85×), `speed_fast` (&approx;1.2×), `speed_very_fast` (&approx;1.4×)
+  - Pauses — `pause` (&approx;400–700 ms), `long_pause` (&approx;700–1500 ms)
+  - Pitch — `pitch_low` (&approx;−3 st), `pitch_high` (&approx;+2.5 st)
+  - Delivery — `expressive_high`, `expressive_low`
+
+Embed control tokens directly in the `input` field. Tokens from different
+categories can be combined. Each request is a single **turn**, and two rules make control tokens reliable:
 
 1. **Lead the turn with the delivery tokens.** Emotion (`<|emotion:…|>`), Style
    (`<|style:…|>`), and the prosody *speed* (`<|prosody:speed_…|>`), *pitch*
@@ -261,8 +280,7 @@ Each request is a single **turn**, and two rules make control tokens reliable:
 2. **Pair every sound effect with its onomatopoeia.** A `<|sfx:…|>` token lands
    best when the matching written sound follows it immediately
    (e.g. `<|sfx:laughter|>Haha`, `<|sfx:sigh|>Uh`, `<|sfx:sneeze|>Achoo`) — the
-   onomatopoeia gives the model the acoustic cue to realize the effect. See the
-   [Sound Effects](#sound-effects) table for suggested pairings.
+   onomatopoeia gives the model the acoustic cue to realize the effect.
 
 **Demo**
 
@@ -519,32 +537,16 @@ Pair each token with the matching onomatopoeia immediately after it.
 | `<\|prosody:expressive_high\|>` | More expressive delivery |
 | `<\|prosody:expressive_low\|>` | Flatter delivery |
 
-### Pre-encoded reference codes
-For high-throughput pipelines (e.g. RL rollout) where the same reference audio is reused across many requests, you can encode the reference audio offline and pass the discrete codes directly via `reference_codes` — this skips the server-side codec encode step. Shape must be `[T, num_codebooks=8]`.
-
-```python
-# python
-resp = requests.post(
-    "http://localhost:8000/v1/audio/speech",
-    json={
-        "input": SPEECH_INPUT,
-        "reference_codes": codes_TN,   # [T, 8] int list, pre-delay-pattern
-        "reference_text": REFERENCE_TEXT,
-    },
-)
-```
-
 ### Request parameters
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
 | `input` | string | (required) | Text to synthesize |
 | `voice` | string | `"default"` | Voice identifier (ignored when `references` is set) |
-| `response_format` | string | `"wav"` | Output audio format |
+| `response_format` | string | `"wav"` | Output audio format (`wav`, `mp3`, `flac`, `opus`, `aac`, `pcm`) |
 | `stream` | bool | `false` | Enable streaming via SSE |
 | `references` | list | `null` | Reference audio for voice cloning; each item has `audio_path` (local path or HTTP URL) and `text` (transcript) |
-| `reference_codes` | list[list[int]] | `null` | Pre-encoded discrete codes, shape `[T, 8]` — alternative to `references[0].audio_path` |
-| `reference_text` | string | `null` | Transcript of reference audio when supplying `reference_codes` |
+| `ref_audio` / `ref_text` | string | `null` | Shorthand for `references[0].audio_path` / `references[0].text` |
 | `max_new_tokens` | int | `2048` | Maximum number of generated multi-codebook steps |
 | `temperature` | float | `1.0` | Sampling temperature |
 | `top_p` | float | `null` | Top-p sampling |
@@ -552,28 +554,23 @@ resp = requests.post(
 | `seed` | int | `null` | Random seed for reproducibility |
 
 
-### Throughput
+### Performance
 
-[TODO (yichi, Huapeng): This should be updated in the last minute.]
+Throughput on Seed-TTS EN (full set, **N=1088** per run). Client `--max-concurrency` sweep against a Higgs server (`max_running_requests=16`, bf16, CUDA Graph on). Each row is the **mean of 3 runs**. Hardware: **1× H100**.
 
-Throughput on seed-tts en (N=50 per concurrency, sequential thread pool, A100 40GB, bf16):
+| Concurrency | Throughput (req/s) | Mean latency | RTF (per-req) | audio_s/s |
+|---:|---:|---:|---:|---:|
+| 1 | 1.62 | 617 ms | 0.147 | 6.89 |
+| 2 | 2.70 | 742 ms | 0.180 | 11.37 |
+| 4 | 5.45 | 733 ms | 0.177 | 22.84 |
+| 8 | 8.91 | 898 ms | 0.217 | 37.38 |
+| 16 | 14.74 | 1079 ms | 0.262 | 61.84 |
 
-| Concurrency | Mean latency | RTF (per-req) | audio_s/s |
-|---:|---:|---:|---:|
-| 1 | [—] | [—] | [—] |
-| 16 | [—] | [—] | [—] |
-| 32 | [—] | [—] | [—] |
 
-## Evaluation Benchmarks
+- **Concurrency** — Maximum number of in-flight client requests (`--max-concurrency`).
+- **Throughput (req/s)** — Completed requests divided by total benchmark wall-clock time.
+- **Mean latency** — Average end-to-end time per request (send to full response received).
+- **RTF (per-req)** — Average ratio of processing time to generated audio duration per request (&lt;1 is faster than real time).
+- **audio_s/s** — Total seconds of audio produced divided by total benchmark wall-clock time.
 
-We report **WER / CER** (↓, %) and **WavLM speaker similarity** (↑, ×100) on the Seed-TTS zero-shot voice-cloning benchmark.
-
-### Seed-TTS
-
-| Lang | WER ↓ | SIM ↑ |
-|---|---|---|
-| en | [0.80] | [73.00] |
-| zh | [1.46] | [67.26] |
-| **macro** | **[1.13]** | **[70.13]** |
-
-Results are generated with SGLang Omni. WER/CER and speaker similarity follow the original text normalization and metric implementation from [seed-tts-eval](https://github.com/BytedanceSpeech/seed-tts-eval).
+To reproduce the results, follow the instructions in [this script](https://github.com/sgl-project/sglang-omni/blob/main/benchmarks/eval/benchmark_tts_seedtts.py).
