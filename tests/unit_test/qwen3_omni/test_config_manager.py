@@ -12,6 +12,7 @@ from sglang_omni.config import (
     resolve_stage_factory_args,
 )
 from sglang_omni.config.manager import ConfigManager
+from sglang_omni.config.runtime import resolve_stage_static_factory_args
 from sglang_omni.models.qwen3_omni.config import (
     Qwen3OmniPipelineConfig,
     Qwen3OmniSpeechColocatedPipelineConfig,
@@ -55,6 +56,29 @@ def test_config_manager_parses_dotted_fraction_overrides_as_numbers() -> None:
         merged, "thinker"
     ).runtime.sglang_server_args.mem_fraction_static == pytest.approx(0.35)
     assert plan.gpus[0].total_gpu_memory_fraction == pytest.approx(0.85)
+
+
+def test_encoder_batch_wait_cli_override_reaches_both_encoders() -> None:
+    config = Qwen3OmniSpeechColocatedPipelineConfig(model_path="dummy")
+    manager = ConfigManager(config)
+
+    extra_args = manager.parse_extra_args(
+        [
+            "--runtime-overrides.image-encoder.max-batch-wait-ms",
+            "5",
+            "--runtime-overrides.audio-encoder.max-batch-wait-ms",
+            "5",
+        ]
+    )
+    merged = manager.merge_config(extra_args)
+
+    assert merged.runtime_overrides == {
+        "image_encoder": {"max_batch_wait_ms": 5},
+        "audio_encoder": {"max_batch_wait_ms": 5},
+    }
+    for stage_name in ("image_encoder", "audio_encoder"):
+        args = resolve_stage_static_factory_args(_stage(merged, stage_name), merged)
+        assert args["max_batch_wait_ms"] == 5
 
 
 def test_config_manager_dotted_tp_size_override_updates_parallelism_alias() -> None:

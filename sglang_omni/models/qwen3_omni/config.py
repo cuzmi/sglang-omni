@@ -63,7 +63,11 @@ def _image_encoder_stage(*, gpu: int, process: str) -> StageConfig:
         name="image_encoder",
         process=process,
         factory=f"{_PKG}.stages.create_image_encoder_executor",
-        factory_args={"device": "cuda", "dtype": None},
+        factory_args={
+            "device": "cuda",
+            "dtype": None,
+            "max_batch_wait_ms": 50,
+        },
         gpu=gpu,
         next="mm_aggregate",
         project_payload={
@@ -77,7 +81,11 @@ def _audio_encoder_stage(*, gpu: int, process: str) -> StageConfig:
         name="audio_encoder",
         process=process,
         factory=f"{_PKG}.stages.create_audio_encoder_executor",
-        factory_args={"device": "cuda", "dtype": None},
+        factory_args={
+            "device": "cuda",
+            "dtype": None,
+            "max_batch_wait_ms": 50,
+        },
         gpu=gpu,
         next="mm_aggregate",
         project_payload={

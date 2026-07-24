@@ -88,7 +88,10 @@ class ConfigManager:
             current = cfg_copy
             keys = key.split(".")
             for k in keys[:-1]:
-                current = _resolve_child(current, k)
+                if isinstance(current, list):
+                    current = current[_resolve_list_index(current, k)]
+                else:
+                    current = current.setdefault(k, {})
 
             # update the value
             last_key = keys[-1]
