@@ -136,7 +136,7 @@ async def run_mmmu_eval(
     """Run full MMMU evaluation and return results dict.
 
     Returns a dict with keys: summary, speed, config,
-    per_sample, and wer (only when enable_audio is True).
+    per_sample, and wer (only for non-streaming audio runs).
     """
     base_url = _build_base_url(config)
     api_url = f"{base_url}/v1/chat/completions"
@@ -200,9 +200,7 @@ async def run_mmmu_eval(
         "per_sample": per_sample,
     }
 
-    if config.enable_audio and compute_wer:
-        if config.stream:
-            raise ValueError("Streaming MMMU performance mode does not support WER")
+    if config.enable_audio and compute_wer and not config.stream:
         results["wer"] = compute_text_audio_consistency(
             request_results,
             config.lang,
@@ -241,7 +239,7 @@ def _config_from_args(args: argparse.Namespace) -> MMMUEvalConfig:
 
 async def benchmark(args: argparse.Namespace) -> dict:
     config = _config_from_args(args)
-    results = await run_mmmu_eval(config, compute_wer=not args.skip_wer)
+    results = await run_mmmu_eval(config)
     print_mmmu_accuracy_summary(results["summary"], config.model)
     print_speed_summary(
         results["speed"],
@@ -293,7 +291,7 @@ def main() -> None:
     parser.add_argument(
         "--enable-audio",
         action="store_true",
-        help="Request audio output and compute text-audio WER unless skipped.",
+        help="Request audio output; WER is computed only in non-streaming mode.",
     )
     parser.add_argument(
         "--stream",
@@ -302,11 +300,6 @@ def main() -> None:
             "Use streaming chat completions and record text TTFT and "
             "time-to-first-audio-payload."
         ),
-    )
-    parser.add_argument(
-        "--skip-wer",
-        action="store_true",
-        help="Skip text-audio WER, for streaming performance measurement.",
     )
     parser.add_argument(
         "--asr-device",
@@ -334,9 +327,6 @@ def main() -> None:
         "Defaults to loading the full MMMU/MMMU (all 30 subjects).",
     )
     args = parser.parse_args()
-
-    if args.stream and args.enable_audio and not args.skip_wer:
-        parser.error("--stream with --enable-audio requires --skip-wer")
 
     if args.output_dir is None:
         args.output_dir = "results/mmmu_audio" if args.enable_audio else "results/mmmu"
