@@ -115,6 +115,7 @@ class MMMUEvalConfig:
     request_rate: float = float("inf")
     disable_tqdm: bool = False
     enable_audio: bool = False
+    stream: bool = False
     asr_device: str = "cuda:0"
     asr_concurrency: int = DEFAULT_ASR_TRANSCRIBE_CONCURRENCY
     lang: str = "en"
@@ -148,7 +149,7 @@ async def run_mmmu_eval(
     logger.info(f"Prepared {len(samples)} MMMU samples")
 
     audio_dir: str | None = None
-    if config.enable_audio and config.output_dir:
+    if config.enable_audio and config.output_dir and not config.stream:
         audio_dir = str(Path(config.output_dir) / "audio")
         Path(audio_dir).mkdir(parents=True, exist_ok=True)
 
@@ -159,6 +160,7 @@ async def run_mmmu_eval(
         temperature=config.temperature,
         enable_audio=config.enable_audio,
         audio_dir=audio_dir,
+        stream=config.stream,
     )
 
     runner = BenchmarkRunner(
@@ -187,6 +189,7 @@ async def run_mmmu_eval(
         "max_concurrency": config.max_concurrency,
         "warmup": config.warmup,
         "enable_audio": config.enable_audio,
+        "stream": config.stream,
         "asr_concurrency": config.asr_concurrency,
     }
 
@@ -198,6 +201,8 @@ async def run_mmmu_eval(
     }
 
     if config.enable_audio and compute_wer:
+        if config.stream:
+            raise ValueError("Streaming MMMU performance mode does not support WER")
         results["wer"] = compute_text_audio_consistency(
             request_results,
             config.lang,
@@ -226,6 +231,7 @@ def _config_from_args(args: argparse.Namespace) -> MMMUEvalConfig:
         request_rate=args.request_rate,
         disable_tqdm=args.disable_tqdm,
         enable_audio=args.enable_audio,
+        stream=args.stream,
         asr_device=args.asr_device,
         asr_concurrency=args.asr_concurrency,
         lang=args.lang,
@@ -235,7 +241,7 @@ def _config_from_args(args: argparse.Namespace) -> MMMUEvalConfig:
 
 async def benchmark(args: argparse.Namespace) -> dict:
     config = _config_from_args(args)
-    results = await run_mmmu_eval(config)
+    results = await run_mmmu_eval(config, compute_wer=not args.skip_wer)
     print_mmmu_accuracy_summary(results["summary"], config.model)
     print_speed_summary(
         results["speed"],
@@ -287,7 +293,20 @@ def main() -> None:
     parser.add_argument(
         "--enable-audio",
         action="store_true",
-        help="Request audio output and compute text-audio WER.",
+        help="Request audio output and compute text-audio WER unless skipped.",
+    )
+    parser.add_argument(
+        "--stream",
+        action="store_true",
+        help=(
+            "Use streaming chat completions and record text TTFT and "
+            "time-to-first-audio-payload."
+        ),
+    )
+    parser.add_argument(
+        "--skip-wer",
+        action="store_true",
+        help="Skip text-audio WER, for streaming performance measurement.",
     )
     parser.add_argument(
         "--asr-device",
@@ -315,6 +334,9 @@ def main() -> None:
         "Defaults to loading the full MMMU/MMMU (all 30 subjects).",
     )
     args = parser.parse_args()
+
+    if args.stream and args.enable_audio and not args.skip_wer:
+        parser.error("--stream with --enable-audio requires --skip-wer")
 
     if args.output_dir is None:
         args.output_dir = "results/mmmu_audio" if args.enable_audio else "results/mmmu"

@@ -16,6 +16,7 @@ import aiohttp
 
 from benchmarks.benchmarker.data import RequestResult
 from benchmarks.benchmarker.runner import SendFn
+from benchmarks.benchmarker.utils import parse_sse_event
 from benchmarks.dataset.mmmu import MMMUSample
 
 logger = logging.getLogger(__name__)
@@ -228,6 +229,7 @@ def make_mmmu_send_fn(
     temperature: float = 0.0,
     enable_audio: bool = False,
     audio_dir: str | None = None,
+    stream: bool = False,
 ) -> SendFn:
     """Return a *send_fn* that sends an MMMUSample to /v1/chat/completions.
 
@@ -235,10 +237,12 @@ def make_mmmu_send_fn(
     When *enable_audio* is ``False`` (default), requests text-only output.
     When ``True``, requests ``["text", "audio"]`` modalities, decodes the
     audio response, saves it as a WAV file under *audio_dir*, and stores
-    the path in ``RequestResult.wav_path``.
+    the path in ``RequestResult.wav_path``.  When *stream* is ``True``, SSE
+    deltas are used to record text TTFT and time-to-first-audio-payload.  The
+    streaming path is performance-only and does not save audio for WER.
     """
     modalities = ["text", "audio"] if enable_audio else ["text"]
-    if enable_audio:
+    if enable_audio and not stream:
         import soundfile as sf
 
     async def send_fn(
@@ -256,7 +260,7 @@ def make_mmmu_send_fn(
             "modalities": modalities,
             "max_tokens": max_tokens,
             "temperature": temperature,
-            "stream": False,
+            "stream": stream,
         }
         if enable_audio:
             payload["audio"] = {"format": "wav"}
@@ -265,32 +269,40 @@ def make_mmmu_send_fn(
         try:
             async with session.post(api_url, json=payload) as response:
                 response.raise_for_status()
-                body = await response.json()
+                if stream:
+                    usage = await _read_streaming_mmmu_response(
+                        response,
+                        result,
+                        start_time=start_time,
+                        expect_audio=enable_audio,
+                    )
+                else:
+                    body = await response.json()
+                    usage = body.get("usage", {})
 
-            message = body.get("choices", [{}])[0].get("message", {})
-            content = message.get("content", "")
-            result.text = content or ""
+                    message = body.get("choices", [{}])[0].get("message", {})
+                    content = message.get("content", "")
+                    result.text = content or ""
 
-            if enable_audio and audio_dir:
-                audio_obj = message.get("audio")
-                if audio_obj is None:
-                    result.error = "No audio in response"
-                    return result
-                audio_b64 = audio_obj.get("data", "")
-                if not audio_b64:
-                    result.error = "Empty audio data in response"
-                    return result
-                wav_path = os.path.join(audio_dir, f"{sample.sample_id}.wav")
-                with open(wav_path, "wb") as f:
-                    f.write(base64.b64decode(audio_b64))
-                result.wav_path = wav_path
-
-                wav_info = sf.info(wav_path)
-                result.audio_duration_s = round(wav_info.duration, 4)
+                    if enable_audio and audio_dir:
+                        audio_obj = message.get("audio")
+                        if audio_obj is None:
+                            result.error = "No audio in response"
+                            return result
+                        audio_b64 = audio_obj.get("data", "")
+                        if not audio_b64:
+                            result.error = "Empty audio data in response"
+                            return result
+                        wav_bytes = base64.b64decode(audio_b64)
+                        wav_path = os.path.join(audio_dir, f"{sample.sample_id}.wav")
+                        with open(wav_path, "wb") as f:
+                            f.write(wav_bytes)
+                        result.wav_path = wav_path
+                        wav_info = sf.info(wav_path)
+                        result.audio_duration_s = round(wav_info.duration, 4)
 
             result.is_success = True
 
-            usage = body.get("usage", {})
             if usage:
                 result.prompt_tokens = usage.get("prompt_tokens", 0)
                 result.completion_tokens = usage.get("completion_tokens", 0)
@@ -301,7 +313,7 @@ def make_mmmu_send_fn(
                 result.rtf = elapsed / result.audio_duration_s
             if result.completion_tokens > 0 and result.engine_time_s > 0:
                 result.tok_per_s = result.completion_tokens / result.engine_time_s
-        except (aiohttp.ClientError, asyncio.TimeoutError) as exc:
+        except (aiohttp.ClientError, asyncio.TimeoutError, ValueError) as exc:
             result.error = str(exc)
         finally:
             result.latency_s = time.perf_counter() - start_time
@@ -309,6 +321,75 @@ def make_mmmu_send_fn(
         return result
 
     return send_fn
+
+
+async def _read_streaming_mmmu_response(
+    response: aiohttp.ClientResponse,
+    result: RequestResult,
+    *,
+    start_time: float,
+    expect_audio: bool,
+) -> dict:
+    """Consume SSE deltas for streaming MMMU performance measurement."""
+    text_parts: list[str] = []
+    usage: dict = {}
+    last_audio_time: float | None = None
+    buffer = bytearray()
+
+    def consume_line(raw_line: bytes) -> None:
+        nonlocal last_audio_time, usage
+        try:
+            event = parse_sse_event(
+                raw_line.decode("utf-8", errors="replace").strip()
+            )
+        except ValueError:
+            return
+        if event is None:
+            return
+
+        event_usage = event.get("usage")
+        if isinstance(event_usage, dict):
+            usage = event_usage
+
+        for choice in event.get("choices", []):
+            if not isinstance(choice, dict):
+                continue
+            delta = choice.get("delta")
+            if not isinstance(delta, dict):
+                continue
+
+            content = delta.get("content")
+            if isinstance(content, str) and content:
+                if result.text_ttft_s is None:
+                    result.text_ttft_s = time.perf_counter() - start_time
+                text_parts.append(content)
+
+            audio = delta.get("audio")
+            if not isinstance(audio, dict) or not isinstance(audio.get("data"), str):
+                continue
+            now = time.perf_counter()
+            if result.audio_ttfp_s is None:
+                result.audio_ttfp_s = now - start_time
+            elif last_audio_time is not None:
+                result.inter_chunk_s.append(now - last_audio_time)
+            last_audio_time = now
+            result.audio_chunk_count += 1
+
+    async for chunk in response.content.iter_any():
+        buffer.extend(chunk)
+        while b"\n" in buffer:
+            index = buffer.index(b"\n")
+            raw_line = bytes(buffer[:index])
+            del buffer[: index + 1]
+            consume_line(raw_line)
+
+    if buffer.strip():
+        consume_line(bytes(buffer))
+
+    result.text = "".join(text_parts)
+    if expect_audio and result.audio_ttfp_s is None:
+        raise ValueError("No audio chunks received from streaming response")
+    return usage
 
 
 def build_mmmu_result_records(
