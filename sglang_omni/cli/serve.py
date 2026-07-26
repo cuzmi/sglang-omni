@@ -377,6 +377,33 @@ def apply_encoder_mem_reserve_cli_override(
     return pipeline_config
 
 
+def apply_max_batch_wait_cli_override(
+    pipeline_config: PipelineConfig,
+    *,
+    max_batch_wait_ms: int | None,
+) -> PipelineConfig:
+    """Apply one encoder batching deadline to Qwen3-Omni's media encoders."""
+    if max_batch_wait_ms is None:
+        return pipeline_config
+    if max_batch_wait_ms < 0:
+        raise typer.BadParameter("--max-batch-wait-ms must be >= 0")
+
+    encoder_stages = [
+        stage
+        for stage in pipeline_config.stages
+        if stage.name in {"image_encoder", "audio_encoder"}
+        and "max_batch_wait_ms" in (stage.factory_args or {})
+    ]
+    if not encoder_stages:
+        _raise_unsupported_flag(pipeline_config, "--max-batch-wait-ms")
+
+    for stage in encoder_stages:
+        factory_args = dict(stage.factory_args or {})
+        factory_args["max_batch_wait_ms"] = int(max_batch_wait_ms)
+        stage.factory_args = factory_args
+    return pipeline_config
+
+
 def _parse_gpu_placement(flag_name: str, value: str) -> int | list[int]:
     text = value.strip()
     if not text:
@@ -997,6 +1024,18 @@ def serve(
             ),
         ),
     ] = None,
+    max_batch_wait_ms: Annotated[
+        int | None,
+        typer.Option(
+            "--max-batch-wait-ms",
+            "--max_batch_wait_ms",
+            min=0,
+            help=(
+                "Maximum time Qwen3-Omni image/audio encoders wait to form a "
+                "batch, in milliseconds."
+            ),
+        ),
+    ] = None,
     cpu_offload_gb: Annotated[
         int | None,
         typer.Option(
@@ -1244,6 +1283,10 @@ def serve(
         encoder_mem_reserve=encoder_mem_reserve,
         mem_fraction_static=mem_fraction_static,
         thinker_mem_fraction_static=thinker_mem_fraction_static,
+    )
+    merged_config = apply_max_batch_wait_cli_override(
+        merged_config,
+        max_batch_wait_ms=max_batch_wait_ms,
     )
     merged_config = apply_thinker_server_args_cli_overrides(
         merged_config,

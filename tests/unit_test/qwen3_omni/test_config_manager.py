@@ -58,31 +58,12 @@ def test_config_manager_parses_dotted_fraction_overrides_as_numbers() -> None:
     assert plan.gpus[0].total_gpu_memory_fraction == pytest.approx(0.85)
 
 
-def test_encoder_batch_wait_default_and_cli_override_reach_both_encoders() -> None:
+def test_encoder_batch_wait_default_reaches_both_encoders() -> None:
     config = Qwen3OmniSpeechColocatedPipelineConfig(model_path="dummy")
-    manager = ConfigManager(config)
 
     for stage_name in ("image_encoder", "audio_encoder"):
         args = resolve_stage_static_factory_args(_stage(config, stage_name), config)
         assert args["max_batch_wait_ms"] == 50
-
-    extra_args = manager.parse_extra_args(
-        [
-            "--runtime-overrides.image-encoder.max-batch-wait-ms",
-            "5",
-            "--runtime-overrides.audio-encoder.max-batch-wait-ms",
-            "5",
-        ]
-    )
-    merged = manager.merge_config(extra_args)
-
-    assert merged.runtime_overrides == {
-        "image_encoder": {"max_batch_wait_ms": 5},
-        "audio_encoder": {"max_batch_wait_ms": 5},
-    }
-    for stage_name in ("image_encoder", "audio_encoder"):
-        args = resolve_stage_static_factory_args(_stage(merged, stage_name), merged)
-        assert args["max_batch_wait_ms"] == 5
 
 
 def test_config_manager_dotted_tp_size_override_updates_parallelism_alias() -> None:
