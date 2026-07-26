@@ -1252,6 +1252,44 @@ class Qwen3OmniTalker(nn.Module):
         Returns:
             LogitsProcessorOutput with codec logits
         """
+        diagnostic_enabled = forward_batch.forward_mode.is_decode()
+        diagnostic_forward_id = 0
+        if diagnostic_enabled:
+            diagnostic_forward_id = (
+                getattr(self, "_cuda_graph_diagnostic_forward_count", 0) + 1
+            )
+            self._cuda_graph_diagnostic_forward_count = diagnostic_forward_id
+        diagnostic_capture_active = (
+            diagnostic_enabled
+            and torch.cuda.is_available()
+            and torch.cuda.is_current_stream_capturing()
+        )
+        diagnostic_phase = (
+            "capture" if diagnostic_capture_active else "warmup-or-eager"
+        )
+
+        def diagnostic_marker(
+            step: str,
+            event: str,
+            device: torch.device | None = None,
+        ) -> None:
+            if not diagnostic_enabled or diagnostic_forward_id > 4:
+                return
+            if (
+                event == "end"
+                and device is not None
+                and device.type == "cuda"
+                and not diagnostic_capture_active
+            ):
+                torch.cuda.synchronize(device)
+            logger.warning(
+                "Talker CUDA graph diagnostic: forward=%s phase=%s step=%s %s",
+                diagnostic_forward_id,
+                diagnostic_phase,
+                step,
+                event,
+            )
+
         if forward_batch.forward_mode.is_extend():
             self.invalidate_decode_buffers()
 
@@ -1275,26 +1313,38 @@ class Qwen3OmniTalker(nn.Module):
         else:
             positions = forward_batch.positions
 
+        diagnostic_marker("backbone", "begin")
         hidden_states = self.model(
             input_ids=input_ids,
             positions=positions,
             forward_batch=forward_batch,
             input_embeds=input_embeds,
         )
+        diagnostic_marker("backbone", "end", hidden_states.device)
         if forward_batch.forward_mode.is_extend() and input_embeds is not None:
             return self._manual_extend_logits(hidden_states, forward_batch)
+        diagnostic_marker("codec_head", "begin")
         logits_output = self._manual_decode_logits(hidden_states)
+        diagnostic_marker(
+            "codec_head", "end", logits_output.next_token_logits.device
+        )
         if forward_batch.forward_mode.is_decode():
+            diagnostic_marker("sampling", "begin")
             sampled_token_ids = self._sample_decode_tokens(
                 logits_output.next_token_logits,
                 forward_batch,
             )
+            diagnostic_marker("sampling", "end", sampled_token_ids.device)
             batch_size = sampled_token_ids.shape[0]
+            diagnostic_marker("sample_copy", "begin")
             self._sampled_token_ids[:batch_size].copy_(sampled_token_ids)
+            diagnostic_marker("sample_copy", "end", sampled_token_ids.device)
+            diagnostic_marker("predictor", "begin")
             self.code_predictor_forward(
                 sampled_token_ids.unsqueeze(1),
                 hidden_states.unsqueeze(1),
             )
+            diagnostic_marker("predictor", "end", hidden_states.device)
         return logits_output
 
     def _manual_extend_logits(
@@ -1464,15 +1514,17 @@ class Qwen3OmniTalker(nn.Module):
         talker_hidden: torch.Tensor,
         seq_len: int,
     ) -> bool:
-        # Diagnostic branch: keep the outer SGLang Talker CUDA graph enabled,
-        # but force the private Predictor CUDA graph to use its eager fallback.
-        if not getattr(self, "_predictor_graph_diagnostic_logged", False):
-            logger.warning(
-                "Diagnostic mode: Predictor private CUDA graph is disabled; "
-                "the outer Talker CUDA graph remains unchanged"
-            )
-            self._predictor_graph_diagnostic_logged = True
-        return False
+        if seq_len != 1:
+            return False
+        if layer0_codes.dtype not in (torch.int, torch.long):
+            return False
+        if not torch.cuda.is_available():
+            return False
+        if not layer0_codes.is_cuda or not talker_hidden.is_cuda:
+            return False
+        if torch.cuda.is_current_stream_capturing():
+            return False
+        return True
 
     @staticmethod
     def _normalize_predictor_decode_graph_batch_sizes(
