@@ -1464,17 +1464,15 @@ class Qwen3OmniTalker(nn.Module):
         talker_hidden: torch.Tensor,
         seq_len: int,
     ) -> bool:
-        if seq_len != 1:
-            return False
-        if layer0_codes.dtype not in (torch.int, torch.long):
-            return False
-        if not torch.cuda.is_available():
-            return False
-        if not layer0_codes.is_cuda or not talker_hidden.is_cuda:
-            return False
-        if torch.cuda.is_current_stream_capturing():
-            return False
-        return True
+        # Diagnostic branch: keep the outer SGLang Talker CUDA graph enabled,
+        # but force the private Predictor CUDA graph to use its eager fallback.
+        if not getattr(self, "_predictor_graph_diagnostic_logged", False):
+            logger.warning(
+                "Diagnostic mode: Predictor private CUDA graph is disabled; "
+                "the outer Talker CUDA graph remains unchanged"
+            )
+            self._predictor_graph_diagnostic_logged = True
+        return False
 
     @staticmethod
     def _normalize_predictor_decode_graph_batch_sizes(
