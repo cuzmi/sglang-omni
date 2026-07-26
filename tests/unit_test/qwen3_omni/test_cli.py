@@ -142,7 +142,9 @@ def test_cli_max_batch_wait_overrides_both_media_encoders(
 
     launched_config = launch_server.call_args.args[0]
     for stage_name in ("image_encoder", "audio_encoder"):
-        assert _stage(launched_config, stage_name).factory_args["max_batch_wait_ms"] == 5
+        assert (
+            _stage(launched_config, stage_name).factory_args["max_batch_wait_ms"] == 5
+        )
         args = resolve_stage_static_factory_args(
             _stage(launched_config, stage_name), launched_config
         )

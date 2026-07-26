@@ -339,9 +339,7 @@ async def _read_streaming_mmmu_response(
     def consume_line(raw_line: bytes) -> None:
         nonlocal last_audio_time, usage
         try:
-            event = parse_sse_event(
-                raw_line.decode("utf-8", errors="replace").strip()
-            )
+            event = parse_sse_event(raw_line.decode("utf-8", errors="replace").strip())
         except ValueError:
             return
         if event is None:
