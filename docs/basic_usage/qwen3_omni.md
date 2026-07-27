@@ -291,7 +291,7 @@ sgl-omni serve \
 ```
 
 `--max-batch-wait-ms` sets one batching deadline, in milliseconds, for both the
-image and audio encoders. Omit it to keep the config default (50 ms); for
+image and audio encoders. Omit it to keep the config default (10 ms); for
 example, add `--max-batch-wait-ms 5` when prioritizing lower first-response
 latency over forming larger encoder batches.
 

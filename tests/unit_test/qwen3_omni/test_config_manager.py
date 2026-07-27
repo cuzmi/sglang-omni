@@ -63,7 +63,7 @@ def test_encoder_batch_wait_default_reaches_both_encoders() -> None:
 
     for stage_name in ("image_encoder", "audio_encoder"):
         args = resolve_stage_static_factory_args(_stage(config, stage_name), config)
-        assert args["max_batch_wait_ms"] == 50
+        assert args["max_batch_wait_ms"] == 10
 
 
 def test_config_manager_dotted_tp_size_override_updates_parallelism_alias() -> None:

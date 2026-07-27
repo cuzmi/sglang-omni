@@ -72,7 +72,7 @@ def _image_encoder_stage(*, gpu: int, process: str) -> StageConfig:
         factory_args={
             "device": "cuda",
             "dtype": None,
-            "max_batch_wait_ms": 50,
+            "max_batch_wait_ms": 10,
         },
         gpu=gpu,
         next="mm_aggregate",
@@ -90,7 +90,7 @@ def _audio_encoder_stage(*, gpu: int, process: str) -> StageConfig:
         factory_args={
             "device": "cuda",
             "dtype": None,
-            "max_batch_wait_ms": 50,
+            "max_batch_wait_ms": 10,
         },
         gpu=gpu,
         next="mm_aggregate",

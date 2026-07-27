@@ -788,7 +788,7 @@ def create_image_encoder_executor(
     *,
     device: str = "cuda",
     dtype: str | None = None,
-    max_batch_wait_ms: int = 50,
+    max_batch_wait_ms: int = 10,
 ):
     from sglang_omni.scheduling.simple_scheduler import SimpleScheduler
 
@@ -861,7 +861,7 @@ def create_audio_encoder_executor(
     *,
     device: str = "cuda",
     dtype: str | None = None,
-    max_batch_wait_ms: int = 50,
+    max_batch_wait_ms: int = 10,
 ):
     from sglang_omni.scheduling.simple_scheduler import SimpleScheduler
 
