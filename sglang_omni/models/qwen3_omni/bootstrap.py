@@ -1,10 +1,14 @@
 # SPDX-License-Identifier: Apache-2.0
 """Qwen3-Omni-specific scheduler construction."""
 
+import logging
+import time
+
 from __future__ import annotations
 
 from typing import Any
 
+logger = logging.getLogger(__name__)
 
 def create_thinker_scheduler(
     server_args: Any,
@@ -168,7 +172,23 @@ def create_talker_scheduler(
         model_worker.model_runner.model._sampler = model_worker.model_runner.sampler
     if want_cuda_graph:
         server_args.disable_cuda_graph = False
-        model_worker.model_runner.init_device_graphs()
+
+        graph_start = time.perf_counter()
+        logger.warning("[Talker CUDA Graph] capture started")
+
+        try:
+            model_worker.model_runner.init_device_graphs()
+        except BaseException:
+            logger.exception(
+                "[Talker CUDA Graph] capture failed after %.3f seconds",
+                time.perf_counter() - graph_start,
+            )
+            raise
+        else:
+            logger.warning(
+                "[Talker CUDA Graph] capture completed in %.3f seconds",
+                time.perf_counter() - graph_start,
+            )
 
     output_proc = SGLangOutputProcessor(
         capture_hidden=False,
