@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: Apache-2.0
 """Qwen3-Omni-specific scheduler construction."""
 
-import logging
-import time
-
 from __future__ import annotations
 
 from typing import Any
+
+import logging
+import time
 
 logger = logging.getLogger(__name__)
 
