@@ -350,7 +350,7 @@ async def _run_server(
     port = _find_available_port(host, port)
 
     mp_runner = MultiProcessPipelineRunner(pipeline_config)
-    startup_timeout = float(os.environ.get("SGLANG_OMNI_STARTUP_TIMEOUT", "1200"))
+    startup_timeout = float(os.environ.get("SGLANG_OMNI_STARTUP_TIMEOUT", "2400"))
     await mp_runner.start(timeout=startup_timeout)
     coordinator = mp_runner.coordinator
 
