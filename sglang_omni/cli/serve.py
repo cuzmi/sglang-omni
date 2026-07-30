@@ -397,10 +397,11 @@ def apply_max_batch_wait_cli_override(
     if not encoder_stages:
         _raise_unsupported_flag(pipeline_config, "--max-batch-wait-ms")
 
-    for stage in encoder_stages:
-        factory_args = dict(stage.factory_args or {})
-        factory_args["max_batch_wait_ms"] = int(max_batch_wait_ms)
-        stage.factory_args = factory_args
+    _apply_factory_args_updates(
+        pipeline_config,
+        encoder_stages,
+        {"max_batch_wait_ms": int(max_batch_wait_ms)},
+    )
     return pipeline_config
 
 
