@@ -339,6 +339,14 @@ def test_pending_text_queue_rejects_unexpected_rank() -> None:
         queue.append_rows(torch.zeros((1, 0)))
 
 
+def test_pending_text_queue_rejects_hidden_dimension_mismatch() -> None:
+    """Preserves the shape check previously enforced by torch.cat."""
+    queue = PendingTextTensorQueue.from_tensor(torch.zeros((2, 4)))
+
+    with pytest.raises(ValueError, match="match the queue hidden dimension"):
+        queue.append_rows(torch.zeros((1, 8)))
+
+
 def test_pending_text_queue_rejects_non_tensor_input() -> None:
     """Keeps conversion failures explicit instead of skipping invalid rows."""
     with pytest.raises(TypeError, match="pending text rows must be tensors"):
@@ -360,6 +368,55 @@ def test_coerce_pending_text_queue_copies_cursor_state() -> None:
     assert copied is not queue
     assert len(copied) == 1
     assert len(queue) == 2
+
+
+def test_pending_text_queue_preserves_fifo_across_chunks() -> None:
+    """Consumes incrementally appended chunks in FIFO order."""
+    queue = PendingTextTensorQueue.from_tensor(torch.tensor([[1.0], [2.0]]))
+    queue.append_rows(torch.tensor([[3.0], [4.0]]))
+
+    assert len(queue) == 4
+    assert [row.item() for row in queue] == [1.0, 2.0, 3.0, 4.0]
+    assert queue[0].item() == 1.0
+    assert queue[-1].item() == 4.0
+    assert [queue.popleft().item() for _ in range(4)] == [1.0, 2.0, 3.0, 4.0]
+    assert len(queue) == 0
+    assert not queue
+    with pytest.raises(IndexError):
+        queue.popleft()
+
+
+def test_pending_text_queue_appends_after_partial_consumption() -> None:
+    """Keeps remaining rows ahead of chunks appended after consumption starts."""
+    queue = PendingTextTensorQueue.from_tensor(
+        torch.tensor([[1.0], [2.0]], dtype=torch.float32)
+    )
+
+    assert queue.popleft().item() == 1.0
+    queue.append_rows(torch.tensor([[3.0], [4.0]], dtype=torch.float64))
+
+    assert len(queue) == 3
+    assert [row.item() for row in queue] == [2.0, 3.0, 4.0]
+    assert all(row.dtype == torch.float32 for row in queue)
+    assert [queue.popleft().item() for _ in range(3)] == [2.0, 3.0, 4.0]
+
+    queue.append(torch.tensor([5.0]))
+    assert queue.popleft().item() == 5.0
+    assert not queue
+
+
+def test_pending_text_queue_copy_is_independent_across_chunk_boundaries() -> None:
+    """Copies pending chunk and cursor state without sharing FIFO mutation."""
+    queue = PendingTextTensorQueue.from_tensor(torch.tensor([[1.0], [2.0]]))
+    queue.append_rows(torch.tensor([[3.0], [4.0]]))
+    assert queue.popleft().item() == 1.0
+
+    copied = queue.copy()
+    assert copied.popleft().item() == 2.0
+    assert copied.popleft().item() == 3.0
+
+    assert [row.item() for row in queue] == [2.0, 3.0, 4.0]
+    assert [row.item() for row in copied] == [4.0]
 
 
 def test_qwen_talker_prefill_appends_text_chunks_to_tensor_queue() -> None:
