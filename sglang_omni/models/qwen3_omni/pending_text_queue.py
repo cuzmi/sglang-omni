@@ -122,6 +122,10 @@ class PendingTextTensorQueue:
             self.cursor = 0
         else:
             reference = self._chunks[-1] if self._chunks else self.rows
+            if rows.shape[1] != reference.shape[1]:
+                raise ValueError(
+                    "pending text rows must match the queue hidden dimension"
+                )
             rows = rows.to(device=reference.device, dtype=reference.dtype)
             self._chunks.append(rows)
 
