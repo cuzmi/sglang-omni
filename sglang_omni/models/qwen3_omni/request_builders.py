@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import json
 import logging
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass
@@ -1065,17 +1064,6 @@ def make_talker_scheduler_adapters(
 
     def result_adapter(data: SGLangARRequestData) -> StagePayload:
         payload = data.stage_payload
-        pending_text_queue = getattr(data, "pending_text_queue", None)
-        if isinstance(pending_text_queue, PendingTextTensorQueue):
-            metrics = pending_text_queue.copy_metrics()
-            logger.info(
-                "PENDING_TEXT_QUEUE_COPY %s",
-                json.dumps(
-                    {"request_id": payload.request_id, **metrics},
-                    separators=(",", ":"),
-                    sort_keys=True,
-                ),
-            )
         return StagePayload(
             request_id=payload.request_id,
             request=payload.request,
