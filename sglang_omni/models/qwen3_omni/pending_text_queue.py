@@ -3,10 +3,14 @@
 
 from __future__ import annotations
 
+import os
 from collections.abc import Iterable, Iterator
 from dataclasses import dataclass
 
 import torch
+
+
+_NVTX_ENABLED = os.environ.get("SGLANG_OMNI_PENDING_TEXT_QUEUE_NVTX") == "1"
 
 
 def _as_rows(tensor: torch.Tensor) -> torch.Tensor | None:
@@ -38,6 +42,13 @@ class PendingTextTensorQueue:
 
     rows: torch.Tensor | None = None
     cursor: int = 0
+    append_calls: int = 0
+    appended_rows: int = 0
+    max_pending_rows: int = 0
+    to_copy_bytes: int = 0
+    cat_old_recopy_bytes: int = 0
+    cat_output_bytes: int = 0
+    cat_calls: int = 0
 
     @classmethod
     def from_tensor(cls, tensor: torch.Tensor) -> "PendingTextTensorQueue":
@@ -49,7 +60,28 @@ class PendingTextTensorQueue:
         return len(self) > 0
 
     def copy(self) -> "PendingTextTensorQueue":
-        return type(self)(rows=self.rows, cursor=self.cursor)
+        return type(self)(
+            rows=self.rows,
+            cursor=self.cursor,
+            append_calls=self.append_calls,
+            appended_rows=self.appended_rows,
+            max_pending_rows=self.max_pending_rows,
+            to_copy_bytes=self.to_copy_bytes,
+            cat_old_recopy_bytes=self.cat_old_recopy_bytes,
+            cat_output_bytes=self.cat_output_bytes,
+            cat_calls=self.cat_calls,
+        )
+
+    def copy_metrics(self) -> dict[str, int]:
+        return {
+            "append_calls": self.append_calls,
+            "appended_rows": self.appended_rows,
+            "max_pending_rows": self.max_pending_rows,
+            "to_copy_bytes": self.to_copy_bytes,
+            "cat_old_recopy_bytes": self.cat_old_recopy_bytes,
+            "cat_output_bytes": self.cat_output_bytes,
+            "cat_calls": self.cat_calls,
+        }
 
     def __len__(self) -> int:
         if self.rows is None:
@@ -87,15 +119,34 @@ class PendingTextTensorQueue:
         rows = _as_rows(rows)
         if rows is None:
             return
+        appended_rows = int(rows.shape[0])
+        self.append_calls += 1
+        self.appended_rows += appended_rows
         if self.rows is None or len(self) == 0:
             self.rows = rows
             self.cursor = 0
+            self.max_pending_rows = max(self.max_pending_rows, appended_rows)
             return
 
         remaining = self.rows[self.cursor :]
+        if rows.device != remaining.device or rows.dtype != remaining.dtype:
+            self.to_copy_bytes += rows.numel() * remaining.element_size()
         rows = rows.to(device=remaining.device, dtype=remaining.dtype)
-        self.rows = torch.cat([remaining, rows], dim=0)
+        old_recopy_bytes = remaining.numel() * remaining.element_size()
+        output_bytes = old_recopy_bytes + rows.numel() * rows.element_size()
+        self.cat_old_recopy_bytes += old_recopy_bytes
+        self.cat_output_bytes += output_bytes
+        self.cat_calls += 1
+        if _NVTX_ENABLED and remaining.is_cuda:
+            with torch.cuda.nvtx.range("pending_text_queue.cat"):
+                self.rows = torch.cat([remaining, rows], dim=0)
+        else:
+            self.rows = torch.cat([remaining, rows], dim=0)
         self.cursor = 0
+        self.max_pending_rows = max(
+            self.max_pending_rows,
+            int(self.rows.shape[0]),
+        )
 
 
 def coerce_pending_text_queue(value: object) -> PendingTextTensorQueue:
