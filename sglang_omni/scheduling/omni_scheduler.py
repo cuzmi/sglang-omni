@@ -873,6 +873,7 @@ class OmniScheduler:
                 self._deferred_request_payloads[req_id] = payload
                 continue
             active_stage = _get_active_stage()
+            _emit_event(request_id=req_id, stage=active_stage, event_name="talker_build_ready")
             request_build_executor = self._request_build_executor
             if request_build_executor is not None:
                 with self._request_admission_lock:

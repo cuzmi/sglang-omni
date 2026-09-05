@@ -145,6 +145,10 @@ _STAGE_INTERVAL_EVENTS = (
     ("scheduler_prefill_start", "stage_first_stream_chunk_sent"),
     ("scheduler_prefill_start", "scheduler_first_emit"),
     ("scheduler_first_emit", "stage_complete"),
+    ("talker_build_ready", "scheduler_request_build_start"),
+    ("talker_build_ready", "scheduler_prefill_start"),
+    ("talker_prompt_build_start", "talker_prompt_build_end"),
+    ("talker_request_construct_start", "talker_request_construct_end"),
 )
 
 

@@ -12,6 +12,8 @@ import torch
 import xxhash
 
 from sglang_omni.models.qwen3_omni.components.talker_prefill import TalkerPrefillBuilder
+from sglang_omni.profiler.event_recorder import emit as _emit_event
+from sglang_omni.profiler.event_recorder import get_active_stage
 from sglang_omni.models.qwen3_omni.payload_types import (
     Qwen3OmniPipelineState,
     ThinkerOutput,
@@ -1152,11 +1154,13 @@ def _build_talker_request_data(
             "check the partial-start readiness policy or upstream wiring"
         )
 
+    _emit_event(request_id=payload.request_id, stage=get_active_stage(), event_name="talker_prompt_build_start")
     prompt_prefill = prefill_builder.build_prompt_prefill(
         payload,
         thinker_chunks,
         thinker_done=thinker_done,
     )
+    _emit_event(request_id=payload.request_id, stage=get_active_stage(), event_name="talker_prompt_build_end")
     pending_text_queue = prompt_prefill["pending_text_queue"]
     pending_text_rows = len(pending_text_queue) if pending_text_queue is not None else 0
     logger.debug(
@@ -1168,6 +1172,7 @@ def _build_talker_request_data(
         pending_text_rows,
         thinker_done,
     )
+    _emit_event(request_id=payload.request_id, stage=get_active_stage(), event_name="talker_request_construct_start")
     req_data = build_sglang_talker_request(
         thinker_hidden_states=torch.empty(0),
         tokenizer=tokenizer,
@@ -1194,6 +1199,7 @@ def _build_talker_request_data(
         talker_model_inputs=prompt_prefill["prompt_model_inputs"],
         seed=sampling_cfg.get("seed"),
     )
+    _emit_event(request_id=payload.request_id, stage=get_active_stage(), event_name="talker_request_construct_end")
     req_data.tts_eos_embed = prompt_prefill["tts_eos_embed"]
     req_data.stage_payload = payload
     return req_data
