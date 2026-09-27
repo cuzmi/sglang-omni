@@ -12,12 +12,21 @@ in the repo root; the test skips otherwise.
 from __future__ import annotations
 
 import os
+import threading
 from pathlib import Path
 
 import pytest
 import torch
 
 from sglang_omni.models.minicpm_o.components.image_encoder import MiniCPMOImageEncoder
+from sglang_omni.models.minicpm_o.image_encoder_batching import (
+    batch_image_encoder_payloads,
+    create_image_batch_scheduler,
+)
+from sglang_omni.models.minicpm_o.payload_types import MiniCPMOPipelineState
+from sglang_omni.proto.request import OmniRequest, StagePayload
+from sglang_omni.scheduling.message import IncomingMessage
+from sglang_omni.scheduling.stage_cache import StageOutputCache
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 
@@ -198,3 +207,236 @@ def test_golden_parity_vs_remote_code() -> None:
         f"srt path cos_min {cos.min():.6f} below remote bf16 "
         f"cos_min {remote_cos.min():.6f}"
     )
+
+
+class SliceEncoder(MiniCPMOImageEncoder):
+    """Deterministic slice outputs for stage routing and cache contracts."""
+
+    def __init__(self) -> None:
+        torch.nn.Module.__init__(self)
+        self.calls: list[int] = []
+
+    def forward(
+        self, *, pixel_values: list[torch.Tensor], tgt_sizes: torch.Tensor
+    ) -> dict[str, torch.Tensor]:
+        self.calls.append(len(pixel_values))
+        assert len(pixel_values) == tgt_sizes.shape[0]
+        return {
+            "image_embeds": torch.stack([pixels.mean() for pixels in pixel_values])
+            .repeat_interleave(2)
+            .reshape(-1, 1)
+        }
+
+
+def image_payload(
+    request_id: str, values: list[float], cache_key: str | None = None
+) -> StagePayload:
+    state = MiniCPMOPipelineState(
+        encoder_inputs={
+            "image_encoder": {
+                "pixel_values": [
+                    torch.full((3, 1, i + 1), v) for i, v in enumerate(values)
+                ],
+                "tgt_sizes": torch.tensor([[1, i + 1] for i in range(len(values))]),
+                "cache_key": cache_key,
+            }
+        },
+        thinker_inputs={"marker": request_id},
+    )
+    return StagePayload(
+        request_id=request_id, request=OmniRequest(inputs={}), data=state.to_dict()
+    )
+
+
+@pytest.mark.parametrize("request_count", [1, 2, 4])
+def test_image_batch_matches_serial_and_preserves_requests(request_count: int) -> None:
+    encoder = SliceEncoder()
+    payloads = [
+        image_payload(f"request-{i}", [float(i + 1)] * (i + 1))
+        for i in range(request_count)
+    ]
+    serial_encoder = SliceEncoder()
+    expected = []
+    for payload in payloads:
+        inputs = payload.data["encoder_inputs"]["image_encoder"]
+        expected.append(
+            serial_encoder(
+                pixel_values=inputs["pixel_values"], tgt_sizes=inputs["tgt_sizes"]
+            )["image_embeds"]
+        )
+    outputs = batch_image_encoder_payloads(
+        payloads, encoder=encoder, cache=StageOutputCache(cache_device="cpu")
+    )
+    assert encoder.calls == [sum(range(1, request_count + 1))]
+    for index, (payload, embeddings) in enumerate(zip(outputs, expected, strict=True)):
+        assert payload is payloads[index]
+        assert payload.data["thinker_inputs"]["marker"] == payload.request_id
+        torch.testing.assert_close(
+            payload.data["encoder_outs"]["image_encoder"]["image_embeds"], embeddings
+        )
+
+
+def test_image_batch_cache_dedup_and_skip() -> None:
+    encoder = SliceEncoder()
+    cache = StageOutputCache(cache_device="cpu")
+    cache.put("cached", {"image_embeds": torch.full((2, 1), 9.0)})
+    skipped = StagePayload(request_id="skip", request=OmniRequest(inputs={}), data={})
+    payloads = [
+        image_payload("a", [1.0, 2.0], "same"),
+        image_payload("hit", [9.0], "cached"),
+        skipped,
+        image_payload("duplicate", [1.0, 2.0], "same"),
+        image_payload("unkeyed", [3.0]),
+    ]
+    batch_image_encoder_payloads(payloads, encoder=encoder, cache=cache)
+    assert encoder.calls == [3]
+    assert skipped.data["encoder_outs"]["image_encoder"] == {}
+    for index, values in (
+        (0, [1, 1, 2, 2]),
+        (1, [9, 9]),
+        (3, [1, 1, 2, 2]),
+        (4, [3, 3]),
+    ):
+        torch.testing.assert_close(
+            payloads[index].data["encoder_outs"]["image_encoder"]["image_embeds"],
+            torch.tensor(values, dtype=torch.float32).reshape(-1, 1),
+        )
+    batch_image_encoder_payloads(
+        [image_payload("later", [1.0, 2.0], "same"), skipped],
+        encoder=encoder,
+        cache=cache,
+    )
+    assert encoder.calls == [3]
+
+
+@pytest.mark.parametrize("max_batch_size,expected_calls", [(1, [2, 3, 1]), (8, [2, 4])])
+def test_image_scheduler_respects_slice_budget(
+    max_batch_size: int, expected_calls: list[int]
+) -> None:
+    encoder = SliceEncoder()
+    scheduler = create_image_batch_scheduler(
+        encoder,
+        StageOutputCache(),
+        max_batch_size=max_batch_size,
+        max_batch_slices=4,
+        max_batch_wait_ms=0,
+    )
+    for index, values in enumerate(([1.0, 2.0], [3.0, 4.0, 5.0], [6.0])):
+        payload = image_payload(str(index), values)
+        scheduler.inbox.put(
+            IncomingMessage(type="new_request", request_id=str(index), data=payload)
+        )
+    worker = threading.Thread(target=scheduler.start, daemon=True)
+    worker.start()
+    try:
+        outputs = [scheduler.outbox.get(timeout=5) for _ in range(3)]
+    finally:
+        scheduler.stop()
+        worker.join(timeout=5)
+    assert not worker.is_alive()
+    assert [output.request_id for output in outputs] == ["0", "1", "2"]
+    assert all(output.type == "result" for output in outputs)
+    assert encoder.calls == expected_calls
+
+
+@pytest.fixture(scope="module")
+def batching_native_encoder() -> MiniCPMOImageEncoder:
+    checkpoint = checkpoint_dir()
+    if checkpoint is None or not torch.cuda.is_available():
+        pytest.skip("cross-request numerical parity requires a checkpoint and CUDA")
+    else:
+        pass
+    return MiniCPMOImageEncoder(str(checkpoint), device="cuda", dtype="bfloat16")
+
+
+@pytest.mark.accelerator
+@pytest.mark.parametrize("chunk_size", [1, 2, 16])
+@pytest.mark.parametrize("slice_counts", [(1, 1), (2, 3), (9, 8)])
+def test_cross_request_checkpoint_parity(
+    batching_native_encoder: MiniCPMOImageEncoder,
+    chunk_size: int,
+    slice_counts: tuple[int, int],
+    request: pytest.FixtureRequest,
+) -> None:
+    encoder = batching_native_encoder
+    encoder.vision_batch_size = chunk_size
+    generator = torch.Generator().manual_seed(20260926)
+    patch_size = encoder.vpm.embeddings.patch_size
+    payloads = []
+    expected = []
+    for index, slice_count in enumerate(slice_counts):
+        payload = image_payload(str(index), [1.0] * slice_count)
+        inputs = payload.data["encoder_inputs"]["image_encoder"]
+        sizes = torch.tensor(
+            [(8, 12), (3, 5), (1, 9)] * slice_count, dtype=torch.int32
+        )[:slice_count]
+        inputs["tgt_sizes"] = sizes
+        inputs["pixel_values"] = [
+            torch.randn(
+                3, patch_size, int(height * width) * patch_size, generator=generator
+            )
+            for height, width in sizes.tolist()
+        ]
+        expected.append(
+            encoder(pixel_values=inputs["pixel_values"], tgt_sizes=sizes)[
+                "image_embeds"
+            ].clone()
+        )
+        repeat = encoder(pixel_values=inputs["pixel_values"], tgt_sizes=sizes)[
+            "image_embeds"
+        ]
+        request.node.user_properties.append(
+            (
+                f"request_{index}_aa_max_abs",
+                float((repeat.float() - expected[-1].float()).abs().max()),
+            )
+        )
+        torch.testing.assert_close(repeat, expected[-1], rtol=0, atol=0)
+        payloads.append(payload)
+    batch_image_encoder_payloads(payloads, encoder=encoder, cache=StageOutputCache())
+    combined = encoder(
+        pixel_values=[
+            pixels
+            for payload in payloads
+            for pixels in payload.data["encoder_inputs"]["image_encoder"][
+                "pixel_values"
+            ]
+        ],
+        tgt_sizes=torch.cat(
+            [
+                payload.data["encoder_inputs"]["image_encoder"]["tgt_sizes"]
+                for payload in payloads
+            ]
+        ),
+    )["image_embeds"]
+    reconstructed = torch.cat(
+        [
+            payload.data["encoder_outs"]["image_encoder"]["image_embeds"]
+            for payload in payloads
+        ]
+    )
+    request.node.user_properties.append(
+        ("split_max_abs", float((combined.float() - reconstructed.float()).abs().max()))
+    )
+    torch.testing.assert_close(reconstructed, combined, rtol=0, atol=0)
+    for payload, serial in zip(payloads, expected, strict=True):
+        batched = payload.data["encoder_outs"]["image_encoder"]["image_embeds"]
+        assert torch.isfinite(batched).all()
+        difference = (batched.float() - serial.float()).abs()
+        cosine = torch.nn.functional.cosine_similarity(
+            batched.float(), serial.float(), dim=-1
+        )
+        request.node.user_properties.extend(
+            [
+                (f"request_{payload.request_id}_max_abs", float(difference.max())),
+                (f"request_{payload.request_id}_mean_abs", float(difference.mean())),
+                (f"request_{payload.request_id}_cosine_min", float(cosine.min())),
+            ]
+        )
+    for payload, serial in zip(payloads, expected, strict=True):
+        torch.testing.assert_close(
+            payload.data["encoder_outs"]["image_encoder"]["image_embeds"],
+            serial,
+            rtol=0.02,
+            atol=0.02,
+        )
