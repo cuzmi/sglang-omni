@@ -39,6 +39,11 @@ def image_encoder_stage(*, gpu: int, process: str) -> StageConfig:
         name="image_encoder",
         process=process,
         factory_path=f"{PKG}.stages.create_image_encoder_executor",
+        factory=FactoryArgs(
+            max_batch_size=1,
+            max_batch_slices=64,
+            max_batch_wait_ms=0,
+        ),
         gpu=gpu,
         next="thinker",
         project_payload={"thinker": f"{PKG}.routing.project_encoder_to_thinker"},

@@ -22,6 +22,9 @@ from sglang_omni.models.minicpm_o.components.code2wav import MiniCPMOCode2Wav
 from sglang_omni.models.minicpm_o.components.image_encoder import MiniCPMOImageEncoder
 from sglang_omni.models.minicpm_o.components.preprocessor import MiniCPMOPreprocessor
 from sglang_omni.models.minicpm_o.hf_config import register_minicpm_o_hf_config
+from sglang_omni.models.minicpm_o.image_encoder_batching import (
+    create_image_batch_scheduler,
+)
 from sglang_omni.models.minicpm_o.merge import build_decode_result
 from sglang_omni.models.minicpm_o.payload_types import MiniCPMOPipelineState
 from sglang_omni.models.minicpm_o.request_builders import build_encoder_request
@@ -94,11 +97,25 @@ def create_image_encoder_executor(
     device: str | None = None,
     gpu_id: int | None = None,
     dtype: str | None = None,
+    max_batch_size: int,
+    max_batch_slices: int,
+    max_batch_wait_ms: int,
 ) -> SimpleScheduler:
     encoder = MiniCPMOImageEncoder(
         model_path, device=str(resolve_concrete_device(device, gpu_id)), dtype=dtype
     )
-    return create_encoder_executor(encoder, stage_name="image_encoder")
+    cache = StageOutputCache(
+        max_size=ENCODER_CACHE_MAX_ENTRIES,
+        max_bytes=ENCODER_CACHE_MAX_BYTES,
+        cache_device="cpu",
+    )
+    return create_image_batch_scheduler(
+        encoder,
+        cache,
+        max_batch_size=max_batch_size,
+        max_batch_slices=max_batch_slices,
+        max_batch_wait_ms=max_batch_wait_ms,
+    )
 
 
 def create_audio_encoder_executor(
