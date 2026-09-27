@@ -8,7 +8,6 @@ import torch
 from sglang_omni.models.minicpm_o.components.image_encoder import MiniCPMOImageEncoder
 from sglang_omni.models.minicpm_o.payload_types import MiniCPMOPipelineState
 from sglang_omni.models.minicpm_o.request_builders import build_encoder_request
-from sglang_omni.profiler.event_recorder import emit as emit_event
 from sglang_omni.proto.request import StagePayload
 from sglang_omni.scheduling.simple_scheduler import SimpleScheduler
 from sglang_omni.scheduling.stage_cache import StageOutputCache
@@ -35,14 +34,12 @@ def batch_image_encoder_payloads(
     leaders: dict[str, int] = {}
     duplicates: dict[int, int] = {}
     active_indices: list[int] = []
-    cache_hits = 0
     for index, request in enumerate(requests):
         cached = cache.get(request.cache_key)
         if request.skip_result is not None:
             outputs[index] = request.skip_result
         elif cached is not None:
             outputs[index] = cached
-            cache_hits += 1
         elif request.cache_key is not None and request.cache_key in leaders:
             duplicates[index] = leaders[request.cache_key]
         else:
@@ -72,47 +69,19 @@ def batch_image_encoder_payloads(
             dim=0,
         )
         total_slices = sum(slice_counts)
-        assert target_sizes.shape == (total_slices, 2)
-        metadata = {
-            "modality": "image",
-            "request_batch_size": len(payloads),
-            "batch_size": len(active_indices),
-            "num_slices": total_slices,
-            "cache_hits": cache_hits,
-            "dedup_same_batch": len(duplicates),
-        }
-        for index in active_indices:
-            emit_event(
-                request_id=payloads[index].request_id,
-                stage="image_encoder",
-                event_name="encoder_start",
-                metadata=metadata,
-            )
-        status = "error"
-        try:
-            with torch.no_grad():
-                embeddings = encoder(pixel_values=pixel_values, tgt_sizes=target_sizes)[
-                    "image_embeds"
-                ]
-            assert embeddings.ndim == 2
-            assert embeddings.shape[0] > 0 and embeddings.shape[0] % total_slices == 0
-            query_count = embeddings.shape[0] // total_slices
-            cursor = 0
-            for index, slice_count in zip(active_indices, slice_counts, strict=True):
-                row_count = slice_count * query_count
-                output = {"image_embeds": embeddings[cursor : cursor + row_count]}
-                outputs[index] = output
-                cache.put(requests[index].cache_key, output)
-                cursor += row_count
-            status = "ok"
-        finally:
-            for index in active_indices:
-                emit_event(
-                    request_id=payloads[index].request_id,
-                    stage="image_encoder",
-                    event_name="encoder_end",
-                    metadata={**metadata, "status": status},
-                )
+        with torch.no_grad():
+            embeddings = encoder(pixel_values=pixel_values, tgt_sizes=target_sizes)[
+                "image_embeds"
+            ]
+        assert embeddings.shape[0] > 0 and embeddings.shape[0] % total_slices == 0
+        query_count = embeddings.shape[0] // total_slices
+        cursor = 0
+        for index, slice_count in zip(active_indices, slice_counts, strict=True):
+            row_count = slice_count * query_count
+            output = {"image_embeds": embeddings[cursor : cursor + row_count]}
+            outputs[index] = output
+            cache.put(requests[index].cache_key, output)
+            cursor += row_count
     else:
         pass
 
