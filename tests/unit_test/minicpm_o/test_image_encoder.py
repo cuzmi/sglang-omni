@@ -11,6 +11,7 @@ in the repo root; the test skips otherwise.
 
 from __future__ import annotations
 
+import asyncio
 import os
 import threading
 from pathlib import Path
@@ -18,12 +19,13 @@ from pathlib import Path
 import pytest
 import torch
 
+from sglang_omni.models.minicpm_o import stages
 from sglang_omni.models.minicpm_o.components.image_encoder import MiniCPMOImageEncoder
-from sglang_omni.models.minicpm_o.image_encoder_batching import (
-    batch_image_encoder_payloads,
-    create_image_batch_scheduler,
-)
 from sglang_omni.models.minicpm_o.payload_types import MiniCPMOPipelineState
+from sglang_omni.models.minicpm_o.stages import (
+    batch_image_encoder_payloads,
+    create_image_encoder_executor,
+)
 from sglang_omni.proto.request import OmniRequest, StagePayload
 from sglang_omni.scheduling.message import IncomingMessage
 from sglang_omni.scheduling.stage_cache import StageOutputCache
@@ -220,7 +222,8 @@ class SliceEncoder(MiniCPMOImageEncoder):
         self, *, pixel_values: list[torch.Tensor], tgt_sizes: torch.Tensor
     ) -> dict[str, torch.Tensor]:
         self.calls.append(len(pixel_values))
-        assert len(pixel_values) == tgt_sizes.shape[0]
+        for pixels, size in zip(pixel_values, tgt_sizes.tolist(), strict=True):
+            assert pixels.shape[-2:] == tuple(size)
         return {
             "image_embeds": torch.stack([pixels.mean() for pixels in pixel_values])
             .repeat_interleave(2)
@@ -248,32 +251,29 @@ def image_payload(
     )
 
 
-@pytest.mark.parametrize("request_count", [1, 2, 4])
-def test_image_batch_matches_serial_and_preserves_requests(request_count: int) -> None:
+def test_image_batch_preserves_request_and_slice_order() -> None:
     encoder = SliceEncoder()
     payloads = [
-        image_payload(f"request-{i}", [float(i + 1)] * (i + 1))
-        for i in range(request_count)
+        image_payload("a", [1.0, 2.0]),
+        image_payload("b", [3.0]),
+        image_payload("c", [4.0, 5.0, 6.0]),
     ]
-    serial_encoder = SliceEncoder()
-    expected = []
-    for payload in payloads:
-        inputs = payload.data["encoder_inputs"]["image_encoder"]
-        expected.append(
-            serial_encoder(
-                pixel_values=inputs["pixel_values"], tgt_sizes=inputs["tgt_sizes"]
-            )["image_embeds"]
-        )
     outputs = batch_image_encoder_payloads(
         payloads, encoder=encoder, cache=StageOutputCache(cache_device="cpu")
     )
-    assert encoder.calls == [sum(range(1, request_count + 1))]
-    for index, (payload, embeddings) in enumerate(zip(outputs, expected, strict=True)):
-        assert payload is payloads[index]
+    expected = {
+        "a": [1.0, 1.0, 2.0, 2.0],
+        "b": [3.0, 3.0],
+        "c": [4.0, 4.0, 5.0, 5.0, 6.0, 6.0],
+    }
+    assert [payload.request_id for payload in outputs] == list(expected)
+    for payload in outputs:
         assert payload.data["thinker_inputs"]["marker"] == payload.request_id
         torch.testing.assert_close(
-            payload.data["encoder_outs"]["image_encoder"]["image_embeds"], embeddings
+            payload.data["encoder_outs"]["image_encoder"]["image_embeds"],
+            torch.tensor(expected[payload.request_id]).reshape(-1, 1),
         )
+    assert encoder.calls == [6]
 
 
 def test_image_batch_cache_dedup_and_skip() -> None:
@@ -309,14 +309,69 @@ def test_image_batch_cache_dedup_and_skip() -> None:
     assert encoder.calls == [3]
 
 
-@pytest.mark.parametrize("max_batch_size,expected_calls", [(1, [2, 3, 1]), (8, [2, 4])])
-def test_image_scheduler_respects_slice_budget(
-    max_batch_size: int, expected_calls: list[int]
+def test_image_scheduler_shares_cache_between_single_and_batch(
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     encoder = SliceEncoder()
-    scheduler = create_image_batch_scheduler(
-        encoder,
-        StageOutputCache(),
+    monkeypatch.setattr(
+        stages, "MiniCPMOImageEncoder", lambda model_path, device, dtype: encoder
+    )
+    scheduler = create_image_encoder_executor(
+        "unused",
+        device="cpu",
+        max_batch_size=8,
+        max_batch_slices=64,
+        max_batch_wait_ms=0,
+    )
+    single = [image_payload("single-a", [1.0, 2.0], "a")]
+    batch = [
+        image_payload("batch-a", [1.0, 2.0], "a"),
+        image_payload("batch-b", [3.0], "b"),
+    ]
+    groups = [single, batch, [image_payload("cached-b", [3.0], "b")]]
+    expected = {
+        "single-a": [1.0, 1.0, 2.0, 2.0],
+        "batch-a": [1.0, 1.0, 2.0, 2.0],
+        "batch-b": [3.0, 3.0],
+        "cached-b": [3.0, 3.0],
+    }
+    loop = asyncio.new_event_loop()
+    try:
+        for group in groups:
+            scheduler.run_batch(
+                [
+                    IncomingMessage(
+                        type="new_request", request_id=payload.request_id, data=payload
+                    )
+                    for payload in group
+                ],
+                loop,
+            )
+            for payload in group:
+                output = scheduler.outbox.get_nowait()
+                assert output.type == "result"
+                assert output.request_id == payload.request_id
+                state = MiniCPMOPipelineState.from_dict(output.data.data)
+                torch.testing.assert_close(
+                    state.encoder_outs["image_encoder"]["image_embeds"],
+                    torch.tensor(expected[payload.request_id]).reshape(-1, 1),
+                )
+    finally:
+        loop.close()
+    assert encoder.calls == [2, 1]
+
+
+@pytest.mark.parametrize("max_batch_size,expected_calls", [(1, [2, 3, 1]), (8, [2, 4])])
+def test_image_scheduler_respects_slice_budget(
+    max_batch_size: int, expected_calls: list[int], monkeypatch: pytest.MonkeyPatch
+) -> None:
+    encoder = SliceEncoder()
+    monkeypatch.setattr(
+        stages, "MiniCPMOImageEncoder", lambda model_path, device, dtype: encoder
+    )
+    scheduler = create_image_encoder_executor(
+        "unused",
+        device="cpu",
         max_batch_size=max_batch_size,
         max_batch_slices=4,
         max_batch_wait_ms=0,
