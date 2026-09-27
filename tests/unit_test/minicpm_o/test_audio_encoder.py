@@ -10,12 +10,15 @@ root; the test skips otherwise.
 
 from __future__ import annotations
 
+import asyncio
 import os
 from pathlib import Path
+from unittest.mock import Mock
 
 import pytest
 import torch
 
+from sglang_omni.models.minicpm_o import stages
 from sglang_omni.models.minicpm_o.components.audio_encoder import (
     MiniCPMOAudioEncoder,
     MiniCPMWhisperEncoder,
@@ -25,8 +28,58 @@ from sglang_omni.models.minicpm_o.components.audio_encoder import (
     fuse_qkv,
     min_mel_frames,
 )
+from sglang_omni.proto.request import OmniRequest, StagePayload
+from sglang_omni.scheduling.message import IncomingMessage
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
+
+
+def test_audio_stage_reuses_cache_and_skips_empty_input(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    features = torch.ones(1, 80, 4)
+    feature_lens = torch.tensor([4])
+    embeddings = torch.ones(2, 4)
+    encoder = Mock(return_value={"audio_embeds": embeddings})
+    monkeypatch.setattr(
+        stages, "MiniCPMOAudioEncoder", lambda model_path, device, dtype: encoder
+    )
+    scheduler = stages.create_audio_encoder_executor("unused", device="cpu")
+    loop = asyncio.new_event_loop()
+    try:
+        for request_id in ("first", "cached", "skip"):
+            inputs = (
+                {
+                    "audio_features": features,
+                    "audio_feature_lens": feature_lens,
+                    "cache_key": "same-audio",
+                }
+                if request_id != "skip"
+                else {}
+            )
+            payload = StagePayload(
+                request_id=request_id,
+                request=OmniRequest(inputs={}),
+                data={"encoder_inputs": {"audio_encoder": inputs}},
+            )
+            scheduler.run_single(
+                IncomingMessage(
+                    type="new_request", request_id=request_id, data=payload
+                ),
+                loop,
+            )
+            output = scheduler.outbox.get_nowait()
+            assert output.type == "result" and output.request_id == request_id
+            result = output.data.data["encoder_outs"]["audio_encoder"]
+            if request_id == "skip":
+                assert result == {}
+            else:
+                torch.testing.assert_close(result["audio_embeds"], embeddings)
+    finally:
+        loop.close()
+    encoder.assert_called_once_with(
+        audio_features=features, audio_feature_lens=feature_lens
+    )
 
 
 def checkpoint_dir() -> Path | None:

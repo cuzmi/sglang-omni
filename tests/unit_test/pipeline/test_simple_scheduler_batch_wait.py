@@ -11,6 +11,8 @@ import threading
 import time
 from typing import Any
 
+import pytest
+
 from sglang_omni.scheduling.message import IncomingMessage
 from sglang_omni.scheduling.simple_scheduler import SimpleScheduler
 
@@ -84,30 +86,24 @@ def test_backlog_still_coalesces_into_one_batch() -> None:
     assert max(seen_batches) > 1, f"backlog was not coalesced: {seen_batches}"
 
 
-def test_late_arrival_joins_batch_once_a_backlog_exists() -> None:
-    seen_batches: list[int] = []
+def test_late_arrival_joins_batch_once_a_backlog_exists(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    scheduler = batching_scheduler(batch_wait_when_idle=False)
+    scheduler.max_batch_size = 3
+    scheduler.inbox.put(msg("r2"))
+    receive = scheduler.inbox.get
 
-    def batch_fn(payloads: list[Any]) -> list[Any]:
-        seen_batches.append(len(payloads))
-        return list(payloads)
+    def receive_with_late_arrival(
+        block: bool = True, timeout: float | None = None
+    ) -> IncomingMessage:
+        if timeout is not None:
+            assert timeout > 0
+            scheduler.inbox.put(msg("r3"))
+        else:
+            pass
+        return receive(block=block, timeout=timeout)
 
-    scheduler = SimpleScheduler(
-        lambda payload: payload,
-        batch_compute_fn=batch_fn,
-        max_batch_size=32,
-        max_batch_wait_ms=WINDOW_MS,
-        batch_wait_when_idle=False,
-    )
-    thread = threading.Thread(target=scheduler.start, daemon=True)
-    thread.start()
-    try:
-        scheduler.inbox.put(msg("r1"))
-        scheduler.inbox.put(msg("r2"))
-        time.sleep(WINDOW_MS / 4 / 1000)
-        scheduler.inbox.put(msg("r3"))
-        results = [scheduler.outbox.get(timeout=5.0) for _ in range(3)]
-    finally:
-        scheduler.stop()
-        thread.join(timeout=2.0)
-    assert len(results) == 3
-    assert max(seen_batches) >= 3, f"straggler did not join: {seen_batches}"
+    monkeypatch.setattr(scheduler.inbox, "get", receive_with_late_arrival)
+    batch = scheduler.collect_batch(msg("r1"))
+    assert [message.request_id for message in batch] == ["r1", "r2", "r3"]
