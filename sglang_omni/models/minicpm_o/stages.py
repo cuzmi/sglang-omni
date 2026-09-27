@@ -6,10 +6,9 @@ from __future__ import annotations
 import logging
 import os
 from collections import defaultdict
-from typing import Any
+from typing import Any, Literal
 
 import torch
-import torch.nn as nn
 from sglang.srt.arg_groups.model_override_base import resolved_view
 from transformers import AutoTokenizer
 
@@ -22,9 +21,6 @@ from sglang_omni.models.minicpm_o.components.code2wav import MiniCPMOCode2Wav
 from sglang_omni.models.minicpm_o.components.image_encoder import MiniCPMOImageEncoder
 from sglang_omni.models.minicpm_o.components.preprocessor import MiniCPMOPreprocessor
 from sglang_omni.models.minicpm_o.hf_config import register_minicpm_o_hf_config
-from sglang_omni.models.minicpm_o.image_encoder_batching import (
-    create_image_batch_scheduler,
-)
 from sglang_omni.models.minicpm_o.merge import build_decode_result
 from sglang_omni.models.minicpm_o.payload_types import MiniCPMOPipelineState
 from sglang_omni.models.minicpm_o.request_builders import build_encoder_request
@@ -63,32 +59,101 @@ ENCODER_CACHE_MAX_ENTRIES = 64
 ENCODER_CACHE_MAX_BYTES = 4 * 1024**3
 
 
-def create_encoder_executor(encoder: nn.Module, *, stage_name: str) -> SimpleScheduler:
-    cache = StageOutputCache(
-        max_size=ENCODER_CACHE_MAX_ENTRIES,
-        max_bytes=ENCODER_CACHE_MAX_BYTES,
-        cache_device="cpu",
-    )
+def run_single_encoder_payload(
+    payload: StagePayload,
+    *,
+    encoder: MiniCPMOImageEncoder | MiniCPMOAudioEncoder,
+    stage_name: Literal["image_encoder", "audio_encoder"],
+    cache: StageOutputCache,
+) -> StagePayload:
+    state = MiniCPMOPipelineState.from_dict(payload.data)
+    request = build_encoder_request(state, stage_name=stage_name)
+    cached = None if request.skip_result is not None else cache.get(request.cache_key)
+    if request.skip_result is not None:
+        encoder_out = request.skip_result
+    elif cached is not None:
+        encoder_out = cached
+    else:
+        with torch.no_grad():
+            encoder_out = encoder(**request.model_inputs)
+        cache.put(request.cache_key, encoder_out)
+    state.encoder_outs[stage_name] = encoder_out
+    payload.data = state.to_dict()
+    return payload
 
-    def _encode_stage(payload: StagePayload) -> StagePayload:
-        state = MiniCPMOPipelineState.from_dict(payload.data)
-        request = build_encoder_request(state, stage_name=stage_name)
-        cached = (
-            None if request.skip_result is not None else cache.get(request.cache_key)
-        )
+
+def batch_image_encoder_payloads(
+    payloads: list[StagePayload],
+    *,
+    encoder: MiniCPMOImageEncoder,
+    cache: StageOutputCache,
+) -> list[StagePayload]:
+    """Encode unique misses together and restore each payload's slice order."""
+    states = [MiniCPMOPipelineState.from_dict(payload.data) for payload in payloads]
+    requests = [
+        build_encoder_request(state, stage_name="image_encoder") for state in states
+    ]
+    outputs: dict[int, dict[str, torch.Tensor]] = {}
+    leaders: dict[str, int] = {}
+    duplicates: dict[int, int] = {}
+    active_indices: list[int] = []
+    for index, request in enumerate(requests):
+        cached = cache.get(request.cache_key)
         if request.skip_result is not None:
-            encoder_out = request.skip_result
+            outputs[index] = request.skip_result
         elif cached is not None:
-            encoder_out = cached
+            outputs[index] = cached
+        elif request.cache_key is not None and request.cache_key in leaders:
+            duplicates[index] = leaders[request.cache_key]
         else:
-            with torch.no_grad():
-                encoder_out = encoder(**request.model_inputs)
-            cache.put(request.cache_key, encoder_out)
-        state.encoder_outs[stage_name] = encoder_out
-        payload.data = state.to_dict()
-        return payload
+            pixels = request.model_inputs.get("pixel_values")
+            sizes = request.model_inputs.get("tgt_sizes")
+            if not pixels or sizes is None:
+                outputs[index] = {}
+            else:
+                active_indices.append(index)
+                if request.cache_key is not None:
+                    leaders[request.cache_key] = index
+                else:
+                    pass
 
-    return SimpleScheduler(_encode_stage)
+    if active_indices:
+        slice_counts = [
+            len(requests[index].model_inputs["pixel_values"])
+            for index in active_indices
+        ]
+        pixel_values: list[torch.Tensor] = [
+            pixels
+            for index in active_indices
+            for pixels in requests[index].model_inputs["pixel_values"]
+        ]
+        target_sizes = torch.cat(
+            [requests[index].model_inputs["tgt_sizes"] for index in active_indices],
+            dim=0,
+        )
+        total_slices = sum(slice_counts)
+        with torch.no_grad():
+            embeddings = encoder(pixel_values=pixel_values, tgt_sizes=target_sizes)[
+                "image_embeds"
+            ]
+        assert embeddings.shape[0] > 0 and embeddings.shape[0] % total_slices == 0
+        query_count = embeddings.shape[0] // total_slices
+        cursor = 0
+        for index, slice_count in zip(active_indices, slice_counts, strict=True):
+            row_count = slice_count * query_count
+            output = {"image_embeds": embeddings[cursor : cursor + row_count]}
+            outputs[index] = output
+            cache.put(requests[index].cache_key, output)
+            cursor += row_count
+    else:
+        pass
+
+    for index, leader_index in duplicates.items():
+        outputs[index] = outputs[leader_index]
+    for index, (payload, state) in enumerate(zip(payloads, states, strict=True)):
+        state.encoder_outs["image_encoder"] = outputs[index]
+        payload.data = state.to_dict()
+    return payloads
 
 
 def create_image_encoder_executor(
@@ -101,6 +166,10 @@ def create_image_encoder_executor(
     max_batch_slices: int,
     max_batch_wait_ms: int,
 ) -> SimpleScheduler:
+    if max_batch_size < 1 or max_batch_slices < 1 or max_batch_wait_ms < 0:
+        raise ValueError("Image batch limits must be positive and wait non-negative")
+    else:
+        pass
     encoder = MiniCPMOImageEncoder(
         model_path, device=str(resolve_concrete_device(device, gpu_id)), dtype=dtype
     )
@@ -109,12 +178,30 @@ def create_image_encoder_executor(
         max_bytes=ENCODER_CACHE_MAX_BYTES,
         cache_device="cpu",
     )
-    return create_image_batch_scheduler(
-        encoder,
-        cache,
+
+    def image_slice_cost(payload: StagePayload) -> int:
+        state = MiniCPMOPipelineState.from_dict(payload.data)
+        request = build_encoder_request(state, stage_name="image_encoder")
+        return len(request.model_inputs.get("pixel_values", []))
+
+    return SimpleScheduler(
+        lambda payload: run_single_encoder_payload(
+            payload, encoder=encoder, stage_name="image_encoder", cache=cache
+        ),
+        batch_compute_fn=(
+            (
+                lambda payloads: batch_image_encoder_payloads(
+                    payloads, encoder=encoder, cache=cache
+                )
+            )
+            if max_batch_size > 1
+            else None
+        ),
         max_batch_size=max_batch_size,
-        max_batch_slices=max_batch_slices,
         max_batch_wait_ms=max_batch_wait_ms,
+        batch_wait_when_idle=False,
+        request_cost_fn=image_slice_cost,
+        max_batch_cost=max_batch_slices,
     )
 
 
@@ -128,7 +215,16 @@ def create_audio_encoder_executor(
     encoder = MiniCPMOAudioEncoder(
         model_path, device=str(resolve_concrete_device(device, gpu_id)), dtype=dtype
     )
-    return create_encoder_executor(encoder, stage_name="audio_encoder")
+    cache = StageOutputCache(
+        max_size=ENCODER_CACHE_MAX_ENTRIES,
+        max_bytes=ENCODER_CACHE_MAX_BYTES,
+        cache_device="cpu",
+    )
+    return SimpleScheduler(
+        lambda payload: run_single_encoder_payload(
+            payload, encoder=encoder, stage_name="audio_encoder", cache=cache
+        )
+    )
 
 
 def create_sglang_talker_executor_from_config(
