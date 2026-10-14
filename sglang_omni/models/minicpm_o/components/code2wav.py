@@ -318,8 +318,8 @@ class MiniCPMOCode2Wav(nn.Module):
 
     def prefetch_reference(
         self, request_id: str, reference: str | bytes | None
-    ) -> None:
-        """Start preparing a queued request's reference and pin it until release."""
+    ) -> Future[SpeakerPrompt] | None:
+        """Pin a queued reference and return its pending preparation, if any."""
         reference_key, resolved = self.resolve_reference_key(reference)
         with self.reference_lock:
             self.reserved_reference_keys_by_request[request_id] = reference_key
@@ -330,6 +330,17 @@ class MiniCPMOCode2Wav(nn.Module):
                 self.submit_reference(reference_key, resolved)
             else:
                 pass
+            return self.pending_references.get(reference_key)
+
+    def is_reference_ready(self, request_id: str) -> bool:
+        """Let missing or failed prefetch reach normal execution and error handling."""
+        with self.reference_lock:
+            reference_key = self.reserved_reference_keys_by_request.get(request_id)
+            if reference_key is None:
+                return True
+            else:
+                future = self.pending_references.get(reference_key)
+                return future is None or future.done()
 
     def release_reference(self, request_id: str) -> None:
         """Unpin a request's prompt once its batch consumed it or it was aborted."""
