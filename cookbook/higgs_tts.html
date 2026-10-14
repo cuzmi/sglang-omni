@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.1.8" />
-    <meta name="docbuild:last-update" content="Oct 13, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 14, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -268,6 +268,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/profiler.html">Request-level profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/qwen3_asr_concurrency_profile.html">Qwen3-ASR High-Concurrency Benchmark and Bottleneck Profile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/full_duplex_bench.html">Full-Duplex-Bench runbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_reference/full_duplex_metrics.html">Full-Duplex-Bench v1.0 unified metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/tts_bench.html">TTS benchmark runbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/asr_bench.html">ASR benchmark runbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/omni_offline_bench.html">MiniCPM-o offline benchmark runbook</a></li>
@@ -656,6 +657,14 @@ sgl-omni<span class="w"> </span>serve<span class="w"> </span><span class="se">\<
 </div>
 <p>The voice-cloning examples below use local reference clips from
 <code class="docutils literal notranslate"><span class="pre">docs/_static/audio</span></code>.</p>
+<p>CUDA reference encoding temporarily disables cuDNN convolutions and cuDNN
+attention. These settings affect the whole process, so <code class="docutils literal notranslate"><span class="pre">audio_encoder</span></code> must
+run in a separate process from CUDA stages such as <code class="docutils literal notranslate"><span class="pre">tts_engine</span></code> and <code class="docutils literal notranslate"><span class="pre">vocoder</span></code>,
+even when they use different GPUs. The default layout already does this:
+CPU preprocessing and the audio encoder share <code class="docutils literal notranslate"><span class="pre">tts_frontend</span></code>, while the
+engine and vocoder share <code class="docutils literal notranslate"><span class="pre">pipeline</span></code> on the same GPU. Custom layouts that
+combine the CUDA encoder with another CUDA stage are rejected at configuration
+validation; CPU encoding does not have this restriction.</p>
 </section>
 <section id="synthesizing-speech">
 <h2>Synthesizing Speech<a class="headerlink" href="#synthesizing-speech" title="Link to this heading">#</a></h2>
@@ -1312,17 +1321,17 @@ onomatopoeia gives the model the acoustic cue to realize the effect.</p></li>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">temperature</span></code></p></td>
 <td><p>float</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.8</span></code></p></td>
 <td><p>Sampling temperature</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">top_p</span></code></p></td>
 <td><p>float</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">null</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.8</span></code></p></td>
 <td><p>Top-p sampling</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">top_k</span></code></p></td>
 <td><p>int</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">null</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">30</span></code></p></td>
 <td><p>Top-k sampling</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">seed</span></code></p></td>
@@ -1493,7 +1502,7 @@ By SGLang-Omni Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 13, 2026.
+  Last updated on Oct 14, 2026.
   <br/>
 </p>
   </div>

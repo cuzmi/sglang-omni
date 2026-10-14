@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.1.8" />
-    <meta name="docbuild:last-update" content="Oct 13, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 14, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -268,6 +268,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/profiler.html">Request-level profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/qwen3_asr_concurrency_profile.html">Qwen3-ASR High-Concurrency Benchmark and Bottleneck Profile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/full_duplex_bench.html">Full-Duplex-Bench runbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_reference/full_duplex_metrics.html">Full-Duplex-Bench v1.0 unified metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/tts_bench.html">TTS benchmark runbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/asr_bench.html">ASR benchmark runbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/omni_offline_bench.html">MiniCPM-o offline benchmark runbook</a></li>
@@ -550,6 +551,22 @@ model-specific dependencies:</p>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">8000</span>
 </pre></div>
 </div>
+<p>Reference audio encoding runs on GPU 0 in the preprocessing process by default,
+using the checkpoint’s FP32 codec. Tokenization and audio loading remain on CPU.
+The preprocessing process has a 6 GiB PyTorch allocator limit; this is a memory
+budget, not a reference-duration limit or a reservation of all GPU allocations.
+Long references can exceed it and fail encoding.</p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">--preprocessing.total_reserve_bytes</span> <span class="pre">8GiB</span></code> to increase the budget, while
+leaving enough GPU memory for the autoregressive engine and vocoder. To encode
+references on CPU instead, clear both the GPU placement and its budget:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sgl-omni<span class="w"> </span>serve<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>fishaudio/s2-pro<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--config<span class="w"> </span>examples/configs/s2pro_tts.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--preprocessing.gpu<span class="w"> </span>null<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--preprocessing.total_reserve_bytes<span class="w"> </span>null<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--port<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
 </section>
 <section id="synthesize-speech">
 <h2>Synthesize Speech<a class="headerlink" href="#synthesize-speech" title="Link to this heading">#</a></h2>
@@ -772,7 +789,7 @@ By SGLang-Omni Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 13, 2026.
+  Last updated on Oct 14, 2026.
   <br/>
 </p>
   </div>
