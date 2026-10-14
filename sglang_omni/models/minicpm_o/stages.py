@@ -300,7 +300,16 @@ def create_code2wav_executor(
             reference = code2wav_reference_audio(payload)
         except ValueError:
             return
-        model.prefetch_reference(payload.request_id, reference)
+        future = model.prefetch_reference(payload.request_id, reference)
+        if future is not None:
+            future.add_done_callback(lambda completed: scheduler.notify_readiness())
+        else:
+            pass
+
+    def is_ready(payload: StagePayload) -> bool:
+        return codec_token_cost(payload) == 0 or model.is_reference_ready(
+            payload.request_id
+        )
 
     def vocode_and_release(payloads: list[StagePayload]) -> list[StagePayload]:
         try:
@@ -309,7 +318,7 @@ def create_code2wav_executor(
             for payload in payloads:
                 model.release_reference(payload.request_id)
 
-    return SimpleScheduler(
+    scheduler = SimpleScheduler(
         lambda payload: vocode_and_release([payload])[0],
         batch_compute_fn=vocode_and_release,
         max_batch_size=max_batch_size,
@@ -320,7 +329,9 @@ def create_code2wav_executor(
         abort_callback=model.release_reference,
         shutdown_callback=model.close_reference_pool,
         request_arrival_hook=prefetch_reference,
+        request_readiness_hook=is_ready,
     )
+    return scheduler
 
 
 def create_decode_executor(model_path: str) -> StreamingDetokenizeScheduler:
