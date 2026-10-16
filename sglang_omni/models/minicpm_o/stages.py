@@ -6,8 +6,8 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
-import queue
 import threading
+from collections import deque
 from collections.abc import Mapping
 from dataclasses import dataclass
 
@@ -241,7 +241,7 @@ def create_sglang_session_talker_executor_from_config(
     )
 
 
-HIFT_PENDING_BATCHES = 1
+HIFT_PENDING_BATCHES = 2
 
 
 @dataclass(kw_only=True)
@@ -311,14 +311,15 @@ def vocode_code2wav_payloads(
 
 
 @dataclass(kw_only=True)
-class HiFTBatch:
-    requests: Code2WavBatch
+class HiFTRequest:
+    payload: StagePayload
     mel: torch.Tensor
     ready: torch.Event
+    enqueue_order: int
 
 
 class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
-    """Collect ready requests while a separate worker finishes previous batches."""
+    """Regroup Flow outputs by length for a separate HiFT worker."""
 
     def __init__(
         self,
@@ -331,9 +332,11 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
         decode_stream_priority: int,
     ) -> None:
         self.model: MiniCPMOCode2Wav = model
-        self.hift_queue: queue.Queue[HiFTBatch | None] = queue.Queue(
-            maxsize=HIFT_PENDING_BATCHES
-        )
+        self.hift_pending: dict[int, deque[HiFTRequest]] = {}
+        self.hift_condition: threading.Condition = threading.Condition()
+        self.hift_pending_count: int = 0
+        self.hift_enqueue_order: int = 0
+        self.hift_closed: bool = False
         with model.device_context:
             device_module = torch.get_device_module(model.token2wav.device)
             self.hift_stream: torch.Stream = device_module.Stream(
@@ -389,14 +392,25 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
             pass
         try:
             requests = Code2WavBatch.from_payloads(payloads)
-            if not requests.voiced_rows:
-                for payload in requests.outputs([], self.model.sample_rate):
+            payloads = [requests.payloads[row] for row in requests.voiced_rows]
+            for row, payload in enumerate(requests.payloads):
+                if row not in requests.voiced_rows:
                     if not self.consume_if_aborted(payload.request_id):
+                        payload.data = dict(
+                            audio_waveform_payload(
+                                np.zeros(0, dtype=np.float32),
+                                sample_rate=self.model.sample_rate,
+                                modality="audio",
+                                source_hint="MiniCPM-o",
+                            )
+                        )
                         self.emit_result(payload.request_id, payload, self.outbox)
                     else:
                         pass
-                for payload in payloads:
                     self.model.release_reference(payload.request_id)
+                else:
+                    pass
+            if not payloads:
                 return
             else:
                 pass
@@ -406,7 +420,30 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
                 mel = self.model.generate_mel(requests.codec_tokens, speaker_prompts)
                 ready = device_module.Event()
                 ready.record(self.model.flow_stream)
-            self.hift_queue.put(HiFTBatch(requests=requests, mel=mel, ready=ready))
+            with self.hift_condition:
+                for row, (payload, tokens) in enumerate(
+                    zip(payloads, requests.codec_tokens, strict=True)
+                ):
+                    self.hift_condition.wait_for(
+                        lambda: self.hift_pending_count
+                        < HIFT_PENDING_BATCHES * self.max_batch_size
+                    )
+                    token_length = len(tokens)
+                    self.hift_pending.setdefault(token_length, deque()).append(
+                        HiFTRequest(
+                            payload=payload,
+                            mel=mel[
+                                row : row + 1,
+                                :,
+                                : token_length * self.model.token2wav.flow.up_rate,
+                            ],
+                            ready=ready,
+                            enqueue_order=self.hift_enqueue_order,
+                        )
+                    )
+                    self.hift_enqueue_order += 1
+                    self.hift_pending_count += 1
+                    self.hift_condition.notify_all()
         except Exception as error:
             logger.exception("MiniCPM-o Flow batch failed")
             for payload in payloads:
@@ -419,37 +456,73 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
     def run_hift(self) -> None:
         device_module = torch.get_device_module(self.model.token2wav.device)
         while True:
-            batch = self.hift_queue.get()
-            if batch is None:
-                return
+            with self.hift_condition:
+                self.hift_condition.wait_for(
+                    lambda: self.hift_pending or self.hift_closed
+                )
+                if not self.hift_pending:
+                    return
+                else:
+                    pass
+                token_length = min(
+                    self.hift_pending,
+                    key=lambda length: self.hift_pending[length][0].enqueue_order,
+                )
+                group = self.hift_pending[token_length]
+                batch_size = min(len(group), self.max_batch_size)
+                if self.max_batch_cost is not None:
+                    batch_size = min(
+                        batch_size, max(1, self.max_batch_cost // token_length)
+                    )
+                else:
+                    pass
+                batch = [group.popleft() for _ in range(batch_size)]
+                if not group:
+                    self.hift_pending.pop(token_length)
+                else:
+                    pass
+                self.hift_pending_count -= len(batch)
+                self.hift_condition.notify_all()
+            batch = [
+                request
+                for request in batch
+                if not self.consume_if_aborted(request.payload.request_id)
+            ]
+            if not batch:
+                continue
             else:
                 pass
             try:
                 with device_module.stream(self.hift_stream):
-                    self.hift_stream.wait_event(batch.ready)
-                    # note (cuzmi): mel belongs to the Flow stream and outlives its consumer work.
-                    batch.mel.record_stream(self.hift_stream)
-                    waveforms = self.model.decode_mel(
-                        batch.mel,
-                        [len(tokens) for tokens in batch.requests.codec_tokens],
-                    )
-                for payload in batch.requests.outputs(
-                    waveforms, self.model.sample_rate
-                ):
+                    for request in batch:
+                        self.hift_stream.wait_event(request.ready)
+                        request.mel.record_stream(self.hift_stream)
+                    mel = torch.cat([request.mel for request in batch])
+                    waveforms = self.model.decode_mel(mel, [token_length] * len(batch))
+                for request, waveform in zip(batch, waveforms, strict=True):
+                    payload = request.payload
                     if self.consume_if_aborted(payload.request_id):
                         continue
                     else:
+                        payload.data = dict(
+                            audio_waveform_payload(
+                                waveform,
+                                sample_rate=self.model.sample_rate,
+                                modality="audio",
+                                source_hint="MiniCPM-o",
+                            )
+                        )
                         self.emit_result(payload.request_id, payload, self.outbox)
             except Exception as error:
                 logger.exception("MiniCPM-o HiFT batch failed")
-                for payload in batch.requests.payloads:
-                    if self.consume_if_aborted(payload.request_id):
+                for request in batch:
+                    if self.consume_if_aborted(request.payload.request_id):
                         continue
                     else:
-                        self.emit_error(payload.request_id, error, self.outbox)
+                        self.emit_error(request.payload.request_id, error, self.outbox)
             finally:
-                for payload in batch.requests.payloads:
-                    self.model.release_reference(payload.request_id)
+                for request in batch:
+                    self.model.release_reference(request.payload.request_id)
 
     def start_serial(self) -> None:
         hift_worker = threading.Thread(target=self.run_hift, name="minicpmo-hift")
@@ -457,7 +530,9 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
         try:
             super().start_serial()
         finally:
-            self.hift_queue.put(None)
+            with self.hift_condition:
+                self.hift_closed = True
+                self.hift_condition.notify_all()
             hift_worker.join()
             while (message := self.next_message()) is not None:
                 self.model.release_reference(message.request_id)
