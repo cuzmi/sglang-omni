@@ -927,6 +927,51 @@ def test_close_reference_pool_waits_for_running_preparation(
     assert all(not thread.is_alive() for thread in preparation_threads)
 
 
+@pytest.mark.parametrize("waiting_for_reference", [False, True])
+def test_code2wav_stop_wakes_waiters_and_drains_without_blocking(
+    build_code2wav_model: Code2WavBuilder,
+    monkeypatch: pytest.MonkeyPatch,
+    waiting_for_reference: bool,
+) -> None:
+    """Stopping with blocking inbox reads must exit and release queued references."""
+    model = build_code2wav_model()
+    scheduler = build_code2wav_stage(model, monkeypatch)
+    waiting = threading.Event()
+    if waiting_for_reference:
+        scheduler.request_readiness_hook = lambda payload: False
+        original_wait = scheduler.readiness_changed.wait
+
+        def wait_for_reference(timeout: float | None = None) -> bool:
+            waiting.set()
+            return original_wait(timeout)
+
+        monkeypatch.setattr(scheduler.readiness_changed, "wait", wait_for_reference)
+        enqueue_talker_request(scheduler, "waiting", wav_data_uri(b"speaker"))
+    else:
+        original_get = scheduler.inbox.get
+
+        def get_message(
+            block: bool = True, timeout: float | None = None
+        ) -> IncomingMessage:
+            if block:
+                waiting.set()
+            else:
+                pass
+            return original_get(block, timeout)
+
+        monkeypatch.setattr(scheduler.inbox, "get", get_message)
+    worker = threading.Thread(target=scheduler.start, daemon=True)
+    worker.start()
+    try:
+        assert waiting.wait(THREAD_WAIT_SECONDS)
+    finally:
+        scheduler.stop()
+        worker.join(THREAD_WAIT_SECONDS)
+    assert not worker.is_alive()
+    assert scheduler.outbox.empty()
+    assert not model.reserved_reference_keys_by_request
+
+
 def test_stage_stop_rejects_new_reference_preparation(
     build_code2wav_model: Code2WavBuilder,
     fake_token2wav: MagicMock,

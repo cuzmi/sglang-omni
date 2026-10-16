@@ -6,6 +6,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+import queue
 import threading
 from collections import deque
 from collections.abc import Mapping
@@ -510,7 +511,14 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
                 self.hift_closed = True
                 self.hift_condition.notify_all()
             hift_worker.join()
-            while (message := self.next_message()) is not None:
+            while True:
+                if self.pending_messages:
+                    message = self.pending_messages.popleft()
+                else:
+                    try:
+                        message = self.inbox.get_nowait()
+                    except queue.Empty:
+                        break
                 self.model.release_reference(message.request_id)
 
 

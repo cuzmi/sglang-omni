@@ -153,15 +153,12 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
             pass
         return max(int(self.request_cost_fn(msg.data)), 0)
 
-    def next_message(self) -> IncomingMessage | None:
+    def next_message(self) -> IncomingMessage:
         if self.pending_messages:
             return self.pending_messages.popleft()
         else:
             pass
-        try:
-            return self.inbox.get(timeout=0.1)
-        except _queue_mod.Empty:
-            return None
+        return self.inbox.get()
 
     def collect_batch(self, first_msg: IncomingMessage) -> list[IncomingMessage]:
         batch_limit = self.max_batch_size if self.batch_fn is not None else 1
@@ -367,11 +364,6 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
         try:
             while self.running:
                 msg = self.next_message()
-                if msg is None:
-                    continue
-                else:
-                    pass
-
                 if msg.type == "new_request":
                     if self.consume_if_aborted(msg.request_id):
                         continue
@@ -465,6 +457,7 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
 
     def stop(self) -> None:
         self.running = False
+        self.inbox.put(IncomingMessage(request_id="", type="wakeup"))
         self.notify_readiness()
         with self.shutdown_lock:
             callback = self.shutdown_callback
