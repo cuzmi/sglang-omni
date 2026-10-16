@@ -80,7 +80,7 @@ class FakeToken2Wav:
 class FakeCode2Wav:
     def __init__(self) -> None:
         self.token2wav = FakeToken2Wav()
-        self.decode_stream = torch.cpu.Stream()
+        self.flow_stream = torch.cpu.Stream()
 
     def resolve_reference_key(self, reference: bytes) -> tuple[str, bytes]:
         return reference.decode(), reference

@@ -103,9 +103,9 @@ class MiniCPMOVocoderRuntime:
         speaker = self.speakers.get(reference_key)
         if speaker is None:
             (prompt,) = self.code2wav.prepare_references([reference_audio])
-            # note (Dayuxiaoshui): references are prepared on the codec's decode stream.
+            # note (Dayuxiaoshui): references are prepared on the codec's Flow stream.
             device_module = torch.get_device_module(self.token2wav.device)
-            device_module.current_stream().wait_stream(self.code2wav.decode_stream)
+            device_module.current_stream().wait_stream(self.code2wav.flow_stream)
             speaker = SharedSpeaker(
                 reference_key=reference_key,
                 prompt=prompt,

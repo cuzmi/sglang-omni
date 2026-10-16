@@ -397,9 +397,7 @@ def test_source_module_noise_leaves_the_global_generator_unchanged() -> None:
 def test_native_vocoder_with_checkpoint() -> None:
     model = load_checkpoint_model(require_checkpoint_dir())
     device_module = torch.get_device_module(model.token2wav.device)
-    assert (
-        model.decode_stream.priority == code2wav_stage_factory().decode_stream_priority
-    )
+    assert model.flow_stream.priority == code2wav_stage_factory().decode_stream_priority
     device_generator_state = device_module.get_rng_state(model.token2wav.device)
     output = model(codec_tokens=torch.tensor(CHECKPOINT_CODEC_TOKENS))
     assert torch.equal(
@@ -732,12 +730,12 @@ def test_vocode_prepares_and_decodes_on_its_private_stream(
     model = build_code2wav_model(reference_workers=1)
     caller_stream = torch.cpu.current_stream()
     model.vocode([[1, 2], [3]], references)
-    assert reference_preparation_streams == [model.decode_stream] * len(references)
+    assert reference_preparation_streams == [model.flow_stream] * len(references)
     assert flow_streams
     assert hift_streams
-    assert all(stream == model.decode_stream for stream in flow_streams)
-    assert all(stream == model.decode_stream for stream in hift_streams)
-    assert model.decode_stream != caller_stream
+    assert all(stream == model.flow_stream for stream in flow_streams)
+    assert all(stream == model.flow_stream for stream in hift_streams)
+    assert model.flow_stream != caller_stream
     assert torch.cpu.current_stream() == caller_stream
 
 

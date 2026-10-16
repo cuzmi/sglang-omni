@@ -268,7 +268,7 @@ def tiny_token2wav() -> Token2Wav:
 class TinyCode2Wav:
     def __init__(self, token2wav: Token2Wav) -> None:
         self.token2wav = token2wav
-        self.decode_stream = torch.cpu.Stream()
+        self.flow_stream = torch.cpu.Stream()
 
     def resolve_reference_key(self, reference: bytes) -> tuple[str, bytes]:
         return reference.decode(), reference
