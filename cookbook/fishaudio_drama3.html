@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.1.8" />
-    <meta name="docbuild:last-update" content="Oct 14, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 16, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -215,6 +215,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cookbook</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="higgs_tts.html">Higgs TTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nemotron_diarization.html">Nemotron 3 Diarization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="voxtral_tts.html">Voxtral TTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fishaudio_s2_pro.html">Fish Audio S2-Pro</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fish Audio Drama 3</a></li>
@@ -251,11 +252,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/omni_router.html">SGLang-Omni Rust Router</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/mps_dp.html">Same-GPU Data Parallelism with CUDA MPS</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Benchmarks</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../benchmarks/relay.html">Benchmark Relay</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmarks/qwen3_tts_leading_silence.html">Qwen3-TTS Base: Leading Silence in X-Vector Voice Cloning</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/main.html">Architecture</a></li>
@@ -274,6 +270,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/omni_offline_bench.html">MiniCPM-o offline benchmark runbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/rl_admin_control.html">RL Admin Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/mlx.html">MLX Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_reference/ci_labels.html">CI Workflows and Labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/bump_version.html">Bumping the SGLang Pin</a></li>
 </ul>
 
@@ -696,11 +693,11 @@ the preprocessing stage. The budgets of all stages on the GPU must still fit the
 </section>
 <section id="int4-checkpoint">
 <h2>Int4 Checkpoint<a class="headerlink" href="#int4-checkpoint" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://huggingface.co/akhaliq/drama-3-int4"><code class="docutils literal notranslate"><span class="pre">akhaliq/drama-3-int4</span></code></a> is a 4-bit GPTQ quantization of Drama 3. The server reads its quantization from the checkpoint, so it starts with the same command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hf<span class="w"> </span>download<span class="w"> </span>akhaliq/drama-3-int4
+<p><a class="reference external" href="https://huggingface.co/fishaudio/drama-3-int4"><code class="docutils literal notranslate"><span class="pre">fishaudio/drama-3-int4</span></code></a> is a 4-bit GPTQ quantization of Drama 3. Thanks so much to <a class="reference external" href="https://x.com/_akhaliq">AK</a> for the quantization! The server reads its quantization from the checkpoint, so it starts with the same command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hf<span class="w"> </span>download<span class="w"> </span>fishaudio/drama-3-int4
 
 sgl-omni<span class="w"> </span>serve<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--model-path<span class="w"> </span>akhaliq/drama-3-int4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-path<span class="w"> </span>fishaudio/drama-3-int4<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">8000</span>
 </pre></div>
 </div>
@@ -728,7 +725,7 @@ sgl-omni<span class="w"> </span>serve<span class="w"> </span><span class="se">\<
 <td class="text-right"><p>1.99%</p></td>
 <td class="text-right"><p>1.32%</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">akhaliq/drama-3-int4</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fishaudio/drama-3-int4</span></code></p></td>
 <td class="text-right"><p>20.8 GB</p></td>
 <td class="text-right"><p>1.334 s</p></td>
 <td class="text-right"><p>2.178 s</p></td>
@@ -1052,7 +1049,7 @@ By SGLang-Omni Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 14, 2026.
+  Last updated on Oct 16, 2026.
   <br/>
 </p>
   </div>

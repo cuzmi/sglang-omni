@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.1.8" />
-    <meta name="docbuild:last-update" content="Oct 14, 2026"/>
+    <meta name="docbuild:last-update" content="Oct 16, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -215,6 +215,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cookbook</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="higgs_tts.html">Higgs TTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nemotron_diarization.html">Nemotron 3 Diarization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="voxtral_tts.html">Voxtral TTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fishaudio_s2_pro.html">Fish Audio S2-Pro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fishaudio_drama3.html">Fish Audio Drama 3</a></li>
@@ -251,11 +252,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/omni_router.html">SGLang-Omni Rust Router</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/mps_dp.html">Same-GPU Data Parallelism with CUDA MPS</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Benchmarks</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../benchmarks/relay.html">Benchmark Relay</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmarks/qwen3_tts_leading_silence.html">Qwen3-TTS Base: Leading Silence in X-Vector Voice Cloning</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/main.html">Architecture</a></li>
@@ -274,6 +270,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/omni_offline_bench.html">MiniCPM-o offline benchmark runbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/rl_admin_control.html">RL Admin Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/mlx.html">MLX Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_reference/ci_labels.html">CI Workflows and Labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developer_reference/bump_version.html">Bumping the SGLang Pin</a></li>
 </ul>
 
@@ -513,6 +510,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ascend-npu-baseline">Ascend NPU baseline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-inference">Deterministic Inference</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overload-admission-policy">Overload / admission policy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#server-readiness">Server Readiness</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-cuda-graphs">Prefill CUDA graphs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-admission-coalescing">Prefill Admission Coalescing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-topology">Process topology</a></li>
@@ -520,17 +518,9 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesizing-speech">Synthesizing Speech</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-only-requests">Text-only Requests</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voice-cloning">Voice Cloning</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#leading-silence-in-x-vector-mode">Leading silence in x-vector mode</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voice-cloning">Voice Cloning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#language-hint">Language Hint</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#codec-decoding-defaults">Codec decoding defaults</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-audio-chunk-ramp">First-audio chunk ramp</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generation-parameters">Generation Parameters</a></li>
@@ -684,6 +674,37 @@ must be <strong>≥ 1</strong>. Capacity is about <code class="docutils literal 
 HTTP <strong>503</strong> (<code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">request</span> <span class="pre">queue</span> <span class="pre">is</span> <span class="pre">full.</span></code>) before preprocessing, or later
 if the AR waiting queue or request-build backlog is full. Qwen3-TTS
 defaults to 4 request-build workers with pending depth 16.</p>
+<p>A finished request no longer counts toward that capacity, but its streamed
+audio waits in the API process until the client reads it.
+<code class="docutils literal notranslate"><span class="pre">--stream_delivery.max_total_backlog_bytes</span></code> caps the undelivered stream bytes
+all requests may hold together, per API process (default <code class="docutils literal notranslate"><span class="pre">1073741824</span></code>,
+1 GiB; <code class="docutils literal notranslate"><span class="pre">none</span></code> turns it off).</p>
+<p>A client that reads at least as fast as audio is generated holds almost
+nothing in the API process. A slower client holds the audio that is
+generated but not yet in its socket buffers; 24 kHz float32 audio is
+about 96 kB per second. This includes a client that reads at playback
+speed while generation runs faster than real time, once its socket
+buffers are full.</p>
+<p>Over the cap, the streams whose readers have been idle longest fail first,
+until the total fits. A failed stream’s generation is aborted if it is
+still running. SSE (<code class="docutils literal notranslate"><span class="pre">stream_format=sse</span></code>) and WebSocket clients get an error
+event with <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">request</span> <span class="pre">queue</span> <span class="pre">is</span> <span class="pre">full.</span></code>; a raw PCM stream is closed early.
+New requests are not refused because of the cap. <code class="docutils literal notranslate"><span class="pre">/health</span></code> reports the
+backlog under <code class="docutils literal notranslate"><span class="pre">stream_delivery</span></code>, including the held bytes, open streams and
+failed streams.</p>
+</section>
+<section id="server-readiness">
+<h3>Server Readiness<a class="headerlink" href="#server-readiness" title="Link to this heading">#</a></h3>
+<p>Before it reports ready, the server sends itself a streaming speech request in
+its checkpoint’s mode, once per replica of its most replicated process, one
+after another: CustomVoice uses its first built-in speaker, VoiceDesign a short
+voice description, and Base a one-second tone as its reference clip. <code class="docutils literal notranslate"><span class="pre">/health</span></code>
+returns 503 with status <code class="docutils literal notranslate"><span class="pre">starting</span></code> until these requests finish, so the first
+requests after that do not wait for the kernel loading and first-use setup of
+the speech path. The sampler is compiled for single and batched requests while
+the model loads, so the first concurrent requests need no warmup of their own.
+A failed warmup stops the server. <code class="docutils literal notranslate"><span class="pre">SGLANG_OMNI_WARMUP_TIMEOUT</span></code> (seconds, default
+600) bounds each request, and <code class="docutils literal notranslate"><span class="pre">--skip-server-warmup</span></code> reports ready without them.</p>
 </section>
 <section id="prefill-cuda-graphs">
 <h3>Prefill CUDA graphs<a class="headerlink" href="#prefill-cuda-graphs" title="Link to this heading">#</a></h3>
@@ -875,8 +896,7 @@ mode.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ref_audio</span></code> and <code class="docutils literal notranslate"><span class="pre">ref_text</span></code> are accepted as shorthand for <code class="docutils literal notranslate"><span class="pre">references[0].audio_path</span></code> and
 <code class="docutils literal notranslate"><span class="pre">references[0].text</span></code>.</p>
-<section id="python">
-<h4>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h4>
+<p><strong>Python</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
@@ -901,9 +921,7 @@ mode.</p>
 response still contains decodable audio, but the utterance may be incomplete.
 Models that do not report how generation ended send <code class="docutils literal notranslate"><span class="pre">X-Finish-Reason:</span> <span class="pre">unknown</span></code>.
 Batch responses expose the same value as each item’s <code class="docutils literal notranslate"><span class="pre">finish_reason</span></code>.</p>
-</section>
-<section id="leading-silence-in-x-vector-mode">
-<h4>Leading silence in x-vector mode<a class="headerlink" href="#leading-silence-in-x-vector-mode" title="Link to this heading">#</a></h4>
+<p><strong>Leading silence in x-vector mode</strong></p>
 <p>Without a reference transcript the talker starts cold, and on most requests it
 opens with several frames of room-tone silence before speaking, which the
 listener hears as extra time to first audio. The engine therefore excludes
@@ -963,9 +981,6 @@ from the unmasked model. To turn it off:</p>
 <span class="w">  </span>--port<span class="w"> </span><span class="m">8000</span>
 </pre></div>
 </div>
-<p>Details and the full sweep are in
-<a class="reference internal" href="../benchmarks/qwen3_tts_leading_silence.html"><span class="std std-doc">the leading-silence benchmark</span></a>.</p>
-</section>
 </section>
 <section id="language-hint">
 <h3>Language Hint<a class="headerlink" href="#language-hint" title="Link to this heading">#</a></h3>
@@ -1031,8 +1046,7 @@ single AR step while the playback cushion is rebuilt within four chunks. Pass an
 explicit value to trade continuity against time-to-first-audio.
 Utterances that finish in fewer than the first chunk’s generated codec frames never reach the
 first chunk, so their audio arrives complete in a single final flush.</p>
-<section id="codec-decoding-defaults">
-<h4>Codec decoding defaults<a class="headerlink" href="#codec-decoding-defaults" title="Link to this heading">#</a></h4>
+<p><strong>Codec decoding defaults</strong></p>
 <p>Streaming decodes run on the stateful incremental codec by default: each
 follow-up chunk decodes only its fresh frames against per-stream state held in
 a preallocated arena, and the follow-up workers collect for 4 ms. On NVIDIA, AMD
@@ -1061,9 +1075,7 @@ rows fill the first graph-sized group. Left-context decodes keep queue order.
 The follow-up workers also commit each in-flight cohort as soon as its decode
 has finished, checked at the top of the worker loop and before each launch,
 instead of at the next drain.</p>
-</section>
-<section id="first-audio-chunk-ramp">
-<h4>First-audio chunk ramp<a class="headerlink" href="#first-audio-chunk-ramp" title="Link to this heading">#</a></h4>
+<p><strong>First-audio chunk ramp</strong></p>
 <p>For latency-sensitive deployments the whole early chunk schedule can be
 configured server-side with <code class="docutils literal notranslate"><span class="pre">stream_chunk_ramp</span></code> on the vocoder stage: entry
 <code class="docutils literal notranslate"><span class="pre">i</span></code> sizes streaming decode chunk <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> in codec frames, and past the ramp
@@ -1089,7 +1101,6 @@ exclusive with the legacy <code class="docutils literal notranslate"><span class
 <code class="docutils literal notranslate"><span class="pre">stream_initial_followup_stride</span></code> options, its first entry must not exceed the
 steady stride, and a per-request <code class="docutils literal notranslate"><span class="pre">initial_codec_chunk_frames</span></code> still overrides
 only the first chunk.</p>
-</section>
 </section>
 </section>
 <section id="generation-parameters">
@@ -1359,7 +1370,7 @@ latency for quality.</p>
 </table>
 </div>
 <p>Corpus WER (EN) / CER (ZH) is total edit distance divided by total reference words / characters and includes every sample. The filtered row excludes samples whose own WER/CER exceeds 50% and recomputes the corpus rate. UTMOS is the mean predicted audio-quality score, not a listening-test score. These independently sampled runs are not a paired comparison of streaming and non-streaming quality; the Base result also uses different conditioning and a different ASR evaluator.</p>
-<p>TTFA measures arrival of the first PCM payload, not the first audible speech; its mean payload duration was 80 ms in both languages. All 3,108 streaming requests were continuity-scored: 98.99% EN and 93.76% ZH had no playback underrun longer than 50 ms. Maximum underrun was 396.1 ms EN and 2072.0 ms ZH. The default ramp therefore does not guarantee uninterrupted playback at concurrency 16; see <a class="reference internal" href="#first-audio-chunk-ramp"><span class="std std-ref">First-audio chunk ramp</span></a> for the buffering tradeoff.</p>
+<p>TTFA measures arrival of the first PCM payload, not the first audible speech; its mean payload duration was 80 ms in both languages. All 3,108 streaming requests were continuity-scored: 98.99% EN and 93.76% ZH had no playback underrun longer than 50 ms. Maximum underrun was 396.1 ms EN and 2072.0 ms ZH. The default ramp therefore does not guarantee uninterrupted playback at concurrency 16; see First-audio chunk ramp for the buffering tradeoff.</p>
 </section>
 </section>
 <section id="known-limitations">
@@ -1431,6 +1442,7 @@ checkpoint is less prone.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ascend-npu-baseline">Ascend NPU baseline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deterministic-inference">Deterministic Inference</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overload-admission-policy">Overload / admission policy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#server-readiness">Server Readiness</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-cuda-graphs">Prefill CUDA graphs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prefill-admission-coalescing">Prefill Admission Coalescing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#process-topology">Process topology</a></li>
@@ -1438,17 +1450,9 @@ checkpoint is less prone.</p></li>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesizing-speech">Synthesizing Speech</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-only-requests">Text-only Requests</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voice-cloning">Voice Cloning</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#leading-silence-in-x-vector-mode">Leading silence in x-vector mode</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voice-cloning">Voice Cloning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#language-hint">Language Hint</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#codec-decoding-defaults">Codec decoding defaults</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-audio-chunk-ramp">First-audio chunk ramp</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming">Streaming</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generation-parameters">Generation Parameters</a></li>
@@ -1493,7 +1497,7 @@ By SGLang-Omni Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 14, 2026.
+  Last updated on Oct 16, 2026.
   <br/>
 </p>
   </div>
