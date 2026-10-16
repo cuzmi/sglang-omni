@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import base64
 import io
 import os
@@ -1004,6 +1005,109 @@ def test_vocode_payloads_skip_empty_codec_sequences(
         np.frombuffer(outputs[1].data["audio_waveform"], dtype=np.float32),
         expected_waveform([4, 5], DEFAULT_REFERENCE_AUDIO),
     )
+
+
+def test_hift_regroups_flow_batches_without_mixing_request_audio(
+    build_code2wav_model: Code2WavBuilder,
+    fake_token2wav: MagicMock,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Cross-batch reordering must preserve each request's tokens and speaker."""
+    rows = [
+        ("a1", [11, 12], b"speaker-a"),
+        ("a2", [21, 22, 23], b"voice-b"),
+        ("a3", [31, 32], b"clone-c"),
+        ("a4", [41], b"ref-d"),
+        ("a5", [51, 52, 53], b"prompt-e"),
+        ("a6", [61, 62], b"speaker-f"),
+    ]
+    model = build_code2wav_model()
+    baseline = vocode_code2wav_payloads(
+        model,
+        [
+            talker_payload(
+                request_id=request_id,
+                codec_tokens=tokens,
+                params={"ref_audio": wav_data_uri(reference)},
+            )
+            for request_id, tokens, reference in rows
+        ],
+    )
+    expected = {
+        payload.request_id: payload.data["audio_waveform"] for payload in baseline
+    }
+    payloads = [
+        talker_payload(
+            request_id=request_id,
+            codec_tokens=tokens,
+            params={"ref_audio": wav_data_uri(reference)},
+        )
+        for request_id, tokens, reference in rows
+    ]
+    scheduler = build_code2wav_stage(model, monkeypatch)
+    # note (cuzmi): CPU tensors need no CUDA allocator lifetime registration.
+    monkeypatch.setattr(torch.Tensor, "record_stream", lambda tensor, stream: None)
+    first_hift_started = threading.Event()
+    release_first_hift = threading.Event()
+    hift_groups: list[list[int]] = []
+
+    def blocked_hift(speech_feat: torch.Tensor) -> tuple[torch.Tensor, None]:
+        hift_groups.append(
+            [
+                round(value) % REFERENCE_ID_SCALE
+                for value in speech_feat[:, 0, 0].tolist()
+            ]
+        )
+        if len(hift_groups) == 1:
+            first_hift_started.set()
+            assert release_first_hift.wait(THREAD_WAIT_SECONDS)
+        else:
+            pass
+        return fake_hift(speech_feat)
+
+    fake_token2wav.hift.side_effect = blocked_hift
+    loop = asyncio.new_event_loop()
+    worker = threading.Thread(target=scheduler.run_hift)
+    scheduler.run_batch(
+        [
+            IncomingMessage(payload.request_id, "new_request", payload)
+            for payload in payloads[:4]
+        ],
+        loop,
+    )
+    worker.start()
+    try:
+        assert first_hift_started.wait(THREAD_WAIT_SECONDS)
+        scheduler.run_batch(
+            [
+                IncomingMessage(payload.request_id, "new_request", payload)
+                for payload in payloads[4:]
+            ],
+            loop,
+        )
+    finally:
+        with scheduler.hift_condition:
+            scheduler.hift_closed = True
+            scheduler.hift_condition.notify_all()
+        release_first_hift.set()
+        worker.join(THREAD_WAIT_SECONDS)
+        loop.close()
+    assert not worker.is_alive()
+    outputs = [scheduler.outbox.get_nowait() for _ in rows]
+    assert scheduler.outbox.empty()
+    assert [output.request_id for output in outputs] == [
+        "a1",
+        "a3",
+        "a2",
+        "a5",
+        "a4",
+        "a6",
+    ]
+    assert hift_groups == [[11, 31], [21, 51], [41], [61]]
+    for output in outputs:
+        assert output.type == "result"
+        assert output.data.request_id == output.request_id
+        assert output.data.data["audio_waveform"] == expected[output.request_id]
 
 
 QUEUED_REFERENCES = (("req-a", b"a"), ("req-b", b"b"))
