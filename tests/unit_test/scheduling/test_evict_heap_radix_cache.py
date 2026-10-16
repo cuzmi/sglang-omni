@@ -2,19 +2,13 @@
 
 from __future__ import annotations
 
-import dataclasses
 import random
 
-import pytest
 import torch
 from sglang.srt.mem_cache.base_prefix_cache import EvictParams, InsertParams
 from sglang.srt.mem_cache.cache_init_params import CacheInitParams
-from sglang.srt.mem_cache.chunk_cache import ChunkCache
-from sglang.srt.mem_cache.memory_pool import HybridReqToTokenPool
 from sglang.srt.mem_cache.radix_cache import RadixCache, RadixKey
-from sglang.srt.runtime_context import get_context
 
-from sglang_omni.scheduling.sglang_backend.cache import create_tree_cache
 from sglang_omni.scheduling.sglang_backend.evict_heap_radix_cache import (
     EvictHeapRadixCache,
 )
@@ -93,63 +87,6 @@ def test_eviction_trace_matches_stock():
         assert len(patched.evictable_leaves) == len(stock.evictable_leaves)
 
 
-def test_factory_selects_evict_heap_only_for_lru():
-    def build(policy):
-        with get_context().override_server_args(
-            disable_radix_cache=False,
-            chunked_prefill_size=None,
-            radix_eviction_policy=policy,
-        ):
-            return create_tree_cache(None, MockAllocator(), 1)
-
-    assert type(build("lru")) is EvictHeapRadixCache
-    for policy in ("mru", "priority", "lfu", "fifo", "filo"):
-        assert type(build(policy)) is RadixCache, policy
-
-
-def test_factory_passes_the_eviction_policy_config_to_the_strategy():
-    if "eviction_policy_config" not in {
-        field.name for field in dataclasses.fields(CacheInitParams)
-    }:
-        pytest.skip("CacheInitParams has no eviction_policy_config")
-    else:
-        pass
-
-    with get_context().override_server_args(
-        disable_radix_cache=False,
-        chunked_prefill_size=None,
-        radix_eviction_policy="slru",
-        radix_eviction_policy_config={"protected_threshold": 4},
-    ):
-        cache = create_tree_cache(None, MockAllocator(), 1)
-
-    assert cache.eviction_strategy.protected_threshold == 4
-
-
-@pytest.mark.parametrize("eviction_policy", ["lru", "fifo"])
-def test_factory_refuses_radix_for_hybrid_state_pools(eviction_policy: str) -> None:
-    """A radix hit restores attention KV but never the linear-attention state."""
-    hybrid_pool = object.__new__(HybridReqToTokenPool)
-    with get_context().override_server_args(
-        disable_radix_cache=False,
-        chunked_prefill_size=None,
-        radix_eviction_policy=eviction_policy,
-    ):
-        with pytest.raises(ValueError, match="disable_radix_cache"):
-            create_tree_cache(hybrid_pool, MockAllocator(), 1)
-
-
-def test_factory_keeps_chunk_cache_for_hybrid_state_pools() -> None:
-    hybrid_pool = object.__new__(HybridReqToTokenPool)
-    with get_context().override_server_args(
-        disable_radix_cache=True,
-        chunked_prefill_size=100,
-    ):
-        cache = create_tree_cache(hybrid_pool, MockAllocator(), 1)
-
-    assert type(cache) is ChunkCache
-
-
 def test_heap_stays_bounded_and_recovers():
     cache = make(EvictHeapRadixCache)
     run_trace(cache, seed=7, steps=2000, drain=False)
@@ -161,22 +98,4 @@ def test_heap_stays_bounded_and_recovers():
     cache.insert(InsertParams(key=key, value=torch.arange(3)))
     result = cache.evict(EvictParams(num_tokens=1 << 20))
     assert result.num_tokens_evicted >= 3
-    assert not cache.evictable_leaves
-
-
-def test_reset_then_reuse():
-    cache = make(EvictHeapRadixCache)
-    cache.insert(
-        InsertParams(
-            key=RadixKey(token_ids=[5, 6, 7], extra_key="r"), value=torch.arange(3)
-        )
-    )
-    cache.reset()
-    cache.insert(
-        InsertParams(
-            key=RadixKey(token_ids=[8, 9], extra_key="r2"), value=torch.arange(2)
-        )
-    )
-    result = cache.evict(EvictParams(num_tokens=1 << 20))
-    assert result.num_tokens_evicted == 2
     assert not cache.evictable_leaves

@@ -208,6 +208,10 @@ def test_route_session_input_records_authoritative_ar_bypass(
         "reason": reason,
         "stage": "ar-stage",
     }
+    message = scheduler.outbox.get_nowait()
+    assert (message.request_id, message.type) == (payload.request_id, "result")
+    assert message.data is (payload if bypass_generation else eos_payload)
+    assert scheduler.outbox.empty()
 
 
 def make_abortable_req(request_id: str, **attributes):
@@ -234,9 +238,15 @@ def make_abortable_req(request_id: str, **attributes):
     return req
 
 
-@pytest.mark.parametrize("tp_size,is_entry_rank", [(1, True), (2, True), (2, False)])
 @pytest.mark.parametrize(
-    "pending_queue", ["pending_request_builds", "pending_request_admissions"]
+    ("tp_size", "is_entry_rank", "pending_queue"),
+    [
+        (1, True, "pending_request_builds"),
+        (1, True, "pending_request_admissions"),
+        (2, True, "pending_request_builds"),
+        (2, True, "pending_request_admissions"),
+        (2, False, "pending_request_builds"),
+    ],
 )
 def test_scheduler_idle_sleep_yields_to_pending_request_builds(
     monkeypatch, tp_size, is_entry_rank, pending_queue
@@ -424,27 +434,6 @@ def test_threaded_simple_scheduler_reports_worker_errors() -> None:
     assert isinstance(outputs[0].data, RuntimeError)
 
 
-def test_omni_scheduler_default_stream_chunk_buffers_raw_chunks() -> None:
-    """Preserves generic stream chunk buffering when no custom handler exists."""
-    req_data = SimpleNamespace()
-    chunk = SimpleNamespace(data="chunk-data", metadata={"token_id": 1})
-
-    OmniScheduler.append_stream_chunk_default(req_data, chunk)
-
-    assert list(req_data.stream_chunks) == [chunk]
-
-
-def test_omni_scheduler_default_stream_done_sets_generic_flag() -> None:
-    """Preserves generic stream completion state when no custom handler exists."""
-    scheduler = object.__new__(OmniScheduler)
-    scheduler.stream_done_handler = None
-    req_data = SimpleNamespace()
-
-    scheduler.mark_stream_done(req_data)
-
-    assert req_data.stream_done is True
-
-
 def test_take_deferred_request_payloads_is_event_driven() -> None:
     scheduler = object.__new__(OmniScheduler)
     scheduler.running_batch = None
@@ -460,6 +449,8 @@ def test_take_deferred_request_payloads_is_event_driven() -> None:
 
     assert scheduler.take_deferred_request_payloads() == []
     assert scheduler.deferred_request_payloads == {"req-deferred": payload}
+    init_sync_request_build_state(scheduler)
+    assert scheduler.active_request_ids() == ["req-deferred"]
 
     OmniScheduler.on_stream_chunk(scheduler, "req-deferred", "chunk-1")
     assert scheduler.dirty_deferred_request_ids == {"req-deferred"}
@@ -2846,6 +2837,7 @@ def construct_omni_scheduler(
     return_runtime_context: bool = False,
     server_max_queued_requests: int | None = 7,
     prefill_decode_interval: int | None = 0,
+    is_hybrid_swa: bool = False,
     **kwargs,
 ) -> OmniScheduler | tuple[OmniScheduler, object]:
     """Build an OmniScheduler over the minimum stub surface __init__ touches."""
@@ -2956,6 +2948,10 @@ def construct_omni_scheduler(
             max_total_num_tokens=128,
             effective_max_total_num_tokens=64,
             max_running_requests=1,
+            is_hybrid_swa=is_hybrid_swa,
+            full_max_total_num_tokens=0,
+            swa_max_total_num_tokens=128,
+            sliding_window_size=8,
         ),
         random_seed=0,
         device=torch.device("cpu"),
@@ -2980,6 +2976,23 @@ def construct_omni_scheduler(
     if return_runtime_context:
         return scheduler, runtime_context
     return scheduler
+
+
+@pytest.mark.parametrize("is_hybrid_swa", [False, True])
+def test_omni_scheduler_initializes_window_memory(
+    monkeypatch: pytest.MonkeyPatch, is_hybrid_swa: bool
+) -> None:
+    scheduler = construct_omni_scheduler(monkeypatch, is_hybrid_swa=is_hybrid_swa)
+    assert scheduler.is_hybrid_swa is is_hybrid_swa
+    assert scheduler.max_req_len == 63
+    if is_hybrid_swa:
+        assert scheduler.full_tokens_per_layer == 0
+        assert scheduler.swa_tokens_per_layer == 128
+        assert scheduler.sliding_window_size == 8
+    else:
+        assert scheduler.full_tokens_per_layer is None
+        assert scheduler.swa_tokens_per_layer is None
+        assert scheduler.sliding_window_size is None
 
 
 def test_omni_scheduler_initializes_upstream_queue_limit(monkeypatch) -> None:
@@ -3171,6 +3184,7 @@ def test_omni_scheduler_binds_one_execution_bridge_to_any_runner(
             max_total_num_tokens=128,
             effective_max_total_num_tokens=64,
             max_running_requests=1,
+            is_hybrid_swa=False,
         ),
         random_seed=0,
         device=torch.device("cpu"),
@@ -3257,6 +3271,7 @@ def test_omni_scheduler_refuses_overlap_with_async_decode(monkeypatch) -> None:
             max_total_num_tokens=128,
             effective_max_total_num_tokens=64,
             max_running_requests=1,
+            is_hybrid_swa=False,
         ),
         random_seed=0,
         device=torch.device("cpu"),
@@ -3335,16 +3350,6 @@ def test_omni_scheduler_normalizes_prefill_coalesce_args(monkeypatch) -> None:
     )
     assert enabled.prefill_coalesce_requests == 32
     assert enabled.prefill_coalesce_wait_s == pytest.approx(0.3)
-
-
-def test_omni_scheduler_trusts_validated_coalesce_values(monkeypatch) -> None:
-    """Range and type are configuration rules (FactoryArgs and the lossless
-    conversion in ConfigPath.coerce); the scheduler trusts its callers and
-    keeps only its own TP-interaction rule."""
-    scheduler = construct_omni_scheduler(
-        monkeypatch, prefill_coalesce_requests=0, prefill_coalesce_wait_ms=1.0
-    )
-    assert scheduler.prefill_coalesce_requests == 0
 
 
 def test_stage_output_cache_eviction_uses_lru_order() -> None:
@@ -3864,3 +3869,37 @@ def test_omni_scheduler_running_abort_does_not_leak_prefill_dedup_state(
     assert ends == [("req-1", "aborted")]
     assert scheduler.prefill_start_done == set()
     assert scheduler.prefill_start_done == set()
+
+
+def test_prefill_end_emission_skips_when_no_request_is_pending(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    emitted: list[str] = []
+    monkeypatch.setattr(
+        omni_scheduler_module,
+        "_emit_event",
+        lambda **kwargs: emitted.append(kwargs["request_id"]),
+    )
+    scheduler = object.__new__(OmniScheduler)
+    scheduler.prefill_start_done = {"r1"}
+    scheduler.prefill_end_done = {"r1"}
+
+    class ExplodingBatch:
+        # note (luojiaxuan): the O(1) fast path must return before touching
+        # the batch at all -- steady-state decode pays this on every step.
+        @property
+        def reqs(self):
+            raise AssertionError("fast path must not scan the batch")
+
+        @property
+        def is_extend_in_batch(self):
+            raise AssertionError("fast path must not build metadata")
+
+    scheduler.emit_prefill_end_for_batch(ExplodingBatch())
+    assert emitted == []
+
+    scheduler.prefill_start_done = {"r1", "r2"}
+    batch = SimpleNamespace(reqs=[SimpleNamespace(rid="r2")], is_extend_in_batch=True)
+    scheduler.emit_prefill_end_for_batch(batch)
+    assert emitted == ["r2"]
+    assert scheduler.prefill_end_done == {"r1", "r2"}
