@@ -30,12 +30,18 @@ class RequestArrivalHook(Protocol):
     def __call__(self, payload: StagePayload) -> None: ...
 
 
+class RequestReadinessHook(Protocol):
+    def __call__(self, payload: StagePayload) -> bool: ...
+
+
 class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
     """Process requests one at a time via a callable.
 
     Supports sync and async callables for ``new_request`` messages only.
     A batch_compute_fn may return a BaseException in an item's
     result slot to fail only that request while preserving the rest of the batch.
+    Readiness filtering is opt-in for serial execution. Background preparation
+    must call notify_readiness when a deferred request becomes eligible.
     Streaming stages should provide a dedicated scheduler implementation
     (for example ``Code2WavScheduler``) rather than rely on SimpleScheduler.
     """
@@ -63,6 +69,7 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
         abort_callback: Callable[[str], None] | None = None,
         shutdown_callback: Callable[[], None] | None = None,
         request_arrival_hook: RequestArrivalHook | None = None,
+        request_readiness_hook: RequestReadinessHook | None = None,
     ):
         self.inbox: _queue_mod.Queue[IncomingMessage] = _queue_mod.Queue()
         self.outbox: _queue_mod.Queue[OutgoingMessage] = _queue_mod.Queue()
@@ -91,6 +98,8 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
         self.abort_callback = abort_callback
         self.shutdown_callback = shutdown_callback
         self.request_arrival_hook = request_arrival_hook
+        self.request_readiness_hook = request_readiness_hook
+        self.readiness_changed = threading.Event()
         self.shutdown_lock = threading.Lock()
         self.aborted: set[str] = set()
         self.abort_lock = threading.Lock()
@@ -128,6 +137,14 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
         else:
             pass
         self.inbox.put(message)
+        self.notify_readiness()
+
+    def notify_readiness(self) -> None:
+        """Wake batch collection after preparation, arrival, cancellation or stop."""
+        if self.request_readiness_hook is not None:
+            self.readiness_changed.set()
+        else:
+            pass
 
     def message_cost(self, msg: IncomingMessage) -> int:
         if self.request_cost_fn is None or msg.type != "new_request":
@@ -144,54 +161,96 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
         return self.inbox.get()
 
     def collect_batch(self, first_msg: IncomingMessage) -> list[IncomingMessage]:
-        batch = [first_msg]
-        if self.batch_fn is None or self.max_batch_size <= 1:
-            return batch
+        batch_limit = self.max_batch_size if self.batch_fn is not None else 1
+        if self.request_readiness_hook is None and batch_limit == 1:
+            return [first_msg]
         else:
             pass
 
-        batch_cost = self.message_cost(first_msg)
-        deadline: float | None = (
-            time.monotonic() + self.max_batch_wait_s
-            if self.batch_wait_when_idle
-            else None
-        )
-        while len(batch) < self.max_batch_size:
-            try:
-                msg = self.inbox.get_nowait()
-            except _queue_mod.Empty:
-                if deadline is None:
-                    break
+        batch: list[IncomingMessage] = []
+        batch_cost = 0
+        deadline: float | None = None
+        candidates = collections.deque([first_msg])
+        if self.request_readiness_hook is not None:
+            # note (cuzmi): clear before checking state so completion cannot lose a wakeup.
+            self.readiness_changed.clear()
+            candidates.extend(self.pending_messages)
+            self.pending_messages.clear()
+        else:
+            pass
+        try:
+            while len(batch) < batch_limit:
+                if candidates:
+                    msg = candidates.popleft()
                 else:
-                    pass
-                remaining = deadline - time.monotonic()
-                if remaining <= 0:
-                    break
-                else:
-                    pass
-                try:
-                    msg = self.inbox.get(timeout=remaining)
-                except _queue_mod.Empty:
-                    break
+                    try:
+                        msg = self.inbox.get_nowait()
+                    except _queue_mod.Empty:
+                        if batch:
+                            remaining_seconds = (
+                                deadline - time.monotonic()
+                                if deadline is not None
+                                else 0
+                            )
+                            if remaining_seconds <= 0:
+                                break
+                            else:
+                                pass
+                        elif self.pending_messages:
+                            remaining_seconds = None
+                        else:
+                            break
+                        if self.request_readiness_hook is not None:
+                            if not self.running:
+                                break
+                            else:
+                                pass
+                            self.readiness_changed.wait(timeout=remaining_seconds)
+                            self.readiness_changed.clear()
+                            candidates.extend(self.pending_messages)
+                            self.pending_messages.clear()
+                            continue
+                        else:
+                            try:
+                                msg = self.inbox.get(timeout=remaining_seconds)
+                            except _queue_mod.Empty:
+                                break
 
-            if msg.type == "new_request":
-                if self.max_batch_cost is not None:
-                    msg_cost = self.message_cost(msg)
-                    if batch and batch_cost + msg_cost > self.max_batch_cost:
-                        self.pending_messages.appendleft(msg)
-                        break
+                if msg.type != "new_request":
+                    if self.request_readiness_hook is None:
+                        self.pending_messages.append(msg)
                     else:
                         pass
-                    batch_cost += msg_cost
+                    continue
+                elif self.request_readiness_hook is not None:
+                    if self.consume_if_aborted(msg.request_id):
+                        continue
+                    elif not self.request_readiness_hook(msg.data):
+                        self.pending_messages.append(msg)
+                        continue
+                    else:
+                        pass
                 else:
                     pass
-                batch.append(msg)
-                if deadline is None:
+                msg_cost = (
+                    self.message_cost(msg) if self.max_batch_cost is not None else 0
+                )
+                if (
+                    batch
+                    and self.max_batch_cost is not None
+                    and batch_cost + msg_cost > self.max_batch_cost
+                ):
+                    candidates.appendleft(msg)
+                    break
+                else:
+                    batch.append(msg)
+                    batch_cost += msg_cost
+                if deadline is None and (self.batch_wait_when_idle or len(batch) > 1):
                     deadline = time.monotonic() + self.max_batch_wait_s
                 else:
                     pass
-            else:
-                self.pending_messages.append(msg)
+        finally:
+            self.pending_messages.extend(candidates)
         return batch
 
     @staticmethod
@@ -399,6 +458,7 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
     def stop(self) -> None:
         self.running = False
         self.inbox.put(IncomingMessage(request_id="", type="wakeup"))
+        self.notify_readiness()
         with self.shutdown_lock:
             callback = self.shutdown_callback
             self.shutdown_callback = None
@@ -417,3 +477,4 @@ class SimpleScheduler(Generic[ComputeInput, ComputeResult]):
             else:
                 pass
         self.cleanup_aborted_request(request_id)
+        self.notify_readiness()

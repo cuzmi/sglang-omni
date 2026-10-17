@@ -44,7 +44,7 @@ class FakeCode2Wav:
 
     def __init__(self) -> None:
         self.token2wav = FakeToken2Wav()
-        self.decode_stream = torch.cpu.current_stream()
+        self.flow_stream = torch.cpu.current_stream()
         self.prepared: list[bytes] = []
 
     def resolve_reference_key(self, reference: bytes) -> tuple[str, bytes]:
