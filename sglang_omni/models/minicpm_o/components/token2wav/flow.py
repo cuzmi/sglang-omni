@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import math
 from collections import defaultdict
+from collections.abc import Sequence
 from contextlib import nullcontext
 from dataclasses import dataclass
 from typing import Literal
@@ -589,9 +590,9 @@ class CausalMaskedDiffWithXvec(torch.nn.Module):
     def inference(
         self,
         speech_tokens: torch.Tensor,
-        token_lengths: torch.Tensor,
+        token_lengths: Sequence[int],
         prompt_tokens: torch.Tensor,
-        prompt_token_lengths: torch.Tensor,
+        prompt_token_lengths: Sequence[int],
         prompt_mel: torch.Tensor,
         speaker_embeddings: torch.Tensor,
         n_timesteps: int = 10,
@@ -602,22 +603,29 @@ class CausalMaskedDiffWithXvec(torch.nn.Module):
         )
         speaker_embeddings = F.normalize(speaker_embeddings, dim=1)
         speaker_embeddings = self.speaker_embedding_projection(speaker_embeddings)
-        prompt_row_lengths = prompt_token_lengths.tolist()
-        generated_row_lengths = token_lengths.tolist()
         combined_tokens = pad_sequence(
             [
                 torch.cat(
                     [prompt_tokens[i, :prompt_length], speech_tokens[i, :token_length]]
                 )
                 for i, (prompt_length, token_length) in enumerate(
-                    zip(prompt_row_lengths, generated_row_lengths, strict=True)
+                    zip(prompt_token_lengths, token_lengths, strict=True)
                 )
             ],
             batch_first=True,
         )
-        combined_token_lengths = prompt_token_lengths + token_lengths
+        combined_token_lengths = torch.tensor(
+            [
+                prompt_length + token_length
+                for prompt_length, token_length in zip(
+                    prompt_token_lengths, token_lengths, strict=True
+                )
+            ],
+            dtype=torch.int32,
+            device="cpu",
+        ).to(speech_tokens.device, non_blocking=True)
         token_mask = (
-            (~make_pad_mask(combined_token_lengths))
+            (~make_pad_mask(combined_token_lengths, combined_tokens.shape[1]))
             .unsqueeze(-1)
             .to(speaker_embeddings)
         )
@@ -632,7 +640,7 @@ class CausalMaskedDiffWithXvec(torch.nn.Module):
         ).to(hidden_states)
         hidden_states = self.encoder_proj(hidden_states) * frame_mask.unsqueeze(-1)
         mel_conditioning = torch.zeros_like(hidden_states)
-        for i, prompt_length in enumerate(prompt_row_lengths):
+        for i, prompt_length in enumerate(prompt_token_lengths):
             prompt_frames = prompt_length * self.up_rate
             mel_conditioning[i, :prompt_frames] = prompt_mel[i, :prompt_frames]
         mel_conditioning = mel_conditioning.transpose(1, 2).contiguous()
@@ -644,10 +652,10 @@ class CausalMaskedDiffWithXvec(torch.nn.Module):
                     hidden_states.shape[1],
                 )
                 for prompt_length, token_length in zip(
-                    prompt_row_lengths, generated_row_lengths, strict=True
+                    prompt_token_lengths, token_lengths, strict=True
                 )
             )
-            if len(generated_row_lengths) > 1
+            if len(token_lengths) > 1
             else None
         )
         predicted_mel, _ = self.decoder.forward(
@@ -667,7 +675,7 @@ class CausalMaskedDiffWithXvec(torch.nn.Module):
                 * self.up_rate,
             ]
             for i, (prompt_length, token_length) in enumerate(
-                zip(prompt_row_lengths, generated_row_lengths, strict=True)
+                zip(prompt_token_lengths, token_lengths, strict=True)
             )
         ]
         return pad_sequence(
