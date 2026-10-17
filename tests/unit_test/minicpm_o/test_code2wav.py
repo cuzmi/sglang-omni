@@ -10,7 +10,7 @@ import os
 import subprocess
 import sys
 import threading
-from collections.abc import Iterator
+from collections.abc import Iterator, Sequence
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import nullcontext
 from pathlib import Path
@@ -110,9 +110,9 @@ def fake_prepare_prompt(source: str | io.BytesIO) -> SpeakerPrompt:
 
 def fake_flow_inference(
     speech_tokens: torch.Tensor,
-    speech_token_lengths: torch.Tensor,
+    speech_token_lengths: Sequence[int],
     prompt_tokens: torch.Tensor,
-    prompt_token_lengths: torch.Tensor,
+    prompt_token_lengths: Sequence[int],
     prompt_mels: torch.Tensor,
     speaker_embeddings: torch.Tensor,
     n_timesteps: int,
@@ -455,7 +455,9 @@ def test_mixed_reference_batch_matches_single_row_mels(
     generated_mels: list[torch.Tensor] = []
     flow_inference = model.token2wav.flow.inference
 
-    def record_generated_mel(*flow_inputs: torch.Tensor | int) -> torch.Tensor:
+    def record_generated_mel(
+        *flow_inputs: torch.Tensor | Sequence[int] | int,
+    ) -> torch.Tensor:
         generated_mel = flow_inference(*flow_inputs)
         generated_mels.append(generated_mel)
         return generated_mel
@@ -585,7 +587,7 @@ def test_compiled_flow_matches_eager(compiled_vocoder: MiniCPMOCode2Wav) -> None
     tokens = torch.tensor(
         [CHECKPOINT_CODEC_TOKENS * 7], dtype=torch.int32, device=device
     )
-    token_lengths = torch.tensor([tokens.shape[1]], dtype=torch.int32, device=device)
+    token_lengths = [tokens.shape[1]]
     prompts = compiled_vocoder.prepare_references([None])
     compiled = compiled_vocoder.flow_mel(tokens, token_lengths, prompts).float()
     with torch.compiler.set_stance("force_eager"):
@@ -599,7 +601,7 @@ def test_compiled_hift_matches_eager(compiled_vocoder: MiniCPMOCode2Wav) -> None
     tokens = torch.tensor(
         [CHECKPOINT_CODEC_TOKENS * 7], dtype=torch.int32, device=device
     )
-    token_lengths = torch.tensor([tokens.shape[1]], dtype=torch.int32, device=device)
+    token_lengths = [tokens.shape[1]]
     prompts = compiled_vocoder.prepare_references([None])
     hift = compiled_vocoder.token2wav.hift
     with torch.inference_mode():
@@ -701,9 +703,9 @@ def test_vocode_prepares_and_decodes_on_its_private_stream(
 
     def record_flow_stream(
         speech_tokens: torch.Tensor,
-        speech_token_lengths: torch.Tensor,
+        speech_token_lengths: Sequence[int],
         prompt_tokens: torch.Tensor,
-        prompt_token_lengths: torch.Tensor,
+        prompt_token_lengths: Sequence[int],
         prompt_mels: torch.Tensor,
         speaker_embeddings: torch.Tensor,
         n_timesteps: int,

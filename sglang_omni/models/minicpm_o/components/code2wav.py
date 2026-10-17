@@ -179,7 +179,7 @@ class MiniCPMOCode2Wav(nn.Module):
             with self.device_context, torch.inference_mode():
                 self.flow_mel(
                     warmup_prompt.prompt_tokens,
-                    warmup_prompt.prompt_token_lengths,
+                    [FLOW_WARMUP_TOKENS],
                     [warmup_prompt],
                 )
         else:
@@ -398,10 +398,10 @@ class MiniCPMOCode2Wav(nn.Module):
     def flow_mel(
         self,
         speech_tokens: torch.Tensor,
-        speech_token_lengths: torch.Tensor,
+        speech_token_lengths: Sequence[int],
         speaker_prompts: Sequence[SpeakerPrompt],
     ) -> torch.Tensor:
-        """Run the flow on padded codec tokens, one speaker prompt per row."""
+        """Run the flow on padded codec tokens, one unpadded speaker prompt per row."""
         with torch.amp.autocast(
             self.token2wav.device.type,
             dtype=self.token2wav.dtype,
@@ -414,7 +414,7 @@ class MiniCPMOCode2Wav(nn.Module):
                     [prompt.prompt_tokens[0] for prompt in speaker_prompts],
                     batch_first=True,
                 ),
-                torch.cat([prompt.prompt_token_lengths for prompt in speaker_prompts]),
+                [prompt.prompt_tokens.shape[1] for prompt in speaker_prompts],
                 pad_sequence(
                     [prompt.prompt_mel[0] for prompt in speaker_prompts],
                     batch_first=True,
@@ -462,11 +462,8 @@ class MiniCPMOCode2Wav(nn.Module):
         speech_tokens = pad_sequence(
             [torch.tensor(tokens, dtype=torch.int32) for tokens in token_sequences],
             batch_first=True,
-        ).to(token2wav_device)
-        speech_token_lengths = torch.tensor(
-            token_lengths, dtype=torch.int32, device=token2wav_device
-        )
-        return self.flow_mel(speech_tokens, speech_token_lengths, speaker_prompts)
+        ).to(token2wav_device, non_blocking=True)
+        return self.flow_mel(speech_tokens, token_lengths, speaker_prompts)
 
     def decode_mel(
         self, mel: torch.Tensor, token_lengths: Sequence[int]
