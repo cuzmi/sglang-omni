@@ -98,8 +98,8 @@ When a constructor gains or loses fields, pass the new shape;
 a helper that filters kwargs by signature or branches on field layout keeps
 two versions alive.
 
-**The boot sequence.** `ModelWorker` and the MLX worker run upstream's worker
-boot themselves: publish the resolved config together with the process
+**The boot sequence.** `ModelWorker` runs upstream's worker
+boot itself: publish the resolved config together with the process
 placement, run the parallel runtime phase, run the layer runtime phase, then
 build the runner. The order and the arguments of each step are upstream's, and
 a step that upstream adds in front of the runner is not an import change. One
@@ -326,8 +326,8 @@ they are.
 Run CI with `run-all-ci`. A stage without a model label draws its model at
 random, so give each preset its own run on the new image before merge: keep
 `run-all-ci` and add one model label per stage, for example
-`run-tts-moss-tts-local-transformer-v1.5`, `run-asr-fun-asr-nano-2512` and
-`run-omni-minicpm-o-4.5`. The model labels within a stage are exclusive. The
+`run-moss-tts-local-transformer-v1.5`, `run-fun-asr-nano-2512` and
+`run-minicpm-o-4.5`. The model labels within a stage are exclusive. The
 CI section of the pull request template lists every label.
 
 After the merge, everyone pulls the new image and rebuilds their
