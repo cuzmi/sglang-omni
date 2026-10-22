@@ -962,6 +962,51 @@ def test_close_reference_pool_waits_for_running_preparation(
     assert all(not thread.is_alive() for thread in preparation_threads)
 
 
+@pytest.mark.parametrize("waiting_for_reference", [False, True])
+def test_code2wav_stop_wakes_waiters_and_drains_without_blocking(
+    build_code2wav_model: Code2WavBuilder,
+    monkeypatch: pytest.MonkeyPatch,
+    waiting_for_reference: bool,
+) -> None:
+    """Stopping with blocking inbox reads must exit and release queued references."""
+    model = build_code2wav_model()
+    scheduler = build_code2wav_stage(model, monkeypatch)
+    waiting = threading.Event()
+    if waiting_for_reference:
+        scheduler.request_readiness_hook = lambda payload: False
+        original_wait = scheduler.readiness_changed.wait
+
+        def wait_for_reference(timeout: float | None = None) -> bool:
+            waiting.set()
+            return original_wait(timeout)
+
+        monkeypatch.setattr(scheduler.readiness_changed, "wait", wait_for_reference)
+        enqueue_talker_request(scheduler, "waiting", wav_data_uri(b"speaker"))
+    else:
+        original_get = scheduler.inbox.get
+
+        def get_message(
+            block: bool = True, timeout: float | None = None
+        ) -> IncomingMessage:
+            if block:
+                waiting.set()
+            else:
+                pass
+            return original_get(block, timeout)
+
+        monkeypatch.setattr(scheduler.inbox, "get", get_message)
+    worker = threading.Thread(target=scheduler.start, daemon=True)
+    worker.start()
+    try:
+        assert waiting.wait(THREAD_WAIT_SECONDS)
+    finally:
+        scheduler.stop()
+        worker.join(THREAD_WAIT_SECONDS)
+    assert not worker.is_alive()
+    assert scheduler.outbox.empty()
+    assert not model.reserved_reference_keys_by_request
+
+
 def test_stage_stop_rejects_new_reference_preparation(
     build_code2wav_model: Code2WavBuilder,
     fake_token2wav: MagicMock,
@@ -1040,6 +1085,114 @@ def test_vocode_payloads_skip_empty_codec_sequences(
         np.frombuffer(outputs[1].data["audio_waveform"], dtype=np.float32),
         expected_waveform([4, 5], DEFAULT_REFERENCE_AUDIO),
     )
+
+
+@pytest.mark.parametrize(
+    ("long_reference", "fail_second_group"),
+    [(False, False), (True, False), (False, True)],
+)
+def test_scheduler_splits_flow_budget_and_preserves_hift_handoff(
+    build_code2wav_model: Code2WavBuilder,
+    fake_token2wav: MagicMock,
+    monkeypatch: pytest.MonkeyPatch,
+    long_reference: bool,
+    fail_second_group: bool,
+) -> None:
+    """Async serving must bound Flow batches without blocking on earlier HiFT work."""
+    monkeypatch.setattr(code2wav, "FLOW_BATCH_TOKEN_SQUARE_BUDGET", 128)
+    model = build_code2wav_model()
+    tokens = [[11, 12], [21, 22], [31, 32]]
+    references = [b"a", b"b", b"c"]
+    if long_reference:
+        references[1] = b"b" * 12
+    else:
+        tokens[1] = [21] * 12
+    payloads = [
+        talker_payload(
+            request_id=str(index),
+            codec_tokens=row_tokens,
+            params={"ref_audio": wav_data_uri(reference)},
+        )
+        for index, (row_tokens, reference) in enumerate(
+            zip(tokens, references, strict=True)
+        )
+    ]
+    scheduler = build_code2wav_stage(model, monkeypatch)
+    for payload in payloads:
+        scheduler.prefetch_reference(payload)
+    # note (cuzmi): CPU tensors need no CUDA allocator lifetime registration.
+    monkeypatch.setattr(torch.Tensor, "record_stream", lambda tensor, stream: None)
+    first_hift_started = threading.Event()
+    release_first_hift = threading.Event()
+    flow_call_count = 0
+    generate_mel = model.generate_mel
+
+    def checked_generate_mel(
+        token_sequences: Sequence[Sequence[int]],
+        speaker_prompts: Sequence[SpeakerPrompt],
+    ) -> torch.Tensor:
+        nonlocal flow_call_count
+        flow_call_count += 1
+        longest_token_count = max(
+            len(row_tokens) + prompt.prompt_tokens.shape[1]
+            for row_tokens, prompt in zip(token_sequences, speaker_prompts, strict=True)
+        )
+        assert (
+            len(token_sequences) == 1
+            or len(token_sequences) * longest_token_count**2 <= 128
+        )
+        if flow_call_count == 2:
+            assert first_hift_started.wait(THREAD_WAIT_SECONDS)
+            assert not release_first_hift.is_set()
+            if fail_second_group:
+                raise RuntimeError("second Flow group failed")
+        return generate_mel(token_sequences, speaker_prompts)
+
+    def blocked_hift(speech_feat: torch.Tensor) -> tuple[torch.Tensor, None]:
+        first_hift_started.set()
+        assert release_first_hift.wait(THREAD_WAIT_SECONDS)
+        return fake_hift(speech_feat)
+
+    monkeypatch.setattr(model, "generate_mel", checked_generate_mel)
+    fake_token2wav.hift.side_effect = blocked_hift
+    loop = asyncio.new_event_loop()
+    worker = threading.Thread(target=scheduler.run_hift)
+    worker.start()
+    try:
+        scheduler.run_batch(
+            [
+                IncomingMessage(payload.request_id, "new_request", payload)
+                for payload in payloads
+            ],
+            loop,
+        )
+        expected_reserved = {"0", "2"} if fail_second_group else {"0", "1", "2"}
+        assert set(model.reserved_reference_keys_by_request) == expected_reserved
+    finally:
+        release_first_hift.set()
+        with scheduler.hift_condition:
+            scheduler.hift_closed = True
+            scheduler.hift_condition.notify_all()
+        worker.join(THREAD_WAIT_SECONDS)
+        loop.close()
+    assert not worker.is_alive()
+    assert flow_call_count == 2
+    assert fake_token2wav.flow.inference.call_count == (1 if fail_second_group else 2)
+    outputs = [scheduler.outbox.get_nowait() for _ in payloads]
+    assert scheduler.outbox.empty()
+    assert {output.request_id for output in outputs} == {"0", "1", "2"}
+    for output in outputs:
+        if fail_second_group and output.request_id == "1":
+            assert output.type == "error"
+            assert str(output.data) == "second Flow group failed"
+        else:
+            assert output.type == "result"
+            index = int(output.request_id)
+            np.testing.assert_array_equal(
+                np.frombuffer(output.data.data["audio_waveform"], dtype=np.float32),
+                expected_waveform(tokens[index], references[index]),
+            )
+    assert not model.reserved_reference_keys_by_request
 
 
 def test_hift_regroups_flow_batches_without_mixing_request_audio(

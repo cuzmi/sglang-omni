@@ -6,6 +6,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+import queue
 import threading
 from collections import deque
 from collections.abc import Mapping
@@ -390,6 +391,7 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
             return
         else:
             pass
+        hift_submitted_request_ids: set[str] = set()
         try:
             requests = Code2WavBatch.from_payloads(payloads)
             payloads = [requests.payloads[row] for row in requests.voiced_rows]
@@ -415,38 +417,49 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
             else:
                 pass
             speaker_prompts = self.model.prepare_references(requests.references)
+            row_groups = self.model.flow_row_groups(
+                requests.codec_tokens, speaker_prompts
+            )
             device_module = torch.get_device_module(self.model.token2wav.device)
-            with device_module.stream(self.model.flow_stream):
-                mel = self.model.generate_mel(requests.codec_tokens, speaker_prompts)
-                ready = device_module.Event()
-                ready.record(self.model.flow_stream)
-            with self.hift_condition:
-                for row, (payload, tokens) in enumerate(
-                    zip(payloads, requests.codec_tokens, strict=True)
-                ):
-                    self.hift_condition.wait_for(
-                        lambda: self.hift_pending_count
-                        < HIFT_PENDING_BATCHES * self.max_batch_size
+            for row_group in row_groups:
+                with device_module.stream(self.model.flow_stream):
+                    mel = self.model.generate_mel(
+                        [requests.codec_tokens[index] for index in row_group],
+                        [speaker_prompts[index] for index in row_group],
                     )
-                    token_length = len(tokens)
-                    self.hift_pending.setdefault(token_length, deque()).append(
-                        HiFTRequest(
-                            payload=payload,
-                            mel=mel[
-                                row : row + 1,
-                                :,
-                                : token_length * self.model.token2wav.flow.up_rate,
-                            ],
-                            ready=ready,
-                            enqueue_order=self.hift_enqueue_order,
+                    ready = device_module.Event()
+                    ready.record(self.model.flow_stream)
+                with self.hift_condition:
+                    for row, index in enumerate(row_group):
+                        payload = payloads[index]
+                        self.hift_condition.wait_for(
+                            lambda: self.hift_pending_count
+                            < HIFT_PENDING_BATCHES * self.max_batch_size
                         )
-                    )
-                    self.hift_enqueue_order += 1
-                    self.hift_pending_count += 1
-                    self.hift_condition.notify_all()
+                        token_length = len(requests.codec_tokens[index])
+                        self.hift_pending.setdefault(token_length, deque()).append(
+                            HiFTRequest(
+                                payload=payload,
+                                mel=mel[
+                                    row : row + 1,
+                                    :,
+                                    : token_length * self.model.token2wav.flow.up_rate,
+                                ],
+                                ready=ready,
+                                enqueue_order=self.hift_enqueue_order,
+                            )
+                        )
+                        hift_submitted_request_ids.add(payload.request_id)
+                        self.hift_enqueue_order += 1
+                        self.hift_pending_count += 1
+                        self.hift_condition.notify_all()
         except Exception as error:
             logger.exception("MiniCPM-o Flow batch failed")
             for payload in payloads:
+                if payload.request_id in hift_submitted_request_ids:
+                    continue
+                else:
+                    pass
                 self.model.release_reference(payload.request_id)
                 if self.consume_if_aborted(payload.request_id):
                     continue
@@ -534,7 +547,14 @@ class MiniCPMOCode2WavScheduler(SimpleScheduler[StagePayload, StagePayload]):
                 self.hift_closed = True
                 self.hift_condition.notify_all()
             hift_worker.join()
-            while (message := self.next_message()) is not None:
+            while True:
+                if self.pending_messages:
+                    message = self.pending_messages.popleft()
+                else:
+                    try:
+                        message = self.inbox.get_nowait()
+                    except queue.Empty:
+                        break
                 self.model.release_reference(message.request_id)
 
 
