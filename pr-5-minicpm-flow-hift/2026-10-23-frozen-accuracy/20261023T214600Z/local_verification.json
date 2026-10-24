@@ -1,0 +1,35 @@
+{
+  "mel_npy_files_exact": 256,
+  "wave_npy_files_exact": 246,
+  "paired_requests": 256,
+  "matching_flow_batches": true,
+  "matching_conditioning_features": true,
+  "matching_flow_noise": true,
+  "matching_per_request_source_seeds": true,
+  "matching_configs": true,
+  "same_normalized_asr_transcripts": 256,
+  "nonexact_wave_indices": [
+    39,
+    50,
+    74,
+    80,
+    93,
+    94,
+    96,
+    99,
+    109,
+    110
+  ],
+  "hift_changed_membership_indices": [
+    39,
+    50,
+    74,
+    80,
+    93,
+    94,
+    96,
+    99,
+    109,
+    110
+  ]
+}

@@ -1,0 +1,855 @@
+{
+  "kernel_count": 108192,
+  "signatures_match": {
+    "serial_00": {
+      "Decode/A/helper": true,
+      "Decode/B/helper": true,
+      "Flow/A/graph": true,
+      "Flow/A/preparation": true,
+      "Flow/B/graph": true,
+      "Flow/B/preparation": true,
+      "HiFT/A": true,
+      "HiFT/B": true
+    },
+    "overlap_01": {
+      "Decode/A/helper": true,
+      "Decode/B/helper": true,
+      "Flow/A/graph": true,
+      "Flow/A/preparation": true,
+      "Flow/B/graph": true,
+      "Flow/B/preparation": true,
+      "HiFT/A": true,
+      "HiFT/B": true
+    },
+    "overlap_02": {
+      "Decode/A/helper": true,
+      "Decode/B/helper": true,
+      "Flow/A/graph": true,
+      "Flow/A/preparation": true,
+      "Flow/B/graph": true,
+      "Flow/B/preparation": true,
+      "HiFT/A": true,
+      "HiFT/B": true
+    },
+    "serial_03": {
+      "Decode/A/helper": true,
+      "Decode/B/helper": true,
+      "Flow/A/graph": true,
+      "Flow/A/preparation": true,
+      "Flow/B/graph": true,
+      "Flow/B/preparation": true,
+      "HiFT/A": true,
+      "HiFT/B": true
+    },
+    "serial_04": {
+      "Decode/A/helper": true,
+      "Decode/B/helper": true,
+      "Flow/A/graph": true,
+      "Flow/A/preparation": true,
+      "Flow/B/graph": true,
+      "Flow/B/preparation": true,
+      "HiFT/A": true,
+      "HiFT/B": true
+    },
+    "overlap_05": {
+      "Decode/A/helper": true,
+      "Decode/B/helper": true,
+      "Flow/A/graph": true,
+      "Flow/A/preparation": true,
+      "Flow/B/graph": true,
+      "Flow/B/preparation": true,
+      "HiFT/A": true,
+      "HiFT/B": true
+    },
+    "overlap_06": {
+      "Decode/A/helper": true,
+      "Decode/B/helper": true,
+      "Flow/A/graph": true,
+      "Flow/A/preparation": true,
+      "Flow/B/graph": true,
+      "Flow/B/preparation": true,
+      "HiFT/A": true,
+      "HiFT/B": true
+    },
+    "serial_07": {
+      "Decode/A/helper": true,
+      "Decode/B/helper": true,
+      "Flow/A/graph": true,
+      "Flow/A/preparation": true,
+      "Flow/B/graph": true,
+      "Flow/B/preparation": true,
+      "HiFT/A": true,
+      "HiFT/B": true
+    }
+  },
+  "modes": {
+    "serial_00": {
+      "graph_overlap_ms": 0.0,
+      "all_flow_overlap_ms": 0.0,
+      "regions": {
+        "Decode/A/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 58.026829,
+          "last_gpu_ms": 90.913746,
+          "kernel_union_ms": 0.035872,
+          "kernel_sum_ms": 0.035872,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Decode/B/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 146.449025,
+          "last_gpu_ms": 176.752279,
+          "kernel_union_ms": 0.036,
+          "kernel_sum_ms": 0.036,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Flow/A/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 19.410478,
+          "last_gpu_ms": 57.800239,
+          "kernel_union_ms": 36.648053,
+          "kernel_sum_ms": 36.678581,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/A/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 0.336557,
+          "last_gpu_ms": 57.824334,
+          "kernel_union_ms": 3.734887,
+          "kernel_sum_ms": 3.734887,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "Flow/B/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 107.072999,
+          "last_gpu_ms": 146.31821,
+          "kernel_union_ms": 36.065747,
+          "kernel_sum_ms": 36.065779,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/B/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 92.009707,
+          "last_gpu_ms": 146.344226,
+          "kernel_union_ms": 3.695041,
+          "kernel_sum_ms": 3.695041,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "HiFT/A": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 58.304843,
+          "last_gpu_ms": 90.818547,
+          "kernel_union_ms": 10.79072,
+          "kernel_sum_ms": 10.79072,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        },
+        "HiFT/B": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 146.653856,
+          "last_gpu_ms": 176.68492,
+          "kernel_union_ms": 10.78396,
+          "kernel_sum_ms": 10.78396,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        }
+      }
+    },
+    "overlap_01": {
+      "graph_overlap_ms": 13.210802,
+      "all_flow_overlap_ms": 14.038476,
+      "regions": {
+        "Decode/A/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 50.50624,
+          "last_gpu_ms": 85.537591,
+          "kernel_union_ms": 0.048543,
+          "kernel_sum_ms": 0.048543,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Decode/B/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 100.837777,
+          "last_gpu_ms": 131.382886,
+          "kernel_union_ms": 0.036928,
+          "kernel_sum_ms": 0.036928,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Flow/A/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 11.214182,
+          "last_gpu_ms": 50.407361,
+          "kernel_union_ms": 36.011278,
+          "kernel_sum_ms": 36.011278,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/A/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 0.132271,
+          "last_gpu_ms": 50.432993,
+          "kernel_union_ms": 3.685354,
+          "kernel_sum_ms": 3.685354,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "Flow/B/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 55.464575,
+          "last_gpu_ms": 100.756338,
+          "kernel_union_ms": 41.129618,
+          "kernel_sum_ms": 41.134161,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/B/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 50.434081,
+          "last_gpu_ms": 100.782034,
+          "kernel_union_ms": 3.892227,
+          "kernel_sum_ms": 3.892227,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "HiFT/A": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 50.666847,
+          "last_gpu_ms": 85.485144,
+          "kernel_union_ms": 16.150172,
+          "kernel_sum_ms": 16.150172,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        },
+        "HiFT/B": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 100.964817,
+          "last_gpu_ms": 131.312295,
+          "kernel_union_ms": 10.953017,
+          "kernel_sum_ms": 10.953017,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        }
+      }
+    },
+    "overlap_02": {
+      "graph_overlap_ms": 13.02593,
+      "all_flow_overlap_ms": 14.007522,
+      "regions": {
+        "Decode/A/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 51.166916,
+          "last_gpu_ms": 84.053578,
+          "kernel_union_ms": 0.052382,
+          "kernel_sum_ms": 0.052382,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Decode/B/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 101.900371,
+          "last_gpu_ms": 131.880716,
+          "kernel_union_ms": 0.036608,
+          "kernel_sum_ms": 0.036608,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Flow/A/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 11.276942,
+          "last_gpu_ms": 51.069605,
+          "kernel_union_ms": 36.603566,
+          "kernel_sum_ms": 36.603566,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/A/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 0.128696,
+          "last_gpu_ms": 51.095685,
+          "kernel_union_ms": 3.742854,
+          "kernel_sum_ms": 3.742854,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "Flow/B/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 56.214883,
+          "last_gpu_ms": 101.82258,
+          "kernel_union_ms": 41.299152,
+          "kernel_sum_ms": 41.301424,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/B/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 51.099557,
+          "last_gpu_ms": 101.848499,
+          "kernel_union_ms": 3.978212,
+          "kernel_sum_ms": 3.978212,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "HiFT/A": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 51.332291,
+          "last_gpu_ms": 84.003658,
+          "kernel_union_ms": 16.28507,
+          "kernel_sum_ms": 16.28507,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        },
+        "HiFT/B": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 102.009554,
+          "last_gpu_ms": 131.81342,
+          "kernel_union_ms": 10.953806,
+          "kernel_sum_ms": 10.953806,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        }
+      }
+    },
+    "serial_03": {
+      "graph_overlap_ms": 0.0,
+      "all_flow_overlap_ms": 0.0,
+      "regions": {
+        "Decode/A/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 50.813515,
+          "last_gpu_ms": 81.444543,
+          "kernel_union_ms": 0.036254,
+          "kernel_sum_ms": 0.036254,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Decode/B/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 132.67377,
+          "last_gpu_ms": 162.162374,
+          "kernel_union_ms": 0.036384,
+          "kernel_sum_ms": 0.036384,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Flow/A/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 11.452753,
+          "last_gpu_ms": 50.696332,
+          "kernel_union_ms": 36.074639,
+          "kernel_sum_ms": 36.074639,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/A/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 0.125724,
+          "last_gpu_ms": 50.721451,
+          "kernel_union_ms": 3.741708,
+          "kernel_sum_ms": 3.741708,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "Flow/B/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 93.049458,
+          "last_gpu_ms": 132.582699,
+          "kernel_union_ms": 36.35041,
+          "kernel_sum_ms": 36.35041,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/B/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 81.929084,
+          "last_gpu_ms": 132.608075,
+          "kernel_union_ms": 3.706958,
+          "kernel_sum_ms": 3.706958,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "HiFT/A": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 50.972458,
+          "last_gpu_ms": 81.363072,
+          "kernel_union_ms": 10.798586,
+          "kernel_sum_ms": 10.798586,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        },
+        "HiFT/B": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 132.828873,
+          "last_gpu_ms": 162.091911,
+          "kernel_union_ms": 10.938295,
+          "kernel_sum_ms": 10.938295,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        }
+      }
+    },
+    "serial_04": {
+      "graph_overlap_ms": 0.0,
+      "all_flow_overlap_ms": 0.0,
+      "regions": {
+        "Decode/A/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 50.769427,
+          "last_gpu_ms": 80.412654,
+          "kernel_union_ms": 0.036256,
+          "kernel_sum_ms": 0.036256,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Decode/B/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 131.248316,
+          "last_gpu_ms": 161.50389,
+          "kernel_union_ms": 0.03648,
+          "kernel_sum_ms": 0.03648,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Flow/A/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 10.934428,
+          "last_gpu_ms": 50.662644,
+          "kernel_union_ms": 36.548656,
+          "kernel_sum_ms": 36.548656,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/A/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 0.132228,
+          "last_gpu_ms": 50.688339,
+          "kernel_union_ms": 3.743149,
+          "kernel_sum_ms": 3.743149,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "Flow/B/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 91.360069,
+          "last_gpu_ms": 131.142524,
+          "kernel_union_ms": 36.600557,
+          "kernel_sum_ms": 36.600557,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/B/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 80.895307,
+          "last_gpu_ms": 131.168252,
+          "kernel_union_ms": 3.751617,
+          "kernel_sum_ms": 3.751617,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "HiFT/A": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 50.910386,
+          "last_gpu_ms": 80.346382,
+          "kernel_union_ms": 10.953883,
+          "kernel_sum_ms": 10.953883,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        },
+        "HiFT/B": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 131.380411,
+          "last_gpu_ms": 161.397331,
+          "kernel_union_ms": 10.878613,
+          "kernel_sum_ms": 10.878613,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        }
+      }
+    },
+    "overlap_05": {
+      "graph_overlap_ms": 13.156385,
+      "all_flow_overlap_ms": 13.962715,
+      "regions": {
+        "Decode/A/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 50.531809,
+          "last_gpu_ms": 83.434406,
+          "kernel_union_ms": 0.047584,
+          "kernel_sum_ms": 0.047584,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Decode/B/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 100.171351,
+          "last_gpu_ms": 129.021367,
+          "kernel_union_ms": 0.036704,
+          "kernel_sum_ms": 0.036704,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Flow/A/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 11.194055,
+          "last_gpu_ms": 50.426946,
+          "kernel_union_ms": 36.063411,
+          "kernel_sum_ms": 36.063411,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/A/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 0.152144,
+          "last_gpu_ms": 50.452194,
+          "kernel_union_ms": 3.707559,
+          "kernel_sum_ms": 3.707559,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "Flow/B/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 55.483456,
+          "last_gpu_ms": 100.072375,
+          "kernel_union_ms": 40.935592,
+          "kernel_sum_ms": 40.9546,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/B/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 50.453314,
+          "last_gpu_ms": 100.095863,
+          "kernel_union_ms": 3.882248,
+          "kernel_sum_ms": 3.882248,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "HiFT/A": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 50.706656,
+          "last_gpu_ms": 83.360039,
+          "kernel_union_ms": 16.233391,
+          "kernel_sum_ms": 16.233391,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        },
+        "HiFT/B": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 100.311542,
+          "last_gpu_ms": 128.950423,
+          "kernel_union_ms": 10.936129,
+          "kernel_sum_ms": 10.936129,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        }
+      }
+    },
+    "overlap_06": {
+      "graph_overlap_ms": 13.050185,
+      "all_flow_overlap_ms": 14.040927,
+      "regions": {
+        "Decode/A/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 52.077418,
+          "last_gpu_ms": 84.570193,
+          "kernel_union_ms": 0.043456,
+          "kernel_sum_ms": 0.043456,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Decode/B/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 102.886744,
+          "last_gpu_ms": 134.421958,
+          "kernel_union_ms": 0.036543,
+          "kernel_sum_ms": 0.036543,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Flow/A/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 12.230835,
+          "last_gpu_ms": 51.977226,
+          "kernel_union_ms": 36.560591,
+          "kernel_sum_ms": 36.560591,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/A/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 0.127011,
+          "last_gpu_ms": 52.002538,
+          "kernel_union_ms": 3.739531,
+          "kernel_sum_ms": 3.739531,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "Flow/B/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 57.14852,
+          "last_gpu_ms": 102.695033,
+          "kernel_union_ms": 41.366961,
+          "kernel_sum_ms": 41.367281,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/B/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 52.006506,
+          "last_gpu_ms": 102.720761,
+          "kernel_union_ms": 3.988133,
+          "kernel_sum_ms": 3.988133,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "HiFT/A": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 52.241193,
+          "last_gpu_ms": 84.506258,
+          "kernel_union_ms": 16.235285,
+          "kernel_sum_ms": 16.235285,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        },
+        "HiFT/B": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 103.197814,
+          "last_gpu_ms": 134.351494,
+          "kernel_union_ms": 10.948338,
+          "kernel_sum_ms": 10.948338,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        }
+      }
+    },
+    "serial_07": {
+      "graph_overlap_ms": 0.0,
+      "all_flow_overlap_ms": 0.0,
+      "regions": {
+        "Decode/A/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 59.00077,
+          "last_gpu_ms": 92.928704,
+          "kernel_union_ms": 0.036352,
+          "kernel_sum_ms": 0.036352,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Decode/B/helper": {
+          "kernel_count": 13,
+          "streams": [
+            18
+          ],
+          "first_gpu_ms": 144.362154,
+          "last_gpu_ms": 178.361032,
+          "kernel_union_ms": 0.036768,
+          "kernel_sum_ms": 0.036768,
+          "signature_multiset_sha256": "96c84a5b78ee329a3cd7502545a7f99d8ff7905e9f0299b7b7621f73db8863ad"
+        },
+        "Flow/A/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 19.523017,
+          "last_gpu_ms": 58.77162,
+          "kernel_union_ms": 36.072142,
+          "kernel_sum_ms": 36.072142,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/A/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 0.185449,
+          "last_gpu_ms": 58.797027,
+          "kernel_union_ms": 3.720679,
+          "kernel_sum_ms": 3.720679,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "Flow/B/graph": {
+          "kernel_count": 4020,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 104.577043,
+          "last_gpu_ms": 144.204427,
+          "kernel_union_ms": 36.441625,
+          "kernel_sum_ms": 36.441625,
+          "signature_multiset_sha256": "af80b562c708d00cf563fd69f7b5e1d56e9a43a29a69f116951d561ffdc06e03"
+        },
+        "Flow/B/preparation": {
+          "kernel_count": 549,
+          "streams": [
+            14
+          ],
+          "first_gpu_ms": 93.484285,
+          "last_gpu_ms": 144.229931,
+          "kernel_union_ms": 3.697863,
+          "kernel_sum_ms": 3.697863,
+          "signature_multiset_sha256": "788bbbcb34ae533bcb0804996a8cb63c9ea7394c2c87f0326b9c4cc094e44ba8"
+        },
+        "HiFT/A": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 59.293056,
+          "last_gpu_ms": 92.848097,
+          "kernel_union_ms": 10.810234,
+          "kernel_sum_ms": 10.810234,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        },
+        "HiFT/B": {
+          "kernel_count": 2180,
+          "streams": [
+            7,
+            18
+          ],
+          "first_gpu_ms": 144.595945,
+          "last_gpu_ms": 178.267177,
+          "kernel_union_ms": 10.930063,
+          "kernel_sum_ms": 10.930063,
+          "signature_multiset_sha256": "a1332691cae9a8a25e224411cf62835410c7bd2abd2fd8b3bea44278931082cd"
+        }
+      }
+    }
+  }
+}

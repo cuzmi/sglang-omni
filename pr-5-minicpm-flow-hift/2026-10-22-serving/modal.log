@@ -1,0 +1,264 @@
+✓ Initialized. View run at 
+https://modal.com/apps/xinyuj2/main/ap-iVdzEYTxfZqYswSddR7UKF
+✓ Created objects.
+├── ✓ Uploaded /private/tmp/minicpm-e2e-20261022/experiment/run_modal.py
+├── ✓ Uploaded 
+│   /private/tmp/minicpm-e2e-20261022/experiment/expected_versions.json
+├── ✓ Uploaded 
+│   /private/tmp/minicpm-e2e-20261022/experiment/expected_workload.json
+├── ✓ Uploaded /private/tmp/minicpm-e2e-20261022/experiment/source.json
+├── ✓ Uploaded /private/tmp/minicpm-e2e-20261022/experiment/prepare_data.py
+├── ✓ Uploaded /private/tmp/minicpm-e2e-20261022/experiment/client.py
+├── ✓ Uploaded /private/tmp/minicpm-e2e-20261022/experiment/optimized
+├── ✓ Uploaded /private/tmp/minicpm-e2e-20261022/experiment/baseline
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID 20261022T132646Z
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/awq/awq.py:53: UserWarning: Only CUDA, HIP and XPU support AWQ currently.
+  warnings.warn(f"Only CUDA, HIP and XPU support AWQ currently.")
+/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/gguf.py:69: UserWarning: Only CUDA, MUSA and NPU support GGUF quantization currently.
+  warnings.warn(f"Only CUDA, MUSA and NPU support GGUF quantization currently.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1AFetching 54 files:   0%|          | 0/54 [00:00<?, ?it/s]
+[1AFetching 54 files: 100%|██████████| 54/54 [00:00<00:00, 975.81it/s]
+{"root": "/results/minicpm-serving-comparison/20261022T132646Z", "model": "/__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582", "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582", "dataset_revision": "27f4c1adee83b5b29b7c4b375f6b976324bda308", "measured_count": 32, "warmup_count": 32, "sample_ids_disjoint": true, "target_texts_disjoint": true, "reference_bytes_disjoint": true, "inputs_sha256": "3b29cb22a018d90ef1d363607cf2a2f0aa41d4185f62235aa99f8c3f4c9b43e1"}
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Visit 1: starting baseline with default compilation and graphs
+Visit 1 startup: ied. Use fa3 backend by default.
+2026-10-22 13:29:43,540 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=140
+2026-10-22 13:29:43,609 [INFO] sglang_omni.scheduling.bootstrap: SGLang runtime configuration: gpu_id=0, sm=90, architecture=hopper, attention_backend=fa3, decode_attention_backend=fa3, prefill_attention_backend=fa3, sampling_backend=pytorch
+2026-10-22 13:29:43,611 [INFO] sglang_omni.platforms.cuda: Configured SGLang backend policy: arch=MiniCPMOTalkerForCausalLM effective_quantization=None server_quantization=None moe_runner_backend=auto fp8_gemm_backend=auto
+2026-10-22 13:29:43,614 [INFO] sglang.srt.distributed.bootstrap: Init parallel begin.
+2026-10-22 13:29:43,658 [INFO] sglang.srt.distributed.bootstrap: Init parallel ends. elapsed=0.04 s
+2026-10-22 13:29:51,316 [INFO] sglang.srt.distributed.bootstrap: Memory baseline taken. mem usage=0.00 GB
+2026-10-22 13:29:51,326 [INFO] sglang.srt.model_executor.model_runner: Load weight begin. avail mem=77.95 GB
+
+Visit 1 startup: e: Acquired GPU startup lock for stage thinker: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:30:37,936 [INFO] stage_workers.talker: Building scheduler for code2wav (tp_rank=0/1) ...
+2026-10-22 13:30:37,987 [INFO] sglang.srt.arg_groups.overrides: Attention backend not specified. Use fa3 backend by default.
+2026-10-22 13:30:37,997 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.459716796875 pid=139
+2026-10-22 13:30:38,033 [INFO] sglang_omni.scheduling.bootstrap: SGLang runtime configuration: gpu_id=0, sm=90, architecture=hopper, attention_backend=fa3, decode_attention_backend=fa3, prefill_attention_backend=fa3, sampling_backend=pytorch
+2026-10-22 13:30:38,035 [INFO] sglang_omni.platforms.cuda: Configured SGLang backend policy: arch=MiniCPMO effective_quantization=None server_quantization=None moe_runner_backend=auto fp8_gemm_backend=auto
+2026-10-22 13:30:38,039 [INFO] sglang.srt.distributed.bootstrap: Init parallel begin.
+2026-10-22 13:30:38,065 [INFO] sglang.srt.distributed.bootstrap: Init parallel ends. elapsed=0.03 s
+
+Visit 1 startup: |███████▌  | 9/12 [00:20<00:02,  1.21it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:20<00:02,  1.21it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:20<00:02,  1.21it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:20<00:00,  1.89it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:20<00:00,  1.89it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:20<00:00,  1.73s/it]
+2026-10-22 13:31:10,850 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=21.76 s, mem usage=0.12 GB, avail mem=13.82 GB.
+2026-10-22 13:31:11,595 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=thinker gpu_id=0 post_load_avail_mem=13.822998046875 pid=139
+2026-10-22 13:31:11,596 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:31:11,596 [INFO] stage_workers.pipeline: Set current device to 0 for stage image_encoder
+2026-10-22 13:31:11,596 [INFO] stage_workers.pipeline: Building scheduler for image_encoder (tp_rank=0/1) ...
+
+Visit 1 startup: |███████▌  | 9/12 [00:20<00:02,  1.21it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:20<00:02,  1.21it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:20<00:02,  1.21it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:20<00:00,  1.89it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:20<00:00,  1.89it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:20<00:00,  1.73s/it]
+2026-10-22 13:31:10,850 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=21.76 s, mem usage=0.12 GB, avail mem=13.82 GB.
+2026-10-22 13:31:11,595 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=thinker gpu_id=0 post_load_avail_mem=13.822998046875 pid=139
+2026-10-22 13:31:11,596 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:31:11,596 [INFO] stage_workers.pipeline: Set current device to 0 for stage image_encoder
+2026-10-22 13:31:11,596 [INFO] stage_workers.pipeline: Building scheduler for image_encoder (tp_rank=0/1) ...
+
+Visit 1: ready; starting 32 disjoint warmup then 32 measured requests
+Visit 1: C1 warmup: 32/32, valid=True, elapsed=28.652s
+Visit 1: C1 measured: 32/32, valid=True, elapsed=15.826s
+Visit 2: starting optimized with default compilation and graphs
+Visit 2 startup: 34:09,352 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=talker gpu_id=0 post_load_avail_mem=69.459716796875 pid=1202
+2026-10-22 13:34:09,353 [INFO] stage_workers.talker: Set current device to 0 for stage code2wav
+2026-10-22 13:34:09,353 [INFO] stage_workers.pipeline: Acquired GPU startup lock for stage preprocessing: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:34:09,353 [INFO] stage_workers.talker: Building scheduler for code2wav (tp_rank=0/1) ...
+[transformers] You are using a model of type `minicpmo` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+2026-10-22 13:34:10,209 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:34:10,210 [INFO] stage_workers.pipeline: Set current device to 0 for stage thinker
+2026-10-22 13:34:10,210 [INFO] stage_workers.pipeline: Building scheduler for thinker (tp_rank=0/1) ...
+
+Visit 2 startup: 34:09,352 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=talker gpu_id=0 post_load_avail_mem=69.459716796875 pid=1202
+2026-10-22 13:34:09,353 [INFO] stage_workers.talker: Set current device to 0 for stage code2wav
+2026-10-22 13:34:09,353 [INFO] stage_workers.pipeline: Acquired GPU startup lock for stage preprocessing: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:34:09,353 [INFO] stage_workers.talker: Building scheduler for code2wav (tp_rank=0/1) ...
+[transformers] You are using a model of type `minicpmo` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+2026-10-22 13:34:10,209 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:34:10,210 [INFO] stage_workers.pipeline: Set current device to 0 for stage thinker
+2026-10-22 13:34:10,210 [INFO] stage_workers.pipeline: Building scheduler for thinker (tp_rank=0/1) ...
+
+Visit 2: ready; starting 32 disjoint warmup then 32 measured requests
+Visit 2: C1 warmup: 32/32, valid=True, elapsed=22.199s
+Visit 2: C1 measured: 32/32, valid=True, elapsed=16.230s
+Visit 3: starting optimized with default compilation and graphs
+Visit 3 startup: context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.459716796875 pid=1877
+2026-10-22 13:37:06,275 [INFO] sglang_omni.scheduling.bootstrap: SGLang runtime configuration: gpu_id=0, sm=90, architecture=hopper, attention_backend=fa3, decode_attention_backend=fa3, prefill_attention_backend=fa3, sampling_backend=pytorch
+2026-10-22 13:37:06,277 [INFO] sglang_omni.platforms.cuda: Configured SGLang backend policy: arch=MiniCPMO effective_quantization=None server_quantization=None moe_runner_backend=auto fp8_gemm_backend=auto
+2026-10-22 13:37:06,281 [INFO] sglang.srt.distributed.bootstrap: Init parallel begin.
+2026-10-22 13:37:06,309 [INFO] sglang.srt.distributed.bootstrap: Init parallel ends. elapsed=0.03 s
+2026-10-22 13:37:11,046 [INFO] sglang.srt.distributed.bootstrap: Memory baseline taken. mem usage=0.00 GB
+2026-10-22 13:37:11,147 [INFO] sglang.srt.model_executor.model_runner: Load weight begin. avail mem=69.27 GB
+
+Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.43it/s]
+Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.26it/s]
+Visit 3 startup: █████▋   | 8/12 [00:01<00:00,  5.93it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  83%|████████▎ | 10/12 [00:02<00:00,  7.45it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  83%|████████▎ | 10/12 [00:02<00:00,  7.45it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  83%|████████▎ | 10/12 [00:02<00:00,  7.45it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  9.34it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  5.54it/s]
+2026-10-22 13:37:17,958 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=3.14 s, mem usage=0.12 GB, avail mem=13.82 GB.
+2026-10-22 13:37:18,625 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=thinker gpu_id=0 post_load_avail_mem=13.822998046875 pid=1877
+2026-10-22 13:37:18,625 [INFO] stage_workers.pipeline: Set current device to 0 for stage image_encoder
+2026-10-22 13:37:18,625 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:37:18,626 [INFO] stage_workers.pipeline: Building scheduler for image_encoder (tp_rank=0/1) ...
+
+Visit 3: ready; starting 32 disjoint warmup then 32 measured requests
+Visit 3: C8 warmup: 32/32, valid=True, elapsed=7.486s
+Visit 3: C8 measured: 32/32, valid=True, elapsed=4.203s
+Visit 4: starting baseline with default compilation and graphs
+Visit 4 startup: 39:19,871 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=talker gpu_id=0 post_load_avail_mem=69.459716796875 pid=2561
+2026-10-22 13:39:19,872 [INFO] stage_workers.talker: Set current device to 0 for stage code2wav
+2026-10-22 13:39:19,872 [INFO] stage_workers.pipeline: Acquired GPU startup lock for stage preprocessing: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:39:19,873 [INFO] stage_workers.talker: Building scheduler for code2wav (tp_rank=0/1) ...
+[transformers] You are using a model of type `minicpmo` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+2026-10-22 13:39:20,658 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:39:20,658 [INFO] stage_workers.pipeline: Set current device to 0 for stage thinker
+2026-10-22 13:39:20,658 [INFO] stage_workers.pipeline: Building scheduler for thinker (tp_rank=0/1) ...
+
+Visit 4 startup: 39:19,871 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=talker gpu_id=0 post_load_avail_mem=69.459716796875 pid=2561
+2026-10-22 13:39:19,872 [INFO] stage_workers.talker: Set current device to 0 for stage code2wav
+2026-10-22 13:39:19,872 [INFO] stage_workers.pipeline: Acquired GPU startup lock for stage preprocessing: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:39:19,873 [INFO] stage_workers.talker: Building scheduler for code2wav (tp_rank=0/1) ...
+[transformers] You are using a model of type `minicpmo` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+2026-10-22 13:39:20,658 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:39:20,658 [INFO] stage_workers.pipeline: Set current device to 0 for stage thinker
+2026-10-22 13:39:20,658 [INFO] stage_workers.pipeline: Building scheduler for thinker (tp_rank=0/1) ...
+
+Visit 4: ready; starting 32 disjoint warmup then 32 measured requests
+Visit 4: C8 warmup: 32/32, valid=True, elapsed=8.105s
+Visit 4: C8 measured: 32/32, valid=True, elapsed=4.362s
+Visit 5: starting baseline with default compilation and graphs
+Visit 5 startup: ing batches (bs=32 avail_mem=13.84 GB):  25%|██▌       | 3/12 [00:01<00:03,  2.78it/s]
+Capturing batches (bs=32 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.76it/s]
+Capturing batches (bs=24 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.76it/s]
+Capturing batches (bs=16 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.76it/s]
+Capturing batches (bs=16 avail_mem=13.84 GB):  58%|█████▊    | 7/12 [00:01<00:00,  6.02it/s]
+Capturing batches (bs=12 avail_mem=13.83 GB):  58%|█████▊    | 7/12 [00:01<00:00,  6.02it/s]
+Capturing batches (bs=8 avail_mem=13.83 GB):  58%|█████▊    | 7/12 [00:01<00:00,  6.02it/s] 
+Capturing batches (bs=8 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.67it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.67it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.67it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:01<00:00,  8.97it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:01<00:00,  8.97it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  5.86it/s]
+
+Visit 5 startup: |███████▌  | 9/12 [00:01<00:00,  7.67it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.67it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.67it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:01<00:00,  8.97it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:01<00:00,  8.97it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  5.86it/s]
+2026-10-22 13:41:46,492 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=3.01 s, mem usage=0.12 GB, avail mem=13.82 GB.
+2026-10-22 13:41:47,209 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=thinker gpu_id=0 post_load_avail_mem=13.822998046875 pid=3235
+2026-10-22 13:41:47,210 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:41:47,210 [INFO] stage_workers.pipeline: Set current device to 0 for stage image_encoder
+2026-10-22 13:41:47,211 [INFO] stage_workers.pipeline: Building scheduler for image_encoder (tp_rank=0/1) ...
+
+Visit 5: ready; starting 32 disjoint warmup then 32 measured requests
+Visit 5: C16 warmup: 32/32, valid=True, elapsed=6.932s
+Visit 5: C16 measured: 32/32, valid=True, elapsed=3.066s
+Visit 6: starting optimized with default compilation and graphs
+Visit 6 startup: tches (bs=24 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.41it/s]
+Capturing batches (bs=16 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.41it/s]
+Capturing batches (bs=16 avail_mem=13.84 GB):  58%|█████▊    | 7/12 [00:01<00:00,  5.69it/s]
+Capturing batches (bs=12 avail_mem=13.83 GB):  58%|█████▊    | 7/12 [00:01<00:00,  5.69it/s]
+Capturing batches (bs=8 avail_mem=13.83 GB):  58%|█████▊    | 7/12 [00:01<00:00,  5.69it/s] 
+Capturing batches (bs=8 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  6.77it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  6.77it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:02<00:00,  6.77it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:02<00:00,  8.31it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:02<00:00,  8.31it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  5.49it/s]
+2026-10-22 13:43:59,804 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=3.12 s, mem usage=0.12 GB, avail mem=13.82 GB.
+
+Visit 6 startup: |███████▌  | 9/12 [00:01<00:00,  6.77it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  6.77it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:02<00:00,  6.77it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:02<00:00,  8.31it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:02<00:00,  8.31it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  5.49it/s]
+2026-10-22 13:43:59,804 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=3.12 s, mem usage=0.12 GB, avail mem=13.82 GB.
+2026-10-22 13:44:00,505 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=thinker gpu_id=0 post_load_avail_mem=13.822998046875 pid=3916
+2026-10-22 13:44:00,506 [INFO] stage_workers.pipeline: Set current device to 0 for stage image_encoder
+2026-10-22 13:44:00,506 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:44:00,507 [INFO] stage_workers.pipeline: Building scheduler for image_encoder (tp_rank=0/1) ...
+
+Visit 6: ready; starting 32 disjoint warmup then 32 measured requests
+Visit 6: C16 warmup: 32/32, valid=True, elapsed=6.344s
+Visit 6: C16 measured: 32/32, valid=True, elapsed=2.956s
+Visit 7: starting optimized with default compilation and graphs
+Visit 7 startup: tches (bs=24 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.50it/s]
+Capturing batches (bs=16 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.50it/s]
+Capturing batches (bs=16 avail_mem=13.84 GB):  58%|█████▊    | 7/12 [00:01<00:00,  5.85it/s]
+Capturing batches (bs=12 avail_mem=13.83 GB):  58%|█████▊    | 7/12 [00:01<00:00,  5.85it/s]
+Capturing batches (bs=8 avail_mem=13.83 GB):  58%|█████▊    | 7/12 [00:01<00:00,  5.85it/s] 
+Capturing batches (bs=8 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.19it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.19it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.19it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:02<00:00,  8.98it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:02<00:00,  8.98it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  5.71it/s]
+2026-10-22 13:46:14,744 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=3.03 s, mem usage=0.12 GB, avail mem=13.82 GB.
+
+Visit 7 startup: |███████▌  | 9/12 [00:01<00:00,  7.19it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.19it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:01<00:00,  7.19it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:02<00:00,  8.98it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:02<00:00,  8.98it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  5.71it/s]
+2026-10-22 13:46:14,744 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=3.03 s, mem usage=0.12 GB, avail mem=13.82 GB.
+2026-10-22 13:46:15,442 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=thinker gpu_id=0 post_load_avail_mem=13.822998046875 pid=4599
+2026-10-22 13:46:15,442 [INFO] stage_workers.pipeline: Set current device to 0 for stage image_encoder
+2026-10-22 13:46:15,442 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:46:15,443 [INFO] stage_workers.pipeline: Building scheduler for image_encoder (tp_rank=0/1) ...
+
+Visit 7: ready; starting 32 disjoint warmup then 32 measured requests
+Visit 7: C32 warmup: 32/32, valid=True, elapsed=7.427s
+Visit 7: C32 measured: 32/32, valid=True, elapsed=3.023s
+Visit 8: starting baseline with default compilation and graphs
+Visit 8 startup: ing 0.10 GB of the KV budget for post-sizing multimodal allocations (feature-transport pools + embedding cache).
+2026-10-22 13:48:34,560 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 290410, K size: 19.94 GB, V size: 19.94 GB
+2026-10-22 13:48:34,561 [INFO] sglang.srt.mem_cache.kv_cache_configurator: Memory pool end. avail mem=14.03 GB
+2026-10-22 13:48:34,681 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Disable prefill CUDA graph because cuda_graph_config resolved prefill.backend='disabled' (e.g. via --cuda-graph-backend-prefill=disabled or auto-disable rules).
+2026-10-22 13:48:34,682 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph begin. backend=full, num_tokens_per_req=1, bs=[1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64], avail mem=13.94 GB
+
+  0%|          | 0/12 [00:00<?, ?it/s]
+Capturing batches (bs=64 avail_mem=13.90 GB):   0%|          | 0/12 [00:00<?, ?it/s]
+Capturing batches (bs=64 avail_mem=13.90 GB):   8%|▊         | 1/12 [00:01<00:13,  1.22s/it]
+Capturing batches (bs=56 avail_mem=13.85 GB):   8%|▊         | 1/12 [00:01<00:13,  1.22s/it]
+Visit 8 startup: |███████▌  | 9/12 [00:02<00:00,  6.00it/s]
+Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:02<00:00,  6.00it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:02<00:00,  6.00it/s]
+Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:02<00:00,  7.57it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB):  92%|█████████▏| 11/12 [00:02<00:00,  7.57it/s]
+Capturing batches (bs=1 avail_mem=13.82 GB): 100%|██████████| 12/12 [00:02<00:00,  5.10it/s]
+2026-10-22 13:48:37,922 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=3.24 s, mem usage=0.12 GB, avail mem=13.82 GB.
+2026-10-22 13:48:38,603 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=thinker gpu_id=0 post_load_avail_mem=13.822998046875 pid=5280
+2026-10-22 13:48:38,604 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 13:48:38,604 [INFO] stage_workers.pipeline: Set current device to 0 for stage image_encoder
+2026-10-22 13:48:38,604 [INFO] stage_workers.pipeline: Building scheduler for image_encoder (tp_rank=0/1) ...
+
+Visit 8: ready; starting 32 disjoint warmup then 32 measured requests
+Visit 8: C32 warmup: 32/32, valid=True, elapsed=6.177s
+Visit 8: C32 measured: 32/32, valid=True, elapsed=3.169s
+Artifacts: /private/tmp/minicpm-e2e-20261022/experiment/20261022T132646Z; {'status': 'complete', 'completed_visits': 8}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/xinyuj2/main/ap-iVdzEYTxfZqYswSddR7UKF

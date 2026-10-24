@@ -1,0 +1,109 @@
+WARN `--no-project` was provided, but no project was found
+✓ Initialized. View run at 
+https://modal.com/apps/xinyuj2/main/ap-q97i5px5WKHKe9Ime0X4wG
+Building image im-VUCidmgZ3LIb8JHwXUfloL
+
+=> Step 0: FROM base
+
+=> Step 1: RUN uv pip install --system --no-deps torch==2.14.1 torchvision==0.29.1 torchaudio==2.11.0 sglang==0.5.22 transformers==5.19.0
+Using Python 3.12.3 environment at: /usr
+Resolved 5 packages in 37ms
+Downloading torchvision (7.1MiB)
+Downloading transformers (12.0MiB)
+Downloading torch (528.9MiB)
+Downloading sglang (32.8MiB)
+ Downloaded torchvision
+ Downloaded transformers
+ Downloaded sglang
+ Downloaded torch
+Prepared 4 packages in 3.45s
+Uninstalled 4 packages in 2.25s
+Installed 4 packages in 1.84s
+Bytecode compiled 9639 files in 6.38s
+ - sglang==0.5.18 (from file:///sgl-workspace/sglang/python)
+ + sglang==0.5.22
+ - torch==2.13.0+cu130
+ + torch==2.14.1
+ - torchvision==0.28.0+cu130
+ + torchvision==0.29.1
+ - transformers==5.12.1
+ + transformers==5.19.0
+
+=> Step 2: RUN uv pip install --system "onnx>=1.18.0" "einops>=0.8.1" "audioread>=3.0.0" "av>=16.1.0" decord==0.6.0 qwen-vl-utils==0.0.11 python-multipart s3prl jiwer
+Using Python 3.12.3 environment at: /usr
+Resolved 73 packages in 225ms
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading onnx (8.5MiB)
+Downloading triton (236.5MiB)
+Downloading decord (13.0MiB)
+Downloading tokenizers (3.2MiB)
+Downloading nvidia-nccl-cu13 (206.0MiB)
+ Downloaded tokenizers
+ Downloaded decord
+ Downloaded onnx
+ Downloaded nvidia-nccl-cu13
+ Downloaded triton
+ Downloaded nvidia-cudnn-cu13
+Prepared 8 packages in 1.57s
+Uninstalled 5 packages in 58ms
+Installed 8 packages in 110ms
+Bytecode compiled 892 files in 322ms
+ + audioread==3.1.0
+ + decord==0.6.0
+ - huggingface-hub==1.28.0
+ + huggingface-hub==2.3.0
+ - nvidia-cudnn-cu13==9.20.0.48
+ + nvidia-cudnn-cu13==9.24.0.43
+ - nvidia-nccl-cu13==2.29.7
+ + nvidia-nccl-cu13==2.30.7
+ + onnx==1.23.2
+ - tokenizers==0.22.2
+ + tokenizers==0.23.3
+ - triton==3.7.1
+ + triton==3.8.0
+Saving image...
+Image saved, took 7.02s
+
+Built image im-VUCidmgZ3LIb8JHwXUfloL in 28.83s
+
+
+Building image im-xcX8kfB8VgoYG2fpiuYich
+
+=> Step 0: FROM base
+
+=> Step 1: ENV PYTHONUNBUFFERED=1
+
+=> Step 2: ENV HF_HOME=/root/.cache/hf_cache
+
+=> Step 3: ENV OMP_NUM_THREADS=4
+Saving image...
+Image saved, took 5.67s
+
+Built image im-xcX8kfB8VgoYG2fpiuYich in 7.96s
+
+
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/run_moda
+│   l.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/optimize
+│   d.tar
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/baseline
+│   .tar
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID 20261023T210310Z
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/awq/awq.py:53: UserWarning: Only CUDA, HIP and XPU support AWQ currently.
+  warnings.warn(f"Only CUDA, HIP and XPU support AWQ currently.")
+/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/gguf.py:69: UserWarning: Only CUDA, MUSA and NPU support GGUF quantization currently.
+  warnings.warn(f"Only CUDA, MUSA and NPU support GGUF quantization currently.")
+/usr/local/lib/python3.12/dist-packages/sglang/kernels/ops/attention/fla/utils.py:223: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+2.14.1+cu130
+{'status': 'imports_passed'}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/xinyuj2/main/ap-q97i5px5WKHKe9Ime0X4wG

@@ -1,0 +1,371 @@
+{
+  "valid": true,
+  "run_id": "20261020T171213Z",
+  "unprofiled": {
+    "valid": true,
+    "measured_passes": 40,
+    "requests_per_pass": 8,
+    "batches": [
+      {
+        "batch": "A",
+        "input_frames": [
+          302,
+          368,
+          570,
+          474
+        ],
+        "expected_graph_shape": [
+          4,
+          576
+        ],
+        "generated_token_lengths": [
+          53,
+          86,
+          123,
+          75
+        ],
+        "reference_token_lengths": [
+          98,
+          98,
+          162,
+          162
+        ],
+        "hift_groups": {
+          "53": 1,
+          "75": 1,
+          "86": 1,
+          "123": 1
+        }
+      },
+      {
+        "batch": "B",
+        "input_frames": [
+          302,
+          368,
+          570,
+          474
+        ],
+        "expected_graph_shape": [
+          4,
+          576
+        ],
+        "generated_token_lengths": [
+          53,
+          86,
+          123,
+          75
+        ],
+        "reference_token_lengths": [
+          98,
+          98,
+          162,
+          162
+        ],
+        "hift_groups": {
+          "53": 1,
+          "75": 1,
+          "86": 1,
+          "123": 1
+        }
+      }
+    ],
+    "scope": "Same-code ready-input Code2Wav replay; two fixed Flow batches, unchanged per-batch HiFT grouping; no HTTP, Talker, scheduler admission, reference preparation, or input upload in timed interval.",
+    "timing": "Host wall-clock until all eight CPU waveforms returned. No profiler, record_function, or timing CUDA events in measured passes.",
+    "serial": {
+      "n": 20,
+      "mean_ms": 153.09319404999826,
+      "median_ms": 153.0265259999979,
+      "stdev_ms": 1.9220821793632616,
+      "min_ms": 149.19557100000702,
+      "max_ms": 156.24318599999754
+    },
+    "overlap": {
+      "n": 20,
+      "mean_ms": 131.1176304000007,
+      "median_ms": 130.98771099999595,
+      "stdev_ms": 0.9732240025849596,
+      "min_ms": 129.6920190000037,
+      "max_ms": 133.87143299999593
+    },
+    "mean_time_reduction_percent": 14.354370085727396
+  },
+  "paired_blocks": [
+    {
+      "block": 0,
+      "serial_mean_ms": 152.36510550000304,
+      "overlap_mean_ms": 131.81624900000344,
+      "reduction_ms": 20.5488564999996,
+      "reduction_percent": 13.486589618119083
+    },
+    {
+      "block": 1,
+      "serial_mean_ms": 155.78044399999413,
+      "overlap_mean_ms": 131.06451600000213,
+      "reduction_ms": 24.715927999992005,
+      "reduction_percent": 15.86587338266473
+    },
+    {
+      "block": 2,
+      "serial_mean_ms": 151.76366749999914,
+      "overlap_mean_ms": 130.69244449999928,
+      "reduction_ms": 21.07122299999986,
+      "reduction_percent": 13.884234182730182
+    },
+    {
+      "block": 3,
+      "serial_mean_ms": 153.59232550000002,
+      "overlap_mean_ms": 130.59214450000667,
+      "reduction_ms": 23.000180999993347,
+      "reduction_percent": 14.974824376881612
+    },
+    {
+      "block": 4,
+      "serial_mean_ms": 152.71326699999577,
+      "overlap_mean_ms": 130.83576150000198,
+      "reduction_ms": 21.877505499993788,
+      "reduction_percent": 14.32587091466938
+    },
+    {
+      "block": 5,
+      "serial_mean_ms": 152.94908499999593,
+      "overlap_mean_ms": 130.98771099999595,
+      "reduction_ms": 21.961373999999978,
+      "reduction_percent": 14.358617444491784
+    },
+    {
+      "block": 6,
+      "serial_mean_ms": 153.41553699999366,
+      "overlap_mean_ms": 130.84014999999738,
+      "reduction_ms": 22.575386999996283,
+      "reduction_percent": 14.715189505217596
+    },
+    {
+      "block": 7,
+      "serial_mean_ms": 153.7208614999983,
+      "overlap_mean_ms": 130.50564050000446,
+      "reduction_ms": 23.215220999993846,
+      "reduction_percent": 15.10219287965291
+    },
+    {
+      "block": 8,
+      "serial_mean_ms": 152.60600800000645,
+      "overlap_mean_ms": 130.90898899999814,
+      "reduction_ms": 21.69701900000831,
+      "reduction_percent": 14.217670250575843
+    },
+    {
+      "block": 9,
+      "serial_mean_ms": 152.02563949999615,
+      "overlap_mean_ms": 132.93269799999763,
+      "reduction_ms": 19.092941499998517,
+      "reduction_percent": 12.559027255398592
+    }
+  ],
+  "positive_blocks": 10,
+  "correctness": {
+    "unprofiled": {
+      "mel": [
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        }
+      ],
+      "waveform": [
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": false,
+          "max_abs": 8.344650268554688e-05,
+          "relative_rms": 2.820831814572586e-05
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        }
+      ]
+    },
+    "trace": {
+      "mel": [
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        }
+      ],
+      "waveform": [
+        {
+          "exact": false,
+          "max_abs": 2.9753893613815308e-05,
+          "relative_rms": 7.440790427419611e-06
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        },
+        {
+          "exact": true,
+          "max_abs": 0.0,
+          "relative_rms": 0.0
+        }
+      ]
+    }
+  },
+  "kernel_source_attribution": [
+    {
+      "region": "Flow/A/graph",
+      "kernels_per_mode": 4020,
+      "serial_kernel_sum_ms": 43.393802,
+      "overlap_kernel_sum_ms": 43.132779,
+      "kernel_sum_increase_percent": -0.6015213877779146,
+      "serial_gpu_span_ms": 46.588209000000006,
+      "overlap_gpu_span_ms": 46.336048,
+      "source": "flow_cuda_graph.py:372 run_step -> captured.graph.replay"
+    },
+    {
+      "region": "HiFT/A",
+      "kernels_per_mode": 2180,
+      "serial_kernel_sum_ms": 10.866386,
+      "overlap_kernel_sum_ms": 17.731964,
+      "kernel_sum_increase_percent": 63.181797517592344,
+      "serial_gpu_span_ms": 37.149536999999995,
+      "overlap_gpu_span_ms": 37.285505,
+      "source": "code2wav.py:468 decode_mel -> token2wav.hift"
+    },
+    {
+      "region": "Flow/B/graph",
+      "kernels_per_mode": 4020,
+      "serial_kernel_sum_ms": 43.088781,
+      "overlap_kernel_sum_ms": 48.621526,
+      "kernel_sum_increase_percent": 12.84033772039177,
+      "serial_gpu_span_ms": 46.28756899999999,
+      "overlap_gpu_span_ms": 52.75158,
+      "source": "flow_cuda_graph.py:372 run_step -> captured.graph.replay"
+    },
+    {
+      "region": "HiFT/B",
+      "kernels_per_mode": 2180,
+      "serial_kernel_sum_ms": 10.842417,
+      "overlap_kernel_sum_ms": 10.983733,
+      "kernel_sum_increase_percent": 1.3033625251639203,
+      "serial_gpu_span_ms": 36.851968,
+      "overlap_gpu_span_ms": 34.259675999999985,
+      "source": "code2wav.py:468 decode_mel -> token2wav.hift"
+    }
+  ],
+  "graph_ids": {
+    "serial": [
+      188
+    ],
+    "overlap": [
+      188
+    ]
+  },
+  "same_ab_graph_signatures": {
+    "serial": true,
+    "overlap": true
+  },
+  "matching_serial_overlap_signatures": {
+    "Decode/A/helper": true,
+    "Decode/B/helper": true,
+    "Flow/A/graph": true,
+    "Flow/A/preparation": true,
+    "Flow/B/graph": true,
+    "Flow/B/preparation": true,
+    "HiFT/A": true,
+    "HiFT/B": true
+  },
+  "kernel_intersection_ms": {
+    "serial": 0.0,
+    "overlap": 15.267995
+  },
+  "overlap_opportunities": [
+    {
+      "producer": "Flow A",
+      "consumer": "HiFT A",
+      "independent_work": "Flow B",
+      "dependency": "Flow readiness event on HiFT stream",
+      "observed": true
+    }
+  ],
+  "fusion_patterns": [
+    {
+      "scope": "Flow and HiFT compiled kernels",
+      "change": "None; existing compiled execution retained",
+      "candidate": "No fusion proposal evaluated in this scheduling control"
+    }
+  ],
+  "attribution_confidence": "Observed kernels mapped through launch correlation to same-thread NVTX scopes; no eager timing transfer.",
+  "limitations": [
+    "Four unique real samples replayed twice; not eight unique utterances.",
+    "One diagnostic trace per mode; component slowdowns are observations, not repeatability estimates.",
+    "Nsight possible-incomplete-event warnings retained; observed marker, launch, and correlation gates passed.",
+    "No SM, cache, bandwidth, clock or power counters captured; the specific resource causing slowdown is unresolved.",
+    "Isolated ready-input Code2Wav result; no serving throughput claim."
+  ]
+}

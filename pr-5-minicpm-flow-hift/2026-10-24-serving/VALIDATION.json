@@ -1,0 +1,40 @@
+{
+  "complete_cells": 16,
+  "formal_successes": 4096,
+  "warmup_successes": 2048,
+  "matched_formal_ids": true,
+  "matched_kv_capacity": true,
+  "matching_resolved_configuration": true,
+  "input_checksums_match": true,
+  "retrieved_files_verified": 13009,
+  "text_output_parity": {
+    "1": {
+      "pairs": 512,
+      "text_changed": 0,
+      "finish_reasons": {
+        "stop": 1024
+      }
+    },
+    "8": {
+      "pairs": 512,
+      "text_changed": 0,
+      "finish_reasons": {
+        "stop": 1024
+      }
+    },
+    "16": {
+      "pairs": 512,
+      "text_changed": 0,
+      "finish_reasons": {
+        "stop": 1024
+      }
+    },
+    "32": {
+      "pairs": 512,
+      "text_changed": 0,
+      "finish_reasons": {
+        "stop": 1024
+      }
+    }
+  }
+}

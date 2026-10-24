@@ -1,0 +1,50 @@
+[
+  {
+    "concurrency": 1,
+    "paired_repeats": 2,
+    "requests_per_variant": 512,
+    "baseline_qps": 3.513110464466653,
+    "optimized_qps": 3.501010569987524,
+    "qps_change_percent": -0.34442112200891994,
+    "baseline_audio_seconds_per_second": 14.549766557992669,
+    "optimized_audio_seconds_per_second": 14.499654088763952,
+    "audio_throughput_change_percent": -0.34442112200891994,
+    "total_audio_change_percent": 0.0
+  },
+  {
+    "concurrency": 8,
+    "paired_repeats": 2,
+    "requests_per_variant": 512,
+    "baseline_qps": 10.862265624316803,
+    "optimized_qps": 12.093560984327077,
+    "qps_change_percent": 11.335529829558144,
+    "baseline_audio_seconds_per_second": 44.99184366172095,
+    "optimized_audio_seconds_per_second": 50.79862499088513,
+    "audio_throughput_change_percent": 12.906297801049194,
+    "total_audio_change_percent": 1.410841600965762
+  },
+  {
+    "concurrency": 16,
+    "paired_repeats": 2,
+    "requests_per_variant": 512,
+    "baseline_qps": 15.960651631969816,
+    "optimized_qps": 16.917748599093574,
+    "qps_change_percent": 5.996603329194006,
+    "baseline_audio_seconds_per_second": 66.49731178760301,
+    "optimized_audio_seconds_per_second": 70.06987827976138,
+    "audio_throughput_change_percent": 5.372497618504335,
+    "total_audio_change_percent": -0.5887978398245508
+  },
+  {
+    "concurrency": 32,
+    "paired_repeats": 2,
+    "requests_per_variant": 512,
+    "baseline_qps": 22.09352485001815,
+    "optimized_qps": 21.812914847433387,
+    "qps_change_percent": -1.270100649351702,
+    "baseline_audio_seconds_per_second": 92.44586698766581,
+    "optimized_audio_seconds_per_second": 90.51678008095871,
+    "audio_throughput_change_percent": -2.086720552866339,
+    "total_audio_change_percent": -0.8271252263859052
+  }
+]

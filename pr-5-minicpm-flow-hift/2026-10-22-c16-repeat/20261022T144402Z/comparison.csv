@@ -1,0 +1,2 @@
+concurrency,qps_change_pct,mean_latency_change_pct,p95_latency_change_pct,audio_throughput_change_pct,audio_total_change_pct,equal_audio_length_requests,equal_completion_token_requests,requests_audio_change_over_10pct,mean_absolute_audio_delta_s,maximum_absolute_audio_delta_s
+16,12.791749511204298,-18.89018428932321,-25.97509946344315,10.943287180733874,-1.638827607942006,13,32,8,0.2675,1.4400000000000004

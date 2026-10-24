@@ -1,0 +1,14 @@
+{
+  "all_cells_valid": true,
+  "measured_requests": 256,
+  "warmup_requests": 256,
+  "same_fixed_inputs": true,
+  "warmup_and_measured_disjoint": true,
+  "resolved_configs_identical": true,
+  "no_torch_profiler_api_calls_or_artifacts": true,
+  "all_gpu_processes_stopped_after_cells": true,
+  "all_request_event_joins_exact": true,
+  "all_required_stage_boundaries_unique": true,
+  "all_stage_intervals_nonnegative": true,
+  "warmup_not_profiled": true
+}

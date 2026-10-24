@@ -1,0 +1,5 @@
+Possible --gpu-metrics-devices values are:
+	0: Hopper GH100 | NVIDIA H100 80GB HBM3 PCI[000c:00:00.0]
+	all: Select all supported GPUs
+	cuda-visible: Select GPUs that match CUDA_VISIBLE_DEVICES
+	none: Disable GPU Metrics [Default]

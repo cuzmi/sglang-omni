@@ -1,0 +1,51 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Inputs ready: [{'batch': 'A', 'input_frames': [302, 368, 570, 474], 'expected_graph_shape': (4, 576), 'generated_token_lengths': [53, 86, 123, 75], 'reference_token_lengths': [98, 98, 162, 162], 'hift_groups': {'53': 1, '75': 1, '86': 1, '123': 1}}, {'batch': 'B', 'input_frames': [302, 368, 570, 474], 'expected_graph_shape': (4, 576), 'generated_token_lengths': [53, 86, 123, 75], 'reference_token_lengths': [98, 98, 162, 162], 'hift_groups': {'53': 1, '75': 1, '86': 1, '123': 1}}]
+{"name": "warmup_serial_0", "overlap": false, "completion_ms": 627.1971479999934, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_overlap_0", "overlap": true, "completion_ms": 117.70027599999366, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_serial_1", "overlap": false, "completion_ms": 143.21310900000128, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_overlap_1", "overlap": true, "completion_ms": 129.1337850000076, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "validation_serial", "overlap": false, "completion_ms": 150.05939000000978, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "validation_overlap", "overlap": true, "completion_ms": 120.77261399998918, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_serial_00", "overlap": false, "completion_ms": 177.78900200001146, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_overlap_01", "overlap": true, "completion_ms": 131.89838099999918, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_overlap_02", "overlap": true, "completion_ms": 132.94730900000218, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_serial_03", "overlap": false, "completion_ms": 162.48714400001063, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_serial_04", "overlap": false, "completion_ms": 161.86926499999288, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_overlap_05", "overlap": true, "completion_ms": 129.35407199999815, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_overlap_06", "overlap": true, "completion_ms": 134.9317740000089, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_serial_07", "overlap": false, "completion_ms": 179.4553220000097, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+GPU 0: General Metrics for NVIDIA GH100
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-root/nsys-report-eda3.qdstrm'
+
+[1/1] [0%                          ] timeline.nsys-repProcessing events...
+
+[1/1] [0%                          ] timeline.nsys-rep
+[1/1] [1%                          ] timeline.nsys-rep
+[1/1] [2%                          ] timeline.nsys-rep
+[1/1] [5%                          ] timeline.nsys-rep
+[1/1] [6%                          ] timeline.nsys-rep
+[1/1] [7%                          ] timeline.nsys-rep
+[1/1] [8%                          ] timeline.nsys-rep
+[1/1] [9%                          ] timeline.nsys-rep
+[1/1] [10%                         ] timeline.nsys-rep
+[1/1] [11%                         ] timeline.nsys-rep
+[1/1] [12%                         ] timeline.nsys-rep
+[1/1] [13%                         ] timeline.nsys-rep
+[1/1] [14%                         ] timeline.nsys-rep
+[1/1] [=15%                        ] timeline.nsys-rep
+[1/1] [=16%                        ] timeline.nsys-rep
+[1/1] [=17%                        ] timeline.nsys-rep
+[1/1] [==18%                       ] timeline.nsys-rep
+[1/1] [==19%                       ] timeline.nsys-rep
+[1/1] [==20%                       ] timeline.nsys-rep
+[1/1] [======================91%   ] timeline.nsys-rep
+[1/1] [=======================93%  ] timeline.nsys-rep
+[1/1] [=======================96%  ] timeline.nsys-rep
+[1/1] [========================98% ] timeline.nsys-rep
+[1/1] [========================100%] timeline.nsys-rep
+[1/1] [========================100%] timeline.nsys-rep
+Completed NVTX trace experiment.
+Generated:
+	/results/minicpm-same-graph-sm-metrics/20261020T175814Z/trace/timeline.nsys-rep

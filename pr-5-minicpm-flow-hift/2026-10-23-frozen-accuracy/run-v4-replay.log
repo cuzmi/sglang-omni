@@ -1,0 +1,111 @@
+WARN `--no-project` was provided, but no project was found
+✓ Initialized. View run at 
+https://modal.com/apps/xinyuj2/main/ap-1be9G8GLarhHJ0PLMPleec
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/run_moda
+│   l.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/compare.
+│   py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/quality.
+│   py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/driver.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/replay.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/prepare_
+│   data.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/client.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/capture_
+│   hook.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/optimize
+│   d.tar
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/baseline
+│   .tar
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID 20261023T214600Z
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+baseline: 32/256 outputs
+baseline: 64/256 outputs
+baseline: 96/256 outputs
+baseline: 128/256 outputs
+baseline: 160/256 outputs
+baseline: 192/256 outputs
+baseline: 224/256 outputs
+baseline: 256/256 outputs
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+optimized: 32/256 outputs
+optimized: 64/256 outputs
+optimized: 96/256 outputs
+optimized: 128/256 outputs
+optimized: 160/256 outputs
+optimized: 192/256 outputs
+optimized: 224/256 outputs
+optimized: 256/256 outputs
+{
+  "samples": 256,
+  "mel_exact": 256,
+  "wave_exact": 246,
+  "all_bit_exact": false,
+  "max_wave_abs": 0.3652174472808838,
+  "max_wave_relative_rms": 0.303545332444394
+}
+
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]
+Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 769.48it/s]
+WER: 32/256 pairs
+WER: 64/256 pairs
+WER: 96/256 pairs
+WER: 128/256 pairs
+WER: 160/256 pairs
+WER: 192/256 pairs
+WER: 224/256 pairs
+WER: 256/256 pairs
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/opt/sglang/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+/opt/sglang/lib/python3.12/site-packages/torch/nn/functional.py:6829: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  key_padding_mask = _canonical_mask(
+/opt/sglang/lib/python3.12/site-packages/torch/nn/functional.py:6829: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  key_padding_mask = _canonical_mask(
+Similarity: 32/256 pairs
+Similarity: 64/256 pairs
+Similarity: 96/256 pairs
+Similarity: 128/256 pairs
+Similarity: 160/256 pairs
+Similarity: 192/256 pairs
+Similarity: 224/256 pairs
+Similarity: 256/256 pairs
+{
+  "samples": 256,
+  "asr_checkpoint": "/__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--Qwen--Qwen3-ASR-1.7B/snapshots/7278e1e70fe206f11671096ffdd38061171dd6e5",
+  "speaker_assets": {
+    "finetune": "/root/.cache/sglang-omni/speaker_sim/wavlm_large_finetune.pth",
+    "base": "/root/.cache/sglang-omni/speaker_sim/wavlm_large.pt"
+  },
+  "baseline": {
+    "corpus_wer_percent": 2.5127458120903134,
+    "mean_similarity_0_100": 48.46123830974102,
+    "wer_over_50_percent": 4
+  },
+  "optimized": {
+    "corpus_wer_percent": 2.5127458120903134,
+    "mean_similarity_0_100": 48.460693165659904,
+    "wer_over_50_percent": 4
+  }
+}
+Artifacts: /Users/cuzimi/Coding Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/20261023T214600Z; {'status': 'complete'}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/xinyuj2/main/ap-1be9G8GLarhHJ0PLMPleec

@@ -1,0 +1,10 @@
+{
+  "all_cells_valid": true,
+  "measured_requests": 256,
+  "warmup_requests": 256,
+  "same_fixed_inputs": true,
+  "warmup_and_measured_disjoint": true,
+  "resolved_configs_identical": true,
+  "no_profiler_api_calls_or_artifacts": true,
+  "all_gpu_processes_stopped_after_cells": true
+}

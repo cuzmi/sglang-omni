@@ -1,0 +1,159 @@
+{
+  "title": "Two ready Code2Wav batches: serial versus overlap",
+  "source_commit": "917821a95770c89f875fc0e4c4456f85c221d441",
+  "successful_run": "20261020T135528Z",
+  "no_profiler_or_trace": true,
+  "result": {
+    "valid": true,
+    "measured_passes": 40,
+    "requests_per_pass": 8,
+    "batches": [
+      {
+        "batch": "A",
+        "input_frames": [
+          302,
+          368,
+          570,
+          474
+        ],
+        "expected_graph_shape": [
+          4,
+          576
+        ],
+        "generated_token_lengths": [
+          53,
+          86,
+          123,
+          75
+        ],
+        "reference_token_lengths": [
+          98,
+          98,
+          162,
+          162
+        ],
+        "hift_groups": {
+          "53": 1,
+          "75": 1,
+          "86": 1,
+          "123": 1
+        }
+      },
+      {
+        "batch": "B",
+        "input_frames": [
+          576,
+          556,
+          652,
+          490
+        ],
+        "expected_graph_shape": [
+          4,
+          672
+        ],
+        "generated_token_lengths": [
+          96,
+          86,
+          177,
+          96
+        ],
+        "reference_token_lengths": [
+          192,
+          192,
+          149,
+          149
+        ],
+        "hift_groups": {
+          "86": 1,
+          "96": 2,
+          "177": 1
+        }
+      }
+    ],
+    "scope": "Same-code ready-input Code2Wav replay; two fixed Flow batches, unchanged per-batch HiFT grouping; no HTTP, Talker, scheduler admission, reference preparation, or input upload in timed interval.",
+    "timing": "Host wall-clock until all eight CPU waveforms returned. No profiler, record_function, or timing CUDA events in measured passes.",
+    "serial": {
+      "n": 20,
+      "mean_ms": 146.58644300000034,
+      "median_ms": 143.35290300000025,
+      "stdev_ms": 7.212346230720233,
+      "min_ms": 140.0768920000104,
+      "max_ms": 170.43088900000214
+    },
+    "overlap": {
+      "n": 20,
+      "mean_ms": 123.57840315000104,
+      "median_ms": 122.28015100000533,
+      "stdev_ms": 2.6749901092731236,
+      "min_ms": 121.20294600001102,
+      "max_ms": 130.42168500000173
+    },
+    "mean_time_reduction_percent": 15.695885225893125
+  },
+  "paired_blocks_all_faster": true,
+  "correctness": {
+    "mel": [
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      },
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      }
+    ],
+    "waveform": [
+      {
+        "exact": false,
+        "max_abs": 3.993883728981018e-05,
+        "relative_rms": 1.1477744326692765e-05
+      },
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      },
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      },
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      },
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      },
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      },
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      },
+      {
+        "exact": true,
+        "max_abs": 0.0,
+        "relative_rms": 0.0
+      }
+    ]
+  },
+  "data_origin": "First eight archived C1 target WAVs were re-tokenized. These are not saved original Talker codec tokens. References and tokens are fixed across modes.",
+  "first_attempt": "20261020T135144Z is invalid: private HiFT RNG was not reset. It stopped at correctness gate before formal timing or any profiler call. Corrected harness resets HiFT private generator outside every timing interval; model source unchanged.",
+  "scope": "Same source, ready input tensors, two fixed batches of four, identical per-batch HiFT grouping. No C32 or HTTP serving conclusion; no kernel-level claims.",
+  "files": {
+    "raw_passes": "20261020T135528Z/passes.json",
+    "inputs": "20261020T135528Z/inputs.json",
+    "protocol": "PROTOCOL.md",
+    "environment": "20261020T135528Z/environment.json"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "valid": true,
+  "measured_passes": 40,
+  "requests_per_pass": 8,
+  "batches": [
+    {
+      "batch": "A",
+      "input_frames": [
+        302,
+        368,
+        570,
+        474
+      ],
+      "expected_graph_shape": [
+        4,
+        576
+      ],
+      "generated_token_lengths": [
+        53,
+        86,
+        123,
+        75
+      ],
+      "reference_token_lengths": [
+        98,
+        98,
+        162,
+        162
+      ],
+      "hift_groups": {
+        "53": 1,
+        "75": 1,
+        "86": 1,
+        "123": 1
+      }
+    },
+    {
+      "batch": "B",
+      "input_frames": [
+        302,
+        368,
+        570,
+        474
+      ],
+      "expected_graph_shape": [
+        4,
+        576
+      ],
+      "generated_token_lengths": [
+        53,
+        86,
+        123,
+        75
+      ],
+      "reference_token_lengths": [
+        98,
+        98,
+        162,
+        162
+      ],
+      "hift_groups": {
+        "53": 1,
+        "75": 1,
+        "86": 1,
+        "123": 1
+      }
+    }
+  ],
+  "scope": "Same-code ready-input Code2Wav replay; two fixed Flow batches, unchanged per-batch HiFT grouping; no HTTP, Talker, scheduler admission, reference preparation, or input upload in timed interval.",
+  "timing": "Host wall-clock until all eight CPU waveforms returned. No profiler, record_function, or timing CUDA events in measured passes.",
+  "serial": {
+    "n": 20,
+    "mean_ms": 153.09319404999826,
+    "median_ms": 153.0265259999979,
+    "stdev_ms": 1.9220821793632616,
+    "min_ms": 149.19557100000702,
+    "max_ms": 156.24318599999754
+  },
+  "overlap": {
+    "n": 20,
+    "mean_ms": 131.1176304000007,
+    "median_ms": 130.98771099999595,
+    "stdev_ms": 0.9732240025849596,
+    "min_ms": 129.6920190000037,
+    "max_ms": 133.87143299999593
+  },
+  "mean_time_reduction_percent": 14.354370085727396
+}

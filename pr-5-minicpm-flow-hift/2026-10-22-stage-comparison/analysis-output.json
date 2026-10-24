@@ -1,0 +1,200 @@
+{
+  "validation": {
+    "all_cells_valid": true,
+    "measured_requests": 256,
+    "warmup_requests": 256,
+    "same_fixed_inputs": true,
+    "warmup_and_measured_disjoint": true,
+    "resolved_configs_identical": true,
+    "no_torch_profiler_api_calls_or_artifacts": true,
+    "all_gpu_processes_stopped_after_cells": true,
+    "all_request_event_joins_exact": true,
+    "all_required_stage_boundaries_unique": true,
+    "all_stage_intervals_nonnegative": true,
+    "warmup_not_profiled": true
+  },
+  "stage_changes": [
+    {
+      "concurrency": 1,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 1.686886,
+      "optimized_mean_ms": 1.7834813437500001,
+      "change_ms": 0.09659534375,
+      "change_pct": 5.726252025922318
+    },
+    {
+      "concurrency": 1,
+      "stage": "thinker",
+      "baseline_mean_ms": 136.14054578125,
+      "optimized_mean_ms": 136.1463515,
+      "change_ms": 0.005805718749996913,
+      "change_pct": 0.004264503801332253
+    },
+    {
+      "concurrency": 1,
+      "stage": "talker",
+      "baseline_mean_ms": 118.09165571875,
+      "optimized_mean_ms": 116.98064209375,
+      "change_ms": -1.1110136249999982,
+      "change_pct": -0.9408062053478328
+    },
+    {
+      "concurrency": 1,
+      "stage": "code2wav",
+      "baseline_mean_ms": 121.066889,
+      "optimized_mean_ms": 124.52799728125,
+      "change_ms": 3.4611082812499916,
+      "change_pct": 2.8588396958395323
+    },
+    {
+      "concurrency": 8,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 5.075793,
+      "optimized_mean_ms": 2.5366205,
+      "change_ms": -2.5391725,
+      "change_pct": -50.0251389290304
+    },
+    {
+      "concurrency": 8,
+      "stage": "thinker",
+      "baseline_mean_ms": 237.63600703125,
+      "optimized_mean_ms": 258.36665221875,
+      "change_ms": 20.730645187500016,
+      "change_pct": 8.72369698787856
+    },
+    {
+      "concurrency": 8,
+      "stage": "talker",
+      "baseline_mean_ms": 318.76166228125,
+      "optimized_mean_ms": 322.0885455,
+      "change_ms": 3.3268832187500266,
+      "change_pct": 1.0436898825727292
+    },
+    {
+      "concurrency": 8,
+      "stage": "code2wav",
+      "baseline_mean_ms": 536.25904265625,
+      "optimized_mean_ms": 389.77709390625,
+      "change_ms": -146.48194875000002,
+      "change_pct": -27.315520503753465
+    },
+    {
+      "concurrency": 16,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 8.56362178125,
+      "optimized_mean_ms": 10.03380165625,
+      "change_ms": 1.4701798750000012,
+      "change_pct": 17.167734780381714
+    },
+    {
+      "concurrency": 16,
+      "stage": "thinker",
+      "baseline_mean_ms": 298.60988053125,
+      "optimized_mean_ms": 300.11061678125003,
+      "change_ms": 1.5007362500000454,
+      "change_pct": 0.5025742106490538
+    },
+    {
+      "concurrency": 16,
+      "stage": "talker",
+      "baseline_mean_ms": 388.78310925,
+      "optimized_mean_ms": 645.65646365625,
+      "change_ms": 256.87335440625003,
+      "change_pct": 66.07111993671315
+    },
+    {
+      "concurrency": 16,
+      "stage": "code2wav",
+      "baseline_mean_ms": 909.57323978125,
+      "optimized_mean_ms": 769.74110603125,
+      "change_ms": -139.83213375000003,
+      "change_pct": -15.373378155191686
+    },
+    {
+      "concurrency": 32,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 18.0004566875,
+      "optimized_mean_ms": 18.3212651875,
+      "change_ms": 0.3208084999999983,
+      "change_pct": 1.7822242266929633
+    },
+    {
+      "concurrency": 32,
+      "stage": "thinker",
+      "baseline_mean_ms": 314.04850890625,
+      "optimized_mean_ms": 334.71336390625,
+      "change_ms": 20.66485499999999,
+      "change_pct": 6.5801474657435355
+    },
+    {
+      "concurrency": 32,
+      "stage": "talker",
+      "baseline_mean_ms": 630.05508775,
+      "optimized_mean_ms": 719.3038221875,
+      "change_ms": 89.24873443750005,
+      "change_pct": 14.165227163900497
+    },
+    {
+      "concurrency": 32,
+      "stage": "code2wav",
+      "baseline_mean_ms": 1568.22090278125,
+      "optimized_mean_ms": 1111.06905859375,
+      "change_ms": -457.15184418750005,
+      "change_pct": -29.150985258310115
+    }
+  ],
+  "output_comparisons": [
+    {
+      "concurrency": 1,
+      "qps_change_pct": -0.6807785542075839,
+      "mean_latency_change_pct": 0.6527070609737784,
+      "p95_latency_change_pct": 1.1503190401951136,
+      "audio_throughput_change_pct": -0.6807785542075728,
+      "audio_total_change_pct": 0.0,
+      "equal_audio_length_requests": 32,
+      "equal_completion_token_requests": 32,
+      "requests_audio_change_over_10pct": 0,
+      "mean_absolute_audio_delta_s": 0.0,
+      "maximum_absolute_audio_delta_s": 0.0
+    },
+    {
+      "concurrency": 8,
+      "qps_change_pct": 16.78885120783482,
+      "mean_latency_change_pct": -12.20176791715133,
+      "p95_latency_change_pct": -12.657697371886966,
+      "audio_throughput_change_pct": 14.520396077858088,
+      "audio_total_change_pct": -1.942355889724312,
+      "equal_audio_length_requests": 12,
+      "equal_completion_token_requests": 32,
+      "requests_audio_change_over_10pct": 9,
+      "mean_absolute_audio_delta_s": 0.31249999999999994,
+      "maximum_absolute_audio_delta_s": 2.16
+    },
+    {
+      "concurrency": 16,
+      "qps_change_pct": -14.34047287379422,
+      "mean_latency_change_pct": 5.8414459644022365,
+      "p95_latency_change_pct": 18.236375074803647,
+      "audio_throughput_change_pct": -14.036127008681731,
+      "audio_total_change_pct": 0.35529715762274705,
+      "equal_audio_length_requests": 11,
+      "equal_completion_token_requests": 32,
+      "requests_audio_change_over_10pct": 5,
+      "mean_absolute_audio_delta_s": 0.16875,
+      "maximum_absolute_audio_delta_s": 0.8000000000000003
+    },
+    {
+      "concurrency": 32,
+      "qps_change_pct": 10.140876042424217,
+      "mean_latency_change_pct": -14.28050843842199,
+      "p95_latency_change_pct": -12.328098156619284,
+      "audio_throughput_change_pct": 8.844699737186644,
+      "audio_total_change_pct": -1.1768349334159156,
+      "equal_audio_length_requests": 21,
+      "equal_completion_token_requests": 32,
+      "requests_audio_change_over_10pct": 5,
+      "mean_absolute_audio_delta_s": 0.13,
+      "maximum_absolute_audio_delta_s": 0.8799999999999999
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+The repository /__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582 contains custom code which must be executed to correctly load the model. You can inspect the repository content at /__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582 .
+ You can inspect the repository content at https://hf.co//__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] 2026-10-22 14:26:52,759 [INFO] sglang_omni.pipeline.mp_runner: CPU thread fallback plan: budget=32 processes=2 fallback_threads_per_process=16 fallback_overcommitted=false allocations={'pipeline': {'fallback_threads': 16, 'cpus': None, 'stages': ['preprocessing', 'thinker', 'image_encoder', 'audio_encoder', 'decode']}, 'talker': {'fallback_threads': 16, 'cpus': None, 'stages': ['talker', 'code2wav']}}
+2026-10-22 14:26:52,762 [INFO] sglang_omni.pipeline.mp_runner: Coordinator stream backlog cap: max_total_backlog_bytes=1073741824
+2026-10-22 14:26:52,863 [INFO] sglang_omni.pipeline.control_plane: Coordinator control plane started
+2026-10-22 14:26:52,864 [INFO] sglang_omni.pipeline.coordinator: Coordinator started
+2026-10-22 14:26:52,868 [INFO] sglang_omni.pipeline.stage_workers: Worker spawn environment: process=pipeline OMP_NUM_THREADS=16 source=environment_or_policy fallback_threads=16
+2026-10-22 14:26:52,871 [INFO] sglang_omni.pipeline.stage_workers: StageGroup pipeline: spawned 1 process(es) (pids=[3933])
+2026-10-22 14:26:52,872 [INFO] sglang_omni.pipeline.stage_workers: Worker spawn environment: process=talker OMP_NUM_THREADS=16 source=environment_or_policy fallback_threads=16
+2026-10-22 14:26:52,875 [INFO] sglang_omni.pipeline.stage_workers: StageGroup talker: spawned 1 process(es) (pids=[3934])
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+2026-10-22 14:27:02,449 [INFO] stage_workers.talker: Set current device to 0 for stage talker
+2026-10-22 14:27:02,450 [INFO] stage_workers.talker: Building scheduler for talker (tp_rank=0/1) ...
+2026-10-22 14:27:02,457 [INFO] stage_workers.pipeline: Set current device to 0 for stage preprocessing
+2026-10-22 14:27:02,457 [INFO] stage_workers.pipeline: Building scheduler for preprocessing (tp_rank=0/1) ...
+2026-10-22 14:27:03,008 [INFO] qwen_vl_utils.vision_process: set VIDEO_TOTAL_PIXELS: 90316800
+2026-10-22 14:27:03,008 [INFO] qwen_vl_utils.vision_process: set VIDEO_TOTAL_PIXELS: 90316800
+2026-10-22 14:27:03,240 [INFO] sglang.srt.configs.linear_attn_model_registry: Registered linear attn model: config=GigaChat35Config, backend=GDNAttnBackend, archs=['GigaChat35ForCausalLM', 'GigaChat35ForCausalLMNextN']
+2026-10-22 14:27:03,240 [INFO] sglang.srt.configs.linear_attn_model_registry: Registered linear attn model: config=GigaChat35Config, backend=GDNAttnBackend, archs=['GigaChat35ForCausalLM', 'GigaChat35ForCausalLMNextN']
+2026-10-22 14:27:07,404 [INFO] stage_workers.pipeline: Acquired GPU startup lock for stage preprocessing: /tmp/sglang_omni_gpu_0_startup.lock
+[transformers] You are using a model of type `minicpmo` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+2026-10-22 14:27:08,200 [INFO] stage_workers.talker: Acquired GPU startup lock for stage talker: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 14:27:08,200 [INFO] stage_workers.pipeline: Set current device to 0 for stage thinker
+2026-10-22 14:27:08,201 [INFO] stage_workers.pipeline: Building scheduler for thinker (tp_rank=0/1) ...
+2026-10-22 14:27:08,250 [INFO] sglang.srt.arg_groups.overrides: Attention backend not specified. Use fa3 backend by default.
+2026-10-22 14:27:08,258 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.14532470703125 pid=3934
+2026-10-22 14:27:08,304 [INFO] sglang_omni.scheduling.bootstrap: SGLang runtime configuration: gpu_id=0, sm=90, architecture=hopper, attention_backend=fa3, decode_attention_backend=fa3, prefill_attention_backend=fa3, sampling_backend=pytorch
+2026-10-22 14:27:08,306 [INFO] sglang_omni.platforms.cuda: Configured SGLang backend policy: arch=MiniCPMOTalkerForCausalLM effective_quantization=None server_quantization=None moe_runner_backend=auto fp8_gemm_backend=auto
+2026-10-22 14:27:08,310 [INFO] sglang.srt.distributed.bootstrap: Init parallel begin.
+2026-10-22 14:27:08,337 [INFO] sglang.srt.distributed.bootstrap: Init parallel ends. elapsed=0.03 s
+2026-10-22 14:27:13,155 [INFO] sglang.srt.distributed.bootstrap: Memory baseline taken. mem usage=0.00 GB
+2026-10-22 14:27:13,212 [INFO] sglang.srt.model_executor.model_runner: Load weight begin. avail mem=77.95 GB
+Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:00<00:00, 41.79it/s]
+2026-10-22 14:27:13,584 [INFO] sglang.srt.model_executor.model_runner: Load weight end. elapsed=0.37 s, type=MiniCPMOTalkerForCausalLM, avail mem=77.21 GB, mem usage=0.75 GB.
+2026-10-22 14:27:14,046 [INFO] sglang.srt.mem_cache.kv_cache_configurator: Reserving 0.10 GB of the KV budget for post-sizing multimodal allocations (feature-transport pools + embedding cache).
+2026-10-22 14:27:14,060 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB
+2026-10-22 14:27:14,061 [INFO] sglang.srt.mem_cache.kv_cache_configurator: Memory pool end. avail mem=69.63 GB
+2026-10-22 14:27:14,195 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Disable prefill CUDA graph because cuda_graph_config resolved prefill.backend='disabled' (e.g. via --cuda-graph-backend-prefill=disabled or auto-disable rules).
+2026-10-22 14:27:14,197 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph begin. backend=full, num_tokens_per_req=1, bs=[1, 2, 4, 8, 12, 16, 24, 32], avail mem=69.53 GB
+  0%|          | 0/8 [00:00<?, ?it/s]Capturing batches (bs=32 avail_mem=69.53 GB):   0%|          | 0/8 [00:00<?, ?it/s]Capturing batches (bs=32 avail_mem=69.53 GB):  12%|█▎        | 1/8 [00:01<00:07,  1.07s/it]Capturing batches (bs=24 avail_mem=69.49 GB):  12%|█▎        | 1/8 [00:01<00:07,  1.07s/it]Capturing batches (bs=16 avail_mem=69.49 GB):  12%|█▎        | 1/8 [00:01<00:07,  1.07s/it]Capturing batches (bs=16 avail_mem=69.49 GB):  38%|███▊      | 3/8 [00:01<00:01,  3.11it/s]Capturing batches (bs=12 avail_mem=69.49 GB):  38%|███▊      | 3/8 [00:01<00:01,  3.11it/s]Capturing batches (bs=8 avail_mem=69.49 GB):  38%|███▊      | 3/8 [00:01<00:01,  3.11it/s] Capturing batches (bs=4 avail_mem=69.49 GB):  38%|███▊      | 3/8 [00:01<00:01,  3.11it/s]Capturing batches (bs=2 avail_mem=69.49 GB):  38%|███▊      | 3/8 [00:01<00:01,  3.11it/s]Capturing batches (bs=2 avail_mem=69.49 GB):  88%|████████▊ | 7/8 [00:01<00:00,  8.00it/s]Capturing batches (bs=1 avail_mem=69.49 GB):  88%|████████▊ | 7/8 [00:01<00:00,  8.00it/s]Capturing batches (bs=1 avail_mem=69.49 GB): 100%|██████████| 8/8 [00:01<00:00,  5.85it/s]
+2026-10-22 14:27:16,397 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=2.20 s, mem usage=0.04 GB, avail mem=69.49 GB.
+2026-10-22 14:27:18,695 [INFO] sglang_omni.models.minicpm_o.talker_model_runner: MiniCPM-o talker captured sampling graphs for batch sizes [1, 2, 4, 8, 12, 16, 24, 32]
+2026-10-22 14:27:20,020 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=talker gpu_id=0 post_load_avail_mem=69.45977783203125 pid=3934
+2026-10-22 14:27:20,021 [INFO] stage_workers.talker: Set current device to 0 for stage code2wav
+2026-10-22 14:27:20,021 [INFO] stage_workers.talker: Building scheduler for code2wav (tp_rank=0/1) ...
+2026-10-22 14:27:20,021 [INFO] stage_workers.pipeline: Acquired GPU startup lock for stage thinker: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 14:27:20,080 [INFO] sglang.srt.arg_groups.overrides: Attention backend not specified. Use fa3 backend by default.
+2026-10-22 14:27:20,090 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.45977783203125 pid=3933
+2026-10-22 14:27:20,117 [INFO] sglang_omni.scheduling.bootstrap: SGLang runtime configuration: gpu_id=0, sm=90, architecture=hopper, attention_backend=fa3, decode_attention_backend=fa3, prefill_attention_backend=fa3, sampling_backend=pytorch
+2026-10-22 14:27:20,119 [INFO] sglang_omni.platforms.cuda: Configured SGLang backend policy: arch=MiniCPMO effective_quantization=None server_quantization=None moe_runner_backend=auto fp8_gemm_backend=auto
+2026-10-22 14:27:20,123 [INFO] sglang.srt.distributed.bootstrap: Init parallel begin.
+2026-10-22 14:27:20,148 [INFO] sglang.srt.distributed.bootstrap: Init parallel ends. elapsed=0.02 s
+2026-10-22 14:27:25,068 [INFO] sglang.srt.distributed.bootstrap: Memory baseline taken. mem usage=0.00 GB
+2026-10-22 14:27:25,086 [INFO] sglang.srt.model_executor.model_runner: Load weight begin. avail mem=69.27 GB
+Multi-thread loading shards:   0% Completed | 0/4 [00:00<?, ?it/s]Multi-thread loading shards:  25% Completed | 1/4 [00:00<00:02,  1.34it/s]Multi-thread loading shards:  50% Completed | 2/4 [00:01<00:01,  1.08it/s]Multi-thread loading shards:  75% Completed | 3/4 [00:02<00:00,  1.01it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.36it/s]Multi-thread loading shards: 100% Completed | 4/4 [00:03<00:00,  1.24it/s]
+2026-10-22 14:27:28,630 [INFO] sglang.srt.model_executor.model_runner: Load weight end. elapsed=3.54 s, type=MiniCPMOThinkerForCausalLM, avail mem=53.99 GB, mem usage=15.28 GB.
+2026-10-22 14:27:29,150 [INFO] sglang.srt.mem_cache.kv_cache_configurator: Reserving 0.10 GB of the KV budget for post-sizing multimodal allocations (feature-transport pools + embedding cache).
+2026-10-22 14:27:29,205 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 290410, K size: 19.94 GB, V size: 19.94 GB
+2026-10-22 14:27:29,206 [INFO] sglang.srt.mem_cache.kv_cache_configurator: Memory pool end. avail mem=14.03 GB
+2026-10-22 14:27:29,345 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Disable prefill CUDA graph because cuda_graph_config resolved prefill.backend='disabled' (e.g. via --cuda-graph-backend-prefill=disabled or auto-disable rules).
+2026-10-22 14:27:29,346 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph begin. backend=full, num_tokens_per_req=1, bs=[1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64], avail mem=13.94 GB
+  0%|          | 0/12 [00:00<?, ?it/s]Capturing batches (bs=64 avail_mem=13.90 GB):   0%|          | 0/12 [00:00<?, ?it/s]Capturing batches (bs=64 avail_mem=13.90 GB):   8%|▊         | 1/12 [00:01<00:13,  1.27s/it]Capturing batches (bs=56 avail_mem=13.85 GB):   8%|▊         | 1/12 [00:01<00:13,  1.27s/it]Capturing batches (bs=56 avail_mem=13.85 GB):  17%|█▋        | 2/12 [00:01<00:05,  1.68it/s]Capturing batches (bs=48 avail_mem=13.84 GB):  17%|█▋        | 2/12 [00:01<00:05,  1.68it/s]Capturing batches (bs=48 avail_mem=13.84 GB):  25%|██▌       | 3/12 [00:01<00:03,  2.71it/s]Capturing batches (bs=40 avail_mem=13.84 GB):  25%|██▌       | 3/12 [00:01<00:03,  2.71it/s]Capturing batches (bs=40 avail_mem=13.84 GB):  33%|███▎      | 4/12 [00:01<00:02,  3.77it/s]Capturing batches (bs=32 avail_mem=13.84 GB):  33%|███▎      | 4/12 [00:01<00:02,  3.77it/s]Capturing batches (bs=32 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.75it/s]Capturing batches (bs=24 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.75it/s]Capturing batches (bs=16 avail_mem=13.84 GB):  42%|████▏     | 5/12 [00:01<00:01,  4.75it/s]Capturing batches (bs=16 avail_mem=13.84 GB):  58%|█████▊    | 7/12 [00:01<00:00,  6.41it/s]Capturing batches (bs=12 avail_mem=13.83 GB):  58%|█████▊    | 7/12 [00:01<00:00,  6.41it/s]Capturing batches (bs=8 avail_mem=13.83 GB):  58%|█████▊    | 7/12 [00:01<00:00,  6.41it/s] Capturing batches (bs=8 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:02<00:00,  8.37it/s]Capturing batches (bs=4 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:02<00:00,  8.37it/s]Capturing batches (bs=2 avail_mem=13.83 GB):  75%|███████▌  | 9/12 [00:02<00:00,  8.37it/s]Capturing batches (bs=2 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:02<00:00,  9.55it/s]Capturing batches (bs=1 avail_mem=13.83 GB):  92%|█████████▏| 11/12 [00:02<00:00,  9.55it/s]Capturing batches (bs=1 avail_mem=13.83 GB): 100%|██████████| 12/12 [00:02<00:00,  5.19it/s]
+2026-10-22 14:27:32,541 [INFO] sglang.srt.model_executor.model_runner_components.cuda_graph_setup: Capture target decode CUDA graph end. elapsed=3.19 s, mem usage=0.12 GB, avail mem=13.82 GB.
+2026-10-22 14:27:33,350 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_started stage=thinker gpu_id=0 post_load_avail_mem=13.82305908203125 pid=3933
+2026-10-22 14:27:33,351 [INFO] stage_workers.pipeline: Set current device to 0 for stage image_encoder
+2026-10-22 14:27:33,351 [INFO] stage_workers.talker: Acquired GPU startup lock for stage code2wav: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 14:27:33,351 [INFO] stage_workers.pipeline: Building scheduler for image_encoder (tp_rank=0/1) ...
+2026-10-22 14:28:40,724 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs
+2026-10-22 14:28:40,725 [INFO] stage_workers.pipeline: Acquired GPU startup lock for stage image_encoder: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 14:28:40,726 [INFO] sglang_omni.pipeline.control_plane: Stage talker control plane started
+2026-10-22 14:28:40,728 [INFO] sglang_omni.pipeline.stage.runtime: Scheduler thread for stage talker set cuda device to 0
+2026-10-22 14:28:40,729 [INFO] sglang_omni.pipeline.stage.runtime: Stage talker started
+2026-10-22 14:28:40,730 [INFO] sglang_omni.pipeline.control_plane: Stage code2wav control plane started
+2026-10-22 14:28:40,731 [INFO] sglang_omni.pipeline.stage.runtime: Scheduler thread for stage code2wav set cuda device to 0
+2026-10-22 14:28:40,731 [INFO] sglang_omni.pipeline.stage.runtime: Stage code2wav started
+2026-10-22 14:28:40,732 [INFO] stage_workers.talker: Process talker ready with stages=['talker', 'code2wav']
+2026-10-22 14:28:40,733 [INFO] sglang_omni.pipeline.stage_workers: Process talker ready
+2026-10-22 14:28:40,752 [INFO] sglang.srt.utils.common: Multimodal attention backend not set. Use fa3.
+2026-10-22 14:28:40,753 [INFO] sglang.srt.utils.common: Using fa3 as multimodal attention backend.
+2026-10-22 14:28:42,473 [INFO] stage_workers.pipeline: Set current device to 0 for stage audio_encoder
+2026-10-22 14:28:42,474 [INFO] stage_workers.pipeline: Building scheduler for audio_encoder (tp_rank=0/1) ...
+2026-10-22 14:28:42,475 [INFO] stage_workers.pipeline: Acquired GPU startup lock for stage audio_encoder: /tmp/sglang_omni_gpu_0_startup.lock
+2026-10-22 14:28:44,119 [INFO] stage_workers.pipeline: Building scheduler for decode (tp_rank=0/1) ...
+2026-10-22 14:28:44,980 [INFO] sglang_omni.pipeline.control_plane: Stage preprocessing control plane started
+2026-10-22 14:28:44,982 [INFO] sglang_omni.pipeline.stage.runtime: Scheduler thread for stage preprocessing set cuda device to 0
+2026-10-22 14:28:44,983 [INFO] sglang_omni.pipeline.stage.runtime: Stage preprocessing started
+2026-10-22 14:28:44,984 [INFO] sglang_omni.pipeline.control_plane: Stage thinker control plane started
+2026-10-22 14:28:44,985 [INFO] sglang_omni.pipeline.stage.runtime: Scheduler thread for stage thinker set cuda device to 0
+2026-10-22 14:28:44,986 [INFO] sglang_omni.pipeline.stage.runtime: Stage thinker started
+2026-10-22 14:28:44,986 [INFO] sglang_omni.pipeline.control_plane: Stage image_encoder control plane started
+2026-10-22 14:28:44,987 [INFO] sglang_omni.pipeline.stage.runtime: Scheduler thread for stage image_encoder set cuda device to 0
+2026-10-22 14:28:44,988 [INFO] sglang_omni.pipeline.stage.runtime: Stage image_encoder started
+2026-10-22 14:28:44,988 [INFO] sglang_omni.pipeline.control_plane: Stage audio_encoder control plane started
+2026-10-22 14:28:44,989 [INFO] sglang_omni.pipeline.stage.runtime: Scheduler thread for stage audio_encoder set cuda device to 0
+2026-10-22 14:28:44,990 [INFO] sglang_omni.pipeline.stage.runtime: Stage audio_encoder started
+2026-10-22 14:28:44,991 [INFO] sglang_omni.pipeline.control_plane: Stage decode control plane started
+2026-10-22 14:28:44,991 [INFO] sglang_omni.pipeline.stage.runtime: Stage decode started
+2026-10-22 14:28:44,992 [INFO] stage_workers.pipeline: Process pipeline ready with stages=['preprocessing', 'thinker', 'image_encoder', 'audio_encoder', 'decode']
+2026-10-22 14:28:44,992 [INFO] sglang_omni.pipeline.stage_workers: Process pipeline ready
+2026-10-22 14:28:44,993 [INFO] sglang_omni.pipeline.coordinator: Coordinator registered stage: preprocessing at ipc:///tmp/sglang_omni/modal-volumes-vo-yahpkxk1lnmk19ud302a7c-hub-models--zzlntd7o/stage_preprocessing.sock
+2026-10-22 14:28:44,993 [INFO] sglang_omni.pipeline.coordinator: Coordinator registered stage: thinker at ipc:///tmp/sglang_omni/modal-volumes-vo-yahpkxk1lnmk19ud302a7c-hub-models--zzlntd7o/stage_thinker.sock
+2026-10-22 14:28:44,993 [INFO] sglang_omni.pipeline.coordinator: Coordinator registered stage: image_encoder at ipc:///tmp/sglang_omni/modal-volumes-vo-yahpkxk1lnmk19ud302a7c-hub-models--zzlntd7o/stage_image_encoder.sock
+2026-10-22 14:28:44,993 [INFO] sglang_omni.pipeline.coordinator: Coordinator registered stage: audio_encoder at ipc:///tmp/sglang_omni/modal-volumes-vo-yahpkxk1lnmk19ud302a7c-hub-models--zzlntd7o/stage_audio_encoder.sock
+2026-10-22 14:28:44,993 [INFO] sglang_omni.pipeline.coordinator: Coordinator registered stage: decode at ipc:///tmp/sglang_omni/modal-volumes-vo-yahpkxk1lnmk19ud302a7c-hub-models--zzlntd7o/stage_decode.sock
+2026-10-22 14:28:44,993 [INFO] sglang_omni.pipeline.coordinator: Coordinator registered stage: talker at ipc:///tmp/sglang_omni/modal-volumes-vo-yahpkxk1lnmk19ud302a7c-hub-models--zzlntd7o/stage_talker.sock
+2026-10-22 14:28:44,994 [INFO] sglang_omni.pipeline.coordinator: Coordinator registered stage: code2wav at ipc:///tmp/sglang_omni/modal-volumes-vo-yahpkxk1lnmk19ud302a7c-hub-models--zzlntd7o/stage_code2wav.sock
+2026-10-22 14:28:44,994 [INFO] sglang_omni.pipeline.mp_runner: MultiProcessPipelineRunner started: 7 stage(s), 2 process(es)
+2026-10-22 14:28:44,995 [INFO] sglang_omni.serve.launcher: Resolved placement/topology plan: placement={'topology': 'MiniCPMOSpeechPipelineConfig', 'pipeline': '/__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582', 'process_groups': {'pipeline': {'stages': ['preprocessing', 'thinker', 'image_encoder', 'audio_encoder', 'decode'], 'gpu': 0}, 'talker': {'stages': ['talker', 'code2wav'], 'gpu': 0}}, 'tp_process_groups': {}, 'stage_runtime': {'preprocessing': {'gpu': 0, 'total_gpu_memory_fraction': None, 'kv_cache_bytes': None, 'total_reserve_bytes': None, 'mem_fraction_static': None}, 'thinker': {'gpu': 0, 'total_gpu_memory_fraction': None, 'kv_cache_bytes': None, 'total_reserve_bytes': None, 'mem_fraction_static': None}, 'image_encoder': {'gpu': 0, 'total_gpu_memory_fraction': None, 'kv_cache_bytes': None, 'total_reserve_bytes': None, 'mem_fraction_static': None}, 'audio_encoder': {'gpu': 0, 'total_gpu_memory_fraction': None, 'kv_cache_bytes': None, 'total_reserve_bytes': None, 'mem_fraction_static': None}, 'talker': {'gpu': 0, 'total_gpu_memory_fraction': None, 'kv_cache_bytes': None, 'total_reserve_bytes': None, 'mem_fraction_static': None}, 'code2wav': {'gpu': 0, 'total_gpu_memory_fraction': None, 'kv_cache_bytes': None, 'total_reserve_bytes': None, 'mem_fraction_static': None}}, 'gpus': {0: {'hardware': {'device_id': 0, 'name': 'NVIDIA H100 80GB HBM3', 'total_memory': '79.65GiB'}, 'stages': ['preprocessing', 'thinker', 'image_encoder', 'audio_encoder', 'talker', 'code2wav'], 'total_gpu_memory_fraction': 0.0, 'missing_fraction_stages': ['audio_encoder', 'code2wav', 'image_encoder', 'preprocessing', 'talker', 'thinker'], 'total_kv_cache_bytes': 0, 'total_reserve_bytes': 0}}}
+2026-10-22 14:28:44,995 [INFO] sglang_omni.serve.launcher: Pipeline '/__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582' started (1 GPU(s))
+INFO:     Started server process [3881]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:57814 (Press CTRL+C to quit)
+INFO:     127.0.0.1:38949 - "GET /health HTTP/1.1" 200 OK
+2026-10-22 14:28:51,473 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 45, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 0.58
+2026-10-22 14:28:52,395 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 15, #new-token: 363, #cached-token: 195, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 393.87
+2026-10-22 14:28:53,091 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 8, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 0.09
+2026-10-22 14:28:53,797 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 15, #new-token: 262, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 371.23
+2026-10-22 14:28:53,863 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 16, #token: 926, token usage: 0.01, cuda graph: True, gen throughput (token/s): 6.82, #queue-req: 0
+2026-10-22 14:28:54,166 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 12, #token: 1194, token usage: 0.01, cuda graph: True, gen throughput (token/s): 1952.08, #queue-req: 0
+2026-10-22 14:28:54,298 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=51
+2026-10-22 14:28:54,421 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 6, #token: 858, token usage: 0.01, cuda graph: True, gen throughput (token/s): 1426.99, #queue-req: 0
+2026-10-22 14:28:54,484 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=4 max_codec_tokens=88
+2026-10-22 14:28:54,696 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 3, #token: 550, token usage: 0.00, cuda graph: True, gen throughput (token/s): 705.34, #queue-req: 0
+2026-10-22 14:28:54,704 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=5 max_codec_tokens=109
+INFO:     127.0.0.1:16930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:54,802 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 22, #cached-token: 13, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 9.14
+2026-10-22 14:28:54,892 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=4 max_codec_tokens=169
+INFO:     127.0.0.1:26920 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:55,042 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=2 max_codec_tokens=162
+2026-10-22 14:28:55,046 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 21, #cached-token: 13, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 86.06
+2026-10-22 14:28:55,089 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 1, #token: 36, token usage: 0.00, cuda graph: True, gen throughput (token/s): 3.29, #queue-req: 0
+2026-10-22 14:28:55,110 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 15, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 11.42
+INFO:     127.0.0.1:59158 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39161 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:55,272 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 13, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 79.88
+2026-10-22 14:28:55,282 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 21, #cached-token: 13, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 89.30
+2026-10-22 14:28:55,311 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 2, #token: 82, token usage: 0.00, cuda graph: True, gen throughput (token/s): 110.48, #queue-req: 0
+2026-10-22 14:28:55,314 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 21, #cached-token: 13, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 655.79
+INFO:     127.0.0.1:25380 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:55,409 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 21, #cached-token: 14, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 221.13
+2026-10-22 14:28:55,410 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 2, #token: 162, token usage: 0.00, cuda graph: True, gen throughput (token/s): 810.68, #queue-req: 0
+INFO:     127.0.0.1:45602 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:55,480 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=92
+2026-10-22 14:28:55,510 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 30, #cached-token: 13, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 296.76
+2026-10-22 14:28:55,565 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 13, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 44.39
+INFO:     127.0.0.1:26123 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:55,601 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=77
+2026-10-22 14:28:55,618 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 13, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 245.25
+2026-10-22 14:28:55,627 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 24, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 204.07
+2026-10-22 14:28:55,689 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 14, #cached-token: 0, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 197.16
+INFO:     127.0.0.1:63985 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:55,742 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 3, #token: 93, token usage: 0.00, cuda graph: True, gen throughput (token/s): 262.16, #queue-req: 0
+2026-10-22 14:28:55,758 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 16, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 122.39
+INFO:     127.0.0.1:48636 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:55,844 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 3, #token: 213, token usage: 0.00, cuda graph: True, gen throughput (token/s): 1177.40, #queue-req: 0
+2026-10-22 14:28:55,862 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 17, #cached-token: 13, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 164.13
+2026-10-22 14:28:55,902 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 22, #cached-token: 0, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 103.49
+2026-10-22 14:28:55,915 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 1, #token: 33, token usage: 0.00, cuda graph: True, gen throughput (token/s): 98.00, #queue-req: 0
+INFO:     127.0.0.1:51736 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:55,948 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 8, #cached-token: 0, token usage: 0.00, #running-req: 4, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 171.73
+2026-10-22 14:28:55,965 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 22, #cached-token: 13, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 211.75
+2026-10-22 14:28:55,979 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 17, #cached-token: 0, token usage: 0.00, #running-req: 5, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 563.14
+2026-10-22 14:28:55,993 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=77
+INFO:     127.0.0.1:34756 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:56,082 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 5, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 87.31
+2026-10-22 14:28:56,097 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 27, #cached-token: 14, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 205.46
+2026-10-22 14:28:56,146 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 5, #token: 268, token usage: 0.00, cuda graph: True, gen throughput (token/s): 635.47, #queue-req: 0
+INFO:     127.0.0.1:55619 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:56,211 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 20, #cached-token: 13, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 175.51
+2026-10-22 14:28:56,228 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 14, #cached-token: 0, token usage: 0.00, #running-req: 5, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 95.51
+INFO:     127.0.0.1:65484 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:56,326 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 24, #cached-token: 14, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 207.61
+2026-10-22 14:28:56,340 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=2 max_codec_tokens=116
+2026-10-22 14:28:56,348 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 4, #token: 291, token usage: 0.00, cuda graph: True, gen throughput (token/s): 977.07, #queue-req: 0
+INFO:     127.0.0.1:27073 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:56,455 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 24, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 187.16
+2026-10-22 14:28:56,455 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 12, #cached-token: 0, token usage: 0.00, #running-req: 4, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 52.94
+2026-10-22 14:28:56,480 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=50
+2026-10-22 14:28:56,489 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 20, #cached-token: 0, token usage: 0.00, #running-req: 5, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 586.69
+INFO:     127.0.0.1:55600 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:56,552 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 25, #cached-token: 14, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 255.87
+2026-10-22 14:28:56,568 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=85
+INFO:     127.0.0.1:33721 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:56,666 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 2, #token: 85, token usage: 0.00, cuda graph: True, gen throughput (token/s): 103.92, #queue-req: 0
+2026-10-22 14:28:56,704 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 23, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 151.57
+2026-10-22 14:28:56,721 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 17, #cached-token: 0, token usage: 0.00, #running-req: 4, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 73.32
+2026-10-22 14:28:56,757 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 16, #cached-token: 0, token usage: 0.00, #running-req: 5, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 446.64
+2026-10-22 14:28:56,765 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 6, #token: 353, token usage: 0.00, cuda graph: True, gen throughput (token/s): 481.51, #queue-req: 0
+2026-10-22 14:28:56,773 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=95
+INFO:     127.0.0.1:16930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:56,875 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 18, #cached-token: 0, token usage: 0.00, #running-req: 6, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 152.35
+INFO:     127.0.0.1:26920 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59158 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:56,933 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 15, #cached-token: 0, token usage: 0.00, #running-req: 7, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 258.63
+2026-10-22 14:28:56,947 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=124
+INFO:     127.0.0.1:25380 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:57,084 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 6, #token: 385, token usage: 0.00, cuda graph: True, gen throughput (token/s): 794.46, #queue-req: 0
+INFO:     127.0.0.1:39161 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:57,159 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=94
+2026-10-22 14:28:57,216 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 5, #token: 501, token usage: 0.00, cuda graph: True, gen throughput (token/s): 1580.94, #queue-req: 0
+2026-10-22 14:28:57,265 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=80
+INFO:     127.0.0.1:63985 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:57,378 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 2, #token: 172, token usage: 0.00, cuda graph: True, gen throughput (token/s): 1101.02, #queue-req: 0
+INFO:     127.0.0.1:48636 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:57,476 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=170
+INFO:     127.0.0.1:26123 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:57,520 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=2 max_codec_tokens=122
+2026-10-22 14:28:57,559 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=103
+INFO:     127.0.0.1:45602 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:57,613 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=117
+INFO:     127.0.0.1:51736 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55619 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34756 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55600 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27073 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33721 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65484 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:58,165 [INFO] sglang_omni.profiler.event_recorder: RequestEventRecorder started run_id=20261022T141048Z-optimized-c16-measured stage=coordinator path=/__modal/volumes/vo-eTpzz8Phg1mcOZmDSoNsMz/minicpm-stage-comparison/20261022T141048Z/optimized/c16/measured/events/events_coordinator_3881.jsonl
+2026-10-22 14:28:58,166 [INFO] sglang_omni.profiler.profiler_control: ProfilerControlClient connected to 7 stages
+2026-10-22 14:28:58,167 [INFO] sglang_omni.profiler.profiler_control: Broadcast profiler_start run_id=20261022T141048Z-optimized-c16-measured event_dir=/results/minicpm-stage-comparison/20261022T141048Z/optimized/c16/measured/events torch=False to stages=['preprocessing', 'thinker', 'image_encoder', 'audio_encoder', 'decode', 'talker', 'code2wav']
+INFO:     127.0.0.1:40608 - "POST /start_request_profile HTTP/1.1" 200 OK
+2026-10-22 14:28:58,169 [INFO] sglang_omni.profiler.event_recorder: RequestEventRecorder started run_id=20261022T141048Z-optimized-c16-measured stage=preprocessing path=/__modal/volumes/vo-eTpzz8Phg1mcOZmDSoNsMz/minicpm-stage-comparison/20261022T141048Z/optimized/c16/measured/events/events_preprocessing_3933.jsonl
+2026-10-22 14:28:58,170 [INFO] sglang_omni.profiler.event_recorder: RequestEventRecorder started run_id=20261022T141048Z-optimized-c16-measured stage=talker path=/__modal/volumes/vo-eTpzz8Phg1mcOZmDSoNsMz/minicpm-stage-comparison/20261022T141048Z/optimized/c16/measured/events/events_talker_3934.jsonl
+2026-10-22 14:28:58,270 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 19, #cached-token: 13, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 12.13
+2026-10-22 14:28:58,341 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 15, #new-token: 349, #cached-token: 203, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 4919.16
+2026-10-22 14:28:58,455 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 9, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 5.91
+2026-10-22 14:28:58,484 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 10, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 344.36
+2026-10-22 14:28:58,519 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 11, #cached-token: 0, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 312.91
+2026-10-22 14:28:58,570 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 3, #new-token: 35, #cached-token: 0, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 699.02
+2026-10-22 14:28:58,623 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 3, #new-token: 42, #cached-token: 0, token usage: 0.00, #running-req: 6, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 793.51
+2026-10-22 14:28:58,685 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 4, #new-token: 69, #cached-token: 0, token usage: 0.00, #running-req: 9, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 1096.33
+2026-10-22 14:28:58,703 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 1, #token: 77, token usage: 0.00, cuda graph: True, gen throughput (token/s): 123.23, #queue-req: 0
+2026-10-22 14:28:58,719 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 2, #new-token: 43, #cached-token: 0, token usage: 0.00, #running-req: 13, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 1292.52
+2026-10-22 14:28:58,763 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 15, #token: 549, token usage: 0.00, cuda graph: True, gen throughput (token/s): 241.19, #queue-req: 0
+2026-10-22 14:28:58,792 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 30, #cached-token: 0, token usage: 0.00, #running-req: 15, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 411.03
+2026-10-22 14:28:58,857 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 14, #token: 1074, token usage: 0.01, cuda graph: True, gen throughput (token/s): 6708.74, #queue-req: 0
+2026-10-22 14:28:58,981 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=52
+2026-10-22 14:28:59,093 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=3 max_codec_tokens=83
+2026-10-22 14:28:59,121 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 6, #token: 711, token usage: 0.01, cuda graph: True, gen throughput (token/s): 1517.28, #queue-req: 0
+INFO:     127.0.0.1:51698 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:59,260 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=3 max_codec_tokens=91
+2026-10-22 14:28:59,302 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 22, #cached-token: 13, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 22.89
+2026-10-22 14:28:59,381 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=5 max_codec_tokens=129
+INFO:     127.0.0.1:34187 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:59,448 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 3, #token: 476, token usage: 0.00, cuda graph: True, gen throughput (token/s): 541.45, #queue-req: 0
+2026-10-22 14:28:59,501 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 24, #cached-token: 14, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 120.64
+2026-10-22 14:28:59,547 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=149
+INFO:     127.0.0.1:54200 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:59,653 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=2 max_codec_tokens=142
+2026-10-22 14:28:59,658 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 14, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 16.16
+2026-10-22 14:28:59,679 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 19, #cached-token: 13, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 106.56
+2026-10-22 14:28:59,727 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 2, #token: 223, token usage: 0.00, cuda graph: True, gen throughput (token/s): 243.52, #queue-req: 0
+INFO:     127.0.0.1:61162 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48108 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:59,782 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=162
+2026-10-22 14:28:59,845 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 2, #new-token: 40, #cached-token: 26, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 241.53
+2026-10-22 14:28:59,873 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 17, #cached-token: 0, token usage: 0.00, #running-req: 1, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 78.96
+INFO:     127.0.0.1:46377 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:28:59,943 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 11, #cached-token: 0, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 157.32
+2026-10-22 14:28:59,973 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 26, #cached-token: 14, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 202.22
+INFO:     127.0.0.1:52229 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,024 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 3, #token: 160, token usage: 0.00, cuda graph: True, gen throughput (token/s): 336.67, #queue-req: 0
+2026-10-22 14:29:00,035 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 2, #token: 75, token usage: 0.00, cuda graph: True, gen throughput (token/s): 46.54, #queue-req: 0
+INFO:     127.0.0.1:60466 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44125 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,100 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 11, #cached-token: 0, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 70.20
+2026-10-22 14:29:00,100 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 30, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 236.92
+2026-10-22 14:29:00,128 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 13, #cached-token: 0, token usage: 0.00, #running-req: 4, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 455.37
+2026-10-22 14:29:00,138 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 22, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 584.34
+2026-10-22 14:29:00,174 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 14, #cached-token: 14, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 384.93
+INFO:     127.0.0.1:22892 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,220 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 5, #token: 266, token usage: 0.00, cuda graph: True, gen throughput (token/s): 990.17, #queue-req: 0
+2026-10-22 14:29:00,239 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 23, #cached-token: 13, token usage: 0.00, #running-req: 4, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 350.94
+INFO:     127.0.0.1:41298 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,346 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 21, #cached-token: 13, token usage: 0.00, #running-req: 4, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 197.25
+2026-10-22 14:29:00,362 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 7, #cached-token: 0, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 30.01
+2026-10-22 14:29:00,384 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=99
+INFO:     127.0.0.1:47908 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,447 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 19, #cached-token: 0, token usage: 0.00, #running-req: 4, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 221.74
+2026-10-22 14:29:00,452 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 23, #cached-token: 14, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 216.25
+2026-10-22 14:29:00,475 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=84
+INFO:     127.0.0.1:19636 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,515 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 14, #cached-token: 0, token usage: 0.00, #running-req: 5, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 206.82
+2026-10-22 14:29:00,571 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 18, #cached-token: 13, token usage: 0.00, #running-req: 3, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 152.01
+2026-10-22 14:29:00,579 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 15, #cached-token: 0, token usage: 0.00, #running-req: 6, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 234.73
+INFO:     127.0.0.1:63762 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,631 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 22, #cached-token: 0, token usage: 0.00, #running-req: 7, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 419.91
+2026-10-22 14:29:00,663 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 13, #cached-token: 0, token usage: 0.00, #running-req: 8, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 410.22
+2026-10-22 14:29:00,669 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 21, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 214.28
+2026-10-22 14:29:00,689 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=104
+2026-10-22 14:29:00,713 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 7, #token: 268, token usage: 0.00, cuda graph: True, gen throughput (token/s): 430.42, #queue-req: 0
+INFO:     127.0.0.1:34340 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,786 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 26, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 221.17
+INFO:     127.0.0.1:58306 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51698 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,857 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 10, #cached-token: 0, token usage: 0.00, #running-req: 7, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 51.47
+2026-10-22 14:29:00,867 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 20, #cached-token: 13, token usage: 0.00, #running-req: 2, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 248.69
+2026-10-22 14:29:00,895 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=76
+2026-10-22 14:29:00,902 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 16, #cached-token: 0, token usage: 0.00, #running-req: 8, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 354.34
+INFO:     127.0.0.1:54200 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:00,987 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 13, #cached-token: 0, token usage: 0.00, #running-req: 9, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 153.86
+INFO:     127.0.0.1:34187 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:01,014 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 2, #token: 54, token usage: 0.00, cuda graph: True, gen throughput (token/s): 121.56, #queue-req: 0
+2026-10-22 14:29:01,020 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=93
+2026-10-22 14:29:01,098 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 12, #cached-token: 0, token usage: 0.00, #running-req: 9, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 108.47
+INFO:     127.0.0.1:48108 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:01,132 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Prefill batch, #new-seq: 1, #new-token: 19, #cached-token: 0, token usage: 0.00, #running-req: 10, #queue-req: 0, #pending-token: 0, cuda graph: False, input throughput (token/s): 554.45
+INFO:     127.0.0.1:61162 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:01,181 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 11, #token: 641, token usage: 0.00, cuda graph: True, gen throughput (token/s): 864.56, #queue-req: 0
+2026-10-22 14:29:01,316 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 6, #token: 601, token usage: 0.00, cuda graph: True, gen throughput (token/s): 2918.12, #queue-req: 0
+2026-10-22 14:29:01,422 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=80
+2026-10-22 14:29:01,489 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 2, #token: 277, token usage: 0.00, cuda graph: True, gen throughput (token/s): 914.96, #queue-req: 0
+2026-10-22 14:29:01,539 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=7 max_codec_tokens=121
+INFO:     127.0.0.1:44125 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:01,661 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=95
+2026-10-22 14:29:01,707 [INFO] sglang.srt.managers.scheduler_components.metrics_reporter: Decode batch, #running-req: 1, #token: 161, token usage: 0.00, cuda graph: True, gen throughput (token/s): 238.15, #queue-req: 0
+2026-10-22 14:29:01,746 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=145
+INFO:     127.0.0.1:41298 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:01,869 [INFO] sglang_omni.models.minicpm_o.stages: minicpm_code2wav_batch size=1 max_codec_tokens=144
+INFO:     127.0.0.1:19636 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47908 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63762 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60466 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58306 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22892 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46377 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52229 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34340 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2026-10-22 14:29:02,366 [INFO] sglang_omni.profiler.profiler_control: Broadcast profiler_stop run_id=20261022T141048Z-optimized-c16-measured to stages=['preprocessing', 'thinker', 'image_encoder', 'audio_encoder', 'decode', 'talker', 'code2wav']
+INFO:     127.0.0.1:32107 - "POST /stop_request_profile HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3881]
+2026-10-22 14:29:03,689 [INFO] sglang_omni.serve.launcher: Shutting down pipeline …
+2026-10-22 14:29:03,690 [INFO] sglang_omni.pipeline.coordinator: Sent shutdown to stage: preprocessing
+2026-10-22 14:29:03,691 [INFO] sglang_omni.pipeline.coordinator: Sent shutdown to stage: thinker
+2026-10-22 14:29:03,691 [INFO] sglang_omni.pipeline.coordinator: Sent shutdown to stage: image_encoder
+2026-10-22 14:29:03,692 [INFO] sglang_omni.pipeline.coordinator: Sent shutdown to stage: audio_encoder
+2026-10-22 14:29:03,692 [INFO] sglang_omni.pipeline.coordinator: Sent shutdown to stage: decode
+2026-10-22 14:29:03,692 [INFO] sglang_omni.pipeline.coordinator: Sent shutdown to stage: talker
+2026-10-22 14:29:03,693 [INFO] sglang_omni.pipeline.coordinator: Sent shutdown to stage: code2wav
+2026-10-22 14:29:03,990 [INFO] sglang_omni.pipeline.coordinator: Coordinator completion loop cancelled
+2026-10-22 14:29:03,991 [INFO] sglang_omni.pipeline.coordinator: Coordinator stopped
+2026-10-22 14:29:03,992 [INFO] sglang_omni.serve.launcher: Pipeline stopped.
+/usr/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

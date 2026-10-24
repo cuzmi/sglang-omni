@@ -1,0 +1,1274 @@
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 12 files:   8%|▊         | 1/12 [00:00<00:01,  7.00it/s]Fetching 12 files:  58%|█████▊    | 7/12 [00:00<00:00, 28.62it/s]Fetching 12 files:  92%|█████████▏| 11/12 [00:03<00:00,  2.69it/s]Fetching 12 files: 100%|██████████| 12/12 [00:06<00:00,  1.91it/s]
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.287
+  Latency median (s):            0.287
+  Latency p95 (s):               0.393
+  Latency p99 (s):               0.447
+  RTF mean:                      0.0716
+  RTF median:                    0.0691
+  RTF p95:                       0.097
+  RTF p99:                       0.1089
+  Audio duration mean (s):       4.142
+  Audio throughput (s/s):        14.438
+  Output throughput (tok/s):     52.3
+  Output tokens/request-s:       52.3
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            3.486
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0244 (2.44%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0340 (3.40%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1175
+  WER per-sample p95:            0.1705
+  WER per-sample max:            1.0000 (100.00%)
+  WER corpus (excl >50%):        0.0194 (1.94%)
+  WER mean (excl >50%):          0.0239 (2.39%)
+  >50% WER samples:              3 (1.2%)
+------------------------------------------------------------
+  Latency mean (s):              0.286837890625
+  Latency p95 (s):               0.393175
+  RTF mean:                      0.07156330517878468
+  Throughput (req/s):            3.486
+  Audio duration mean (s):       4.1415625
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.08914397939497576
+  ASR latency median (s):        0.07856587541755289
+  ASR latency p95 (s):           0.13044211216038093
+  ASR latency p99 (s):           0.3705066421418449
+  ASR RTF mean:                  0.022813964703196236
+  ASR RTF median:                0.019212081137488388
+  ASR total time (s):            2.904867502162233
+  ASR latency sum (s):           22.820858725113794
+  ASR throughput (samples/s):    88.12794380791787
+  Audio processed (s):           1060.24
+============================================================
+WER complete: r1-baseline-c1
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.976
+  Latency median (s):            0.979
+  Latency p95 (s):               1.261
+  Latency p99 (s):               1.412
+  RTF mean:                      0.2457
+  RTF median:                    0.2383
+  RTF p95:                       0.346
+  RTF p99:                       0.4068
+  Audio duration mean (s):       4.167
+  Audio throughput (s/s):        67.159
+  Output throughput (tok/s):     241.9
+  Output tokens/request-s:       15.4
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            16.115
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0350 (3.50%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0485 (4.85%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1810
+  WER per-sample p95:            0.2125
+  WER per-sample max:            1.6154 (161.54%)
+  WER corpus (excl >50%):        0.0185 (1.85%)
+  WER mean (excl >50%):          0.0235 (2.35%)
+  >50% WER samples:              6 (2.3%)
+------------------------------------------------------------
+  Latency mean (s):              0.976479296875
+  Latency p95 (s):               1.260775
+  RTF mean:                      0.24568057459467124
+  Throughput (req/s):            16.115
+  Audio duration mean (s):       4.167343750000001
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.08322164223864092
+  ASR latency median (s):        0.0820979248965159
+  ASR latency p95 (s):           0.1241218838840723
+  ASR latency p99 (s):           0.1471772033488376
+  ASR RTF mean:                  0.020679645820902873
+  ASR RTF median:                0.020434952224925258
+  ASR total time (s):            2.715977743966505
+  ASR latency sum (s):           21.304740413092077
+  ASR throughput (samples/s):    94.25703158602803
+  Audio processed (s):           1066.84
+============================================================
+WER complete: r1-baseline-c16
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              1.421
+  Latency median (s):            1.382
+  Latency p95 (s):               1.969
+  Latency p99 (s):               2.043
+  RTF mean:                      0.3548
+  RTF median:                    0.3449
+  RTF p95:                       0.5121
+  RTF p99:                       0.5356
+  Audio duration mean (s):       4.19
+  Audio throughput (s/s):        91.938
+  Output throughput (tok/s):     329.4
+  Output tokens/request-s:       10.6
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            21.941
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0288 (2.88%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0414 (4.14%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1481
+  WER per-sample p95:            0.1705
+  WER per-sample max:            1.0000 (100.00%)
+  WER corpus (excl >50%):        0.0184 (1.84%)
+  WER mean (excl >50%):          0.0207 (2.07%)
+  >50% WER samples:              6 (2.3%)
+------------------------------------------------------------
+  Latency mean (s):              1.4214625
+  Latency p95 (s):               1.968575
+  RTF mean:                      0.35480382823008216
+  Throughput (req/s):            21.941
+  Audio duration mean (s):       4.190312499999999
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.08539133099020546
+  ASR latency median (s):        0.08622483955696225
+  ASR latency p95 (s):           0.1254577654763125
+  ASR latency p99 (s):           0.13973121633753177
+  ASR RTF mean:                  0.021363842897420826
+  ASR RTF median:                0.02034294456399682
+  ASR total time (s):            2.756999323843047
+  ASR latency sum (s):           21.860180733492598
+  ASR throughput (samples/s):    92.8545748220045
+  Audio processed (s):           1072.72
+============================================================
+WER complete: r1-baseline-c32
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.732
+  Latency median (s):            0.722
+  Latency p95 (s):               0.985
+  Latency p99 (s):               1.094
+  RTF mean:                      0.1843
+  RTF median:                    0.1814
+  RTF p95:                       0.2486
+  RTF p99:                       0.283
+  Audio duration mean (s):       4.154
+  Audio throughput (s/s):        44.899
+  Output throughput (tok/s):     162.2
+  Output tokens/request-s:       20.5
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            10.808
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0284 (2.84%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0376 (3.76%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1818
+  WER per-sample p95:            0.1456
+  WER per-sample max:            2.0000 (200.00%)
+  WER corpus (excl >50%):        0.0151 (1.51%)
+  WER mean (excl >50%):          0.0165 (1.65%)
+  >50% WER samples:              4 (1.6%)
+------------------------------------------------------------
+  Latency mean (s):              0.73166875
+  Latency p95 (s):               0.98495
+  RTF mean:                      0.18426994956338416
+  Throughput (req/s):            10.808
+  Audio duration mean (s):       4.154375
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.08533236370021768
+  ASR latency median (s):        0.0837865169160068
+  ASR latency p95 (s):           0.12708760041277856
+  ASR latency p99 (s):           0.14771608478622505
+  ASR RTF mean:                  0.02134176449205915
+  ASR RTF median:                0.020767165568089222
+  ASR total time (s):            2.7882028070744127
+  ASR latency sum (s):           21.845085107255727
+  ASR throughput (samples/s):    91.81541577623402
+  Audio processed (s):           1063.52
+============================================================
+WER complete: r1-baseline-c8
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.286
+  Latency median (s):            0.285
+  Latency p95 (s):               0.392
+  Latency p99 (s):               0.482
+  RTF mean:                      0.0711
+  RTF median:                    0.0688
+  RTF p95:                       0.0949
+  RTF p99:                       0.1029
+  Audio duration mean (s):       4.142
+  Audio throughput (s/s):        14.497
+  Output throughput (tok/s):     52.5
+  Output tokens/request-s:       52.5
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            3.5
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0237 (2.37%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0333 (3.33%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1171
+  WER per-sample p95:            0.1571
+  WER per-sample max:            1.0000 (100.00%)
+  WER corpus (excl >50%):        0.0187 (1.87%)
+  WER mean (excl >50%):          0.0231 (2.31%)
+  >50% WER samples:              3 (1.2%)
+------------------------------------------------------------
+  Latency mean (s):              0.28567070312500004
+  Latency p95 (s):               0.39165
+  RTF mean:                      0.07107918283539609
+  Throughput (req/s):            3.5
+  Audio duration mean (s):       4.1415625
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.08677759915190109
+  ASR latency median (s):        0.09022264601662755
+  ASR latency p95 (s):           0.12354703177697957
+  ASR latency p99 (s):           0.13318673933390526
+  ASR RTF mean:                  0.02180858708449021
+  ASR RTF median:                0.02089588357300096
+  ASR total time (s):            2.8238285949919373
+  ASR latency sum (s):           22.215065382886678
+  ASR throughput (samples/s):    90.65706057868252
+  Audio processed (s):           1060.24
+============================================================
+WER complete: r1-optimized-c1
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.921
+  Latency median (s):            0.923
+  Latency p95 (s):               1.244
+  Latency p99 (s):               1.382
+  RTF mean:                      0.2311
+  RTF median:                    0.2303
+  RTF p95:                       0.287
+  RTF p99:                       0.3134
+  Audio duration mean (s):       4.11
+  Audio throughput (s/s):        70.311
+  Output throughput (tok/s):     256.8
+  Output tokens/request-s:       16.3
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            17.106
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0204 (2.04%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0248 (2.48%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.0946
+  WER per-sample p95:            0.1333
+  WER per-sample max:            1.0000 (100.00%)
+  WER corpus (excl >50%):        0.0175 (1.75%)
+  WER mean (excl >50%):          0.0179 (1.79%)
+  >50% WER samples:              2 (0.8%)
+------------------------------------------------------------
+  Latency mean (s):              0.920676953125
+  Latency p95 (s):               1.244
+  RTF mean:                      0.23105632053174044
+  Throughput (req/s):            17.106
+  Audio duration mean (s):       4.1103125
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.0786199553640472
+  ASR latency median (s):        0.07840950787067413
+  ASR latency p95 (s):           0.11449486226774752
+  ASR latency p99 (s):           0.14637157048564395
+  ASR RTF mean:                  0.020139130925739174
+  ASR RTF median:                0.018732918999544268
+  ASR total time (s):            2.5535333019215614
+  ASR latency sum (s):           20.126708573196083
+  ASR throughput (samples/s):    100.25324510448219
+  Audio processed (s):           1052.24
+============================================================
+WER complete: r1-optimized-c16
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              1.451
+  Latency median (s):            1.397
+  Latency p95 (s):               1.985
+  Latency p99 (s):               2.332
+  RTF mean:                      0.3616
+  RTF median:                    0.3575
+  RTF p95:                       0.4693
+  RTF p99:                       0.5165
+  Audio duration mean (s):       4.171
+  Audio throughput (s/s):        89.535
+  Output throughput (tok/s):     322.2
+  Output tokens/request-s:       10.3
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            21.466
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0393 (3.93%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0539 (5.39%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.2322
+  WER per-sample p95:            0.1667
+  WER per-sample max:            2.6154 (261.54%)
+  WER corpus (excl >50%):        0.0174 (1.74%)
+  WER mean (excl >50%):          0.0195 (1.95%)
+  >50% WER samples:              7 (2.7%)
+------------------------------------------------------------
+  Latency mean (s):              1.4508390625
+  Latency p95 (s):               1.984875
+  RTF mean:                      0.36155776419841956
+  Throughput (req/s):            21.466
+  Audio duration mean (s):       4.171093750000001
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.07682277191543108
+  ASR latency median (s):        0.07240401103626937
+  ASR latency p95 (s):           0.11933765141293406
+  ASR latency p99 (s):           0.20306163824861867
+  ASR RTF mean:                  0.019265941908639672
+  ASR RTF median:                0.017851212974441377
+  ASR total time (s):            2.4778541061095893
+  ASR latency sum (s):           19.666629610350356
+  ASR throughput (samples/s):    103.31520300924358
+  Audio processed (s):           1067.8
+============================================================
+WER complete: r1-optimized-c32
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.662
+  Latency median (s):            0.642
+  Latency p95 (s):               0.899
+  Latency p99 (s):               1.021
+  RTF mean:                      0.1652
+  RTF median:                    0.166
+  RTF p95:                       0.225
+  RTF p99:                       0.2505
+  Audio duration mean (s):       4.215
+  Audio throughput (s/s):        50.366
+  Output throughput (tok/s):     179.4
+  Output tokens/request-s:       22.7
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            11.949
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0288 (2.88%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0373 (3.73%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1557
+  WER per-sample p95:            0.1429
+  WER per-sample max:            1.5000 (150.00%)
+  WER corpus (excl >50%):        0.0162 (1.62%)
+  WER mean (excl >50%):          0.0197 (1.97%)
+  >50% WER samples:              4 (1.6%)
+------------------------------------------------------------
+  Latency mean (s):              0.6620417968750001
+  Latency p95 (s):               0.89925
+  RTF mean:                      0.16518487852317235
+  Throughput (req/s):            11.949
+  Audio duration mean (s):       4.215
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.08222270463102177
+  ASR latency median (s):        0.08134869986679405
+  ASR latency p95 (s):           0.1208730906364508
+  ASR latency p99 (s):           0.13837205044692374
+  ASR RTF mean:                  0.020773979537274154
+  ASR RTF median:                0.0193572033676776
+  ASR total time (s):            2.7128439280204475
+  ASR latency sum (s):           21.049012385541573
+  ASR throughput (samples/s):    94.36591517699372
+  Audio processed (s):           1079.04
+============================================================
+WER complete: r1-optimized-c8
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.282
+  Latency median (s):            0.283
+  Latency p95 (s):               0.382
+  Latency p99 (s):               0.446
+  RTF mean:                      0.0703
+  RTF median:                    0.0683
+  RTF p95:                       0.0937
+  RTF p99:                       0.0999
+  Audio duration mean (s):       4.142
+  Audio throughput (s/s):        14.664
+  Output throughput (tok/s):     53.2
+  Output tokens/request-s:       53.2
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            3.541
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0244 (2.44%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0340 (3.40%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1175
+  WER per-sample p95:            0.1705
+  WER per-sample max:            1.0000 (100.00%)
+  WER corpus (excl >50%):        0.0194 (1.94%)
+  WER mean (excl >50%):          0.0239 (2.39%)
+  >50% WER samples:              3 (1.2%)
+------------------------------------------------------------
+  Latency mean (s):              0.28241601562499996
+  Latency p95 (s):               0.382325
+  RTF mean:                      0.07031008715804828
+  Throughput (req/s):            3.541
+  Audio duration mean (s):       4.1415625
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.0589209148174632
+  ASR latency median (s):        0.05568599049001932
+  ASR latency p95 (s):           0.0930588724440895
+  ASR latency p99 (s):           0.10422661532647905
+  ASR RTF mean:                  0.014776892107860254
+  ASR RTF median:                0.0137332895446884
+  ASR total time (s):            1.9032706441357732
+  ASR latency sum (s):           15.083754193270579
+  ASR throughput (samples/s):    134.50530579493233
+  Audio processed (s):           1060.24
+============================================================
+WER complete: r2-baseline-c1
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.996
+  Latency median (s):            1.004
+  Latency p95 (s):               1.293
+  Latency p99 (s):               1.402
+  RTF mean:                      0.2507
+  RTF median:                    0.246
+  RTF p95:                       0.352
+  RTF p99:                       0.408
+  Audio duration mean (s):       4.165
+  Audio throughput (s/s):        65.848
+  Output throughput (tok/s):     237.3
+  Output tokens/request-s:       15.1
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            15.809
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0342 (3.42%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0438 (4.38%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1799
+  WER per-sample p95:            0.1750
+  WER per-sample max:            1.8462 (184.62%)
+  WER corpus (excl >50%):        0.0177 (1.77%)
+  WER mean (excl >50%):          0.0214 (2.14%)
+  >50% WER samples:              5 (2.0%)
+------------------------------------------------------------
+  Latency mean (s):              0.996499609375
+  Latency p95 (s):               1.292675
+  RTF mean:                      0.25065939568873025
+  Throughput (req/s):            15.809
+  Audio duration mean (s):       4.165312500000001
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.07859677718261082
+  ASR latency median (s):        0.0770001084310934
+  ASR latency p95 (s):           0.12109466484980658
+  ASR latency p99 (s):           0.1360175796668045
+  ASR RTF mean:                  0.01969530728755169
+  ASR RTF median:                0.018615621600310578
+  ASR total time (s):            2.5575477441307157
+  ASR latency sum (s):           20.12077495874837
+  ASR throughput (samples/s):    100.09588309250186
+  Audio processed (s):           1066.32
+============================================================
+WER complete: r2-baseline-c16
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              1.401
+  Latency median (s):            1.36
+  Latency p95 (s):               1.934
+  Latency p99 (s):               2.338
+  RTF mean:                      0.3513
+  RTF median:                    0.3453
+  RTF p95:                       0.5042
+  RTF p99:                       0.5601
+  Audio duration mean (s):       4.178
+  Audio throughput (s/s):        92.961
+  Output throughput (tok/s):     334.0
+  Output tokens/request-s:       10.7
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            22.249
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0259 (2.59%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0362 (3.62%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1251
+  WER per-sample p95:            0.1705
+  WER per-sample max:            1.0000 (100.00%)
+  WER corpus (excl >50%):        0.0187 (1.87%)
+  WER mean (excl >50%):          0.0232 (2.32%)
+  >50% WER samples:              4 (1.6%)
+------------------------------------------------------------
+  Latency mean (s):              1.400896484375
+  Latency p95 (s):               1.933775
+  RTF mean:                      0.35133903271888456
+  Throughput (req/s):            22.249
+  Audio duration mean (s):       4.17828125
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.08929095200255688
+  ASR latency median (s):        0.09322296036407351
+  ASR latency p95 (s):           0.12293811119161546
+  ASR latency p99 (s):           0.13349106290843338
+  ASR RTF mean:                  0.022156944782429525
+  ASR RTF median:                0.021818734978746007
+  ASR total time (s):            2.909529878059402
+  ASR latency sum (s):           22.85848371265456
+  ASR throughput (samples/s):    87.98672319211475
+  Audio processed (s):           1069.64
+============================================================
+WER complete: r2-baseline-c32
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.725
+  Latency median (s):            0.714
+  Latency p95 (s):               0.98
+  Latency p99 (s):               1.115
+  RTF mean:                      0.182
+  RTF median:                    0.1815
+  RTF p95:                       0.2367
+  RTF p99:                       0.266
+  Audio duration mean (s):       4.13
+  Audio throughput (s/s):        45.086
+  Output throughput (tok/s):     163.9
+  Output tokens/request-s:       20.7
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            10.918
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0215 (2.15%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0304 (3.04%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1512
+  WER per-sample p95:            0.1429
+  WER per-sample max:            2.0000 (200.00%)
+  WER corpus (excl >50%):        0.0154 (1.54%)
+  WER mean (excl >50%):          0.0166 (1.66%)
+  >50% WER samples:              3 (1.2%)
+------------------------------------------------------------
+  Latency mean (s):              0.7247
+  Latency p95 (s):               0.980225
+  RTF mean:                      0.1819745034656607
+  Throughput (req/s):            10.918
+  Audio duration mean (s):       4.1296875
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.07758254156942712
+  ASR latency median (s):        0.07638169394340366
+  ASR latency p95 (s):           0.11951264820527285
+  ASR latency p99 (s):           0.12946114626247432
+  ASR RTF mean:                  0.019636632501823736
+  ASR RTF median:                0.01835252716330861
+  ASR total time (s):            2.514995160046965
+  ASR latency sum (s):           19.861130641773343
+  ASR throughput (samples/s):    101.78946030067885
+  Audio processed (s):           1057.2
+============================================================
+WER complete: r2-baseline-c8
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.286
+  Latency median (s):            0.287
+  Latency p95 (s):               0.387
+  Latency p99 (s):               0.445
+  RTF mean:                      0.0712
+  RTF median:                    0.0689
+  RTF p95:                       0.0948
+  RTF p99:                       0.1041
+  Audio duration mean (s):       4.142
+  Audio throughput (s/s):        14.503
+  Output throughput (tok/s):     52.6
+  Output tokens/request-s:       52.6
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            3.502
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0237 (2.37%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0333 (3.33%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1171
+  WER per-sample p95:            0.1571
+  WER per-sample max:            1.0000 (100.00%)
+  WER corpus (excl >50%):        0.0187 (1.87%)
+  WER mean (excl >50%):          0.0231 (2.31%)
+  >50% WER samples:              3 (1.2%)
+------------------------------------------------------------
+  Latency mean (s):              0.28554335937499997
+  Latency p95 (s):               0.38745
+  RTF mean:                      0.07115950861804414
+  Throughput (req/s):            3.502
+  Audio duration mean (s):       4.1415625
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.058114961498176854
+  ASR latency median (s):        0.05611904652323574
+  ASR latency p95 (s):           0.09052442602114752
+  ASR latency p99 (s):           0.1043626872706227
+  ASR RTF mean:                  0.014556810356977127
+  ASR RTF median:                0.01363476020050333
+  ASR total time (s):            1.9299967729020864
+  ASR latency sum (s):           14.877430143533275
+  ASR throughput (samples/s):    132.64270883471966
+  Audio processed (s):           1060.24
+============================================================
+WER complete: r2-optimized-c1
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.94
+  Latency median (s):            0.939
+  Latency p95 (s):               1.234
+  Latency p99 (s):               1.479
+  RTF mean:                      0.2342
+  RTF median:                    0.2302
+  RTF p95:                       0.3051
+  RTF p99:                       0.3311
+  Audio duration mean (s):       4.173
+  Audio throughput (s/s):        69.834
+  Output throughput (tok/s):     251.2
+  Output tokens/request-s:       16.0
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            16.734
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0382 (3.82%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0510 (5.10%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.2168
+  WER per-sample p95:            0.1667
+  WER per-sample max:            2.1250 (212.50%)
+  WER corpus (excl >50%):        0.0167 (1.67%)
+  WER mean (excl >50%):          0.0179 (1.79%)
+  >50% WER samples:              7 (2.7%)
+------------------------------------------------------------
+  Latency mean (s):              0.9395296875
+  Latency p95 (s):               1.2338
+  RTF mean:                      0.23421559549320775
+  Throughput (req/s):            16.734
+  Audio duration mean (s):       4.17328125
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.07916077630125073
+  ASR latency median (s):        0.07537304039578885
+  ASR latency p95 (s):           0.12208564847242087
+  ASR latency p99 (s):           0.15020443841349318
+  ASR RTF mean:                  0.019958177300744277
+  ASR RTF median:                0.018328418276117496
+  ASR total time (s):            2.552996435202658
+  ASR latency sum (s):           20.265158733120188
+  ASR throughput (samples/s):    100.27432724545837
+  Audio processed (s):           1068.36
+============================================================
+WER complete: r2-optimized-c16
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              1.4
+  Latency median (s):            1.395
+  Latency p95 (s):               1.889
+  Latency p99 (s):               2.114
+  RTF mean:                      0.3501
+  RTF median:                    0.3467
+  RTF p95:                       0.4464
+  RTF p99:                       0.5277
+  Audio duration mean (s):       4.128
+  Audio throughput (s/s):        91.531
+  Output throughput (tok/s):     332.8
+  Output tokens/request-s:       10.7
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            22.172
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0269 (2.69%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0382 (3.82%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.1361
+  WER per-sample p95:            0.1705
+  WER per-sample max:            1.0000 (100.00%)
+  WER corpus (excl >50%):        0.0191 (1.91%)
+  WER mean (excl >50%):          0.0230 (2.30%)
+  >50% WER samples:              4 (1.6%)
+------------------------------------------------------------
+  Latency mean (s):              1.399847265625
+  Latency p95 (s):               1.88935
+  RTF mean:                      0.35014258555842914
+  Throughput (req/s):            22.172
+  Audio duration mean (s):       4.12828125
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.07991389801281912
+  ASR latency median (s):        0.07969507249072194
+  ASR latency p95 (s):           0.12179728626506403
+  ASR latency p99 (s):           0.1384813522920012
+  ASR RTF mean:                  0.020229050781198715
+  ASR RTF median:                0.019067175793447223
+  ASR total time (s):            2.606050271075219
+  ASR latency sum (s):           20.457957891281694
+  ASR throughput (samples/s):    98.23294770686756
+  Audio processed (s):           1056.84
+============================================================
+WER complete: r2-optimized-c32
+
+============================================================
+                 TTS Speed Benchmark Result                 
+============================================================
+  Model:                         MiniCPM-o-4_5
+  Completed requests:            256
+  Failed requests:               0
+  Max token hits:                0
+  Finish reasons observed:       0
+------------------------------------------------------------
+  Latency mean (s):              0.647
+  Latency median (s):            0.636
+  Latency p95 (s):               0.859
+  Latency p99 (s):               0.967
+  RTF mean:                      0.1623
+  RTF median:                    0.1582
+  RTF p95:                       0.2298
+  RTF p99:                       0.2487
+  Audio duration mean (s):       4.186
+  Audio throughput (s/s):        51.242
+  Output throughput (tok/s):     183.8
+  Output tokens/request-s:       23.2
+  Output tokens (mean):          15
+  Output tokens (total):         3843
+  Prompt tokens (mean):          36
+  Prompt tokens (total):         9207
+  Throughput (req/s):            12.242
+============================================================
+
+============================================================
+                  TTS WER Benchmark Result                  
+============================================================
+  TTS model:                     MiniCPM-o-4_5
+  Language:                      en
+  Evaluated / Total:             256/256
+  Skipped:                       0
+------------------------------------------------------------
+  WER (corpus, micro-avg):       0.0335 (3.35%)
+------------------------------------------------------------
+  WER per-sample mean:           0.0445 (4.45%)
+  WER per-sample median:         0.0000
+  WER per-sample std:            0.2142
+  WER per-sample p95:            0.1571
+  WER per-sample max:            2.2500 (225.00%)
+  WER corpus (excl >50%):        0.0158 (1.58%)
+  WER mean (excl >50%):          0.0178 (1.78%)
+  >50% WER samples:              5 (2.0%)
+------------------------------------------------------------
+  Latency mean (s):              0.646776171875
+  Latency p95 (s):               0.8585750000000001
+  RTF mean:                      0.16233169188422897
+  Throughput (req/s):            12.242
+  Audio duration mean (s):       4.1859375
+============================================================
+
+
+============================================================
+                 ASR Speed Benchmark Result                 
+============================================================
+  ASR model:                     Qwen3-ASR-1.7B
+  Evaluated / Total:             256/256
+  ASR concurrency:               8
+  Skipped:                       0
+------------------------------------------------------------
+  ASR latency mean (s):          0.08837060014866438
+  ASR latency median (s):        0.09072857012506574
+  ASR latency p95 (s):           0.1257556733326055
+  ASR latency p99 (s):           0.136849458492361
+  ASR RTF mean:                  0.021954053342844056
+  ASR RTF median:                0.021526580820147887
+  ASR total time (s):            2.8802650200668722
+  ASR latency sum (s):           22.62287363805808
+  ASR throughput (samples/s):    88.88071000982276
+  Audio processed (s):           1071.6
+============================================================
+WER complete: r2-optimized-c8
+/opt/sglang/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+/opt/sglang/lib/python3.12/site-packages/torch/nn/functional.py:6829: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  key_padding_mask = _canonical_mask(
+/opt/sglang/lib/python3.12/site-packages/torch/nn/functional.py:6829: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  key_padding_mask = _canonical_mask(
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:14,  2.15it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:08,  3.42it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:07,  4.09it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:05,  4.71it/s]Speaker similarity:  16%|█▌        | 5/32 [00:01<00:05,  4.87it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:05,  4.83it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.11it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.09it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:04,  5.66it/s]Speaker similarity:  31%|███▏      | 10/32 [00:02<00:04,  5.49it/s]Speaker similarity:  34%|███▍      | 11/32 [00:02<00:03,  5.69it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.62it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  5.80it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.76it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:03,  5.64it/s]Speaker similarity:  50%|█████     | 16/32 [00:03<00:02,  5.61it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:03<00:02,  5.59it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.78it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.30it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.10it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.81it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:04<00:01,  5.69it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:04<00:01,  5.73it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.79it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.85it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.78it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:05<00:00,  5.82it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:05<00:00,  5.54it/s]Speaker similarity:  91%|█████████ | 29/32 [00:05<00:00,  5.82it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.23it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.06it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.95it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.48it/s]
+SeedTTS speaker similarity: 48.4902 (256/256 evaluated, 0 skipped)
+Similarity complete: r1-baseline-c1
+/opt/sglang/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:06,  4.89it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.69it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.72it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.03it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  6.05it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.62it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.81it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.60it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  6.10it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.96it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  6.11it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.91it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  6.06it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.95it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.74it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.73it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.68it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.83it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.29it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.10it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.89it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.94it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.95it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.98it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.93it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.89it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.03it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.64it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.19it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.29it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.19it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.25it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.95it/s]
+SeedTTS speaker similarity: 48.4798 (256/256 evaluated, 0 skipped)
+Similarity complete: r1-baseline-c16
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.27it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.66it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.73it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.03it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.83it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.66it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.81it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.62it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  5.87it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.52it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  5.73it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.70it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  5.90it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.85it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.76it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.74it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.72it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.92it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.40it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.16it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.94it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.97it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.96it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.99it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.99it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.88it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  5.76it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.50it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.02it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.01it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  5.92it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.06it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.87it/s]
+SeedTTS speaker similarity: 48.6839 (256/256 evaluated, 0 skipped)
+Similarity complete: r1-baseline-c32
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.31it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.97it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:04,  5.91it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.15it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  6.15it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.77it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.90it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.31it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:04,  5.64it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.64it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  5.68it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.68it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  5.90it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.83it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.78it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.76it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.74it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.96it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.46it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.23it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  6.00it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  6.03it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  6.03it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  6.04it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.95it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:00,  6.10it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.10it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.71it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.20it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.24it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.11it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.05it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.93it/s]
+SeedTTS speaker similarity: 48.7186 (256/256 evaluated, 0 skipped)
+Similarity complete: r1-baseline-c8
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.31it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.96it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:04,  5.87it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.11it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.87it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.52it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.72it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.59it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  6.12it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.83it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  6.05it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.92it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  6.08it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.96it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.85it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.79it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.75it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.94it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.44it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.21it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.97it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.85it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.89it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.92it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.96it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.83it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  5.86it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.56it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  5.83it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.25it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.11it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.04it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.92it/s]
+SeedTTS speaker similarity: 48.4896 (256/256 evaluated, 0 skipped)
+Similarity complete: r1-optimized-c1
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.31it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.91it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:04,  5.83it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.06it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.88it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.80it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.90it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.69it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  5.93it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.76it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  5.88it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.80it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  5.97it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.85it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.75it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.67it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.61it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.78it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.27it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.09it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.95it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.97it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.97it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.98it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.94it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.93it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  5.96it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.56it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.12it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.21it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.15it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.25it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.93it/s]
+SeedTTS speaker similarity: 48.7403 (256/256 evaluated, 0 skipped)
+Similarity complete: r1-optimized-c16
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.34it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.91it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:04,  5.86it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.13it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.89it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.63it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.78it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:05,  4.11it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:04,  4.81it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:04,  4.84it/s]Speaker similarity:  34%|███▍      | 11/32 [00:02<00:04,  5.08it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.23it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  5.55it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.59it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:03,  5.61it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.65it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:03<00:02,  5.65it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.87it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.40it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.18it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.98it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.89it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:04<00:01,  5.92it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.95it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  6.07it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:00,  6.07it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.15it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.73it/s]Speaker similarity:  91%|█████████ | 29/32 [00:05<00:00,  5.99it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.13it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.01it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.13it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.71it/s]
+SeedTTS speaker similarity: 48.5646 (256/256 evaluated, 0 skipped)
+Similarity complete: r1-optimized-c32
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.35it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.66it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.73it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.02it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.92it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.76it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.88it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.69it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  6.21it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  6.00it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  6.05it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.92it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  6.07it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.95it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.84it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.80it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.73it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.87it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.38it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.18it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.96it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.98it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.99it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  6.00it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  6.09it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:00,  6.09it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.17it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.76it/s]Speaker similarity:  91%|█████████ | 29/32 [00:05<00:00,  3.92it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  4.36it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  4.73it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.15it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.65it/s]
+SeedTTS speaker similarity: 48.4564 (256/256 evaluated, 0 skipped)
+Similarity complete: r1-optimized-c8
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.31it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.96it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:04,  5.88it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.13it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.88it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.53it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.72it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.59it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  6.14it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.84it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  6.07it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.92it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  6.07it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.95it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.84it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.80it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.76it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.95it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.45it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.21it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.96it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.85it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.89it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.94it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.99it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.87it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  5.91it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.60it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  5.89it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.29it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.16it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.07it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.94it/s]
+SeedTTS speaker similarity: 48.4902 (256/256 evaluated, 0 skipped)
+Similarity complete: r2-baseline-c1
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.31it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.93it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.76it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.06it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.83it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.70it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.84it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  4.90it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:04,  5.53it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:04,  5.50it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  5.76it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.71it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  5.90it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.81it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.73it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.69it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.65it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.85it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.33it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.10it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.86it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.88it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.89it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.89it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.90it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.93it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  5.77it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.48it/s]Speaker similarity:  91%|█████████ | 29/32 [00:05<00:00,  5.76it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  5.90it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  5.83it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.90it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.79it/s]
+SeedTTS speaker similarity: 48.5535 (256/256 evaluated, 0 skipped)
+Similarity complete: r2-baseline-c16
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.36it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.70it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.75it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.06it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.96it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.51it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.71it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.60it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  6.14it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.68it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  5.86it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.81it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  6.00it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.92it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.84it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.81it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.78it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.97it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.50it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.24it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  6.04it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  6.05it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.97it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.99it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.85it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.94it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.08it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.71it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.20it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.27it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.19it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.26it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.96it/s]
+SeedTTS speaker similarity: 49.0847 (256/256 evaluated, 0 skipped)
+Similarity complete: r2-baseline-c32
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.34it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.85it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.76it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.02it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.87it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.73it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.87it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.69it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  5.93it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.72it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  5.98it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.89it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  6.07it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.96it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.88it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.84it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.81it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  6.02it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.49it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.25it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  6.04it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  6.05it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  6.06it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  6.05it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  5.96it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:00,  6.12it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.09it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.72it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.27it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.31it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.18it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.27it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.01it/s]
+SeedTTS speaker similarity: 48.8716 (256/256 evaluated, 0 skipped)
+Similarity complete: r2-baseline-c8
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.33it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.67it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.75it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.05it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.85it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.52it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.73it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.61it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  6.16it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.87it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  6.09it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.96it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  6.12it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.99it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.89it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.84it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.81it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  6.00it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:01,  6.51it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.27it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  6.02it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.90it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.94it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  5.98it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  6.03it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:01,  5.92it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  5.95it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.63it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  5.92it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.34it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.20it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.11it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.96it/s]
+SeedTTS speaker similarity: 48.4896 (256/256 evaluated, 0 skipped)
+Similarity complete: r2-optimized-c1
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.35it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.65it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.73it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.03it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.82it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.46it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.68it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  4.87it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:04,  5.30it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:04,  5.36it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  5.56it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.60it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  5.85it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.83it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.75it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.75it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:03<00:02,  5.75it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.90it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.43it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.23it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.95it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.99it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  6.00it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  6.02it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  6.13it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:00,  6.07it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.20it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.79it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.02it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.17it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  5.98it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.16it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.85it/s]
+SeedTTS speaker similarity: 48.8646 (256/256 evaluated, 0 skipped)
+Similarity complete: r2-optimized-c16
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.34it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.60it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:05,  5.70it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.02it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.80it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.68it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.84it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.67it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  5.91it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.83it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  6.02it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.90it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  6.06it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.95it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.82it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.80it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.77it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.91it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.44it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.20it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.97it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  5.98it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  5.99it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  6.00it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  6.04it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:00,  6.18it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.25it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.83it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.31it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.08it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.04it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.17it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  5.97it/s]
+SeedTTS speaker similarity: 48.5013 (256/256 evaluated, 0 skipped)
+Similarity complete: r2-optimized-c32
+Speaker similarity:   0%|          | 0/32 [00:00<?, ?it/s]Speaker similarity:   3%|▎         | 1/32 [00:00<00:05,  5.33it/s]Speaker similarity:   6%|▋         | 2/32 [00:00<00:05,  5.95it/s]Speaker similarity:   9%|▉         | 3/32 [00:00<00:04,  5.89it/s]Speaker similarity:  12%|█▎        | 4/32 [00:00<00:04,  6.03it/s]Speaker similarity:  16%|█▌        | 5/32 [00:00<00:04,  5.86it/s]Speaker similarity:  19%|█▉        | 6/32 [00:01<00:04,  5.70it/s]Speaker similarity:  22%|██▏       | 7/32 [00:01<00:04,  5.85it/s]Speaker similarity:  25%|██▌       | 8/32 [00:01<00:04,  5.51it/s]Speaker similarity:  28%|██▊       | 9/32 [00:01<00:03,  6.07it/s]Speaker similarity:  31%|███▏      | 10/32 [00:01<00:03,  5.68it/s]Speaker similarity:  34%|███▍      | 11/32 [00:01<00:03,  5.81it/s]Speaker similarity:  38%|███▊      | 12/32 [00:02<00:03,  5.77it/s]Speaker similarity:  41%|████      | 13/32 [00:02<00:03,  5.97it/s]Speaker similarity:  44%|████▍     | 14/32 [00:02<00:03,  5.89it/s]Speaker similarity:  47%|████▋     | 15/32 [00:02<00:02,  5.83it/s]Speaker similarity:  50%|█████     | 16/32 [00:02<00:02,  5.76it/s]Speaker similarity:  53%|█████▎    | 17/32 [00:02<00:02,  5.73it/s]Speaker similarity:  56%|█████▋    | 18/32 [00:03<00:02,  5.94it/s]Speaker similarity:  59%|█████▉    | 19/32 [00:03<00:02,  6.46it/s]Speaker similarity:  62%|██████▎   | 20/32 [00:03<00:01,  6.23it/s]Speaker similarity:  66%|██████▌   | 21/32 [00:03<00:01,  5.99it/s]Speaker similarity:  69%|██████▉   | 22/32 [00:03<00:01,  6.03it/s]Speaker similarity:  72%|███████▏  | 23/32 [00:03<00:01,  6.03it/s]Speaker similarity:  75%|███████▌  | 24/32 [00:04<00:01,  6.04it/s]Speaker similarity:  78%|███████▊  | 25/32 [00:04<00:01,  6.07it/s]Speaker similarity:  81%|████████▏ | 26/32 [00:04<00:00,  6.19it/s]Speaker similarity:  84%|████████▍ | 27/32 [00:04<00:00,  6.25it/s]Speaker similarity:  88%|████████▊ | 28/32 [00:04<00:00,  5.82it/s]Speaker similarity:  91%|█████████ | 29/32 [00:04<00:00,  6.33it/s]Speaker similarity:  94%|█████████▍| 30/32 [00:05<00:00,  6.38it/s]Speaker similarity:  97%|█████████▋| 31/32 [00:05<00:00,  6.30it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.36it/s]Speaker similarity: 100%|██████████| 32/32 [00:05<00:00,  6.01it/s]
+SeedTTS speaker similarity: 48.8420 (256/256 evaluated, 0 skipped)
+Similarity complete: r2-optimized-c8

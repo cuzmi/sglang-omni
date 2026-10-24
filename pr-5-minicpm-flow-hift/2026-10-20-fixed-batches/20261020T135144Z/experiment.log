@@ -1,0 +1,15 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Inputs ready: [{'batch': 'A', 'input_frames': [302, 368, 570, 474], 'expected_graph_shape': (4, 576), 'generated_token_lengths': [53, 86, 123, 75], 'reference_token_lengths': [98, 98, 162, 162], 'hift_groups': {'53': 1, '75': 1, '86': 1, '123': 1}}, {'batch': 'B', 'input_frames': [576, 556, 652, 490], 'expected_graph_shape': (4, 672), 'generated_token_lengths': [96, 86, 177, 96], 'reference_token_lengths': [192, 192, 149, 149], 'hift_groups': {'86': 1, '96': 2, '177': 1}}]
+{"name": "warmup_serial_0", "overlap": false, "completion_ms": 737.5981440000032, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_overlap_0", "overlap": true, "completion_ms": 126.32394500000999, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_serial_1", "overlap": false, "completion_ms": 146.51457200000095, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_overlap_1", "overlap": true, "completion_ms": 122.8959409999959, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "validation_serial", "overlap": false, "completion_ms": 152.13024400000563, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "validation_overlap", "overlap": true, "completion_ms": 124.29106299998693, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+Traceback (most recent call last):
+  File "/opt/ready-overlap/experiment.py", line 172, in <module>
+    main()
+  File "/opt/ready-overlap/experiment.py", line 139, in main
+    assert all(item['relative_rms']<=1e-3 for values in validation.values() for item in values), validation
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'mel': [{'exact': True, 'max_abs': 0.0, 'relative_rms': 0.0}, {'exact': True, 'max_abs': 0.0, 'relative_rms': 0.0}], 'waveform': [{'exact': False, 'max_abs': 0.017422035336494446, 'relative_rms': 0.008971764285753692}, {'exact': False, 'max_abs': 0.018598701804876328, 'relative_rms': 0.012179843370743286}, {'exact': False, 'max_abs': 0.01621569530107081, 'relative_rms': 0.01325085176871527}, {'exact': False, 'max_abs': 0.004735552705824375, 'relative_rms': 0.005229497288571223}, {'exact': False, 'max_abs': 0.03022474143654108, 'relative_rms': 0.05191926351726314}, {'exact': False, 'max_abs': 0.018426706083118916, 'relative_rms': 0.04830302650352701}, {'exact': False, 'max_abs': 0.4695170931518078, 'relative_rms': 0.05827369068308017}, {'exact': False, 'max_abs': 0.7624938488006592, 'relative_rms': 0.14453931423716648}]}

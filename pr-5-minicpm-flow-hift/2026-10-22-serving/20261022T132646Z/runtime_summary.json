@@ -1,0 +1,114 @@
+{
+  "baseline/c1": {
+    "ar_startup": [
+      "2026-10-22 13:29:43,540 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=140",
+      "2026-10-22 13:30:37,997 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.459716796875 pid=139"
+    ],
+    "kv_allocations": [
+      "2026-10-22 13:30:07,442 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB",
+      "2026-10-22 13:30:48,972 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 290410, K size: 19.94 GB, V size: 19.94 GB"
+    ],
+    "flow_graph_capture": [
+      "2026-10-22 13:32:25,290 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs"
+    ],
+    "warnings": []
+  },
+  "optimized/c1": {
+    "ar_startup": [
+      "2026-10-22 13:33:56,204 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=1202",
+      "2026-10-22 13:35:17,466 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=67.754638671875 pid=1201"
+    ],
+    "kv_allocations": [
+      "2026-10-22 13:34:02,711 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB",
+      "2026-10-22 13:35:28,474 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 280502, K size: 19.26 GB, V size: 19.26 GB"
+    ],
+    "flow_graph_capture": [
+      "2026-10-22 13:35:17,395 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs"
+    ],
+    "warnings": []
+  },
+  "baseline/c8": {
+    "ar_startup": [
+      "2026-10-22 13:39:08,152 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=2561",
+      "2026-10-22 13:40:23,308 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=67.754638671875 pid=2560"
+    ],
+    "kv_allocations": [
+      "2026-10-22 13:39:13,992 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB",
+      "2026-10-22 13:40:31,620 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 280502, K size: 19.26 GB, V size: 19.26 GB"
+    ],
+    "flow_graph_capture": [
+      "2026-10-22 13:40:23,245 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs"
+    ],
+    "warnings": []
+  },
+  "optimized/c8": {
+    "ar_startup": [
+      "2026-10-22 13:36:54,266 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=1878",
+      "2026-10-22 13:37:06,238 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.459716796875 pid=1877"
+    ],
+    "kv_allocations": [
+      "2026-10-22 13:36:59,928 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB",
+      "2026-10-22 13:37:14,700 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 290410, K size: 19.94 GB, V size: 19.94 GB"
+    ],
+    "flow_graph_capture": [
+      "2026-10-22 13:38:23,318 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs"
+    ],
+    "warnings": []
+  },
+  "baseline/c16": {
+    "ar_startup": [
+      "2026-10-22 13:41:23,412 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=3236",
+      "2026-10-22 13:41:34,933 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.459716796875 pid=3235"
+    ],
+    "kv_allocations": [
+      "2026-10-22 13:41:28,916 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB",
+      "2026-10-22 13:41:43,364 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 290410, K size: 19.94 GB, V size: 19.94 GB"
+    ],
+    "flow_graph_capture": [
+      "2026-10-22 13:42:48,706 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs"
+    ],
+    "warnings": []
+  },
+  "optimized/c16": {
+    "ar_startup": [
+      "2026-10-22 13:43:36,911 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=3917",
+      "2026-10-22 13:43:48,198 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.459716796875 pid=3916"
+    ],
+    "kv_allocations": [
+      "2026-10-22 13:43:42,319 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB",
+      "2026-10-22 13:43:56,564 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 290410, K size: 19.94 GB, V size: 19.94 GB"
+    ],
+    "flow_graph_capture": [
+      "2026-10-22 13:45:03,302 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs"
+    ],
+    "warnings": []
+  },
+  "baseline/c32": {
+    "ar_startup": [
+      "2026-10-22 13:48:14,584 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=5281",
+      "2026-10-22 13:48:26,037 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.459716796875 pid=5280"
+    ],
+    "kv_allocations": [
+      "2026-10-22 13:48:20,089 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB",
+      "2026-10-22 13:48:34,560 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 290410, K size: 19.94 GB, V size: 19.94 GB"
+    ],
+    "flow_graph_capture": [
+      "2026-10-22 13:49:42,580 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs"
+    ],
+    "warnings": []
+  },
+  "optimized/c32": {
+    "ar_startup": [
+      "2026-10-22 13:45:51,517 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=talker gpu_id=0 tp_rank=0/1 context_length=4096 total_gpu_memory_fraction=None mem_fraction_static=0.7989499999999999 max_running_requests=32 max_total_tokens=131072 pre_load_avail_mem=78.145263671875 pid=4600",
+      "2026-10-22 13:46:03,362 [INFO] sglang_omni.models.minicpm_o.stages: sglang_ar_startup stage=thinker gpu_id=0 tp_rank=0/1 context_length=8192 total_gpu_memory_fraction=None mem_fraction_static=0.7979999999999999 pre_load_avail_mem=69.459716796875 pid=4599"
+    ],
+    "kv_allocations": [
+      "2026-10-22 13:45:57,219 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 131072, K size: 3.75 GB, V size: 3.75 GB",
+      "2026-10-22 13:46:11,594 [INFO] sglang.srt.mem_cache.memory_pool: KV Cache is allocated. dtype: torch.bfloat16, #tokens: 290410, K size: 19.94 GB, V size: 19.94 GB"
+    ],
+    "flow_graph_capture": [
+      "2026-10-22 13:47:23,697 [INFO] sglang_omni.models.minicpm_o.components.token2wav.flow_cuda_graph: Captured 155 MiniCPM-o dense Flow graphs and 0 packed Flow pre/post pairs"
+    ],
+    "warnings": []
+  }
+}

@@ -1,0 +1,15 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Usage: python -m sglang_omni.cli config resolve [OPTIONS]
+Try 'python -m sglang_omni.cli config resolve --help' for help.
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ Invalid value: --stages.thinker.engine.max_total_tokens: the stages. prefix  │
+│ is implied on the command line; write --thinker.engine.max_total_tokens      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Traceback (most recent call last):
+  File "/work/driver.py", line 127, in <module>
+    main(parser.parse_args())
+  File "/work/driver.py", line 94, in main
+    subprocess.run([sys.executable, "-m", "sglang_omni.cli", "config", "resolve", "--model-path", prepared["model"], *ENGINE_OPTIONS], cwd=workspace, env={**os.environ, "PYTHONPATH": str(workspace)}, stdout=output, check=True)
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/sglang/bin/python', '-m', 'sglang_omni.cli', 'config', 'resolve', '--model-path', '/work/cache/hf/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582', '--stages.thinker.engine.max_total_tokens', '131072', '--stages.talker.engine.max_total_tokens', '131072']' returned non-zero exit status 2.

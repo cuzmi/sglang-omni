@@ -1,0 +1,370 @@
+[
+  {
+    "name": "warmup_serial_0",
+    "overlap": false,
+    "completion_ms": 639.795706000001,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "warmup_overlap_0",
+    "overlap": true,
+    "completion_ms": 132.91321399999845,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "warmup_serial_1",
+    "overlap": false,
+    "completion_ms": 153.89664999999297,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "warmup_overlap_1",
+    "overlap": true,
+    "completion_ms": 130.87529599999925,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "validation_serial",
+    "overlap": false,
+    "completion_ms": 153.41981099999202,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "validation_overlap",
+    "overlap": true,
+    "completion_ms": 132.83896000000084,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_00_0",
+    "overlap": false,
+    "completion_ms": 154.38001600000462,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_00_1",
+    "overlap": true,
+    "completion_ms": 132.93241300000602,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_00_2",
+    "overlap": true,
+    "completion_ms": 130.70008500000085,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_00_3",
+    "overlap": false,
+    "completion_ms": 150.35019500000146,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_01_0",
+    "overlap": false,
+    "completion_ms": 156.24318599999754,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_01_1",
+    "overlap": true,
+    "completion_ms": 130.83449399999836,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_01_2",
+    "overlap": true,
+    "completion_ms": 131.2945380000059,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_01_3",
+    "overlap": false,
+    "completion_ms": 155.31770199999073,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_02_0",
+    "overlap": false,
+    "completion_ms": 154.33176399999127,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_02_1",
+    "overlap": true,
+    "completion_ms": 130.65894000000355,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_02_2",
+    "overlap": true,
+    "completion_ms": 130.725948999995,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_02_3",
+    "overlap": false,
+    "completion_ms": 149.19557100000702,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_03_0",
+    "overlap": false,
+    "completion_ms": 151.7593729999902,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_03_1",
+    "overlap": true,
+    "completion_ms": 129.963312000001,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_03_2",
+    "overlap": true,
+    "completion_ms": 131.22097700001234,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_03_3",
+    "overlap": false,
+    "completion_ms": 155.42527800000983,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_04_0",
+    "overlap": false,
+    "completion_ms": 150.35207599999012,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_04_1",
+    "overlap": true,
+    "completion_ms": 131.59329900000216,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_04_2",
+    "overlap": true,
+    "completion_ms": 130.0782240000018,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_04_3",
+    "overlap": false,
+    "completion_ms": 155.0744580000014,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_05_0",
+    "overlap": false,
+    "completion_ms": 152.58351800000014,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_05_1",
+    "overlap": true,
+    "completion_ms": 131.06825599999183,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_05_2",
+    "overlap": true,
+    "completion_ms": 130.90716600000007,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_05_3",
+    "overlap": false,
+    "completion_ms": 153.31465199999172,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_06_0",
+    "overlap": false,
+    "completion_ms": 153.68001199999526,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_06_1",
+    "overlap": true,
+    "completion_ms": 130.57954500000335,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_06_2",
+    "overlap": true,
+    "completion_ms": 131.1007549999914,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_06_3",
+    "overlap": false,
+    "completion_ms": 153.15106199999207,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_07_0",
+    "overlap": false,
+    "completion_ms": 151.94359499999166,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_07_1",
+    "overlap": true,
+    "completion_ms": 129.6920190000037,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_07_2",
+    "overlap": true,
+    "completion_ms": 131.3192620000052,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_07_3",
+    "overlap": false,
+    "completion_ms": 155.49812800000495,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_08_0",
+    "overlap": false,
+    "completion_ms": 152.3100260000092,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_08_1",
+    "overlap": true,
+    "completion_ms": 131.4359120000006,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_08_2",
+    "overlap": true,
+    "completion_ms": 130.3820659999957,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_08_3",
+    "overlap": false,
+    "completion_ms": 152.9019900000037,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_09_0",
+    "overlap": false,
+    "completion_ms": 152.21185100000412,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_09_1",
+    "overlap": true,
+    "completion_ms": 131.99396299999933,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_09_2",
+    "overlap": true,
+    "completion_ms": 133.87143299999593,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "measured_09_3",
+    "overlap": false,
+    "completion_ms": 151.83942799998817,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  }
+]

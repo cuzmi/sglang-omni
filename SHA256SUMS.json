@@ -1,0 +1,3630 @@
+{
+  ".gitattributes": {
+    "bytes": 28171,
+    "sha256": "df31cd9d87b8ff62719d8f5fa1436414a3ac328c263e8c6599931c76378de926"
+  },
+  "README.md": {
+    "bytes": 686,
+    "sha256": "4271fad87c613efdf5bea31e77409440bbfb58ee0e0c2084cc5951291864b597"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/correctness.json": {
+    "bytes": 1126,
+    "sha256": "95306fa3a6d53880c9a02ddf590712bb8944c272197eb2d164a9b61b6b91314e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/effective_config.json": {
+    "bytes": 8745,
+    "sha256": "16c563a65966539c13c25ed85a1ecf580b43b639cdbe28b1bb0db24ac2d84253"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/environment.json": {
+    "bytes": 486,
+    "sha256": "7c17db9616acd5495f129f3fbfc50f3657087dea91d92ca7e40943a52250a8ad"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/experiment.log": {
+    "bytes": 2697,
+    "sha256": "6c6c7e018ae969f270d264301743e96968fbdc1e61dbaf28513505c9756c9786"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/gpu_after.txt": {
+    "bytes": 41,
+    "sha256": "cae79969ce448872401f5d9bcd1d52bbefa1a5450cf3a5658f62f068ab59294b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/passes.json": {
+    "bytes": 1084,
+    "sha256": "95b55d6b962aa0adddffe235f1ca9575653336a94ef3bb60a3799ff38c341ef5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/runtime.json": {
+    "bytes": 5107,
+    "sha256": "24bd6f64d8558bdacb6a3e01a831916adc7a46b89760d320c3b72b985c1a9f47"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/status.json": {
+    "bytes": 17,
+    "sha256": "64a1526b099d75eed9d9da41a5562dcc164b6ffddeb729dd371c4496bbcded05"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/correctness.json": {
+    "bytes": 895,
+    "sha256": "dbbc2145bff745d50100b7c55bc182c040d9180a0e1aa04887805a148f213674"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/effective_config.json": {
+    "bytes": 8745,
+    "sha256": "16c563a65966539c13c25ed85a1ecf580b43b639cdbe28b1bb0db24ac2d84253"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/environment.json": {
+    "bytes": 486,
+    "sha256": "95e598a2937227f806def43d13f5fff475c9f1d9b9568e3f5c8e9814fbce9fb9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/experiment.log": {
+    "bytes": 7343,
+    "sha256": "7ffe228daf9af9a251de057c1846c0f164dcb1134515289c1891ca90b73ce075"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/gpu_after.txt": {
+    "bytes": 41,
+    "sha256": "cae79969ce448872401f5d9bcd1d52bbefa1a5450cf3a5658f62f068ab59294b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/passes.json": {
+    "bytes": 8161,
+    "sha256": "e7aff31001ccdcf9d0e1cc8996b48839089fc5654f25164a1cae95ddbee360d3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/runtime.json": {
+    "bytes": 5107,
+    "sha256": "24bd6f64d8558bdacb6a3e01a831916adc7a46b89760d320c3b72b985c1a9f47"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/status.json": {
+    "bytes": 17,
+    "sha256": "c365161d39236fe0f1d32937fbc549796b8487d8faf65ed3879b96897c78ea5d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135528Z/summary.json": {
+    "bytes": 1821,
+    "sha256": "758e29aa8b8c5af9899d83f0c45b53bbc2facff43981e3a4c8e88f63fdba2849"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/README.md": {
+    "bytes": 696,
+    "sha256": "670552c1d67f2d79e1a5f4efff825dceeea406b5066362332946f46eac8caa9b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/REPORT.json": {
+    "bytes": 4068,
+    "sha256": "03a32eb8b04d787fe2be9aa348e7a50c3f32945f05f7b9e0f402c3e66a5a3b42"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/measured_passes.csv": {
+    "bytes": 1922,
+    "sha256": "0b3754f7b69cbdaf66ff66c147d2c13fd5fb0d0f3f6cfcec47843e5c6796b03d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-fixed-batches/paired_blocks.json": {
+    "bytes": 1533,
+    "sha256": "259171a1176d9939ed9d488600db5457148f01e7f7a03d80f22b2e01317c9030"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/analysis.json": {
+    "bytes": 206086,
+    "sha256": "9387b8a1166dd83c8a24bfd34044a2a08b46de9d09953ba5140217586a21c627"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/capability.json": {
+    "bytes": 57,
+    "sha256": "e2da2e4470d6614060555ce54e22ad9987e72b1d588e44c5bfe291975ea80f0b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/capture_validation.json": {
+    "bytes": 516,
+    "sha256": "1a2e6f406093e4e4518452b2e46e75cc954ce2835fefb6acbcafb0d1f3884c45"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/commands.json": {
+    "bytes": 1248,
+    "sha256": "1d733082066290b91b259316f5b4479811707780927c58635fba11cf856666ff"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/correctness.json": {
+    "bytes": 895,
+    "sha256": "d2d3476bfc54866685ec7de2e2330d59686453dc9b575e7ff8bab2858e8b8465"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/effective_config.json": {
+    "bytes": 8745,
+    "sha256": "16c563a65966539c13c25ed85a1ecf580b43b639cdbe28b1bb0db24ac2d84253"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/environment.json": {
+    "bytes": 559,
+    "sha256": "94247b7d4fa2006ae058f6854e2e7bbc9e74ed8a8d96a9391f69f4770abb3b6e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/experiment.log": {
+    "bytes": 3349,
+    "sha256": "30491e387779f2c8976602e7d120c37ebbe628e0402c37c44c27e2e51e10bc78"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/export.log": {
+    "bytes": 8128,
+    "sha256": "f6ed0e2a5f350f70d48c76aee9f140f8e86f46919a9ee594d2a548e7d544b07e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/gpu_after.txt": {
+    "bytes": 41,
+    "sha256": "cae79969ce448872401f5d9bcd1d52bbefa1a5450cf3a5658f62f068ab59294b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/gpu_timeline.png": {
+    "bytes": 118507,
+    "sha256": "329626b7d9b0c82541cb6c2cf8ff46869aa0cb14b14bfadb87445743dfbce159"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/passes.json": {
+    "bytes": 1431,
+    "sha256": "106aafcb2569bfbf6fe450af51e23a78f39634a04ae658e7fb4a45e2d0b03ac8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/probe-export.log": {
+    "bytes": 3831,
+    "sha256": "fbc56449da440883602b4d09c8ec2b3179394b9c6347eebd05a9b6dae893b15d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/probe.log": {
+    "bytes": 1016,
+    "sha256": "496b26cbf5b8ebcb681cc18a141e831f875f985a68ff4d5add3310238c1f0e34"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/runtime.json": {
+    "bytes": 5107,
+    "sha256": "24bd6f64d8558bdacb6a3e01a831916adc7a46b89760d320c3b72b985c1a9f47"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/20261020T165001Z/status.json": {
+    "bytes": 117,
+    "sha256": "3e7fa252007738862833a380602065f544d5a6a51eaed1451f02a05606b26c28"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/README.md": {
+    "bytes": 716,
+    "sha256": "b13c2f73c99e2685396ea49c252443accb6946a3af71748980a909f75e61199b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-kernel-overlap/REPORT.json": {
+    "bytes": 3330,
+    "sha256": "c24e90654236c8bd81ba47eed94d296444c725caa9608c5a2b7d9d587ed9e8ad"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/REPORT.json": {
+    "bytes": 9607,
+    "sha256": "a78898de6927f64a75965e6235502c5696fd19ea13f5b13f38761d0a395f7861"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/REPORT.md": {
+    "bytes": 3505,
+    "sha256": "3e9479dbc9512595a8b4216b964262db7c4eaf54857d9c852f96883f7e4be2bc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/capability.json": {
+    "bytes": 57,
+    "sha256": "0ea57465a9f43b24cfdc9235bab866e311a1e97b50052ed94c1af2c9d51f51ad"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/commands.json": {
+    "bytes": 1396,
+    "sha256": "7ef50e0812bbb312538d94d70606266b4db705f0300ec3f141b06a42133dd66c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/environment.json": {
+    "bytes": 559,
+    "sha256": "48af53b48e984cc1a47082ba63efb817589b9b5291752ac797d0fb8905a9ccb1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/experiment.log": {
+    "bytes": 3372,
+    "sha256": "238738824b81d3829291b54e975424d6d0b41e04fe7836610c62c58d0b71eba3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/export.log": {
+    "bytes": 8128,
+    "sha256": "ee53ee4afc918b6a666773e5a52db4260934f90ad7ec88ef6494118f1ec64f68"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/gpu_after.txt": {
+    "bytes": 41,
+    "sha256": "cae79969ce448872401f5d9bcd1d52bbefa1a5450cf3a5658f62f068ab59294b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/measured_passes.csv": {
+    "bytes": 1920,
+    "sha256": "adf5589c33ce2d5c5d75949e46f4426daf8a5f59f801623774f251710fd171a5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/paired_blocks.json": {
+    "bytes": 1934,
+    "sha256": "71e4db290920bef0275c665248a52000c7c291b0b174a25ad774bb9c1a3809db"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/probe-export.log": {
+    "bytes": 3831,
+    "sha256": "fbc56449da440883602b4d09c8ec2b3179394b9c6347eebd05a9b6dae893b15d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/probe.log": {
+    "bytes": 1022,
+    "sha256": "eb1b7995d1794ba03a72f366a1f666bc74805524251bd19db5369722a49ba67c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/status.json": {
+    "bytes": 136,
+    "sha256": "0d27c51b9049dc43c7292ed3071b3e5c8d4226d93ee26b21a8dafa20ae0c4e7c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/trace/analysis.json": {
+    "bytes": 208279,
+    "sha256": "656a83936aa5a631bcce8b2b77c3dec55eb8799220d1322774ec0dac5c55a22b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/trace/capture_validation.json": {
+    "bytes": 514,
+    "sha256": "46942db7e9e018aac9dd9f99437faf0246e2656044b47eef4b48829d9e2bc191"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/trace/correctness.json": {
+    "bytes": 895,
+    "sha256": "b86246ce20186981ce74ff25893c02f0764d7547d34f062cf7150d2691c2e2d0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/trace/effective_config.json": {
+    "bytes": 8745,
+    "sha256": "16c563a65966539c13c25ed85a1ecf580b43b639cdbe28b1bb0db24ac2d84253"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/trace/gpu_timeline.png": {
+    "bytes": 123135,
+    "sha256": "95b4cc8223e406b4d05694a19f1737c19319e5aa0f6bd3f04c3ddd5c66cf29eb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/trace/passes.json": {
+    "bytes": 1435,
+    "sha256": "2b7ac6664c349b5f8b888976a2a88ee7c596d8dae43795ac49fc44bbdd4bee04"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/trace/runtime.json": {
+    "bytes": 5107,
+    "sha256": "24bd6f64d8558bdacb6a3e01a831916adc7a46b89760d320c3b72b985c1a9f47"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled/correctness.json": {
+    "bytes": 894,
+    "sha256": "c547fffc9fcd95babfe4877fb92cd5512d78205b5a0f106e977ce522e066fa28"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled/effective_config.json": {
+    "bytes": 8745,
+    "sha256": "16c563a65966539c13c25ed85a1ecf580b43b639cdbe28b1bb0db24ac2d84253"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled/passes.json": {
+    "bytes": 8169,
+    "sha256": "e83508e48df4d69cc30ad430a02aeca2d1c5ca0a9cf5650be2f855ee40887e0a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled/runtime.json": {
+    "bytes": 5107,
+    "sha256": "24bd6f64d8558bdacb6a3e01a831916adc7a46b89760d320c3b72b985c1a9f47"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled/summary.json": {
+    "bytes": 1835,
+    "sha256": "023bd72a396e216c7c9d5b931c2e0963bc739638ca047942cc8bfea2550220cf"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled.log": {
+    "bytes": 7358,
+    "sha256": "0edc788be0a23e3c308247ae018bd8d70140fea8e84fa3f92b55d28610821c31"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-same-graph/README.md": {
+    "bytes": 902,
+    "sha256": "2b3713a2174e242f3de8f5e462d5a46653903f0566c66d85d75dc45576bdd003"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/REPORT.md": {
+    "bytes": 6320,
+    "sha256": "034b712c439d1cdc797eb9d8acc3498d77407cf94bb062d450c7be388f6d1539"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/capability.json": {
+    "bytes": 180,
+    "sha256": "b47854f10bc4a84b06081605dfac1a24aa39e13aa54b11593ae6168df47e292a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/commands.json": {
+    "bytes": 1430,
+    "sha256": "8c50b79624eb178972a007ea9ddb598726f57a9b49ce4dbad3f076590abf7657"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/environment.json": {
+    "bytes": 559,
+    "sha256": "39bc46e9fa44c499215e8173db4913fc2d5c79a4b76fc005cc5d5a6f1c18c9eb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/experiment.log": {
+    "bytes": 4420,
+    "sha256": "145beefa55e169febf532cd528415029b8d5557c82895d89f2a2a5942b5a4cd5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/export.log": {
+    "bytes": 8128,
+    "sha256": "7e496edaf378556c90dba1faca6a50ed7152a5ba1c3372e971beaad02b668bdc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/gpu_after.txt": {
+    "bytes": 41,
+    "sha256": "cae79969ce448872401f5d9bcd1d52bbefa1a5450cf3a5658f62f068ab59294b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/probe-export.log": {
+    "bytes": 8128,
+    "sha256": "a4d75226dc8eeb34ae0cdc3c929a1e0f53a2726e6398f9238be1b2bc57a97cfb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/probe.log": {
+    "bytes": 1475,
+    "sha256": "d6841a8429a1b5116c0b5caaf13eb58e300c6e6cc58e3750bd5e5711d371ef0f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/status.json": {
+    "bytes": 117,
+    "sha256": "3e7fa252007738862833a380602065f544d5a6a51eaed1451f02a05606b26c28"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/analysis.json": {
+    "bytes": 823057,
+    "sha256": "a1c73aa8f3617a1d25f6d329846910df0263cb20b23a2ed5b007c439d8a48a4e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/capture_validation.json": {
+    "bytes": 1696,
+    "sha256": "cd4448bb0df40b28351822b10bee2fca3453125fc406cd7cc4fcfeff7e7701fe"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/correctness.json": {
+    "bytes": 934,
+    "sha256": "0131c885294b7263e437612598c54961978850caf5a0a33288417e49f6598c1a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/effective_config.json": {
+    "bytes": 8745,
+    "sha256": "16c563a65966539c13c25ed85a1ecf580b43b639cdbe28b1bb0db24ac2d84253"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/gpu_metrics.csv": {
+    "bytes": 312583,
+    "sha256": "4c5123bd9ca6d3c9c2f082379db96abdbabf4ef9e5ce79dbdac15305a9d8faf8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/metrics_analysis.json": {
+    "bytes": 37559,
+    "sha256": "15c6fb84532cf0294dd87121ae0a3675db8ddd85bb5b823059eb9755fc88fe81"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/passes.json": {
+    "bytes": 2522,
+    "sha256": "6eaea9664be9842283439ff9b30921023a61d186e2515070913f2e2b6f4a3e71"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/runtime.json": {
+    "bytes": 5107,
+    "sha256": "24bd6f64d8558bdacb6a3e01a831916adc7a46b89760d320c3b72b985c1a9f47"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/sm_metrics_timeline.png": {
+    "bytes": 296160,
+    "sha256": "e1319436e747e45bac511b5254a82d3d376aac6d5db185f6aa6959811fb43f21"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/sm_metrics_timeline.svg": {
+    "bytes": 139474,
+    "sha256": "9fedb583234b16e842ae32f1450846218dee8349a4bb07c2d8f01828e5779c07"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/20261020T175814Z/trace/window_metrics.csv": {
+    "bytes": 8391,
+    "sha256": "4acdf247313477aa851aa09cb65107be7049e211c529ec077dbce7a39f661198"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/README.md": {
+    "bytes": 771,
+    "sha256": "1407bafcef0cfec863db5a8a2d9e05da25093f400863fa454b1df0e3f1b75bd1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/capability.json": {
+    "bytes": 300,
+    "sha256": "5d63cad3a1db129afab3ccb0a7d4eaf81d913b59d11dc3757ae4f4947f154690"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/probe-20261020T175607Z/command_0.log": {
+    "bytes": 58,
+    "sha256": "2d006cfc938a957e6bd2055a01c8aedaa00e391369fd1672ec8962b6d2d8b982"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/probe-20261020T175607Z/command_1.log": {
+    "bytes": 102,
+    "sha256": "db6ba9fdfe5b75718436ff7901b1865c45085a351409d77f2d866fc7d1fecb22"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/probe-20261020T175607Z/command_2.log": {
+    "bytes": 230,
+    "sha256": "43ed3267f668da86db3738b3b4cd76df79fd9f80f3462dc81f98b99ee9a34045"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/probe-20261020T175607Z/command_3.log": {
+    "bytes": 197,
+    "sha256": "f6b7aaf865af2d566126b4b0e8acf9c35caeb113e5aa65d1c00ec9a45bfa0e47"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/probe-20261020T175607Z/command_4.log": {
+    "bytes": 1441,
+    "sha256": "f68e1af4621ed148dbdcc713982762ba94ff2fe9d624401af17a66af36c574b2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/probe-20261020T175607Z/commands.json": {
+    "bytes": 1198,
+    "sha256": "8c14c1f31f47004b99fa4b409c416f1fa061cfda204a68f0af3fa8913cf035ab"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/probe-20261020T175607Z/export.log": {
+    "bytes": 8128,
+    "sha256": "7fdc1d4f17191b1e792b5d8ffca155aa88f0cecdf79e580bb5d4690debab607f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-20-sm-metrics/trace-analysis.log": {
+    "bytes": 27423,
+    "sha256": "456a4dae061733453811208f7aa821964cb50b432dff5a03111c2c30e2cdaa27"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/REPEAT_COMPARISON.md": {
+    "bytes": 1983,
+    "sha256": "8d472e118d8bbd69af2476b73ed8e8e6f1e554ff97d330a98337703a4bd29957"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/REPORT.md": {
+    "bytes": 3829,
+    "sha256": "f24484ff4b037b238eb917fca1aa6a9e06d5b0aa294353775f3c3589b3187aa6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/analysis.json": {
+    "bytes": 20076,
+    "sha256": "187505b929367ca0db75a0867e402de0c1a5ec581e63a47bab11df09d9138f82"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/client.log": {
+    "bytes": 95,
+    "sha256": "818d01525f6cc33f305061d5d731943b1d341f582a6dacb5423828151fdf1212"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/command.json": {
+    "bytes": 594,
+    "sha256": "577025c43227046622707abda0f081439bd7cedabfe0e3a5876ecddcf052d57f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/events/events_coordinator_87.jsonl": {
+    "bytes": 30328,
+    "sha256": "d352d8de716070ddeaf182482c9aab14cf33431382ab06edeab08cbf5c70822e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/events/events_preprocessing_139.jsonl": {
+    "bytes": 211330,
+    "sha256": "9380f51835c23f96eca95f7449e0719e935c1e905014956ce9697cf49100c972"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/events/events_talker_140.jsonl": {
+    "bytes": 160608,
+    "sha256": "d31b8a3a68ada544b70eb26f3a22e511d28b3e0a929af168ef3cce9f7848c6a0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/joined_requests.csv": {
+    "bytes": 14186,
+    "sha256": "a37e01d85ed0cff99dae6ed38132f7604d7a2ae0b36e37624038acb978b8f88b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/joined_requests.json": {
+    "bytes": 33201,
+    "sha256": "3342f05cb6a9a20fdec3dd9ad4df72e2b8195ce913977586efab5d71b31c419e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/profile_start.json": {
+    "bytes": 145,
+    "sha256": "5a826d772ef3d9a23159fd980ae4d8cfde1ba7b90374fea07445db488d2c36fd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/profile_stop.json": {
+    "bytes": 51,
+    "sha256": "7ca40cda2d3f0f38f9b8703b95ccbd98d68b29858d32e8efd8fa48846b36306c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/requests.json": {
+    "bytes": 37126,
+    "sha256": "7648ebf7e86f2276333e4e865230ad2d875d602295d2008f3161c8fe59066362"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/requests_full.csv": {
+    "bytes": 16233,
+    "sha256": "3d17f1bfcbb13e4ed4b4790bb1278904b278199ab4fb34d7fc8daffec05f8b0c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/results.csv": {
+    "bytes": 5924,
+    "sha256": "e8d0688a2863cf474913f2264aee77cdeb7d3a7d6486de4a3ac9435cafa64460"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/speed_results.json": {
+    "bytes": 30589,
+    "sha256": "a90cc6c4da5292a79ef77825b14987644f048fef9e32186c1b7fe0eebc2c3f1c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/measured/status.json": {
+    "bytes": 67,
+    "sha256": "7ce628659374043e355958766456d5e00180df244a4c189da266850205336b4d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/server.log": {
+    "bytes": 50136,
+    "sha256": "f31248847bdccb26176148452835654df8e3d2fdde2bb9fd75f5a3eafea6d39e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/warmup/requests.json": {
+    "bytes": 37249,
+    "sha256": "27a0f3d78f302ed66025465009c92833b2425ef593d793f00d07528c1272faa7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/warmup/requests_full.csv": {
+    "bytes": 16391,
+    "sha256": "b65948e9a297e87e03bfd67a59a431312fe69596a54be310d05fe2fa5b6fc39e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/warmup/results.csv": {
+    "bytes": 6054,
+    "sha256": "d14d255e2a8ea0f20a0c0459f4302a0d791bda3c3309617f7af39dc4409727c5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/warmup/speed_results.json": {
+    "bytes": 30641,
+    "sha256": "e8abfaefc009f2c7524ec322cb2f7f8a6376e727ee4a1f5f4374220e6a9985c0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline/c16/warmup/status.json": {
+    "bytes": 62,
+    "sha256": "018fbb4d2cf6e4dba8101c0005a68e447921c7182188b7697ad8a537a6471270"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/baseline_resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/comparison.csv": {
+    "bytes": 411,
+    "sha256": "07949c97a1709f903b710948975c072d1dc14076c456bff8f38be169f0f5b79a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/environment.json": {
+    "bytes": 2578,
+    "sha256": "614a167bc9d3b2c6c1bf1b8b1f82061c2cd6110fcf54cafef045df2d649f6625"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/gpu_identity.csv": {
+    "bytes": 133,
+    "sha256": "6d1610e315925b3c4cd2d45cd8483512ad6b69beb36c8fd06f389c13ad6f3d04"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/joined_requests_all.csv": {
+    "bytes": 28015,
+    "sha256": "0ffb84c641f7fd8fec9c34677850c9d92faf862d55acdb0283c27c562fe03e26"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/client.log": {
+    "bytes": 94,
+    "sha256": "618833c37aabb97f6298170d176e6fb59c13206ee81d0040fed0c7d31a38293c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/command.json": {
+    "bytes": 597,
+    "sha256": "a7a34aa198d600167d66227f8c4d1aab76b3390419498b2be23ecb563692f80a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/events/events_coordinator_1185.jsonl": {
+    "bytes": 30712,
+    "sha256": "19ece0125c7688b8e64e959bbb554b6209ab38b53c092064195b7c04a6d390b0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/events/events_preprocessing_1237.jsonl": {
+    "bytes": 213335,
+    "sha256": "f1e27c96c490d36d2dadd89674cc607415b036525ecaffe1921d2282b6bb9ac7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/events/events_talker_1238.jsonl": {
+    "bytes": 162155,
+    "sha256": "a1384853e1cff7c94dd0ec344236d55af4a9c6cacdbf2aeef08b0b89a1cea186"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/joined_requests.csv": {
+    "bytes": 14240,
+    "sha256": "88634494f677738de5029203549c169b875d591f013a7500a002e6f90fa9f060"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/joined_requests.json": {
+    "bytes": 33255,
+    "sha256": "f9f3166b05218c2de4247d10ce3e62c92520f185ffea839bf86685ec4696e7c1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/profile_start.json": {
+    "bytes": 147,
+    "sha256": "c32d85a30f5114e38cc831e16114f632029de972cdd94b4f8020553c0e2c5247"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/profile_stop.json": {
+    "bytes": 52,
+    "sha256": "543466e43075f1c1d57f021f3f096b4215aa279f00b391edbd09cd6a46ef5ba2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/requests.json": {
+    "bytes": 37235,
+    "sha256": "a52ed496387db715bacea167a80e062051a62dc274319a1084a6e576b74027d3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/requests_full.csv": {
+    "bytes": 16342,
+    "sha256": "5e632a55d82272b4beaec698777063a6bc5b10e3328efad1ab509d72c7062b85"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/results.csv": {
+    "bytes": 5962,
+    "sha256": "5ebaff0235063f5e93956b950a20eef9673718d7d2d228f29d3cd88d3ee9a248"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/speed_results.json": {
+    "bytes": 30696,
+    "sha256": "486518e7dd36f2ddf19dd58612d7d4eb1832498428b8c46a7969f855d109832f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/measured/status.json": {
+    "bytes": 67,
+    "sha256": "5f8d03a72c9eccc7a277bcc60e32bdc3b0757b3335edb5b83d60929886ec70f7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/server.log": {
+    "bytes": 59710,
+    "sha256": "165b0bfde90307b97a902e65692dc1c48088fd991751a8846ba7bdf5a5110d13"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/warmup/requests.json": {
+    "bytes": 37320,
+    "sha256": "8928cbeef8817c7dba8f26824f722e97f296227d4f6035e134e09e75fe8c0459"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/warmup/requests_full.csv": {
+    "bytes": 16462,
+    "sha256": "8e795a2d714e14a94a97ce33f19aa753cc701f98811a5c43de0e1b9f9366b513"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/warmup/results.csv": {
+    "bytes": 6071,
+    "sha256": "c4082fc266409f04cbb6823ec2ea8c46ead874200eb0a0163d1aa0d23a26a31c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/warmup/speed_results.json": {
+    "bytes": 30718,
+    "sha256": "e5e5436e67e268715d055b17f1e6ec5e536264e3024d1262cadf5a497efec59c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized/c16/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "37ad52fe86dc8ed38264cf1bbe612b152b57b4793a0a6e38823c562f57947894"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/optimized_resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/output_lengths_across_repeats.csv": {
+    "bytes": 6540,
+    "sha256": "c09554817a6c9a4d8552c13757ace9acd6f1a4a89eb2d5a065b12e001b743959"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/output_lengths_paired.csv": {
+    "bytes": 6649,
+    "sha256": "53f9fa4726b9d7176de3b15521bf7b0d5031e62b57a8f8a89d0d5c0a171f514b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/previous_run_match.json": {
+    "bytes": 118,
+    "sha256": "ac7125070adfc6a32485d101f00532a18fd3a451723d760502ce5b1e54e51e05"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/repeat_comparison.csv": {
+    "bytes": 837,
+    "sha256": "5959ef2f747b46d64601a0447d7932f7261d77527f71e6e8eb28c072cc42e65f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/repeat_comparison.json": {
+    "bytes": 1923,
+    "sha256": "1aeffc7fe91d130ad705fb650ca120d530cdd842f1c7ac279ad6e0952cf6a596"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/runtime_summary.json": {
+    "bytes": 2473,
+    "sha256": "c959ef4c2717b272267a8f112e1fdbe8ff838ec00d5db942e69e497d15405fcc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/serving_summary.csv": {
+    "bytes": 529,
+    "sha256": "49f9b4d076e1f68a15f557df2be45ef6b99f7851c277058bd78c0a44a0deda70"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/stage_analysis.json": {
+    "bytes": 3802,
+    "sha256": "1881ba2bb580ea4ac3941f1698c7d247c3e1c5505ff2fa6f7d663af879171460"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/stage_comparison.csv": {
+    "bytes": 403,
+    "sha256": "e98ede846d73f1781aecf5ca7475c2b51c90c15eb7c3a2d79851c2d8c492a560"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/stage_summary_ms.csv": {
+    "bytes": 934,
+    "sha256": "b8d33b75965cc47f43ce2dc556d59748ae22155c0cccfa0abb7ea31ae0be51f2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/status.json": {
+    "bytes": 51,
+    "sha256": "847ccb8650d466673ddb1d884e492ea64299520ba56c38fd87d6fe15f8cd49bd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/validation.json": {
+    "bytes": 452,
+    "sha256": "b0cfd648824152b426836e776a04b82dbd5043ea2a3f883a3ff5e1d5daab373a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/20261022T144402Z/versions.txt": {
+    "bytes": 7854,
+    "sha256": "c7bdf7e97bc7797873f3a43015cc67027699f961f5d1a31c1419ee5ea1811e04"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/README.md": {
+    "bytes": 837,
+    "sha256": "db318a6add064e43b00ecaa4265d8f0533f71197f56c003391f7d8039ac8db06"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/analysis-output.json": {
+    "bytes": 2001,
+    "sha256": "256e4c293d73e0f706bce72a7086b1eb91b4acbc68e958ef0643c967e69ff244"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/comparison-output.json": {
+    "bytes": 1924,
+    "sha256": "0ec572d09ca8ddc653bf90ea4970a3b737e1116db3bfba74c13fe6945814a08f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/local_validation.json": {
+    "bytes": 289,
+    "sha256": "e421556b779b541ce2c52ea27b36c3c1b6ec2218dcc114b0915d7add349553b4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-c16-repeat/modal.log": {
+    "bytes": 10923,
+    "sha256": "393be51c3a01ae034518a0a6264accf42d31f9b9af4cf9fabdb7a972e1ac2d4a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/REPORT.md": {
+    "bytes": 5854,
+    "sha256": "65837875627b7a71576dcaee213abd6da8995e7039f9a296778ea40fec7ae499"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/analysis.json": {
+    "bytes": 78956,
+    "sha256": "7990e731385733dc254794192be0494f2c812fc0e23a4f0bf7d1ddbcb1c5825f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/client.log": {
+    "bytes": 94,
+    "sha256": "245c388d19eb411245885b47f3bb84965df2cb271e244e0959f79dcfe0f5cd52"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/command.json": {
+    "bytes": 596,
+    "sha256": "f01a1b635237f8ed200075c7ce78b5d3a2d3063a1a3e3129ebcff659904c1ced"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/measured/requests.json": {
+    "bytes": 37143,
+    "sha256": "22e6f1c7fcf8eabf0c294be4396d8110d75e0bfc839c172ffff65195663c976f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/measured/requests_full.csv": {
+    "bytes": 16250,
+    "sha256": "bd5421ecfc2253a901d6a153e24008ee37a700ccfe32f326abb44758fafb06eb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/measured/results.csv": {
+    "bytes": 5918,
+    "sha256": "d6586cb554b06e6e57f0cdeed2f741dea15fc497e1a42b657a90162761d38bfe"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/measured/speed_results.json": {
+    "bytes": 30525,
+    "sha256": "915df2acab544953a98e21c8f1c6f6f8a363b65efa14ad1d9ab4e4c092d2b1dc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/measured/status.json": {
+    "bytes": 68,
+    "sha256": "7ab2bd150b6bff26778fc69cd01ca3dfd96a6193c9c9f701e8e518ae9121db15"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/server.log": {
+    "bytes": 111752,
+    "sha256": "12a2158732e9ec37a51044e4eecd559e8c182ae8952be323997dbc8a19866be6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/warmup/requests.json": {
+    "bytes": 37247,
+    "sha256": "46f51f77b9209227c44a59b089290fdfbf13526436a9064a78d9537aac8ceedd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/warmup/requests_full.csv": {
+    "bytes": 16389,
+    "sha256": "2e6c31acaaf837d2649eeb522ce370d969899572a7f6db272414835570854c36"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/warmup/results.csv": {
+    "bytes": 6031,
+    "sha256": "a77c6f2665844fac158531a83a9a97fd3459908da4aa646a3abfef9502561eef"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/warmup/speed_results.json": {
+    "bytes": 30565,
+    "sha256": "0db3148e4933311f41c4dc364640e0058bff6c9437900b8536b2225a05034b1d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c1/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "9f66736ca7b55845950140c0362edf83b5011f466fe6a976b03917cb6ae4e189"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/client.log": {
+    "bytes": 94,
+    "sha256": "716140ae84401288eb5b1f86386ab86d6b1c5acf25be529873fd8052bcaef38b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/command.json": {
+    "bytes": 596,
+    "sha256": "56fb41f99de9ec0c0832845bc4a2ee4bc5d8ea846a969180c4acf71ff4d4e83b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/measured/requests.json": {
+    "bytes": 37217,
+    "sha256": "01e66e993d63288871e512deb4644430c2e510cd10ac4b9667ad53ad868f0a4a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/measured/requests_full.csv": {
+    "bytes": 16324,
+    "sha256": "bb14995db8a7771dd489e256a9abd4d27dbfdecea8db2c4edbb86229e720b9fb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/measured/results.csv": {
+    "bytes": 5936,
+    "sha256": "2d0bcb1e57c05ce56e894b61e1e9a983ce1886842893bb2c7c8ca569a355e8dd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/measured/speed_results.json": {
+    "bytes": 30633,
+    "sha256": "c17bbc2f5296918106b00748f3c70cd8c433c3f555188728e423eca1349cb788"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/measured/status.json": {
+    "bytes": 67,
+    "sha256": "d9eb2b2a03550b5b29a518f7747d7eb049cf12c8269ba1ce5092763ccd37a06d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/server.log": {
+    "bytes": 47636,
+    "sha256": "1ef1d818c93b6767ccbb2ee6e06a6ff22624fd67e3068cad326b18d32c3dda1f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/warmup/requests.json": {
+    "bytes": 37282,
+    "sha256": "b86a8b0478508c44eea5ced996bdcdebfec9060601bb86c78007477eeb85a361"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/warmup/requests_full.csv": {
+    "bytes": 16424,
+    "sha256": "aed86606a669424e4f53f01878326e34f3938e777a95172c7bc351488ae8e6cc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/warmup/results.csv": {
+    "bytes": 6037,
+    "sha256": "63604499b003381184ae477972facb09e4d6be0c0e49c2bc04cd2b4b92e66c04"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/warmup/speed_results.json": {
+    "bytes": 30649,
+    "sha256": "af36fe4dcd42c7aee81ba3bbbe49f937cecd693ff4737eec61552161abfc73d1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c16/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "64354f2abfbfcefa1a718b71631df08b185503bbf0a5e3faa85b1667bdd3e3a7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/client.log": {
+    "bytes": 94,
+    "sha256": "6d59caccc71aed7d6f557c4f784161c33f2dc88f089d341d52af783eaa69d467"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/command.json": {
+    "bytes": 596,
+    "sha256": "c0af78891c4e713fb66e4900a1e70674422529b983e34b917a80529106fc5da2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/measured/requests.json": {
+    "bytes": 37188,
+    "sha256": "83487c0a6497f9d3ded4aca472b01c01de97e7d75ac7db4e6df40bdbf4227ceb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/measured/requests_full.csv": {
+    "bytes": 16295,
+    "sha256": "d1b333ff97a0d0622bd4f242521d66e4a13d1a405acbcd826a05b08da77ec602"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/measured/results.csv": {
+    "bytes": 5919,
+    "sha256": "d4eb8c0150ddc41d2f26ab7c37fa7387b2e633f29d627fdb0b1f887b9cc9fa0e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/measured/speed_results.json": {
+    "bytes": 30627,
+    "sha256": "2a88d96b3a158ca7bb4a8500e340448c52825b5ddba6d04413a87b6a1ca4160c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/measured/status.json": {
+    "bytes": 68,
+    "sha256": "7d4291b1886fbb0f3f37e55c3116611e3d9e1f1d31d0f99221d326f58d3d77a4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/server.log": {
+    "bytes": 35852,
+    "sha256": "a4fdd1f3ea2cb39e61fd72ee0e44012435ae021c48397864e6ae4a68a9a15a29"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/warmup/requests.json": {
+    "bytes": 37274,
+    "sha256": "fd54c44985be0d23f895564ea079abd157b4d0ef3742465b77671bfc11243e6f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/warmup/requests_full.csv": {
+    "bytes": 16416,
+    "sha256": "552cc7c06cbf7022e4f8df89a49b03b1355e5b3105f223659464704b3b3f9817"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/warmup/results.csv": {
+    "bytes": 6032,
+    "sha256": "04cad6ab7e02cd37704f873353ea3b60b749e8fa488afb1c1c177563aec43ea3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/warmup/speed_results.json": {
+    "bytes": 30654,
+    "sha256": "cb10e16c49f1515f2df1dfa9aa437ba159911fabe6647f6ba7b9edae1846bfd6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c32/warmup/status.json": {
+    "bytes": 66,
+    "sha256": "14c5adc3cb2b8af0ab619595a21b4b13a5adf970ea9f6ecd3b69e2329693935f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/client.log": {
+    "bytes": 92,
+    "sha256": "c69d163a4f1539cd4c86672032331afd36ed35c746a5d2b2c51705cfc657b41e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/command.json": {
+    "bytes": 596,
+    "sha256": "9769100aa34cbbc9c29fefe355932b51f0f94e3f89deb1cffed930257269dadc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/measured/requests.json": {
+    "bytes": 37126,
+    "sha256": "e88c2206b2c4be024d1554559577fd694b4c37d7864820c3245afe11d999020d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/measured/requests_full.csv": {
+    "bytes": 16233,
+    "sha256": "bb6ec64f5b2cd172b87e8673f3bb200d0954e2d2b81c98f5ef1e78f7900d1443"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/measured/results.csv": {
+    "bytes": 5916,
+    "sha256": "64b10ffcf2e3d9100fae79f8896956e3794dced9e61d3ef2ac51d3568eb4d0be"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/measured/speed_results.json": {
+    "bytes": 30533,
+    "sha256": "d206f041a201cae56465fa5dd7dfebca9dfa64abc24654111faa458f1f8de3a5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/measured/status.json": {
+    "bytes": 67,
+    "sha256": "f2ace42d8bf5fe95c30daac61928c1554c1630020069a3dc13abf538c05d2d21"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/server.log": {
+    "bytes": 67290,
+    "sha256": "e210bac83fcd2999940d94a7c9847e6ad1489f2c4b8dcb00a8b156b19e96029f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/warmup/requests.json": {
+    "bytes": 37217,
+    "sha256": "7e56c9a4117ebc0c91cb31680627979d8a4bc56908780eebbfbf84e2663de068"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/warmup/requests_full.csv": {
+    "bytes": 16359,
+    "sha256": "f5006d0c75659a8b1a5192ff0b9e9bb7cca0a33b867219c65cf1dece788ace38"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/warmup/results.csv": {
+    "bytes": 6023,
+    "sha256": "e0e0217948df0a3320132df3ab0b6278ccdcb8a639e6c128d12378ed214fe75e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/warmup/speed_results.json": {
+    "bytes": 30562,
+    "sha256": "258d947d3b2cf4c540dabcd5dff13c3aeb750757161c362fbda0dd2e368efd00"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline/c8/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "ea316a693d6165d2ca9d3ee3f67d6349a9d1af820e0b2d3b81523db6a15697d2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/baseline_resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/comparison.csv": {
+    "bytes": 755,
+    "sha256": "29760c2f53eba6d5670441630756fe6f8ee1e3e7d508c8139bb7cc426f390511"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/environment.json": {
+    "bytes": 2726,
+    "sha256": "5aaa40a5a1a6d7e1a465a5f69e1bf8575d445a6f55baeca11fe9431ee4abfe01"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/gpu_identity.csv": {
+    "bytes": 133,
+    "sha256": "f8f7b7906fa30368efd75e1fe89172f4fec7e78c97e134f19ddd09eac9c18300"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/client.log": {
+    "bytes": 94,
+    "sha256": "62a3d02822f6fdf42d0743994b528136d74c67042fbc2a716271a1209fdb34a6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/command.json": {
+    "bytes": 599,
+    "sha256": "5e986a8b1880f9a23034dbbea6114429096b18d25a9d9743df81d33bd8ab87ff"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/measured/requests.json": {
+    "bytes": 37232,
+    "sha256": "cb9d00673ee9c579f600fc0cca3cbf4dababeaae9f0bd93b9d19b9366bede416"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/measured/requests_full.csv": {
+    "bytes": 16339,
+    "sha256": "6dd2a8d33dc314584e1775c1f9b005d6b8faa76ce8719ebf9571d29bb985e854"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/measured/results.csv": {
+    "bytes": 5950,
+    "sha256": "040b97699d01bd96e4f2055efa7075b052bd84e5f30da25852ca71eb30efed68"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/measured/speed_results.json": {
+    "bytes": 30626,
+    "sha256": "a16e8e8a07f4a6aba682b34f22a317c21f74495b16c9d74f8407f3d381d1ad4d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/measured/status.json": {
+    "bytes": 68,
+    "sha256": "5307a47146a3d6a719b8d82061455531c4f73fa6d4dbe513aae8754c0f659867"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/server.log": {
+    "bytes": 111733,
+    "sha256": "df0cf684575682f6cfed959def60b5763dd5a17475a0f27c58963c39b0ec234c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/warmup/requests.json": {
+    "bytes": 37344,
+    "sha256": "50ef29f8e5761bf024ad77c15b0fb8287823e4772e85efc167a668f7cc5862f4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/warmup/requests_full.csv": {
+    "bytes": 16486,
+    "sha256": "b7ebac315b1db4672fb521a35a0ee3c25617238ee896ffeb5686dbdfa0012765"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/warmup/results.csv": {
+    "bytes": 6063,
+    "sha256": "ca86dc9b6fc8a46e8dd41076f36d5f4f15d4cda71f3f1bd5ef9091824fa76107"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/warmup/speed_results.json": {
+    "bytes": 30662,
+    "sha256": "0b4d86c8a07552e24a7e913cdac54fc9d8bb5ff9fdbec01a48bbd4e8c770118f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c1/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "c355b51c5fc6518c34e5fde8078c8a4ad82a0750f21bdcad8ee7d99bf210025b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/client.log": {
+    "bytes": 94,
+    "sha256": "57b2a7e73226da88c2440f06f8e7b0f10bc25704070e27a8cbb40ae043b241dd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/command.json": {
+    "bytes": 599,
+    "sha256": "bfbffbf9476d19db9cec041de684e8c345e7654566d69cca9fda3340fcd54ba0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/measured/requests.json": {
+    "bytes": 37320,
+    "sha256": "0aa8a96be19b75e85aca35c42e612a0c40cd758109742b6f8cb901f539c635e4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/measured/requests_full.csv": {
+    "bytes": 16427,
+    "sha256": "08e2b497da53cca2cdea526d993c45f56d37b073d7bc9214c92edf7831b61ae5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/measured/results.csv": {
+    "bytes": 5973,
+    "sha256": "dd3c091f902cf65c866093fbdf2b48ccea60ba4f19c8744e6d6f9fd8b79c74b8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/measured/speed_results.json": {
+    "bytes": 30731,
+    "sha256": "85ad3f2757b9c90162e5bbabf65a2c29253e04d40cf73b5d9dc32b2e169d0681"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/measured/status.json": {
+    "bytes": 67,
+    "sha256": "450cb0e05cc78ec586d3abfef2802bdf99120a374bca8cc97b6ad41639d07176"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/server.log": {
+    "bytes": 60248,
+    "sha256": "c06f0cb19f29e2220d33538ae205bf87f3ce0ae01921f9c011eb23e2d44b01ad"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/warmup/requests.json": {
+    "bytes": 37396,
+    "sha256": "a4263c0d5e08a434d1e8a6d2da1e02649aaf94058264f00574e8ecc2261cc301"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/warmup/requests_full.csv": {
+    "bytes": 16538,
+    "sha256": "5df5f84b536ff66fd64c58209464f7d06c620619d463f497edc92a5fc7fa575b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/warmup/results.csv": {
+    "bytes": 6076,
+    "sha256": "295b254d8898569bedde15f7b78aa3cf9e255e7c905e9b53b361d4b6682abb55"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/warmup/speed_results.json": {
+    "bytes": 30759,
+    "sha256": "3a0da4a00d87f726da490d3076fff6744b1d0f9fcebdf1a9181bf72fd36b4a58"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c16/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "c11ef643fa419d58fa533a7a2952c8ffc039d00d91873423dcea1708b064bbd1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/client.log": {
+    "bytes": 94,
+    "sha256": "41c61390c9d56611a8f2d8e54d921156971f7d3b643c3a0e0c7dead853246f62"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/command.json": {
+    "bytes": 599,
+    "sha256": "81e1ad15f8391d781eab162f7ba586e81c7f43fa9ef5b38c213e2a581843a309"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/measured/requests.json": {
+    "bytes": 37284,
+    "sha256": "5a5b8d1a456ec40ca522162468bd83d43f95925d672c860e4d95e3d3c09326dc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/measured/requests_full.csv": {
+    "bytes": 16391,
+    "sha256": "ba17825f6d3693e9dde956807b8324601727fa94553d2b6125d3aa4f69014d55"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/measured/results.csv": {
+    "bytes": 5951,
+    "sha256": "fa97e42468bd023b7d452d7b26420eabb6a12296ae370ec1ff49f192b03999dd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/measured/speed_results.json": {
+    "bytes": 30718,
+    "sha256": "8c614152e50c02dbcfd10ee262ec97b06ee8376124fefbc4bb802d8b19ce67d7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/measured/status.json": {
+    "bytes": 67,
+    "sha256": "dbfd4dd8e926c60dea47d081f690be8258453d030a08001826988b53e0562749"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/server.log": {
+    "bytes": 36169,
+    "sha256": "b2709c78213dfaa267f445e7d62d6ba66db167fc02f16adabb30cbf503322af8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/warmup/requests.json": {
+    "bytes": 37381,
+    "sha256": "c64fc4fcba34a1dfaf314513bd4b065834a04cf104a99dd046535a708dcddb98"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/warmup/requests_full.csv": {
+    "bytes": 16523,
+    "sha256": "ad516042c8fcc4c44e096e08b037d5c119b8e906be6cd11379c64fd6dfbab639"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/warmup/results.csv": {
+    "bytes": 6064,
+    "sha256": "354315bd29f7d6cca817ec82337c566e0c082aa6bfd716e6e09e29c4d8340f3b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/warmup/speed_results.json": {
+    "bytes": 30756,
+    "sha256": "415f3500b7689b0447fc3f6ba5bd431f29d262088ba8051c4d7bf21ed6a2684c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c32/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "7f7037f56556a775ec9372467639e1a811085e668fa89ac438626387ae61449f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/client.log": {
+    "bytes": 92,
+    "sha256": "e5500bc2e339a87c13aaf0816d576449cb697fa54b5c23c19a8f514bddb8e7e8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/command.json": {
+    "bytes": 599,
+    "sha256": "56a686f1a679c8a55d4a6a3dc2c58934cedb03382b3f06c0c4e2d55c12ab013d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/measured/requests.json": {
+    "bytes": 37224,
+    "sha256": "8f53dd33cce672508848902961dde2b7d7081418d828d34b936a9e1749ed164b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/measured/requests_full.csv": {
+    "bytes": 16331,
+    "sha256": "08105b726102c0e32cd234fc6026101a8ee3ae3204cacd9c86b01bcabe81c549"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/measured/results.csv": {
+    "bytes": 5947,
+    "sha256": "b438f9598b95a42d6f852c8b955e3b4635755d1fd1498a578fe655afe26fbb81"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/measured/speed_results.json": {
+    "bytes": 30634,
+    "sha256": "c13991cb94e2b653ccbd3e8c565bc5bf5faca742bb9f2c9f1f8cd44ec3162a3b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/measured/status.json": {
+    "bytes": 67,
+    "sha256": "f9e31c02f7cd85c00fd3d77acb7884fd1248877bacb6220e8fec96c9d088bc13"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/server.log": {
+    "bytes": 76121,
+    "sha256": "7574617ba8f4beadfbf26abe5a869732739186e4cb48417451b0c47555a08889"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/warmup/requests.json": {
+    "bytes": 37298,
+    "sha256": "cb9a61cd53bb79941ae16052c7bd06d7ca9b2cf319a934182dbf39a2a7baa02f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/warmup/requests_full.csv": {
+    "bytes": 16440,
+    "sha256": "53a8355997bfba006c837979fbfc61ecd93caadf0a5226cc69fbf0054ab347fa"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/warmup/results.csv": {
+    "bytes": 6055,
+    "sha256": "5d340fb349fc257ba28565080e54b83eacb9bb8520e02e2470963f7d24858b2b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/warmup/speed_results.json": {
+    "bytes": 30660,
+    "sha256": "dc1c3876ae443650b8f23a7922159e31ae58bb79f8f533a7a36684caaf71f756"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized/c8/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "897062471174edb957bd4c859f1ef7a0cb6ebebe3e6446781d08030484fc6cf4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/optimized_resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/output_lengths_paired.csv": {
+    "bytes": 24813,
+    "sha256": "52b7eb6905f380f1d4d16cc069681e1edd5161626f9ae6e8597ff3d7db280b32"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/previous_run_match.json": {
+    "bytes": 118,
+    "sha256": "ac7125070adfc6a32485d101f00532a18fd3a451723d760502ce5b1e54e51e05"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/runtime_summary.json": {
+    "bytes": 9856,
+    "sha256": "3c980aec33ab45c7db438585d20b09b03848730f9f838643f76d9b5710f9c3ac"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/serving_summary.csv": {
+    "bytes": 1514,
+    "sha256": "406dc26977cc43cae56f541c4fb5319e10386d6e3238ee4be72877e320fd5973"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/status.json": {
+    "bytes": 51,
+    "sha256": "0f78b23d5c88207dd7334fda757aa8779f49b903163daa520a4a3f4a19201c73"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/validation.json": {
+    "bytes": 285,
+    "sha256": "76d0a117aa2a526ffe691dedbe116bc8d8ff0c9926a8eb139490dc3dd6579975"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/20261022T132646Z/versions.txt": {
+    "bytes": 7854,
+    "sha256": "c7bdf7e97bc7797873f3a43015cc67027699f961f5d1a31c1419ee5ea1811e04"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/README.md": {
+    "bytes": 677,
+    "sha256": "20e0b392c0e9bad8d4cd58895e03f47a3d9019d3bc5caf0b6202be938676202a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/analysis-output.json": {
+    "bytes": 6483,
+    "sha256": "4fac7fe09cfba90a6d89f72dac0af206006d188827ad949e74b246f0ef1d4e1c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/local_validation.json": {
+    "bytes": 289,
+    "sha256": "e421556b779b541ce2c52ea27b36c3c1b6ec2218dcc114b0915d7add349553b4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-serving/modal.log": {
+    "bytes": 27981,
+    "sha256": "062a8e12603e80efbb4cf7d94a3cbb51b3f8ff2993b7ce0772069407f47a8867"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/REPORT.md": {
+    "bytes": 5072,
+    "sha256": "70161774304146ae101eadd89d8a5e756965820ee017ff41b1ebcfe6fee46cfb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/analysis.json": {
+    "bytes": 79452,
+    "sha256": "8e5dd216c4fe92f60d60a349b96e819d8b0bc5bab805353f467eb8b85c43be49"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/client.log": {
+    "bytes": 94,
+    "sha256": "6e82655598563ae3dad3dba5d46edc19f07b7d16e4e18f8b50275bbb934ed075"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/command.json": {
+    "bytes": 594,
+    "sha256": "91b8ff76a15dce70ea66f73b8bcffd20a42fea993c86b5697fd0b01704afce9b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/events/events_audio_encoder_139.jsonl": {
+    "bytes": 209960,
+    "sha256": "6fe3c1aa83724869b339ed1bba6495b68f6c4681f004a63647c5bd5e2ee85a83"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/events/events_coordinator_87.jsonl": {
+    "bytes": 30136,
+    "sha256": "9c2b0323d4952d2a146360bed4d1375d9c004dbf54b226d5190551fe3e2ea4a7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/events/events_talker_140.jsonl": {
+    "bytes": 159584,
+    "sha256": "8fc1eb20f05f5043ff1c939b4273fde6f839e1dc045b0c15c06e82cc880147b7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/joined_requests.csv": {
+    "bytes": 14059,
+    "sha256": "5f775a0b3ceccb648212435fd7abff21e8b3771a4e73407dd15d3004ed49cdd2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/joined_requests.json": {
+    "bytes": 33074,
+    "sha256": "1b5f4516f6b569ec26ea517a206dd873e1699b0c21d8dda925e1ee50cff2f609"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/profile_start.json": {
+    "bytes": 143,
+    "sha256": "162ca3f9c9d80e2ffff5dce23dc99a69f2575286ae4e69a611cf9e1c457f4495"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/profile_stop.json": {
+    "bytes": 50,
+    "sha256": "3875f6b4b584c962ca08bb806935cec221e2b44dee987062de78834b4afd8ec6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/requests.json": {
+    "bytes": 37085,
+    "sha256": "df47d9266623a41c3bf8bbfb31d2f6a3d1aa2062c22fe87e8365f8b297193267"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/requests_full.csv": {
+    "bytes": 16192,
+    "sha256": "0a706aea3729dbb6bed07cefc0a2e3bfdf381004a1d9daaa55c4af574756d533"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/results.csv": {
+    "bytes": 5918,
+    "sha256": "86b6b8ff0b7e93185e7f0157c9f893ed4d6375b5b83ea9a604fe4a2d6bd74f2a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/speed_results.json": {
+    "bytes": 30498,
+    "sha256": "e7d3a07faa5080ab92e4d17072a9b2e8b11fe41e281e76667284860a3dc711e6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/measured/status.json": {
+    "bytes": 68,
+    "sha256": "da72a066474ad7d729581d1031b8473361e161f7d3da42fa2c155c6b4d5136e1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/server.log": {
+    "bytes": 113531,
+    "sha256": "fc90fdbcdab959a921732b6489c816c00f924235691fd62d1d3484c9a047afac"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/warmup/requests.json": {
+    "bytes": 37209,
+    "sha256": "25874c0768b96648293c0b17544bd70dbf72dcd9892cda6215e46aa1c4e349e1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/warmup/requests_full.csv": {
+    "bytes": 16351,
+    "sha256": "5d20e33ab42a2cd1e28a6f8a6c46627e5820a76d6230c16d4d562c89b85cc54f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/warmup/results.csv": {
+    "bytes": 6031,
+    "sha256": "233e1600155992a6781d8d480518fce015a2ea0b83c1415e12cd5b2fc7de848a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/warmup/speed_results.json": {
+    "bytes": 30539,
+    "sha256": "bc802be0744ec4fe37cd07b06cfa661dd741156e791514047144c0424a0a0e41"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c1/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "c60ebbf216180bb3a39204f56a2d9a681770d0ef7d3cb6e2bdeb1d98d296af19"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/client.log": {
+    "bytes": 94,
+    "sha256": "da64d79245d2f0fc750a57f27532a05529753bb6476ec14c46697c44a7721d8a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/command.json": {
+    "bytes": 594,
+    "sha256": "fbec3fc04e598871eaf59648159a49fb41ffdf5818cf5db41bd68da39e6b8995"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/events/events_coordinator_3196.jsonl": {
+    "bytes": 30520,
+    "sha256": "25366c190a879d54ffd146c9ce04edc9880f75714f86a4972d72106a2fd12e3e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/events/events_preprocessing_3248.jsonl": {
+    "bytes": 212005,
+    "sha256": "0f69e5cd24c5ca3be50affb29e9a0bd239dd4fcdd04dcc70e3874629db4ecc16"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/events/events_talker_3249.jsonl": {
+    "bytes": 161120,
+    "sha256": "420247094606b71bce76208df2697165ef33d77d5beed56227409e5f389fe5b2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/joined_requests.csv": {
+    "bytes": 14180,
+    "sha256": "ea93027ebe685d228515b86df036a062d03aa7f02655e86eaff5bfbe98058fd6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/joined_requests.json": {
+    "bytes": 33195,
+    "sha256": "98a26d8d9beae4e745cfb6467d05b65747be31f36609dc52d7a1b487bf3f74b6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/profile_start.json": {
+    "bytes": 145,
+    "sha256": "64ebb75d7e72dc55aa6f18c82df41e080f27b4a0582378405fd26645bf66bee6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/profile_stop.json": {
+    "bytes": 51,
+    "sha256": "654c11aca788ea18f055e744dd197a33851f059260f2dda8510c4eb52c768307"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/requests.json": {
+    "bytes": 37122,
+    "sha256": "a4403ab2848bc7a597b670e1abd17a44472f28bcae4c8f3769d02c54ba25b212"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/requests_full.csv": {
+    "bytes": 16229,
+    "sha256": "1acb5bfb4b6027c2a4bf676c8b5b4c5103a51211669d8607b6ff10ad722dfd70"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/results.csv": {
+    "bytes": 5929,
+    "sha256": "b29b92d5b5d443c8c7ef4d466faef03f32327085208b46b1c6ff82d7f36d6e7e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/speed_results.json": {
+    "bytes": 30588,
+    "sha256": "b4163ae7985831549b3a188ebd0bfaf5203d731b5c671844dcc324dd633c4f9c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/measured/status.json": {
+    "bytes": 67,
+    "sha256": "23716e1f24e19ac3bcd63397c71a2a6220b27ece6b7f9f074d3df93badf263b7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/server.log": {
+    "bytes": 48873,
+    "sha256": "d6e1a4568c4a1460eb5221218b3fc5fd360eb3c7303c0d19b504e0a5d6183512"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/warmup/requests.json": {
+    "bytes": 37228,
+    "sha256": "fe987a943068dcdc437a02e686e9dc35224ffa8911057f6856b05a3d322a2c08"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/warmup/requests_full.csv": {
+    "bytes": 16370,
+    "sha256": "64074f9c468cccb1f3d3edb999a47ee1884f217f0ba27d0035cdba2c7aa8b7c0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/warmup/results.csv": {
+    "bytes": 6039,
+    "sha256": "39513f831ccc541abdba512bf35140a8f3000a13a61adb8a0380e65e1bebf546"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/warmup/speed_results.json": {
+    "bytes": 30624,
+    "sha256": "658d7869a25321b32beac4a145015dcb468c600291a1099edd85356255c4610b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c16/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "8a63bf20aa621cf035b640970f68fd0ffcbf94f9ce5e2a80bf8190a988524a08"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/client.log": {
+    "bytes": 94,
+    "sha256": "7d9c79cf0b4877b6b96a4cc7ff20277145d089bae16e3f469ff075e4004dff22"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/command.json": {
+    "bytes": 594,
+    "sha256": "5bddedf0c74a32d623b378486449d002830f6676f60d954773b3020bc8cca502"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/events/events_audio_encoder_5300.jsonl": {
+    "bytes": 212071,
+    "sha256": "f4ae94fd4c0ab30ffc1f176e11c2232f1972d8b517c436af999b5a7c7d32bf78"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/events/events_code2wav_5301.jsonl": {
+    "bytes": 161184,
+    "sha256": "6b0c995ed5d1d2ff78af475c434d34c3b37777859d9587cf64a6cdf6514dc707"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/events/events_coordinator_5248.jsonl": {
+    "bytes": 30520,
+    "sha256": "6c7eebbe7d9adb9017fa8149cf4af4444bc3d74874492de79b53b3ea97626b72"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/joined_requests.csv": {
+    "bytes": 14215,
+    "sha256": "e9fb8cd0591ee43055b43e14c1bd4e601631413f67ff7cf76ffcc87626753423"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/joined_requests.json": {
+    "bytes": 33230,
+    "sha256": "3afc1e0a4e76fae2ee7ff6633b0d8ada04319d7e33653847ffdb6c25b3570fd5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/profile_start.json": {
+    "bytes": 145,
+    "sha256": "6ba7a9c31259b459dca4cca6cd8b5143feb337b99b2a89a6739a2483d4e9aa1e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/profile_stop.json": {
+    "bytes": 51,
+    "sha256": "da74b0ba066895fcdc7ef00b794b7fa45b48e61d3dd57f9bd55ab54b2417b61b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/requests.json": {
+    "bytes": 37119,
+    "sha256": "9563dfa9c570eeed4588f0332b4dd2a61aa47bee4afa44463b911ed96f4caf23"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/requests_full.csv": {
+    "bytes": 16226,
+    "sha256": "2f7ae5abdafb879a6a67d234a3d3ba80768b14ac01efaec9803faf41415d1e2a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/results.csv": {
+    "bytes": 5918,
+    "sha256": "6175d8fc3ac303643ef47c3cbbe1029b6f037490e114cd222fad702ed1ef2b63"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/speed_results.json": {
+    "bytes": 30594,
+    "sha256": "96f5d6246705f5d19d3ff8084a9916c22cf9d061e4404b5f29b460c6b6e588ca"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/measured/status.json": {
+    "bytes": 68,
+    "sha256": "9e929dc97fcf12565d008ef6bd318dad5f03f8f8d9214eec4e3234b08329564e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/server.log": {
+    "bytes": 37058,
+    "sha256": "5180f85e545d570f2e4c1b6b8aab083f57de2a168be5470a632320777db72811"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/warmup/requests.json": {
+    "bytes": 37219,
+    "sha256": "bf3dd621fbc101bc4f351b93aebb631891d37f011d597a4e66e023d64b949005"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/warmup/requests_full.csv": {
+    "bytes": 16361,
+    "sha256": "4b2694bd68b53d67cbe6d2c15025e26343d2d4d62d53631e5db8214666892135"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/warmup/results.csv": {
+    "bytes": 6032,
+    "sha256": "5bb3a8f272d941045b1d137b6be576e0a5a39485dfb94e559299a739630f9854"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/warmup/speed_results.json": {
+    "bytes": 30631,
+    "sha256": "1abf9d17c5b4684415efb0516880b0dc5391e316cafc45d56f702dd16450ea27"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c32/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "691662e760e6f2db9d33196f28e898b3bd79cb26fd796a18774c3bfd9f9adb49"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/client.log": {
+    "bytes": 92,
+    "sha256": "363e6b32f0beef1fefbb909ea3fcc5e6cf9c737c4f678f7badd3127975402361"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/command.json": {
+    "bytes": 594,
+    "sha256": "ef0156b8c82836a0e8f2f77a1ad0b055ce781883ea6607a071210f5e2a4feffd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/events/events_coordinator_2518.jsonl": {
+    "bytes": 30328,
+    "sha256": "bc8269a1695a0a56720ab914592cd1f6f391a16cf37e5defcc48875fc804791c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/events/events_preprocessing_2570.jsonl": {
+    "bytes": 210632,
+    "sha256": "8e5bc9f66cdfd4517aa9b51e3d5da5c16822e8aaf865217cd2a719fbb6038d34"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/events/events_talker_2571.jsonl": {
+    "bytes": 160096,
+    "sha256": "5de0b889280b4d96d82da790d5af1ca9e7ebe95bae7f411d524b60ef7295c233"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/joined_requests.csv": {
+    "bytes": 14083,
+    "sha256": "3ce937732671f9c0dfc53a4bbfc8d5c2ffd27e36debf82df540f5d0684a0dcd9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/joined_requests.json": {
+    "bytes": 33098,
+    "sha256": "981b92163bd885f2330375087cf3fe25145084a029de4dc728b5f2e4b98a7e38"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/profile_start.json": {
+    "bytes": 143,
+    "sha256": "caf99c7b755306f6388e028c5096afd4dbfdb346688d82abd7c2bcc313691fb8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/profile_stop.json": {
+    "bytes": 50,
+    "sha256": "3127db97c6c701121d804fbcdfeb6e4a4c2dd7337e7bb266ffbf8ceea5709838"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/requests.json": {
+    "bytes": 37047,
+    "sha256": "9097022c585d536a07c00e926744853271665cb6614124e82b3f1d69b6aa82bd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/requests_full.csv": {
+    "bytes": 16154,
+    "sha256": "11d7b2e84cc06369554e913ba2b21e684df5c2984f41b00d58d1abc4ee06be1d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/results.csv": {
+    "bytes": 5912,
+    "sha256": "f22c767279933d6f527033ae4d4f2d272384c915eb86e18d0518224276f74760"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/speed_results.json": {
+    "bytes": 30498,
+    "sha256": "ac54ee65452b43ec2f3b24c1c5481f63a16931cb846b0ec25ce724395f56eea8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/measured/status.json": {
+    "bytes": 67,
+    "sha256": "5989d56dd6cb9e2fbce99e9eced3d1e5c54a67bbfe3ef68e404a8eb9b5bf2559"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/server.log": {
+    "bytes": 65785,
+    "sha256": "9c1e09277bfb21b2e345861fe1269097cfe25146036479bd91be04f758aee6b5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/warmup/requests.json": {
+    "bytes": 37155,
+    "sha256": "dc9585d4a44cd536ad444205561e7c2c6d4a19613a52fed04b46801e55b3cb8e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/warmup/requests_full.csv": {
+    "bytes": 16297,
+    "sha256": "40480391cd5105b0d29b8ba61ef8196fe7bf258a0e16b15b72ff9726f4a4bb4d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/warmup/results.csv": {
+    "bytes": 6023,
+    "sha256": "f4f7f53a119fe679e85e2eb6478cda45311314cc419b792c64bc5f4dbbfc6154"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/warmup/speed_results.json": {
+    "bytes": 30529,
+    "sha256": "17b8f2426d95659c7d97540b25ceb0dbd1cf5f9ad9c7931279eeb7d62c5d6091"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline/c8/warmup/status.json": {
+    "bytes": 65,
+    "sha256": "477e299f5190ff433f6af833a2b4fc3573c64ce56bc82df1df14b860de51822e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/baseline_resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/comparison.csv": {
+    "bytes": 778,
+    "sha256": "ddf8a1be43b46969c1bffa8447b69bc8007ac8e32998d75b562bd5730e41adc6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/environment.json": {
+    "bytes": 2784,
+    "sha256": "4aaa3abd4d43656b0fe73b39e03be31e756553787e529d10dbabe70753be369f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/gpu_identity.csv": {
+    "bytes": 133,
+    "sha256": "549d3499c40aa708c702377565169fcb58b8bc95c1374fb2ef7dc9f092fb7eba"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/joined_requests_all.csv": {
+    "bytes": 110462,
+    "sha256": "f7331cddf5860e2e2c925661f25120cae40740540457e139989f71c4cdbbe4f3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/client.log": {
+    "bytes": 94,
+    "sha256": "42017901ebabe84cdff3005194fea03b457c9ced61aeb197d6ae338da24d898e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/command.json": {
+    "bytes": 597,
+    "sha256": "e8426b2bc14a58e613d167a0dc2bb3c6f5553f6c6935c12490db192a5bb88952"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/events/events_coordinator_1147.jsonl": {
+    "bytes": 30520,
+    "sha256": "a8389e3f37d43be267aff0d8311e8b7d1cd097efc998452d9f5ff4cb5e6e57fe"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/events/events_preprocessing_1199.jsonl": {
+    "bytes": 211976,
+    "sha256": "50c15fbea4954a9b553ea33c13c05b53806af52eb3aeedd1f3e3b7a540e135c3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/events/events_talker_1200.jsonl": {
+    "bytes": 161120,
+    "sha256": "99a9b2dd931c204fe42c3af12b6ef500674916ffcb1c2b1e98b8b3f9c68e1ec5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/joined_requests.csv": {
+    "bytes": 14125,
+    "sha256": "f6611293ce0579c998057fa254da3dbe4588432f5551401f30c5183b13e53e2e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/joined_requests.json": {
+    "bytes": 33140,
+    "sha256": "dbb40ede621a8d9863b7e53416042455e5086ab2f2c87d8949918f7c461f6148"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/profile_start.json": {
+    "bytes": 145,
+    "sha256": "7bab36f1b60f2845574dd5d350ad23b6056b27c3a1c8ab9a780ec74dd2f347e9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/profile_stop.json": {
+    "bytes": 51,
+    "sha256": "b194b0460e5bb5e4c3f93a0fd1405514f2c8df87bb6421165df232f3cc4f3480"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/requests.json": {
+    "bytes": 37174,
+    "sha256": "0b355b9583a0d9ebf76ec63d29407e491ac4fa4fde46e0a8cfb87d39e1aa0fdc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/requests_full.csv": {
+    "bytes": 16281,
+    "sha256": "007509d6fc790282032b3473ef7a2e504eafea7b9c204cbf824745f672dc8e67"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/results.csv": {
+    "bytes": 5950,
+    "sha256": "06e0b129919b65e1dcabcea82729fe95c0be453e5a79676b1b46b60fa814418f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/speed_results.json": {
+    "bytes": 30601,
+    "sha256": "13ae5c53b5c17f594a16b5179c874954309d087a99baa415ae9ae9d662c2626f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/measured/status.json": {
+    "bytes": 68,
+    "sha256": "32b34865c6d6bbf219a2a859c325f8f404b432e915c95a9681e97d4053c32d5f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/server.log": {
+    "bytes": 113418,
+    "sha256": "3b0780431c148fca176f40bf4e04f8473f713afb4768b8c6025e0a31b79e6597"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/warmup/requests.json": {
+    "bytes": 37283,
+    "sha256": "9830744f351ea6dadc688cee3155945e1ee46d4bb969f8bf1e478112232cb8ff"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/warmup/requests_full.csv": {
+    "bytes": 16425,
+    "sha256": "d7933cd5a28d9986d0f44a07d58745d402bf6a5f79921bc2a554893d813366af"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/warmup/results.csv": {
+    "bytes": 6063,
+    "sha256": "6696f2c49c44ea4d57c0604dadb07a9bfe636839b980f5738342e7618b131e45"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/warmup/speed_results.json": {
+    "bytes": 30626,
+    "sha256": "d839b695fb78af70b78a1f79df78c66a91fb95777724e83ed2d862d9faab8e68"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c1/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "40605373d3cd3d0e8932db21952b18ca8a80284c19c9ef25a06f4c2b02cb1772"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/client.log": {
+    "bytes": 94,
+    "sha256": "31c808410a61d018cba67dbd874bfae1aae6e78199a551d6f98a81283244b09e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/command.json": {
+    "bytes": 597,
+    "sha256": "176261c08ef23e97aca70c5f8cad969764d1072fd8b16eac57a5f100ef8a1372"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/events/events_coordinator_3881.jsonl": {
+    "bytes": 30712,
+    "sha256": "a2a2059937dd75aa2a36bd8d962db25d3ba97e5304173c3fdf8f5f6bbc381230"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/events/events_preprocessing_3933.jsonl": {
+    "bytes": 213335,
+    "sha256": "13f07e4795c4cf57d5eabf0cdac0c37048f8abf110640ed0b2bd4800b922c172"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/events/events_talker_3934.jsonl": {
+    "bytes": 162144,
+    "sha256": "c5445952daf189fc33b6448868b4d77295484163f4e6af3df8f9c15ad6965204"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/joined_requests.csv": {
+    "bytes": 14246,
+    "sha256": "44ad65737d1fe3ec41d0d86170fbaa03023ad3c1af3006a077558c294116ece3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/joined_requests.json": {
+    "bytes": 33261,
+    "sha256": "dc7f91da0878af0b178b60b87a10324870dea65472def311796c6e102771dc53"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/profile_start.json": {
+    "bytes": 147,
+    "sha256": "3860b4a85db62bbfab3b6122897341057fe00ad875010af91c046b9a39f3ce50"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/profile_stop.json": {
+    "bytes": 52,
+    "sha256": "c0c2aa4ce8bad200377eafba4909fede425fc66b65b184685d6c6a1f049cf5f4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/requests.json": {
+    "bytes": 37219,
+    "sha256": "8ff9c6443a19a1baf997782edd791d283ff225410f3c975424684e5a33951c29"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/requests_full.csv": {
+    "bytes": 16326,
+    "sha256": "bf7f88b4cf3dddcc27e47d6a3b803b3cd87c8d839850074d851ba46d1ef9d2b2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/results.csv": {
+    "bytes": 5955,
+    "sha256": "d01a7f7c9074f0dc3a0c1ec68a7a6f1ec6e602c411916fc911d27814095d0477"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/speed_results.json": {
+    "bytes": 30688,
+    "sha256": "e24f72d08a3d71b00a333b08c03675c2c7bf25a9de4e37e911eaf80ceaf3fbc0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/measured/status.json": {
+    "bytes": 67,
+    "sha256": "bab2e7bad949464caf4738459e8e6a9c3a704481e03891cd9bd44e21ed34dbad"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/server.log": {
+    "bytes": 62375,
+    "sha256": "12749d0f9bf5f5b8a3307a0c739288994e9645f31bb4a534e92cf51b324c0144"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/warmup/requests.json": {
+    "bytes": 37317,
+    "sha256": "ae86b3f974f1385ae9cd65eb7ecb4a30601d1d59fbda83e5318927d0e5aedb38"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/warmup/requests_full.csv": {
+    "bytes": 16459,
+    "sha256": "3f382b2c12202235e74c79699752d6e3700a84b8ecd4772690605ec1b3dc4654"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/warmup/results.csv": {
+    "bytes": 6069,
+    "sha256": "5f9aa8c4245886ac995c1409427300ce21eed5515bb0c9ff487475a1290f079b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/warmup/speed_results.json": {
+    "bytes": 30720,
+    "sha256": "c8703b6c2e7a2646175e56cd17499afd5363969599a55d8279b587a31fb57ce4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c16/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "0c349a76ca5855ffb9a19bdb848a65b5796cabc73703a59557c6bbc2c2135c84"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/client.log": {
+    "bytes": 94,
+    "sha256": "856d0288a8b780d8b936b4d4b92e5d8dee316323413f60f156a86540a825ff67"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/command.json": {
+    "bytes": 597,
+    "sha256": "33ef106e4a66b5a906d296aec53bf06b7dc5558c17550cca79c279dd5cd9f71c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/events/events_coordinator_4564.jsonl": {
+    "bytes": 30712,
+    "sha256": "49355ff4f0f50bdd037b6a87bf7aeff28efb2d8e5a932cf79e478b9c1a234ec2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/events/events_preprocessing_4616.jsonl": {
+    "bytes": 213415,
+    "sha256": "fd321c773ab56305e5566aff79885082f023ada3b8c80d74a66f2f81725132c0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/events/events_talker_4617.jsonl": {
+    "bytes": 162208,
+    "sha256": "2b9390344d468de110a5a50e21945e001d271e9507b2f7846e06fa1392e094c6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/joined_requests.csv": {
+    "bytes": 14282,
+    "sha256": "12634918e5d7b003ff10dcf151119180645bf1853c5416d296a6f11ee043ec76"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/joined_requests.json": {
+    "bytes": 33297,
+    "sha256": "bddeed689d9288ca98523a2e8221eab03c7cc0388e642396a8433769f16e462e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/profile_start.json": {
+    "bytes": 147,
+    "sha256": "07630cdb7cace5a16499ec74b6f0574f02cb92421abd217cf308ae3602130930"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/profile_stop.json": {
+    "bytes": 52,
+    "sha256": "1efba52f14e3f0f34c82d326752177cd16eb8f23b6c333ab1a9d6b4b21110764"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/requests.json": {
+    "bytes": 37222,
+    "sha256": "2c238b7fc671699afc4a1bda7671020c2b5506571645eb61ccedc01999efe2c9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/requests_full.csv": {
+    "bytes": 16329,
+    "sha256": "e943194f6cadd942cfe272799dd4db00f73ac086eac01855e26c8c63c75a6526"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/results.csv": {
+    "bytes": 5950,
+    "sha256": "caf90399a464475849f86386f22d3f956aad255489c0c5f041237002c1b08000"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/speed_results.json": {
+    "bytes": 30696,
+    "sha256": "78947542397dc469dd9ae8096b6e2f24c04f2f7411aab8031b3293867beb4ac2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/measured/status.json": {
+    "bytes": 67,
+    "sha256": "a40985bb15281a8549a7a4210b296f6499ca1b30e9d6976e9d09fa2447e4be3a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/server.log": {
+    "bytes": 38778,
+    "sha256": "b28894fc9ea76864a088ddd7ab5a58d43a09e69b9d36b84ea19d442abebafbb4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/warmup/requests.json": {
+    "bytes": 37306,
+    "sha256": "ed40c31eb2576f7c9b6bb07e7a4864f042b1058151ef354934f824670c884100"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/warmup/requests_full.csv": {
+    "bytes": 16448,
+    "sha256": "be23718516738162e8c84bc52a07a203e894b2c6c37b39c0fb09934d3c0a96bb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/warmup/results.csv": {
+    "bytes": 6064,
+    "sha256": "9e2833499311603af8e29c686691d931ea906d153a0275a58b57ff4e15dcfd2d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/warmup/speed_results.json": {
+    "bytes": 30721,
+    "sha256": "1e0315baadd5e0f5d5bdc32fb073fdbc6f6748e90a9a33e7674887fe1ebdd822"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c32/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "00c59625c11b5db9944932fa206d7d12cef80729aff39e635645683bf84d50c5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/client.log": {
+    "bytes": 92,
+    "sha256": "46e7efc6b3035a791ba8dac4cf359408194ed1dc12b0a0c04c7d7f0b171574bc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/command.json": {
+    "bytes": 597,
+    "sha256": "e2255285a158c328a9aa7d4c8596b75f4bdcdaaa667ba622772cc8261eae59a7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/gpu_after.txt": {
+    "bytes": 27,
+    "sha256": "4233bbb964037d6ed1a7cdac907d57e23e3fe16023b2b492766cb2186981b32e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/events/events_code2wav_1878.jsonl": {
+    "bytes": 161120,
+    "sha256": "4cfb9319c38945523909d7c6e384d9490ccff115fe0cbf79c404aeedb9f00691"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/events/events_coordinator_1825.jsonl": {
+    "bytes": 30520,
+    "sha256": "b74591d1156eea658d8e475ff017ec7a714063885a9a7eef4b8669cd3541aacb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/events/events_preprocessing_1877.jsonl": {
+    "bytes": 211976,
+    "sha256": "c862c2bc80bf29bd398f4f2b215b54b97e2417394926c99527f24ad3953a1343"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/joined_requests.csv": {
+    "bytes": 14149,
+    "sha256": "2e145e51023b5f342803f08e4fa4e5932c487f34ab2013350074ad30ca35a051"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/joined_requests.json": {
+    "bytes": 33164,
+    "sha256": "c91b2a0bf0649ad7eefd3ac81f3d1a8a5a51f477a773bb6e564464fe4b8dfd79"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/profile_start.json": {
+    "bytes": 145,
+    "sha256": "9e3ae16a3d55fb43ea09716fbe060f7331cce80f02a13ebe693c155d9f23967d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/profile_stop.json": {
+    "bytes": 51,
+    "sha256": "fdfb87705c241b99d42397282872b9542f84fe60538a44e14516867a07c8a8c7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/requests.json": {
+    "bytes": 37154,
+    "sha256": "8aad93fe8e5517cae8e8784b4a29e532afc93a32d4679e5e8879f314e527e651"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/requests_full.csv": {
+    "bytes": 16261,
+    "sha256": "648f0097dca884e2bb635fd98662e1f233fd89b0642f2c62cc63df5be5847d49"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/results.csv": {
+    "bytes": 5946,
+    "sha256": "14bd08cb5cf31101cf62c200fa5db439cfb68c21536ee2a147e1d7239b2c09a6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/speed_results.json": {
+    "bytes": 30608,
+    "sha256": "67c035ab3ed4d4fae433c720ff069588bbce93a6dab85f24e097a3977613458a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/measured/status.json": {
+    "bytes": 67,
+    "sha256": "1d373f27ff6abed1d45f6409087b5bf65f4aaf3fb5fb8f2e2877d25fa5c2a70c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/server.log": {
+    "bytes": 76695,
+    "sha256": "80ed1045b9fed2354d343b7cd579c2ccbdfafa3bf33157f624390ed9884b9b26"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/status.json": {
+    "bytes": 22,
+    "sha256": "beddebacb141fdf84309e392f971cc8bc984dc8702b128dab3332d289b177ae4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/warmup/requests.json": {
+    "bytes": 37237,
+    "sha256": "11dfeca2bf9d3df32e74d6a343df926c52a03bb5ec66d29a418428f9acd38231"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/warmup/requests_full.csv": {
+    "bytes": 16379,
+    "sha256": "71b28aa70337429983b4e5e482d392afa26949a8113d0370dcd29bdb8e78f057"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/warmup/results.csv": {
+    "bytes": 6055,
+    "sha256": "f5d9ea2cd407ce75a5d313267e1d531d77763d89aa818dc11204c2ec5d07a7bb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/warmup/speed_results.json": {
+    "bytes": 30630,
+    "sha256": "661b0e2125ea26c26fb6e78fbdcd36c503e1a7d5bf51096b0bd451f8fde64048"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized/c8/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "95aec30b7dfe71d2becdc68caf2ab68fa9245260313f2f7240344434a46bdeda"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/optimized_resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/output_lengths_paired.csv": {
+    "bytes": 25290,
+    "sha256": "2d67f86f86edc95cc2d24d3e5de4bf7398e86cdab78b7cca6f5f72da7ba8b7e4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/previous_run_match.json": {
+    "bytes": 118,
+    "sha256": "ac7125070adfc6a32485d101f00532a18fd3a451723d760502ce5b1e54e51e05"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/resolved_config.yaml": {
+    "bytes": 19265,
+    "sha256": "a8959580953482913bdb1979bcf766b806f48fae69436a8b7191f17dd8673ad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/runtime_summary.json": {
+    "bytes": 9888,
+    "sha256": "578eb2c128cb1483c5a75ab91818e75b67072f1257a636ea4cb9e9a1403b1e4e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/serving_summary.csv": {
+    "bytes": 1510,
+    "sha256": "3b0451b0ce8f0bbcb50a3cb8215aa73792ae1698fae973dbc584d1593a1cf0b7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/stage_analysis.json": {
+    "bytes": 14949,
+    "sha256": "d3e3aef6b397068f37365483c7cfe46e6996351fda5f75d14279c7176480b6e4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/stage_comparison.csv": {
+    "bytes": 1356,
+    "sha256": "90f7bb3bcb11fc10c08a23701fd018f3bc19102e76dc315d9447906485cf9dd2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/stage_summary_ms.csv": {
+    "bytes": 3533,
+    "sha256": "158d4d7bcc18e024657e3fe3d0a64718491eaa05c29791a167263b6e08d24537"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/status.json": {
+    "bytes": 51,
+    "sha256": "0f78b23d5c88207dd7334fda757aa8779f49b903163daa520a4a3f4a19201c73"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/validation.json": {
+    "bytes": 454,
+    "sha256": "961d63a5bca6e97493452480cb0f3908812b7ee613f45d862da914ac0b3bc860"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/20261022T141048Z/versions.txt": {
+    "bytes": 7854,
+    "sha256": "c7bdf7e97bc7797873f3a43015cc67027699f961f5d1a31c1419ee5ea1811e04"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/README.md": {
+    "bytes": 762,
+    "sha256": "390fcd1d356501a90149ba2d6483fec8ff1d177f5bca5277e50dd343adf2d076"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/analysis-output.json": {
+    "bytes": 6281,
+    "sha256": "7af987ba9aec7f8e84697b42bfeeeeb705538679371a50abadd575e365ebe97f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/local_validation.json": {
+    "bytes": 289,
+    "sha256": "e421556b779b541ce2c52ea27b36c3c1b6ec2218dcc114b0915d7add349553b4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-22-stage-comparison/modal.log": {
+    "bytes": 28692,
+    "sha256": "2426a16e0331cddd76c3d7a70b7ff46c9f51c8618dd9c0d0b78dd9164758fd01"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T210543Z/capture_command.json": {
+    "bytes": 302,
+    "sha256": "dc4ae10c6032631e9c584a84e2bc293c777a4bea7fb298333518835b4c7dfbe3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T210543Z/capture_server.log": {
+    "bytes": 27724,
+    "sha256": "9918433ddfcb37d91ad3cbb90f1014dc26217f05f7d22cb137cfaef7edc85d79"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T210543Z/environment.json": {
+    "bytes": 1900,
+    "sha256": "3412cedf913661e9ec24563bac5d33f1e350a9509907d1d91aade14cd94623cb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T210543Z/status.json": {
+    "bytes": 108,
+    "sha256": "3361aa01ed9e652ff62b965f3de3308b02f4eb72e8c082a552ae37db67256488"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture/measured/requests.json": {
+    "bytes": 286657,
+    "sha256": "aeaabfeb063582f50d1ea8b54a3a55b9d38226b2072dccfa07a7efe8d7040c54"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture/measured/results.csv": {
+    "bytes": 41581,
+    "sha256": "ff08f5d6697d208000af1027f275c85a17e3208f1f18e8b0b0de5f8fc7f71d84"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture/measured/speed_results.json": {
+    "bytes": 226746,
+    "sha256": "6cdddd8ed3742d9786741c662062dad369b5fccd60d7d462d7d43266c305b8e6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture/measured/status.json": {
+    "bytes": 69,
+    "sha256": "b6bb412b1e9c08ff8fd535ca055d1fe2d59c3726b6e6537742fc335f29d0dda2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture/warmup/requests.json": {
+    "bytes": 35802,
+    "sha256": "78bedd9d40932c011600d6030c2ba6290534494546ecda5ed0be4470626f8dd2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture/warmup/results.csv": {
+    "bytes": 5405,
+    "sha256": "b8239dec43227e40821e7b7e4259f2633bdc0a2267b41e99a248e5b4d2ad4f6a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture/warmup/speed_results.json": {
+    "bytes": 29165,
+    "sha256": "6acdb3b3e9330526f9822f831c3fad88000550a0d163e4df9ee0eeba0092f73e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "a31954b2e8e38941f2f1a4b532aea73d831612750d274b373ecb2b5733fc81ed"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture_client.log": {
+    "bytes": 98,
+    "sha256": "7cfb7c63cb23c03d549e16be90edcb31f8364f6fc717ba51c74e790bd3389d7b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture_command.json": {
+    "bytes": 309,
+    "sha256": "3ef6bb1a61c4a66b83a4c7095a0dcf46bca187ae0183b01e1e55379c026fd618"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/capture_server.log": {
+    "bytes": 186719,
+    "sha256": "697f470cb3b08afae34675863a33bcb1abb5f92a56326c9e474ff4451701cc34"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/environment.json": {
+    "bytes": 1906,
+    "sha256": "80149cd392624b802f91b8ed2ac256b3696c6adbdd5158d55e70f5638afc9f30"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T213729Z/status.json": {
+    "bytes": 115,
+    "sha256": "456b05edf4c0ab680ff653a8249810593447d9a5ae40d0ca9036dd0dc263273a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/asr_server.log": {
+    "bytes": 263052,
+    "sha256": "5ded021955206ee09e9b35ac803725699099c93639d06bb559e0ca9c2574a357"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/baseline/config.json": {
+    "bytes": 8745,
+    "sha256": "16c563a65966539c13c25ed85a1ecf580b43b639cdbe28b1bb0db24ac2d84253"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/baseline/execution.json": {
+    "bytes": 89569,
+    "sha256": "886088152b4b0d0c19f96ca7cc4bf8b3aa7c3ac88387fe5177b9857899eae394"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/baseline_replay.log": {
+    "bytes": 303,
+    "sha256": "e5d3ea6ab09d29327a350ba9065e880fbd72f2858090a7450054dc88004133eb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/capture_client.log": {
+    "bytes": 98,
+    "sha256": "7cfb7c63cb23c03d549e16be90edcb31f8364f6fc717ba51c74e790bd3389d7b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/capture_command.json": {
+    "bytes": 309,
+    "sha256": "3ef6bb1a61c4a66b83a4c7095a0dcf46bca187ae0183b01e1e55379c026fd618"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/capture_provenance.json": {
+    "bytes": 132,
+    "sha256": "3efaedcdefee04d93abeb00b5215ea6f0a26d1d733bc43b3d136e8026a146d09"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/capture_server.log": {
+    "bytes": 186719,
+    "sha256": "697f470cb3b08afae34675863a33bcb1abb5f92a56326c9e474ff4451701cc34"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/comparison.json": {
+    "bytes": 88354,
+    "sha256": "732e15c707d8a7c8cc28cf2d9151c73d829add510647c51b362386dc3ca3ea86"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/comparison.log": {
+    "bytes": 172,
+    "sha256": "c4b4484ded6bbf5331e5e257a6fea4010432ae72430558100a665f218f069cbb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/environment.json": {
+    "bytes": 1906,
+    "sha256": "a67e5837d6707e66fc8058f4b593be9ac96bd1ff55ca87ffd485639a09c42b1d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/frozen_inputs.json": {
+    "bytes": 470317,
+    "sha256": "253c7868cf24c5c0cf46b6d566a68c1a910b234a120e27d9c196c87e6e0adfd1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/local_verification.json": {
+    "bytes": 551,
+    "sha256": "200f9de14ad0e6cf85b322d480ef8379677e3418201017df376d16d6a9f10eee"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/optimized/config.json": {
+    "bytes": 8745,
+    "sha256": "16c563a65966539c13c25ed85a1ecf580b43b639cdbe28b1bb0db24ac2d84253"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/optimized/execution.json": {
+    "bytes": 89521,
+    "sha256": "65557c790d871f47c221fd16338e48ead90b8d420f7e4be98b32ea1fa4dc5dae"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/optimized_replay.log": {
+    "bytes": 311,
+    "sha256": "7b8f5713d1cf5f12a1000833e7a0066333526e6caa1e18a474612a1163e81f50"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/quality.log": {
+    "bytes": 1949,
+    "sha256": "a8922779a8994a018db0a50130bc46bc181e1891644ad2b3dc64a45a5678dd5b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/quality_rows.json": {
+    "bytes": 273833,
+    "sha256": "5f542c3d9351a5bbf338964ff5d373f3679d18be5e12a8020405ebdc0307acc0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/quality_summary.json": {
+    "bytes": 634,
+    "sha256": "7f93da8727a895316590d533cea9353ee4a8a77868294c1452931b875c763f2a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/speaker_assets.json": {
+    "bytes": 397,
+    "sha256": "baa931056d70dfcc7509f657772bb29573d3644fb53a5828877bb744a5ebd817"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/20261023T214600Z/status.json": {
+    "bytes": 26,
+    "sha256": "34c8f74408bc4183b49f04a8136d278cf1d85c3415647a3e734dc82d5dd7e5c0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/README.md": {
+    "bytes": 867,
+    "sha256": "c8dbefa67a998c3b6f3970a8b5504096150cf4ae8e90344ec52c22d4e5425c77"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/REPORT.md": {
+    "bytes": 6178,
+    "sha256": "e67922941e2f5512be4f140175386b687374a742dcb4d3bfcb092b286c8adf74"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/preflight.log": {
+    "bytes": 3791,
+    "sha256": "d2b66d78d506d3005db1c0c6a46fccccbad3a0b09d53c09b8ada9014d8401fac"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/run-2.log": {
+    "bytes": 12655,
+    "sha256": "a90184715edeb91eaf2991cf9338e6da2297654df0f8b25857ad2aae64f92db3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/run-3.log": {
+    "bytes": 11085,
+    "sha256": "fcf82c0a3ad58d4c0196ef77bb7a14005a6e8b20e73fec0ee2b9f1ecd1124790"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/run-v4-replay.log": {
+    "bytes": 4669,
+    "sha256": "25e13098b7106e2de7e7b39f7026510961f3be6db0c9991fe019834acca7ead5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/run-v4.log": {
+    "bytes": 4187,
+    "sha256": "0f6558c86810f1e79b6981dc380814e864691042c0f0dc582dc4482652d74c51"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/run.log": {
+    "bytes": 10533,
+    "sha256": "a213f8c2549d6d0f7da1a7b9546c85f5c8bd9364a037baeaeac9f3638a21c593"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-23-frozen-accuracy/speaker-assets-v4.log": {
+    "bytes": 418,
+    "sha256": "ec0053a3127d949f22c3689726e57537080a85bd269103d1963612fccf7a49ee"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/README.md": {
+    "bytes": 800,
+    "sha256": "a2f7cfd50616f38d5badf752f0da6470573ca0284c47b883e02a5278da573788"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/REPORT.md": {
+    "bytes": 5708,
+    "sha256": "e9b4656276b5b87b92be9a6dca40e8a0dbffbf7dd5e01fc6691fb30e451c7d8a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/VALIDATION.json": {
+    "bytes": 760,
+    "sha256": "0d22729189f83c7905467750c33234a3b0c331677b11672963c07ef6efdaafc1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/analysis.log": {
+    "bytes": 1788,
+    "sha256": "3a29cd5a1b629b63fe07810e5b14a8a7b599afbd3d0f2313f0b4115fdede10a4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/client_verification.json": {
+    "bytes": 125,
+    "sha256": "f68921cd7172c1b3f1299969c21cc485211cf0b400b16acbdffa531f4689b7e7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/comparison.json": {
+    "bytes": 1787,
+    "sha256": "d91ccf40401ce0e4056e01f29e0d2e5ff06adca9df2d2c95c156c2c936dd0baa"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/container_status.txt": {
+    "bytes": 129,
+    "sha256": "0e80d1ab1f1a8c9573948011acb38aa935630fd29685daa474270143232c2415"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/gpu_final.csv": {
+    "bytes": 98,
+    "sha256": "81ffb6a9629278cce3037765946f46b1c5df1a0726c548f3f3434893cef5d813"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/outlier_examples.json": {
+    "bytes": 15637,
+    "sha256": "b346a8b7b2036de47b7614361db2cf2b90625f75f9cedb2e9cae5aa9b64e42b3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/preflight-run.log": {
+    "bytes": 1768,
+    "sha256": "e53cd204c04c7ca6053e7b4ea2d136b99dbbebd5f9853dbf5ca932d6a8924e8a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/prepare.log": {
+    "bytes": 3205,
+    "sha256": "c2f9124c66b4ebbf6d8965d38017251762242c770fabd9d567d3ddfd414c5ee3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/quality.log": {
+    "bytes": 99925,
+    "sha256": "cb60573b642927e83a117c5fe117648a381104e6905e4c8c65b7271e6105f1e5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/quality_cells.csv": {
+    "bytes": 935,
+    "sha256": "f087fdb509d2e6a79bfb1cbbe481d463d38044d1267b6022a2efc3ae1edcb349"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/quality_summary.json": {
+    "bytes": 1771,
+    "sha256": "4c017dda22cbef87022dbba689cb360ec128f990bac792c3e7b48cbdecd76f11"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/request_length_comparison.csv": {
+    "bytes": 172370,
+    "sha256": "0b4fce5e761f8e7a681c376ad644ca86753d7e36701e279fbfa7781134ee7e32"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/asr_server.log": {
+    "bytes": 689559,
+    "sha256": "aa727df1449cc6f4d70cedf5f05654c642007c20556e4e04d3d85a62a0f930d5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/baseline_resolved_config.yaml": {
+    "bytes": 19620,
+    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/environment.json": {
+    "bytes": 794,
+    "sha256": "9a68643e05a113a6de2516f2f9badc9273ef7472697efa562ba1fafad8e63758"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/gpu_identity.csv": {
+    "bytes": 134,
+    "sha256": "34e0c80a08e224f3ba33402f794f54167b1e1c04a639a2eac9775090cc5acfe8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/optimized_resolved_config.yaml": {
+    "bytes": 19620,
+    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/quality_environment.json": {
+    "bytes": 444,
+    "sha256": "02d31da8c6ac76ea5877a58c973d5f238facd1e5e5819b9d421f5d585382f6c1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/quality_status.json": {
+    "bytes": 337,
+    "sha256": "9d91443c4e5ba0c7b286ea046006b03e5b0153ad07da8995446273cbbaf4430b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/client.log": {
+    "bytes": 1376,
+    "sha256": "78c5af26783ecf619deb37fe9ee1f234289b726646a74851dc87669f25ce9b70"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/command.json": {
+    "bytes": 813,
+    "sha256": "47c5dece1c4ac03eb253f01dc07bf332d22596571c854b0d6e63e7345fa386d4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/asr_speed_results.json": {
+    "bytes": 553,
+    "sha256": "7961cd2346115aa0bbfd847d0a98f7cb564ce4a6f7679857269e862ac7362e4a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/generated.json": {
+    "bytes": 91282,
+    "sha256": "67ca835faf4ebdd4499716e9e01acc25386dfdd34416d2172ec9955e2c0f8b84"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/metrics.json": {
+    "bytes": 639,
+    "sha256": "bfae65aa3d27fab3aeb283ee250ff37c546f1178137b65a270146bf4bc7bbcd7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/requests.json": {
+    "bytes": 262390,
+    "sha256": "ea7419b1784c1d4c9b12d08e0a93a465b57d610cdac3a45c61af9f3130851229"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/results.csv": {
+    "bytes": 43710,
+    "sha256": "fa42f58c42bcd814f801eb4b440cc737aba76a72d2fee5f4cae56707a5f9372e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/similarity_results.json": {
+    "bytes": 99325,
+    "sha256": "adc7dbc3ea4a6e959009957670eaec9ebfbee1f9ca0bede031d5f3b93464cab9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/speed_results.json": {
+    "bytes": 216598,
+    "sha256": "c7af7af46abb528723d8b454b1122357f915586488642591e356fbbd836fc5cf"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/status.json": {
+    "bytes": 68,
+    "sha256": "af2a07f8735225a43e8630b7c59a56b177673a6e17a5a83b442cb51f51e90a82"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/wer_results.csv": {
+    "bytes": 55025,
+    "sha256": "7fb4f0d49d586d6ed71bab1ce1f80c218236fe95c0c150eed65366526ed1659c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/measured/wer_results.json": {
+    "bytes": 161013,
+    "sha256": "f17c56c5ff5bf2c5bf98aa594ed5ff832ea4c97dd7f0b22d21b24567d422ac76"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/server.log": {
+    "bytes": 564115,
+    "sha256": "f7047b9d6669135e6ae0f0e47c393599511eb3d3202ddf510abd884ed1ae6985"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/status.json": {
+    "bytes": 74,
+    "sha256": "968c86dfef5b98a145dbb9a24fc29c021f5ef8e5af63eb820964eea8b83be6e8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/warmup/metrics.json": {
+    "bytes": 639,
+    "sha256": "313fa75edffddba6a3cf901eb3a26fadb21ac9bfa71a73c1549d8c1608edd6be"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/warmup/requests.json": {
+    "bytes": 131192,
+    "sha256": "37c6eaf5981b5cef242a2a7a98bd1473c9479aea028900135586ecfe16f855cc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/warmup/results.csv": {
+    "bytes": 22009,
+    "sha256": "cd57b01215c46fc7ebc3ccd6196d28878fb177b2db3e35c32768f6fc96ea9e7c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/warmup/speed_results.json": {
+    "bytes": 108752,
+    "sha256": "36e1a0226255684816a8c33f4f98ec7a0f2ff84cc63113d8efbb70399edd0097"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c1/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "f7b03dae2c5d42fa476f7cf1e124d23501fc1b81c30efc9c0ba8a1584c519262"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/client.log": {
+    "bytes": 1383,
+    "sha256": "a334612fb461a116e910cc76e82547253f8bb3ae0b9f6856192f9e9d61d17c95"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/command.json": {
+    "bytes": 816,
+    "sha256": "730f26a6ea822d906863b750920162ebd8677880511878cc414ab4386b829538"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/asr_speed_results.json": {
+    "bytes": 551,
+    "sha256": "bd7b99fd8b4d684563faf61d45bc9a6c05bcc7cdc694f04a39d835f919409ca4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/generated.json": {
+    "bytes": 91547,
+    "sha256": "fa66784e90f407851df1d854b66132ee3f2f1cb2cf0dc5f14998615c001bd7e1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/metrics.json": {
+    "bytes": 641,
+    "sha256": "65be0badb5e12d18aa12743a7caef84a5109d01a51341c81b7e6928e49186085"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/requests.json": {
+    "bytes": 262613,
+    "sha256": "fd3aaadf2466a083d92751c05de6f98d0329e6fdd35f95afbc1122ec70d506ed"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/results.csv": {
+    "bytes": 43956,
+    "sha256": "4f4b64822e340c8a527e0ec3daf247f3cbe0c185198ead354e3da2314685dfff"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/similarity_results.json": {
+    "bytes": 99572,
+    "sha256": "d5e82f6bd8979c6dfe5d0258db0467df56a4d22fd1e6a7fb71e4793c46593973"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/speed_results.json": {
+    "bytes": 217133,
+    "sha256": "9eb30ca683e63a765675acc76c8a956dabef6a64d10bb73b3a171e7615f42b7e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/status.json": {
+    "bytes": 69,
+    "sha256": "66b6de6c60fc67e8525a5001627efd61a5d1c1be7f472148af4d64c903e98645"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/wer_results.csv": {
+    "bytes": 55013,
+    "sha256": "634b3b3e2b9cfb50fea88472b2a655037c15181669976b5a15a9a62528334db6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/measured/wer_results.json": {
+    "bytes": 161045,
+    "sha256": "8f52fffc5eb46f30e8b1a03816e08ff60200c90e9bc20ab5110b7d1cb206be12"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/server.log": {
+    "bytes": 221137,
+    "sha256": "904b81f6c25f2871be5c9c9a659acf5e8b9f96dc71c00b4654be071a2983e3e9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/status.json": {
+    "bytes": 74,
+    "sha256": "1830fefa326b973d3f68685f483a5eb3ef08629d50b3da78865f8bddf727f980"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/warmup/metrics.json": {
+    "bytes": 640,
+    "sha256": "40669e0aa104f53dd1015628aa85fbadf8be2d123ac4242dcf86a21bbe6759b5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/warmup/requests.json": {
+    "bytes": 131260,
+    "sha256": "8b53a134a8025c5033ed8ef82926cf72eca2aef477b4120954451729cbee0a45"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/warmup/results.csv": {
+    "bytes": 22112,
+    "sha256": "ae2f39c3801084dc4501720c69c8402afb51de2d43863866189bdd8f66d9b151"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/warmup/speed_results.json": {
+    "bytes": 108997,
+    "sha256": "1fbde302d09a5fe67840afd38dc3a8a0b45030529db04b89db27dc7d54050a32"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c16/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "b7944474a3abe8cfe685f5257546cc3771ee775222fd45df454e8e856b54c916"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/client.log": {
+    "bytes": 1380,
+    "sha256": "6ae3c23274cd933876341c136a550c05841b6184058ea9cbf801e843b8493f92"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/command.json": {
+    "bytes": 816,
+    "sha256": "a046a83712bf1af8df9616c50a19ed0589fc32660e722ffe31b9facff73ebad0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/asr_speed_results.json": {
+    "bytes": 551,
+    "sha256": "d684e1ced9a0e24daac0b9a74bffd1bf52bb576623f22044649c72b721935b9e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/generated.json": {
+    "bytes": 91546,
+    "sha256": "88c819d8a7fca2b7674cfec3c05c3f5b84a4823f0de32bcf64b950c5ef551fe9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/metrics.json": {
+    "bytes": 641,
+    "sha256": "68d6189f54b4f52a4dea3c6c81ce8f1266e8eb047defba22bf5e72e3106f9c72"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/requests.json": {
+    "bytes": 262454,
+    "sha256": "6759372fc794027fe2903f7585472bd3be55cf52e7f22861753285c7cec17875"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/results.csv": {
+    "bytes": 43856,
+    "sha256": "63d7cf3382f2daad1eb861fc68f842255d6ed4de374d379190d89ad7c84ef262"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/similarity_results.json": {
+    "bytes": 99557,
+    "sha256": "13b81d17404898680962aed5092290dba57ebf36e1d2e71ead2e766ddb08145f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/speed_results.json": {
+    "bytes": 217040,
+    "sha256": "e95dab05b25f58b45e54cb2c40e4701bf778231ba9a4e4118de80c273f56f109"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/status.json": {
+    "bytes": 69,
+    "sha256": "1261ecd4eed067a839a08c2bc0241b3c65ba99b5ccbf2efbb0ee62b41f207101"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/wer_results.csv": {
+    "bytes": 55051,
+    "sha256": "4960e7f7a24c0859487c3f5bdaadf140c5c1a1f4d740d7226de27c505d140b11"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/measured/wer_results.json": {
+    "bytes": 161097,
+    "sha256": "13233eb2ca6450e34c92ee76596dd966cbec785d932a05ba3b49126f76605469"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/server.log": {
+    "bytes": 180499,
+    "sha256": "944f1c06e1fffcd6c0e7b8b74a3b11951b73bde5b73c32c18cecbb5990d6516a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/status.json": {
+    "bytes": 74,
+    "sha256": "38e52ae8fb059d51b4aa302fed457d806efb2cefb0633b749b16901da13cf58c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/warmup/metrics.json": {
+    "bytes": 638,
+    "sha256": "ecd62817541200d2ff76953249ebfdea78159d3d70750f4efb56dd2d1a7594eb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/warmup/requests.json": {
+    "bytes": 131175,
+    "sha256": "869008da25522ba3341c72a02566addf303b64c0d7c928118bd2465ed1bf8da0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/warmup/results.csv": {
+    "bytes": 22052,
+    "sha256": "92377cab075a91dc519c9aa66c334a402ce2c0366ce411c52753f1593b0148be"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/warmup/speed_results.json": {
+    "bytes": 108944,
+    "sha256": "7a6bef4a3d4b3324c4eff5641b7c6311b9f6107f3b4268b802d923554feb6e0e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c32/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "51eb197c031631e5c96a7789704077d28594bef7a485d7178b8f91e7a999d238"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/client.log": {
+    "bytes": 1377,
+    "sha256": "6fd0d274dc1cafd1d6eeec50e5fd4da51356d5fdf56e6b0a4cfc157d159d7399"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/command.json": {
+    "bytes": 813,
+    "sha256": "faf921793c7afc605cec16a6f00ce03edd3e17bee2a056df32ea4b2c55330e64"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/asr_speed_results.json": {
+    "bytes": 553,
+    "sha256": "d96ecb384f0dc8304a6c0218948bbe46cd06eecd7e3dbc5f384ea84af1521d6d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/generated.json": {
+    "bytes": 91299,
+    "sha256": "0fe2112fe770a6d23a6730bebb42cbe7cb3e073fe93c1a6743478bbb047f9d67"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/metrics.json": {
+    "bytes": 641,
+    "sha256": "a15e25b1e169ebf1466350977ff13d8c72cae6f3fa3d4396b4b3db6440c5c0e2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/requests.json": {
+    "bytes": 262150,
+    "sha256": "c43769e72f15c41377092ad556fd79c73e09616fcd069d64c65797b8bdb1183b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/results.csv": {
+    "bytes": 43711,
+    "sha256": "bf968a0343f3e408f204e8abf4a7378632f1e548269d7c15ff125648dbb3a11c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/similarity_results.json": {
+    "bytes": 99320,
+    "sha256": "ab3602eb2e0ff3221101e02b8f7858734d1f765d97c49c80d5ba513b067c9402"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/speed_results.json": {
+    "bytes": 216624,
+    "sha256": "a6e576d2edaccefff9f17c6f16c9cf6dc364a33d5fa9669ad49b9cb234457058"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/status.json": {
+    "bytes": 69,
+    "sha256": "f717b3d8b8f4cbb54a60a2d22e8909d5810ad9a882d5bc5b7a1b89eea7433ee3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/wer_results.csv": {
+    "bytes": 54949,
+    "sha256": "27840e80d0ba5a8b2e731e7cba590aab01e3abfa73aeae46103d96ce31d9738a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/measured/wer_results.json": {
+    "bytes": 160870,
+    "sha256": "3c6c41e0b96b6adc19b728d9ad42c01d48085e6e6293e19a70a59d94f7b3a291"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/server.log": {
+    "bytes": 314160,
+    "sha256": "316663940738a4ae49e6d462644003cad0f4408baadc1e0fb210213c07b2e3b8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/status.json": {
+    "bytes": 74,
+    "sha256": "7687c9c2282375ce197d1029832296918e018cc6ced1ba1c4a63bcef3751ffe4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/warmup/metrics.json": {
+    "bytes": 638,
+    "sha256": "8a30895bf2216ecc168c6a940284eede9d662996b4f1a24f27436533bd25e11e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/warmup/requests.json": {
+    "bytes": 131086,
+    "sha256": "b337186b9c8723d5355ddee01b3a1cc1675fd47dbde313aa6627ae7240a339c5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/warmup/results.csv": {
+    "bytes": 22001,
+    "sha256": "a5dfcd613b1d23cd0d5a05409ef4b053e08b248b968c223246606a847dfa8c9c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/warmup/speed_results.json": {
+    "bytes": 108758,
+    "sha256": "e651a17b0f12351db38183e1ae02121946aa9f4f87e36080734dff2795b9fb0e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-baseline-c8/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "f1205a5e7f75c56fbe76dbba26cdc9e9f6ffa7434a2c160fd8f54692a8457d3c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/client.log": {
+    "bytes": 1379,
+    "sha256": "4ac53077ee9c16d235c1930074e9ff6dc5af1ac665854fcf98c830c538f2c4fd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/command.json": {
+    "bytes": 818,
+    "sha256": "a5ba06d177e7acb635bdf5b562a5576b91db389f4f0bac68da2431f1ab04818c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/asr_speed_results.json": {
+    "bytes": 553,
+    "sha256": "14137b4408242e713effb4986d117c2f451da74d3bde62d787cfa47b25cb570f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/generated.json": {
+    "bytes": 91548,
+    "sha256": "73d1a149f8f8fa1198bcae947cf25a7c59c26d6298ee3fd5e4876c7227c18f26"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/metrics.json": {
+    "bytes": 638,
+    "sha256": "4bc8595f2fc9da362488c875b9e51aaf7e2924af0eaa5867f9b47096375bf01b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/requests.json": {
+    "bytes": 262853,
+    "sha256": "f4586f8e34ddd92b39f672e92cf140ae9e2d32479547dfed04239e22d7a697a1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/results.csv": {
+    "bytes": 43966,
+    "sha256": "5d5ac72240d113b4099f19cdbe40f2fa147712e0af95ace6c49ccdd45daea50a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/similarity_results.json": {
+    "bytes": 99563,
+    "sha256": "21b5eb6d686ce8c986e165d7d2338338125513fe4d55ae2cf6e29548b4759971"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/speed_results.json": {
+    "bytes": 217114,
+    "sha256": "1bafe3f9acaf442110db9b254e8a1323b16e2b044832642cd0503c2253a3372f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/status.json": {
+    "bytes": 68,
+    "sha256": "a56bdfea6f28b793fd01647330df5f698d470c2492a8d09bdd2e6d16d8196e35"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/wer_results.csv": {
+    "bytes": 55022,
+    "sha256": "d918c3cda29b491a403eca4897469db179d050c280e24c3c4de17c32b80afb61"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/measured/wer_results.json": {
+    "bytes": 161022,
+    "sha256": "c121697614df6eb0a5ab0433d35f5edfe1d8ed7d86ba0c38bdec560179601065"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/server.log": {
+    "bytes": 564240,
+    "sha256": "fbba77f917aa970eb73872f6fd64e4879c34b7a374c358e6f6a26a15511755ae"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/status.json": {
+    "bytes": 74,
+    "sha256": "96e5bc86eb5a8bec59afcf7619d7b2e96d3579282a4866f0c0f4acadfffdd993"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/warmup/metrics.json": {
+    "bytes": 639,
+    "sha256": "c2cbb3c6e4ed724254c6cec4eff9550083cdba55e31f0ee783839c5aa331ca84"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/warmup/requests.json": {
+    "bytes": 131487,
+    "sha256": "427693ce69cbae243dfc9a90feb08c441b0c943b73e714972e18983bbde6cd88"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/warmup/results.csv": {
+    "bytes": 22137,
+    "sha256": "1554787d1d049d857fb892b6ff066640c9f25131de8336adaf76bbf59ddfc66b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/warmup/speed_results.json": {
+    "bytes": 108999,
+    "sha256": "da325e45f9b75df217ad104c3d51ccb3fd314a0bbe8df197fb3d9bdbf7e1e1ce"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c1/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "c6a7484b90252f54c946728b7ad73185805ea7c8769e13c41b82b0d5cb6fcd68"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/client.log": {
+    "bytes": 1386,
+    "sha256": "202f21a529104097d222be34a62396e9189a7a00e35e0110b6d29c4f0bdbe293"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/command.json": {
+    "bytes": 821,
+    "sha256": "3da6973bdcac660b641d15ac9cbab64ad60fcb2f25701a8e0742f02e9b7462a3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/asr_speed_results.json": {
+    "bytes": 555,
+    "sha256": "6e4782a5673db27d1d8fa872862ceefc9fd6131f025cdd829699891842a70345"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/generated.json": {
+    "bytes": 91797,
+    "sha256": "eb21c8c6672c6c10cfe9195eda411aa2e63e72ae25fcd5115d9ebef4c8908fd5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/metrics.json": {
+    "bytes": 640,
+    "sha256": "bdd7826c51485ec3cf40025bf9bc57e828701682c890b8bc4b5721466e0d1f89"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/requests.json": {
+    "bytes": 263130,
+    "sha256": "56af739ff3ef4096d062e4ee79e1cfd0bb1bcd5d8ccd4a3a712e56918fea3aea"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/results.csv": {
+    "bytes": 44222,
+    "sha256": "4620f5ef15405ba74f89331ba807e446d880b8709c17de199e9ba5d268fa83ab"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/similarity_results.json": {
+    "bytes": 99809,
+    "sha256": "e3c4d97799e3b8c0f659b90b57f0c401f82ca79eb03364659bb83e8fe0630bb6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/speed_results.json": {
+    "bytes": 217638,
+    "sha256": "0545a4dc01945ad899bf64dc369033b9ef5b0abf7574dbd5405374a5303d2b79"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/status.json": {
+    "bytes": 69,
+    "sha256": "5a01c3c5baadcc229d4917cc4492c4a55f925ed2cb6538ec1caaeaa32112b052"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/wer_results.csv": {
+    "bytes": 54944,
+    "sha256": "ecdc045e1ff7c8d8f6fc8b6ae2fd2474f12130fae8b570c1fc1158cb27b3a0cf"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/measured/wer_results.json": {
+    "bytes": 160862,
+    "sha256": "df51f8de797aa82a159ce10df3008d47a1f878e2a40bf0ce0439ce9bad4e2cad"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/server.log": {
+    "bytes": 300679,
+    "sha256": "7076b9523dd5440c7c90fa930c815889d5ac8efddce3504ed06a450ac3ac718b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/status.json": {
+    "bytes": 74,
+    "sha256": "c9f6e233e6626cf02af17c78659eb06bbb1e87d16089f30bb23d01b07bc04526"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/warmup/metrics.json": {
+    "bytes": 640,
+    "sha256": "17a531225793e2c7752357386db7f2cff385df7fd190f71ce1c6921bec7b1727"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/warmup/requests.json": {
+    "bytes": 131525,
+    "sha256": "4516fc535e3c0a093e63b2bff3c59cd790e290d34a846c950a3ac0a7cd9d5d28"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/warmup/results.csv": {
+    "bytes": 22248,
+    "sha256": "fe309c7ac1f79c95eda5e2a3c20de13b4bb462582dca543ef870f3e305009b1b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/warmup/speed_results.json": {
+    "bytes": 109250,
+    "sha256": "0bd23b5674c7150916fa3f60d6276aa9a3aa38890d9fe75144f0de5c7634b48a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c16/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "26c49a0e8caf825d1d54c4d8764030a75d6c68729ee7e07bc04c945a0d15fb02"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/client.log": {
+    "bytes": 1385,
+    "sha256": "81dad5b43c8a45df73cc14456b3f243e4efc6eff8d023e87cf729f20e8b2f680"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/command.json": {
+    "bytes": 821,
+    "sha256": "abae62345da265d5fecbb023253305c461dc7ee3b4ee46e836fb850b3b05e947"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/asr_speed_results.json": {
+    "bytes": 555,
+    "sha256": "e5754e9c71aad0de388310268bfb444d6bb00dcd4c682074427ec0f76d368974"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/generated.json": {
+    "bytes": 91812,
+    "sha256": "c696161ccc1ccb77a38c9841d5413c92957e5665f91787ab8829e17d97b4454d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/metrics.json": {
+    "bytes": 642,
+    "sha256": "d522f12478d6449fd7472351c3c45acb2d9cabcad8594d333c3f92f6cf7ad9da"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/requests.json": {
+    "bytes": 262979,
+    "sha256": "e18873cb5656a1b0f9a3e1163eb98ca7639dbc11b4aaec03c7f4d75a598ec685"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/results.csv": {
+    "bytes": 44117,
+    "sha256": "392704cc1d0e39c8887681655ee23111999860dace45d47cd94e0f1dbc0d2fbf"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/similarity_results.json": {
+    "bytes": 99828,
+    "sha256": "6ec3340c3b1a21d18f8902f5686e6f4bd98701de70c216b9e20c788ddc999e35"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/speed_results.json": {
+    "bytes": 217564,
+    "sha256": "ac608e45f32ad2b5cde859280cecc09a9ccf2a4070d35539f9da975046b9d1a0"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/status.json": {
+    "bytes": 69,
+    "sha256": "f00c61d913418f3b6876b2020223d2eedfef1480b78269f18c361f4dae59cab7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/wer_results.csv": {
+    "bytes": 55082,
+    "sha256": "776ace0b9124973f7e1117ca902fb7669f0f34dfb50506f47cc25045f997e8d8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/measured/wer_results.json": {
+    "bytes": 161180,
+    "sha256": "044eb023151d6a49efc3f6147eb2b52c408da806136b1276dd09c203dd2f9ab5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/server.log": {
+    "bytes": 257188,
+    "sha256": "71fe052f7d9d192b4de1c11ac574260cc8c39b4ed62ab4af611eab196f108fe2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/status.json": {
+    "bytes": 74,
+    "sha256": "2c024314300bfae7b87d600f520da75d83c82737f199da3d86a49503652c7b8a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/warmup/metrics.json": {
+    "bytes": 638,
+    "sha256": "284b256fb7d2da84523239c6535276c78246a1e6504136722a872d7ef0c88919"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/warmup/requests.json": {
+    "bytes": 131413,
+    "sha256": "7a5c52e5fa6382d1d33c4ac872e5f7b5eff7a56b9eee194d4a170eb535a7578f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/warmup/results.csv": {
+    "bytes": 22184,
+    "sha256": "ec11c1833f3c1c20ebcb4cd7ec9abf688a2cf3e57ffb2ef354fa054bee05fc41"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/warmup/speed_results.json": {
+    "bytes": 109215,
+    "sha256": "f70e3ee78e9ee9ca735b740ad981ad2a41897b1956b191ac6fd499ffcec27335"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c32/warmup/status.json": {
+    "bytes": 67,
+    "sha256": "87fedc66d108bc75e1a15c9a8372a79f8c6ed456b0373ad15411fa7d92522e95"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/client.log": {
+    "bytes": 1380,
+    "sha256": "df888aba93030d07296d83bedee33cb7bdea86560a9c53343488d729f1b000ea"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/command.json": {
+    "bytes": 818,
+    "sha256": "28391408cb1ba0ac1adfbc9b360d15af2a8dde231d0a0389a11c8d4bba7dbea5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/asr_speed_results.json": {
+    "bytes": 552,
+    "sha256": "d826303fa879183c922d7ff45f134180ea697931d63493dd40ec65183aabde6c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/generated.json": {
+    "bytes": 91556,
+    "sha256": "b83f4c9b79107e14c3f4b63d8846eecb0ac863100dea702fbd2e50463074ee04"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/metrics.json": {
+    "bytes": 640,
+    "sha256": "8844cbcae04a413e689d66d1affd82a875ee43ee2b0d0d5b9e04d1fbdbc24cd6"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/requests.json": {
+    "bytes": 262665,
+    "sha256": "e448d6e1ff68e9bcc2d64862ff9bd746994648200f8135621056955641dddd6a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/results.csv": {
+    "bytes": 43966,
+    "sha256": "753f624ad41dee96c2f1df8a5934236769fc6c1da0e853c51921a6806b35b395"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/similarity_results.json": {
+    "bytes": 99561,
+    "sha256": "28b66c2056feb0e44d4d03b42168d1a955a6b15d59c2b915ad5dc54573add9a7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/speed_results.json": {
+    "bytes": 217132,
+    "sha256": "cdb9b435c93d5ee4bbb5a3b8372d76916f9afa73e70ace813148a406578efd93"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/status.json": {
+    "bytes": 69,
+    "sha256": "9fc68d02dc8b2212d2a1a109ecccf2c57d5303c88a734fcf1f00a9aa91a9b72e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/wer_results.csv": {
+    "bytes": 55109,
+    "sha256": "5476676760796c3eb2e7e585d178cca170426445d2d254c1df9fce9a98b03643"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/measured/wer_results.json": {
+    "bytes": 161159,
+    "sha256": "88464f0ce04d01524102c6dc86e59435b2e02b032d08ad4c6ff2e1ea8ab91e7e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/server.log": {
+    "bytes": 340748,
+    "sha256": "9c33f9ef7d788750058493d9775b1e82f4a7f86a340459409aabead345b0351a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/status.json": {
+    "bytes": 74,
+    "sha256": "d7c8d8fa0d6a3406e59208e1819e5034c5f6dabf90244f0fe0dbc34d2c447287"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/warmup/metrics.json": {
+    "bytes": 638,
+    "sha256": "2ff30ea397005bb65f9f525bf679e05541ebe18bf6890f25bc9af8bb6f23245f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/warmup/requests.json": {
+    "bytes": 131330,
+    "sha256": "ed7122f8aba7be89477583b5101a56c084f8c1480f3e357f20775fb415272d7a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/warmup/results.csv": {
+    "bytes": 22130,
+    "sha256": "05fb48eea13c4f8ca6fc0c1f4d5b9eac9921438c2790816cf6ea35e845c6f8fd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/warmup/speed_results.json": {
+    "bytes": 109015,
+    "sha256": "73c93154329595d791c332b7adfc10c2a902eb4cf316d1492468ef3eda6fdc41"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r1-optimized-c8/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "7425085d955567f75ca1ff5a88620368956c68fe38a8f3f132c8f236d44aa3bb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/client.log": {
+    "bytes": 1378,
+    "sha256": "91abf6b6bbf341e27ee5d37a7bec16213a4bd85647eda648da44977cfe40fabb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/command.json": {
+    "bytes": 813,
+    "sha256": "1e739d377431492c174f85762b49692a6e7f2a10fb7e4d870dab4832d084a68b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/asr_speed_results.json": {
+    "bytes": 552,
+    "sha256": "911f8dc1990ec9697fedd64fc4e8c10baf7db521cc6b73b7339c9fd77762be11"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/generated.json": {
+    "bytes": 91289,
+    "sha256": "35574d49d0ce183806bc5702a820c1fd2d9e2d0dbcd0f41a125fc53231a3de8a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/metrics.json": {
+    "bytes": 640,
+    "sha256": "66582a34e7ca00685ff80fa67c7a8a436232260f4c714b2d37ef2736724c83d1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/requests.json": {
+    "bytes": 262386,
+    "sha256": "af707ec121154de0d4b7dea127800de37abb614c117c6f334a3d36147b6ea2d4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/results.csv": {
+    "bytes": 43710,
+    "sha256": "2c70990e5198498ae48ffb1c121c04192ef7deb0544b5acecc3c15530ba5e987"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/similarity_results.json": {
+    "bytes": 99325,
+    "sha256": "1f40f3783f1d2b34017306c5279b2e63e41a83fcf99109dce10c8952c4d14107"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/speed_results.json": {
+    "bytes": 216605,
+    "sha256": "20bc1a57ba011b65b25ca844562b46f3e78ae53f8432bf15996442646c5f8d2e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/status.json": {
+    "bytes": 68,
+    "sha256": "c4aeea22d824c17bf607fdbd429309397ebf0a1baabc777aed9c2fa8dd66e639"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/wer_results.csv": {
+    "bytes": 55025,
+    "sha256": "d4d7c50ef3edf18c0a592c62a087747023ecf151d502b0db09ce30682a936a39"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/measured/wer_results.json": {
+    "bytes": 161025,
+    "sha256": "edcc205c01c76c226aaf21fbf90d6b173bdd577ac7492800f9d890816fbe7534"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/server.log": {
+    "bytes": 564046,
+    "sha256": "325246ce7f1caf5f9bc5e940041449f4484136b5e7a8354b0120cb55520d749d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/status.json": {
+    "bytes": 74,
+    "sha256": "42161d7e42e52afd42ab572a880ae19a07ed547068e206253fef96694b054c20"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/warmup/metrics.json": {
+    "bytes": 640,
+    "sha256": "24f4f442d8ce4de14155ce4969a6b73aa590d72db00b1bc66f43f73c40e908b5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/warmup/requests.json": {
+    "bytes": 131208,
+    "sha256": "df664a80457f8ab3451316a5b433c1247419f391e07782c7ca46f6c14f38c756"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/warmup/results.csv": {
+    "bytes": 22009,
+    "sha256": "a8600cde883675c72556d2a40419d0a000942c31e12da1455c8b0e9824b9a1e1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/warmup/speed_results.json": {
+    "bytes": 108756,
+    "sha256": "f29e6f5e1afe70977a0400556f881ab6e63392171ff6416dc24bcc2bbfc25073"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c1/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "0184283d53d8d83318631410004a166faa57b14f892d15dbf5f2d0258de03251"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/client.log": {
+    "bytes": 1383,
+    "sha256": "6a2afe2dd29a4184c55abae24017a133b3dff018997258f8553454872de9e510"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/command.json": {
+    "bytes": 816,
+    "sha256": "4fcb118709bc083f59f67d535cd83497ccf963f5a877dbd05a13b5ac64b12a66"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/asr_speed_results.json": {
+    "bytes": 552,
+    "sha256": "594d0fa901498dde93beb13c8f745069e26fc9b84dc786baf873c8cee55d9a8a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/generated.json": {
+    "bytes": 91554,
+    "sha256": "ab4ffee509f8417a65c85d362b7e20989d8473102b62e1ee783cbf2e8db484be"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/metrics.json": {
+    "bytes": 639,
+    "sha256": "d44f853922e9e186c5463633667e8655956633066ea269924b951ce1de8205cc"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/requests.json": {
+    "bytes": 262595,
+    "sha256": "cee043e8e41f5dae354712368029295b9fd653da88ab84d0818db9cc80e88d2d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/results.csv": {
+    "bytes": 43957,
+    "sha256": "2114e60b43a22df5c83fc8c69f67b9a7648b79884ee2f6ae6b28f0953a450433"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/similarity_results.json": {
+    "bytes": 99565,
+    "sha256": "ffdec4c2908fd585c79bfbb7e9ef376eec0e6d8c6a7db6e9a2c9ff8c8f663c45"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/speed_results.json": {
+    "bytes": 217137,
+    "sha256": "8c21c6ab7a6fada6202bda5aa3a63ec69d545bb623da16cd594d0133f4af561a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/status.json": {
+    "bytes": 69,
+    "sha256": "f25c0721af7abaabea3850c6308f8bf1f7bc8232d0a5352443a59faffe56f74a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/wer_results.csv": {
+    "bytes": 55002,
+    "sha256": "8a6be8942707866e91785980a9d79310723302ea7ce70355b2d1850eeb6a1f9c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/measured/wer_results.json": {
+    "bytes": 160972,
+    "sha256": "08c03fa0e19bad42375536df9fa409129d32dc61119076c7fd9e770897d3526b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/server.log": {
+    "bytes": 233241,
+    "sha256": "f0fd78b65917ac14433a9e538ea4774dabc1f92a24e4b3243cde31c9c289af4e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/status.json": {
+    "bytes": 74,
+    "sha256": "fd950f1e8a97575afc07d73d9ff1aef16aec501786fc64ef93f1c2665c087173"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/warmup/metrics.json": {
+    "bytes": 642,
+    "sha256": "3fab28657173d389d193b53980d986a2dc83cd5cb2d00ae66c5256d6851ddf17"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/warmup/requests.json": {
+    "bytes": 131270,
+    "sha256": "b5fbd4aa404d83477e9a6595f83162a74737c1efe29ebcd4b068cfd94d9c04e9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/warmup/results.csv": {
+    "bytes": 22114,
+    "sha256": "f1fc188ca62a50a87f25728085aeb8523b844e87d8c31f4088486bdb11b8e949"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/warmup/speed_results.json": {
+    "bytes": 108991,
+    "sha256": "487194349d3907297f1c3252ac1c161b8ab555aa6a0add8b1b6d6c7633914042"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c16/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "c96f984a9b9f31b6cf8736eb279c77ecddf274d628876764e65e11308b14f213"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/client.log": {
+    "bytes": 1381,
+    "sha256": "024a6172396ddf89a9307f60bd2eeeca9197fa63c3cd5545d2645ff5227a8680"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/command.json": {
+    "bytes": 816,
+    "sha256": "50abe175197c5386eddfe08a93d91dea2e41f031460b8659355ae00c5585cae7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/asr_speed_results.json": {
+    "bytes": 553,
+    "sha256": "c0a7cd25404aaa1af62f2dd79b11690fd5685e06d0216aee51ec06469ccb5311"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/generated.json": {
+    "bytes": 91543,
+    "sha256": "23f8587beb46894d86e34dbfe5ad3463fbd0b1a443b00276de29600172268131"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/metrics.json": {
+    "bytes": 641,
+    "sha256": "bd4b055263e497efe449721841ad700ee2588ee7bd34602658c895ff0d7aa13f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/requests.json": {
+    "bytes": 262466,
+    "sha256": "435faea1aa2af35bad8ed020f918f60ec44a9d38d012d599264ac11e1fdebd1a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/results.csv": {
+    "bytes": 43870,
+    "sha256": "ff518e4bd97aebb69fc7937db0b25a0da26ddf653762cf8e7cf2f7f9c0cc2a70"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/similarity_results.json": {
+    "bytes": 99581,
+    "sha256": "9b190594f9756435a01b22582152eaa0ba8dbbca313070ad3d9c39fc3393cc17"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/speed_results.json": {
+    "bytes": 217052,
+    "sha256": "71b5ac7cdc0d0970cbfffffc0aaee12d9dea3683af62d9bd3ef372847ecb420c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/status.json": {
+    "bytes": 69,
+    "sha256": "aa524e41a27afb496f49a5e443f20bdf484a91afb4706332191c76c133d7eed3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/wer_results.csv": {
+    "bytes": 55009,
+    "sha256": "8187b3f777c286f68c194afc8f96fae33f356b2a14b160f40bcba2ca1fa2acaf"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/measured/wer_results.json": {
+    "bytes": 161031,
+    "sha256": "c219ed27093d67848ae642cdfee082beae4bae6b0cbe49963dd73fb5dcbb1766"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/server.log": {
+    "bytes": 180096,
+    "sha256": "7e361ef9acdebfdbc9ea8635f66bb9f5bd5bcafc9e49b9d8b5f2511ce6931012"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/status.json": {
+    "bytes": 74,
+    "sha256": "55dd23d99320b7ca7d2da8cb55320588610441758801771c6ff477e910858f46"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/warmup/metrics.json": {
+    "bytes": 639,
+    "sha256": "20b4ddb712a1709227c00b1b7d16686ae7c3bda1af7b6621b1eb0b98e072e35c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/warmup/requests.json": {
+    "bytes": 131197,
+    "sha256": "5bf8e4b0728446cc99cc7fd2333d2473e31bb726aa9c0a10bdd0973a82f8d394"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/warmup/results.csv": {
+    "bytes": 22074,
+    "sha256": "5d4f2ac601dc01078e1c48c1b3e6fc23abfad4e93d89112a5ae671afd213ab67"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/warmup/speed_results.json": {
+    "bytes": 108976,
+    "sha256": "9030b02dc9a542a9445bcc829168855cd3ffcae4aa015e51d06610ddfc80c3b2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c32/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "f51c4013d654f99af4a6592b2a9f6f8b7f7c557a55a1135dc9840713bdbe2d3f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/client.log": {
+    "bytes": 1377,
+    "sha256": "12f035b6ce7f3e1c8cefe4f6e42f11414285267524b86cc9296333bd5961e497"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/command.json": {
+    "bytes": 813,
+    "sha256": "8314db74e2ddafe9e9c50b43f38c47c43e5b30beafe6062bd449ed4aba020f6a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/asr_speed_results.json": {
+    "bytes": 553,
+    "sha256": "f08f34a60c05c5bdec293c00da243f5035a268f207062b32efa9a7ad193c5d01"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/generated.json": {
+    "bytes": 91291,
+    "sha256": "d20b5e3d17bc75689e990345551fcda15903487af88b6f55f3ce64d291484654"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/metrics.json": {
+    "bytes": 638,
+    "sha256": "9f50597fc837d979e707e81b62c0521caab6296bc366dbb1a48ad3220c1fd087"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/requests.json": {
+    "bytes": 262123,
+    "sha256": "6d2d997cd41153b57075a4558e6967700de02b19a53ae7832ceefb034d974c31"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/results.csv": {
+    "bytes": 43709,
+    "sha256": "bc211041d8f2aaa1e71400d589f25b656160631aff0bec4b9fc1b93f0b0380b3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/similarity_results.json": {
+    "bytes": 99295,
+    "sha256": "ea6f332e9b4adb90e5276d226429f8f8a2023fd050ba8e11fb0eec7f2d92cb48"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/speed_results.json": {
+    "bytes": 216612,
+    "sha256": "486a1a17a8667ca7ab4c17dd3ffa93f46ca572691de2da8095e0b5318a43acd8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/status.json": {
+    "bytes": 68,
+    "sha256": "b6dbd5fad6bdb2ef89f14128bb5d4a1b04327c152b56ca67db93034eb1334d8f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/wer_results.csv": {
+    "bytes": 54999,
+    "sha256": "2faa102fa4a3ef4239258f6e90348ec12e5bee588e5332a7230f467e9c1223d8"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/measured/wer_results.json": {
+    "bytes": 160955,
+    "sha256": "add0ab0050901fab378b714d580a8c4058d8110a08e3fe73b7fdff94726c1bb5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/server.log": {
+    "bytes": 310906,
+    "sha256": "16336e7d4f57005976e47bd771911cbd359be20fe93b183e68cf9922dc9b9d60"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/status.json": {
+    "bytes": 74,
+    "sha256": "28eef3567e9809bd90311927ef5013f5f2dacce38bc1bef854244233bb7ed289"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/warmup/metrics.json": {
+    "bytes": 641,
+    "sha256": "5435c45b87a9aca35f7c8ed803fd7efda1f661748df6c71ba33f77f3c8d9f09e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/warmup/requests.json": {
+    "bytes": 131054,
+    "sha256": "23fd95520a2967c69c513d07ff0c8102212cacd6154fac4a5624cdee48b15fc2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/warmup/results.csv": {
+    "bytes": 22002,
+    "sha256": "f72e695a25c14f9e32ec9ed7740c7da093a3691a2189edcfa53702823a492b55"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/warmup/speed_results.json": {
+    "bytes": 108756,
+    "sha256": "be222291764c91157acdafbaca51deae1ddb5c3d3e83776c7319fe8ffc6f8b93"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-baseline-c8/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "e94dcd9c907d35d0a57191ef551760cc7d519c4ddbd28e3fa8b3d0d19b2ba043"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/client.log": {
+    "bytes": 1382,
+    "sha256": "b6bfa32e48c0da936b5ef90450379af6bd64b0ced62c91aff84a57b887663557"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/command.json": {
+    "bytes": 818,
+    "sha256": "5ac6b3675b03047bbe4d6278e61045f5ad6fe8b0fc7c281f67641ee15c8b7000"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/asr_speed_results.json": {
+    "bytes": 555,
+    "sha256": "537d1f89cdc2048a35d2c76c58a9724dc6c01a32d3ed26d45205fa03548da725"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/generated.json": {
+    "bytes": 91539,
+    "sha256": "8c58508da6c58a8b2184d644a3bc67050e346a09f45b089592ef7897064e170d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/metrics.json": {
+    "bytes": 640,
+    "sha256": "77fbdc81662b56d37b27b588c19dc83d1068c8689a5a142885bdc5b8198aa04c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/requests.json": {
+    "bytes": 262893,
+    "sha256": "6c9d2a4d3faad5f9cd83a62b0e716a3f387c41913601421e3a0c482225dff4bf"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/results.csv": {
+    "bytes": 43966,
+    "sha256": "023a5d32e093edf1974347fb5c10641931b4e4c0f3c83d960a72d2ef976851dd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/similarity_results.json": {
+    "bytes": 99563,
+    "sha256": "1b062c2f2aeebf536c7dccd0a13465eb0cec3287dfb6ded31fc502d68e196fd4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/speed_results.json": {
+    "bytes": 217113,
+    "sha256": "64350b8754bedea5893cb5371cb2636e59b54262da7649907a6ddd7067d699c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/status.json": {
+    "bytes": 68,
+    "sha256": "d049b304c9b680968f4757150a836474d7fc504517c69f0066d4a9f595ede5a1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/wer_results.csv": {
+    "bytes": 55019,
+    "sha256": "cbd13bc6767c3d0109ac612fbfe7f01463a5b93ec229ba3593792838367f54ef"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/measured/wer_results.json": {
+    "bytes": 161013,
+    "sha256": "6d59bec240a648678b794273e86281c86bcb1527bdd3111e2be310910ea23364"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/server.log": {
+    "bytes": 564146,
+    "sha256": "6d34ecee341e4db5bb1009542f4d561006dbb1e5421b2ea90acf3e7ae813ee57"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/status.json": {
+    "bytes": 74,
+    "sha256": "fc0837b1d72ae6b051b0492714a9ec83938fcee21bfbacf58dbbd2a4d134d811"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/warmup/metrics.json": {
+    "bytes": 640,
+    "sha256": "1d9c7374f2103598b4a295bad46bd83567ff282e33b496ca253b59c367fa869a"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/warmup/requests.json": {
+    "bytes": 131442,
+    "sha256": "5529dccee9d0998f7e41c5950280b951389357f303e0103de7234310288e00f1"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/warmup/results.csv": {
+    "bytes": 22137,
+    "sha256": "37e049a7925e35bd0315ab7a3eda8014d5b82d72366cf20de07a5dfa7816906f"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/warmup/speed_results.json": {
+    "bytes": 109010,
+    "sha256": "3c3fc8f95d7eb2aa6b70ced6ab0faa0b86cfa434810c400f726af1355a48914d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c1/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "f66f30d153001b2e384952cc76d5ef3de9a40ef0e7cbd7d0e6b8f0f7c64ed23b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/client.log": {
+    "bytes": 1388,
+    "sha256": "ef969af08e77801a7c6a10a1fd9fa096f815dc1f0ce94e6a8de43e74162078bb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/command.json": {
+    "bytes": 821,
+    "sha256": "36679db97cf58cc5afb4be5c6bc006fb6a54fe97d3fa6d9a65e10d106f44012b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/asr_speed_results.json": {
+    "bytes": 555,
+    "sha256": "bea5ba31dc0dab1f732321ff5694689c81fbc28202dcfe516ad90bac472f0204"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/generated.json": {
+    "bytes": 91795,
+    "sha256": "1761754a4ac612b8c6928dee1ff14cf70f1df3fe65a746a009841ced79028ad3"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/metrics.json": {
+    "bytes": 641,
+    "sha256": "6d3227bf549a69e66b8bd45f76e05b133fb63d40b7e05bb1ba498be508f1ccb2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/requests.json": {
+    "bytes": 263103,
+    "sha256": "acf3de60a7fd8db0c6b5cc604afda64e8fe8f885f3fbde34c0cd21decd83eb75"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/results.csv": {
+    "bytes": 44217,
+    "sha256": "4e93e9a6c28b30f2fa85406607f17c879cf72c235716c6893d2ec28e2135593c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/similarity_results.json": {
+    "bytes": 99831,
+    "sha256": "0480295daf4b6811b03608de073947981d71818ec8d76eac835ce114771011e9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/speed_results.json": {
+    "bytes": 217634,
+    "sha256": "b3d75db8cb1ae36f573712a5c62aed4a9d47a956977a682a4a9c012484e63078"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/status.json": {
+    "bytes": 68,
+    "sha256": "6df0e82e8f98bb45755839e368a55e8099a26b8e85ea09eafe7284ec0021fd45"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/wer_results.csv": {
+    "bytes": 55103,
+    "sha256": "a6ffd209de3cb0dadfc9344b0f1310557a1e803021eb4d56b338eabfba60e603"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/measured/wer_results.json": {
+    "bytes": 161185,
+    "sha256": "61247007ad688ea53da2cdcd89f274e1cc913b617aa13c1203a643fb29a2f8ec"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/server.log": {
+    "bytes": 305492,
+    "sha256": "fcaded60d632611b2e08bfb103fcab00a79bc37eee6ebaaab603e1592c8a625b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/status.json": {
+    "bytes": 74,
+    "sha256": "aa581c8cb21a498fcdfa794d502e0d90420225694278e3e8c4508ca8e992a5b5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/warmup/metrics.json": {
+    "bytes": 641,
+    "sha256": "3d12b3040d692909829c4db30248f5002c6bb3b8e1333771aff24b1c6cb44814"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/warmup/requests.json": {
+    "bytes": 131536,
+    "sha256": "0e4dc33ca3c11ece4da59fb52c1b950a05eeeaf99a4d9988972c623d052755e5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/warmup/results.csv": {
+    "bytes": 22248,
+    "sha256": "de0f43f6e3194b56fdbbc539fd7cc2330d538800860d9739c4eb4ec724f11a88"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/warmup/speed_results.json": {
+    "bytes": 109249,
+    "sha256": "8be3a8c577aa414ba0d0a38ebf1f9006937ae60f2e03bdf3425c266d4207043b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c16/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "0ba80e993ee749201dcfc08c8992f2661e48c3b8c8659101b71deb7a1ab3a579"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/client.log": {
+    "bytes": 1383,
+    "sha256": "6258614b1d0c9c3b530fb50e5edd81cc267bd2c4d2e61a2cd5f1de2391f68b6d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/command.json": {
+    "bytes": 821,
+    "sha256": "d12b5d6f6af00f3ba0d3da265ba996b66d95fbbb406fa28d5a36c775a4446ec9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/asr_speed_results.json": {
+    "bytes": 553,
+    "sha256": "6fbb0f198062ab7792e1275e71ba7c4ba73c0440d8cc3129cff42f8bc17e0e25"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/generated.json": {
+    "bytes": 91798,
+    "sha256": "920528cc6b6e1f9a48cf47f9ee1be2c6de9ffa3a44b10cdc2b262ec86ee26ac9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/metrics.json": {
+    "bytes": 640,
+    "sha256": "0fbfa4915476479a0d56a6ae7c9ba93b9e280d4f808567d51348d58d4bccbdfb"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/requests.json": {
+    "bytes": 262994,
+    "sha256": "5c04ad6115dd3233db0ea631b6656b8080f572fe6cca2bc11694eb68dc36a3bf"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/results.csv": {
+    "bytes": 44133,
+    "sha256": "4396779bd312be86708c78a4b78d16e155348321b733986427fa044b6c127bc4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/similarity_results.json": {
+    "bytes": 99855,
+    "sha256": "6950c8249c56d82d935b01766d485d071e3a3f98f3ec51c1968e94a9a41e08c9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/speed_results.json": {
+    "bytes": 217574,
+    "sha256": "bf2123aecf37e252339a0aa9c56f79a7ccb243497678df2b560ea67a7c320691"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/status.json": {
+    "bytes": 69,
+    "sha256": "8e566195321b38ae8ba041f461198ef965f294f9121ab5cc00ec1347987cadc9"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/wer_results.csv": {
+    "bytes": 55045,
+    "sha256": "1ea464ebdd9c1826df6b1e31807c0fb39668db6c7750092194b7e4728badd43e"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/measured/wer_results.json": {
+    "bytes": 161085,
+    "sha256": "52b09641a439d19d92f32693c43029c939ebb78ea1b958b460300f02f70f92a2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/server.log": {
+    "bytes": 255132,
+    "sha256": "9f358e5afed99eb09addf3febdb930088a5ecfe4b341e53d55fffd2910598347"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/status.json": {
+    "bytes": 74,
+    "sha256": "c22bd5e830124e692f3f757970f5be874d11469ddcbb3e89748e0c99a41d8d2b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/warmup/metrics.json": {
+    "bytes": 638,
+    "sha256": "434e1bfe53e4f97f7bf46e94efd20abc16c49593cd291272c6b54e686022882c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/warmup/requests.json": {
+    "bytes": 131460,
+    "sha256": "a14886c7f61af28a9efee58814bb366c8d2b9ae82d5fd4b1b4329cb3e4aa87fd"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/warmup/results.csv": {
+    "bytes": 22193,
+    "sha256": "5f0ccbda338ef3f42209d2719ab0e93e9c13c49eb51010474d283fd3130a5293"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/warmup/speed_results.json": {
+    "bytes": 109218,
+    "sha256": "8260c832c853fb6b6f48f6876bd6820094bea7f597b9ae7dd9a3d1045c152b84"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c32/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "ae19d1baf754d24d35dcef5b85fe6597b08e011381cf4a697ec8118d2e7130f4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/client.log": {
+    "bytes": 1383,
+    "sha256": "6b9c49dfdf991f0c5b3a716f7edac935414563ac889b0306fce7f07d7d8fc015"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/command.json": {
+    "bytes": 818,
+    "sha256": "3a71185c16ee7a716d14da8d8c984216c8df889af4102dba8770b0f11d57c1ab"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/asr_speed_results.json": {
+    "bytes": 550,
+    "sha256": "f8dac850b4f8cb4d8a866e7f39df79fdffbe31a8e709af5f4350d67ec0e478be"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/generated.json": {
+    "bytes": 91537,
+    "sha256": "7ce5007f16f3cf62b4479d14c81fe5344b36f6e9b8cb170d9aab671b223e8ca5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/metrics.json": {
+    "bytes": 642,
+    "sha256": "50098f1ad5978e5aa497450e3d3ce5271f475adab3d3590e9bd51d3ac1755d21"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/requests.json": {
+    "bytes": 262680,
+    "sha256": "41a63482748449b6f7291c270c086a391727c994458c31111f352e4cf534113d"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/results.csv": {
+    "bytes": 43965,
+    "sha256": "386cf0139f2912a9c57bc79c8b7ad2641ca0fe2054cd5f57d86e59a503042a5b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/similarity_results.json": {
+    "bytes": 99555,
+    "sha256": "9219194c26dbe6dbb9ab3c0c0798ba5c4642098c0d93709c72118f105a15440c"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/speed_results.json": {
+    "bytes": 217118,
+    "sha256": "6326a6f8654245d4d811455bdc3cf6d2d2e16e872f0a554678fba816b7368c6b"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/status.json": {
+    "bytes": 69,
+    "sha256": "eb0473cb6e404df5cf12391e34f80c2623a9fc18a6dd65fa7b891337b9b57078"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/wer_results.csv": {
+    "bytes": 55026,
+    "sha256": "3e7cdf57e6a2cf72507c96a3d50be88e13b9dc6a168ce382e6de8b1c329c07e5"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/measured/wer_results.json": {
+    "bytes": 161020,
+    "sha256": "4cba60542d49ed3ff26bf377bcb5ddf2e26376834aaf030e2a87cc22d2db72a7"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/server.log": {
+    "bytes": 333962,
+    "sha256": "7a1461948c174e8d4cea212697a063a410acf8f3fa83834c53ebfbe0c8426c96"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/status.json": {
+    "bytes": 74,
+    "sha256": "96ae44fc53cd2aa6635750cc5c162e11cbf429c409970b55d443b2a013912cb4"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/warmup/metrics.json": {
+    "bytes": 639,
+    "sha256": "2ecc8962d8fe207317def8ebbf75c0eca84800e751eaf2af07d03228617e01fe"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/warmup/requests.json": {
+    "bytes": 131314,
+    "sha256": "8e84bd6de09981a06895b3cab6861bf641811fe15782735efd042e003b35c501"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/warmup/results.csv": {
+    "bytes": 22129,
+    "sha256": "a00c931024063a414a96739bb4206c6c854e61966742d94a9534a521cefd9509"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/warmup/speed_results.json": {
+    "bytes": 109015,
+    "sha256": "5d17454b5908e43e88ad15ef33adcad003daa9727467f6c85d5402c577d88847"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/r2-optimized-c8/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "e5e9f91df5041345f21da5c3bb0790fbcea530aab6782ef32ba27af735c72fba"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/status.json": {
+    "bytes": 432,
+    "sha256": "dad2e596dfb5459c7f9c916db4f901655aab0983357c595d5302921aafa75ad2"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/results/versions.txt": {
+    "bytes": 9547,
+    "sha256": "1b36a69616eacfe3d25fd1a04c367ac43a28dc34db13dd0b3a224dd71927e584"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/run.log": {
+    "bytes": 2884,
+    "sha256": "7f9f48a06e7705dabbbf25a35ec6012132b8fa0ac4f6b8cf290caaea43455724"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/serving_cells.csv": {
+    "bytes": 2915,
+    "sha256": "887b1675974cf02060be07258528703567337d61ef46140d493f6da4ba669927"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/text_output_parity.json": {
+    "bytes": 420,
+    "sha256": "1ca5b0c96fa6785ccc8d2c55ac300d097d0cd0dd87b225999607699f0504e093"
+  },
+  "pr-5-minicpm-flow-hift/2026-10-24-serving/validation.log": {
+    "bytes": 761,
+    "sha256": "85d49fd6a8688ec2cd0ab692a2cee6f6714ae6d7f0e9d9b6988938dbe930a7e7"
+  },
+  "pr-5-minicpm-flow-hift/EXTERNAL_EVIDENCE.json": {
+    "bytes": 7077,
+    "sha256": "793ebfa4f17bc4a4fef18804d080608de57f88a2b7762b50cd94d130efd98428"
+  },
+  "pr-5-minicpm-flow-hift/PROVENANCE.json": {
+    "bytes": 398029,
+    "sha256": "fe3515e38f23928d53c1ad6e8e8968bc3fe16843a9c8a5e7ae87cea6bdf666ab"
+  },
+  "pr-5-minicpm-flow-hift/README.md": {
+    "bytes": 3155,
+    "sha256": "e1d145b6835fbce423a6763e76f04a97ceeaab8410ce2fdb3bb6589d7d0bb222"
+  }
+}

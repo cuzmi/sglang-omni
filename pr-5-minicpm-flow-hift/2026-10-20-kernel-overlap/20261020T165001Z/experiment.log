@@ -1,0 +1,42 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Inputs ready: [{'batch': 'A', 'input_frames': [302, 368, 570, 474], 'expected_graph_shape': (4, 576), 'generated_token_lengths': [53, 86, 123, 75], 'reference_token_lengths': [98, 98, 162, 162], 'hift_groups': {'53': 1, '75': 1, '86': 1, '123': 1}}, {'batch': 'B', 'input_frames': [576, 556, 652, 490], 'expected_graph_shape': (4, 672), 'generated_token_lengths': [96, 86, 177, 96], 'reference_token_lengths': [192, 192, 149, 149], 'hift_groups': {'86': 1, '96': 2, '177': 1}}]
+{"name": "warmup_serial_0", "overlap": false, "completion_ms": 611.5355090000065, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_overlap_0", "overlap": true, "completion_ms": 121.77147800001364, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_serial_1", "overlap": false, "completion_ms": 136.24277700000675, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "warmup_overlap_1", "overlap": true, "completion_ms": 118.68365700000538, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "validation_serial", "overlap": false, "completion_ms": 137.198669, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "validation_overlap", "overlap": true, "completion_ms": 120.61223300000279, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_serial", "overlap": false, "completion_ms": 165.07858399999975, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+{"name": "trace_overlap", "overlap": true, "completion_ms": 130.16516199999728, "graph_replays": 20, "graph_misses": 0, "new_compiled_graphs": 0}
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-root/nsys-report-953c.qdstrm'
+
+[1/1] [0%                          ] timeline.nsys-repProcessing events...
+
+[1/1] [0%                          ] timeline.nsys-rep
+[1/1] [1%                          ] timeline.nsys-rep
+[1/1] [2%                          ] timeline.nsys-rep
+[1/1] [5%                          ] timeline.nsys-rep
+[1/1] [6%                          ] timeline.nsys-rep
+[1/1] [7%                          ] timeline.nsys-rep
+[1/1] [8%                          ] timeline.nsys-rep
+[1/1] [9%                          ] timeline.nsys-rep
+[1/1] [10%                         ] timeline.nsys-rep
+[1/1] [11%                         ] timeline.nsys-rep
+[1/1] [12%                         ] timeline.nsys-rep
+[1/1] [13%                         ] timeline.nsys-rep
+[1/1] [14%                         ] timeline.nsys-rep
+[1/1] [=15%                        ] timeline.nsys-rep
+[1/1] [=16%                        ] timeline.nsys-rep
+[1/1] [==18%                       ] timeline.nsys-rep
+[1/1] [==19%                       ] timeline.nsys-rep
+[1/1] [==20%                       ] timeline.nsys-rep
+[1/1] [=======================93%  ] timeline.nsys-rep
+[1/1] [=======================96%  ] timeline.nsys-rep
+[1/1] [========================98% ] timeline.nsys-rep
+[1/1] [========================100%] timeline.nsys-rep
+[1/1] [========================100%] timeline.nsys-rep
+Completed NVTX trace experiment.
+Generated:
+	/results/minicpm-ready-overlap-nvtx/20261020T165001Z/timeline.nsys-rep

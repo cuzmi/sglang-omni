@@ -1,0 +1,632 @@
+{
+  "stages": [
+    {
+      "variant": "baseline",
+      "concurrency": 1,
+      "stage": "preprocessing",
+      "count": 32,
+      "mean": 1.686886,
+      "min": 1.374728,
+      "max": 1.934435,
+      "p50": 1.6971729999999998,
+      "p95": 1.91256585
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 1,
+      "stage": "thinker",
+      "count": 32,
+      "mean": 136.14054578125,
+      "min": 78.706757,
+      "max": 251.946735,
+      "p50": 128.4342605,
+      "p95": 193.16921765
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 1,
+      "stage": "decode",
+      "count": 32,
+      "mean": 1.50559115625,
+      "min": 1.121972,
+      "max": 1.898869,
+      "p50": 1.4997755000000002,
+      "p95": 1.83115835
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 1,
+      "stage": "talker",
+      "count": 32,
+      "mean": 118.09165571875,
+      "min": 77.375069,
+      "max": 202.74343,
+      "p50": 114.359786,
+      "p95": 155.75102275
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 1,
+      "stage": "code2wav",
+      "count": 32,
+      "mean": 121.066889,
+      "min": 35.530542,
+      "max": 230.47906,
+      "p50": 119.85118299999999,
+      "p95": 191.89819095
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 1,
+      "stage": "preprocessing",
+      "count": 32,
+      "mean": 1.7834813437500001,
+      "min": 1.415937,
+      "max": 2.318916,
+      "p50": 1.7517725,
+      "p95": 2.1561946
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 1,
+      "stage": "thinker",
+      "count": 32,
+      "mean": 136.1463515,
+      "min": 78.568109,
+      "max": 251.408056,
+      "p50": 129.13316,
+      "p95": 193.21717465
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 1,
+      "stage": "decode",
+      "count": 32,
+      "mean": 1.51608165625,
+      "min": 1.066587,
+      "max": 1.895195,
+      "p50": 1.5279690000000001,
+      "p95": 1.75415565
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 1,
+      "stage": "talker",
+      "count": 32,
+      "mean": 116.98064209375,
+      "min": 71.386915,
+      "max": 190.506403,
+      "p50": 113.35929,
+      "p95": 152.86350025
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 1,
+      "stage": "code2wav",
+      "count": 32,
+      "mean": 124.52799728125,
+      "min": 34.944139,
+      "max": 229.756355,
+      "p50": 118.5290755,
+      "p95": 195.81983125
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 8,
+      "stage": "preprocessing",
+      "count": 32,
+      "mean": 5.075793,
+      "min": 1.454823,
+      "max": 9.796263,
+      "p50": 5.5808845,
+      "p95": 9.4552038
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 8,
+      "stage": "thinker",
+      "count": 32,
+      "mean": 237.63600703125,
+      "min": 129.205033,
+      "max": 387.128643,
+      "p50": 229.76107,
+      "p95": 366.9114426
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 8,
+      "stage": "decode",
+      "count": 32,
+      "mean": 1.65042128125,
+      "min": 0.928803,
+      "max": 3.134306,
+      "p50": 1.4455719999999999,
+      "p95": 2.8357072499999996
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 8,
+      "stage": "talker",
+      "count": 32,
+      "mean": 318.76166228125,
+      "min": 141.027455,
+      "max": 699.116567,
+      "p50": 312.6236825,
+      "p95": 509.62251359999993
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 8,
+      "stage": "code2wav",
+      "count": 32,
+      "mean": 536.25904265625,
+      "min": 126.10639,
+      "max": 809.596424,
+      "p50": 622.9970275000001,
+      "p95": 794.0684243
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 8,
+      "stage": "talker",
+      "count": 32,
+      "mean": 322.0885455,
+      "min": 178.928692,
+      "max": 518.983671,
+      "p50": 305.1568535,
+      "p95": 453.04092469999995
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 8,
+      "stage": "code2wav",
+      "count": 32,
+      "mean": 389.77709390625,
+      "min": 174.108128,
+      "max": 682.761543,
+      "p50": 327.080577,
+      "p95": 646.8470340499999
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 8,
+      "stage": "preprocessing",
+      "count": 32,
+      "mean": 2.5366205,
+      "min": 1.399775,
+      "max": 8.113416,
+      "p50": 1.889214,
+      "p95": 6.552328149999999
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 8,
+      "stage": "thinker",
+      "count": 32,
+      "mean": 258.36665221875,
+      "min": 138.998353,
+      "max": 404.412509,
+      "p50": 249.674713,
+      "p95": 372.1859693
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 8,
+      "stage": "decode",
+      "count": 32,
+      "mean": 1.6337244375,
+      "min": 0.935953,
+      "max": 3.423879,
+      "p50": 1.42969,
+      "p95": 3.3778196499999997
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 16,
+      "stage": "preprocessing",
+      "count": 32,
+      "mean": 8.56362178125,
+      "min": 1.425827,
+      "max": 12.751452,
+      "p50": 9.618815000000001,
+      "p95": 12.32147895
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 16,
+      "stage": "thinker",
+      "count": 32,
+      "mean": 298.60988053125,
+      "min": 174.118017,
+      "max": 515.640425,
+      "p50": 293.22427400000004,
+      "p95": 420.78630824999993
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 16,
+      "stage": "decode",
+      "count": 32,
+      "mean": 1.57042428125,
+      "min": 0.997005,
+      "max": 3.452785,
+      "p50": 1.3824205,
+      "p95": 2.79854515
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 16,
+      "stage": "talker",
+      "count": 32,
+      "mean": 388.78310925,
+      "min": 231.598477,
+      "max": 541.345264,
+      "p50": 380.779746,
+      "p95": 526.7127715
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 16,
+      "stage": "code2wav",
+      "count": 32,
+      "mean": 909.57323978125,
+      "min": 279.716573,
+      "max": 1392.187681,
+      "p50": 768.210881,
+      "p95": 1362.69801635
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 16,
+      "stage": "preprocessing",
+      "count": 32,
+      "mean": 10.03380165625,
+      "min": 1.679875,
+      "max": 24.00672,
+      "p50": 5.740349,
+      "p95": 23.4175529
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 16,
+      "stage": "thinker",
+      "count": 32,
+      "mean": 300.11061678125003,
+      "min": 179.058898,
+      "max": 504.258739,
+      "p50": 293.497447,
+      "p95": 457.99037864999997
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 16,
+      "stage": "decode",
+      "count": 32,
+      "mean": 2.52360284375,
+      "min": 1.257368,
+      "max": 12.280789,
+      "p50": 1.669297,
+      "p95": 6.203628249999996
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 16,
+      "stage": "talker",
+      "count": 32,
+      "mean": 645.65646365625,
+      "min": 383.282078,
+      "max": 1062.220179,
+      "p50": 629.0926555,
+      "p95": 1018.7529106
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 16,
+      "stage": "code2wav",
+      "count": 32,
+      "mean": 769.74110603125,
+      "min": 140.277109,
+      "max": 1294.60098,
+      "p50": 718.943944,
+      "p95": 1182.6233181999999
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 32,
+      "stage": "preprocessing",
+      "count": 32,
+      "mean": 18.0004566875,
+      "min": 2.321896,
+      "max": 22.876492,
+      "p50": 18.553852499999998,
+      "p95": 22.30345235
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 32,
+      "stage": "thinker",
+      "count": 32,
+      "mean": 314.04850890625,
+      "min": 174.033377,
+      "max": 558.093233,
+      "p50": 297.887512,
+      "p95": 467.89652824999996
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 32,
+      "stage": "decode",
+      "count": 32,
+      "mean": 2.119694875,
+      "min": 0.835004,
+      "max": 4.085356,
+      "p50": 1.7376005,
+      "p95": 3.5297706499999997
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 32,
+      "stage": "talker",
+      "count": 32,
+      "mean": 630.05508775,
+      "min": 383.82644,
+      "max": 886.161211,
+      "p50": 601.2092299999999,
+      "p95": 856.60050555
+    },
+    {
+      "variant": "baseline",
+      "concurrency": 32,
+      "stage": "code2wav",
+      "count": 32,
+      "mean": 1568.22090278125,
+      "min": 478.92641,
+      "max": 2227.793879,
+      "p50": 1305.8837915,
+      "p95": 2199.1827877
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 32,
+      "stage": "preprocessing",
+      "count": 32,
+      "mean": 18.3212651875,
+      "min": 1.313695,
+      "max": 27.61072,
+      "p50": 22.2139615,
+      "p95": 26.97504565
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 32,
+      "stage": "thinker",
+      "count": 32,
+      "mean": 334.71336390625,
+      "min": 200.699444,
+      "max": 536.063289,
+      "p50": 322.3576355,
+      "p95": 484.97530495
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 32,
+      "stage": "decode",
+      "count": 32,
+      "mean": 2.28509184375,
+      "min": 0.808014,
+      "max": 3.708676,
+      "p50": 2.4313260000000003,
+      "p95": 3.4637466
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 32,
+      "stage": "talker",
+      "count": 32,
+      "mean": 719.3038221875,
+      "min": 401.515874,
+      "max": 1146.937671,
+      "p50": 648.053128,
+      "p95": 1095.00192435
+    },
+    {
+      "variant": "optimized",
+      "concurrency": 32,
+      "stage": "code2wav",
+      "count": 32,
+      "mean": 1111.06905859375,
+      "min": 495.250475,
+      "max": 1421.541561,
+      "p50": 1181.105417,
+      "p95": 1387.74318015
+    }
+  ],
+  "changes": [
+    {
+      "concurrency": 1,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 1.686886,
+      "optimized_mean_ms": 1.7834813437500001,
+      "change_ms": 0.09659534375,
+      "change_pct": 5.726252025922318
+    },
+    {
+      "concurrency": 1,
+      "stage": "thinker",
+      "baseline_mean_ms": 136.14054578125,
+      "optimized_mean_ms": 136.1463515,
+      "change_ms": 0.005805718749996913,
+      "change_pct": 0.004264503801332253
+    },
+    {
+      "concurrency": 1,
+      "stage": "talker",
+      "baseline_mean_ms": 118.09165571875,
+      "optimized_mean_ms": 116.98064209375,
+      "change_ms": -1.1110136249999982,
+      "change_pct": -0.9408062053478328
+    },
+    {
+      "concurrency": 1,
+      "stage": "code2wav",
+      "baseline_mean_ms": 121.066889,
+      "optimized_mean_ms": 124.52799728125,
+      "change_ms": 3.4611082812499916,
+      "change_pct": 2.8588396958395323
+    },
+    {
+      "concurrency": 8,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 5.075793,
+      "optimized_mean_ms": 2.5366205,
+      "change_ms": -2.5391725,
+      "change_pct": -50.0251389290304
+    },
+    {
+      "concurrency": 8,
+      "stage": "thinker",
+      "baseline_mean_ms": 237.63600703125,
+      "optimized_mean_ms": 258.36665221875,
+      "change_ms": 20.730645187500016,
+      "change_pct": 8.72369698787856
+    },
+    {
+      "concurrency": 8,
+      "stage": "talker",
+      "baseline_mean_ms": 318.76166228125,
+      "optimized_mean_ms": 322.0885455,
+      "change_ms": 3.3268832187500266,
+      "change_pct": 1.0436898825727292
+    },
+    {
+      "concurrency": 8,
+      "stage": "code2wav",
+      "baseline_mean_ms": 536.25904265625,
+      "optimized_mean_ms": 389.77709390625,
+      "change_ms": -146.48194875000002,
+      "change_pct": -27.315520503753465
+    },
+    {
+      "concurrency": 16,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 8.56362178125,
+      "optimized_mean_ms": 10.03380165625,
+      "change_ms": 1.4701798750000012,
+      "change_pct": 17.167734780381714
+    },
+    {
+      "concurrency": 16,
+      "stage": "thinker",
+      "baseline_mean_ms": 298.60988053125,
+      "optimized_mean_ms": 300.11061678125003,
+      "change_ms": 1.5007362500000454,
+      "change_pct": 0.5025742106490538
+    },
+    {
+      "concurrency": 16,
+      "stage": "talker",
+      "baseline_mean_ms": 388.78310925,
+      "optimized_mean_ms": 645.65646365625,
+      "change_ms": 256.87335440625003,
+      "change_pct": 66.07111993671315
+    },
+    {
+      "concurrency": 16,
+      "stage": "code2wav",
+      "baseline_mean_ms": 909.57323978125,
+      "optimized_mean_ms": 769.74110603125,
+      "change_ms": -139.83213375000003,
+      "change_pct": -15.373378155191686
+    },
+    {
+      "concurrency": 32,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 18.0004566875,
+      "optimized_mean_ms": 18.3212651875,
+      "change_ms": 0.3208084999999983,
+      "change_pct": 1.7822242266929633
+    },
+    {
+      "concurrency": 32,
+      "stage": "thinker",
+      "baseline_mean_ms": 314.04850890625,
+      "optimized_mean_ms": 334.71336390625,
+      "change_ms": 20.66485499999999,
+      "change_pct": 6.5801474657435355
+    },
+    {
+      "concurrency": 32,
+      "stage": "talker",
+      "baseline_mean_ms": 630.05508775,
+      "optimized_mean_ms": 719.3038221875,
+      "change_ms": 89.24873443750005,
+      "change_pct": 14.165227163900497
+    },
+    {
+      "concurrency": 32,
+      "stage": "code2wav",
+      "baseline_mean_ms": 1568.22090278125,
+      "optimized_mean_ms": 1111.06905859375,
+      "change_ms": -457.15184418750005,
+      "change_pct": -29.150985258310115
+    }
+  ],
+  "validation": {
+    "baseline/c1": {
+      "requests": 32,
+      "events": 1280,
+      "exact_request_join": true,
+      "unique_stage_boundaries": true,
+      "nonnegative_intervals": true
+    },
+    "optimized/c1": {
+      "requests": 32,
+      "events": 1280,
+      "exact_request_join": true,
+      "unique_stage_boundaries": true,
+      "nonnegative_intervals": true
+    },
+    "baseline/c8": {
+      "requests": 32,
+      "events": 1280,
+      "exact_request_join": true,
+      "unique_stage_boundaries": true,
+      "nonnegative_intervals": true
+    },
+    "optimized/c8": {
+      "requests": 32,
+      "events": 1280,
+      "exact_request_join": true,
+      "unique_stage_boundaries": true,
+      "nonnegative_intervals": true
+    },
+    "baseline/c16": {
+      "requests": 32,
+      "events": 1280,
+      "exact_request_join": true,
+      "unique_stage_boundaries": true,
+      "nonnegative_intervals": true
+    },
+    "optimized/c16": {
+      "requests": 32,
+      "events": 1280,
+      "exact_request_join": true,
+      "unique_stage_boundaries": true,
+      "nonnegative_intervals": true
+    },
+    "baseline/c32": {
+      "requests": 32,
+      "events": 1280,
+      "exact_request_join": true,
+      "unique_stage_boundaries": true,
+      "nonnegative_intervals": true
+    },
+    "optimized/c32": {
+      "requests": 32,
+      "events": 1280,
+      "exact_request_join": true,
+      "unique_stage_boundaries": true,
+      "nonnegative_intervals": true
+    }
+  }
+}

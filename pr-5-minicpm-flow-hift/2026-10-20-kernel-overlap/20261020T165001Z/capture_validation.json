@@ -1,0 +1,23 @@
+{
+  "valid": true,
+  "same_inputs_config_noise": true,
+  "trace_passes": [
+    {
+      "name": "trace_serial",
+      "overlap": false,
+      "completion_ms": 165.07858399999975,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    },
+    {
+      "name": "trace_overlap",
+      "overlap": true,
+      "completion_ms": 130.16516199999728,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    }
+  ],
+  "no_performance_claim_from_profiled_time": true
+}

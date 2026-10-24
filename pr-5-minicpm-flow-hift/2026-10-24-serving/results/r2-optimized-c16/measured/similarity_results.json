@@ -1,0 +1,2065 @@
+{
+  "summary": {
+    "speaker_similarity_mean": 48.86461824923754,
+    "total_samples": 256,
+    "evaluated": 256,
+    "skipped": 0
+  },
+  "config": {
+    "model": "MiniCPM-o-4_5",
+    "meta": "/work/data/quality-meta.lst",
+    "device": "cuda:0",
+    "max_samples": 256,
+    "similarity_checkpoint": "/work/cache/speaker-sim/wavlm_large_finetune.pth"
+  },
+  "per_sample": [
+    {
+      "id": "common_voice_en_10119832-common_voice_en_10119840",
+      "ref_audio": "/work/data/references/common_voice_en_10119832-common_voice_en_10119840.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_10119832-common_voice_en_10119840.wav",
+      "speaker_similarity": 56.741703033447266,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_10119832-common_voice_en_10119847",
+      "ref_audio": "/work/data/references/common_voice_en_10119832-common_voice_en_10119847.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_10119832-common_voice_en_10119847.wav",
+      "speaker_similarity": 69.91213989257812,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_103675-common_voice_en_103676",
+      "ref_audio": "/work/data/references/common_voice_en_103675-common_voice_en_103676.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_103675-common_voice_en_103676.wav",
+      "speaker_similarity": 40.16613006591797,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_103675-common_voice_en_103677",
+      "ref_audio": "/work/data/references/common_voice_en_103675-common_voice_en_103677.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_103675-common_voice_en_103677.wav",
+      "speaker_similarity": 32.45509719848633,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_10933823-common_voice_en_10933822",
+      "ref_audio": "/work/data/references/common_voice_en_10933823-common_voice_en_10933822.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_10933823-common_voice_en_10933822.wav",
+      "speaker_similarity": 48.46326446533203,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_10933823-common_voice_en_10933825",
+      "ref_audio": "/work/data/references/common_voice_en_10933823-common_voice_en_10933825.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_10933823-common_voice_en_10933825.wav",
+      "speaker_similarity": 52.90523147583008,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_120405-common_voice_en_120402",
+      "ref_audio": "/work/data/references/common_voice_en_120405-common_voice_en_120402.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_120405-common_voice_en_120402.wav",
+      "speaker_similarity": 31.13755226135254,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_120405-common_voice_en_120406",
+      "ref_audio": "/work/data/references/common_voice_en_120405-common_voice_en_120406.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_120405-common_voice_en_120406.wav",
+      "speaker_similarity": 30.0384521484375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_1205005-common_voice_en_1205007",
+      "ref_audio": "/work/data/references/common_voice_en_1205005-common_voice_en_1205007.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_1205005-common_voice_en_1205007.wav",
+      "speaker_similarity": 51.62044906616211,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_1205005-common_voice_en_1205008",
+      "ref_audio": "/work/data/references/common_voice_en_1205005-common_voice_en_1205008.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_1205005-common_voice_en_1205008.wav",
+      "speaker_similarity": 45.192630767822266,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_123125-common_voice_en_123126",
+      "ref_audio": "/work/data/references/common_voice_en_123125-common_voice_en_123126.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_123125-common_voice_en_123126.wav",
+      "speaker_similarity": 39.68904495239258,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_123125-common_voice_en_123127",
+      "ref_audio": "/work/data/references/common_voice_en_123125-common_voice_en_123127.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_123125-common_voice_en_123127.wav",
+      "speaker_similarity": 53.07770538330078,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_125386-common_voice_en_125388",
+      "ref_audio": "/work/data/references/common_voice_en_125386-common_voice_en_125388.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_125386-common_voice_en_125388.wav",
+      "speaker_similarity": 49.994651794433594,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_125386-common_voice_en_125389",
+      "ref_audio": "/work/data/references/common_voice_en_125386-common_voice_en_125389.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_125386-common_voice_en_125389.wav",
+      "speaker_similarity": 52.41402816772461,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_137148-common_voice_en_137152",
+      "ref_audio": "/work/data/references/common_voice_en_137148-common_voice_en_137152.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_137148-common_voice_en_137152.wav",
+      "speaker_similarity": 48.048583984375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_13900-common_voice_en_13901",
+      "ref_audio": "/work/data/references/common_voice_en_13900-common_voice_en_13901.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_13900-common_voice_en_13901.wav",
+      "speaker_similarity": 43.05812072753906,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_1416089-common_voice_en_1416090",
+      "ref_audio": "/work/data/references/common_voice_en_1416089-common_voice_en_1416090.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_1416089-common_voice_en_1416090.wav",
+      "speaker_similarity": 66.7033920288086,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_1416089-common_voice_en_1416093",
+      "ref_audio": "/work/data/references/common_voice_en_1416089-common_voice_en_1416093.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_1416089-common_voice_en_1416093.wav",
+      "speaker_similarity": 62.86270523071289,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_15265-common_voice_en_15266",
+      "ref_audio": "/work/data/references/common_voice_en_15265-common_voice_en_15266.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_15265-common_voice_en_15266.wav",
+      "speaker_similarity": 41.14925003051758,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_15265-common_voice_en_15268",
+      "ref_audio": "/work/data/references/common_voice_en_15265-common_voice_en_15268.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_15265-common_voice_en_15268.wav",
+      "speaker_similarity": 40.69618606567383,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_153872-common_voice_en_153873",
+      "ref_audio": "/work/data/references/common_voice_en_153872-common_voice_en_153873.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_153872-common_voice_en_153873.wav",
+      "speaker_similarity": 38.947349548339844,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_153872-common_voice_en_153874",
+      "ref_audio": "/work/data/references/common_voice_en_153872-common_voice_en_153874.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_153872-common_voice_en_153874.wav",
+      "speaker_similarity": 58.07691192626953,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_155313-common_voice_en_155315",
+      "ref_audio": "/work/data/references/common_voice_en_155313-common_voice_en_155315.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_155313-common_voice_en_155315.wav",
+      "speaker_similarity": 47.89955139160156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_15734837-common_voice_en_15734838",
+      "ref_audio": "/work/data/references/common_voice_en_15734837-common_voice_en_15734838.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_15734837-common_voice_en_15734838.wav",
+      "speaker_similarity": 37.6007194519043,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_15735839-common_voice_en_15735837",
+      "ref_audio": "/work/data/references/common_voice_en_15735839-common_voice_en_15735837.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_15735839-common_voice_en_15735837.wav",
+      "speaker_similarity": 38.832584381103516,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_15903802-common_voice_en_15903807",
+      "ref_audio": "/work/data/references/common_voice_en_15903802-common_voice_en_15903807.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_15903802-common_voice_en_15903807.wav",
+      "speaker_similarity": 60.472633361816406,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_15903802-common_voice_en_15903815",
+      "ref_audio": "/work/data/references/common_voice_en_15903802-common_voice_en_15903815.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_15903802-common_voice_en_15903815.wav",
+      "speaker_similarity": 53.19668197631836,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_16666041-common_voice_en_16666040",
+      "ref_audio": "/work/data/references/common_voice_en_16666041-common_voice_en_16666040.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_16666041-common_voice_en_16666040.wav",
+      "speaker_similarity": 64.19432067871094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_167249-common_voice_en_167246",
+      "ref_audio": "/work/data/references/common_voice_en_167249-common_voice_en_167246.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_167249-common_voice_en_167246.wav",
+      "speaker_similarity": 29.524560928344727,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_167249-common_voice_en_167247",
+      "ref_audio": "/work/data/references/common_voice_en_167249-common_voice_en_167247.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_167249-common_voice_en_167247.wav",
+      "speaker_similarity": 24.141021728515625,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17147545-common_voice_en_17147546",
+      "ref_audio": "/work/data/references/common_voice_en_17147545-common_voice_en_17147546.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17147545-common_voice_en_17147546.wav",
+      "speaker_similarity": 58.38050842285156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17161-common_voice_en_17159",
+      "ref_audio": "/work/data/references/common_voice_en_17161-common_voice_en_17159.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17161-common_voice_en_17159.wav",
+      "speaker_similarity": 39.217010498046875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17161-common_voice_en_17160",
+      "ref_audio": "/work/data/references/common_voice_en_17161-common_voice_en_17160.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17161-common_voice_en_17160.wav",
+      "speaker_similarity": 33.49363708496094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17249419-common_voice_en_17249428",
+      "ref_audio": "/work/data/references/common_voice_en_17249419-common_voice_en_17249428.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17249419-common_voice_en_17249428.wav",
+      "speaker_similarity": 45.142669677734375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17255102-common_voice_en_17255101",
+      "ref_audio": "/work/data/references/common_voice_en_17255102-common_voice_en_17255101.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17255102-common_voice_en_17255101.wav",
+      "speaker_similarity": 47.734073638916016,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17256676-common_voice_en_17256678",
+      "ref_audio": "/work/data/references/common_voice_en_17256676-common_voice_en_17256678.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17256676-common_voice_en_17256678.wav",
+      "speaker_similarity": 31.108999252319336,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17259121-common_voice_en_17259122",
+      "ref_audio": "/work/data/references/common_voice_en_17259121-common_voice_en_17259122.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17259121-common_voice_en_17259122.wav",
+      "speaker_similarity": 44.49349594116211,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17263752-common_voice_en_17263750",
+      "ref_audio": "/work/data/references/common_voice_en_17263752-common_voice_en_17263750.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17263752-common_voice_en_17263750.wav",
+      "speaker_similarity": 43.6487922668457,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17263752-common_voice_en_17263755",
+      "ref_audio": "/work/data/references/common_voice_en_17263752-common_voice_en_17263755.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17263752-common_voice_en_17263755.wav",
+      "speaker_similarity": 55.9580192565918,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17263780-common_voice_en_17263781",
+      "ref_audio": "/work/data/references/common_voice_en_17263780-common_voice_en_17263781.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17263780-common_voice_en_17263781.wav",
+      "speaker_similarity": 27.443828582763672,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17263780-common_voice_en_17263782",
+      "ref_audio": "/work/data/references/common_voice_en_17263780-common_voice_en_17263782.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17263780-common_voice_en_17263782.wav",
+      "speaker_similarity": 48.338401794433594,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17267923-common_voice_en_17267922",
+      "ref_audio": "/work/data/references/common_voice_en_17267923-common_voice_en_17267922.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17267923-common_voice_en_17267922.wav",
+      "speaker_similarity": 68.9273452758789,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17268075-common_voice_en_17268076",
+      "ref_audio": "/work/data/references/common_voice_en_17268075-common_voice_en_17268076.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17268075-common_voice_en_17268076.wav",
+      "speaker_similarity": 47.7858772277832,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17271507-common_voice_en_17271509",
+      "ref_audio": "/work/data/references/common_voice_en_17271507-common_voice_en_17271509.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17271507-common_voice_en_17271509.wav",
+      "speaker_similarity": 28.670846939086914,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17271507-common_voice_en_17271510",
+      "ref_audio": "/work/data/references/common_voice_en_17271507-common_voice_en_17271510.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17271507-common_voice_en_17271510.wav",
+      "speaker_similarity": 40.16891098022461,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17274522-common_voice_en_17274523",
+      "ref_audio": "/work/data/references/common_voice_en_17274522-common_voice_en_17274523.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17274522-common_voice_en_17274523.wav",
+      "speaker_similarity": 47.32400131225586,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17274522-common_voice_en_17274525",
+      "ref_audio": "/work/data/references/common_voice_en_17274522-common_voice_en_17274525.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17274522-common_voice_en_17274525.wav",
+      "speaker_similarity": 34.0815544128418,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17274533-common_voice_en_17274531",
+      "ref_audio": "/work/data/references/common_voice_en_17274533-common_voice_en_17274531.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17274533-common_voice_en_17274531.wav",
+      "speaker_similarity": 48.1629638671875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17275818-common_voice_en_17275816",
+      "ref_audio": "/work/data/references/common_voice_en_17275818-common_voice_en_17275816.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17275818-common_voice_en_17275816.wav",
+      "speaker_similarity": 25.15619468688965,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17275818-common_voice_en_17275817",
+      "ref_audio": "/work/data/references/common_voice_en_17275818-common_voice_en_17275817.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17275818-common_voice_en_17275817.wav",
+      "speaker_similarity": 39.193321228027344,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17277080-common_voice_en_17277082",
+      "ref_audio": "/work/data/references/common_voice_en_17277080-common_voice_en_17277082.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17277080-common_voice_en_17277082.wav",
+      "speaker_similarity": 55.754798889160156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17277080-common_voice_en_17277083",
+      "ref_audio": "/work/data/references/common_voice_en_17277080-common_voice_en_17277083.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17277080-common_voice_en_17277083.wav",
+      "speaker_similarity": 51.86591339111328,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17278904-common_voice_en_17278905",
+      "ref_audio": "/work/data/references/common_voice_en_17278904-common_voice_en_17278905.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17278904-common_voice_en_17278905.wav",
+      "speaker_similarity": 44.058467864990234,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17278904-common_voice_en_17278909",
+      "ref_audio": "/work/data/references/common_voice_en_17278904-common_voice_en_17278909.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17278904-common_voice_en_17278909.wav",
+      "speaker_similarity": 44.82141876220703,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17281385-common_voice_en_17281386",
+      "ref_audio": "/work/data/references/common_voice_en_17281385-common_voice_en_17281386.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17281385-common_voice_en_17281386.wav",
+      "speaker_similarity": 32.23695755004883,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17281385-common_voice_en_17281393",
+      "ref_audio": "/work/data/references/common_voice_en_17281385-common_voice_en_17281393.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17281385-common_voice_en_17281393.wav",
+      "speaker_similarity": 52.55713653564453,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17288057-common_voice_en_17288056",
+      "ref_audio": "/work/data/references/common_voice_en_17288057-common_voice_en_17288056.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17288057-common_voice_en_17288056.wav",
+      "speaker_similarity": 52.50664520263672,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17288057-common_voice_en_17288059",
+      "ref_audio": "/work/data/references/common_voice_en_17288057-common_voice_en_17288059.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17288057-common_voice_en_17288059.wav",
+      "speaker_similarity": 48.737083435058594,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17324784-common_voice_en_17324785",
+      "ref_audio": "/work/data/references/common_voice_en_17324784-common_voice_en_17324785.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17324784-common_voice_en_17324785.wav",
+      "speaker_similarity": 54.97412109375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17324784-common_voice_en_17324786",
+      "ref_audio": "/work/data/references/common_voice_en_17324784-common_voice_en_17324786.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17324784-common_voice_en_17324786.wav",
+      "speaker_similarity": 58.423622131347656,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17347410-common_voice_en_17347409",
+      "ref_audio": "/work/data/references/common_voice_en_17347410-common_voice_en_17347409.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17347410-common_voice_en_17347409.wav",
+      "speaker_similarity": 34.138214111328125,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17352169-common_voice_en_17352173",
+      "ref_audio": "/work/data/references/common_voice_en_17352169-common_voice_en_17352173.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17352169-common_voice_en_17352173.wav",
+      "speaker_similarity": 40.47452926635742,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_173534-common_voice_en_173537",
+      "ref_audio": "/work/data/references/common_voice_en_173534-common_voice_en_173537.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_173534-common_voice_en_173537.wav",
+      "speaker_similarity": 46.26561737060547,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_173534-common_voice_en_173540",
+      "ref_audio": "/work/data/references/common_voice_en_173534-common_voice_en_173540.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_173534-common_voice_en_173540.wav",
+      "speaker_similarity": 54.53547286987305,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17369337-common_voice_en_17369336",
+      "ref_audio": "/work/data/references/common_voice_en_17369337-common_voice_en_17369336.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17369337-common_voice_en_17369336.wav",
+      "speaker_similarity": 27.197996139526367,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17369851-common_voice_en_17369849",
+      "ref_audio": "/work/data/references/common_voice_en_17369851-common_voice_en_17369849.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17369851-common_voice_en_17369849.wav",
+      "speaker_similarity": 24.32364273071289,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17375252-common_voice_en_17375256",
+      "ref_audio": "/work/data/references/common_voice_en_17375252-common_voice_en_17375256.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17375252-common_voice_en_17375256.wav",
+      "speaker_similarity": 18.868484497070312,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17380945-common_voice_en_17380947",
+      "ref_audio": "/work/data/references/common_voice_en_17380945-common_voice_en_17380947.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17380945-common_voice_en_17380947.wav",
+      "speaker_similarity": 39.57292938232422,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17389076-common_voice_en_17389120",
+      "ref_audio": "/work/data/references/common_voice_en_17389076-common_voice_en_17389120.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17389076-common_voice_en_17389120.wav",
+      "speaker_similarity": 52.705169677734375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17389984-common_voice_en_17389987",
+      "ref_audio": "/work/data/references/common_voice_en_17389984-common_voice_en_17389987.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17389984-common_voice_en_17389987.wav",
+      "speaker_similarity": 67.79825592041016,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17389984-common_voice_en_17389988",
+      "ref_audio": "/work/data/references/common_voice_en_17389984-common_voice_en_17389988.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17389984-common_voice_en_17389988.wav",
+      "speaker_similarity": 54.97937774658203,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17401431-common_voice_en_17401433",
+      "ref_audio": "/work/data/references/common_voice_en_17401431-common_voice_en_17401433.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17401431-common_voice_en_17401433.wav",
+      "speaker_similarity": 67.82145690917969,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17406452-common_voice_en_17406455",
+      "ref_audio": "/work/data/references/common_voice_en_17406452-common_voice_en_17406455.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17406452-common_voice_en_17406455.wav",
+      "speaker_similarity": 40.1573371887207,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17406452-common_voice_en_17406466",
+      "ref_audio": "/work/data/references/common_voice_en_17406452-common_voice_en_17406466.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17406452-common_voice_en_17406466.wav",
+      "speaker_similarity": 56.59914016723633,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17406732-common_voice_en_17406734",
+      "ref_audio": "/work/data/references/common_voice_en_17406732-common_voice_en_17406734.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17406732-common_voice_en_17406734.wav",
+      "speaker_similarity": 57.934715270996094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17406732-common_voice_en_17406735",
+      "ref_audio": "/work/data/references/common_voice_en_17406732-common_voice_en_17406735.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17406732-common_voice_en_17406735.wav",
+      "speaker_similarity": 41.11960983276367,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17429166-common_voice_en_17429168",
+      "ref_audio": "/work/data/references/common_voice_en_17429166-common_voice_en_17429168.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17429166-common_voice_en_17429168.wav",
+      "speaker_similarity": 44.766746520996094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17429166-common_voice_en_17429171",
+      "ref_audio": "/work/data/references/common_voice_en_17429166-common_voice_en_17429171.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17429166-common_voice_en_17429171.wav",
+      "speaker_similarity": 33.111785888671875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17442686-common_voice_en_17442688",
+      "ref_audio": "/work/data/references/common_voice_en_17442686-common_voice_en_17442688.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17442686-common_voice_en_17442688.wav",
+      "speaker_similarity": 45.547611236572266,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17444666-common_voice_en_17444667",
+      "ref_audio": "/work/data/references/common_voice_en_17444666-common_voice_en_17444667.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17444666-common_voice_en_17444667.wav",
+      "speaker_similarity": 53.56687927246094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17444666-common_voice_en_17444668",
+      "ref_audio": "/work/data/references/common_voice_en_17444666-common_voice_en_17444668.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17444666-common_voice_en_17444668.wav",
+      "speaker_similarity": 43.81630325317383,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17451108-common_voice_en_17451109",
+      "ref_audio": "/work/data/references/common_voice_en_17451108-common_voice_en_17451109.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17451108-common_voice_en_17451109.wav",
+      "speaker_similarity": 47.920230865478516,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17502-common_voice_en_17503",
+      "ref_audio": "/work/data/references/common_voice_en_17502-common_voice_en_17503.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17502-common_voice_en_17503.wav",
+      "speaker_similarity": 40.10895919799805,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17519982-common_voice_en_17519985",
+      "ref_audio": "/work/data/references/common_voice_en_17519982-common_voice_en_17519985.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17519982-common_voice_en_17519985.wav",
+      "speaker_similarity": 54.10405349731445,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17519982-common_voice_en_17519988",
+      "ref_audio": "/work/data/references/common_voice_en_17519982-common_voice_en_17519988.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17519982-common_voice_en_17519988.wav",
+      "speaker_similarity": 36.25035095214844,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_175348-common_voice_en_175349",
+      "ref_audio": "/work/data/references/common_voice_en_175348-common_voice_en_175349.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_175348-common_voice_en_175349.wav",
+      "speaker_similarity": 60.241844177246094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_175348-common_voice_en_175350",
+      "ref_audio": "/work/data/references/common_voice_en_175348-common_voice_en_175350.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_175348-common_voice_en_175350.wav",
+      "speaker_similarity": 66.06759643554688,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17578783-common_voice_en_17578780",
+      "ref_audio": "/work/data/references/common_voice_en_17578783-common_voice_en_17578780.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17578783-common_voice_en_17578780.wav",
+      "speaker_similarity": 64.20494079589844,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17578783-common_voice_en_17578781",
+      "ref_audio": "/work/data/references/common_voice_en_17578783-common_voice_en_17578781.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17578783-common_voice_en_17578781.wav",
+      "speaker_similarity": 54.7414665222168,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17662945-common_voice_en_17662954",
+      "ref_audio": "/work/data/references/common_voice_en_17662945-common_voice_en_17662954.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17662945-common_voice_en_17662954.wav",
+      "speaker_similarity": 55.931766510009766,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17662945-common_voice_en_17662956",
+      "ref_audio": "/work/data/references/common_voice_en_17662945-common_voice_en_17662956.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17662945-common_voice_en_17662956.wav",
+      "speaker_similarity": 48.65019607543945,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17718576-common_voice_en_17718578",
+      "ref_audio": "/work/data/references/common_voice_en_17718576-common_voice_en_17718578.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17718576-common_voice_en_17718578.wav",
+      "speaker_similarity": 36.57845687866211,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17727889-common_voice_en_17727904",
+      "ref_audio": "/work/data/references/common_voice_en_17727889-common_voice_en_17727904.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17727889-common_voice_en_17727904.wav",
+      "speaker_similarity": 56.14228820800781,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17727889-common_voice_en_17727905",
+      "ref_audio": "/work/data/references/common_voice_en_17727889-common_voice_en_17727905.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17727889-common_voice_en_17727905.wav",
+      "speaker_similarity": 49.661651611328125,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17729945-common_voice_en_17729943",
+      "ref_audio": "/work/data/references/common_voice_en_17729945-common_voice_en_17729943.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17729945-common_voice_en_17729943.wav",
+      "speaker_similarity": 56.08812713623047,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17729945-common_voice_en_17729944",
+      "ref_audio": "/work/data/references/common_voice_en_17729945-common_voice_en_17729944.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17729945-common_voice_en_17729944.wav",
+      "speaker_similarity": 52.83843994140625,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17736608-common_voice_en_17736610",
+      "ref_audio": "/work/data/references/common_voice_en_17736608-common_voice_en_17736610.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17736608-common_voice_en_17736610.wav",
+      "speaker_similarity": 68.77639770507812,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17738848-common_voice_en_17744571",
+      "ref_audio": "/work/data/references/common_voice_en_17738848-common_voice_en_17744571.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17738848-common_voice_en_17744571.wav",
+      "speaker_similarity": 55.55317306518555,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17738848-common_voice_en_19083939",
+      "ref_audio": "/work/data/references/common_voice_en_17738848-common_voice_en_19083939.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17738848-common_voice_en_19083939.wav",
+      "speaker_similarity": 47.638397216796875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17781154-common_voice_en_17781153",
+      "ref_audio": "/work/data/references/common_voice_en_17781154-common_voice_en_17781153.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17781154-common_voice_en_17781153.wav",
+      "speaker_similarity": 56.23622512817383,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17784-common_voice_en_17785",
+      "ref_audio": "/work/data/references/common_voice_en_17784-common_voice_en_17785.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17784-common_voice_en_17785.wav",
+      "speaker_similarity": 53.38127517700195,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17784-common_voice_en_17786",
+      "ref_audio": "/work/data/references/common_voice_en_17784-common_voice_en_17786.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17784-common_voice_en_17786.wav",
+      "speaker_similarity": 51.394927978515625,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_177895-common_voice_en_177894",
+      "ref_audio": "/work/data/references/common_voice_en_177895-common_voice_en_177894.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_177895-common_voice_en_177894.wav",
+      "speaker_similarity": 30.83251190185547,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_177895-common_voice_en_177898",
+      "ref_audio": "/work/data/references/common_voice_en_177895-common_voice_en_177898.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_177895-common_voice_en_177898.wav",
+      "speaker_similarity": 31.3290958404541,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17817002-common_voice_en_17817003",
+      "ref_audio": "/work/data/references/common_voice_en_17817002-common_voice_en_17817003.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17817002-common_voice_en_17817003.wav",
+      "speaker_similarity": 60.78413772583008,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17817002-common_voice_en_17817005",
+      "ref_audio": "/work/data/references/common_voice_en_17817002-common_voice_en_17817005.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17817002-common_voice_en_17817005.wav",
+      "speaker_similarity": 60.3867301940918,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17830764-common_voice_en_17830762",
+      "ref_audio": "/work/data/references/common_voice_en_17830764-common_voice_en_17830762.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17830764-common_voice_en_17830762.wav",
+      "speaker_similarity": 33.809547424316406,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17830764-common_voice_en_17830783",
+      "ref_audio": "/work/data/references/common_voice_en_17830764-common_voice_en_17830783.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17830764-common_voice_en_17830783.wav",
+      "speaker_similarity": 58.390987396240234,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17837104-common_voice_en_17837105",
+      "ref_audio": "/work/data/references/common_voice_en_17837104-common_voice_en_17837105.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17837104-common_voice_en_17837105.wav",
+      "speaker_similarity": 43.542945861816406,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17851231-common_voice_en_17851248",
+      "ref_audio": "/work/data/references/common_voice_en_17851231-common_voice_en_17851248.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17851231-common_voice_en_17851248.wav",
+      "speaker_similarity": 53.748748779296875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17851231-common_voice_en_17851256",
+      "ref_audio": "/work/data/references/common_voice_en_17851231-common_voice_en_17851256.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17851231-common_voice_en_17851256.wav",
+      "speaker_similarity": 56.28514099121094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17854896-common_voice_en_17854894",
+      "ref_audio": "/work/data/references/common_voice_en_17854896-common_voice_en_17854894.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17854896-common_voice_en_17854894.wav",
+      "speaker_similarity": 62.51029968261719,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17854896-common_voice_en_17854897",
+      "ref_audio": "/work/data/references/common_voice_en_17854896-common_voice_en_17854897.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17854896-common_voice_en_17854897.wav",
+      "speaker_similarity": 53.87467575073242,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17861335-common_voice_en_17861337",
+      "ref_audio": "/work/data/references/common_voice_en_17861335-common_voice_en_17861337.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17861335-common_voice_en_17861337.wav",
+      "speaker_similarity": 53.7069091796875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17861489-common_voice_en_17861487",
+      "ref_audio": "/work/data/references/common_voice_en_17861489-common_voice_en_17861487.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17861489-common_voice_en_17861487.wav",
+      "speaker_similarity": 27.056377410888672,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17874600-common_voice_en_17874601",
+      "ref_audio": "/work/data/references/common_voice_en_17874600-common_voice_en_17874601.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17874600-common_voice_en_17874601.wav",
+      "speaker_similarity": 32.16008377075195,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17874600-common_voice_en_17874602",
+      "ref_audio": "/work/data/references/common_voice_en_17874600-common_voice_en_17874602.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17874600-common_voice_en_17874602.wav",
+      "speaker_similarity": 49.707305908203125,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17875915-common_voice_en_17875925",
+      "ref_audio": "/work/data/references/common_voice_en_17875915-common_voice_en_17875925.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17875915-common_voice_en_17875925.wav",
+      "speaker_similarity": 62.0220832824707,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17879420-common_voice_en_17879418",
+      "ref_audio": "/work/data/references/common_voice_en_17879420-common_voice_en_17879418.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17879420-common_voice_en_17879418.wav",
+      "speaker_similarity": 44.55341720581055,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17879420-common_voice_en_17879438",
+      "ref_audio": "/work/data/references/common_voice_en_17879420-common_voice_en_17879438.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17879420-common_voice_en_17879438.wav",
+      "speaker_similarity": 33.57248306274414,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17880926-common_voice_en_17880932",
+      "ref_audio": "/work/data/references/common_voice_en_17880926-common_voice_en_17880932.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17880926-common_voice_en_17880932.wav",
+      "speaker_similarity": 54.434322357177734,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17889905-common_voice_en_17889907",
+      "ref_audio": "/work/data/references/common_voice_en_17889905-common_voice_en_17889907.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17889905-common_voice_en_17889907.wav",
+      "speaker_similarity": 28.1502685546875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17893247-common_voice_en_17893246",
+      "ref_audio": "/work/data/references/common_voice_en_17893247-common_voice_en_17893246.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17893247-common_voice_en_17893246.wav",
+      "speaker_similarity": 38.212158203125,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17893247-common_voice_en_17893250",
+      "ref_audio": "/work/data/references/common_voice_en_17893247-common_voice_en_17893250.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17893247-common_voice_en_17893250.wav",
+      "speaker_similarity": 27.33125114440918,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17899910-common_voice_en_17899909",
+      "ref_audio": "/work/data/references/common_voice_en_17899910-common_voice_en_17899909.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17899910-common_voice_en_17899909.wav",
+      "speaker_similarity": 45.468624114990234,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17920116-common_voice_en_17920112",
+      "ref_audio": "/work/data/references/common_voice_en_17920116-common_voice_en_17920112.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17920116-common_voice_en_17920112.wav",
+      "speaker_similarity": 17.814960479736328,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_17986345-common_voice_en_17986347",
+      "ref_audio": "/work/data/references/common_voice_en_17986345-common_voice_en_17986347.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_17986345-common_voice_en_17986347.wav",
+      "speaker_similarity": 55.201786041259766,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18012457-common_voice_en_18012447",
+      "ref_audio": "/work/data/references/common_voice_en_18012457-common_voice_en_18012447.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18012457-common_voice_en_18012447.wav",
+      "speaker_similarity": 53.603755950927734,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18012457-common_voice_en_18012464",
+      "ref_audio": "/work/data/references/common_voice_en_18012457-common_voice_en_18012464.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18012457-common_voice_en_18012464.wav",
+      "speaker_similarity": 46.74280548095703,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18057869-common_voice_en_18057867",
+      "ref_audio": "/work/data/references/common_voice_en_18057869-common_voice_en_18057867.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18057869-common_voice_en_18057867.wav",
+      "speaker_similarity": 36.236244201660156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18070362-common_voice_en_18070351",
+      "ref_audio": "/work/data/references/common_voice_en_18070362-common_voice_en_18070351.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18070362-common_voice_en_18070351.wav",
+      "speaker_similarity": 36.5773811340332,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18105426-common_voice_en_18105428",
+      "ref_audio": "/work/data/references/common_voice_en_18105426-common_voice_en_18105428.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18105426-common_voice_en_18105428.wav",
+      "speaker_similarity": 40.00897979736328,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18105426-common_voice_en_18105430",
+      "ref_audio": "/work/data/references/common_voice_en_18105426-common_voice_en_18105430.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18105426-common_voice_en_18105430.wav",
+      "speaker_similarity": 33.68034362792969,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18177486-common_voice_en_18177492",
+      "ref_audio": "/work/data/references/common_voice_en_18177486-common_voice_en_18177492.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18177486-common_voice_en_18177492.wav",
+      "speaker_similarity": 43.602333068847656,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18177486-common_voice_en_18177499",
+      "ref_audio": "/work/data/references/common_voice_en_18177486-common_voice_en_18177499.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18177486-common_voice_en_18177499.wav",
+      "speaker_similarity": 60.657264709472656,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18187914-common_voice_en_18188853",
+      "ref_audio": "/work/data/references/common_voice_en_18187914-common_voice_en_18188853.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18187914-common_voice_en_18188853.wav",
+      "speaker_similarity": 39.26987075805664,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18200641-common_voice_en_18200765",
+      "ref_audio": "/work/data/references/common_voice_en_18200641-common_voice_en_18200765.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18200641-common_voice_en_18200765.wav",
+      "speaker_similarity": 63.80340576171875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18200641-common_voice_en_18200790",
+      "ref_audio": "/work/data/references/common_voice_en_18200641-common_voice_en_18200790.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18200641-common_voice_en_18200790.wav",
+      "speaker_similarity": 72.99967956542969,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_182275-common_voice_en_182276",
+      "ref_audio": "/work/data/references/common_voice_en_182275-common_voice_en_182276.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_182275-common_voice_en_182276.wav",
+      "speaker_similarity": 33.51464080810547,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18229682-common_voice_en_18229679",
+      "ref_audio": "/work/data/references/common_voice_en_18229682-common_voice_en_18229679.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18229682-common_voice_en_18229679.wav",
+      "speaker_similarity": 23.315120697021484,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18229682-common_voice_en_18229695",
+      "ref_audio": "/work/data/references/common_voice_en_18229682-common_voice_en_18229695.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18229682-common_voice_en_18229695.wav",
+      "speaker_similarity": 44.08121871948242,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18234333-common_voice_en_18234353",
+      "ref_audio": "/work/data/references/common_voice_en_18234333-common_voice_en_18234353.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18234333-common_voice_en_18234353.wav",
+      "speaker_similarity": 53.123985290527344,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18240348-common_voice_en_18240305",
+      "ref_audio": "/work/data/references/common_voice_en_18240348-common_voice_en_18240305.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18240348-common_voice_en_18240305.wav",
+      "speaker_similarity": 44.617855072021484,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18313326-common_voice_en_18313324",
+      "ref_audio": "/work/data/references/common_voice_en_18313326-common_voice_en_18313324.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18313326-common_voice_en_18313324.wav",
+      "speaker_similarity": 50.60714340209961,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18313326-common_voice_en_18313328",
+      "ref_audio": "/work/data/references/common_voice_en_18313326-common_voice_en_18313328.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18313326-common_voice_en_18313328.wav",
+      "speaker_similarity": 53.505252838134766,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18336410-common_voice_en_18336411",
+      "ref_audio": "/work/data/references/common_voice_en_18336410-common_voice_en_18336411.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18336410-common_voice_en_18336411.wav",
+      "speaker_similarity": 42.390220642089844,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18336410-common_voice_en_18336421",
+      "ref_audio": "/work/data/references/common_voice_en_18336410-common_voice_en_18336421.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18336410-common_voice_en_18336421.wav",
+      "speaker_similarity": 57.2252197265625,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18338543-common_voice_en_18338546",
+      "ref_audio": "/work/data/references/common_voice_en_18338543-common_voice_en_18338546.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18338543-common_voice_en_18338546.wav",
+      "speaker_similarity": 30.689990997314453,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18436934-common_voice_en_18436935",
+      "ref_audio": "/work/data/references/common_voice_en_18436934-common_voice_en_18436935.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18436934-common_voice_en_18436935.wav",
+      "speaker_similarity": 26.07981300354004,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18466098-common_voice_en_18466096",
+      "ref_audio": "/work/data/references/common_voice_en_18466098-common_voice_en_18466096.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18466098-common_voice_en_18466096.wav",
+      "speaker_similarity": 31.529491424560547,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18466098-common_voice_en_18466097",
+      "ref_audio": "/work/data/references/common_voice_en_18466098-common_voice_en_18466097.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18466098-common_voice_en_18466097.wav",
+      "speaker_similarity": 37.000648498535156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18485041-common_voice_en_18485042",
+      "ref_audio": "/work/data/references/common_voice_en_18485041-common_voice_en_18485042.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18485041-common_voice_en_18485042.wav",
+      "speaker_similarity": 45.81888198852539,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18500600-common_voice_en_18500603",
+      "ref_audio": "/work/data/references/common_voice_en_18500600-common_voice_en_18500603.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18500600-common_voice_en_18500603.wav",
+      "speaker_similarity": 40.723384857177734,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18522556-common_voice_en_18522557",
+      "ref_audio": "/work/data/references/common_voice_en_18522556-common_voice_en_18522557.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18522556-common_voice_en_18522557.wav",
+      "speaker_similarity": 35.20833969116211,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18529345-common_voice_en_18529360",
+      "ref_audio": "/work/data/references/common_voice_en_18529345-common_voice_en_18529360.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18529345-common_voice_en_18529360.wav",
+      "speaker_similarity": 61.842926025390625,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18529345-common_voice_en_18529361",
+      "ref_audio": "/work/data/references/common_voice_en_18529345-common_voice_en_18529361.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18529345-common_voice_en_18529361.wav",
+      "speaker_similarity": 64.43488311767578,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18533403-common_voice_en_18533404",
+      "ref_audio": "/work/data/references/common_voice_en_18533403-common_voice_en_18533404.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18533403-common_voice_en_18533404.wav",
+      "speaker_similarity": 31.902339935302734,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18545637-common_voice_en_18545639",
+      "ref_audio": "/work/data/references/common_voice_en_18545637-common_voice_en_18545639.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18545637-common_voice_en_18545639.wav",
+      "speaker_similarity": 54.68873977661133,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18554437-common_voice_en_18554439",
+      "ref_audio": "/work/data/references/common_voice_en_18554437-common_voice_en_18554439.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18554437-common_voice_en_18554439.wav",
+      "speaker_similarity": 34.3997688293457,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18557077-common_voice_en_18557074",
+      "ref_audio": "/work/data/references/common_voice_en_18557077-common_voice_en_18557074.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18557077-common_voice_en_18557074.wav",
+      "speaker_similarity": 35.13133239746094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18557077-common_voice_en_18557192",
+      "ref_audio": "/work/data/references/common_voice_en_18557077-common_voice_en_18557192.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18557077-common_voice_en_18557192.wav",
+      "speaker_similarity": 36.336021423339844,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18575865-common_voice_en_18575863",
+      "ref_audio": "/work/data/references/common_voice_en_18575865-common_voice_en_18575863.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18575865-common_voice_en_18575863.wav",
+      "speaker_similarity": 61.37019348144531,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18575865-common_voice_en_18575864",
+      "ref_audio": "/work/data/references/common_voice_en_18575865-common_voice_en_18575864.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18575865-common_voice_en_18575864.wav",
+      "speaker_similarity": 62.37138366699219,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18647546-common_voice_en_18647545",
+      "ref_audio": "/work/data/references/common_voice_en_18647546-common_voice_en_18647545.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18647546-common_voice_en_18647545.wav",
+      "speaker_similarity": 41.512901306152344,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18647546-common_voice_en_18647550",
+      "ref_audio": "/work/data/references/common_voice_en_18647546-common_voice_en_18647550.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18647546-common_voice_en_18647550.wav",
+      "speaker_similarity": 43.98023986816406,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18672480-common_voice_en_18672484",
+      "ref_audio": "/work/data/references/common_voice_en_18672480-common_voice_en_18672484.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18672480-common_voice_en_18672484.wav",
+      "speaker_similarity": 57.558048248291016,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18681919-common_voice_en_18681920",
+      "ref_audio": "/work/data/references/common_voice_en_18681919-common_voice_en_18681920.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18681919-common_voice_en_18681920.wav",
+      "speaker_similarity": 60.828853607177734,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18693241-common_voice_en_18693240",
+      "ref_audio": "/work/data/references/common_voice_en_18693241-common_voice_en_18693240.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18693241-common_voice_en_18693240.wav",
+      "speaker_similarity": 60.75337600708008,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18699078-common_voice_en_18699081",
+      "ref_audio": "/work/data/references/common_voice_en_18699078-common_voice_en_18699081.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18699078-common_voice_en_18699081.wav",
+      "speaker_similarity": 68.02436065673828,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18699078-common_voice_en_18699082",
+      "ref_audio": "/work/data/references/common_voice_en_18699078-common_voice_en_18699082.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18699078-common_voice_en_18699082.wav",
+      "speaker_similarity": 65.31757354736328,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18707936-common_voice_en_18707937",
+      "ref_audio": "/work/data/references/common_voice_en_18707936-common_voice_en_18707937.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18707936-common_voice_en_18707937.wav",
+      "speaker_similarity": 33.09112548828125,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18710640-common_voice_en_18710642",
+      "ref_audio": "/work/data/references/common_voice_en_18710640-common_voice_en_18710642.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18710640-common_voice_en_18710642.wav",
+      "speaker_similarity": 53.55565643310547,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18735317-common_voice_en_18735316",
+      "ref_audio": "/work/data/references/common_voice_en_18735317-common_voice_en_18735316.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18735317-common_voice_en_18735316.wav",
+      "speaker_similarity": 60.31840896606445,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18735317-common_voice_en_18735372",
+      "ref_audio": "/work/data/references/common_voice_en_18735317-common_voice_en_18735372.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18735317-common_voice_en_18735372.wav",
+      "speaker_similarity": 52.463172912597656,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18746637-common_voice_en_18746638",
+      "ref_audio": "/work/data/references/common_voice_en_18746637-common_voice_en_18746638.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18746637-common_voice_en_18746638.wav",
+      "speaker_similarity": 57.05940628051758,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18746637-common_voice_en_18746639",
+      "ref_audio": "/work/data/references/common_voice_en_18746637-common_voice_en_18746639.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18746637-common_voice_en_18746639.wav",
+      "speaker_similarity": 58.265350341796875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18754308-common_voice_en_18754311",
+      "ref_audio": "/work/data/references/common_voice_en_18754308-common_voice_en_18754311.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18754308-common_voice_en_18754311.wav",
+      "speaker_similarity": 54.07551956176758,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18754308-common_voice_en_18754312",
+      "ref_audio": "/work/data/references/common_voice_en_18754308-common_voice_en_18754312.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18754308-common_voice_en_18754312.wav",
+      "speaker_similarity": 55.50310516357422,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18757805-common_voice_en_18757804",
+      "ref_audio": "/work/data/references/common_voice_en_18757805-common_voice_en_18757804.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18757805-common_voice_en_18757804.wav",
+      "speaker_similarity": 60.4055290222168,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18770703-common_voice_en_18770702",
+      "ref_audio": "/work/data/references/common_voice_en_18770703-common_voice_en_18770702.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18770703-common_voice_en_18770702.wav",
+      "speaker_similarity": 47.522430419921875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18770703-common_voice_en_18770704",
+      "ref_audio": "/work/data/references/common_voice_en_18770703-common_voice_en_18770704.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18770703-common_voice_en_18770704.wav",
+      "speaker_similarity": 47.79078674316406,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18781918-common_voice_en_18781919",
+      "ref_audio": "/work/data/references/common_voice_en_18781918-common_voice_en_18781919.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18781918-common_voice_en_18781919.wav",
+      "speaker_similarity": 64.18353271484375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18786931-common_voice_en_18786930",
+      "ref_audio": "/work/data/references/common_voice_en_18786931-common_voice_en_18786930.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18786931-common_voice_en_18786930.wav",
+      "speaker_similarity": 61.032814025878906,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18786931-common_voice_en_18786946",
+      "ref_audio": "/work/data/references/common_voice_en_18786931-common_voice_en_18786946.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18786931-common_voice_en_18786946.wav",
+      "speaker_similarity": 53.83061218261719,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_188092-common_voice_en_188091",
+      "ref_audio": "/work/data/references/common_voice_en_188092-common_voice_en_188091.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_188092-common_voice_en_188091.wav",
+      "speaker_similarity": 51.18626403808594,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_188092-common_voice_en_188093",
+      "ref_audio": "/work/data/references/common_voice_en_188092-common_voice_en_188093.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_188092-common_voice_en_188093.wav",
+      "speaker_similarity": 56.719947814941406,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18828571-common_voice_en_18828573",
+      "ref_audio": "/work/data/references/common_voice_en_18828571-common_voice_en_18828573.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18828571-common_voice_en_18828573.wav",
+      "speaker_similarity": 49.087764739990234,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18829843-common_voice_en_18829841",
+      "ref_audio": "/work/data/references/common_voice_en_18829843-common_voice_en_18829841.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18829843-common_voice_en_18829841.wav",
+      "speaker_similarity": 66.62149047851562,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18829843-common_voice_en_18829842",
+      "ref_audio": "/work/data/references/common_voice_en_18829843-common_voice_en_18829842.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18829843-common_voice_en_18829842.wav",
+      "speaker_similarity": 56.8584098815918,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18852076-common_voice_en_18852077",
+      "ref_audio": "/work/data/references/common_voice_en_18852076-common_voice_en_18852077.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18852076-common_voice_en_18852077.wav",
+      "speaker_similarity": 42.271156311035156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18852076-common_voice_en_18852085",
+      "ref_audio": "/work/data/references/common_voice_en_18852076-common_voice_en_18852085.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18852076-common_voice_en_18852085.wav",
+      "speaker_similarity": 49.61434555053711,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18877786-common_voice_en_18877788",
+      "ref_audio": "/work/data/references/common_voice_en_18877786-common_voice_en_18877788.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18877786-common_voice_en_18877788.wav",
+      "speaker_similarity": 32.20696258544922,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18889688-common_voice_en_18889686",
+      "ref_audio": "/work/data/references/common_voice_en_18889688-common_voice_en_18889686.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18889688-common_voice_en_18889686.wav",
+      "speaker_similarity": 44.52037048339844,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18889688-common_voice_en_18889687",
+      "ref_audio": "/work/data/references/common_voice_en_18889688-common_voice_en_18889687.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18889688-common_voice_en_18889687.wav",
+      "speaker_similarity": 31.51266860961914,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18902273-common_voice_en_18902274",
+      "ref_audio": "/work/data/references/common_voice_en_18902273-common_voice_en_18902274.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18902273-common_voice_en_18902274.wav",
+      "speaker_similarity": 62.66443634033203,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18902273-common_voice_en_18902275",
+      "ref_audio": "/work/data/references/common_voice_en_18902273-common_voice_en_18902275.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18902273-common_voice_en_18902275.wav",
+      "speaker_similarity": 44.93181610107422,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18944281-common_voice_en_18944280",
+      "ref_audio": "/work/data/references/common_voice_en_18944281-common_voice_en_18944280.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18944281-common_voice_en_18944280.wav",
+      "speaker_similarity": 48.95668029785156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18962809-common_voice_en_18962813",
+      "ref_audio": "/work/data/references/common_voice_en_18962809-common_voice_en_18962813.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18962809-common_voice_en_18962813.wav",
+      "speaker_similarity": 63.20256423950195,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18962809-common_voice_en_18962814",
+      "ref_audio": "/work/data/references/common_voice_en_18962809-common_voice_en_18962814.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18962809-common_voice_en_18962814.wav",
+      "speaker_similarity": 64.15364837646484,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18993020-common_voice_en_18993021",
+      "ref_audio": "/work/data/references/common_voice_en_18993020-common_voice_en_18993021.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18993020-common_voice_en_18993021.wav",
+      "speaker_similarity": 58.71000289916992,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18993020-common_voice_en_18993067",
+      "ref_audio": "/work/data/references/common_voice_en_18993020-common_voice_en_18993067.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18993020-common_voice_en_18993067.wav",
+      "speaker_similarity": 43.398345947265625,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18994068-common_voice_en_18994069",
+      "ref_audio": "/work/data/references/common_voice_en_18994068-common_voice_en_18994069.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18994068-common_voice_en_18994069.wav",
+      "speaker_similarity": 64.46720123291016,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18994734-common_voice_en_18994736",
+      "ref_audio": "/work/data/references/common_voice_en_18994734-common_voice_en_18994736.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18994734-common_voice_en_18994736.wav",
+      "speaker_similarity": 65.01060485839844,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18994734-common_voice_en_18994738",
+      "ref_audio": "/work/data/references/common_voice_en_18994734-common_voice_en_18994738.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18994734-common_voice_en_18994738.wav",
+      "speaker_similarity": 62.941162109375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18998723-common_voice_en_18998722",
+      "ref_audio": "/work/data/references/common_voice_en_18998723-common_voice_en_18998722.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18998723-common_voice_en_18998722.wav",
+      "speaker_similarity": 53.466583251953125,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_18998723-common_voice_en_18998724",
+      "ref_audio": "/work/data/references/common_voice_en_18998723-common_voice_en_18998724.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_18998723-common_voice_en_18998724.wav",
+      "speaker_similarity": 55.40755844116211,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19002369-common_voice_en_19002367",
+      "ref_audio": "/work/data/references/common_voice_en_19002369-common_voice_en_19002367.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19002369-common_voice_en_19002367.wav",
+      "speaker_similarity": 30.1534423828125,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19017623-common_voice_en_19017624",
+      "ref_audio": "/work/data/references/common_voice_en_19017623-common_voice_en_19017624.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19017623-common_voice_en_19017624.wav",
+      "speaker_similarity": 52.116458892822266,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19022657-common_voice_en_19022662",
+      "ref_audio": "/work/data/references/common_voice_en_19022657-common_voice_en_19022662.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19022657-common_voice_en_19022662.wav",
+      "speaker_similarity": 39.43216323852539,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19022657-common_voice_en_19022667",
+      "ref_audio": "/work/data/references/common_voice_en_19022657-common_voice_en_19022667.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19022657-common_voice_en_19022667.wav",
+      "speaker_similarity": 44.87315368652344,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19043111-common_voice_en_19043109",
+      "ref_audio": "/work/data/references/common_voice_en_19043111-common_voice_en_19043109.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19043111-common_voice_en_19043109.wav",
+      "speaker_similarity": 54.985904693603516,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19043111-common_voice_en_19043119",
+      "ref_audio": "/work/data/references/common_voice_en_19043111-common_voice_en_19043119.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19043111-common_voice_en_19043119.wav",
+      "speaker_similarity": 52.51567840576172,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19049396-common_voice_en_19049393",
+      "ref_audio": "/work/data/references/common_voice_en_19049396-common_voice_en_19049393.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19049396-common_voice_en_19049393.wav",
+      "speaker_similarity": 48.39739990234375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19049396-common_voice_en_19049395",
+      "ref_audio": "/work/data/references/common_voice_en_19049396-common_voice_en_19049395.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19049396-common_voice_en_19049395.wav",
+      "speaker_similarity": 49.4465217590332,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19083094-common_voice_en_19083091",
+      "ref_audio": "/work/data/references/common_voice_en_19083094-common_voice_en_19083091.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19083094-common_voice_en_19083091.wav",
+      "speaker_similarity": 47.987998962402344,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19083094-common_voice_en_19083093",
+      "ref_audio": "/work/data/references/common_voice_en_19083094-common_voice_en_19083093.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19083094-common_voice_en_19083093.wav",
+      "speaker_similarity": 63.17719268798828,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19113286-common_voice_en_19113288",
+      "ref_audio": "/work/data/references/common_voice_en_19113286-common_voice_en_19113288.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19113286-common_voice_en_19113288.wav",
+      "speaker_similarity": 43.05044174194336,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19117097-common_voice_en_19117098",
+      "ref_audio": "/work/data/references/common_voice_en_19117097-common_voice_en_19117098.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19117097-common_voice_en_19117098.wav",
+      "speaker_similarity": 53.052799224853516,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19124597-common_voice_en_19124596",
+      "ref_audio": "/work/data/references/common_voice_en_19124597-common_voice_en_19124596.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19124597-common_voice_en_19124596.wav",
+      "speaker_similarity": 65.73123931884766,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19152197-common_voice_en_19152196",
+      "ref_audio": "/work/data/references/common_voice_en_19152197-common_voice_en_19152196.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19152197-common_voice_en_19152196.wav",
+      "speaker_similarity": 65.65914154052734,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19152197-common_voice_en_19152198",
+      "ref_audio": "/work/data/references/common_voice_en_19152197-common_voice_en_19152198.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19152197-common_voice_en_19152198.wav",
+      "speaker_similarity": 43.02470016479492,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19176854-common_voice_en_19176853",
+      "ref_audio": "/work/data/references/common_voice_en_19176854-common_voice_en_19176853.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19176854-common_voice_en_19176853.wav",
+      "speaker_similarity": 59.55989456176758,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19176854-common_voice_en_19176856",
+      "ref_audio": "/work/data/references/common_voice_en_19176854-common_voice_en_19176856.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19176854-common_voice_en_19176856.wav",
+      "speaker_similarity": 67.99810028076172,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19211875-common_voice_en_19211870",
+      "ref_audio": "/work/data/references/common_voice_en_19211875-common_voice_en_19211870.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19211875-common_voice_en_19211870.wav",
+      "speaker_similarity": 62.1021728515625,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19254683-common_voice_en_19254685",
+      "ref_audio": "/work/data/references/common_voice_en_19254683-common_voice_en_19254685.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19254683-common_voice_en_19254685.wav",
+      "speaker_similarity": 44.265071868896484,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19254683-common_voice_en_19254687",
+      "ref_audio": "/work/data/references/common_voice_en_19254683-common_voice_en_19254687.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19254683-common_voice_en_19254687.wav",
+      "speaker_similarity": 42.057342529296875,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19277026-common_voice_en_19277029",
+      "ref_audio": "/work/data/references/common_voice_en_19277026-common_voice_en_19277029.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19277026-common_voice_en_19277029.wav",
+      "speaker_similarity": 53.337623596191406,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19284142-common_voice_en_19284143",
+      "ref_audio": "/work/data/references/common_voice_en_19284142-common_voice_en_19284143.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19284142-common_voice_en_19284143.wav",
+      "speaker_similarity": 42.082008361816406,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19284142-common_voice_en_19284144",
+      "ref_audio": "/work/data/references/common_voice_en_19284142-common_voice_en_19284144.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19284142-common_voice_en_19284144.wav",
+      "speaker_similarity": 46.12327194213867,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19289713-common_voice_en_19289715",
+      "ref_audio": "/work/data/references/common_voice_en_19289713-common_voice_en_19289715.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19289713-common_voice_en_19289715.wav",
+      "speaker_similarity": 63.86507797241211,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19294198-common_voice_en_19294199",
+      "ref_audio": "/work/data/references/common_voice_en_19294198-common_voice_en_19294199.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19294198-common_voice_en_19294199.wav",
+      "speaker_similarity": 39.270355224609375,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19294198-common_voice_en_19294200",
+      "ref_audio": "/work/data/references/common_voice_en_19294198-common_voice_en_19294200.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19294198-common_voice_en_19294200.wav",
+      "speaker_similarity": 43.21575164794922,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19343495-common_voice_en_19343496",
+      "ref_audio": "/work/data/references/common_voice_en_19343495-common_voice_en_19343496.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19343495-common_voice_en_19343496.wav",
+      "speaker_similarity": 38.46778106689453,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19343495-common_voice_en_19343497",
+      "ref_audio": "/work/data/references/common_voice_en_19343495-common_voice_en_19343497.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19343495-common_voice_en_19343497.wav",
+      "speaker_similarity": 51.40520477294922,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19345360-common_voice_en_19345358",
+      "ref_audio": "/work/data/references/common_voice_en_19345360-common_voice_en_19345358.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19345360-common_voice_en_19345358.wav",
+      "speaker_similarity": 59.783119201660156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19345360-common_voice_en_19345359",
+      "ref_audio": "/work/data/references/common_voice_en_19345360-common_voice_en_19345359.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19345360-common_voice_en_19345359.wav",
+      "speaker_similarity": 59.73520278930664,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19361636-common_voice_en_19361634",
+      "ref_audio": "/work/data/references/common_voice_en_19361636-common_voice_en_19361634.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19361636-common_voice_en_19361634.wav",
+      "speaker_similarity": 56.0563850402832,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19361636-common_voice_en_19361635",
+      "ref_audio": "/work/data/references/common_voice_en_19361636-common_voice_en_19361635.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19361636-common_voice_en_19361635.wav",
+      "speaker_similarity": 46.757877349853516,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19384720-common_voice_en_19384721",
+      "ref_audio": "/work/data/references/common_voice_en_19384720-common_voice_en_19384721.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19384720-common_voice_en_19384721.wav",
+      "speaker_similarity": 47.62338638305664,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19397397-common_voice_en_19397399",
+      "ref_audio": "/work/data/references/common_voice_en_19397397-common_voice_en_19397399.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19397397-common_voice_en_19397399.wav",
+      "speaker_similarity": 74.91905212402344,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19397397-common_voice_en_19397407",
+      "ref_audio": "/work/data/references/common_voice_en_19397397-common_voice_en_19397407.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19397397-common_voice_en_19397407.wav",
+      "speaker_similarity": 67.3899917602539,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19401124-common_voice_en_19401123",
+      "ref_audio": "/work/data/references/common_voice_en_19401124-common_voice_en_19401123.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19401124-common_voice_en_19401123.wav",
+      "speaker_similarity": 55.144195556640625,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19401124-common_voice_en_19401125",
+      "ref_audio": "/work/data/references/common_voice_en_19401124-common_voice_en_19401125.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19401124-common_voice_en_19401125.wav",
+      "speaker_similarity": 48.459266662597656,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19428391-common_voice_en_19428392",
+      "ref_audio": "/work/data/references/common_voice_en_19428391-common_voice_en_19428392.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19428391-common_voice_en_19428392.wav",
+      "speaker_similarity": 61.60363006591797,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19428391-common_voice_en_19428396",
+      "ref_audio": "/work/data/references/common_voice_en_19428391-common_voice_en_19428396.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19428391-common_voice_en_19428396.wav",
+      "speaker_similarity": 67.10494995117188,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19449066-common_voice_en_19449075",
+      "ref_audio": "/work/data/references/common_voice_en_19449066-common_voice_en_19449075.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19449066-common_voice_en_19449075.wav",
+      "speaker_similarity": 56.13834762573242,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19449066-common_voice_en_19449076",
+      "ref_audio": "/work/data/references/common_voice_en_19449066-common_voice_en_19449076.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19449066-common_voice_en_19449076.wav",
+      "speaker_similarity": 39.20549011230469,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19455206-common_voice_en_19455208",
+      "ref_audio": "/work/data/references/common_voice_en_19455206-common_voice_en_19455208.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19455206-common_voice_en_19455208.wav",
+      "speaker_similarity": 57.491939544677734,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19455206-common_voice_en_19455210",
+      "ref_audio": "/work/data/references/common_voice_en_19455206-common_voice_en_19455210.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19455206-common_voice_en_19455210.wav",
+      "speaker_similarity": 49.663963317871094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19481268-common_voice_en_19481267",
+      "ref_audio": "/work/data/references/common_voice_en_19481268-common_voice_en_19481267.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19481268-common_voice_en_19481267.wav",
+      "speaker_similarity": 61.51432418823242,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19481268-common_voice_en_19481270",
+      "ref_audio": "/work/data/references/common_voice_en_19481268-common_voice_en_19481270.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19481268-common_voice_en_19481270.wav",
+      "speaker_similarity": 53.85550308227539,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19496235-common_voice_en_19496229",
+      "ref_audio": "/work/data/references/common_voice_en_19496235-common_voice_en_19496229.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19496235-common_voice_en_19496229.wav",
+      "speaker_similarity": 53.522743225097656,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19496235-common_voice_en_19496266",
+      "ref_audio": "/work/data/references/common_voice_en_19496235-common_voice_en_19496266.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19496235-common_voice_en_19496266.wav",
+      "speaker_similarity": 58.345245361328125,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19517720-common_voice_en_19517721",
+      "ref_audio": "/work/data/references/common_voice_en_19517720-common_voice_en_19517721.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19517720-common_voice_en_19517721.wav",
+      "speaker_similarity": 53.892982482910156,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19527999-common_voice_en_19528000",
+      "ref_audio": "/work/data/references/common_voice_en_19527999-common_voice_en_19528000.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19527999-common_voice_en_19528000.wav",
+      "speaker_similarity": 47.57664489746094,
+      "is_success": true,
+      "error": null
+    },
+    {
+      "id": "common_voice_en_19527999-common_voice_en_19528002",
+      "ref_audio": "/work/data/references/common_voice_en_19527999-common_voice_en_19528002.wav",
+      "wav_path": "/work/results/r2-optimized-c16/measured/audio/common_voice_en_19527999-common_voice_en_19528002.wav",
+      "speaker_similarity": 49.852325439453125,
+      "is_success": true,
+      "error": null
+    }
+  ]
+}

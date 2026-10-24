@@ -1,0 +1,67 @@
+{
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "torchaudio": "2.11.0+cu130",
+    "sglang": "0.5.21",
+    "transformers": "5.12.1",
+    "onnx": "1.23.2"
+  },
+  "gpu": "Thu Oct 22 14:12:35 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA H100 80GB HBM3          On  |   00000000:04:00.0 Off |                    0 |\n| N/A   36C    P0             70W /  700W |       4MiB /  81559MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n",
+  "order": [
+    [
+      1,
+      "baseline"
+    ],
+    [
+      1,
+      "optimized"
+    ],
+    [
+      8,
+      "optimized"
+    ],
+    [
+      8,
+      "baseline"
+    ],
+    [
+      16,
+      "baseline"
+    ],
+    [
+      16,
+      "optimized"
+    ],
+    [
+      32,
+      "optimized"
+    ],
+    [
+      32,
+      "baseline"
+    ]
+  ],
+  "cpu": 16,
+  "gpu_count": 1,
+  "concurrencies": [
+    1,
+    8,
+    16,
+    32
+  ],
+  "arrival_pattern": "closed_loop",
+  "seed": 20261019,
+  "temperature": 0.7,
+  "max_tokens": 256,
+  "stream": false,
+  "voice_clone": true,
+  "sampling": "Talker defaults preserved",
+  "phases_per_concurrency": {
+    "warmup": 32,
+    "measured": 32
+  },
+  "profiler": "request events for measured phase only; Torch/CUPTI disabled",
+  "memory_fraction_overrides": null,
+  "compiler_cache": "fresh directory per server visit",
+  "unprofiled_comparison_run": "20261022T132646Z"
+}

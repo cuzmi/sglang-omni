@@ -1,0 +1,50 @@
+[
+  {
+    "name": "warmup_serial_0",
+    "overlap": false,
+    "completion_ms": 737.5981440000032,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "warmup_overlap_0",
+    "overlap": true,
+    "completion_ms": 126.32394500000999,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "warmup_serial_1",
+    "overlap": false,
+    "completion_ms": 146.51457200000095,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "warmup_overlap_1",
+    "overlap": true,
+    "completion_ms": 122.8959409999959,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "validation_serial",
+    "overlap": false,
+    "completion_ms": 152.13024400000563,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  },
+  {
+    "name": "validation_overlap",
+    "overlap": true,
+    "completion_ms": 124.29106299998693,
+    "graph_replays": 20,
+    "graph_misses": 0,
+    "new_compiled_graphs": 0
+  }
+]

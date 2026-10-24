@@ -1,0 +1,72 @@
+{
+  "1": {
+    "baseline": {
+      "samples": 512,
+      "wer_percent": 2.4399126001456666,
+      "similarity_mean_0_100": 48.49024058133364,
+      "wer_over_50_percent": 6
+    },
+    "optimized": {
+      "samples": 512,
+      "wer_percent": 2.3670793882010197,
+      "similarity_mean_0_100": 48.489616364240646,
+      "wer_over_50_percent": 6
+    }
+  },
+  "8": {
+    "baseline": {
+      "samples": 512,
+      "wer_percent": 2.4945375091041515,
+      "similarity_mean_0_100": 48.79513257369399,
+      "wer_over_50_percent": 7
+    },
+    "optimized": {
+      "samples": 512,
+      "wer_percent": 3.113619810633649,
+      "similarity_mean_0_100": 48.64920670725405,
+      "wer_over_50_percent": 9
+    }
+  },
+  "16": {
+    "baseline": {
+      "samples": 512,
+      "wer_percent": 3.459577567370721,
+      "similarity_mean_0_100": 48.51666562259197,
+      "wer_over_50_percent": 11
+    },
+    "optimized": {
+      "samples": 512,
+      "wer_percent": 2.931536780772032,
+      "similarity_mean_0_100": 48.80244550853968,
+      "wer_over_50_percent": 9
+    }
+  },
+  "32": {
+    "baseline": {
+      "samples": 512,
+      "wer_percent": 2.7312454479242536,
+      "similarity_mean_0_100": 48.88430054485798,
+      "wer_over_50_percent": 10
+    },
+    "optimized": {
+      "samples": 512,
+      "wer_percent": 3.3139111434814277,
+      "similarity_mean_0_100": 48.532951571047306,
+      "wer_over_50_percent": 11
+    }
+  },
+  "all": {
+    "baseline": {
+      "samples": 2048,
+      "wer_percent": 2.781318281136198,
+      "similarity_mean_0_100": 48.671584830619395,
+      "wer_over_50_percent": 34
+    },
+    "optimized": {
+      "samples": 2048,
+      "wer_percent": 2.931536780772032,
+      "similarity_mean_0_100": 48.61855503777042,
+      "wer_over_50_percent": 35
+    }
+  }
+}

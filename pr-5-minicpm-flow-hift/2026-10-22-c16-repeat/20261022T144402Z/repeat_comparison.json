@@ -1,0 +1,64 @@
+{
+  "runs": [
+    {
+      "run": "previous",
+      "run_id": "20261022T141048Z",
+      "variant": "baseline",
+      "e2e_mean_ms": 1672.086685625004,
+      "e2e_p95_ms": 2105.385999000009,
+      "qps": 8.909501813289728,
+      "audio_total_s": 123.84,
+      "preprocessing_mean_ms": 8.56362178125,
+      "thinker_mean_ms": 298.60988053125,
+      "talker_mean_ms": 388.78310925,
+      "code2wav_mean_ms": 909.57323978125,
+      "decode_mean_ms": 1.57042428125
+    },
+    {
+      "run": "previous",
+      "run_id": "20261022T141048Z",
+      "variant": "optimized",
+      "e2e_mean_ms": 1769.7607258437529,
+      "e2e_p95_ms": 2489.3320865500527,
+      "qps": 7.63183712256471,
+      "audio_total_s": 124.28,
+      "preprocessing_mean_ms": 10.03380165625,
+      "thinker_mean_ms": 300.11061678125003,
+      "talker_mean_ms": 645.65646365625,
+      "code2wav_mean_ms": 769.74110603125,
+      "decode_mean_ms": 2.52360284375
+    },
+    {
+      "run": "repeat",
+      "run_id": "20261022T144402Z",
+      "variant": "baseline",
+      "e2e_mean_ms": 1912.9327296874994,
+      "e2e_p95_ms": 2650.854713450013,
+      "qps": 7.786790142446893,
+      "audio_total_s": 126.92,
+      "preprocessing_mean_ms": 7.33774065625,
+      "thinker_mean_ms": 312.19776571875,
+      "talker_mean_ms": 486.0964013125,
+      "code2wav_mean_ms": 1044.208327125,
+      "decode_mean_ms": 1.66953734375
+    },
+    {
+      "run": "repeat",
+      "run_id": "20261022T144402Z",
+      "variant": "optimized",
+      "e2e_mean_ms": 1551.5762117187498,
+      "e2e_p95_ms": 1962.2925650000013,
+      "qps": 8.782856832431849,
+      "audio_total_s": 124.84,
+      "preprocessing_mean_ms": 5.05266065625,
+      "thinker_mean_ms": 262.960342125,
+      "talker_mean_ms": 586.00436509375,
+      "code2wav_mean_ms": 661.18239509375,
+      "decode_mean_ms": 1.56914903125
+    }
+  ],
+  "equal_audio_lengths_across_repeats": {
+    "baseline": 14,
+    "optimized": 7
+  }
+}

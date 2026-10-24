@@ -1,0 +1,30 @@
+{
+  "server": [
+    "/opt/sglang/bin/python",
+    "-m",
+    "sglang_omni.cli",
+    "serve",
+    "--model-path",
+    "/work/cache/hf/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582",
+    "--model-name",
+    "MiniCPM-o-4_5",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18080",
+    "--thinker.engine.max_total_tokens",
+    "131072",
+    "--talker.engine.max_total_tokens",
+    "131072"
+  ],
+  "cwd": "/work/baseline",
+  "environment": {
+    "PYTHONPATH": "/work/baseline",
+    "SGLANG_OMNI_STRICT_PORT": "1",
+    "TORCHINDUCTOR_CACHE_DIR": "/work/cache/r2-baseline-c1/inductor",
+    "TRITON_CACHE_DIR": "/work/cache/r2-baseline-c1/triton",
+    "CUDA_CACHE_PATH": "/work/cache/r2-baseline-c1/cuda",
+    "OMP_NUM_THREADS": "4",
+    "TORCHINDUCTOR_COMPILE_THREADS": "4"
+  }
+}

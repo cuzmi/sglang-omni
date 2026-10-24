@@ -1,0 +1,76 @@
+WARN `--no-project` was provided, but no project was found
+✓ Initialized. View run at 
+https://modal.com/apps/xinyuj2/main/ap-HrF8WDTxW0FcfsssJDCFLq
+Building image im-yAO6JqNRyETD7sCFaUwFdZ
+
+=> Step 0: FROM base
+
+=> Step 1: ENV PYTHONUNBUFFERED=1
+
+=> Step 2: ENV HF_HOME=/root/.cache/hf_cache
+
+=> Step 3: ENV OMP_NUM_THREADS=4
+Saving image...
+Image saved, took 3.82s
+
+Built image im-yAO6JqNRyETD7sCFaUwFdZ in 9.38s
+
+
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/run_moda
+│   l.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/compare.
+│   py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/quality.
+│   py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/driver.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/capture_
+│   hook.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/replay.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/client.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/prepare_
+│   data.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/baseline
+│   .tar
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/optimize
+│   d.tar
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID 20261023T213729Z
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+/sgl-workspace/sglang/python/sglang/srt/layers/quantization/awq/awq.py:53: UserWarning: Only CUDA, HIP and XPU support AWQ currently.
+  warnings.warn(f"Only CUDA, HIP and XPU support AWQ currently.")
+/sgl-workspace/sglang/python/sglang/srt/layers/quantization/gguf.py:69: UserWarning: Only CUDA, MUSA and NPU support GGUF quantization currently.
+  warnings.warn(f"Only CUDA, MUSA and NPU support GGUF quantization currently.")
+/sgl-workspace/sglang/python/sglang/kernels/ops/attention/fla/utils.py:223: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+2.14.1+cu130
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1AFetching 54 files:   0%|          | 0/54 [00:00<?, ?it/s]
+[1AFetching 54 files: 100%|██████████| 54/54 [00:00<00:00, 571.93it/s]
+{"root": "/results/minicpm-accuracy-frozen256/20261023T213729Z", "model": "/__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582", "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582", "dataset_revision": "27f4c1adee83b5b29b7c4b375f6b976324bda308", "measured_count": 256, "warmup_count": 32, "sample_ids_disjoint": true, "target_texts_disjoint": true, "reference_bytes_disjoint": true, "inputs_sha256": "c245f05fb993a7ec2b3e398662361fd3856c4edf2b07cc4e99741900e0563a11"}
+C16 warmup: 32/32, valid=True, elapsed=15.328s
+C16 measured: 256/256, valid=True, elapsed=22.258s
+Traceback (most recent call last):
+  File "/opt/accuracy/driver.py", line 109, in <module>
+    main()
+  File "/opt/accuracy/driver.py", line 95, in main
+    assert len({tuple(record['codec_tokens']) for record in records})==256
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Artifacts: /Users/cuzimi/Coding Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/20261023T213729Z; {'status': 'failed', 'error': "CalledProcessError(1, ['/opt/sglang/bin/python', '/opt/accuracy/driver.py'])"}
+Stopping app - uncaught exception raised locally: SystemExit(1).

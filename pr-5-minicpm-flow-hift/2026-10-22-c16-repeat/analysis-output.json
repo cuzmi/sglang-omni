@@ -1,0 +1,65 @@
+{
+  "validation": {
+    "all_cells_valid": true,
+    "measured_requests": 64,
+    "warmup_requests": 64,
+    "same_fixed_inputs": true,
+    "warmup_and_measured_disjoint": true,
+    "resolved_configs_identical": true,
+    "no_torch_profiler_api_calls_or_artifacts": true,
+    "all_gpu_processes_stopped_after_cells": true,
+    "all_request_event_joins_exact": true,
+    "all_required_stage_boundaries_unique": true,
+    "all_stage_intervals_nonnegative": true,
+    "warmup_not_profiled": true
+  },
+  "stage_changes": [
+    {
+      "concurrency": 16,
+      "stage": "preprocessing",
+      "baseline_mean_ms": 7.33774065625,
+      "optimized_mean_ms": 5.05266065625,
+      "change_ms": -2.2850800000000007,
+      "change_pct": -31.14146584144616
+    },
+    {
+      "concurrency": 16,
+      "stage": "thinker",
+      "baseline_mean_ms": 312.19776571875,
+      "optimized_mean_ms": 262.960342125,
+      "change_ms": -49.23742359375001,
+      "change_pct": -15.771228689095295
+    },
+    {
+      "concurrency": 16,
+      "stage": "talker",
+      "baseline_mean_ms": 486.0964013125,
+      "optimized_mean_ms": 586.00436509375,
+      "change_ms": 99.90796378125003,
+      "change_pct": 20.553117346989282
+    },
+    {
+      "concurrency": 16,
+      "stage": "code2wav",
+      "baseline_mean_ms": 1044.208327125,
+      "optimized_mean_ms": 661.18239509375,
+      "change_ms": -383.02593203125014,
+      "change_pct": -36.68098808269692
+    }
+  ],
+  "output_comparisons": [
+    {
+      "concurrency": 16,
+      "qps_change_pct": 12.791749511204298,
+      "mean_latency_change_pct": -18.89018428932321,
+      "p95_latency_change_pct": -25.97509946344315,
+      "audio_throughput_change_pct": 10.943287180733874,
+      "audio_total_change_pct": -1.638827607942006,
+      "equal_audio_length_requests": 13,
+      "equal_completion_token_requests": 32,
+      "requests_audio_change_over_10pct": 8,
+      "mean_absolute_audio_delta_s": 0.2675,
+      "maximum_absolute_audio_delta_s": 1.4400000000000004
+    }
+  ]
+}

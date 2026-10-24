@@ -1,0 +1,116 @@
+[
+  {
+    "experiment": "2026-10-20-kernel-overlap",
+    "path": "20261020T165001Z/attributed_kernels.csv",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_nvtx_h100_20261020/20261020T165001Z/attributed_kernels.csv",
+    "sha256": "a30ba2e00ae37f076c3f185d5a25dba25d916abd7f5b94c44a38977a06c4e76d"
+  },
+  {
+    "experiment": "2026-10-20-kernel-overlap",
+    "path": "20261020T165001Z/gpu_timeline.svg",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_nvtx_h100_20261020/20261020T165001Z/gpu_timeline.svg",
+    "sha256": "cbc82bb3dc2151c8c27fd786bd5c4360c41d9712a0c086d4f1863b96f8c23589"
+  },
+  {
+    "experiment": "2026-10-20-kernel-overlap",
+    "path": "20261020T165001Z/probe.nsys-rep",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_nvtx_h100_20261020/20261020T165001Z/probe.nsys-rep",
+    "sha256": "cb217c8c2f8ea0bd080a700ce4458b0e228f4ca97aff8743e54d8f637cc0fbd6"
+  },
+  {
+    "experiment": "2026-10-20-kernel-overlap",
+    "path": "20261020T165001Z/probe.sqlite",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_nvtx_h100_20261020/20261020T165001Z/probe.sqlite",
+    "sha256": "3b8fb60dca13b6d0dca5b927527f1c245322d1fbf003db50418978daf74e7cf2"
+  },
+  {
+    "experiment": "2026-10-20-kernel-overlap",
+    "path": "20261020T165001Z/timeline.nsys-rep",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_nvtx_h100_20261020/20261020T165001Z/timeline.nsys-rep",
+    "sha256": "17db3ecdc18443d7a246ca6f6397d295aea58d9f151e03b85730acd04a8156dd"
+  },
+  {
+    "experiment": "2026-10-20-kernel-overlap",
+    "path": "20261020T165001Z/timeline.sqlite",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_nvtx_h100_20261020/20261020T165001Z/timeline.sqlite",
+    "sha256": "d32e699609bfe5384bf62ebe2cdea3f46600a55bd30b426aea621e1cd1f25a03"
+  },
+  {
+    "experiment": "2026-10-20-same-graph",
+    "path": "20261020T171213Z/probe.nsys-rep",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_same_graph_h100_20261020/20261020T171213Z/probe.nsys-rep",
+    "sha256": "e7541657ff0e770f4570ba12ff7e3363ba553899f44a0f2a18ba47a9b0fc89b9"
+  },
+  {
+    "experiment": "2026-10-20-same-graph",
+    "path": "20261020T171213Z/probe.sqlite",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_same_graph_h100_20261020/20261020T171213Z/probe.sqlite",
+    "sha256": "7a5c39638e8824d4905cd10c8767500098d34b5cabb533492f1b35be8419664e"
+  },
+  {
+    "experiment": "2026-10-20-same-graph",
+    "path": "20261020T171213Z/trace/attributed_kernels.csv",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_same_graph_h100_20261020/20261020T171213Z/trace/attributed_kernels.csv",
+    "sha256": "976300c709cc212d7c1c31716c5966976afed636a4138e3a7d98cc2cd7dc8a6f"
+  },
+  {
+    "experiment": "2026-10-20-same-graph",
+    "path": "20261020T171213Z/trace/gpu_timeline.svg",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_same_graph_h100_20261020/20261020T171213Z/trace/gpu_timeline.svg",
+    "sha256": "c6aac24d7b88c15676345663f4b83466d86c9e713114058d87b69f8339304136"
+  },
+  {
+    "experiment": "2026-10-20-same-graph",
+    "path": "20261020T171213Z/trace/timeline.nsys-rep",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_same_graph_h100_20261020/20261020T171213Z/trace/timeline.nsys-rep",
+    "sha256": "1642ac10f38a4d688b944ad795e8f63a692e840fb5d609dc6593acc07937fa8c"
+  },
+  {
+    "experiment": "2026-10-20-same-graph",
+    "path": "20261020T171213Z/trace/timeline.sqlite",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_ready_overlap_same_graph_h100_20261020/20261020T171213Z/trace/timeline.sqlite",
+    "sha256": "b4993fd7034b1738b163690a8ebe4227db7d4e23541004cc832b4966b0d60af5"
+  },
+  {
+    "experiment": "2026-10-20-sm-metrics",
+    "path": "20261020T175814Z/probe.nsys-rep",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_same_graph_sm_metrics_h100_20261020/20261020T175814Z/probe.nsys-rep",
+    "sha256": "1baa5b7407e1545903986f60b5717390b8fcc7012a9d34411b355534f40b1afe"
+  },
+  {
+    "experiment": "2026-10-20-sm-metrics",
+    "path": "20261020T175814Z/probe.sqlite",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_same_graph_sm_metrics_h100_20261020/20261020T175814Z/probe.sqlite",
+    "sha256": "055f9a54a97d60ef82fd14a277050e2c48415502a02f0aaa41850cf0245a447b"
+  },
+  {
+    "experiment": "2026-10-20-sm-metrics",
+    "path": "20261020T175814Z/trace/attributed_kernels.csv",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_same_graph_sm_metrics_h100_20261020/20261020T175814Z/trace/attributed_kernels.csv",
+    "sha256": "f287a440aef2e5c816d03d99f561c5a1355baa425555d374e2837d7a7d1c4988"
+  },
+  {
+    "experiment": "2026-10-20-sm-metrics",
+    "path": "20261020T175814Z/trace/timeline.nsys-rep",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_same_graph_sm_metrics_h100_20261020/20261020T175814Z/trace/timeline.nsys-rep",
+    "sha256": "4be99b7b972afb14f4f7dea819d607ed38a72a64e41954e009eeb0e0900b85d4"
+  },
+  {
+    "experiment": "2026-10-20-sm-metrics",
+    "path": "20261020T175814Z/trace/timeline.sqlite",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_same_graph_sm_metrics_h100_20261020/20261020T175814Z/trace/timeline.sqlite",
+    "sha256": "2e67a7460e1c82b12c08f45291c65129015620cb3b2d4880d6e6ad9125da7059"
+  },
+  {
+    "experiment": "2026-10-20-sm-metrics",
+    "path": "probe-20261020T175607Z/probe.nsys-rep",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_same_graph_sm_metrics_h100_20261020/probe-20261020T175607Z/probe.nsys-rep",
+    "sha256": "784bb4a43a10d9d11214ab2458675d16d8f64e3ae94e1e18bc8196a5074c4162"
+  },
+  {
+    "experiment": "2026-10-20-sm-metrics",
+    "path": "probe-20261020T175607Z/probe.sqlite",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_same_graph_sm_metrics_h100_20261020/probe-20261020T175607Z/probe.sqlite",
+    "sha256": "1f4c2008e587d9b0e3be5cc396e8a89b786df88bc01f35b569082e9f26d7e5e3"
+  }
+]

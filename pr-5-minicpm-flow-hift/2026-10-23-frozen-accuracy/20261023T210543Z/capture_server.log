@@ -1,0 +1,372 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+The repository /__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582 contains custom code which must be executed to correctly load the model. You can inspect the repository content at /__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582 .
+ You can inspect the repository content at https://hf.co//__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] 2026-10-23 21:07:32,062 [INFO] sglang_omni.pipeline.mp_runner: CPU thread fallback plan: budget=32 processes=2 fallback_threads_per_process=16 fallback_overcommitted=false allocations={'pipeline': {'fallback_threads': 16, 'cpus': None, 'stages': ['preprocessing', 'thinker', 'image_encoder', 'audio_encoder', 'decode']}, 'talker': {'fallback_threads': 16, 'cpus': None, 'stages': ['talker', 'code2wav']}}
+2026-10-23 21:07:32,066 [INFO] sglang_omni.pipeline.mp_runner: Coordinator stream backlog cap: max_total_backlog_bytes=1073741824
+2026-10-23 21:07:32,169 [INFO] sglang_omni.pipeline.control_plane: Coordinator control plane started
+2026-10-23 21:07:32,170 [INFO] sglang_omni.pipeline.coordinator: Coordinator started
+2026-10-23 21:07:32,174 [INFO] sglang_omni.pipeline.stage_workers: Worker spawn environment: process=pipeline OMP_NUM_THREADS=16 source=environment_or_policy fallback_threads=16
+2026-10-23 21:07:32,180 [INFO] sglang_omni.pipeline.stage_workers: StageGroup pipeline: spawned 1 process(es) (pids=[61])
+2026-10-23 21:07:32,182 [INFO] sglang_omni.pipeline.stage_workers: Worker spawn environment: process=talker OMP_NUM_THREADS=16 source=environment_or_policy fallback_threads=16
+2026-10-23 21:07:32,187 [INFO] sglang_omni.pipeline.stage_workers: StageGroup talker: spawned 1 process(es) (pids=[62])
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+2026-10-23 21:07:42,250 [INFO] stage_workers.talker: Set current device to 0 for stage talker
+2026-10-23 21:07:42,251 [INFO] stage_workers.talker: Building scheduler for talker (tp_rank=0/1) ...
+2026-10-23 21:07:42,253 [INFO] stage_workers.pipeline: Set current device to 0 for stage preprocessing
+2026-10-23 21:07:42,254 [INFO] stage_workers.pipeline: Building scheduler for preprocessing (tp_rank=0/1) ...
+2026-10-23 21:07:44,095 [INFO] qwen_vl_utils.vision_process: set VIDEO_TOTAL_PIXELS: 90316800
+2026-10-23 21:07:44,095 [INFO] qwen_vl_utils.vision_process: set VIDEO_TOTAL_PIXELS: 90316800
+2026-10-23 21:07:44,513 [INFO] sglang.srt.configs.linear_attn_model_registry: Registered linear attn model: config=GigaChat35Config, backend=GDNAttnBackend, archs=['GigaChat35ForCausalLM', 'GigaChat35ForCausalLMNextN']
+2026-10-23 21:07:44,514 [INFO] sglang.srt.configs.linear_attn_model_registry: Registered linear attn model: config=GigaChat35Config, backend=GDNAttnBackend, archs=['GigaChat35ForCausalLM', 'GigaChat35ForCausalLMNextN']
+2026-10-23 21:07:51,060 [ERROR] stage_workers.pipeline: Stage process pipeline failed
+Traceback (most recent call last):
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 654, in stage_process_main
+    run_process(spec, ready_event, log)
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 767, in run_process
+    construct_stage(
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 921, in construct_stage
+    scheduler = construct_scheduler(spec, gpu_id, log)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 1177, in construct_scheduler
+    factory = import_string(spec.factory)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/capture/sglang_omni/utils/imports.py", line 21, in import_string
+    module = importlib.import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/capture/sglang_omni/models/minicpm_o/stages.py", line 39, in <module>
+    from sglang_omni.scheduling.omni_scheduler import OmniScheduler
+  File "/workspace/capture/sglang_omni/scheduling/omni_scheduler.py", line 32, in <module>
+    from sglang.srt.configs.model_config import ModelConfig
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/configs/model_config.py", line 34, in <module>
+    from sglang.srt.layers.quantization import QUANTIZATION_METHODS
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/__init__.py", line 18, in <module>
+    from sglang.srt.layers.quantization.compressed_tensors.compressed_tensors import (
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compressed_tensors/compressed_tensors.py", line 40, in <module>
+    from sglang.srt.layers.quantization.compressed_tensors.schemes import (
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compressed_tensors/schemes/__init__.py", line 17, in <module>
+    from .compressed_tensors_w8a8_int8 import (
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compressed_tensors/schemes/compressed_tensors_w8a8_int8.py", line 30, in <module>
+    from sgl_kernel import int8_scaled_mm
+  File "/usr/local/lib/python3.12/dist-packages/sgl_kernel/__init__.py", line 19, in <module>
+    common_ops = _load_architecture_specific_ops()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sgl_kernel/load_utils.py", line 197, in _load_architecture_specific_ops
+    raise ImportError(error_msg)
+ImportError: 
+[sgl_kernel] CRITICAL: Could not load any common_ops library!
+
+Attempted locations:
+1. Architecture-specific pattern: /usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.* - found files: ['/usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.abi3.so']
+2. Fallback pattern: /usr/local/lib/python3.12/dist-packages/sgl_kernel/common_ops.* - found files: []
+3. Standard Python import: common_ops - failed
+
+GPU Info:
+- Compute capability: 90
+- Expected variant: SM90 (Hopper/H100 with fast math optimization)
+- CUDA version: 13.0
+
+Please ensure sgl_kernel is properly installed with:
+pip install --upgrade sglang-kernel
+
+Error details from previous import attempts:
+- ImportError: /usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.abi3.so: undefined symbol: _ZN3c104cuda29c10_cuda_check_implementationEiPKcS2_jb
+- ModuleNotFoundError: No module named 'common_ops'
+
+
+2026-10-23 21:07:51,060 [ERROR] stage_workers.talker: Stage process talker failed
+Traceback (most recent call last):
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 654, in stage_process_main
+    run_process(spec, ready_event, log)
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 767, in run_process
+    construct_stage(
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 921, in construct_stage
+    scheduler = construct_scheduler(spec, gpu_id, log)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 1177, in construct_scheduler
+    factory = import_string(spec.factory)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/capture/sglang_omni/utils/imports.py", line 21, in import_string
+    module = importlib.import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/capture/sglang_omni/models/minicpm_o/stages.py", line 39, in <module>
+    from sglang_omni.scheduling.omni_scheduler import OmniScheduler
+  File "/workspace/capture/sglang_omni/scheduling/omni_scheduler.py", line 32, in <module>
+    from sglang.srt.configs.model_config import ModelConfig
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/configs/model_config.py", line 34, in <module>
+    from sglang.srt.layers.quantization import QUANTIZATION_METHODS
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/__init__.py", line 18, in <module>
+    from sglang.srt.layers.quantization.compressed_tensors.compressed_tensors import (
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compressed_tensors/compressed_tensors.py", line 40, in <module>
+    from sglang.srt.layers.quantization.compressed_tensors.schemes import (
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compressed_tensors/schemes/__init__.py", line 17, in <module>
+    from .compressed_tensors_w8a8_int8 import (
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compressed_tensors/schemes/compressed_tensors_w8a8_int8.py", line 30, in <module>
+    from sgl_kernel import int8_scaled_mm
+  File "/usr/local/lib/python3.12/dist-packages/sgl_kernel/__init__.py", line 19, in <module>
+    common_ops = _load_architecture_specific_ops()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sgl_kernel/load_utils.py", line 197, in _load_architecture_specific_ops
+    raise ImportError(error_msg)
+ImportError: 
+[sgl_kernel] CRITICAL: Could not load any common_ops library!
+
+Attempted locations:
+1. Architecture-specific pattern: /usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.* - found files: ['/usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.abi3.so']
+2. Fallback pattern: /usr/local/lib/python3.12/dist-packages/sgl_kernel/common_ops.* - found files: []
+3. Standard Python import: common_ops - failed
+
+GPU Info:
+- Compute capability: 90
+- Expected variant: SM90 (Hopper/H100 with fast math optimization)
+- CUDA version: 13.0
+
+Please ensure sgl_kernel is properly installed with:
+pip install --upgrade sglang-kernel
+
+Error details from previous import attempts:
+- ImportError: /usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.abi3.so: undefined symbol: _ZN3c104cuda29c10_cuda_check_implementationEiPKcS2_jb
+- ModuleNotFoundError: No module named 'common_ops'
+
+
+2026-10-23 21:07:51,338 [WARNING] stage_workers.pipeline: Reclaiming GPU memory after stage process pipeline exit after failure on gpu_ids=[0]
+2026-10-23 21:07:51,340 [WARNING] stage_workers.talker: Reclaiming GPU memory after stage process talker exit after failure on gpu_ids=[0]
+2026-10-23 21:07:51,511 [WARNING] stage_workers.pipeline: GPU memory reclaim complete after stage process pipeline exit after failure on gpu_ids=[0]
+2026-10-23 21:07:51,514 [WARNING] stage_workers.talker: GPU memory reclaim complete after stage process talker exit after failure on gpu_ids=[0]
+2026-10-23 21:07:53,205 [INFO] sglang_omni.pipeline.coordinator: Coordinator completion loop cancelled
+2026-10-23 21:07:53,208 [INFO] sglang_omni.pipeline.coordinator: Coordinator stopped
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /workspace/capture/sglang_omni/cli/serve.py:577 in serve                     │
+│                                                                              │
+│   574 │   else:                                                              │
+│   575 │   │   pass                                                           │
+│   576 │                                                                      │
+│ ❱ 577 │   launch_server(                                                     │
+│   578 │   │   merged_config,                                                 │
+│   579 │   │   host=host,                                                     │
+│   580 │   │   port=port,                                                     │
+│                                                                              │
+│ /workspace/capture/sglang_omni/cli/serve.py:38 in launch_server              │
+│                                                                              │
+│    35 def launch_server(*args: object, **kwargs: object) -> NoReturn:        │
+│    36 │   from sglang_omni.serve.launcher import launch_server as            │
+│       _launch_server                                                         │
+│    37 │                                                                      │
+│ ❱  38 │   _launch_server(*args, **kwargs)                                    │
+│    39 │   # note (Richard Wang): the launcher has stopped the pipeline and   │
+│       joined                                                                 │
+│    40 │   # every stage by now. Tearing down the modules and objects the CLI │
+│    41 │   # imported took about a second more, and the server's stop waited  │
+│       for it.                                                                │
+│                                                                              │
+│ /workspace/capture/sglang_omni/serve/launcher.py:928 in launch_server        │
+│                                                                              │
+│   925 │   │   │   signal.signal(signal.SIGTERM, previous_handler)            │
+│   926 │                                                                      │
+│   927 │   try:                                                               │
+│ ❱ 928 │   │   asyncio.run(run_server_with_sigterm_cleanup())                 │
+│   929 │   except asyncio.CancelledError:                                     │
+│   930 │   │   if sigterm_received and not cleanup_failed:                    │
+│   931 │   │   │   signal.raise_signal(signal.SIGTERM)                        │
+│                                                                              │
+│ /usr/lib/python3.12/asyncio/runners.py:194 in run                            │
+│                                                                              │
+│   191 │   │   │   "asyncio.run() cannot be called from a running event       │
+│       loop")                                                                 │
+│   192 │                                                                      │
+│   193 │   with Runner(debug=debug, loop_factory=loop_factory) as runner:     │
+│ ❱ 194 │   │   return runner.run(main)                                        │
+│   195                                                                        │
+│   196                                                                        │
+│   197 def _cancel_all_tasks(loop):                                           │
+│                                                                              │
+│ /usr/lib/python3.12/asyncio/runners.py:118 in run                            │
+│                                                                              │
+│   115 │   │                                                                  │
+│   116 │   │   self._interrupt_count = 0                                      │
+│   117 │   │   try:                                                           │
+│ ❱ 118 │   │   │   return self._loop.run_until_complete(task)                 │
+│   119 │   │   except exceptions.CancelledError:                              │
+│   120 │   │   │   if self._interrupt_count > 0:                              │
+│   121 │   │   │   │   uncancel = getattr(task, "uncancel", None)             │
+│                                                                              │
+│ /usr/lib/python3.12/asyncio/base_events.py:687 in run_until_complete         │
+│                                                                              │
+│    684 │   │   if not future.done():                                         │
+│    685 │   │   │   raise RuntimeError('Event loop stopped before Future      │
+│        completed.')                                                          │
+│    686 │   │                                                                 │
+│ ❱  687 │   │   return future.result()                                        │
+│    688 │                                                                     │
+│    689 │   def stop(self):                                                   │
+│    690 │   │   """Stop running the event loop.                               │
+│                                                                              │
+│ /workspace/capture/sglang_omni/serve/launcher.py:919 in                      │
+│ run_server_with_sigterm_cleanup                                              │
+│                                                                              │
+│   916 │   │                                                                  │
+│   917 │   │   signal.signal(signal.SIGTERM, handle_sigterm)                  │
+│   918 │   │   try:                                                           │
+│ ❱ 919 │   │   │   await server_run                                           │
+│   920 │   │   except asyncio.CancelledError as cancelled:                    │
+│   921 │   │   │   # note (Richard Wang): Python 3.10 drops the cause outside │
+│       asyncio.run                                                            │
+│   922 │   │   │   cleanup_failed = cancelled.__cause__ is not None           │
+│                                                                              │
+│ /workspace/capture/sglang_omni/serve/launcher.py:628 in run_server           │
+│                                                                              │
+│   625 │   async with ServiceProcesses(pipeline_config.services) as services: │
+│   626 │   │   mp_runner = MultiProcessPipelineRunner(pipeline_config)        │
+│   627 │   │   startup_timeout =                                              │
+│       float(os.environ.get("SGLANG_OMNI_STARTUP_TIMEOUT", "600"))            │
+│ ❱ 628 │   │   await mp_runner.start(timeout=startup_timeout)                 │
+│   629 │   │   coordinator = mp_runner.coordinator                            │
+│   630 │   │                                                                  │
+│   631 │   │   # Plans are resolved once inside ``mp_runner.start()`` (which  │
+│       applies                                                                │
+│                                                                              │
+│ /workspace/capture/sglang_omni/pipeline/mp_runner.py:863 in start            │
+│                                                                              │
+│    860 │   │   │   │   │   │   │   process_env_overrides=env_by_process,     │
+│    861 │   │   │   │   │   │   )                                             │
+│    862 │   │   │   │                                                         │
+│ ❱  863 │   │   │   │   await self.wait_wave_ready(wave, ready_groups,        │
+│        timeout)                                                              │
+│    864 │   │   │   │                                                         │
+│    865 │   │   │   │   for group in wave:                                    │
+│    866 │   │   │   │   │   if group.any_dead():                              │
+│                                                                              │
+│ /workspace/capture/sglang_omni/pipeline/mp_runner.py:956 in wait_wave_ready  │
+│                                                                              │
+│    953 │   │   │   │   )                                                     │
+│    954 │   │   │   │   for task in done:                                     │
+│    955 │   │   │   │   │   ready_groups.append(waits.pop(task))              │
+│ ❱  956 │   │   │   │   │   task.result()                                     │
+│    957 │   │   │   │   for group in ready_groups:                            │
+│    958 │   │   │   │   │   if group.any_dead():                              │
+│    959 │   │   │   │   │   │   raise RuntimeError(                           │
+│                                                                              │
+│ /workspace/capture/sglang_omni/pipeline/stage_workers.py:497 in wait_ready   │
+│                                                                              │
+│    494 │   │   │   │   │   │   pass                                          │
+│    495 │   │   │   │   │   else:                                             │
+│    496 │   │   │   │   │   │   details = f"\nStartup failure                 │
+│        detail:\n{traceback_text}"                                            │
+│ ❱  497 │   │   │   │   │   raise RuntimeError(                               │
+│    498 │   │   │   │   │   │   f"Process {process_label} died during startup │
+│        "                                                                     │
+│    499 │   │   │   │   │   │   f"(exit code {proc.exitcode}){details}"       │
+│    500 │   │   │   │   │   )                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: Process talker died during startup (exit code 1)
+Startup failure detail:
+Traceback (most recent call last):
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 654, in 
+stage_process_main
+    run_process(spec, ready_event, log)
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 767, in 
+run_process
+    construct_stage(
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 921, in 
+construct_stage
+    scheduler = construct_scheduler(spec, gpu_id, log)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/capture/sglang_omni/pipeline/stage_workers.py", line 1177, in
+construct_scheduler
+    factory = import_string(spec.factory)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/capture/sglang_omni/utils/imports.py", line 21, in 
+import_string
+    module = importlib.import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspace/capture/sglang_omni/models/minicpm_o/stages.py", line 39, in 
+<module>
+    from sglang_omni.scheduling.omni_scheduler import OmniScheduler
+  File "/workspace/capture/sglang_omni/scheduling/omni_scheduler.py", line 32, 
+in <module>
+    from sglang.srt.configs.model_config import ModelConfig
+  File 
+"/usr/local/lib/python3.12/dist-packages/sglang/srt/configs/model_config.py", 
+line 34, in <module>
+    from sglang.srt.layers.quantization import QUANTIZATION_METHODS
+  File 
+"/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/__init__
+.py", line 18, in <module>
+    from sglang.srt.layers.quantization.compressed_tensors.compressed_tensors 
+import (
+  File 
+"/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compress
+ed_tensors/compressed_tensors.py", line 40, in <module>
+    from sglang.srt.layers.quantization.compressed_tensors.schemes import (
+  File 
+"/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compress
+ed_tensors/schemes/__init__.py", line 17, in <module>
+    from .compressed_tensors_w8a8_int8 import (
+  File 
+"/usr/local/lib/python3.12/dist-packages/sglang/srt/layers/quantization/compress
+ed_tensors/schemes/compressed_tensors_w8a8_int8.py", line 30, in <module>
+    from sgl_kernel import int8_scaled_mm
+  File "/usr/local/lib/python3.12/dist-packages/sgl_kernel/__init__.py", line 
+19, in <module>
+    common_ops = _load_architecture_specific_ops()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/sgl_kernel/load_utils.py", line 
+197, in _load_architecture_specific_ops
+    raise ImportError(error_msg)
+ImportError: 
+[sgl_kernel] CRITICAL: Could not load any common_ops library!
+
+Attempted locations:
+1. Architecture-specific pattern: 
+/usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.* - found 
+files: 
+['/usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.abi3.so']
+2. Fallback pattern: 
+/usr/local/lib/python3.12/dist-packages/sgl_kernel/common_ops.* - found files: 
+[]
+3. Standard Python import: common_ops - failed
+
+GPU Info:
+- Compute capability: 90
+- Expected variant: SM90 (Hopper/H100 with fast math optimization)
+- CUDA version: 13.0
+
+Please ensure sgl_kernel is properly installed with:
+pip install --upgrade sglang-kernel
+
+Error details from previous import attempts:
+- ImportError: 
+/usr/local/lib/python3.12/dist-packages/sgl_kernel/sm90/common_ops.abi3.so: 
+undefined symbol: _ZN3c104cuda29c10_cuda_check_implementationEiPKcS2_jb
+- ModuleNotFoundError: No module named 'common_ops'
+
+

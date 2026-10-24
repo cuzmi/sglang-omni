@@ -1,0 +1,18 @@
+{
+  "samples": 256,
+  "asr_checkpoint": "/__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--Qwen--Qwen3-ASR-1.7B/snapshots/7278e1e70fe206f11671096ffdd38061171dd6e5",
+  "speaker_assets": {
+    "finetune": "/root/.cache/sglang-omni/speaker_sim/wavlm_large_finetune.pth",
+    "base": "/root/.cache/sglang-omni/speaker_sim/wavlm_large.pt"
+  },
+  "baseline": {
+    "corpus_wer_percent": 2.5127458120903134,
+    "mean_similarity_0_100": 48.46123830974102,
+    "wer_over_50_percent": 4
+  },
+  "optimized": {
+    "corpus_wer_percent": 2.5127458120903134,
+    "mean_similarity_0_100": 48.460693165659904,
+    "wer_over_50_percent": 4
+  }
+}

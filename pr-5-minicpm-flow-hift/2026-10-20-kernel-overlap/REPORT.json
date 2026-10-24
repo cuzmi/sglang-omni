@@ -1,0 +1,89 @@
+{
+  "title": "NVTX and Nsight verification of ready-input Flow/HiFT overlap",
+  "source_commit": "917821a95770c89f875fc0e4c4456f85c221d441",
+  "run_id": "20261020T165001Z",
+  "same_inputs_as_unprofiled_run": "20261020T135528Z",
+  "hardware": "One H100 80GB, 16 CPU cores",
+  "profiler": "Nsight Systems 2026.4.1, CUDA + NVTX, cuda-graph-trace=node, explicit CUDA Profiler API capture window",
+  "kernel_attribution": "GPU kernel correlationId -> CUDA runtime launch -> same-thread enclosing NVTX ranges. No attribution from coincident GPU timestamps.",
+  "attribution_table": [
+    {
+      "region": "Flow/A/graph",
+      "serial_kernels": 4020,
+      "overlap_kernels": 4020,
+      "same_signature_multiset": true
+    },
+    {
+      "region": "Flow/B/graph",
+      "serial_kernels": 4020,
+      "overlap_kernels": 4020,
+      "same_signature_multiset": true
+    },
+    {
+      "region": "HiFT/A",
+      "serial_kernels": 2180,
+      "overlap_kernels": 2180,
+      "same_signature_multiset": true
+    },
+    {
+      "region": "HiFT/B",
+      "serial_kernels": 1634,
+      "overlap_kernels": 1634,
+      "same_signature_multiset": true
+    }
+  ],
+  "overlap_table": [
+    {
+      "mode": "serial",
+      "flow_b_graph_hift_a_intersection_ms": 0.0,
+      "flow_b_graph_first_gpu_ms": 93.920597,
+      "hift_a_last_gpu_ms": 81.699165
+    },
+    {
+      "mode": "overlap",
+      "flow_b_graph_hift_a_intersection_ms": 15.116454,
+      "flow_b_graph_first_gpu_ms": 55.568009,
+      "hift_a_last_gpu_ms": 86.113765
+    }
+  ],
+  "fusion_table": [
+    {
+      "path": "Flow DiT / HiFT decode body",
+      "status": "Existing default compilation retained; no new fusion implemented or inferred."
+    }
+  ],
+  "validation": {
+    "valid": true,
+    "same_inputs_config_noise": true,
+    "trace_passes": [
+      {
+        "name": "trace_serial",
+        "overlap": false,
+        "completion_ms": 165.07858399999975,
+        "graph_replays": 20,
+        "graph_misses": 0,
+        "new_compiled_graphs": 0
+      },
+      {
+        "name": "trace_overlap",
+        "overlap": true,
+        "completion_ms": 130.16516199999728,
+        "graph_replays": 20,
+        "graph_misses": 0,
+        "new_compiled_graphs": 0
+      }
+    ],
+    "no_performance_claim_from_profiled_time": true
+  },
+  "unmatched_kernels": 0,
+  "diagnostic_warning_context": "Nsight emits generic possible-incomplete-event warnings. All 64 expected NVTX ranges, 40 graph launches, and all kernel-to-launch mappings are present. Region kernel signatures are compared separately; no guarantee is made about unobserved events.",
+  "interpretation": "Actual Flow B graph kernels overlap HiFT A kernels in the overlap capture; none intersect in the serial control. This is kernel activity intersection, not a sum of bounding range overlaps or CPU NVTX overlap.",
+  "performance_boundary": "Keep prior unprofiled completion 146.59 -> 123.58 ms (15.7% reduction). Do not use profile durations or 15.12 ms overlap as the unprofiled speedup.",
+  "scope": "Two fixed ready batches of four requests, same Flow/HiFT grouping. Not C32 or full serving.",
+  "files": {
+    "plot": "20261020T165001Z/gpu_timeline.png",
+    "nsight_report": "20261020T165001Z/timeline.nsys-rep",
+    "sqlite": "20261020T165001Z/timeline.sqlite",
+    "full_analysis": "20261020T165001Z/analysis.json"
+  }
+}

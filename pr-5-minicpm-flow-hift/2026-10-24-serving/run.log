@@ -1,0 +1,50 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+2026-10-24T14:26:05.384844+00:00 r1-baseline-c1: starting server
+r1-baseline-c1: ready, matched KV capacities; 128 warmup then 256 measured
+r1-baseline-c1: complete
+2026-10-24T14:30:14.938563+00:00 r1-optimized-c1: starting server
+r1-optimized-c1: ready, matched KV capacities; 128 warmup then 256 measured
+r1-optimized-c1: complete
+2026-10-24T14:33:37.827573+00:00 r1-baseline-c8: starting server
+r1-baseline-c8: ready, matched KV capacities; 128 warmup then 256 measured
+r1-baseline-c8: complete
+2026-10-24T14:35:43.656683+00:00 r1-optimized-c8: starting server
+r1-optimized-c8: ready, matched KV capacities; 128 warmup then 256 measured
+r1-optimized-c8: complete
+2026-10-24T14:37:45.419370+00:00 r1-baseline-c16: starting server
+r1-baseline-c16: ready, matched KV capacities; 128 warmup then 256 measured
+r1-baseline-c16: complete
+2026-10-24T14:39:42.599543+00:00 r1-optimized-c16: starting server
+r1-optimized-c16: ready, matched KV capacities; 128 warmup then 256 measured
+r1-optimized-c16: complete
+2026-10-24T14:41:38.513361+00:00 r1-baseline-c32: starting server
+r1-baseline-c32: ready, matched KV capacities; 128 warmup then 256 measured
+r1-baseline-c32: complete
+2026-10-24T14:43:26.531681+00:00 r1-optimized-c32: starting server
+r1-optimized-c32: ready, matched KV capacities; 128 warmup then 256 measured
+r1-optimized-c32: complete
+2026-10-24T14:45:14.849511+00:00 r2-optimized-c1: starting server
+r2-optimized-c1: ready, matched KV capacities; 128 warmup then 256 measured
+r2-optimized-c1: complete
+2026-10-24T14:48:33.742284+00:00 r2-baseline-c1: starting server
+r2-baseline-c1: ready, matched KV capacities; 128 warmup then 256 measured
+r2-baseline-c1: complete
+2026-10-24T14:51:52.470351+00:00 r2-optimized-c8: starting server
+r2-optimized-c8: ready, matched KV capacities; 128 warmup then 256 measured
+r2-optimized-c8: complete
+2026-10-24T14:53:53.835941+00:00 r2-baseline-c8: starting server
+r2-baseline-c8: ready, matched KV capacities; 128 warmup then 256 measured
+r2-baseline-c8: complete
+2026-10-24T14:55:58.582476+00:00 r2-optimized-c16: starting server
+r2-optimized-c16: ready, matched KV capacities; 128 warmup then 256 measured
+r2-optimized-c16: complete
+2026-10-24T14:57:51.652935+00:00 r2-baseline-c16: starting server
+r2-baseline-c16: ready, matched KV capacities; 128 warmup then 256 measured
+r2-baseline-c16: complete
+2026-10-24T14:59:46.191997+00:00 r2-optimized-c32: starting server
+r2-optimized-c32: ready, matched KV capacities; 128 warmup then 256 measured
+r2-optimized-c32: complete
+2026-10-24T15:01:34.005639+00:00 r2-baseline-c32: starting server
+r2-baseline-c32: ready, matched KV capacities; 128 warmup then 256 measured
+r2-baseline-c32: complete

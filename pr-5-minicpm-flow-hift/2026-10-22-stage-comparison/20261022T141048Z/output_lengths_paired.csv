@@ -1,0 +1,129 @@
+concurrency,sample_id,target_text,baseline_audio_frames,optimized_audio_frames,baseline_audio_s,optimized_audio_s,audio_delta_s,audio_delta_pct,baseline_completion_tokens,optimized_completion_tokens,baseline_e2e_ms,optimized_e2e_ms
+1,common_voice_en_10119832-common_voice_en_10119840,Get the trust fund to the bank early.,50880,50880,2.12,2.12,0.0,0.0,11,11,366.8835450000074,358.86138800003664
+1,common_voice_en_10119832-common_voice_en_10119847,The stained glass offered a hypnotic atmosphere.,82560,82560,3.44,3.44,0.0,0.0,11,11,318.05106999999566,323.734007999974
+1,common_voice_en_103675-common_voice_en_103676,"One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",118080,118080,4.92,4.92,0.0,0.0,23,23,549.2533350000031,553.6816639999529
+1,common_voice_en_103675-common_voice_en_103677,The boy knew the desert sensed his fear.,72000,72000,3.0,3.0,0.0,0.0,11,11,309.5532270000092,308.1156910000118
+1,common_voice_en_10933823-common_voice_en_10933822,"When it comes to the crunch, our company will become insolvent.",92160,92160,3.84,3.84,0.0,0.0,16,16,510.5261010000106,514.906945000007
+1,common_voice_en_10933823-common_voice_en_10933825,The primary coil has fifty turns.,82560,82560,3.44,3.44,0.0,0.0,9,9,272.7560490000087,268.3213730000489
+1,common_voice_en_120405-common_voice_en_120402,I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.,169920,169920,7.08,7.08,0.0,0.0,30,30,667.5278609999964,657.2207230000231
+1,common_voice_en_120405-common_voice_en_120406,The only shadow was that of the few scattered pine trees.,92160,92160,3.84,3.84,0.0,0.0,14,14,303.731316000011,301.79567599998336
+1,common_voice_en_1205005-common_voice_en_1205007,The work of the tailor is seen on each side.,67200,67200,2.8,2.8,0.0,0.0,13,13,375.9337249999817,388.0354920000286
+1,common_voice_en_1205005-common_voice_en_1205008,NASA plans to launch the rocket tomorrow.,60480,60480,2.52,2.52,0.0,0.0,10,10,300.7305790000032,307.76052700002765
+1,common_voice_en_123125-common_voice_en_123126,"After all, who doesn’t want to overcome new challenges and achieve great heights?",131520,131520,5.48,5.48,0.0,0.0,18,18,460.1195369999971,451.4445030000047
+1,common_voice_en_123125-common_voice_en_123127,"Later, we simply let life proceed, in its own direction, toward its own fate.",123840,123840,5.16,5.16,0.0,0.0,20,20,439.05902500000593,450.75175100004117
+1,common_voice_en_125386-common_voice_en_125388,The two men hurried back and found the cylinder still lying in the same position.,111360,111360,4.64,4.64,0.0,0.0,18,18,471.36752999998066,468.99482399999215
+1,common_voice_en_125386-common_voice_en_125389,I thought about the difficulties in translation that might arise.,108480,108480,4.52,4.52,0.0,0.0,13,13,361.7311060000077,375.0406300000009
+1,common_voice_en_137148-common_voice_en_137152,"Elvis Presley is often called the ""King of Rock and Roll"".",100800,100800,4.2,4.2,0.0,0.0,17,17,424.495233000016,423.6053739999761
+1,common_voice_en_13900-common_voice_en_13901,We don't have the budget to produce it in studio quality.,104640,104640,4.36,4.36,0.0,0.0,15,15,453.3690419999914,458.17540500001996
+1,common_voice_en_1416089-common_voice_en_1416090,"Also, will numbers be written as digits or as words?",97920,97920,4.08,4.08,0.0,0.0,14,14,387.83088299999235,380.85281299998996
+1,common_voice_en_1416089-common_voice_en_1416093,"I do not like sushi, so I did not really enjoy the meal.",113280,113280,4.72,4.72,0.0,0.0,17,17,388.21370600001615,384.2604689999689
+1,common_voice_en_15265-common_voice_en_15266,Large brown dog walks up a blue staircase.,73920,73920,3.08,3.08,0.0,0.0,11,11,369.0705660000049,379.71791000001076
+1,common_voice_en_15265-common_voice_en_15268,A sky jumper falls toward the sea and the earth.,77760,77760,3.24,3.24,0.0,0.0,13,13,291.4865719999966,296.4979369999696
+1,common_voice_en_153872-common_voice_en_153873,They set off running wildly into the trees.,67200,67200,2.8,2.8,0.0,0.0,11,11,314.9623060000124,314.33318099999497
+1,common_voice_en_153872-common_voice_en_153874,A thin circle of bright metal showed between the top and the body of the cylinder.,122880,122880,5.12,5.12,0.0,0.0,19,19,422.31602899997256,430.9964720000039
+1,common_voice_en_155313-common_voice_en_155315,Replace the Ts in Tim Tebow's name with any other consonant to get a Star Wars character,133440,133440,5.56,5.56,0.0,0.0,22,22,524.3346210000368,531.9123720000221
+1,common_voice_en_15734837-common_voice_en_15734838,"Tyler, Lucy, Michelle, we're going to space!",109440,109440,4.56,4.56,0.0,0.0,14,14,437.2156300000256,459.5043740000051
+1,common_voice_en_15735839-common_voice_en_15735837,Get out of this!,75840,75840,3.16,3.16,0.0,0.0,7,7,310.23001300002306,294.65141200000744
+1,common_voice_en_15903802-common_voice_en_15903807,Thousands of people die every year as a consequence of air pollution.,110400,110400,4.6,4.6,0.0,0.0,15,15,470.1724799999738,481.8260660000533
+1,common_voice_en_15903802-common_voice_en_15903815,History teaches us that humans do not learn from history.,78720,78720,3.28,3.28,0.0,0.0,13,13,274.2791940000302,275.2749500000391
+1,common_voice_en_16666041-common_voice_en_16666040,"I was well, but I'm all the better for being here.",79680,79680,3.32,3.32,0.0,0.0,16,16,417.2545750000154,429.4260180000151
+1,common_voice_en_167249-common_voice_en_167246,what is the forecast for California for rain,72000,72000,3.0,3.0,0.0,0.0,10,10,335.58371600003056,342.16185099995755
+1,common_voice_en_167249-common_voice_en_167247,Take these capsules over to Mrs. David's house.,73920,73920,3.08,3.08,0.0,0.0,13,13,272.4779989999888,274.3995449999943
+1,common_voice_en_17147545-common_voice_en_17147546,"Lions hunt their prey with sprints, whereas wolves take advantage of their stamina.",122880,122880,5.12,5.12,0.0,0.0,19,19,466.61790100000644,457.0389529999943
+1,common_voice_en_17161-common_voice_en_17159,He must be disguised to avoid encounters with thieves.,91200,91200,3.8,3.8,0.0,0.0,12,12,349.6888969999645,355.8739690000152
+8,common_voice_en_10119832-common_voice_en_10119840,Get the trust fund to the bank early.,49920,49920,2.08,2.08,0.0,0.0,11,11,774.3909149999126,806.9530620000478
+8,common_voice_en_10119832-common_voice_en_10119847,The stained glass offered a hypnotic atmosphere.,85440,85440,3.56,3.56,0.0,0.0,11,11,1230.007752000006,928.8853100000551
+8,common_voice_en_103675-common_voice_en_103676,"One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",143040,143040,5.96,5.96,0.0,0.0,23,23,1240.0760879999098,1362.9804019999483
+8,common_voice_en_103675-common_voice_en_103677,The boy knew the desert sensed his fear.,91200,91200,3.8,3.8,0.0,0.0,11,11,1233.9208969999618,1270.3198939999538
+8,common_voice_en_10933823-common_voice_en_10933822,"When it comes to the crunch, our company will become insolvent.",87360,87360,3.64,3.64,0.0,0.0,16,16,1229.3051000000332,1099.4131579999475
+8,common_voice_en_10933823-common_voice_en_10933825,The primary coil has fifty turns.,57600,57600,2.4,2.4,0.0,0.0,9,9,1216.6983900000332,1031.8152749999854
+8,common_voice_en_120405-common_voice_en_120402,I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.,155520,155520,6.48,6.48,0.0,0.0,30,30,1431.7970099999684,1450.0071410000146
+8,common_voice_en_120405-common_voice_en_120406,The only shadow was that of the few scattered pine trees.,79680,79680,3.32,3.32,0.0,0.0,14,14,1218.9616269999988,1180.2235200000268
+8,common_voice_en_1205005-common_voice_en_1205007,The work of the tailor is seen on each side.,70080,71040,2.92,2.96,0.040000000000000036,1.3698630136986356,13,13,667.5473040000952,809.7474830000237
+8,common_voice_en_1205005-common_voice_en_1205008,NASA plans to launch the rocket tomorrow.,61440,56640,2.56,2.36,-0.20000000000000018,-7.812500000000011,10,10,668.390330999955,656.4245980000578
+8,common_voice_en_123125-common_voice_en_123126,"After all, who doesn’t want to overcome new challenges and achieve great heights?",127680,122880,5.32,5.12,-0.20000000000000018,-3.759398496240607,18,18,1605.5315300000075,1114.903113999958
+8,common_voice_en_123125-common_voice_en_123127,"Later, we simply let life proceed, in its own direction, toward its own fate.",163200,111360,6.8,4.64,-2.16,-31.76470588235294,20,20,1754.4945329999564,1082.244838000065
+8,common_voice_en_125386-common_voice_en_125388,The two men hurried back and found the cylinder still lying in the same position.,104640,102720,4.36,4.28,-0.08000000000000007,-1.834862385321101,18,18,1592.9811289998952,1076.370818999976
+8,common_voice_en_125386-common_voice_en_125389,I thought about the difficulties in translation that might arise.,117120,98880,4.88,4.12,-0.7599999999999998,-15.573770491803273,13,13,1585.7739479999964,960.6744640000215
+8,common_voice_en_137148-common_voice_en_137152,"Elvis Presley is often called the ""King of Rock and Roll"".",77760,92160,3.24,3.84,0.5999999999999996,18.518518518518512,17,17,1018.5542700000951,979.1695889999801
+8,common_voice_en_13900-common_voice_en_13901,We don't have the budget to produce it in studio quality.,104640,85440,4.36,3.56,-0.8000000000000003,-18.34862385321101,15,15,1389.440673000081,849.9860230000422
+8,common_voice_en_1416089-common_voice_en_1416090,"Also, will numbers be written as digits or as words?",97920,117120,4.08,4.88,0.7999999999999998,19.6078431372549,14,14,1375.1755649999495,906.436245000009
+8,common_voice_en_1416089-common_voice_en_1416093,"I do not like sushi, so I did not really enjoy the meal.",92160,92160,3.84,3.84,0.0,0.0,17,17,1095.0220659999559,796.8243929999517
+8,common_voice_en_15265-common_voice_en_15266,Large brown dog walks up a blue staircase.,73920,77760,3.08,3.24,0.16000000000000014,5.1948051948051965,11,11,729.7091609999597,1109.6081859999458
+8,common_voice_en_15265-common_voice_en_15268,A sky jumper falls toward the sea and the earth.,81600,81600,3.4,3.4,0.0,0.0,13,13,1348.2548709999946,1156.5935689999378
+8,common_voice_en_153872-common_voice_en_153873,They set off running wildly into the trees.,67200,61440,2.8,2.56,-0.23999999999999977,-8.571428571428562,11,11,831.0962319999362,828.8422969999374
+8,common_voice_en_153872-common_voice_en_153874,A thin circle of bright metal showed between the top and the body of the cylinder.,120000,118080,5.0,4.92,-0.08000000000000007,-1.6000000000000014,19,19,1355.9294660000205,1286.2802160000228
+8,common_voice_en_155313-common_voice_en_155315,Replace the Ts in Tim Tebow's name with any other consonant to get a Star Wars character,128640,138240,5.36,5.76,0.39999999999999947,7.462686567164178,22,22,1357.034747000057,1436.9777590000012
+8,common_voice_en_15734837-common_voice_en_15734838,"Tyler, Lucy, Michelle, we're going to space!",88320,101760,3.68,4.24,0.56,15.217391304347828,14,14,1336.5541189999703,1114.082983000003
+8,common_voice_en_15735839-common_voice_en_15735837,Get out of this!,113280,89280,4.72,3.72,-0.9999999999999996,-21.18644067796609,7,7,1193.791191999935,1013.892296999984
+8,common_voice_en_15903802-common_voice_en_15903807,Thousands of people die every year as a consequence of air pollution.,94080,94080,3.92,3.92,0.0,0.0,15,15,1184.9790559999747,1161.3673189999645
+8,common_voice_en_15903802-common_voice_en_15903815,History teaches us that humans do not learn from history.,96000,78720,4.0,3.28,-0.7200000000000002,-18.000000000000004,13,13,1184.8881429999665,702.6613210000505
+8,common_voice_en_16666041-common_voice_en_16666040,"I was well, but I'm all the better for being here.",74880,76800,3.12,3.2,0.08000000000000007,2.564102564102577,16,16,604.9243249999563,823.4754530000146
+8,common_voice_en_167249-common_voice_en_167246,what is the forecast for California for rain,72000,78720,3.0,3.28,0.2799999999999998,9.333333333333327,10,10,623.7875089999534,808.4275559999696
+8,common_voice_en_167249-common_voice_en_167247,Take these capsules over to Mrs. David's house.,73920,78720,3.08,3.28,0.19999999999999973,6.493506493506485,13,13,745.9674430000405,718.7762419999899
+8,common_voice_en_17147545-common_voice_en_17147546,"Lions hunt their prey with sprints, whereas wolves take advantage of their stamina.",122880,138240,5.12,5.76,0.6399999999999997,12.5,19,19,750.3339069999129,756.1199750000469
+8,common_voice_en_17161-common_voice_en_17159,He must be disguised to avoid encounters with thieves.,91200,91200,3.8,3.8,0.0,0.0,12,12,743.3015769998974,606.6225449999365
+16,common_voice_en_10119832-common_voice_en_10119840,Get the trust fund to the bank early.,49920,49920,2.08,2.08,0.0,0.0,11,11,1038.6195139999472,1088.3052149999912
+16,common_voice_en_10119832-common_voice_en_10119847,The stained glass offered a hypnotic atmosphere.,85440,79680,3.56,3.32,-0.2400000000000002,-6.741573033707871,11,11,2091.3446460000387,1606.4786250000225
+16,common_voice_en_103675-common_voice_en_103676,"One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",143040,143040,5.96,5.96,0.0,0.0,23,23,2112.27799400001,2337.4913530000185
+16,common_voice_en_103675-common_voice_en_103677,The boy knew the desert sensed his fear.,68160,68160,2.84,2.84,0.0,0.0,11,11,2081.192797000085,1852.361457000029
+16,common_voice_en_10933823-common_voice_en_10933822,"When it comes to the crunch, our company will become insolvent.",92160,87360,3.84,3.64,-0.19999999999999973,-5.208333333333326,16,16,2091.1693089999517,1884.498659999963
+16,common_voice_en_10933823-common_voice_en_10933825,The primary coil has fifty turns.,57600,57600,2.4,2.4,0.0,0.0,9,9,2069.036231000041,1734.1550060000372
+16,common_voice_en_120405-common_voice_en_120402,I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.,155520,155520,6.48,6.48,0.0,0.0,30,30,2175.689203999923,2634.609740999963
+16,common_voice_en_120405-common_voice_en_120406,The only shadow was that of the few scattered pine trees.,79680,79680,3.32,3.32,0.0,0.0,14,14,2079.1497779999872,1602.6926289999892
+16,common_voice_en_1205005-common_voice_en_1205007,The work of the tailor is seen on each side.,71040,71040,2.96,2.96,0.0,0.0,13,13,2071.892405999961,1439.2039420000629
+16,common_voice_en_1205005-common_voice_en_1205008,NASA plans to launch the rocket tomorrow.,63360,63360,2.64,2.64,0.0,0.0,10,10,2067.955454000071,1260.0287489999573
+16,common_voice_en_123125-common_voice_en_123126,"After all, who doesn’t want to overcome new challenges and achieve great heights?",120960,121920,5.04,5.08,0.040000000000000036,0.7936507936507908,18,18,2096.9673060000105,2442.4596280000515
+16,common_voice_en_123125-common_voice_en_123127,"Later, we simply let life proceed, in its own direction, toward its own fate.",136320,136320,5.68,5.68,0.0,0.0,20,20,2099.7470940000085,2546.6206470000543
+16,common_voice_en_125386-common_voice_en_125388,The two men hurried back and found the cylinder still lying in the same position.,120960,123840,5.04,5.16,0.1200000000000001,2.3809523809523725,18,18,2091.885965000074,2222.2817489999898
+16,common_voice_en_125386-common_voice_en_125389,I thought about the difficulties in translation that might arise.,104640,99840,4.36,4.16,-0.20000000000000018,-4.587155963302758,13,13,2088.0174049999596,2110.4931920000354
+16,common_voice_en_137148-common_voice_en_137152,"Elvis Presley is often called the ""King of Rock and Roll"".",92160,89280,3.84,3.72,-0.11999999999999966,-3.124999999999989,17,17,2084.095604999902,1997.7142609999419
+16,common_voice_en_13900-common_voice_en_13901,We don't have the budget to produce it in studio quality.,84480,84480,3.52,3.52,0.0,0.0,15,15,2075.3397429999723,1903.6410800000567
+16,common_voice_en_1416089-common_voice_en_1416090,"Also, will numbers be written as digits or as words?",97920,95040,4.08,3.96,-0.1200000000000001,-2.941176470588236,14,14,1145.2639000000318,1589.70831299996
+16,common_voice_en_1416089-common_voice_en_1416093,"I do not like sushi, so I did not really enjoy the meal.",104640,99840,4.36,4.16,-0.20000000000000018,-4.587155963302758,17,17,1375.1858980000407,1547.7666030000137
+16,common_voice_en_15265-common_voice_en_15266,Large brown dog walks up a blue staircase.,81600,80640,3.4,3.36,-0.040000000000000036,-1.17647058823529,11,11,1358.2020769999872,1326.4948600000253
+16,common_voice_en_15265-common_voice_en_15268,A sky jumper falls toward the sea and the earth.,87360,89280,3.64,3.72,0.08000000000000007,2.19780219780219,13,13,1360.3746620000265,1386.4759079999658
+16,common_voice_en_153872-common_voice_en_153873,They set off running wildly into the trees.,68160,72960,2.84,3.04,0.20000000000000018,7.042253521126773,11,11,1334.7799419999546,1350.0031610000178
+16,common_voice_en_153872-common_voice_en_153874,A thin circle of bright metal showed between the top and the body of the cylinder.,115200,116160,4.8,4.84,0.040000000000000036,0.8333333333333304,19,19,1494.4264690000182,2305.212167000036
+16,common_voice_en_155313-common_voice_en_155315,Replace the Ts in Tim Tebow's name with any other consonant to get a Star Wars character,139200,139200,5.8,5.8,0.0,0.0,22,22,1499.6649400000024,2260.34214099991
+16,common_voice_en_15734837-common_voice_en_15734838,"Tyler, Lucy, Michelle, we're going to space!",88320,91200,3.68,3.8,0.11999999999999966,3.2608695652173836,14,14,1352.0503759999656,2008.8812970000163
+16,common_voice_en_15735839-common_voice_en_15735837,Get out of this!,57600,76800,2.4,3.2,0.8000000000000003,33.33333333333335,7,7,799.9188810000533,1510.83310599995
+16,common_voice_en_15903802-common_voice_en_15903807,Thousands of people die every year as a consequence of air pollution.,96000,102720,4.0,4.28,0.28000000000000025,7.000000000000006,15,15,1349.4924560000072,1959.861151000041
+16,common_voice_en_15903802-common_voice_en_15903815,History teaches us that humans do not learn from history.,79680,75840,3.32,3.16,-0.1599999999999997,-4.819277108433728,13,13,1330.3014839999605,1520.548500000018
+16,common_voice_en_16666041-common_voice_en_16666040,"I was well, but I'm all the better for being here.",80640,67200,3.36,2.8,-0.56,-16.666666666666675,16,16,1329.6283030000495,1567.6739709999765
+16,common_voice_en_167249-common_voice_en_167246,what is the forecast for California for rain,79680,64320,3.32,2.68,-0.6399999999999997,-19.277108433734934,10,10,1320.7843890000959,1384.2712680000204
+16,common_voice_en_167249-common_voice_en_167247,Take these capsules over to Mrs. David's house.,69120,71040,2.88,2.96,0.08000000000000007,2.77777777777779,13,13,1315.2401170000303,1363.3509640000057
+16,common_voice_en_17147545-common_voice_en_17147546,"Lions hunt their prey with sprints, whereas wolves take advantage of their stamina.",120000,138240,5.0,5.76,0.7599999999999998,15.199999999999992,19,19,1470.7079229999636,1629.7474609999654
+16,common_voice_en_17161-common_voice_en_17159,He must be disguised to avoid encounters with thieves.,81600,91200,3.4,3.8,0.3999999999999999,11.764705882352944,12,12,1256.3716720000002,1258.1364220000069
+32,common_voice_en_10119832-common_voice_en_10119840,Get the trust fund to the bank early.,48000,48000,2.0,2.0,0.0,0.0,11,11,1187.7268480000112,1233.393105999994
+32,common_voice_en_10119832-common_voice_en_10119847,The stained glass offered a hypnotic atmosphere.,72000,79680,3.0,3.32,0.31999999999999984,10.666666666666668,11,11,2045.8422839999457,1873.1366179999895
+32,common_voice_en_103675-common_voice_en_103676,"One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",138240,138240,5.76,5.76,0.0,0.0,23,23,3382.4413370000457,2759.332708000102
+32,common_voice_en_103675-common_voice_en_103677,The boy knew the desert sensed his fear.,80640,59520,3.36,2.48,-0.8799999999999999,-26.190476190476186,11,11,2056.250761000001,1584.2724560000079
+32,common_voice_en_10933823-common_voice_en_10933822,"When it comes to the crunch, our company will become insolvent.",92160,92160,3.84,3.84,0.0,0.0,16,16,2070.0661799999125,2241.6864639999403
+32,common_voice_en_10933823-common_voice_en_10933825,The primary coil has fifty turns.,53760,53760,2.24,2.24,0.0,0.0,9,9,2034.3642210000326,1469.1246009999759
+32,common_voice_en_120405-common_voice_en_120402,I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.,154560,154560,6.44,6.44,0.0,0.0,30,30,3390.3676090001227,3077.131748000056
+32,common_voice_en_120405-common_voice_en_120406,The only shadow was that of the few scattered pine trees.,80640,91200,3.36,3.8,0.43999999999999995,13.095238095238093,14,14,2053.7347800000134,2365.1741170001515
+32,common_voice_en_1205005-common_voice_en_1205007,The work of the tailor is seen on each side.,67200,67200,2.8,2.8,0.0,0.0,13,13,2033.0262669999684,1705.1798299999064
+32,common_voice_en_1205005-common_voice_en_1205008,NASA plans to launch the rocket tomorrow.,72000,72000,3.0,3.0,0.0,0.0,10,10,2035.0030959998548,1765.3347499999654
+32,common_voice_en_123125-common_voice_en_123126,"After all, who doesn’t want to overcome new challenges and achieve great heights?",118080,118080,4.92,4.92,0.0,0.0,18,18,3358.5106349999023,2812.4065719998725
+32,common_voice_en_123125-common_voice_en_123127,"Later, we simply let life proceed, in its own direction, toward its own fate.",151680,151680,6.32,6.32,0.0,0.0,20,20,3381.1383370000385,2880.190529999936
+32,common_voice_en_125386-common_voice_en_125388,The two men hurried back and found the cylinder still lying in the same position.,112320,112320,4.68,4.68,0.0,0.0,18,18,3349.6224429998165,2553.5226570000304
+32,common_voice_en_125386-common_voice_en_125389,I thought about the difficulties in translation that might arise.,116160,116160,4.84,4.84,0.0,0.0,13,13,3352.077662000056,2561.1744850000377
+32,common_voice_en_137148-common_voice_en_137152,"Elvis Presley is often called the ""King of Rock and Roll"".",89280,89280,3.72,3.72,0.0,0.0,17,17,2057.863335999855,2299.8566920000485
+32,common_voice_en_13900-common_voice_en_13901,We don't have the budget to produce it in studio quality.,72000,74880,3.0,3.12,0.1200000000000001,4.0000000000000036,15,15,2037.5316350000503,1922.268423999867
+32,common_voice_en_1416089-common_voice_en_1416090,"Also, will numbers be written as digits or as words?",104640,99840,4.36,4.16,-0.20000000000000018,-4.587155963302758,14,14,3339.3140830000902,2487.0217150000826
+32,common_voice_en_1416089-common_voice_en_1416093,"I do not like sushi, so I did not really enjoy the meal.",127680,127680,5.32,5.32,0.0,0.0,17,17,3356.5791190001164,2616.8241929999567
+32,common_voice_en_15265-common_voice_en_15266,Large brown dog walks up a blue staircase.,81600,83520,3.4,3.48,0.08000000000000007,2.35294117647058,11,11,2047.393951999993,2171.0021050000705
+32,common_voice_en_15265-common_voice_en_15268,A sky jumper falls toward the sea and the earth.,94080,94080,3.92,3.92,0.0,0.0,13,13,3328.8328590001584,2414.267774999871
+32,common_voice_en_153872-common_voice_en_153873,They set off running wildly into the trees.,72000,74880,3.0,3.12,0.1200000000000001,4.0000000000000036,11,11,2030.956389000039,1915.2700189999905
+32,common_voice_en_153872-common_voice_en_153874,A thin circle of bright metal showed between the top and the body of the cylinder.,128640,128640,5.36,5.36,0.0,0.0,19,19,3357.5140319999264,2678.2531890000882
+32,common_voice_en_155313-common_voice_en_155315,Replace the Ts in Tim Tebow's name with any other consonant to get a Star Wars character,145920,145920,6.08,6.08,0.0,0.0,22,22,3368.5609650001425,3002.678438999965
+32,common_voice_en_15734837-common_voice_en_15734838,"Tyler, Lucy, Michelle, we're going to space!",110400,96000,4.6,4.0,-0.5999999999999996,-13.043478260869556,14,14,3337.678884999832,2417.7176659998167
+32,common_voice_en_15735839-common_voice_en_15735837,Get out of this!,53760,53760,2.24,2.24,0.0,0.0,7,7,2016.9864960000723,1451.1466609999388
+32,common_voice_en_15903802-common_voice_en_15903807,Thousands of people die every year as a consequence of air pollution.,98880,104640,4.12,4.36,0.2400000000000002,5.825242718446599,15,15,3327.4505550000413,2472.958632999962
+32,common_voice_en_15903802-common_voice_en_15903815,History teaches us that humans do not learn from history.,85440,85440,3.56,3.56,0.0,0.0,13,13,2046.479244000011,2231.0390489999463
+32,common_voice_en_16666041-common_voice_en_16666040,"I was well, but I'm all the better for being here.",81600,81600,3.4,3.4,0.0,0.0,16,16,2043.3835610001552,2097.051446000023
+32,common_voice_en_167249-common_voice_en_167246,what is the forecast for California for rain,76800,76800,3.2,3.2,0.0,0.0,10,10,2030.6245710000894,1969.8882529999082
+32,common_voice_en_167249-common_voice_en_167247,Take these capsules over to Mrs. David's house.,78720,78720,3.28,3.28,0.0,0.0,13,13,2032.0595690000118,2029.748760000075
+32,common_voice_en_17147545-common_voice_en_17147546,"Lions hunt their prey with sprints, whereas wolves take advantage of their stamina.",138240,129600,5.76,5.4,-0.35999999999999943,-6.249999999999989,19,19,3354.905115000065,2933.8491830001203
+32,common_voice_en_17161-common_voice_en_17159,He must be disguised to avoid encounters with thieves.,102720,83520,4.28,3.48,-0.8000000000000003,-18.691588785046733,12,12,3325.5082819998734,2158.017571000073

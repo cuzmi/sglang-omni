@@ -1,0 +1,18 @@
+{
+  "valid": true,
+  "sampling_hz": 10000,
+  "metrics": [
+    {
+      "name": "SMs Active [Throughput %]",
+      "samples": 21223,
+      "maximum": 90,
+      "minimum": 0
+    },
+    {
+      "name": "SM Issue [Throughput %]",
+      "samples": 21223,
+      "maximum": 11,
+      "minimum": 0
+    }
+  ]
+}

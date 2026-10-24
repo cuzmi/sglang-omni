@@ -1,0 +1,231 @@
+WARN `--no-project` was provided, but no project was found
+✓ Initialized. View run at 
+https://modal.com/apps/xinyuj2/main/ap-vZZX8K9DRfB0kOwEnDetjT
+Building image im-gCDKdZwntv8ISjsyXAtpZO
+
+=> Step 0: FROM base
+
+=> Step 1: RUN uv pip uninstall --system sgl-kernel flashinfer-cubin
+Using Python 3.12.3 environment at: /usr
+warning: Skipping flashinfer-cubin as it is not installed
+warning: Skipping sgl-kernel as it is not installed
+warning: No packages to uninstall
+
+=> Step 2: RUN uv pip install --system --prerelease=allow 'sglang==0.5.22' 'torchvision==0.29.1'
+Using Python 3.12.3 environment at: /usr
+Resolved 204 packages in 1.21s
+Downloading nvidia-cutlass-dsl-libs-cu12 (87.5MiB)
+Downloading nvidia-cutlass-dsl-libs-cu13 (87.7MiB)
+Downloading nccl-extensions (21.5MiB)
+Downloading torchcodec (9.5MiB)
+Downloading nvidia-cudnn-frontend (9.7MiB)
+Downloading tilelang (48.2MiB)
+Downloading cython (3.3MiB)
+Downloading nvidia-cutlass-dsl-libs-core (1.6MiB)
+Downloading nvidia-cutlass-dsl-libs-base (2.9MiB)
+Downloading tokenizers (3.2MiB)
+Downloading sentencepiece (1.3MiB)
+Downloading nvshmem4py-cu13 (4.8MiB)
+Downloading sglang-kernel (354.2MiB)
+Downloading sgl-deep-gemm (5.2MiB)
+Downloading sgl-deep-ep (14.7MiB)
+Downloading xgrammar (1.2MiB)
+ Downloaded sentencepiece
+ Downloaded tokenizers
+ Downloaded nvidia-cutlass-dsl-libs-base
+ Downloaded xgrammar
+Downloading flashinfer-python (64.1MiB)
+ Downloaded nvidia-cutlass-dsl-libs-core
+ Downloaded torchcodec
+ Downloaded nccl-extensions
+ Downloaded cython
+ Downloaded nvshmem4py-cu13
+ Downloaded sgl-deep-gemm
+ Downloaded nvidia-cudnn-frontend
+ Downloaded nvidia-cutlass-dsl-libs-cu12
+ Downloaded nvidia-cutlass-dsl-libs-cu13
+ Downloaded sgl-deep-ep
+ Downloaded tilelang
+ Downloaded flashinfer-python
+ Downloaded sglang-kernel
+Prepared 23 packages in 7.70s
+Uninstalled 20 packages in 1.00s
+Installed 23 packages in 921ms
+Bytecode compiled 5590 files in 2.16s
+ + cython==3.3.0
+ - flashinfer-python==0.6.17
+ + flashinfer-python==0.7.1
+ - huggingface-hub==2.3.0
+ + huggingface-hub==1.33.0
+ - humming-kernels==0.1.10
+ + humming-kernels==0.1.12
+ + nccl-extensions==0.1.0
+ - nvidia-cudnn-frontend==1.27.0
+ + nvidia-cudnn-frontend==1.31.0
+ - nvidia-cutlass-dsl==4.6.2
+ + nvidia-cutlass-dsl==4.8.0
+ - nvidia-cutlass-dsl-libs-base==4.6.2
+ + nvidia-cutlass-dsl-libs-base==4.8.0
+ - nvidia-cutlass-dsl-libs-core==4.6.2
+ + nvidia-cutlass-dsl-libs-core==4.8.0
+ - nvidia-cutlass-dsl-libs-cu12==4.6.2
+ + nvidia-cutlass-dsl-libs-cu12==4.8.0
+ - nvidia-cutlass-dsl-libs-cu13==4.6.2
+ + nvidia-cutlass-dsl-libs-cu13==4.8.0
+ + nvshmem4py-cu13==0.4.1
+ - quack-kernels==0.6.4
+ + quack-kernels==0.6.5
+ - sentencepiece==0.2.2
+ + sentencepiece==0.2.1
+ - sgl-deep-ep==0.1.0
+ + sgl-deep-ep==0.1.2.post1
+ - sgl-deep-gemm==0.1.5.post3
+ + sgl-deep-gemm==0.2.2
+ - sglang-kernel==0.4.6.post1
+ + sglang-kernel==0.4.9
+ - smg-grpc-proto==0.4.14
+ + smg-grpc-proto==0.4.27
+ - smg-grpc-servicer==0.8.0
+ + smg-grpc-servicer==0.14.0
+ - tilelang==0.1.11
+ + tilelang==0.1.12
+ - tokenizers==0.23.3
+ + tokenizers==0.23.2
+ - torchcodec==0.15.0+cu130
+ + torchcodec==0.17.0
+ - xgrammar==0.2.1
+ + xgrammar==0.2.7
+Saving image...
+Image saved, took 10.80s
+
+Built image im-gCDKdZwntv8ISjsyXAtpZO in 28.78s
+
+
+Building image im-IjYCBM4E56VXL6PEVkkEyj
+
+=> Step 0: FROM base
+
+=> Step 1: ENV PYTHONUNBUFFERED=1
+
+=> Step 2: ENV HF_HOME=/root/.cache/hf_cache
+
+=> Step 3: ENV OMP_NUM_THREADS=4
+Saving image...
+Image saved, took 3.22s
+
+Built image im-IjYCBM4E56VXL6PEVkkEyj in 5.64s
+
+
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/run_moda
+│   l.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/compare.
+│   py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/quality.
+│   py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/driver.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/capture_
+│   hook.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/client.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/replay.p
+│   y
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/prepare_
+│   data.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/optimize
+│   d.tar
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/baseline
+│   .tar
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID 20261023T210941Z
+Stopping app - user stopped from CLI.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/urllib3/util/request.py", line 25, in <module>
+    import brotlicffi as _unused_module_brotli  # type: ignore[import-not-found] # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'brotlicffi'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/workspace/baseline/sglang_omni/models/minicpm_o/stages.py", line 13, in <module>
+    from sglang.srt.arg_groups.model_override_base import resolved_view
+  File "/usr/local/lib/python3.12/dist-packages/sglang/__init__.py", line 21, in <module>
+    from sglang.srt.utils.hf_transformers_patches import apply_all as _apply_hf_patches
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/utils/__init__.py", line 2, in <module>
+    from sglang.srt.utils.common import *
+  File "/usr/local/lib/python3.12/dist-packages/sglang/srt/utils/common.py", line 87, in <module>
+    import requests
+  File "/usr/local/lib/python3.12/dist-packages/requests/__init__.py", line 45, in <module>
+    import urllib3
+  File "/usr/local/lib/python3.12/dist-packages/urllib3/__init__.py", line 15, in <module>
+    from ._base_connection import _TYPE_BODY
+  File "/usr/local/lib/python3.12/dist-packages/urllib3/_base_connection.py", line 5, in <module>
+    from .util.connection import _TYPE_SOCKET_OPTIONS
+  File "/usr/local/lib/python3.12/dist-packages/urllib3/util/__init__.py", line 5, in <module>
+    from .request import SKIP_HEADER, SKIPPABLE_HEADERS, make_headers
+  File "/usr/local/lib/python3.12/dist-packages/urllib3/util/request.py", line 27, in <module>
+    import brotli as _unused_module_brotli  # type: ignore[import-not-found] # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/brotli.py", line 8, in <module>
+    import _brotli
+KeyboardInterrupt
+Runner terminated.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/cuzimi/Coding                                                         │
+│ Works/RemoteFiles/research/minicpm_accuracy_frozen256_h100_20261023/run_moda │
+│ l.py:91 in main                                                              │
+│                                                                              │
+│    90 │   print('Run ID '+run_id,flush=True)                                 │
+│ ❱  91 │   prepared=prepare.remote(run_id,check_only)                         │
+│    92 │   if check_only:                                                     │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/GUrDw-jkNoXLsTY6X29Uy/lib/python3.13/site │
+│ -packages/modal/_object.py:49 in wrapped                                     │
+│                                                                              │
+│    48 │   │   await self.hydrate()                                           │
+│ ❱  49 │   │   return await method(self, *args, **kwargs)                     │
+│    50                                                                        │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/GUrDw-jkNoXLsTY6X29Uy/lib/python3.13/site │
+│ -packages/modal/_functions.py:2081 in remote                                 │
+│                                                                              │
+│   2080 │   │                                                                 │
+│ ❱ 2081 │   │   return await self._call_function(args, kwargs)                │
+│   2082                                                                       │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/GUrDw-jkNoXLsTY6X29Uy/lib/python3.13/site │
+│ -packages/modal/_functions.py:2018 in _call_function                         │
+│                                                                              │
+│   2017 │   │                                                                 │
+│ ❱ 2018 │   │   return await invocation.run_function()                        │
+│   2019                                                                       │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/GUrDw-jkNoXLsTY6X29Uy/lib/python3.13/site │
+│ -packages/modal/_functions.py:498 in run_function                            │
+│                                                                              │
+│    497 │   │   │   if await_response.output.result.status in TERMINAL_STATUS │
+│ ❱  498 │   │   │   │   return await _process_result(                         │
+│    499 │   │   │   │   │   await_response.output.result, await_response.outp │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/GUrDw-jkNoXLsTY6X29Uy/lib/python3.13/site │
+│ -packages/modal/_utils/function_utils.py:574 in _process_result              │
+│                                                                              │
+│   573 │   │                                                                  │
+│ ❱ 574 │   │   raise RemoteError(result.exception)                            │
+│   575                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteError

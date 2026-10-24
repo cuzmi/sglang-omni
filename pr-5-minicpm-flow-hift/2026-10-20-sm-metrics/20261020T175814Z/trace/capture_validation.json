@@ -1,0 +1,71 @@
+{
+  "valid": true,
+  "same_inputs_config_noise": true,
+  "trace_passes": [
+    {
+      "name": "trace_serial_00",
+      "overlap": false,
+      "completion_ms": 177.78900200001146,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    },
+    {
+      "name": "trace_overlap_01",
+      "overlap": true,
+      "completion_ms": 131.89838099999918,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    },
+    {
+      "name": "trace_overlap_02",
+      "overlap": true,
+      "completion_ms": 132.94730900000218,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    },
+    {
+      "name": "trace_serial_03",
+      "overlap": false,
+      "completion_ms": 162.48714400001063,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    },
+    {
+      "name": "trace_serial_04",
+      "overlap": false,
+      "completion_ms": 161.86926499999288,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    },
+    {
+      "name": "trace_overlap_05",
+      "overlap": true,
+      "completion_ms": 129.35407199999815,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    },
+    {
+      "name": "trace_overlap_06",
+      "overlap": true,
+      "completion_ms": 134.9317740000089,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    },
+    {
+      "name": "trace_serial_07",
+      "overlap": false,
+      "completion_ms": 179.4553220000097,
+      "graph_replays": 20,
+      "graph_misses": 0,
+      "new_compiled_graphs": 0
+    }
+  ],
+  "no_performance_claim_from_profiled_time": true
+}

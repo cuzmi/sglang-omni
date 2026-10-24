@@ -1,0 +1,64 @@
+[
+  {
+    "command": [
+      "nsys",
+      "--version"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=name,uuid,driver_version",
+      "--format=csv"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "nsys",
+      "profile",
+      "--gpu-metrics-devices=help"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "nsys",
+      "profile",
+      "--gpu-metrics-devices=all",
+      "--gpu-metrics-set=help"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "nsys",
+      "profile",
+      "--trace=cuda,nvtx",
+      "--sample=none",
+      "--cpuctxsw=none",
+      "--cuda-graph-trace=node",
+      "--gpu-metrics-devices=all",
+      "--gpu-metrics-frequency=10000",
+      "--capture-range=cudaProfilerApi",
+      "--capture-range-end=stop",
+      "--force-overwrite=true",
+      "--output=/tmp/sm-metrics-probe/probe",
+      "/usr/bin/python",
+      "/opt/probe.py"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "nsys",
+      "export",
+      "--type=sqlite",
+      "--force-overwrite=true",
+      "--output=/tmp/sm-metrics-probe/probe.sqlite",
+      "/tmp/sm-metrics-probe/probe.nsys-rep"
+    ],
+    "returncode": 0
+  }
+]

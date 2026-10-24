@@ -1,0 +1,1310 @@
+{
+  "valid": true,
+  "sampling_hz_requested": 10000,
+  "samples_per_metric": 13388,
+  "sample_spacing_ms": {
+    "min": 0.099998,
+    "median": 0.099999,
+    "max": 0.1
+  },
+  "aggregation": "Mean of samples whose timestamp falls in [start,end), including zeroes. Mode summary gives equal weight to each of four pass means. Whole-GPU window spans the first through last observed kernel, not host request completion.",
+  "attribution": "Device-wide metrics. During overlap, a Flow or HiFT window also includes the other concurrently executing work. Overlap span is intersection of first-to-last spans and includes inter-kernel gaps.",
+  "metric_names": {
+    "sm_active": "SMs Active [Throughput %]",
+    "sm_issue": "SM Issue [Throughput %]",
+    "tensor_active": "Tensor Active [Throughput %]",
+    "dram_read": "DRAM Read Bandwidth [Throughput %]",
+    "dram_write": "DRAM Write Bandwidth [Throughput %]"
+  },
+  "windows": [
+    {
+      "pass": "serial_00",
+      "mode": "serial",
+      "window": "full_gpu",
+      "start_ns": 8578144,
+      "end_ns": 184993866,
+      "origin_ns": 8241587,
+      "start_ms": 0.336557,
+      "end_ms": 176.752279,
+      "duration_ms": 176.415722,
+      "sample_count": 1764,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 43.747732426303855,
+      "sm_issue": 18.750566893424036,
+      "tensor_active": 11.358843537414966,
+      "dram_read": 2.2448979591836733,
+      "dram_write": 4.7522675736961455
+    },
+    {
+      "pass": "serial_00",
+      "mode": "serial",
+      "window": "flow_a_graph",
+      "start_ns": 27652065,
+      "end_ns": 66041826,
+      "origin_ns": 8241587,
+      "start_ms": 19.410478,
+      "end_ms": 57.800239,
+      "duration_ms": 38.389761,
+      "sample_count": 384,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 75.88541666666667,
+      "sm_issue": 33.5859375,
+      "tensor_active": 22.770833333333332,
+      "dram_read": 3.0026041666666665,
+      "dram_write": 7.677083333333333
+    },
+    {
+      "pass": "serial_00",
+      "mode": "serial",
+      "window": "flow_b_graph",
+      "start_ns": 115314586,
+      "end_ns": 154559797,
+      "origin_ns": 8241587,
+      "start_ms": 107.072999,
+      "end_ms": 146.31821,
+      "duration_ms": 39.245211,
+      "sample_count": 392,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.81377551020408,
+      "sm_issue": 32.13520408163265,
+      "tensor_active": 21.862244897959183,
+      "dram_read": 2.954081632653061,
+      "dram_write": 7.520408163265306
+    },
+    {
+      "pass": "serial_00",
+      "mode": "serial",
+      "window": "hift_a",
+      "start_ns": 66546430,
+      "end_ns": 99060134,
+      "origin_ns": 8241587,
+      "start_ms": 58.304843,
+      "end_ms": 90.818547,
+      "duration_ms": 32.513704,
+      "sample_count": 325,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 20.68307692307692,
+      "sm_issue": 7.707692307692308,
+      "tensor_active": 3.3630769230769233,
+      "dram_read": 1.1938461538461538,
+      "dram_write": 1.7692307692307692
+    },
+    {
+      "pass": "serial_00",
+      "mode": "serial",
+      "window": "hift_b",
+      "start_ns": 154895443,
+      "end_ns": 184926507,
+      "origin_ns": 8241587,
+      "start_ms": 146.653856,
+      "end_ms": 176.68492,
+      "duration_ms": 30.031064,
+      "sample_count": 300,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 22.406666666666666,
+      "sm_issue": 8.37,
+      "tensor_active": 3.62,
+      "dram_read": 1.27,
+      "dram_write": 1.89
+    },
+    {
+      "pass": "overlap_01",
+      "mode": "overlap",
+      "window": "full_gpu",
+      "start_ns": 188460595,
+      "end_ns": 319711210,
+      "origin_ns": 188328324,
+      "start_ms": 0.132271,
+      "end_ms": 131.382886,
+      "duration_ms": 131.250615,
+      "sample_count": 1313,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 58.966488956587966,
+      "sm_issue": 25.105864432597105,
+      "tensor_active": 15.073876618431074,
+      "dram_read": 3.4523990860624525,
+      "dram_write": 7.3145468392993145
+    },
+    {
+      "pass": "overlap_01",
+      "mode": "overlap",
+      "window": "flow_a_graph",
+      "start_ns": 199542506,
+      "end_ns": 238735685,
+      "origin_ns": 188328324,
+      "start_ms": 11.214182,
+      "end_ms": 50.407361,
+      "duration_ms": 39.193179,
+      "sample_count": 392,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.76275510204081,
+      "sm_issue": 32.09183673469388,
+      "tensor_active": 21.81377551020408,
+      "dram_read": 2.954081632653061,
+      "dram_write": 7.5229591836734695
+    },
+    {
+      "pass": "overlap_01",
+      "mode": "overlap",
+      "window": "flow_b_graph",
+      "start_ns": 243792899,
+      "end_ns": 289084662,
+      "origin_ns": 188328324,
+      "start_ms": 55.464575,
+      "end_ms": 100.756338,
+      "duration_ms": 45.291763,
+      "sample_count": 453,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 78.41501103752759,
+      "sm_issue": 33.35099337748344,
+      "tensor_active": 21.251655629139073,
+      "dram_read": 4.900662251655629,
+      "dram_write": 10.534216335540838
+    },
+    {
+      "pass": "overlap_01",
+      "mode": "overlap",
+      "window": "hift_a",
+      "start_ns": 238995171,
+      "end_ns": 273813468,
+      "origin_ns": 188328324,
+      "start_ms": 50.666847,
+      "end_ms": 85.485144,
+      "duration_ms": 34.818297,
+      "sample_count": 348,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 79.84482758620689,
+      "sm_issue": 33.27873563218391,
+      "tensor_active": 18.764367816091955,
+      "dram_read": 6.221264367816092,
+      "dram_write": 12.35919540229885
+    },
+    {
+      "pass": "overlap_01",
+      "mode": "overlap",
+      "window": "hift_b",
+      "start_ns": 289293141,
+      "end_ns": 319640619,
+      "origin_ns": 188328324,
+      "start_ms": 100.964817,
+      "end_ms": 131.312295,
+      "duration_ms": 30.347478,
+      "sample_count": 303,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 22.541254125412543,
+      "sm_issue": 8.425742574257425,
+      "tensor_active": 3.6567656765676566,
+      "dram_read": 1.2277227722772277,
+      "dram_write": 1.858085808580858
+    },
+    {
+      "pass": "overlap_01",
+      "mode": "overlap",
+      "window": "overlap_span",
+      "start_ns": 243792899,
+      "end_ns": 273813468,
+      "origin_ns": 188328324,
+      "start_ms": 55.464575,
+      "end_ms": 85.485144,
+      "duration_ms": 30.020569,
+      "sample_count": 300,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 81.20666666666666,
+      "sm_issue": 33.89,
+      "tensor_active": 20.886666666666667,
+      "dram_read": 5.903333333333333,
+      "dram_write": 12.103333333333333
+    },
+    {
+      "pass": "overlap_02",
+      "mode": "overlap",
+      "window": "full_gpu",
+      "start_ns": 322473880,
+      "end_ns": 454225900,
+      "origin_ns": 322345184,
+      "start_ms": 0.128696,
+      "end_ms": 131.880716,
+      "duration_ms": 131.75202,
+      "sample_count": 1317,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 59.49430523917995,
+      "sm_issue": 25.428246013667426,
+      "tensor_active": 15.246013667425968,
+      "dram_read": 3.433561123766135,
+      "dram_write": 7.276385725132878
+    },
+    {
+      "pass": "overlap_02",
+      "mode": "overlap",
+      "window": "flow_a_graph",
+      "start_ns": 333622126,
+      "end_ns": 373414789,
+      "origin_ns": 322345184,
+      "start_ms": 11.276942,
+      "end_ms": 51.069605,
+      "duration_ms": 39.792663,
+      "sample_count": 398,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.98994974874371,
+      "sm_issue": 32.32663316582914,
+      "tensor_active": 21.90954773869347,
+      "dram_read": 2.9020100502512562,
+      "dram_write": 7.42713567839196
+    },
+    {
+      "pass": "overlap_02",
+      "mode": "overlap",
+      "window": "flow_b_graph",
+      "start_ns": 378560067,
+      "end_ns": 424167764,
+      "origin_ns": 322345184,
+      "start_ms": 56.214883,
+      "end_ms": 101.82258,
+      "duration_ms": 45.607697,
+      "sample_count": 457,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 78.33698030634574,
+      "sm_issue": 33.42450765864333,
+      "tensor_active": 21.295404814004378,
+      "dram_read": 4.796498905908097,
+      "dram_write": 10.37417943107221
+    },
+    {
+      "pass": "overlap_02",
+      "mode": "overlap",
+      "window": "hift_a",
+      "start_ns": 373677475,
+      "end_ns": 406348842,
+      "origin_ns": 322345184,
+      "start_ms": 51.332291,
+      "end_ms": 84.003658,
+      "duration_ms": 32.671367,
+      "sample_count": 326,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 80.56748466257669,
+      "sm_issue": 33.58895705521472,
+      "tensor_active": 18.70245398773006,
+      "dram_read": 6.386503067484663,
+      "dram_write": 12.542944785276074
+    },
+    {
+      "pass": "overlap_02",
+      "mode": "overlap",
+      "window": "hift_b",
+      "start_ns": 424354738,
+      "end_ns": 454158604,
+      "origin_ns": 322345184,
+      "start_ms": 102.009554,
+      "end_ms": 131.81342,
+      "duration_ms": 29.803866,
+      "sample_count": 298,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 22.92953020134228,
+      "sm_issue": 8.573825503355705,
+      "tensor_active": 3.7013422818791946,
+      "dram_read": 1.2583892617449663,
+      "dram_write": 1.895973154362416
+    },
+    {
+      "pass": "overlap_02",
+      "mode": "overlap",
+      "window": "overlap_span",
+      "start_ns": 378560067,
+      "end_ns": 406348842,
+      "origin_ns": 322345184,
+      "start_ms": 56.214883,
+      "end_ms": 84.003658,
+      "duration_ms": 27.788775,
+      "sample_count": 278,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 81.92086330935251,
+      "sm_issue": 34.17985611510792,
+      "tensor_active": 20.946043165467625,
+      "dram_read": 6.010791366906475,
+      "dram_write": 12.29136690647482
+    },
+    {
+      "pass": "serial_03",
+      "mode": "serial",
+      "window": "full_gpu",
+      "start_ns": 457323799,
+      "end_ns": 619360449,
+      "origin_ns": 457198075,
+      "start_ms": 0.125724,
+      "end_ms": 162.162374,
+      "duration_ms": 162.03665,
+      "sample_count": 1621,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 47.49290561381863,
+      "sm_issue": 20.32264034546576,
+      "tensor_active": 12.275138803207897,
+      "dram_read": 2.3701418877236273,
+      "dram_write": 5.126465144972239
+    },
+    {
+      "pass": "serial_03",
+      "mode": "serial",
+      "window": "flow_a_graph",
+      "start_ns": 468650828,
+      "end_ns": 507894407,
+      "origin_ns": 457198075,
+      "start_ms": 11.452753,
+      "end_ms": 50.696332,
+      "duration_ms": 39.243579,
+      "sample_count": 393,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.66412213740458,
+      "sm_issue": 32.07888040712468,
+      "tensor_active": 21.8117048346056,
+      "dram_read": 2.946564885496183,
+      "dram_write": 7.513994910941475
+    },
+    {
+      "pass": "serial_03",
+      "mode": "serial",
+      "window": "flow_b_graph",
+      "start_ns": 550247533,
+      "end_ns": 589780774,
+      "origin_ns": 457198075,
+      "start_ms": 93.049458,
+      "end_ms": 132.582699,
+      "duration_ms": 39.533241,
+      "sample_count": 396,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.77020202020202,
+      "sm_issue": 32.17424242424242,
+      "tensor_active": 21.8510101010101,
+      "dram_read": 2.9242424242424243,
+      "dram_write": 7.441919191919192
+    },
+    {
+      "pass": "serial_03",
+      "mode": "serial",
+      "window": "hift_a",
+      "start_ns": 508170533,
+      "end_ns": 538561147,
+      "origin_ns": 457198075,
+      "start_ms": 50.972458,
+      "end_ms": 81.363072,
+      "duration_ms": 30.390614,
+      "sample_count": 304,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 22.12171052631579,
+      "sm_issue": 8.217105263157896,
+      "tensor_active": 3.5690789473684212,
+      "dram_read": 1.256578947368421,
+      "dram_write": 1.894736842105263
+    },
+    {
+      "pass": "serial_03",
+      "mode": "serial",
+      "window": "hift_b",
+      "start_ns": 590026948,
+      "end_ns": 619289986,
+      "origin_ns": 457198075,
+      "start_ms": 132.828873,
+      "end_ms": 162.091911,
+      "duration_ms": 29.263038,
+      "sample_count": 293,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 23.320819112627987,
+      "sm_issue": 8.713310580204778,
+      "tensor_active": 3.7610921501706485,
+      "dram_read": 1.2491467576791808,
+      "dram_write": 1.9044368600682593
+    },
+    {
+      "pass": "serial_04",
+      "mode": "serial",
+      "window": "full_gpu",
+      "start_ns": 621680370,
+      "end_ns": 783052032,
+      "origin_ns": 621548142,
+      "start_ms": 0.132228,
+      "end_ms": 161.50389,
+      "duration_ms": 161.371662,
+      "sample_count": 1613,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 48.21512709237446,
+      "sm_issue": 20.68443893366398,
+      "tensor_active": 12.466831990080594,
+      "dram_read": 2.3719776813391196,
+      "dram_write": 5.159950402975822
+    },
+    {
+      "pass": "serial_04",
+      "mode": "serial",
+      "window": "flow_a_graph",
+      "start_ns": 632482570,
+      "end_ns": 672210786,
+      "origin_ns": 621548142,
+      "start_ms": 10.934428,
+      "end_ms": 50.662644,
+      "duration_ms": 39.728216,
+      "sample_count": 397,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 73.00503778337531,
+      "sm_issue": 32.322418136020154,
+      "tensor_active": 21.94962216624685,
+      "dram_read": 2.929471032745592,
+      "dram_write": 7.448362720403023
+    },
+    {
+      "pass": "serial_04",
+      "mode": "serial",
+      "window": "flow_b_graph",
+      "start_ns": 712908211,
+      "end_ns": 752690666,
+      "origin_ns": 621548142,
+      "start_ms": 91.360069,
+      "end_ms": 131.142524,
+      "duration_ms": 39.782455,
+      "sample_count": 398,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.95477386934674,
+      "sm_issue": 32.30653266331658,
+      "tensor_active": 21.907035175879397,
+      "dram_read": 2.9120603015075375,
+      "dram_write": 7.386934673366834
+    },
+    {
+      "pass": "serial_04",
+      "mode": "serial",
+      "window": "hift_a",
+      "start_ns": 672458528,
+      "end_ns": 701894524,
+      "origin_ns": 621548142,
+      "start_ms": 50.910386,
+      "end_ms": 80.346382,
+      "duration_ms": 29.435996,
+      "sample_count": 295,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 23.152542372881356,
+      "sm_issue": 8.654237288135594,
+      "tensor_active": 3.759322033898305,
+      "dram_read": 1.230508474576271,
+      "dram_write": 1.935593220338983
+    },
+    {
+      "pass": "serial_04",
+      "mode": "serial",
+      "window": "hift_b",
+      "start_ns": 752928553,
+      "end_ns": 782945473,
+      "origin_ns": 621548142,
+      "start_ms": 131.380411,
+      "end_ms": 161.397331,
+      "duration_ms": 30.01692,
+      "sample_count": 300,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 22.583333333333332,
+      "sm_issue": 8.406666666666666,
+      "tensor_active": 3.62,
+      "dram_read": 1.23,
+      "dram_write": 1.88
+    },
+    {
+      "pass": "overlap_05",
+      "mode": "overlap",
+      "window": "full_gpu",
+      "start_ns": 785654511,
+      "end_ns": 914523734,
+      "origin_ns": 785502367,
+      "start_ms": 0.152144,
+      "end_ms": 129.021367,
+      "duration_ms": 128.869223,
+      "sample_count": 1289,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 60.11481768813034,
+      "sm_issue": 25.570985259891387,
+      "tensor_active": 15.350659425911559,
+      "dram_read": 3.495733126454616,
+      "dram_write": 7.430566330488751
+    },
+    {
+      "pass": "overlap_05",
+      "mode": "overlap",
+      "window": "flow_a_graph",
+      "start_ns": 796696422,
+      "end_ns": 835929313,
+      "origin_ns": 785502367,
+      "start_ms": 11.194055,
+      "end_ms": 50.426946,
+      "duration_ms": 39.232891,
+      "sample_count": 392,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.77295918367346,
+      "sm_issue": 32.13520408163265,
+      "tensor_active": 21.8265306122449,
+      "dram_read": 2.951530612244898,
+      "dram_write": 7.50765306122449
+    },
+    {
+      "pass": "overlap_05",
+      "mode": "overlap",
+      "window": "flow_b_graph",
+      "start_ns": 840985823,
+      "end_ns": 885574742,
+      "origin_ns": 785502367,
+      "start_ms": 55.483456,
+      "end_ms": 100.072375,
+      "duration_ms": 44.588919,
+      "sample_count": 446,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 79.72421524663677,
+      "sm_issue": 33.84304932735426,
+      "tensor_active": 21.565022421524663,
+      "dram_read": 4.959641255605381,
+      "dram_write": 10.665919282511211
+    },
+    {
+      "pass": "overlap_05",
+      "mode": "overlap",
+      "window": "hift_a",
+      "start_ns": 836209023,
+      "end_ns": 868862406,
+      "origin_ns": 785502367,
+      "start_ms": 50.706656,
+      "end_ms": 83.360039,
+      "duration_ms": 32.653383,
+      "sample_count": 327,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 80.58103975535168,
+      "sm_issue": 33.3822629969419,
+      "tensor_active": 18.654434250764528,
+      "dram_read": 6.437308868501529,
+      "dram_write": 12.669724770642201
+    },
+    {
+      "pass": "overlap_05",
+      "mode": "overlap",
+      "window": "hift_b",
+      "start_ns": 885813909,
+      "end_ns": 914452790,
+      "origin_ns": 785502367,
+      "start_ms": 100.311542,
+      "end_ms": 128.950423,
+      "duration_ms": 28.638881,
+      "sample_count": 286,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 23.8986013986014,
+      "sm_issue": 8.909090909090908,
+      "tensor_active": 3.86013986013986,
+      "dram_read": 1.2412587412587412,
+      "dram_write": 1.9335664335664335
+    },
+    {
+      "pass": "overlap_05",
+      "mode": "overlap",
+      "window": "overlap_span",
+      "start_ns": 840985823,
+      "end_ns": 868862406,
+      "origin_ns": 785502367,
+      "start_ms": 55.483456,
+      "end_ms": 83.360039,
+      "duration_ms": 27.876583,
+      "sample_count": 279,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 82.18637992831542,
+      "sm_issue": 34.075268817204304,
+      "tensor_active": 20.92831541218638,
+      "dram_read": 6.132616487455197,
+      "dram_write": 12.437275985663083
+    },
+    {
+      "pass": "overlap_06",
+      "mode": "overlap",
+      "window": "full_gpu",
+      "start_ns": 917048389,
+      "end_ns": 1051343336,
+      "origin_ns": 916921378,
+      "start_ms": 0.127011,
+      "end_ms": 134.421958,
+      "duration_ms": 134.294947,
+      "sample_count": 1343,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 58.31645569620253,
+      "sm_issue": 24.909903201787046,
+      "tensor_active": 14.941176470588236,
+      "dram_read": 3.3827252419955323,
+      "dram_write": 7.153387937453463
+    },
+    {
+      "pass": "overlap_06",
+      "mode": "overlap",
+      "window": "flow_a_graph",
+      "start_ns": 929152213,
+      "end_ns": 968898604,
+      "origin_ns": 916921378,
+      "start_ms": 12.230835,
+      "end_ms": 51.977226,
+      "duration_ms": 39.746391,
+      "sample_count": 398,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.9321608040201,
+      "sm_issue": 32.25879396984924,
+      "tensor_active": 21.87437185929648,
+      "dram_read": 2.9271356783919598,
+      "dram_write": 7.442211055276382
+    },
+    {
+      "pass": "overlap_06",
+      "mode": "overlap",
+      "window": "flow_b_graph",
+      "start_ns": 974069898,
+      "end_ns": 1019616411,
+      "origin_ns": 916921378,
+      "start_ms": 57.14852,
+      "end_ms": 102.695033,
+      "duration_ms": 45.546513,
+      "sample_count": 455,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 78.58241758241758,
+      "sm_issue": 33.49230769230769,
+      "tensor_active": 21.37142857142857,
+      "dram_read": 4.791208791208791,
+      "dram_write": 10.406593406593407
+    },
+    {
+      "pass": "overlap_06",
+      "mode": "overlap",
+      "window": "hift_a",
+      "start_ns": 969162571,
+      "end_ns": 1001427636,
+      "origin_ns": 916921378,
+      "start_ms": 52.241193,
+      "end_ms": 84.506258,
+      "duration_ms": 32.265065,
+      "sample_count": 322,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 80.82298136645963,
+      "sm_issue": 33.65527950310559,
+      "tensor_active": 18.698757763975156,
+      "dram_read": 6.419254658385094,
+      "dram_write": 12.633540372670808
+    },
+    {
+      "pass": "overlap_06",
+      "mode": "overlap",
+      "window": "hift_b",
+      "start_ns": 1020119192,
+      "end_ns": 1051272872,
+      "origin_ns": 916921378,
+      "start_ms": 103.197814,
+      "end_ms": 134.351494,
+      "duration_ms": 31.15368,
+      "sample_count": 312,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 21.891025641025642,
+      "sm_issue": 8.21474358974359,
+      "tensor_active": 3.5544871794871793,
+      "dram_read": 1.2467948717948718,
+      "dram_write": 1.8685897435897436
+    },
+    {
+      "pass": "overlap_06",
+      "mode": "overlap",
+      "window": "overlap_span",
+      "start_ns": 974069898,
+      "end_ns": 1001427636,
+      "origin_ns": 916921378,
+      "start_ms": 57.14852,
+      "end_ms": 84.506258,
+      "duration_ms": 27.357738,
+      "sample_count": 273,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 82.35164835164835,
+      "sm_issue": 34.282051282051285,
+      "tensor_active": 21.04029304029304,
+      "dram_read": 6.051282051282051,
+      "dram_write": 12.402930402930403
+    },
+    {
+      "pass": "serial_07",
+      "mode": "serial",
+      "window": "full_gpu",
+      "start_ns": 1054595058,
+      "end_ns": 1232770641,
+      "origin_ns": 1054409609,
+      "start_ms": 0.185449,
+      "end_ms": 178.361032,
+      "duration_ms": 178.175583,
+      "sample_count": 1782,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 43.24466891133558,
+      "sm_issue": 18.537037037037038,
+      "tensor_active": 11.196408529741863,
+      "dram_read": 2.212121212121212,
+      "dram_write": 4.707631874298541
+    },
+    {
+      "pass": "serial_07",
+      "mode": "serial",
+      "window": "flow_a_graph",
+      "start_ns": 1073932626,
+      "end_ns": 1113181229,
+      "origin_ns": 1054409609,
+      "start_ms": 19.523017,
+      "end_ms": 58.77162,
+      "duration_ms": 39.248603,
+      "sample_count": 393,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.6615776081425,
+      "sm_issue": 32.06615776081425,
+      "tensor_active": 21.78117048346056,
+      "dram_read": 2.9440203562340965,
+      "dram_write": 7.5038167938931295
+    },
+    {
+      "pass": "serial_07",
+      "mode": "serial",
+      "window": "flow_b_graph",
+      "start_ns": 1158986652,
+      "end_ns": 1198614036,
+      "origin_ns": 1054409609,
+      "start_ms": 104.577043,
+      "end_ms": 144.204427,
+      "duration_ms": 39.627384,
+      "sample_count": 396,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 72.96969696969697,
+      "sm_issue": 32.30555555555556,
+      "tensor_active": 21.901515151515152,
+      "dram_read": 2.919191919191919,
+      "dram_write": 7.444444444444445
+    },
+    {
+      "pass": "serial_07",
+      "mode": "serial",
+      "window": "hift_a",
+      "start_ns": 1113702665,
+      "end_ns": 1147257706,
+      "origin_ns": 1054409609,
+      "start_ms": 59.293056,
+      "end_ms": 92.848097,
+      "duration_ms": 33.555041,
+      "sample_count": 336,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 20.023809523809526,
+      "sm_issue": 7.497023809523809,
+      "tensor_active": 3.2410714285714284,
+      "dram_read": 1.1577380952380953,
+      "dram_write": 1.7261904761904763
+    },
+    {
+      "pass": "serial_07",
+      "mode": "serial",
+      "window": "hift_b",
+      "start_ns": 1199005554,
+      "end_ns": 1232676786,
+      "origin_ns": 1054409609,
+      "start_ms": 144.595945,
+      "end_ms": 178.267177,
+      "duration_ms": 33.671232,
+      "sample_count": 337,
+      "max_sample_gap_ms": 0.1,
+      "sm_active": 20.270029673590503,
+      "sm_issue": 7.599406528189911,
+      "tensor_active": 3.287833827893175,
+      "dram_read": 1.1661721068249258,
+      "dram_write": 1.7329376854599408
+    }
+  ],
+  "summaries": [
+    {
+      "mode": "serial",
+      "window": "flow_a_graph",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 39.15253975,
+        "stdev": 0.5570011547883761,
+        "min": 38.389761,
+        "max": 39.728216
+      },
+      "sm_active": {
+        "mean": 73.55403854889727,
+        "stdev": 1.5626007720863555,
+        "min": 72.6615776081425,
+        "max": 75.88541666666667
+      },
+      "sm_issue": {
+        "mean": 32.51334845098977,
+        "stdev": 0.7247168752348934,
+        "min": 32.06615776081425,
+        "max": 33.5859375
+      },
+      "tensor_active": {
+        "mean": 22.078332704411586,
+        "stdev": 0.4674467278772681,
+        "min": 21.78117048346056,
+        "max": 22.770833333333332
+      },
+      "dram_read": {
+        "mean": 2.9556651102856346,
+        "stdev": 0.032186017151628755,
+        "min": 2.929471032745592,
+        "max": 3.0026041666666665
+      },
+      "dram_write": {
+        "mean": 7.53581443964274,
+        "stdev": 0.09849643764930326,
+        "min": 7.448362720403023,
+        "max": 7.677083333333333
+      }
+    },
+    {
+      "mode": "serial",
+      "window": "flow_b_graph",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 39.54707275,
+        "stdev": 0.22595466648035903,
+        "min": 39.245211,
+        "max": 39.782455
+      },
+      "sm_active": {
+        "mean": 72.87711209236245,
+        "stdev": 0.10007430120375085,
+        "min": 72.77020202020202,
+        "max": 72.96969696969697
+      },
+      "sm_issue": {
+        "mean": 32.2303836811868,
+        "stdev": 0.08880779822758957,
+        "min": 32.13520408163265,
+        "max": 32.30653266331658
+      },
+      "tensor_active": {
+        "mean": 21.880451331590958,
+        "stdev": 0.027980026034383307,
+        "min": 21.8510101010101,
+        "max": 21.907035175879397
+      },
+      "dram_read": {
+        "mean": 2.9273940693987353,
+        "stdev": 0.018480247161056753,
+        "min": 2.9120603015075375,
+        "max": 2.954081632653061
+      },
+      "dram_write": {
+        "mean": 7.448426618248944,
+        "stdev": 0.05483553110278448,
+        "min": 7.386934673366834,
+        "max": 7.520408163265306
+      }
+    },
+    {
+      "mode": "serial",
+      "window": "full_gpu",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 169.49990425,
+        "stdev": 9.034460378632556,
+        "min": 161.371662,
+        "max": 178.175583
+      },
+      "sm_active": {
+        "mean": 45.67510851095813,
+        "stdev": 2.5415150284963826,
+        "min": 43.24466891133558,
+        "max": 48.21512709237446
+      },
+      "sm_issue": {
+        "mean": 19.573670802397704,
+        "stdev": 1.087331722817208,
+        "min": 18.537037037037038,
+        "max": 20.68443893366398
+      },
+      "tensor_active": {
+        "mean": 11.824305715111329,
+        "stdev": 0.6395311828752126,
+        "min": 11.196408529741863,
+        "max": 12.466831990080594
+      },
+      "dram_read": {
+        "mean": 2.299784685091908,
+        "stdev": 0.08338545405429007,
+        "min": 2.212121212121212,
+        "max": 2.3719776813391196
+      },
+      "dram_write": {
+        "mean": 4.936578748985687,
+        "stdev": 0.2396796611818046,
+        "min": 4.707631874298541,
+        "max": 5.159950402975822
+      }
+    },
+    {
+      "mode": "serial",
+      "window": "hift_a",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 31.47383875,
+        "stdev": 1.891992025732205,
+        "min": 29.435996,
+        "max": 33.555041
+      },
+      "sm_active": {
+        "mean": 21.4952848365209,
+        "stdev": 1.4099447952832047,
+        "min": 20.023809523809526,
+        "max": 23.152542372881356
+      },
+      "sm_issue": {
+        "mean": 8.0190146671274,
+        "stdev": 0.5203023894436135,
+        "min": 7.497023809523809,
+        "max": 8.654237288135594
+      },
+      "tensor_active": {
+        "mean": 3.4831373332287696,
+        "stdev": 0.22852742666053327,
+        "min": 3.2410714285714284,
+        "max": 3.759322033898305
+      },
+      "dram_read": {
+        "mean": 1.2096679177572354,
+        "stdev": 0.043135477230992356,
+        "min": 1.1577380952380953,
+        "max": 1.256578947368421
+      },
+      "dram_write": {
+        "mean": 1.831437826966373,
+        "stdev": 0.09966917638471444,
+        "min": 1.7261904761904763,
+        "max": 1.935593220338983
+      }
+    },
+    {
+      "mode": "serial",
+      "window": "hift_b",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 30.745563500000003,
+        "stdev": 1.9831665685325086,
+        "min": 29.263038,
+        "max": 33.671232
+      },
+      "sm_active": {
+        "mean": 22.145212196554624,
+        "stdev": 1.3113186348079102,
+        "min": 20.270029673590503,
+        "max": 23.320819112627987
+      },
+      "sm_issue": {
+        "mean": 8.27234594376534,
+        "stdev": 0.47429795098474525,
+        "min": 7.599406528189911,
+        "max": 8.713310580204778
+      },
+      "tensor_active": {
+        "mean": 3.5722314945159557,
+        "stdev": 0.20092622217052802,
+        "min": 3.287833827893175,
+        "max": 3.7610921501706485
+      },
+      "dram_read": {
+        "mean": 1.2288297161260266,
+        "stdev": 0.044852053165235106,
+        "min": 1.1661721068249258,
+        "max": 1.27
+      },
+      "dram_write": {
+        "mean": 1.8518436363820499,
+        "stdev": 0.07990277683770888,
+        "min": 1.7329376854599408,
+        "max": 1.9044368600682593
+      }
+    },
+    {
+      "mode": "overlap",
+      "window": "flow_a_graph",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 39.491281,
+        "stdev": 0.3222537388084108,
+        "min": 39.193179,
+        "max": 39.792663
+      },
+      "sm_active": {
+        "mean": 72.86445620961952,
+        "stdev": 0.11408675281639981,
+        "min": 72.76275510204081,
+        "max": 72.98994974874371
+      },
+      "sm_issue": {
+        "mean": 32.20311698800123,
+        "stdev": 0.10855356607146631,
+        "min": 32.09183673469388,
+        "max": 32.32663316582914
+      },
+      "tensor_active": {
+        "mean": 21.85605643010973,
+        "stdev": 0.04418229339509501,
+        "min": 21.81377551020408,
+        "max": 21.90954773869347
+      },
+      "dram_read": {
+        "mean": 2.9336894933852937,
+        "stdev": 0.024363117440974195,
+        "min": 2.9020100502512562,
+        "max": 2.954081632653061
+      },
+      "dram_write": {
+        "mean": 7.474989744641576,
+        "stdev": 0.047372331813526965,
+        "min": 7.42713567839196,
+        "max": 7.5229591836734695
+      }
+    },
+    {
+      "mode": "overlap",
+      "window": "flow_b_graph",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 45.258723,
+        "stdev": 0.4670242594669659,
+        "min": 44.588919,
+        "max": 45.607697
+      },
+      "sm_active": {
+        "mean": 78.76465604323192,
+        "stdev": 0.6478484615438137,
+        "min": 78.33698030634574,
+        "max": 79.72421524663677
+      },
+      "sm_issue": {
+        "mean": 33.52771451394718,
+        "stdev": 0.21799977264501372,
+        "min": 33.35099337748344,
+        "max": 33.84304932735426
+      },
+      "tensor_active": {
+        "mean": 21.37087785902417,
+        "stdev": 0.13856711377042139,
+        "min": 21.251655629139073,
+        "max": 21.565022421524663
+      },
+      "dram_read": {
+        "mean": 4.862002801094475,
+        "stdev": 0.08232126707247023,
+        "min": 4.791208791208791,
+        "max": 4.959641255605381
+      },
+      "dram_write": {
+        "mean": 10.495227113929417,
+        "stdev": 0.13312206355853085,
+        "min": 10.37417943107221,
+        "max": 10.665919282511211
+      }
+    },
+    {
+      "mode": "overlap",
+      "window": "full_gpu",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 131.54170125000002,
+        "stdev": 2.224969463322793,
+        "min": 128.869223,
+        "max": 134.294947
+      },
+      "sm_active": {
+        "mean": 59.2230168950252,
+        "stdev": 0.7651940517861747,
+        "min": 58.31645569620253,
+        "max": 60.11481768813034
+      },
+      "sm_issue": {
+        "mean": 25.253749726985742,
+        "stdev": 0.30065918168321226,
+        "min": 24.909903201787046,
+        "max": 25.570985259891387
+      },
+      "tensor_active": {
+        "mean": 15.152931545589208,
+        "stdev": 0.18152179791882547,
+        "min": 14.941176470588236,
+        "max": 15.350659425911559
+      },
+      "dram_read": {
+        "mean": 3.441104644569684,
+        "stdev": 0.04682198483872853,
+        "min": 3.3827252419955323,
+        "max": 3.495733126454616
+      },
+      "dram_write": {
+        "mean": 7.293721708093601,
+        "stdev": 0.11424278278517164,
+        "min": 7.153387937453463,
+        "max": 7.430566330488751
+      }
+    },
+    {
+      "mode": "overlap",
+      "window": "hift_a",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 33.102028,
+        "stdev": 1.1594305465293453,
+        "min": 32.265065,
+        "max": 34.818297
+      },
+      "sm_active": {
+        "mean": 80.45408334264872,
+        "stdev": 0.4227907752135058,
+        "min": 79.84482758620689,
+        "max": 80.82298136645963
+      },
+      "sm_issue": {
+        "mean": 33.47630879686153,
+        "stdev": 0.17568903559675944,
+        "min": 33.27873563218391,
+        "max": 33.65527950310559
+      },
+      "tensor_active": {
+        "mean": 18.705003454640426,
+        "stdev": 0.045191740486521255,
+        "min": 18.654434250764528,
+        "max": 18.764367816091955
+      },
+      "dram_read": {
+        "mean": 6.366082740546844,
+        "stdev": 0.09880918476647331,
+        "min": 6.221264367816092,
+        "max": 6.437308868501529
+      },
+      "dram_write": {
+        "mean": 12.551351332721984,
+        "stdev": 0.13875864024689485,
+        "min": 12.35919540229885,
+        "max": 12.669724770642201
+      }
+    },
+    {
+      "mode": "overlap",
+      "window": "hift_b",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 29.98597625,
+        "stdev": 1.0554691403580918,
+        "min": 28.638881,
+        "max": 31.15368
+      },
+      "sm_active": {
+        "mean": 22.81510284159547,
+        "stdev": 0.8398362014227468,
+        "min": 21.891025641025642,
+        "max": 23.8986013986014
+      },
+      "sm_issue": {
+        "mean": 8.530850644111908,
+        "stdev": 0.2920524569024992,
+        "min": 8.21474358974359,
+        "max": 8.909090909090908
+      },
+      "tensor_active": {
+        "mean": 3.6931837495184725,
+        "stdev": 0.12715334456211824,
+        "min": 3.5544871794871793,
+        "max": 3.86013986013986
+      },
+      "dram_read": {
+        "mean": 1.2435414117689518,
+        "stdev": 0.012734252904114068,
+        "min": 1.2277227722772277,
+        "max": 1.2583892617449663
+      },
+      "dram_write": {
+        "mean": 1.8890537850248628,
+        "stdev": 0.03369988184504302,
+        "min": 1.858085808580858,
+        "max": 1.9335664335664335
+      }
+    },
+    {
+      "mode": "overlap",
+      "window": "overlap_span",
+      "passes": 4,
+      "duration_ms": {
+        "mean": 28.26091625,
+        "stdev": 1.194813536200348,
+        "min": 27.357738,
+        "max": 30.020569
+      },
+      "sm_active": {
+        "mean": 81.91638956399574,
+        "stdev": 0.5053288086137542,
+        "min": 81.20666666666666,
+        "max": 82.35164835164835
+      },
+      "sm_issue": {
+        "mean": 34.106794053590875,
+        "stdev": 0.16737847647605547,
+        "min": 33.89,
+        "max": 34.282051282051285
+      },
+      "tensor_active": {
+        "mean": 20.95032957115343,
+        "stdev": 0.06493429411349659,
+        "min": 20.886666666666667,
+        "max": 21.04029304029304
+      },
+      "dram_read": {
+        "mean": 6.024505809744264,
+        "stdev": 0.09535152634316804,
+        "min": 5.903333333333333,
+        "max": 6.132616487455197
+      },
+      "dram_write": {
+        "mean": 12.30872665710041,
+        "stdev": 0.15042944524724966,
+        "min": 12.103333333333333,
+        "max": 12.437275985663083
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "severity": 4,
+      "text": "GPU Metrics [0]: Skipping metric CTC.TriageCompute.ctc__tx_bytes_data_protocol.avg.pct_of_peak_sustained_elapsed (requires unsupported counter 0x2e33cdf1d2a6eddd @ auto)"
+    },
+    {
+      "severity": 4,
+      "text": "GPU Metrics [0]: Skipping metric CTC.TriageCompute.ctc__tx_bytes_data_user.avg.pct_of_peak_sustained_elapsed (requires unsupported counter 0x2e33cdf1d2a6eddd @ auto)"
+    },
+    {
+      "severity": 4,
+      "text": "GPU Metrics [0]: Skipping metric CTC.TriageCompute.ctc__rx_bytes_data_protocol.avg.pct_of_peak_sustained_elapsed (requires unsupported counter 0xc9db2188e412c9b6 @ auto)"
+    },
+    {
+      "severity": 4,
+      "text": "GPU Metrics [0]: Skipping metric CTC.TriageCompute.ctc__rx_bytes_data_user.avg.pct_of_peak_sustained_elapsed (requires unsupported counter 0x6fb2cb5e5db22863 @ auto)"
+    },
+    {
+      "severity": 2,
+      "text": "Not all NVTX events might have been collected."
+    },
+    {
+      "severity": 2,
+      "text": "Not all NVTX events might have been collected."
+    },
+    {
+      "severity": 2,
+      "text": "No NVTX events collected. Does the process use NVTX?"
+    },
+    {
+      "severity": 2,
+      "text": "Not all CUDA events might have been collected."
+    },
+    {
+      "severity": 2,
+      "text": "Not all CUDA events might have been collected."
+    },
+    {
+      "severity": 2,
+      "text": "No CUDA events collected. Does the process use CUDA?"
+    }
+  ],
+  "source_revision": "917821a95770c89f875fc0e4c4456f85c221d441",
+  "scope": "Same four fixed real samples replayed as A and B, one shared graph (4,576), unchanged per-batch HiFT grouping. Not serving capacity or a new unprofiled speedup estimate."
+}

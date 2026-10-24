@@ -1,0 +1,44 @@
+
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]
+Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 769.48it/s]
+WER: 32/256 pairs
+WER: 64/256 pairs
+WER: 96/256 pairs
+WER: 128/256 pairs
+WER: 160/256 pairs
+WER: 192/256 pairs
+WER: 224/256 pairs
+WER: 256/256 pairs
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/opt/sglang/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+/opt/sglang/lib/python3.12/site-packages/torch/nn/functional.py:6829: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  key_padding_mask = _canonical_mask(
+/opt/sglang/lib/python3.12/site-packages/torch/nn/functional.py:6829: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  key_padding_mask = _canonical_mask(
+Similarity: 32/256 pairs
+Similarity: 64/256 pairs
+Similarity: 96/256 pairs
+Similarity: 128/256 pairs
+Similarity: 160/256 pairs
+Similarity: 192/256 pairs
+Similarity: 224/256 pairs
+Similarity: 256/256 pairs
+{
+  "samples": 256,
+  "asr_checkpoint": "/__modal/volumes/vo-yahpkXk1LNMk19ud302A7C/hub/models--Qwen--Qwen3-ASR-1.7B/snapshots/7278e1e70fe206f11671096ffdd38061171dd6e5",
+  "speaker_assets": {
+    "finetune": "/root/.cache/sglang-omni/speaker_sim/wavlm_large_finetune.pth",
+    "base": "/root/.cache/sglang-omni/speaker_sim/wavlm_large.pt"
+  },
+  "baseline": {
+    "corpus_wer_percent": 2.5127458120903134,
+    "mean_similarity_0_100": 48.46123830974102,
+    "wer_over_50_percent": 4
+  },
+  "optimized": {
+    "corpus_wer_percent": 2.5127458120903134,
+    "mean_similarity_0_100": 48.460693165659904,
+    "wer_over_50_percent": 4
+  }
+}
