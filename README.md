@@ -1,13 +1,20 @@
-# SGLang-Omni PR test results
+# SGLang-Omni Results
 
-This branch stores completed PR test results, with reports, measurement data, logs,
-figures, environment evidence and source provenance. Each PR has its own directory.
+A shared home for SGLang-Omni benchmark, accuracy and profiling results.
+Results are organized by the model or component being studied, with dated
+experiment directories inside each topic.
 
-| PR | Results |
+## Results index
+
+| Topic | Results |
 | --- | --- |
-| [#5 — MiniCPM-o readiness-aware batching and Flow/HiFT execution](https://github.com/cuzmi/sglang-omni/pull/5) | [Results and limitations](pr-5-minicpm-flow-hift/README.md) |
+| MiniCPM-o Flow/HiFT | [Serving performance, accuracy and overlap measurements](minicpm-flow-hift/README.md) |
 
-This is an independent evidence branch. It contains no serving implementation,
-reproduction scripts, patches, source bundles or PR submission drafts.
-Large raw captures are referenced by immutable links. SHA256SUMS.json verifies the
-files in this branch and excludes itself.
+## Adding results
+
+- Use a short, descriptive topic directory, such as `minicpm-flow-hift`.
+- Keep each experiment in a dated directory and link its report from the topic README.
+- Add new topics to the index above; a PR number is not required.
+- Include reports, measurement data, logs, figures and the environment/source versions needed to interpret them. Preserve limitations and unsuccessful results.
+- Keep implementation code, reproduction scripts, patches and source bundles in their source repositories or archives, referenced by fixed-commit links.
+- Update `SHA256SUMS.json` when published files change. It covers this branch's files and excludes itself.

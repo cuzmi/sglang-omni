@@ -1,7 +1,8 @@
-# MiniCPM-o Flow/HiFT results — PR #5
+# MiniCPM-o Flow/HiFT Results
 
-Evidence for [readiness-aware batching and decoupled Flow/HiFT execution](https://github.com/cuzmi/sglang-omni/pull/5).
-This directory contains completed test results and their measurement context.
+Benchmark, accuracy and profiling results for MiniCPM-o readiness-aware batching
+and decoupled Flow/HiFT execution. Each dated directory preserves one experiment
+and its measurement context.
 
 ## Primary results
 
