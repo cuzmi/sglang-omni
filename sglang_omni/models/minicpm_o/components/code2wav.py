@@ -130,11 +130,11 @@ class MiniCPMOCode2Wav(nn.Module):
             pass
         with self.device_context:
             device_module = torch.get_device_module(self.token2wav.device)
-            self.decode_stream: torch.Stream = device_module.Stream(
+            self.flow_stream: torch.Stream = device_module.Stream(
                 priority=decode_stream_priority,
             )
             # note (zhaochenyang20): weights are published on the load stream.
-            self.decode_stream.wait_stream(device_module.current_stream())
+            self.flow_stream.wait_stream(device_module.current_stream())
 
         if prompt_wav is None:
             default_wav = os.path.join(model_dir, "assets", "HT_ref_audio.wav")
@@ -184,7 +184,7 @@ class MiniCPMOCode2Wav(nn.Module):
             with self.device_context, torch.inference_mode():
                 self.flow_mel(
                     warmup_prompt.prompt_tokens,
-                    warmup_prompt.prompt_token_lengths,
+                    [FLOW_WARMUP_TOKENS],
                     [warmup_prompt],
                 )
         else:
@@ -276,8 +276,8 @@ class MiniCPMOCode2Wav(nn.Module):
 
         def prepare_reference() -> SpeakerPrompt:
             device_module = torch.get_device_module(self.token2wav.device)
-            # note (zhaochenyang20): cached prompts must share the decoder's stream.
-            with device_module.stream(self.decode_stream):
+            # note (zhaochenyang20): cached prompts must share the Flow stream.
+            with device_module.stream(self.flow_stream):
                 return self.token2wav.prepare_prompt(source)
 
         future = self.reference_executor.submit(prepare_reference)
@@ -318,8 +318,8 @@ class MiniCPMOCode2Wav(nn.Module):
 
     def prefetch_reference(
         self, request_id: str, reference: str | bytes | None
-    ) -> None:
-        """Start preparing a queued request's reference and pin it until release."""
+    ) -> Future[SpeakerPrompt] | None:
+        """Pin a queued reference and return its pending preparation, if any."""
         reference_key, resolved = self.resolve_reference_key(reference)
         with self.reference_lock:
             self.reserved_reference_keys_by_request[request_id] = reference_key
@@ -330,6 +330,17 @@ class MiniCPMOCode2Wav(nn.Module):
                 self.submit_reference(reference_key, resolved)
             else:
                 pass
+            return self.pending_references.get(reference_key)
+
+    def is_reference_ready(self, request_id: str) -> bool:
+        """Let missing or failed prefetch reach normal execution and error handling."""
+        with self.reference_lock:
+            reference_key = self.reserved_reference_keys_by_request.get(request_id)
+            if reference_key is None:
+                return True
+            else:
+                future = self.pending_references.get(reference_key)
+                return future is None or future.done()
 
     def release_reference(self, request_id: str) -> None:
         """Unpin a request's prompt once its batch consumed it or it was aborted."""
@@ -392,10 +403,10 @@ class MiniCPMOCode2Wav(nn.Module):
     def flow_mel(
         self,
         speech_tokens: torch.Tensor,
-        speech_token_lengths: torch.Tensor,
+        speech_token_lengths: Sequence[int],
         speaker_prompts: Sequence[SpeakerPrompt],
     ) -> torch.Tensor:
-        """Run the flow on padded codec tokens, one speaker prompt per row."""
+        """Run the flow on padded codec tokens, one unpadded speaker prompt per row."""
         with torch.amp.autocast(
             self.token2wav.device.type,
             dtype=self.token2wav.dtype,
@@ -408,7 +419,7 @@ class MiniCPMOCode2Wav(nn.Module):
                     [prompt.prompt_tokens[0] for prompt in speaker_prompts],
                     batch_first=True,
                 ),
-                torch.cat([prompt.prompt_token_lengths for prompt in speaker_prompts]),
+                [prompt.prompt_tokens.shape[1] for prompt in speaker_prompts],
                 pad_sequence(
                     [prompt.prompt_mel[0] for prompt in speaker_prompts],
                     batch_first=True,
@@ -432,68 +443,82 @@ class MiniCPMOCode2Wav(nn.Module):
             pass
 
         speaker_prompts = self.prepare_references(references)
+        row_groups = self.flow_row_groups(token_sequences, speaker_prompts)
+        device_module = torch.get_device_module(self.token2wav.device)
+        waveforms_by_row: dict[int, np.ndarray] = {}
+        with device_module.stream(self.flow_stream):
+            for row_group in row_groups:
+                group_waveforms = self.decode_waveforms(
+                    [token_sequences[index] for index in row_group],
+                    [speaker_prompts[index] for index in row_group],
+                )
+                waveforms_by_row.update(zip(row_group, group_waveforms, strict=True))
+        return [waveforms_by_row[index] for index in range(len(token_sequences))]
+
+    @staticmethod
+    def flow_row_groups(
+        token_sequences: Sequence[Sequence[int]],
+        speaker_prompts: Sequence[SpeakerPrompt],
+    ) -> list[list[int]]:
+        """Bound dense attention padding while preserving each request's row index."""
         combined_token_lengths = [
             len(tokens) + prompt.prompt_tokens.shape[1]
             for tokens, prompt in zip(token_sequences, speaker_prompts, strict=True)
         ]
-        device_module = torch.get_device_module(self.token2wav.device)
-        with device_module.stream(self.decode_stream):
-            if (
-                len(token_sequences) == 1
-                or len(token_sequences) * max(combined_token_lengths) ** 2
-                <= FLOW_BATCH_TOKEN_SQUARE_BUDGET
+        if (
+            len(token_sequences) <= 1
+            or len(token_sequences) * max(combined_token_lengths) ** 2
+            <= FLOW_BATCH_TOKEN_SQUARE_BUDGET
+        ):
+            return [list(range(len(token_sequences)))]
+        else:
+            row_groups: list[list[int]] = []
+            for index in sorted(
+                range(len(combined_token_lengths)),
+                key=combined_token_lengths.__getitem__,
             ):
-                return self.decode_waveforms(token_sequences, speaker_prompts)
-            else:
-                row_groups: list[list[int]] = []
-                for index in sorted(
-                    range(len(combined_token_lengths)),
-                    key=combined_token_lengths.__getitem__,
+                if (
+                    row_groups
+                    and (len(row_groups[-1]) + 1) * combined_token_lengths[index] ** 2
+                    <= FLOW_BATCH_TOKEN_SQUARE_BUDGET
                 ):
-                    if (
-                        row_groups
-                        and (len(row_groups[-1]) + 1)
-                        * combined_token_lengths[index] ** 2
-                        <= FLOW_BATCH_TOKEN_SQUARE_BUDGET
-                    ):
-                        row_groups[-1].append(index)
-                    else:
-                        row_groups.append([index])
-                logger.info(
-                    f"Code2Wav split {len(token_sequences)} rows into "
-                    f"{len(row_groups)} Flow calls; longest row "
-                    f"{max(combined_token_lengths)} tokens"
-                )
-                waveforms_by_row: dict[int, np.ndarray] = {}
-                for row_group in row_groups:
-                    group_waveforms = self.decode_waveforms(
-                        [token_sequences[index] for index in row_group],
-                        [speaker_prompts[index] for index in row_group],
-                    )
-                    waveforms_by_row.update(
-                        zip(row_group, group_waveforms, strict=True)
-                    )
-                return [
-                    waveforms_by_row[index] for index in range(len(token_sequences))
-                ]
+                    row_groups[-1].append(index)
+                else:
+                    row_groups.append([index])
+            logger.info(
+                f"Code2Wav split {len(token_sequences)} rows into "
+                f"{len(row_groups)} Flow calls; longest row "
+                f"{max(combined_token_lengths)} tokens"
+            )
+            return row_groups
 
     def decode_waveforms(
         self,
         token_sequences: Sequence[Sequence[int]],
         speaker_prompts: Sequence[SpeakerPrompt],
     ) -> list[np.ndarray]:
-        """Run flow and HiFT. The caller selects the decode stream."""
+        """Run flow and HiFT on the caller-selected stream."""
+        mel = self.generate_mel(token_sequences, speaker_prompts)
+        return self.decode_mel(mel, [len(tokens) for tokens in token_sequences])
+
+    def generate_mel(
+        self,
+        token_sequences: Sequence[Sequence[int]],
+        speaker_prompts: Sequence[SpeakerPrompt],
+    ) -> torch.Tensor:
+        """Run the encoder and complete Flow sampling on the caller's stream."""
         token2wav_device = self.token2wav.device
         token_lengths = [len(tokens) for tokens in token_sequences]
         speech_tokens = pad_sequence(
             [torch.tensor(tokens, dtype=torch.int32) for tokens in token_sequences],
             batch_first=True,
-        ).to(token2wav_device)
-        speech_token_lengths = torch.tensor(
-            token_lengths, dtype=torch.int32, device=token2wav_device
-        )
-        mel = self.flow_mel(speech_tokens, speech_token_lengths, speaker_prompts)
+        ).to(token2wav_device, non_blocking=True)
+        return self.flow_mel(speech_tokens, token_lengths, speaker_prompts)
 
+    def decode_mel(
+        self, mel: torch.Tensor, token_lengths: Sequence[int]
+    ) -> list[np.ndarray]:
+        """Run length-grouped HiFT and return CPU waveforms on the caller's stream."""
         mel_upsample_rate = self.token2wav.flow.up_rate
         rows_by_token_length: defaultdict[int, list[int]] = defaultdict(list)
         for row, token_length in enumerate(token_lengths):
