@@ -12,7 +12,6 @@ from typing import Protocol
 from unittest.mock import AsyncMock, Mock
 
 import aiohttp
-import numpy as np
 import pytest
 
 from benchmarks.dataset.seedtts import SampleInput
@@ -385,8 +384,8 @@ async def test_cli_arrival_seed_reaches_scheduler_and_saved_results(
         arguments
     )  # noqa: leading-underscore  # production name
     forwarded: list[ForwardedSpeech] = []
-    generator = Mock(wraps=np.random.default_rng)
-    monkeypatch.setattr(np.random, "default_rng", generator)
+    runner_constructor = Mock(wraps=benchmark.BenchmarkRunner)
+    monkeypatch.setattr(benchmark, "BenchmarkRunner", runner_constructor)
     monkeypatch.setattr(
         benchmark.VoiceCloneOmni,
         "generate_speech",
@@ -395,7 +394,8 @@ async def test_cli_arrival_seed_reaches_scheduler_and_saved_results(
 
     await benchmark.run_omni_seedtts_benchmark(config)
 
-    generator.assert_called_once_with(arrival_seed)
+    runner_constructor.assert_called_once()
+    assert runner_constructor.call_args.args[0].arrival_seed == arrival_seed
     assert forwarded[0].seed == 17
     saved_results = json.loads((tmp_path / "results/speed_results.json").read_text())
     assert saved_results["config"]["arrival_seed"] == arrival_seed
