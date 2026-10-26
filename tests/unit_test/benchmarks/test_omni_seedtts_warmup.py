@@ -12,6 +12,7 @@ from typing import Protocol
 from unittest.mock import AsyncMock, Mock
 
 import aiohttp
+import numpy as np
 import pytest
 
 from benchmarks.dataset.seedtts import SampleInput
@@ -351,6 +352,54 @@ def test_cli_accepts_seed() -> None:
     assert (
         benchmark._config_from_args(args).seed == 3
     )  # noqa: leading-underscore  # production name
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("arrival_seed", [0, 7])
+async def test_cli_arrival_seed_reaches_scheduler_and_saved_results(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path, arrival_seed: int
+) -> None:
+    """Omni CLI previously could not seed arrivals independently of model sampling."""
+    metadata_path = tmp_path / "measured.lst"
+    metadata_path.write_text("measured|reference|unused.wav|Measured text\n")
+    arguments = benchmark._build_arg_parser().parse_args(  # noqa: leading-underscore  # production name
+        [
+            "--meta",
+            str(metadata_path),
+            "--output-dir",
+            str(tmp_path / "results"),
+            "--arrival-seed",
+            str(arrival_seed),
+            "--seed",
+            "17",
+            "--request-rate",
+            "1000",
+            "--max-concurrency",
+            "0",
+            "--warmup",
+            "0",
+            "--disable-tqdm",
+        ]
+    )
+    config = benchmark._config_from_args(
+        arguments
+    )  # noqa: leading-underscore  # production name
+    forwarded: list[ForwardedSpeech] = []
+    generator = Mock(wraps=np.random.default_rng)
+    monkeypatch.setattr(np.random, "default_rng", generator)
+    monkeypatch.setattr(
+        benchmark.VoiceCloneOmni,
+        "generate_speech",
+        recording_generate_speech(forwarded),
+    )
+
+    await benchmark.run_omni_seedtts_benchmark(config)
+
+    generator.assert_called_once_with(arrival_seed)
+    assert forwarded[0].seed == 17
+    saved_results = json.loads((tmp_path / "results/speed_results.json").read_text())
+    assert saved_results["config"]["arrival_seed"] == arrival_seed
+    assert saved_results["config"]["seed"] == 17
 
 
 def test_cli_parses_talker_and_sweep_flags() -> None:
