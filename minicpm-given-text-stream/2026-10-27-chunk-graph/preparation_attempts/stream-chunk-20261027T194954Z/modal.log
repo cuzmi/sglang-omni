@@ -1,0 +1,107 @@
+✓ Initialized. View run at 
+https://modal.com/apps/stangameact/main/ap-ESNXScwQFzKjDkvk4a6bhp
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/run_modal.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/preflight.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/analyze.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/patch_codec_probe.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/patch_chunk_graph_probe.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/verify_chunk_graph_evidence.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/driver.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/protocol.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/measure.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/source.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/candidate.tar.gz
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID: stream-chunk-20261027T194954Z
+Patched terminal codec evidence: /work/stream-validation/candidate/sglang_omni/models/minicpm_o/talker_request.py
+Patched chunk graph selection evidence under /work/stream-validation/candidate
+Stopping app - user stopped from CLI.
+Traceback (most recent call last):
+  File "/work/stream-validation/preflight.py", line 39, in <module>
+    main(options.root, options.output)
+  File "/work/stream-validation/preflight.py", line 26, in main
+    subprocess.run([sys.executable, '-c', 'import torch, torchaudio; import sglang_omni.models.minicpm_o.stages; print("Runtime imports verified")'], cwd=root / 'candidate', env=environment, stdout=log, stderr=subprocess.STDOUT, timeout=180, check=True)
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 2141, in _communicate
+    self.wait(timeout=self._remaining_time(endtime))
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 2047, in _wait
+    time.sleep(delay)
+KeyboardInterrupt
+Runner terminated.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/cuzimi/Coding                                                         │
+│ Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610 │
+│ 27/run_modal.py:247 in main                                                  │
+│                                                                              │
+│   246 │   print(f"Run ID: {run_id}", flush=True)                             │
+│ ❱ 247 │   prepared = prepare.remote(run_id)                                  │
+│   248 │   print(f"CPU preparation complete: {prepared}", flush=True)         │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_object.py:49 in wrapped                                     │
+│                                                                              │
+│    48 │   │   await self.hydrate()                                           │
+│ ❱  49 │   │   return await method(self, *args, **kwargs)                     │
+│    50                                                                        │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_functions.py:2081 in remote                                 │
+│                                                                              │
+│   2080 │   │                                                                 │
+│ ❱ 2081 │   │   return await self._call_function(args, kwargs)                │
+│   2082                                                                       │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_functions.py:2018 in _call_function                         │
+│                                                                              │
+│   2017 │   │                                                                 │
+│ ❱ 2018 │   │   return await invocation.run_function()                        │
+│   2019                                                                       │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_functions.py:498 in run_function                            │
+│                                                                              │
+│    497 │   │   │   if await_response.output.result.status in TERMINAL_STATUS │
+│ ❱  498 │   │   │   │   return await _process_result(                         │
+│    499 │   │   │   │   │   await_response.output.result, await_response.outp │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_utils/function_utils.py:574 in _process_result              │
+│                                                                              │
+│   573 │   │                                                                  │
+│ ❱ 574 │   │   raise RemoteError(result.exception)                            │
+│   575                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteError

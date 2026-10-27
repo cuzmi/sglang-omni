@@ -1,0 +1,19 @@
+{"case": "6435a148ba-warmup-nonstream-en", "server_request_id": "speech-943e3bd6-8a0e-408b-93f7-461256127d12", "meaningful_audio_seconds": 4.104488505000063, "completion_seconds": 4.1102465380000694, "chunks": 0, "error": null}
+{"case": "6435a148ba-warmup-nonstream-zh", "server_request_id": "speech-b2e1e933-7044-4001-a851-e58ae191c257", "meaningful_audio_seconds": 0.7082652340000095, "completion_seconds": 0.713277724999898, "chunks": 0, "error": null}
+{"case": "6435a148ba-warmup-stream-en", "server_request_id": "speech-220f0cfa-a9fa-4c48-b8cf-1bb18b02baf7", "meaningful_audio_seconds": 17.650643410000043, "completion_seconds": 18.106939305000083, "chunks": 15, "error": null}
+{"case": "6435a148ba-warmup-stream-zh", "server_request_id": "speech-3163f791-9041-4a9f-950e-f89b50b65f2e", "meaningful_audio_seconds": null, "completion_seconds": 1.4928773799999817, "chunks": 19, "error": "ValueError: Incomplete or invalid audio: finish_reason=stop, meaningful_audio_seconds=None, bytes=892800"}
+Traceback (most recent call last):
+  File "/work/stream-validation/measure.py", line 642, in <module>
+    asyncio.run(run(settings))
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/work/stream-validation/measure.py", line 526, in run
+    raise RuntimeError(
+RuntimeError: Warmup failed: 6435a148ba-warmup-stream-zh: ValueError: Incomplete or invalid audio: finish_reason=stop, meaningful_audio_seconds=None, bytes=892800

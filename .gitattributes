@@ -281,3 +281,9 @@
 "minicpm-given-text-stream/2026-10-27-streaming/*.csv" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 "minicpm-given-text-stream/2026-10-27-streaming/**/*.yaml" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 "minicpm-given-text-stream/2026-10-27-streaming/*.yaml" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-27-chunk-graph/**/*.log" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-27-chunk-graph/*.log" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-27-chunk-graph/**/*.csv" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-27-chunk-graph/*.csv" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-27-chunk-graph/**/*.yaml" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-27-chunk-graph/*.yaml" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab

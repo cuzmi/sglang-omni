@@ -1,0 +1,161 @@
+Starting one server with pinned KV capacities
+Server ready; warmup then 48 measured requests
+{
+  "valid": true,
+  "expected_enabled": false,
+  "terminal_snapshot_count": 28,
+  "measured_terminal_snapshot_count": 24,
+  "warmup_and_startup_hits": 0,
+  "warmup_and_startup_misses": 53,
+  "measured_hits": 0,
+  "measured_misses": 288,
+  "measured_hit_fraction": 0.0,
+  "captured_graphs": [],
+  "cumulative_shape_counts": [
+    {
+      "requested": [
+        1,
+        22,
+        402
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 5
+    },
+    {
+      "requested": [
+        1,
+        24,
+        402
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 5
+    },
+    {
+      "requested": [
+        1,
+        26,
+        402
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 4
+    },
+    {
+      "requested": [
+        1,
+        50,
+        302
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 10
+    },
+    {
+      "requested": [
+        1,
+        50,
+        352
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 10
+    },
+    {
+      "requested": [
+        1,
+        50,
+        402
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 167
+    },
+    {
+      "requested": [
+        1,
+        54,
+        402
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 5
+    },
+    {
+      "requested": [
+        2,
+        50,
+        302
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 9
+    },
+    {
+      "requested": [
+        2,
+        50,
+        352
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 9
+    },
+    {
+      "requested": [
+        2,
+        50,
+        402
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 108
+    },
+    {
+      "requested": [
+        2,
+        54,
+        402
+      ],
+      "selected": [
+        0,
+        0,
+        0
+      ],
+      "count": 9
+    }
+  ]
+}
+{"output": "/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-chunk-20261027T195127Z/without_chunk_graph/analysis.json", "integrity": {"valid": true, "summary_completed": true, "summary_duration_screen_valid": true, "request_count": 56, "measured_request_count": 48, "expected_measured_request_count": 48, "expected_warmup_request_count": 8, "codec_record_count": 56, "duplicate_request_ids": [], "duplicate_case_ids": [], "duplicate_codec_ids": [], "missing_codec_ids": [], "extra_codec_ids": [], "malformed_codec_lines": [], "invalid_token_lists": [], "invalid_uuid_formats": [], "prefix_mismatch_diagnostics": []}, "strict_attribution_valid": true}
+Streaming comparison completed with graph evidence

@@ -1,0 +1,465 @@
+{
+  "completed": false,
+  "all_requests_successful": false,
+  "comparison_valid": false,
+  "settings": {
+    "base_url": "http://127.0.0.1:18080",
+    "output": "/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-chunk-20261027T195127Z/with_chunk_graph/measurements",
+    "model": "MiniCPM-o-4_5",
+    "repeats": 2,
+    "timeout_seconds": 180.0,
+    "sample_rate": 24000,
+    "seed": 20261027,
+    "startup_reserve_seconds": 0.1,
+    "rms_threshold": 0.001,
+    "rms_window_seconds": 0.01,
+    "duration_mismatch_fraction": 0.1,
+    "stagger_seconds": 0.25
+  },
+  "stagger_seconds": 0.25,
+  "limitations": [
+    "Same source, stream flag comparison; not a branch performance comparison.",
+    "API output_tokens is not assumed to equal codec count. Join separate server codec evidence by server_request_id.",
+    "Seed does not prove identical codec generation. A 10 percent audio-duration gate is a screening check, not equivalent-work proof.",
+    "Generated chunks are SSE delta events; nonstream chunks are HTTP delivery boundaries.",
+    "Buffer stalls are simulated using PCM duration and declared startup reserve, not an audio quality judgment.",
+    "No profiler is active. SSE base64 serialization overhead belongs to the streaming arm."
+  ],
+  "comparisons": [],
+  "requests": [
+    {
+      "client_case_id": "6435a148ba-warmup-nonstream-en",
+      "logical_sample_id": "en",
+      "phase": "warmup",
+      "repetition": 0,
+      "scenario": "warmup",
+      "arm": "nonstream",
+      "arm_slot": 0,
+      "input_sha256": "6aa2ff2df20db879df0154c5264e74ecafdf321d16eb50219e1f7c794ba35913",
+      "planned_dispatch_run_seconds": 6.0723000046891684e-05,
+      "dispatch_run_seconds": 9.024899998166802e-05,
+      "dispatch_lateness_seconds": 2.9525999934776337e-05,
+      "server_request_id": "speech-943e3bd6-8a0e-408b-93f7-461256127d12",
+      "status": 200,
+      "response_headers": {
+        "Date": "Tue, 27 Oct 2026 20:02:33 GMT",
+        "Server": "uvicorn",
+        "Content-Disposition": "attachment; filename=\"speech.pcm\"",
+        "X-Request-ID": "speech-943e3bd6-8a0e-408b-93f7-461256127d12",
+        "x-finish-reason": "stop",
+        "x-prompt-tokens": "108",
+        "x-completion-tokens": "42",
+        "x-sglang-omni-input-tokens": "108",
+        "x-sglang-omni-output-tokens": "42",
+        "x-sglang-omni-total-tokens": "150",
+        "Content-Length": "718080",
+        "Content-Type": "audio/pcm",
+        "Vary": "Origin"
+      },
+      "first_response_seconds": 4.103957794000053,
+      "first_audio_seconds": 4.104488505000063,
+      "meaningful_audio_seconds": 4.104488505000063,
+      "audio_onset_seconds": 0.0,
+      "completion_seconds": 4.1102465380000694,
+      "audio_duration_seconds": 14.96,
+      "sample_rate": 24000,
+      "finish_reason": "stop",
+      "api_output_tokens": 42,
+      "generated_chunk_count": 0,
+      "transport_chunk_count": 3,
+      "simulated_stall_count": 0,
+      "simulated_stall_seconds": 0.0,
+      "max_chunk_gap_seconds": 0.005350206999992224,
+      "pcm_sha256": "1b81dc9584163f9b9ff92ce40fa80f9b5bca2147321ced9bebcdb3fa22558ce6",
+      "audio_file": "6435a148ba-warmup-nonstream-en.wav",
+      "error": null,
+      "chunks": [
+        {
+          "arrival_seconds": 4.104488505000063,
+          "duration_seconds": 5.461333333333333,
+          "byte_count": 262144,
+          "cumulative_audio_seconds": 5.461333333333333
+        },
+        {
+          "arrival_seconds": 4.109838712000055,
+          "duration_seconds": 5.461333333333333,
+          "byte_count": 262144,
+          "cumulative_audio_seconds": 10.922666666666666
+        },
+        {
+          "arrival_seconds": 4.110212739000076,
+          "duration_seconds": 4.037333333333334,
+          "byte_count": 193792,
+          "cumulative_audio_seconds": 14.96
+        }
+      ]
+    },
+    {
+      "client_case_id": "6435a148ba-warmup-nonstream-zh",
+      "logical_sample_id": "zh",
+      "phase": "warmup",
+      "repetition": 0,
+      "scenario": "warmup",
+      "arm": "nonstream",
+      "arm_slot": 0,
+      "input_sha256": "11a1872428c2f16610dd6e1b509b0db6e3129e2c806252e64b8456ad62d50298",
+      "planned_dispatch_run_seconds": 4.116089242000044,
+      "dispatch_run_seconds": 4.116123230000085,
+      "dispatch_lateness_seconds": 3.398800004106306e-05,
+      "server_request_id": "speech-b2e1e933-7044-4001-a851-e58ae191c257",
+      "status": 200,
+      "response_headers": {
+        "Date": "Tue, 27 Oct 2026 20:02:37 GMT",
+        "Server": "uvicorn",
+        "Content-Disposition": "attachment; filename=\"speech.pcm\"",
+        "X-Request-ID": "speech-b2e1e933-7044-4001-a851-e58ae191c257",
+        "x-finish-reason": "stop",
+        "x-prompt-tokens": "120",
+        "x-completion-tokens": "48",
+        "x-sglang-omni-input-tokens": "120",
+        "x-sglang-omni-output-tokens": "48",
+        "x-sglang-omni-total-tokens": "168",
+        "Content-Length": "879360",
+        "Content-Type": "audio/pcm",
+        "Vary": "Origin"
+      },
+      "first_response_seconds": 0.7075287699999535,
+      "first_audio_seconds": 0.7082652340000095,
+      "meaningful_audio_seconds": 0.7082652340000095,
+      "audio_onset_seconds": 0.0,
+      "completion_seconds": 0.713277724999898,
+      "audio_duration_seconds": 18.32,
+      "sample_rate": 24000,
+      "finish_reason": "stop",
+      "api_output_tokens": 48,
+      "generated_chunk_count": 0,
+      "transport_chunk_count": 4,
+      "simulated_stall_count": 0,
+      "simulated_stall_seconds": 0.0,
+      "max_chunk_gap_seconds": 0.004595570999981646,
+      "pcm_sha256": "36c3d9a1d075d716bc195bb5888d1941ccde6df79849dc27fb8c5245eb20effc",
+      "audio_file": "6435a148ba-warmup-nonstream-zh.wav",
+      "error": null,
+      "chunks": [
+        {
+          "arrival_seconds": 0.7082652340000095,
+          "duration_seconds": 5.461333333333333,
+          "byte_count": 262144,
+          "cumulative_audio_seconds": 5.461333333333333
+        },
+        {
+          "arrival_seconds": 0.7128608049999912,
+          "duration_seconds": 5.461333333333333,
+          "byte_count": 262144,
+          "cumulative_audio_seconds": 10.922666666666666
+        },
+        {
+          "arrival_seconds": 0.7130538330000036,
+          "duration_seconds": 5.461333333333333,
+          "byte_count": 262144,
+          "cumulative_audio_seconds": 16.384
+        },
+        {
+          "arrival_seconds": 0.7132386819999965,
+          "duration_seconds": 1.936,
+          "byte_count": 92928,
+          "cumulative_audio_seconds": 18.32
+        }
+      ]
+    },
+    {
+      "client_case_id": "6435a148ba-warmup-stream-en",
+      "logical_sample_id": "en",
+      "phase": "warmup",
+      "repetition": 0,
+      "scenario": "warmup",
+      "arm": "stream",
+      "arm_slot": 0,
+      "input_sha256": "6aa2ff2df20db879df0154c5264e74ecafdf321d16eb50219e1f7c794ba35913",
+      "planned_dispatch_run_seconds": 4.83548161300007,
+      "dispatch_run_seconds": 4.8355159779999894,
+      "dispatch_lateness_seconds": 3.436499991948949e-05,
+      "server_request_id": "speech-220f0cfa-a9fa-4c48-b8cf-1bb18b02baf7",
+      "status": 200,
+      "response_headers": {
+        "Date": "Tue, 27 Oct 2026 20:02:38 GMT",
+        "Server": "uvicorn",
+        "X-Request-ID": "speech-220f0cfa-a9fa-4c48-b8cf-1bb18b02baf7",
+        "x-sample-rate": "24000",
+        "x-channels": "1",
+        "x-bit-depth": "16",
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "Vary": "Origin",
+        "Transfer-Encoding": "chunked"
+      },
+      "first_response_seconds": 17.650512197000012,
+      "first_audio_seconds": 17.650643410000043,
+      "meaningful_audio_seconds": 17.650643410000043,
+      "audio_onset_seconds": 0.49,
+      "completion_seconds": 18.106939305000083,
+      "audio_duration_seconds": 15.24,
+      "sample_rate": 24000,
+      "finish_reason": "stop",
+      "api_output_tokens": 42,
+      "generated_chunk_count": 15,
+      "transport_chunk_count": 16,
+      "simulated_stall_count": 0,
+      "simulated_stall_seconds": 0.0,
+      "max_chunk_gap_seconds": 0.06013168000004043,
+      "pcm_sha256": "8cf1b1d3b87d035c810c1cc986c912745584c1daba11a9152ab6ed738bf3c3df",
+      "audio_file": "6435a148ba-warmup-stream-en.wav",
+      "error": null,
+      "chunks": [
+        {
+          "arrival_seconds": 17.650643410000043,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 1.0
+        },
+        {
+          "arrival_seconds": 17.69061784600001,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 2.0
+        },
+        {
+          "arrival_seconds": 17.72410943500006,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 3.0
+        },
+        {
+          "arrival_seconds": 17.753428147000022,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 4.0
+        },
+        {
+          "arrival_seconds": 17.783362409000006,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 5.0
+        },
+        {
+          "arrival_seconds": 17.812361765000105,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 6.0
+        },
+        {
+          "arrival_seconds": 17.84164304400008,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 7.0
+        },
+        {
+          "arrival_seconds": 17.870582135000063,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 8.0
+        },
+        {
+          "arrival_seconds": 17.899686868999993,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 9.0
+        },
+        {
+          "arrival_seconds": 17.929373470000087,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 10.0
+        },
+        {
+          "arrival_seconds": 17.95836590400006,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 11.0
+        },
+        {
+          "arrival_seconds": 17.987444993000054,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 12.0
+        },
+        {
+          "arrival_seconds": 18.016409122000027,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 13.0
+        },
+        {
+          "arrival_seconds": 18.04600334400004,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 14.0
+        },
+        {
+          "arrival_seconds": 18.106135024000082,
+          "duration_seconds": 1.24,
+          "byte_count": 59520,
+          "cumulative_audio_seconds": 15.24
+        }
+      ]
+    },
+    {
+      "client_case_id": "6435a148ba-warmup-stream-zh",
+      "logical_sample_id": "zh",
+      "phase": "warmup",
+      "repetition": 0,
+      "scenario": "warmup",
+      "arm": "stream",
+      "arm_slot": 0,
+      "input_sha256": "11a1872428c2f16610dd6e1b509b0db6e3129e2c806252e64b8456ad62d50298",
+      "planned_dispatch_run_seconds": 22.94882209900004,
+      "dispatch_run_seconds": 22.94885979600008,
+      "dispatch_lateness_seconds": 3.7697000038861006e-05,
+      "server_request_id": "speech-3163f791-9041-4a9f-950e-f89b50b65f2e",
+      "status": 200,
+      "response_headers": {
+        "Date": "Tue, 27 Oct 2026 20:02:56 GMT",
+        "Server": "uvicorn",
+        "X-Request-ID": "speech-3163f791-9041-4a9f-950e-f89b50b65f2e",
+        "x-sample-rate": "24000",
+        "x-channels": "1",
+        "x-bit-depth": "16",
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "Vary": "Origin",
+        "Transfer-Encoding": "chunked"
+      },
+      "first_response_seconds": 0.6019574580000153,
+      "first_audio_seconds": 0.602078373999916,
+      "meaningful_audio_seconds": null,
+      "audio_onset_seconds": null,
+      "completion_seconds": 1.4928773799999817,
+      "audio_duration_seconds": 18.6,
+      "sample_rate": 24000,
+      "finish_reason": "stop",
+      "api_output_tokens": 48,
+      "generated_chunk_count": 19,
+      "transport_chunk_count": 20,
+      "simulated_stall_count": 0,
+      "simulated_stall_seconds": 0.0,
+      "max_chunk_gap_seconds": 0.07573749599998791,
+      "pcm_sha256": "929b8bcb4fba4e0df7d7b008713c657f70a63e940f785920a2af9ea274ea574b",
+      "audio_file": "6435a148ba-warmup-stream-zh.wav",
+      "error": "ValueError: Incomplete or invalid audio: finish_reason=stop, meaningful_audio_seconds=None, bytes=892800",
+      "chunks": [
+        {
+          "arrival_seconds": 0.602078373999916,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 1.0
+        },
+        {
+          "arrival_seconds": 0.677815869999904,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 2.0
+        },
+        {
+          "arrival_seconds": 0.7489465339999697,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 3.0
+        },
+        {
+          "arrival_seconds": 0.8204321179999852,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 4.0
+        },
+        {
+          "arrival_seconds": 0.8941394209999771,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 5.0
+        },
+        {
+          "arrival_seconds": 0.9673315109999976,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 6.0
+        },
+        {
+          "arrival_seconds": 1.0423491389999526,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 7.0
+        },
+        {
+          "arrival_seconds": 1.1133706489999895,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 8.0
+        },
+        {
+          "arrival_seconds": 1.168445596999959,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 9.0
+        },
+        {
+          "arrival_seconds": 1.1975652909999326,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 10.0
+        },
+        {
+          "arrival_seconds": 1.226701165999998,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 11.0
+        },
+        {
+          "arrival_seconds": 1.2564659149999216,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 12.0
+        },
+        {
+          "arrival_seconds": 1.2857601199999635,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 13.0
+        },
+        {
+          "arrival_seconds": 1.3153207939999447,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 14.0
+        },
+        {
+          "arrival_seconds": 1.3447182459999567,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 15.0
+        },
+        {
+          "arrival_seconds": 1.3738017729999683,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 16.0
+        },
+        {
+          "arrival_seconds": 1.4033862599999338,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 17.0
+        },
+        {
+          "arrival_seconds": 1.4325981160000083,
+          "duration_seconds": 1.0,
+          "byte_count": 48000,
+          "cumulative_audio_seconds": 18.0
+        },
+        {
+          "arrival_seconds": 1.4769272620000038,
+          "duration_seconds": 0.6,
+          "byte_count": 28800,
+          "cumulative_audio_seconds": 18.6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "status": "stopped_during_cpu_preflight",
+  "app_id": "ap-ESNXScwQFzKjDkvk4a6bhp",
+  "reason": "Review found capture width should use normalized scheduler.max_batch_size; corrected and added zero-input regression before GPU validation."
+}

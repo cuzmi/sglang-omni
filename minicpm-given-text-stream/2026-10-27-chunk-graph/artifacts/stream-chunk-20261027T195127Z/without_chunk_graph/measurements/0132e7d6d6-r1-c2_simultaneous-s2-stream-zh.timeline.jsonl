@@ -1,0 +1,42 @@
+{"event": "response_headers", "arrival_seconds": 1.1922819000000118, "status": 200, "server_request_id": "speech-7518ab5a-e996-42ae-9703-7640528b3e56"}
+{"event": "http_delivery", "arrival_seconds": 1.1923840009999935, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 1.1923840009999935, "byte_count": 48000, "cumulative_audio_seconds": 1.0}
+{"event": "http_delivery", "arrival_seconds": 1.3060151600000154, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 1.3060151600000154, "byte_count": 48000, "cumulative_audio_seconds": 2.0}
+{"event": "http_delivery", "arrival_seconds": 1.4220782209999925, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 1.4220782209999925, "byte_count": 48000, "cumulative_audio_seconds": 3.0}
+{"event": "http_delivery", "arrival_seconds": 1.5377749950000066, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 1.5377749950000066, "byte_count": 48000, "cumulative_audio_seconds": 4.0}
+{"event": "http_delivery", "arrival_seconds": 1.653642719000004, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 1.653642719000004, "byte_count": 48000, "cumulative_audio_seconds": 5.0}
+{"event": "http_delivery", "arrival_seconds": 1.770714149000014, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 1.770714149000014, "byte_count": 48000, "cumulative_audio_seconds": 6.0}
+{"event": "http_delivery", "arrival_seconds": 1.8867050910000103, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 1.8867050910000103, "byte_count": 48000, "cumulative_audio_seconds": 7.0}
+{"event": "http_delivery", "arrival_seconds": 2.0026152909999837, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.0026152909999837, "byte_count": 48000, "cumulative_audio_seconds": 8.0}
+{"event": "http_delivery", "arrival_seconds": 2.117739505999964, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.117739505999964, "byte_count": 48000, "cumulative_audio_seconds": 9.0}
+{"event": "http_delivery", "arrival_seconds": 2.232688036000013, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.232688036000013, "byte_count": 48000, "cumulative_audio_seconds": 10.0}
+{"event": "http_delivery", "arrival_seconds": 2.347973311999965, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.347973311999965, "byte_count": 48000, "cumulative_audio_seconds": 11.0}
+{"event": "http_delivery", "arrival_seconds": 2.462955803, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.462955803, "byte_count": 48000, "cumulative_audio_seconds": 12.0}
+{"event": "http_delivery", "arrival_seconds": 2.578038434000007, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.578038434000007, "byte_count": 48000, "cumulative_audio_seconds": 13.0}
+{"event": "http_delivery", "arrival_seconds": 2.6926973660000044, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.6926973660000044, "byte_count": 48000, "cumulative_audio_seconds": 14.0}
+{"event": "http_delivery", "arrival_seconds": 2.8255309959999977, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.8255309959999977, "byte_count": 48000, "cumulative_audio_seconds": 15.0}
+{"event": "http_delivery", "arrival_seconds": 2.939794725000013, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 2.939794725000013, "byte_count": 48000, "cumulative_audio_seconds": 16.0}
+{"event": "http_delivery", "arrival_seconds": 3.0546221920000107, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 3.0546221920000107, "byte_count": 48000, "cumulative_audio_seconds": 17.0}
+{"event": "http_delivery", "arrival_seconds": 3.1687985290000142, "byte_count": 64051}
+{"event": "generated_audio_chunk", "arrival_seconds": 3.1687985290000142, "byte_count": 48000, "cumulative_audio_seconds": 18.0}
+{"event": "http_delivery", "arrival_seconds": 3.2809804699999745, "byte_count": 41011}
+{"event": "generated_audio_chunk", "arrival_seconds": 3.2809804699999745, "byte_count": 30720, "cumulative_audio_seconds": 18.64}
+{"event": "http_delivery", "arrival_seconds": 3.281378912999969, "byte_count": 136}
+{"event": "terminal", "arrival_seconds": 3.281378912999969, "finish_reason": "stop", "api_output_tokens": 48}
+{"event": "completed", "arrival_seconds": 3.2814218610000125, "error": null}

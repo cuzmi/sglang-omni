@@ -1,0 +1,633 @@
+{
+  "remote_files_commit": "f70bc6e9bd0cddc6cb3b76f63133db411a05deff",
+  "archive_url": "https://github.com/cuzmi/RemoteFiles/tree/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027",
+  "prepared_source_base_head": "67476823ae81b398626b85e368d1c6f11a832496",
+  "prepared_source_archive_sha256": "459cb777e1d8134af1f593bd2a6f81349432bca94a503ac1817ee40588cbb937",
+  "source_version_note": "Top-level source describes preparation; executed run manifests and INVALID.json retain the historical run version. See REPORT.md.",
+  "copied_files": {
+    "README.md": {
+      "sha256": "879682a219f19b3f1e42cc7f5bd55f89e9152eb26bb45449f60f1b8f2aac3ee3",
+      "bytes": 234,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/README.md"
+    },
+    "REPORT.md": {
+      "sha256": "04d0df9222335e1cb92efbbd14338d1e6fb4a59c428f39ceacf811cb75af4ab3",
+      "bytes": 2511,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/REPORT.md"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/INVALID.json": {
+      "sha256": "80b0d3cc29f20651f74a94b95bb88a527dbdc5ecc1bb78753d6f54bad69d4434",
+      "bytes": 296,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/INVALID.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/change_manifest.json": {
+      "sha256": "573377c4cb4ec27f70b4fb3486087e1cb61211f0a13c6f28dc511ffa91d3592e",
+      "bytes": 863,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/change_manifest.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/gpu_tests.log": {
+      "sha256": "6eaaf03ce4f1b50cb14b649d498cbda77d39b80d988022f4b34a5dffa8ad43d2",
+      "bytes": 113,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/gpu_tests.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/modal.log": {
+      "sha256": "7f47a04965e7c8c32c9f297d8bd91c60072cf742f8ccf5a89113e995a67644dd",
+      "bytes": 10065,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/modal.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/preflight.log": {
+      "sha256": "3e8f1dce3f878b463535547f331b6715006529bb2f649ed4628b5644c541c3b4",
+      "bytes": 817,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/preflight.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/preflight_config.yaml": {
+      "sha256": "607123d27c0f4628e86443f46db8c560778efb16d91326713688d946d49d79e6",
+      "bytes": 19872,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/preflight_config.yaml"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/preparation.json": {
+      "sha256": "736c2537dde0b262515c7935586ce213fec9f9b3c05b15cc5266eba417255f30",
+      "bytes": 672,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/preparation.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/protocol.json": {
+      "sha256": "154c9dd7b5832bd569bb8b3073e14b688ad7cb3671b3a69ee539732f718e5d12",
+      "bytes": 5004,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/protocol.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/chunk_graph_evidence.jsonl": {
+      "sha256": "511c4c97420a5233da064354f610a3c1c85b575a97e3b2dce4840386f6a223b4",
+      "bytes": 1095,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/chunk_graph_evidence.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/client.log": {
+      "sha256": "2252db903f5243ed0aebb8dca5668c0c07c9e9714f219c4be4f2d776dd492dff",
+      "bytes": 1921,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/client.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/codec_evidence.jsonl": {
+      "sha256": "b1054f1b45538a01912fabf36a3e210cb1f67b170f50947d0cf47acd34be7a08",
+      "bytes": 8742,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/codec_evidence.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/command.json": {
+      "sha256": "87820cd7d904edc95ac686143d267d7932b8ef1e33e9ec90247ca55be1757715",
+      "bytes": 1879,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/command.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/driver.log": {
+      "sha256": "963ff9469eadf186bb7ea23eeecebd14e59fe2280ce7824d8057defbc2dc07b5",
+      "bytes": 907,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/driver.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/environment.json": {
+      "sha256": "fbe5dfa0be7db9c718e8387c7c5736d5f9cc787b2d39e70a7c446e06448ce0c9",
+      "bytes": 706,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/environment.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/gpu_identity.csv": {
+      "sha256": "7e22d6a8141d4499bc6778585fc6668c8a3954424fa3b860e0b3829fd297112d",
+      "bytes": 133,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/gpu_identity.csv"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/input_checksums.json": {
+      "sha256": "3252f1fb4952869950df69e99c8056247b46d8c18dbb187af29d56f049e64790",
+      "bytes": 899,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/input_checksums.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/kv_capacity.json": {
+      "sha256": "341d7dcbd548d4b9491b1d808a6f13385a9a56c9593760080753700b042a6149",
+      "bytes": 90,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/kv_capacity.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/6435a148ba-warmup-nonstream-en.timeline.jsonl": {
+      "sha256": "7ede37f71f82f98792a4b66a666f4afd796d1a3c1d6108c9ad128cbc6dd859de",
+      "bytes": 643,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/6435a148ba-warmup-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/6435a148ba-warmup-nonstream-zh.timeline.jsonl": {
+      "sha256": "858e43d8de846288cbb9d289df31a6c202ac1d3934ca2a49e727aad02f42f2b4",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/6435a148ba-warmup-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/6435a148ba-warmup-stream-en.timeline.jsonl": {
+      "sha256": "c03a41ceb0a55043a77655d5108e366d0b0350a6f7303e09049b257bb8e82d4a",
+      "bytes": 3647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/6435a148ba-warmup-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/6435a148ba-warmup-stream-zh.timeline.jsonl": {
+      "sha256": "08e5e091b603392de024a07546304c1da12d898801409d244397f1d96792fc4a",
+      "bytes": 4791,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/6435a148ba-warmup-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/manifest.json": {
+      "sha256": "c4e9e75e5bb9aa5a304b8c1a73cfb6d4d6fd185b201cd248334c1a56b7c33575",
+      "bytes": 913,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/manifest.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/summary.json": {
+      "sha256": "02f3413843dd6e5b0b30941ccb3cc5411e83aaa7dae06a28945319736bfc6f24",
+      "bytes": 16133,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/measurements/summary.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/resolved_config.yaml": {
+      "sha256": "9416aaa35f39ccbb7ed937beca6845b494aafe812206587bce86073f1abac6a5",
+      "bytes": 19970,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/resolved_config.yaml"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/server.log": {
+      "sha256": "b0e6d30a047e3bc50c4d75924b68641b912d20bacf5b9a13047502049925bb35",
+      "bytes": 45874,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/server.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/status.json": {
+      "sha256": "99a446c09a1c0e2eb37b3764edff16df1eec9b31f883551056173a9402c5b34a",
+      "bytes": 634,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/status.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/versions.txt": {
+      "sha256": "22751d7a8bbad22ada03a16ecd98e00d53ecd39d0e1b4193041aba5ca4da527b",
+      "bytes": 9616,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/with_chunk_graph/versions.txt"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/analysis.json": {
+      "sha256": "7ac4acb3a2ef94e5a21bbb93858bcd8f34027e81bed6b9bb0d8c49f879620c18",
+      "bytes": 105415,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/analysis.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/chunk_graph_evidence.jsonl": {
+      "sha256": "115173286470ec7f27785315daeefd223a845aba9bb867f50208fd0e86eb7212",
+      "bytes": 21074,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/chunk_graph_evidence.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/chunk_graph_verification.json": {
+      "sha256": "cfd20cab5ff4f40b7e7f16ec2649cb6dddb95ee195f39e77d1e888a7f3e287ea",
+      "bytes": 2053,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/chunk_graph_verification.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/client.log": {
+      "sha256": "de0b64db6e69d0d3e328f3f6f72f4efd97c4bff3cfbc1209fb72eae6398696ed",
+      "bytes": 13265,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/client.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/codec_evidence.jsonl": {
+      "sha256": "997f84fbd143f6d1963a36b488e8ed093de14fc67a3b51cc3b793c0b1a99497d",
+      "bytes": 122616,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/codec_evidence.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/command.json": {
+      "sha256": "d24cabf00ca818716972316c547495b2252b35723595d9e7434641a5572544ab",
+      "bytes": 1897,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/command.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/driver.log": {
+      "sha256": "e5d592adc11cc2d07f58956e31ea4610dfd3dfe9daf53436451c44068981de44",
+      "bytes": 2849,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/driver.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/environment.json": {
+      "sha256": "d818143109f4939b9105a515f6fc0dc73de16930fa17e2f51a310782fc39c8e0",
+      "bytes": 706,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/environment.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/gpu_identity.csv": {
+      "sha256": "7e22d6a8141d4499bc6778585fc6668c8a3954424fa3b860e0b3829fd297112d",
+      "bytes": 133,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/gpu_identity.csv"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/input_checksums.json": {
+      "sha256": "3252f1fb4952869950df69e99c8056247b46d8c18dbb187af29d56f049e64790",
+      "bytes": 899,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/input_checksums.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/kv_capacity.json": {
+      "sha256": "341d7dcbd548d4b9491b1d808a6f13385a9a56c9593760080753700b042a6149",
+      "bytes": 90,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/kv_capacity.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_en-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "0ce736f12b2b7aaa60e0954043b381c9ebaf00dda98e8a92baabf52198062049",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_en-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_en-s1-stream-en.timeline.jsonl": {
+      "sha256": "0d5f33d5d3a8a5489ce21723639e70492deca2511bfdf4f26170e2a48b079edf",
+      "bytes": 3645,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_en-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_en-s2-stream-en.timeline.jsonl": {
+      "sha256": "aa7c2d7af8c4568408b4e5c5f215dc5d61a8e3bc041b9ca5798b4fa1f8eac9d1",
+      "bytes": 3640,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_en-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_en-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "5b313396c49c51bc7814bbe403614cb09eaeae7425eeb394592e3868d5c95b6b",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_en-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_zh-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "cab2d01e8bc3c67e49b43d220994e690a4803fc1934a346c8adcfda17a0b020e",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_zh-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_zh-s1-stream-zh.timeline.jsonl": {
+      "sha256": "7dda1835d14b51102e8d6e508f64a7a5058ac95a78cc9828ba008869851cfcaf",
+      "bytes": 4502,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_zh-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_zh-s2-stream-zh.timeline.jsonl": {
+      "sha256": "3dc495671814cc49e8b1298a9cbe0284763c65c83b70c1539b28d0763f293792",
+      "bytes": 4497,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_zh-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_zh-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "deb09e69ca914a809580f961c53de60146124529f6809bcfb5c25f5feb7eb13c",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c1_zh-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "7427580ba8ec741551deb72f92c190a7c72b8f84ee04a0e5bb6b9b3dfe8c1e12",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "90b741f4235e7f46857375bec21d49b6a3b3e5252ac0688809d597e5e761ef1c",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s1-stream-en.timeline.jsonl": {
+      "sha256": "9f05499fb42ede32b6af5f5b0177aa8f6395a1f7c5317e3c2e88a4b261a0b7a2",
+      "bytes": 3555,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s1-stream-zh.timeline.jsonl": {
+      "sha256": "cee62200c739f480c832c72d128543599854e3554c30ce3ce40843f63aa6226c",
+      "bytes": 4505,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s2-stream-en.timeline.jsonl": {
+      "sha256": "f35d7bf57f7e2f64750ff7cd0b25102c69f34f0aea4dc1d3fbad481af778763e",
+      "bytes": 3561,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s2-stream-zh.timeline.jsonl": {
+      "sha256": "29e4325bee48c73791c58e1742c5aa513183d5b4866ac08cbb83dc7a51faf41b",
+      "bytes": 4502,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "a3e4b094e20b63be83ba2e90b2c32403f4cf594804a7080c25a5737b4604f3af",
+      "bytes": 645,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "e6579a41bf760b372c6a296021e1868964a74245613875bd3248484b36fa9b7e",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_simultaneous-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "6655d69f53b2831c72b0e2105bb5b4ffab6f0222f086ca3e91faeea449593fdc",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "1940aa03cfd61c5acd639e2cc723e4c70d7b4677a62f3db694e4f55127fb58af",
+      "bytes": 776,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s1-stream-en.timeline.jsonl": {
+      "sha256": "d3c7782735e14f387613a62cce1841e8f2b4abf4dcd799eecab077eaa40e3bd7",
+      "bytes": 3645,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s1-stream-zh.timeline.jsonl": {
+      "sha256": "a14770d3c991dc344e5d2ab29449df61858b13901e564d3b15ec6393c4ad2c99",
+      "bytes": 4507,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s2-stream-en.timeline.jsonl": {
+      "sha256": "dc941d8f63fa33e93d937b865b1aba481a68515d96f931931c5bf9bd91d408f6",
+      "bytes": 3644,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s2-stream-zh.timeline.jsonl": {
+      "sha256": "7389b8e292129707a3eb57d35a96234a60ed612649bcdd962e66b2a6a398ad77",
+      "bytes": 4504,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "0cc3276af23d2b9c1483e3468aee08d13a43efe49cd1304009e7cd5f4d5ee33a",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "da3f9141155426aff9b69777eacc9d1f9aaaacb7a4f353c9ee2ad1bdc882d030",
+      "bytes": 776,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r0-c2_staggered-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_en-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "dc92d581c63f3b0f6990384481151706133f74ac95a0c25ea7f0103aaa263a7f",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_en-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_en-s1-stream-en.timeline.jsonl": {
+      "sha256": "548dd0dba5d555bf9d16360e63bfc4ca7467d7c48c7cf9edba4bb885003436d2",
+      "bytes": 3648,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_en-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_en-s2-stream-en.timeline.jsonl": {
+      "sha256": "9741128157bbbbd6e259023c9013d728cf1445a059179e18a19e033fc51b5007",
+      "bytes": 3648,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_en-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_en-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "c372240fc69b2af3a6bbd6e5d86accf219a073d42f6e9873a63c1ef08f62c4cc",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_en-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_zh-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "6ffc6dd4022618982dda7ea9436e27d336a2556cc5ae3bb040946caaa77b1e01",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_zh-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_zh-s1-stream-zh.timeline.jsonl": {
+      "sha256": "bcbd16694996db8bf9e887db33c2149a3cde4b4926b7f20b63e10206e7e20c01",
+      "bytes": 4504,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_zh-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_zh-s2-stream-zh.timeline.jsonl": {
+      "sha256": "dacbe5293080d46d578db47530b62433ed20432f64032c1c1c6f3d554f6609e9",
+      "bytes": 4509,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_zh-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_zh-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "b9ce90e169138ad4f3188e09ef1b91b9e72e648155feb89d0ee88eeeb8df4ad1",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c1_zh-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "11ffd8a3ada68495e4f620fd2ef9d7c7bc27dabb6936b4de10b0dbaa32102245",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "6531832061f643d8aebd47e9891eae468647e63ae7d0da18e78a0aa5193f744f",
+      "bytes": 775,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s1-stream-en.timeline.jsonl": {
+      "sha256": "c1cfc20b502ca24a154930e3259337d7711cb172680c02b67e60d47c83b9c6a2",
+      "bytes": 3651,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s1-stream-zh.timeline.jsonl": {
+      "sha256": "7488fdc783f8cfc0658121e2f5a4bdb42cda422219509b2f2bcad52098220ded",
+      "bytes": 4507,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s2-stream-en.timeline.jsonl": {
+      "sha256": "954237099a0ea620d6756ddf3d924b7b05725708ef87044f869984859a667908",
+      "bytes": 3646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s2-stream-zh.timeline.jsonl": {
+      "sha256": "441cb7ae3a31babebd4639ed31459dffb02bde1e99f58d25f5a373e879dc44a3",
+      "bytes": 4491,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "fdeb75d8f182c9af39d3b2cbab244a31a188e0f953c623e76df404ba6555bbf9",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "bbc94b0889a464c105b292be24e0059083f3060a701ca61f55e809f7a76c316c",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_simultaneous-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "3091fcddaab0b94971fd263d169fc967945e0a118055977423b5b0268d5672b2",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "4c9a9ff37dc9ddda9ee2e0f110500c89a3846203c508a2fd0639b914f7a1ffeb",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s1-stream-en.timeline.jsonl": {
+      "sha256": "2137a56f96f1a6f3f63a0cd7aa9f417a62184b5a38f91d0509c734e6d8024367",
+      "bytes": 3640,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s1-stream-zh.timeline.jsonl": {
+      "sha256": "89a14e0b0c93fef3ffd006f55cef5378aa49af20600462c9a51cde7dbc9e5f59",
+      "bytes": 4510,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s2-stream-en.timeline.jsonl": {
+      "sha256": "19ac9c61f6b47f2f7731da2615a65be8ed15c4bb1281dcca28a0e71623cb8284",
+      "bytes": 3640,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s2-stream-zh.timeline.jsonl": {
+      "sha256": "31ce579dc17b4e2bd814394d05eea92ac82210b31d69aa99af0f63214ee5d16f",
+      "bytes": 4509,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "2043e7ca34d4474a5f3f267732cf74c6829aa99c356a6775e570c9c8a95dc1c8",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "310c38a0a6b48ddf651f73f4c67a5ab790601913c026e2831a9535ede547e91b",
+      "bytes": 776,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-r1-c2_staggered-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-c2-nonstream-en.timeline.jsonl": {
+      "sha256": "24f2d8208bb2f26750c17126ccc88cf5b644ef0eea3730c8a3cd640c42399066",
+      "bytes": 644,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-c2-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-c2-nonstream-zh.timeline.jsonl": {
+      "sha256": "0a7a840acdf08c027c8b7e6b024296003be1f475a3b7b62b4b35ca03e33fe4b9",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-c2-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-c2-stream-en.timeline.jsonl": {
+      "sha256": "c8ae8d3a2150162296bf2d923ffde36493dc0ca35b21392cbc64ed3b76099636",
+      "bytes": 3560,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-c2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-c2-stream-zh.timeline.jsonl": {
+      "sha256": "cc5a9d9f13769651554f32a47db9642893ab5a8512dd5d7f193bbb182811f275",
+      "bytes": 4482,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-c2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-nonstream-en.timeline.jsonl": {
+      "sha256": "e40a034f4a8e451252776b6cd8534f09151f515b1a5b30134a70819c8b5cdcbb",
+      "bytes": 641,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-nonstream-zh.timeline.jsonl": {
+      "sha256": "d1a60fa0f8387fdf64ce4fe515b711c2c4f2c216a056ade738725c60420c39f4",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-stream-en.timeline.jsonl": {
+      "sha256": "2da7d686233617ae9c1f39cd787e542011ad7983e7e4278746a10cd88647d0d9",
+      "bytes": 3648,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-stream-zh.timeline.jsonl": {
+      "sha256": "c7739c0dd8ef51a5eaaa9e33f1278fe904ddf004e72f7389489d2733f09dfa2b",
+      "bytes": 4501,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/0132e7d6d6-warmup-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/manifest.json": {
+      "sha256": "33c3ca7508011d1128fcd01d0a2110ba019a0a3d6eb83ba067969fdde4b3c080",
+      "bytes": 913,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/manifest.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/summary.json": {
+      "sha256": "7e5aa7f008864242b5ab715f3d049f4e200cad4c8b2cad50544f195ef1f0e6ba",
+      "bytes": 233250,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/measurements/summary.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/resolved_config.yaml": {
+      "sha256": "3115c687f520b08832f19a35b828ad9c63d44cf904a282d0598b7e08f8cee6c5",
+      "bytes": 19970,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/resolved_config.yaml"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/server.log": {
+      "sha256": "f049f425565635fe6f0cd223066a4bf6505c75e02459534812a563c4163a66a4",
+      "bytes": 170371,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/server.log"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/status.json": {
+      "sha256": "5bfe123a03cea44097588f9bc293b37b9397c9d7500f3e0963f0508c4867c77d",
+      "bytes": 242,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/status.json"
+    },
+    "artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/versions.txt": {
+      "sha256": "22751d7a8bbad22ada03a16ecd98e00d53ecd39d0e1b4193041aba5ca4da527b",
+      "bytes": 9616,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/artifacts/stream-chunk-20261027T195127Z/without_chunk_graph/versions.txt"
+    },
+    "change_manifest.json": {
+      "sha256": "573377c4cb4ec27f70b4fb3486087e1cb61211f0a13c6f28dc511ffa91d3592e",
+      "bytes": 863,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/change_manifest.json"
+    },
+    "diagnostic_modal.log": {
+      "sha256": "acd474f5bcfdd17a63978c6369656d92cfbcc9268cb2da7b155225ef2280bb30",
+      "bytes": 5423,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/diagnostic_modal.log"
+    },
+    "latest_diagnostic.txt": {
+      "sha256": "51741c7d8e4d3fc299713282e1ea852e31547fdc4000e3fd2f5023262b7accc4",
+      "bytes": 34,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/latest_diagnostic.txt"
+    },
+    "latest_run.txt": {
+      "sha256": "b319a2f0fb18b554c11d6187238ea9b3af5642d9c67cb8bec2dafea5ea6e46ad",
+      "bytes": 30,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/latest_run.txt"
+    },
+    "local_comparison_validation.json": {
+      "sha256": "a6892fb2262e9013b59ae7a120ef19483d716ae9684fd184d75790c99dad7b1f",
+      "bytes": 297,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/local_comparison_validation.json"
+    },
+    "local_precommit.log": {
+      "sha256": "10c31ffe437d8e024e1e76c21562ae187c3978e6b8b9e2d3af84335d13c8f685",
+      "bytes": 2210,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/local_precommit.log"
+    },
+    "local_precommit_all.log": {
+      "sha256": "0aafe9962d6f5f5cdd3a6511521f67ba9c8598434aed2eabd1fa0d693c40b781",
+      "bytes": 2303,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/local_precommit_all.log"
+    },
+    "local_probe_validation.json": {
+      "sha256": "5f92e09ef2ac285a47ba0efcec4073f8f432292f4f3ef451ab389c184071fb5f",
+      "bytes": 315,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/local_probe_validation.json"
+    },
+    "modal.log": {
+      "sha256": "7f47a04965e7c8c32c9f297d8bd91c60072cf742f8ccf5a89113e995a67644dd",
+      "bytes": 10065,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/modal.log"
+    },
+    "preparation_attempts/stream-chunk-20261027T194954Z/change_manifest.json": {
+      "sha256": "fd224fd13da1d5f76496b8a1aa66cfae7391a41d7c1ec443e1e2f97ec0f35d6a",
+      "bytes": 713,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/preparation_attempts/stream-chunk-20261027T194954Z/change_manifest.json"
+    },
+    "preparation_attempts/stream-chunk-20261027T194954Z/latest_run.txt": {
+      "sha256": "64590bab56d3e2f42144a578ec96c1ba72fd9e9cc4c5ddbc816612c54b51896b",
+      "bytes": 30,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/preparation_attempts/stream-chunk-20261027T194954Z/latest_run.txt"
+    },
+    "preparation_attempts/stream-chunk-20261027T194954Z/modal.log": {
+      "sha256": "0dd7a743e21a14136646e2a87bc2cad0cb55380ecea5a5f87cd7476956307631",
+      "bytes": 7654,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/preparation_attempts/stream-chunk-20261027T194954Z/modal.log"
+    },
+    "preparation_attempts/stream-chunk-20261027T194954Z/status.json": {
+      "sha256": "7930cb65a09b568c0dae882dbc652855d630b2552c8e00236bc10a38c6039b2b",
+      "bytes": 243,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/preparation_attempts/stream-chunk-20261027T194954Z/status.json"
+    },
+    "protocol.json": {
+      "sha256": "9ffa4dff82fba00bcde45a0e824a25b25d064c5f53656623f571acab7f987bda",
+      "bytes": 5650,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/protocol.json"
+    },
+    "remote_result.json": {
+      "sha256": "59a026968ea68c03f8635f641a915b0c0e65ee5d47066d0a3d0fa3927c6703a1",
+      "bytes": 170,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/f70bc6e9bd0cddc6cb3b76f63133db411a05deff/research/minicpm_given_text_stream_chunk_graph_h100_20261027/remote_result.json"
+    }
+  },
+  "omitted_archive_files": [
+    ".gitattributes",
+    ".gitignore",
+    "PUBLICATION.md",
+    "PUBLICATION_SHA256.json",
+    "PUBLICATION_VALIDATION.json",
+    "analyze.py",
+    "artifacts/stream-chunk-20261027T195127Z/candidate_tracked.patch",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/analyze.py",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/driver.py",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/measure.py",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/patch_chunk_graph_probe.py",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/patch_codec_probe.py",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/preflight.py",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/protocol.json",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/source.json",
+    "artifacts/stream-chunk-20261027T195127Z/scripts/verify_chunk_graph_evidence.py",
+    "artifacts/stream-chunk-20261027T195127Z/source.json",
+    "candidate_tracked.patch",
+    "compare_conditions.py",
+    "diagnostic_checkpoint.py",
+    "diagnostic_codecs.json",
+    "diagnostic_fixed_source.json",
+    "driver.py",
+    "measure.py",
+    "package_source.py",
+    "patch_chunk_graph_probe.py",
+    "patch_codec_probe.py",
+    "preflight.py",
+    "preparation_attempts/stream-chunk-20261027T194954Z/source.json",
+    "run_diagnostic.py",
+    "run_modal.py",
+    "source.json",
+    "verify_chunk_graph_evidence.py"
+  ],
+  "generated_files": [
+    "PUBLICATION.md",
+    "PROVENANCE.json"
+  ]
+}

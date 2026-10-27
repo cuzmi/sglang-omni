@@ -1,0 +1,84 @@
+✓ Initialized. View run at 
+https://modal.com/apps/stangameact/main/ap-8JuNwVT3676BYP1ejmChWl
+Building image im-A8XFoaBDbRNfRv32h3ynJa
+
+=> Step 0: FROM base
+
+=> Step 1: ENV PYTHONUNBUFFERED=1
+
+=> Step 2: ENV HF_HOME=/cache/huggingface
+
+=> Step 3: ENV OMP_NUM_THREADS=4
+
+=> Step 4: ENV TORCHINDUCTOR_COMPILE_THREADS=4
+Saving image...
+Image saved, took 4.74s
+
+Built image im-A8XFoaBDbRNfRv32h3ynJa in 6.66s
+
+
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/run_diagnostic.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/diagnostic_codecs.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/diagnostic_checkpoint.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/diagnostic_fixed.tar.gz
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610
+│   27/diagnostic_bad.tar.gz
+└── ✓ Created Function run.
+Starting bad checkpoint diagnostic
+Stopping app - user stopped from CLI.
+Runner terminated.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/cuzimi/Coding                                                         │
+│ Works/RemoteFiles/research/minicpm_given_text_stream_chunk_graph_h100_202610 │
+│ 27/run_diagnostic.py:69 in main                                              │
+│                                                                              │
+│   68 │   (HERE / 'latest_diagnostic.txt').write_text(run_id + '\n')          │
+│ ❱ 69 │   result = run.remote(run_id)                                         │
+│   70 │   (HERE / 'diagnostic_result.json').write_text(json.dumps(result, ind │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_object.py:49 in wrapped                                     │
+│                                                                              │
+│    48 │   │   await self.hydrate()                                           │
+│ ❱  49 │   │   return await method(self, *args, **kwargs)                     │
+│    50                                                                        │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_functions.py:2081 in remote                                 │
+│                                                                              │
+│   2080 │   │                                                                 │
+│ ❱ 2081 │   │   return await self._call_function(args, kwargs)                │
+│   2082                                                                       │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_functions.py:2018 in _call_function                         │
+│                                                                              │
+│   2017 │   │                                                                 │
+│ ❱ 2018 │   │   return await invocation.run_function()                        │
+│   2019                                                                       │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_functions.py:498 in run_function                            │
+│                                                                              │
+│    497 │   │   │   if await_response.output.result.status in TERMINAL_STATUS │
+│ ❱  498 │   │   │   │   return await _process_result(                         │
+│    499 │   │   │   │   │   await_response.output.result, await_response.outp │
+│                                                                              │
+│ /Users/cuzimi/.cache/uv/archive-v0/edRPF7JPAePqMW59Oofkb/lib/python3.13/site │
+│ -packages/modal/_utils/function_utils.py:574 in _process_result              │
+│                                                                              │
+│   573 │   │                                                                  │
+│ ❱ 574 │   │   raise RemoteError(result.exception)                            │
+│   575                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RemoteError

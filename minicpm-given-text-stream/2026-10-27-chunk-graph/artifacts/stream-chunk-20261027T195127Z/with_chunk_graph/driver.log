@@ -1,0 +1,10 @@
+Starting one server with pinned KV capacities
+Server ready; warmup then 48 measured requests
+Traceback (most recent call last):
+  File "/work/stream-validation/driver.py", line 313, in <module>
+    main(parser.parse_args())
+  File "/work/stream-validation/driver.py", line 264, in main
+    subprocess.run(
+  File "/opt/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/opt/sglang/bin/python', '/work/stream-validation/measure.py', '--base-url', 'http://127.0.0.1:18080', '--output', '/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-chunk-20261027T195127Z/with_chunk_graph/measurements', '--repeats', '2', '--stagger-seconds', '0.25', '--timeout-seconds', '180', '--model', 'MiniCPM-o-4_5', '--sample-rate', '24000', '--seed', '20261027']' returned non-zero exit status 1.

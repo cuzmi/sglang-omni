@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "started_utc": "2026-10-27T19:59:49.980878+00:00",
+  "error": "CalledProcessError(1, ['/opt/sglang/bin/python', '/work/stream-validation/measure.py', '--base-url', 'http://127.0.0.1:18080', '--output', '/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-chunk-20261027T195127Z/with_chunk_graph/measurements', '--repeats', '2', '--stagger-seconds', '0.25', '--timeout-seconds', '180', '--model', 'MiniCPM-o-4_5', '--sample-rate', '24000', '--seed', '20261027'])",
+  "total_timeout_seconds": 825.0,
+  "server_ready_utc": "2026-10-27T20:02:33.895200+00:00",
+  "finished_utc": "2026-10-27T20:02:59.149761+00:00"
+}

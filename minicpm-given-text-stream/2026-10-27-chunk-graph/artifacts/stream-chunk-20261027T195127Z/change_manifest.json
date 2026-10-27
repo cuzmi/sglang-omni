@@ -1,0 +1,18 @@
+{
+  "prior_archive_sha256": "00fbf2698c3f0685510f3b39b4f0997249893c1333c4bc309a123042da2c12dd",
+  "candidate_archive_sha256": "5476b0b886a689995117c775ba8f0cf90846de525734d8977b4ab5e78aefd964",
+  "changed_runtime_files": [
+    "sglang_omni/models/minicpm_o/config.py",
+    "sglang_omni/models/minicpm_o/stages.py"
+  ],
+  "added_validation_files": [
+    "tests/__init__.py",
+    "tests/unit_test/fixtures/__init__.py",
+    "tests/unit_test/fixtures/accelerator.py",
+    "tests/unit_test/minicpm_o/test_flow_ragged.py"
+  ],
+  "same_base_head": true,
+  "local_regressions": "98 passed, 14 deselected",
+  "all_files_precommit": "All checks passed except cargo unavailable for unchanged Rust router formatting hook",
+  "final_wiring_regressions": "8 passed, including normalized zero batch size; 98-case relevant suite passed before this final edge-case correction"
+}

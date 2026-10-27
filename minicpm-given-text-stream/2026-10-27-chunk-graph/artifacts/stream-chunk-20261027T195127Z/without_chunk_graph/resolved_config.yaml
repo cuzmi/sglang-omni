@@ -1,0 +1,920 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+The repository /__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582 contains custom code which must be executed to correctly load the model. You can inspect the repository content at /__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582 .
+ You can inspect the repository content at https://hf.co//__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582.
+You can avoid this prompt in future by passing the argument `trust_remote_code=True`.
+
+Do you wish to run the custom code? [y/N] model_path: /__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582
+audio_chunking:
+  max_audio_clip_s: 30.0
+  max_total_audio_s: 3600.0
+  max_concurrent_chunks: 8
+  max_concurrent_long_audio_requests: null
+stream_delivery:
+  max_total_backlog_bytes: 1073741824
+stages:
+  preprocessing:
+    factory_path: sglang_omni.models.minicpm_o.stages.create_preprocessing_executor
+    next:
+    - image_encoder
+    - audio_encoder
+    - thinker
+    terminal: false
+    route_fn: sglang_omni.models.minicpm_o.routing.resolve_preprocessing_next_stages
+    gpu: 0
+    tp_size: 1
+    process: pipeline
+    allow_child_processes: false
+    runtime_gpu_ids: null
+    gpu_memory_fraction: null
+    total_reserve_bytes: null
+    enforce_total_reserve: true
+    factory:
+      device: null
+      dtype: null
+      max_seq_len: null
+      video_fps: null
+      max_new_tokens: null
+      context_length: null
+      max_concurrency: null
+      max_batch_size: null
+      max_batch_wait_ms: null
+      enable_async_decode: null
+      async_decode_min_batch_size: null
+      prefill_coalesce_requests: null
+      prefill_coalesce_wait_ms: null
+      prefill_coalesce_when_idle: null
+      prefill_coalesce_requires_pending_builds: null
+      prefill_coalesce_after_builds_during_decode: null
+      request_build_max_workers: null
+      request_build_max_pending: null
+      encoder_mem_reserve: null
+      enable_partial_start: null
+      partial_start_min_chunks: null
+    env: {}
+    wait_for: null
+    wait_for_fn: null
+    merge_fn: null
+    stream_to: []
+    stream_done_to_fn: null
+    can_accept_stream_before_payload: false
+    disable_direct_cuda_ipc_payload: false
+    project_payload:
+      image_encoder: sglang_omni.models.minicpm_o.routing.project_preprocessing_to_image_encoder
+      audio_encoder: sglang_omni.models.minicpm_o.routing.project_preprocessing_to_audio_encoder
+      thinker: sglang_omni.models.minicpm_o.routing.project_preprocessing_to_thinker
+    comm: null
+    http_routes: []
+  thinker:
+    factory_path: sglang_omni.models.minicpm_o.stages.create_sglang_thinker_executor_from_config
+    next:
+    - decode
+    - talker
+    terminal: false
+    route_fn: sglang_omni.models.minicpm_o.routing.resolve_thinker_next_stages
+    gpu: 0
+    tp_size: 1
+    process: pipeline
+    allow_child_processes: false
+    runtime_gpu_ids: null
+    gpu_memory_fraction: null
+    total_reserve_bytes: null
+    enforce_total_reserve: true
+    engine:
+      mem_fraction_static: null
+      max_running_requests: null
+      max_total_tokens: 131072
+      cuda_graph_max_bs: null
+      disable_cuda_graph: null
+      enable_torch_compile: null
+      torch_compile_max_bs: null
+      cpu_offload_gb: null
+      quantization: null
+      disable_custom_all_reduce: null
+      kv_cache_bytes: null
+    factory:
+      device: null
+      dtype: null
+      max_seq_len: 8192
+      video_fps: null
+      max_new_tokens: null
+      context_length: null
+      max_concurrency: null
+      max_batch_size: null
+      max_batch_wait_ms: null
+      enable_async_decode: true
+      async_decode_min_batch_size: null
+      prefill_coalesce_requests: null
+      prefill_coalesce_wait_ms: null
+      prefill_coalesce_when_idle: null
+      prefill_coalesce_requires_pending_builds: null
+      prefill_coalesce_after_builds_during_decode: null
+      request_build_max_workers: null
+      request_build_max_pending: null
+      encoder_mem_reserve: null
+      enable_partial_start: null
+      partial_start_min_chunks: null
+    env: {}
+    wait_for:
+    - preprocessing
+    - image_encoder
+    - audio_encoder
+    wait_for_fn: sglang_omni.models.minicpm_o.routing.resolve_thinker_wait_sources
+    merge_fn: sglang_omni.models.minicpm_o.merge.merge_for_thinker
+    stream_to:
+    - decode
+    stream_done_to_fn: null
+    can_accept_stream_before_payload: false
+    disable_direct_cuda_ipc_payload: false
+    project_payload:
+      decode: sglang_omni.models.minicpm_o.routing.project_thinker_to_decode
+      talker: sglang_omni.models.minicpm_o.routing.project_thinker_to_talker
+    comm: null
+    http_routes: []
+  image_encoder:
+    factory_path: sglang_omni.models.minicpm_o.stages.create_image_encoder_executor
+    next: thinker
+    terminal: false
+    route_fn: null
+    gpu: 0
+    tp_size: 1
+    process: pipeline
+    allow_child_processes: false
+    runtime_gpu_ids: null
+    gpu_memory_fraction: null
+    total_reserve_bytes: null
+    enforce_total_reserve: true
+    factory:
+      device: null
+      dtype: null
+      max_seq_len: null
+      video_fps: null
+      max_new_tokens: null
+      context_length: null
+      max_concurrency: null
+      max_batch_size: null
+      max_batch_wait_ms: null
+      enable_async_decode: null
+      async_decode_min_batch_size: null
+      prefill_coalesce_requests: null
+      prefill_coalesce_wait_ms: null
+      prefill_coalesce_when_idle: null
+      prefill_coalesce_requires_pending_builds: null
+      prefill_coalesce_after_builds_during_decode: null
+      request_build_max_workers: null
+      request_build_max_pending: null
+      encoder_mem_reserve: null
+      enable_partial_start: null
+      partial_start_min_chunks: null
+    env: {}
+    wait_for: null
+    wait_for_fn: null
+    merge_fn: null
+    stream_to: []
+    stream_done_to_fn: null
+    can_accept_stream_before_payload: false
+    disable_direct_cuda_ipc_payload: false
+    project_payload:
+      thinker: sglang_omni.models.minicpm_o.routing.project_encoder_to_thinker
+    comm: null
+    http_routes: []
+  audio_encoder:
+    factory_path: sglang_omni.models.minicpm_o.stages.create_audio_encoder_executor
+    next: thinker
+    terminal: false
+    route_fn: null
+    gpu: 0
+    tp_size: 1
+    process: pipeline
+    allow_child_processes: false
+    runtime_gpu_ids: null
+    gpu_memory_fraction: null
+    total_reserve_bytes: null
+    enforce_total_reserve: true
+    factory:
+      device: null
+      dtype: null
+      max_seq_len: null
+      video_fps: null
+      max_new_tokens: null
+      context_length: null
+      max_concurrency: null
+      max_batch_size: null
+      max_batch_wait_ms: null
+      enable_async_decode: null
+      async_decode_min_batch_size: null
+      prefill_coalesce_requests: null
+      prefill_coalesce_wait_ms: null
+      prefill_coalesce_when_idle: null
+      prefill_coalesce_requires_pending_builds: null
+      prefill_coalesce_after_builds_during_decode: null
+      request_build_max_workers: null
+      request_build_max_pending: null
+      encoder_mem_reserve: null
+      enable_partial_start: null
+      partial_start_min_chunks: null
+    env: {}
+    wait_for: null
+    wait_for_fn: null
+    merge_fn: null
+    stream_to: []
+    stream_done_to_fn: null
+    can_accept_stream_before_payload: false
+    disable_direct_cuda_ipc_payload: true
+    project_payload:
+      thinker: sglang_omni.models.minicpm_o.routing.project_encoder_to_thinker
+    comm: null
+    http_routes: []
+  decode:
+    factory_path: sglang_omni.models.minicpm_o.stages.create_decode_executor
+    next: null
+    terminal: true
+    route_fn: null
+    gpu: null
+    tp_size: 1
+    process: pipeline
+    allow_child_processes: false
+    runtime_gpu_ids: null
+    gpu_memory_fraction: null
+    total_reserve_bytes: null
+    enforce_total_reserve: true
+    factory:
+      device: null
+      dtype: null
+      max_seq_len: null
+      video_fps: null
+      max_new_tokens: null
+      context_length: null
+      max_concurrency: null
+      max_batch_size: null
+      max_batch_wait_ms: null
+      enable_async_decode: null
+      async_decode_min_batch_size: null
+      prefill_coalesce_requests: null
+      prefill_coalesce_wait_ms: null
+      prefill_coalesce_when_idle: null
+      prefill_coalesce_requires_pending_builds: null
+      prefill_coalesce_after_builds_during_decode: null
+      request_build_max_workers: null
+      request_build_max_pending: null
+      encoder_mem_reserve: null
+      enable_partial_start: null
+      partial_start_min_chunks: null
+    env: {}
+    wait_for: null
+    wait_for_fn: null
+    merge_fn: null
+    stream_to: []
+    stream_done_to_fn: null
+    can_accept_stream_before_payload: true
+    disable_direct_cuda_ipc_payload: false
+    project_payload: {}
+    comm: null
+    http_routes: []
+  talker:
+    factory_path: sglang_omni.models.minicpm_o.stages.create_sglang_talker_executor_from_config
+    next: code2wav
+    terminal: false
+    route_fn: null
+    gpu: 0
+    tp_size: 1
+    process: talker
+    allow_child_processes: false
+    runtime_gpu_ids: null
+    gpu_memory_fraction: null
+    total_reserve_bytes: null
+    enforce_total_reserve: true
+    engine:
+      mem_fraction_static: null
+      max_running_requests: null
+      max_total_tokens: 131072
+      cuda_graph_max_bs: null
+      disable_cuda_graph: null
+      enable_torch_compile: null
+      torch_compile_max_bs: null
+      cpu_offload_gb: null
+      quantization: null
+      disable_custom_all_reduce: null
+      kv_cache_bytes: null
+    factory:
+      device: null
+      dtype: null
+      max_seq_len: 4096
+      video_fps: null
+      max_new_tokens: null
+      context_length: null
+      max_concurrency: null
+      max_batch_size: null
+      max_batch_wait_ms: null
+      enable_async_decode: null
+      async_decode_min_batch_size: null
+      prefill_coalesce_requests: null
+      prefill_coalesce_wait_ms: null
+      prefill_coalesce_when_idle: null
+      prefill_coalesce_requires_pending_builds: null
+      prefill_coalesce_after_builds_during_decode: null
+      request_build_max_workers: null
+      request_build_max_pending: null
+      encoder_mem_reserve: null
+      enable_partial_start: null
+      partial_start_min_chunks: null
+      codec_stream_chunk_tokens: 25
+    env: {}
+    wait_for: null
+    wait_for_fn: null
+    merge_fn: null
+    stream_to:
+    - code2wav
+    stream_done_to_fn: null
+    can_accept_stream_before_payload: false
+    disable_direct_cuda_ipc_payload: false
+    project_payload:
+      code2wav: sglang_omni.models.minicpm_o.routing.project_talker_to_code2wav
+    comm: null
+    http_routes: []
+  code2wav:
+    factory_path: sglang_omni.models.minicpm_o.stages.create_code2wav_executor
+    next: null
+    terminal: true
+    route_fn: null
+    gpu: 0
+    tp_size: 1
+    process: talker
+    allow_child_processes: false
+    runtime_gpu_ids: null
+    gpu_memory_fraction: null
+    total_reserve_bytes: null
+    enforce_total_reserve: true
+    factory:
+      device: null
+      dtype: float16
+      max_seq_len: null
+      video_fps: null
+      max_new_tokens: null
+      context_length: null
+      max_concurrency: null
+      max_batch_size: 16
+      max_batch_wait_ms: 0.0
+      enable_async_decode: null
+      async_decode_min_batch_size: null
+      prefill_coalesce_requests: null
+      prefill_coalesce_wait_ms: null
+      prefill_coalesce_when_idle: null
+      prefill_coalesce_requires_pending_builds: null
+      prefill_coalesce_after_builds_during_decode: null
+      request_build_max_workers: null
+      request_build_max_pending: null
+      encoder_mem_reserve: null
+      enable_partial_start: null
+      partial_start_min_chunks: null
+      enable_flow_cuda_graph: true
+      chunk_cuda_graph_max_streams: 0
+      codec_chunk_size: 25
+      flow_cuda_graph_capture_shapes:
+      - - 1
+        - 128
+      - - 1
+        - 160
+      - - 1
+        - 192
+      - - 1
+        - 224
+      - - 1
+        - 256
+      - - 1
+        - 272
+      - - 1
+        - 288
+      - - 1
+        - 304
+      - - 1
+        - 320
+      - - 1
+        - 336
+      - - 1
+        - 352
+      - - 1
+        - 368
+      - - 1
+        - 384
+      - - 1
+        - 400
+      - - 1
+        - 416
+      - - 1
+        - 432
+      - - 1
+        - 448
+      - - 1
+        - 464
+      - - 1
+        - 480
+      - - 1
+        - 496
+      - - 1
+        - 512
+      - - 1
+        - 528
+      - - 1
+        - 544
+      - - 1
+        - 560
+      - - 1
+        - 576
+      - - 1
+        - 592
+      - - 1
+        - 608
+      - - 1
+        - 624
+      - - 1
+        - 640
+      - - 1
+        - 656
+      - - 1
+        - 672
+      - - 1
+        - 688
+      - - 1
+        - 704
+      - - 1
+        - 720
+      - - 1
+        - 752
+      - - 1
+        - 784
+      - - 1
+        - 816
+      - - 1
+        - 848
+      - - 1
+        - 880
+      - - 1
+        - 912
+      - - 1
+        - 944
+      - - 1
+        - 976
+      - - 1
+        - 1008
+      - - 1
+        - 1024
+      - - 2
+        - 336
+      - - 2
+        - 384
+      - - 2
+        - 400
+      - - 2
+        - 416
+      - - 2
+        - 432
+      - - 2
+        - 448
+      - - 2
+        - 464
+      - - 2
+        - 480
+      - - 2
+        - 496
+      - - 2
+        - 512
+      - - 2
+        - 528
+      - - 2
+        - 544
+      - - 2
+        - 560
+      - - 2
+        - 576
+      - - 2
+        - 592
+      - - 2
+        - 608
+      - - 2
+        - 624
+      - - 2
+        - 640
+      - - 2
+        - 672
+      - - 2
+        - 736
+      - - 2
+        - 768
+      - - 3
+        - 400
+      - - 3
+        - 416
+      - - 3
+        - 448
+      - - 3
+        - 464
+      - - 3
+        - 480
+      - - 3
+        - 496
+      - - 3
+        - 512
+      - - 3
+        - 528
+      - - 3
+        - 544
+      - - 3
+        - 560
+      - - 3
+        - 576
+      - - 3
+        - 608
+      - - 3
+        - 640
+      - - 3
+        - 656
+      - - 3
+        - 672
+      - - 3
+        - 688
+      - - 3
+        - 736
+      - - 4
+        - 432
+      - - 4
+        - 448
+      - - 4
+        - 464
+      - - 4
+        - 480
+      - - 4
+        - 496
+      - - 4
+        - 512
+      - - 4
+        - 528
+      - - 4
+        - 576
+      - - 4
+        - 592
+      - - 4
+        - 608
+      - - 4
+        - 624
+      - - 4
+        - 640
+      - - 4
+        - 672
+      - - 4
+        - 704
+      - - 5
+        - 416
+      - - 5
+        - 432
+      - - 5
+        - 448
+      - - 5
+        - 480
+      - - 5
+        - 496
+      - - 5
+        - 512
+      - - 5
+        - 528
+      - - 5
+        - 544
+      - - 5
+        - 560
+      - - 5
+        - 576
+      - - 5
+        - 592
+      - - 5
+        - 608
+      - - 5
+        - 624
+      - - 5
+        - 640
+      - - 5
+        - 688
+      - - 6
+        - 464
+      - - 6
+        - 480
+      - - 6
+        - 496
+      - - 6
+        - 512
+      - - 6
+        - 528
+      - - 6
+        - 544
+      - - 6
+        - 560
+      - - 6
+        - 576
+      - - 6
+        - 592
+      - - 6
+        - 608
+      - - 6
+        - 624
+      - - 6
+        - 640
+      - - 6
+        - 656
+      - - 7
+        - 480
+      - - 7
+        - 496
+      - - 7
+        - 512
+      - - 7
+        - 528
+      - - 7
+        - 544
+      - - 7
+        - 560
+      - - 7
+        - 576
+      - - 7
+        - 592
+      - - 7
+        - 608
+      - - 7
+        - 624
+      - - 7
+        - 656
+      - - 7
+        - 672
+      - - 7
+        - 720
+      - - 7
+        - 736
+      - - 8
+        - 480
+      - - 8
+        - 496
+      - - 8
+        - 528
+      - - 8
+        - 544
+      - - 8
+        - 560
+      - - 8
+        - 576
+      - - 8
+        - 592
+      - - 8
+        - 608
+      - - 8
+        - 624
+      - - 8
+        - 640
+      - - 8
+        - 656
+      - - 8
+        - 672
+      - - 8
+        - 784
+      - - 9
+        - 480
+      - - 9
+        - 512
+      - - 9
+        - 544
+      - - 10
+        - 576
+      packed_dit_cuda_graph_capture_shapes:
+      - - 2
+        - 1280
+      - - 2
+        - 1424
+      - - 2
+        - 1616
+      - - 2
+        - 1744
+      - - 2
+        - 1856
+      - - 2
+        - 1936
+      - - 2
+        - 2080
+      - - 2
+        - 2144
+      - - 2
+        - 2256
+      - - 2
+        - 2448
+      - - 2
+        - 2592
+      - - 3
+        - 2000
+      - - 3
+        - 2080
+      - - 3
+        - 2256
+      - - 3
+        - 2496
+      - - 3
+        - 2608
+      - - 3
+        - 2688
+      - - 3
+        - 2784
+      - - 3
+        - 2944
+      - - 3
+        - 3072
+      - - 3
+        - 3088
+      - - 3
+        - 3200
+      - - 3
+        - 3392
+      - - 4
+        - 2784
+      - - 4
+        - 2896
+      - - 4
+        - 3056
+      - - 4
+        - 3216
+      - - 4
+        - 3328
+      - - 4
+        - 3408
+      - - 4
+        - 3520
+      - - 4
+        - 3600
+      - - 4
+        - 3728
+      - - 4
+        - 3936
+      - - 4
+        - 4048
+      - - 4
+        - 4256
+      - - 4
+        - 4432
+      - - 4
+        - 4464
+      - - 5
+        - 3216
+      - - 5
+        - 3568
+      - - 5
+        - 3760
+      - - 5
+        - 3888
+      - - 5
+        - 4128
+      - - 5
+        - 4192
+      - - 5
+        - 4384
+      - - 5
+        - 4512
+      - - 5
+        - 4592
+      - - 5
+        - 4720
+      - - 5
+        - 4944
+      - - 5
+        - 5376
+      - - 5
+        - 5456
+      - - 6
+        - 4368
+      - - 6
+        - 4736
+      - - 6
+        - 4976
+      - - 6
+        - 5248
+      - - 6
+        - 5376
+      - - 6
+        - 5424
+      - - 6
+        - 5536
+      - - 6
+        - 5680
+      - - 6
+        - 5744
+      - - 6
+        - 5888
+      - - 6
+        - 6224
+      - - 6
+        - 6464
+      - - 7
+        - 4944
+      - - 7
+        - 5520
+      - - 7
+        - 5552
+      - - 7
+        - 6032
+      - - 7
+        - 6064
+      - - 7
+        - 6384
+      - - 7
+        - 6448
+      - - 7
+        - 6736
+      - - 7
+        - 6784
+      - - 7
+        - 7136
+      - - 7
+        - 7296
+      - - 8
+        - 6352
+      - - 8
+        - 6448
+      - - 8
+        - 6832
+      - - 8
+        - 6896
+      - - 8
+        - 6928
+      - - 8
+        - 7440
+      - - 8
+        - 7616
+      - - 8
+        - 7760
+      - - 8
+        - 8416
+      - - 9
+        - 6736
+      - - 9
+        - 7136
+      - - 9
+        - 7536
+      - - 9
+        - 7936
+      - - 9
+        - 8304
+      - - 9
+        - 8496
+      - - 9
+        - 8736
+      - - 9
+        - 8944
+      - - 9
+        - 9136
+      - - 10
+        - 7120
+      - - 10
+        - 7520
+      - - 10
+        - 7920
+      - - 10
+        - 8288
+      - - 10
+        - 8512
+      - - 10
+        - 8704
+      - - 10
+        - 8992
+      - - 10
+        - 9424
+      - - 10
+        - 9856
+      batch_wait_when_idle: false
+      enable_dit_torch_compile: true
+      enable_hift_torch_compile: true
+      enable_flow_variable_length: false
+      reference_workers: 8
+      prompt_cache_capacity: 32
+      decode_stream_priority: -1
+      enable_flow_block_compile: false
+    env: {}
+    wait_for: null
+    wait_for_fn: null
+    merge_fn: null
+    stream_to: []
+    stream_done_to_fn: null
+    can_accept_stream_before_payload: true
+    disable_direct_cuda_ipc_payload: false
+    project_payload: {}
+    comm: null
+    http_routes: []
+name: /__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582
+processes: {}
+env_defaults: {}
+mps: 'off'
+weight_share: 'off'
+placement:
+  max_total_gpu_memory_fraction_per_gpu: 1.0
+  require_memory_fraction_for_colocation: false
+placement_policy: null
+endpoints:
+  base_path: /tmp/sglang_omni
+terminal_stages_fn: sglang_omni.models.minicpm_o.routing.resolve_terminal_stages
+config_cls: MiniCPMOSpeechPipelineConfig
+session_nodes: {}
+session_publish: {}
+max_output_lead_ms: 1000.0
+services: []
+

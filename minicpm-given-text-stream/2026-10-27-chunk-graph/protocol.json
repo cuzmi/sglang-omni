@@ -1,0 +1,91 @@
+{
+  "objective": "Retest given-text speech after wiring existing Flow chunk graph capture, preserving the prior streaming/nonstreaming workload and runtime conditions.",
+  "profile": "stangameact",
+  "gpu": "H100!",
+  "gpu_count": 1,
+  "cpu_count": 16,
+  "memory_mib": 131072,
+  "gpu_timeout_seconds": 1800,
+  "driver_timeout_seconds": 1650,
+  "retries": 0,
+  "source": "Same candidate source and same H100 allocation. Two sequential fresh servers: chunk_cuda_graph_max_streams=0 then8; existing whole-sequence Flow graph config remains unchanged. Each condition repeats the original stream=false versus stream=true workload.",
+  "image": "docker.io/hongccc/sglang-omni@sha256:06ed306707bcf3d9e9beb5ba7ce66f09a666cac11c23455ece50c34199c0e985",
+  "model": "openbmb/MiniCPM-o-4_5",
+  "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582",
+  "reference": "Pinned checkpoint assets/HT_ref_audio.wav, SHA256 recorded by CPU preflight; same default voice for both samples and arms.",
+  "configuration": {
+    "thinker_max_total_tokens": 131072,
+    "talker_max_total_tokens": 131072,
+    "codec_stream_chunk_tokens": 25,
+    "code2wav_codec_chunk_size": 25,
+    "graph_compile": "Current defaults for whole-sequence Flow; only chunk_cuda_graph_max_streams varies0versus8.",
+    "OMP_NUM_THREADS": 4,
+    "TORCHINDUCTOR_COMPILE_THREADS": 4
+  },
+  "endpoint": "/v1/audio/speech over localhost; PCM16 mono 24kHz; stream mode uses SSE to identify generated chunks.",
+  "scenarios": [
+    "c1_en",
+    "c1_zh",
+    "c2_simultaneous",
+    "c2_staggered"
+  ],
+  "schedule": "One H100 allocation; real CUDA graph/eager tests first; fresh server with chunk graph cap0, then fresh server withcap8. Each server uses disjoint fresh compiler caches,8warmup+48measured requests, two ABBA mode repeats per scenario, same250ms stagger.",
+  "planned_measured_requests": 96,
+  "warmup_requests": 16,
+  "sampling_seed": 20261027,
+  "primary_metric": "Meaningful-audio arrival time: first received10ms PCM window with RMS>=0.001 fullscale.",
+  "secondary_metrics": [
+    "first generated audio arrival",
+    "generated chunk intervals",
+    "completion time",
+    "audio duration",
+    "simulated playback stall count/time with100ms buffer reserve",
+    "A/A variability"
+  ],
+  "output_work": "Experiment-only adapter writes full codec count, SHA256 and token IDs from existing CPU tensor once per request, shared in both modes.",
+  "validity": [
+    "Fail fast first request failure and preserve partial evidence.",
+    "Identical experiment-only finite-value check on the existing CPU waveform in both conditions, before int16 conversion; no NaN/Inf may be masked as PCM silence.",
+    "No aggregation that silently excludes failed requests.",
+    "Exact per-sample codec hashes checked; mismatches prevent strict matched-work speedup attribution.",
+    "Audio-duration difference above10percent flagged.",
+    "Continuous output means multiple ordered audio deltas for each request before own terminal event; simulated buffer stalls do not establish perceptual audio quality.",
+    "Both conditions must complete the exact workload before comparison.",
+    "Graph evidence must cover all28completedstreamingrequests percondition; measured graph use checked after timings.",
+    "SameGPU condition order is disabledthenenabled; no reversed condition repeat, so condition-order drift remains a limitation."
+  ],
+  "exclusions": [
+    "No profiler during timings",
+    "No claimed GPU overlap without GPU traces",
+    "No ASR/MOS or speaker similarity evaluation",
+    "No cancel/fault injection during measured timing cohorts"
+  ],
+  "previous_run": {
+    "run_id": "stream-20261027T192929Z",
+    "source_archive_sha256": "00fbf2698c3f0685510f3b39b4f0997249893c1333c4bc309a123042da2c12dd",
+    "analysis_sha256": "ae5815fca14e4240696b727edb2918ff9193dd6b57e3de7af9c24773fd4b62b5",
+    "role": "Historical reference only; primary new comparison is cap0versuscap8withinoneGPUallocation."
+  },
+  "unchanged_harness_sha256": {
+    "measure.py": "8b640ea8ddc2d2fa315695d5dbb0782a964270c9737b737e5bfb2986adfc88e1",
+    "patch_codec_probe.py": "0848c68b5d5120e5ad4bb8f81d096b507aeaaed5f0a8ec6caf33c4150378cd40",
+    "analyze.py": "f5192098529fa84b9c6583fc39eca2c1f3bffff507b0c177774a13ef26e5fd79",
+    "preflight.py": "b62e59c68d440e50cbce88192d5beb99fbb48e571e0fb975881d502a5b5afd6b"
+  },
+  "per_condition_measured_requests": 48,
+  "per_condition_warmup_requests": 8,
+  "condition_order": [
+    {
+      "name": "without_chunk_graph",
+      "chunk_cuda_graph_max_streams": 0
+    },
+    {
+      "name": "with_chunk_graph",
+      "chunk_cuda_graph_max_streams": 8
+    }
+  ],
+  "gpu_validation": "11 CUDA cases: all test_flow_ragged accelerator variants including FP16/compiled, plus both timestep-precision-switch graph replay cases; timeout300s, any failure stops serving runs.",
+  "graph_evidence": "Identical experiment-only in-memory shape counters in both conditions; no hot-loop logging or file I/O. One cumulative snapshot at completed streaming request terminal. Post-timing verification subtracts startup/warmup counters and requires measured hits when enabled and zero hits with nonzero misses when disabled. Both conditions also check the already-copied CPU waveform for finite values before PCM conversion.",
+  "correctness_fix": "Both conditions retain DiT timestep frequency buffers by device and dtype so FP16 stream startup cannot invalidate FP32 whole-sequence graphs or vice versa.",
+  "preceding_failed_run": "stream-chunk-20261027T195127Z: enabled startup capture exposed nonfinite audio during warmup; archived INVALID.json, no performance comparison."
+}

@@ -1,0 +1,5 @@
+{"event": "response_headers", "arrival_seconds": 0.690747502000022, "status": 200, "server_request_id": "speech-566e5a33-36b8-439d-b34f-1c14fb0bbb43"}
+{"event": "transport_audio_chunk", "arrival_seconds": 0.6909139140000207, "byte_count": 262144, "cumulative_audio_seconds": 5.461333333333333}
+{"event": "transport_audio_chunk", "arrival_seconds": 0.6933565600000406, "byte_count": 262144, "cumulative_audio_seconds": 10.922666666666666}
+{"event": "transport_audio_chunk", "arrival_seconds": 0.693533503000026, "byte_count": 193792, "cumulative_audio_seconds": 14.96}
+{"event": "completed", "arrival_seconds": 0.6935920120000105, "error": null}
