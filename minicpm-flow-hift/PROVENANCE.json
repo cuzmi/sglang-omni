@@ -9354,6 +9354,492 @@
       "source_url": "https://github.com/cuzmi/RemoteFiles/blob/a4ad93278352495945a82df0d5cd88851efb49ba/research/minicpm_serving_openloop256_radix_h100_20261026/validation.json",
       "source_sha256": "2ffad5ed6bf38c7d8f42d9aac5c3b4d387c698e406b215876495aaffd5e60065",
       "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/COMPARISON_TABLES.md",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/COMPARISON_TABLES.md",
+      "source_sha256": "cf7c78522af4761ebdf79bfd8928678890d0207ca66f329c244f209a8b639ad7",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/REPORT.md",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/REPORT.md",
+      "source_sha256": "2cc800a7939812bb43ae047bcf010465471926c9bce24802b7822d4628459cdf",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/RUNTIME_VALIDATION.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/RUNTIME_VALIDATION.json",
+      "source_sha256": "ce2e735e7146334e453c4b57cb0bed82d63504c60de54aa5f000203013f9d944",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/arrival_schedules/rate30.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/arrival_schedules/rate30.json",
+      "source_sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/cells.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/cells.csv",
+      "source_sha256": "cbdb148a83b6580d9098daeb02bf719de8ac48d04d43c28f8ec56af747738729",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/comparison.json",
+      "source_sha256": "35ea7aab082e76373a420d86e4bcbf2975786f068151b21e95da223394c5af05",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison_tables.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/comparison_tables.csv",
+      "source_sha256": "cb95f37a4c9a8dfd830aa97ece9418cce29395dc6ebb175c86c9edbc3d4c053b",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison_tables.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/comparison_tables.json",
+      "source_sha256": "d5cee28e0d17fc7952832fe7f6ab682b04399250470ac2913376e2444da03c60",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/gpu_final.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/gpu_final.csv",
+      "source_sha256": "c5f868f0e6c74eee05cfd20084031673f234b6357ed80c5bd318e892886ae0ee",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/baseline_resolved_config.yaml",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/baseline_resolved_config.yaml",
+      "source_sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/environment.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/environment.json",
+      "source_sha256": "faf06eb7ec6144e20f6d0d7e08cb73a4992f1dcfbef4364a7aeae9130ddf9c25",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/gpu_identity.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/gpu_identity.csv",
+      "source_sha256": "f7c12838364c9ecd93267ceb8ba007693e8194522b85475ad4841c2110881ec4",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/optimized_resolved_config.yaml",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/optimized_resolved_config.yaml",
+      "source_sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/client.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/client.log",
+      "source_sha256": "8dfb1638395cf61317af8b42ad1e4e2777a673ecfb0617875c909dd4487878d2",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/command.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/command.json",
+      "source_sha256": "77e11d894b602a033d94cc2abf6d364d57d6f8d34b70858e0b694fae4210d4cf",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/kv_capacity.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/kv_capacity.json",
+      "source_sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/arrival_schedule.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/measured/arrival_schedule.json",
+      "source_sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/metrics.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/measured/metrics.json",
+      "source_sha256": "944dfdd32ce00d72a7156392c7ffa645e44dc10a674bd8e20538a0ffff353b1d",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/requests.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/measured/requests.json",
+      "source_sha256": "d54a066e576bf1f28a33077347a4142a3e8921a2f592fde780f6a8e45503ce82",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/results.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/measured/results.csv",
+      "source_sha256": "97fcbdd1bd3efcdec019c39bb10cb2e18806fdcd6daabed4f8f618bbec4ca685",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/speed_results.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/measured/speed_results.json",
+      "source_sha256": "fea22f83992f442dc03d81d0d94d6b2681a39c68949afe3d67e9e5e9d4b93524",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/measured/status.json",
+      "source_sha256": "2fd031b954fcdfb8b9330c7f7b72eda662bbe24ccd7d8a9bbc8813f12c2461a0",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/server.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/server.log",
+      "source_sha256": "5dc95f7bd240dcb5ab0d41d5c4ad925111ae464b27575d002d256162a121e19c",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/status.json",
+      "source_sha256": "915d108f844f035414e5cab630dd3a69cf61490e400f7f6ff0ab86186e246e55",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/metrics.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/warmup/metrics.json",
+      "source_sha256": "8dd90582df3b8c6381087520d55c6027a162eeb20e800c40a82d2fcfd9ca459d",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/requests.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/warmup/requests.json",
+      "source_sha256": "ac3c2609ad157c08d08941de7b0c51a2b569b33e875065ca3ca892c4c71cf8ec",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/results.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/warmup/results.csv",
+      "source_sha256": "825d27b138e93001ad89735994dc47436b1d2ee11d24c2976a136e1c241abb47",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/speed_results.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/warmup/speed_results.json",
+      "source_sha256": "3d6bad5c917e832a0294212d55f9ee1dc69ac6d73d317f6aa98f222aa1e5c9e5",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-baseline-rate30/warmup/status.json",
+      "source_sha256": "b7eb76577de4ea456a354265e7ed4bc62cab6154bf1bfc41df2e08cc2e012129",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/client.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/client.log",
+      "source_sha256": "c198420559fe8f9c3845bab7e4dd3b1f2b95d9243f7c487da738306b00c9427c",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/command.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/command.json",
+      "source_sha256": "07e1cef433b20eb8682f424fc5c4282aeedbeff24d711e40d71150ae83da14da",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/kv_capacity.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/kv_capacity.json",
+      "source_sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/arrival_schedule.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/measured/arrival_schedule.json",
+      "source_sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/metrics.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/measured/metrics.json",
+      "source_sha256": "2c64bcad94370b23693a4d8757cc825179b147d011204b61cb563ff22faf754a",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/requests.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/measured/requests.json",
+      "source_sha256": "72fc6c83b2331fb1d3776424dbfe02bdaffcd793762b453e1b4fc59654f76e3d",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/results.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/measured/results.csv",
+      "source_sha256": "1a5fa5723c3cf02ac09281be464fc390988a2eae07e9d731102166640a96afcd",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/speed_results.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/measured/speed_results.json",
+      "source_sha256": "38720014f7388430d937f2c098762547e3908892140ac76b1919253a39a2613a",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/measured/status.json",
+      "source_sha256": "7cfd982594b619ff81fb106c5dd8cf61274c51cf08b1c95534febdbc89ecbf7a",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/server.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/server.log",
+      "source_sha256": "190909cc539b5741c195d1186474e2183850b355a036b4a6a63e159fc23b041d",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/status.json",
+      "source_sha256": "07a15a741a7cb655e53d33a90312ebf568177b18e0f82bfa47eb7cff002154c8",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/metrics.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/warmup/metrics.json",
+      "source_sha256": "9a8808b2e6d0d7b78f7e740da4c9ca3aecfef51d0d0df869a91d8ce64d4b1772",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/requests.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/warmup/requests.json",
+      "source_sha256": "d2158566ef2a74f2ab5b935202770a5228cf35d2b02c96987dbcea24a32908d2",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/results.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/warmup/results.csv",
+      "source_sha256": "1b8d4aba3bff53cdc83401bf23295680462e470c88f09528834548258336aa04",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/speed_results.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/warmup/speed_results.json",
+      "source_sha256": "108d8e0edde3fbfd7678f52174791984a3fc4b98435d622b61800fa6c7fad71f",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r1-optimized-rate30/warmup/status.json",
+      "source_sha256": "301ef1829589ed9b2dd49fbb37138b29b33d8b1b316de9451503c1286da90ec9",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/client.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/client.log",
+      "source_sha256": "e2cfb13ffbcf01d62303c11d5a12ef944efe7ec333ea7b7e74e46627a974bf26",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/command.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/command.json",
+      "source_sha256": "ea0dd122460e949e11572119b9ebb36b13a357410530fe4347901c087fc43d16",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/kv_capacity.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/kv_capacity.json",
+      "source_sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/arrival_schedule.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/measured/arrival_schedule.json",
+      "source_sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/metrics.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/measured/metrics.json",
+      "source_sha256": "29dc7893c5cc70dfaef1fe12b36b9c2064cbce15617e1fec9f4af969e0b86f6b",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/requests.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/measured/requests.json",
+      "source_sha256": "0ad72446763dfc6af8ea5d790d4811968171b7b6c27bc0dd3296b05b50adac94",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/results.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/measured/results.csv",
+      "source_sha256": "1a8753987f3ea6141d4a1df0a19b5ead7db3946975a2748b1d70f09d0f4b9019",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/speed_results.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/measured/speed_results.json",
+      "source_sha256": "b44bf128bca1d982ede71b233b47642e71d405ad53c26c2362e589824c6d3b79",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/measured/status.json",
+      "source_sha256": "64f4e3305fdd8b8095c2935ae9b42cba963289264b491b9da403e68d866c6e36",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/server.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/server.log",
+      "source_sha256": "f02cd43d5d153b2b1df31579735a334ecf6cac5b7ea65c2bc3b5e45b28d410ec",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/status.json",
+      "source_sha256": "6780d0bc28c7f2f8168f1afd64e105859bf97fe296f7a9e35ae8b564272e3c21",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/metrics.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/warmup/metrics.json",
+      "source_sha256": "faf1b397b182aac8972b7df82ee42d1b126a03ab554029e935034c930b75e4d1",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/requests.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/warmup/requests.json",
+      "source_sha256": "5406d576b00406675c4a44fd5f8af23f75dc1873e0a3fbc7f919b25cdb1cf4b1",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/results.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/warmup/results.csv",
+      "source_sha256": "8b36c823af004ac31cdd88b44dc5eb5f9d55bddd0dc49f9baf0ff9138fbc9027",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/speed_results.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/warmup/speed_results.json",
+      "source_sha256": "62d504e88509c17e2ba429ec495474adccbd5c9b31db2505b047e39dcf996bb7",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-baseline-rate30/warmup/status.json",
+      "source_sha256": "06890c8031cbdc779e867e114c85074311f790c987790edcae99e31a84e8c002",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/client.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/client.log",
+      "source_sha256": "9c2287d0b0924e6a2897dca987cc1d2badbc05c354a7b00cc43ef469d202e92b",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/command.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/command.json",
+      "source_sha256": "9e92350e3b4cd25a247726862c55067087c657f575e9d8ead0bbab1ab8e27de6",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/kv_capacity.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/kv_capacity.json",
+      "source_sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/arrival_schedule.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/measured/arrival_schedule.json",
+      "source_sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/metrics.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/measured/metrics.json",
+      "source_sha256": "98d4ba5b149720f2684518de12b5815e93a79fd7d883ec5500c593a1631a83f4",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/requests.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/measured/requests.json",
+      "source_sha256": "e55fd08ee65444bc047166286fe47000846108680b857d0dd595bc1587de05db",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/results.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/measured/results.csv",
+      "source_sha256": "6b123b83eed51e88ba91ce5f698f35acf2e8a0afd953dbbe64ed73d2835922fb",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/speed_results.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/measured/speed_results.json",
+      "source_sha256": "0059c017fb68ca9202c501a4a7973991af1f598360c9d8fa7d1eae30bd881c74",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/measured/status.json",
+      "source_sha256": "c943d84e78c76a88ad6eff3ef48c00acb954d2f84f78b2b18d2a29e78cb94bdb",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/server.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/server.log",
+      "source_sha256": "507c04c067d8969a9e22c03704f12717ce15180ab68e0e07eca2e2137a84fd38",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/status.json",
+      "source_sha256": "b52f07270dcaa5809664887823e5e862fe996011ba490562f1de0545c220ddaa",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/metrics.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/warmup/metrics.json",
+      "source_sha256": "deeafc4280816141d48cfadceac2432cb140459a27330a91b04ec3af11182bd1",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/requests.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/warmup/requests.json",
+      "source_sha256": "6b766c2311db735bcdacb5c9e0ac6890ccec44318e1134aad51d4fadd36148e4",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/results.csv",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/warmup/results.csv",
+      "source_sha256": "a6425568b3f474d886f56136477848836cc81aaa7fb9e4514696364a87467c2a",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/speed_results.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/warmup/speed_results.json",
+      "source_sha256": "b1d5b7512495138d8885aca8276cb1ec8d4b9984efbdf23cedebc213100e6fe2",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/r2-optimized-rate30/warmup/status.json",
+      "source_sha256": "6ec930479c04112163a19c42577687a261ed71622e7950e7d16b89b41e5f94b2",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/status.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/status.json",
+      "source_sha256": "dd95c838c9e4229b1909bb219773022f919b84d4b4d9c32297d027c8698f46b9",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/results/versions.txt",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/results/versions.txt",
+      "source_sha256": "1b36a69616eacfe3d25fd1a04c367ac43a28dc34db13dd0b3a224dd71927e584",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/run.log",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/run.log",
+      "source_sha256": "02e0fde0a8486a6a28317fc13fa1ed4353df82ad88e636a31d9f1d1fb665a550",
+      "transformation": null
+    },
+    {
+      "path": "minicpm-flow-hift/2026-10-26-openloop-rate30/validation.json",
+      "source_url": "https://github.com/cuzmi/RemoteFiles/blob/ef1886435c68aba3f6f76e48364dd2a715da6edd/research/minicpm_serving_openloop256_rate30_radix_h100_20261026/validation.json",
+      "source_sha256": "f8c1a667b5f174d31af3d15b65017c6fdc736d9e9d835cda054eb3fd49311a00",
+      "transformation": null
     }
   ],
   "optimized_revision": "758405416635738e8812cbddbe170dd94339f5e6",
@@ -9361,6 +9847,7 @@
   "additional_remote_files_commits": [
     "b141239f34546b0ee8c04f86f4c39e162d0ba3f1",
     "428bf60817c2c57e8443982bba591161b0868603",
-    "a4ad93278352495945a82df0d5cd88851efb49ba"
+    "a4ad93278352495945a82df0d5cd88851efb49ba",
+    "ef1886435c68aba3f6f76e48364dd2a715da6edd"
   ]
 }

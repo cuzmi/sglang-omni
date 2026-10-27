@@ -1,0 +1,350 @@
+[
+  {
+    "request_rate": 8,
+    "complete_validated_abba": true,
+    "arrival_schedule_sha256": "9b029f6036770adf477b388a003467a12883de18a30c819ffc42641ec5e95a8e",
+    "rows": [
+      {
+        "request_rate": 8,
+        "metric": "completed_qps",
+        "main_a": 7.890671754273183,
+        "branch_a": 7.884898948704661,
+        "change_a_percent": -0.07315987470135621,
+        "main_b": 7.8930296568783005,
+        "branch_b": 7.8902785978153265,
+        "change_b_percent": -0.03485428514229394
+      },
+      {
+        "request_rate": 8,
+        "metric": "rtf_mean",
+        "main_a": 0.16052281039345873,
+        "branch_a": 0.15573783103125996,
+        "change_a_percent": -2.9808719087774938,
+        "main_b": 0.1611758359351538,
+        "branch_b": 0.15335121720443198,
+        "change_b_percent": -4.854709569410831
+      },
+      {
+        "request_rate": 8,
+        "metric": "latency_mean_ms",
+        "main_a": 651.5149861943428,
+        "branch_a": 633.0269481013602,
+        "change_a_percent": -2.8376995901469138,
+        "main_b": 652.8020092237057,
+        "branch_b": 621.4347573786654,
+        "change_b_percent": -4.805017662605138
+      },
+      {
+        "request_rate": 8,
+        "metric": "latency_median_ms",
+        "main_a": 643.7232360476628,
+        "branch_a": 630.0475604366511,
+        "change_a_percent": -2.1244651187329655,
+        "main_b": 649.1567543707788,
+        "branch_b": 619.0264110919088,
+        "change_b_percent": -4.641458796508258
+      },
+      {
+        "request_rate": 8,
+        "metric": "latency_p95_ms",
+        "main_a": 974.0899648750201,
+        "branch_a": 951.196648820769,
+        "change_a_percent": -2.3502260447974543,
+        "main_b": 980.8823827188462,
+        "branch_b": 913.2184654590674,
+        "change_b_percent": -6.898270215866809
+      },
+      {
+        "request_rate": 8,
+        "metric": "latency_p99_ms",
+        "main_a": 1044.1473028506152,
+        "branch_a": 1050.8722406579172,
+        "change_a_percent": 0.6440602574887988,
+        "main_b": 1070.1345487730578,
+        "branch_b": 1035.6564157060343,
+        "change_b_percent": -3.2218502903727075
+      },
+      {
+        "request_rate": 8,
+        "metric": "audio_throughput",
+        "main_a": 32.67724440238382,
+        "branch_a": 32.77407528647522,
+        "change_a_percent": 0.29632512123431987,
+        "main_b": 32.65247706179842,
+        "branch_b": 32.66205482686273,
+        "change_b_percent": 0.02933243026610466
+      },
+      {
+        "request_rate": 8,
+        "metric": "total_audio_seconds",
+        "main_a": 1060.16,
+        "branch_a": 1064.08,
+        "change_a_percent": 0.369755508602454,
+        "main_b": 1059.04,
+        "branch_b": 1059.72,
+        "change_b_percent": 0.06420909502946603
+      }
+    ]
+  },
+  {
+    "request_rate": 14,
+    "complete_validated_abba": true,
+    "arrival_schedule_sha256": "ed1f8708f8d3cc35b2eafe569d8027149485d6d053bf6f3c7c7c07bf6d1809fa",
+    "rows": [
+      {
+        "request_rate": 14,
+        "metric": "completed_qps",
+        "main_a": 13.53498385888438,
+        "branch_a": 13.505222052903383,
+        "change_a_percent": -0.21988800497505512,
+        "main_b": 13.542193834838628,
+        "branch_b": 13.521743291525544,
+        "change_b_percent": -0.15101351791666495
+      },
+      {
+        "request_rate": 14,
+        "metric": "rtf_mean",
+        "main_a": 0.2170155545924935,
+        "branch_a": 0.2120928861743086,
+        "change_a_percent": -2.2683481962519014,
+        "main_b": 0.22068194531653926,
+        "branch_b": 0.21206281917499584,
+        "change_b_percent": -3.9056779788579465
+      },
+      {
+        "request_rate": 14,
+        "metric": "latency_mean_ms",
+        "main_a": 874.3296752581955,
+        "branch_a": 845.8359087508143,
+        "change_a_percent": -3.2589270745004506,
+        "main_b": 890.4665711879716,
+        "branch_b": 859.2366117400161,
+        "change_b_percent": -3.507145631114661
+      },
+      {
+        "request_rate": 14,
+        "metric": "latency_median_ms",
+        "main_a": 862.2091470751911,
+        "branch_a": 838.2752924226224,
+        "change_a_percent": -2.7758757528562272,
+        "main_b": 881.8630549358204,
+        "branch_b": 867.0088634826243,
+        "change_b_percent": -1.6844102233398495
+      },
+      {
+        "request_rate": 14,
+        "metric": "latency_p95_ms",
+        "main_a": 1253.9107755292207,
+        "branch_a": 1245.1838545966893,
+        "change_a_percent": -0.6959762291577798,
+        "main_b": 1280.5371548747644,
+        "branch_b": 1248.184115451295,
+        "change_b_percent": -2.526520944769739
+      },
+      {
+        "request_rate": 14,
+        "metric": "latency_p99_ms",
+        "main_a": 1395.2807962079526,
+        "branch_a": 1420.2273276750925,
+        "change_a_percent": 1.7879219390776857,
+        "main_b": 1444.3193593295289,
+        "branch_b": 1375.6006821407937,
+        "change_b_percent": -4.757858900446732
+      },
+      {
+        "request_rate": 14,
+        "metric": "audio_throughput",
+        "main_a": 55.965043415258954,
+        "branch_a": 55.36085946217505,
+        "change_a_percent": -1.0795738128904442,
+        "main_b": 56.10911779975248,
+        "branch_b": 56.43426329061544,
+        "change_b_percent": 0.5794877973725576
+      },
+      {
+        "request_rate": 14,
+        "metric": "total_audio_seconds",
+        "main_a": 1058.52,
+        "branch_a": 1049.4,
+        "change_a_percent": -0.861580319691635,
+        "main_b": 1060.68,
+        "branch_b": 1068.44,
+        "change_b_percent": 0.7316061394577078
+      }
+    ]
+  },
+  {
+    "request_rate": 20,
+    "complete_validated_abba": true,
+    "arrival_schedule_sha256": "bdbafc9ffa1869dbe1b8179da04c6c76f3a7d270483589fe3dee86cb115b4bf1",
+    "rows": [
+      {
+        "request_rate": 20,
+        "metric": "completed_qps",
+        "main_a": 18.675780790578873,
+        "branch_a": 17.806722451927364,
+        "change_a_percent": -4.653397619069888,
+        "main_b": 18.49191035705742,
+        "branch_b": 18.05362785238655,
+        "change_b_percent": -2.3701310259899633
+      },
+      {
+        "request_rate": 20,
+        "metric": "rtf_mean",
+        "main_a": 0.30216434135247355,
+        "branch_a": 0.28996494400356965,
+        "change_a_percent": -4.03733852058783,
+        "main_b": 0.28976560749951874,
+        "branch_b": 0.27817679012280866,
+        "change_b_percent": -3.9993764190007663
+      },
+      {
+        "request_rate": 20,
+        "metric": "latency_mean_ms",
+        "main_a": 1222.6752417682292,
+        "branch_a": 1193.7429381250695,
+        "change_a_percent": -2.366311400999488,
+        "main_b": 1184.090563173413,
+        "branch_b": 1144.3371742052477,
+        "change_b_percent": -3.3572929473928537
+      },
+      {
+        "request_rate": 20,
+        "metric": "latency_median_ms",
+        "main_a": 1182.2699009208009,
+        "branch_a": 1172.7591654052958,
+        "change_a_percent": -0.8044470647605717,
+        "main_b": 1177.7307875454426,
+        "branch_b": 1130.4699829779565,
+        "change_b_percent": -4.012869924712104
+      },
+      {
+        "request_rate": 20,
+        "metric": "latency_p95_ms",
+        "main_a": 1859.0046832105145,
+        "branch_a": 1671.7900929506868,
+        "change_a_percent": -10.070689544283805,
+        "main_b": 1619.6052309824154,
+        "branch_b": 1651.8906276323833,
+        "change_b_percent": 1.993411482771279
+      },
+      {
+        "request_rate": 20,
+        "metric": "latency_p99_ms",
+        "main_a": 2152.118397213053,
+        "branch_a": 2014.545358589383,
+        "change_a_percent": -6.392447497397169,
+        "main_b": 1980.7697703130525,
+        "branch_b": 1964.1251238412215,
+        "change_b_percent": -0.8403120201698311
+      },
+      {
+        "request_rate": 20,
+        "metric": "audio_throughput",
+        "main_a": 78.66880848956497,
+        "branch_a": 77.54549397776054,
+        "change_a_percent": -1.4279032991244889,
+        "main_b": 79.72035916587052,
+        "branch_b": 78.04526902999667,
+        "change_b_percent": -2.101207462435739
+      },
+      {
+        "request_rate": 20,
+        "metric": "total_audio_seconds",
+        "main_a": 1078.36,
+        "branch_a": 1114.84,
+        "change_a_percent": 3.3829147965428907,
+        "main_b": 1103.64,
+        "branch_b": 1106.68,
+        "change_b_percent": 0.27545214019064623
+      }
+    ]
+  },
+  {
+    "request_rate": 30,
+    "complete_validated_abba": true,
+    "arrival_schedule_sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af",
+    "rows": [
+      {
+        "request_rate": 30,
+        "metric": "completed_qps",
+        "main_a": 24.940176512765838,
+        "branch_a": 23.961838811076316,
+        "change_a_percent": -3.9227376806605707,
+        "main_b": 25.122445037812756,
+        "branch_b": 22.807535685432747,
+        "change_b_percent": -9.214506585229865
+      },
+      {
+        "request_rate": 30,
+        "metric": "rtf_mean",
+        "main_a": 0.49028504617704133,
+        "branch_a": 0.5462419377405272,
+        "change_a_percent": 11.41313446122929,
+        "main_b": 0.47425892562261973,
+        "branch_b": 0.5417221071980143,
+        "change_b_percent": 14.224968246370295
+      },
+      {
+        "request_rate": 30,
+        "metric": "latency_mean_ms",
+        "main_a": 1964.8109536537959,
+        "branch_a": 2210.3657773195664,
+        "change_a_percent": 12.49763104227064,
+        "main_b": 1896.889935002946,
+        "branch_b": 2180.2632002227256,
+        "change_b_percent": 14.9388354058265
+      },
+      {
+        "request_rate": 30,
+        "metric": "latency_median_ms",
+        "main_a": 2004.0740724653006,
+        "branch_a": 2278.412143001333,
+        "change_a_percent": 13.689018500127425,
+        "main_b": 1966.004585614428,
+        "branch_b": 2344.584673526697,
+        "change_b_percent": 19.25631764454674
+      },
+      {
+        "request_rate": 30,
+        "metric": "latency_p95_ms",
+        "main_a": 2748.822834517341,
+        "branch_a": 3277.64846640639,
+        "change_a_percent": 19.238258109926676,
+        "main_b": 2612.8476048470475,
+        "branch_b": 3175.5899265990593,
+        "change_b_percent": 21.537510289849227
+      },
+      {
+        "request_rate": 30,
+        "metric": "latency_p99_ms",
+        "main_a": 3069.2772799753575,
+        "branch_a": 3570.620541088283,
+        "change_a_percent": 16.334244689582135,
+        "main_b": 2940.7785509712985,
+        "branch_b": 3318.8480600947514,
+        "change_b_percent": 12.85610264664716
+      },
+      {
+        "request_rate": 30,
+        "metric": "audio_throughput",
+        "main_a": 103.34195952219332,
+        "branch_a": 99.7336659764767,
+        "change_a_percent": -3.4916055031274262,
+        "main_b": 104.55647594174698,
+        "branch_b": 94.07752102495924,
+        "change_b_percent": -10.02229161073297
+      },
+      {
+        "request_rate": 30,
+        "metric": "total_audio_seconds",
+        "main_a": 1060.76,
+        "branch_a": 1065.52,
+        "change_a_percent": 0.44873486933896256,
+        "main_b": 1065.44,
+        "branch_b": 1055.96,
+        "change_b_percent": -0.8897732392251112
+      }
+    ]
+  }
+]
