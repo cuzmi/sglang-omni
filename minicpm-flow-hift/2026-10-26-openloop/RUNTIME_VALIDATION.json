@@ -1,0 +1,34 @@
+{
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "torchaudio": "2.11.0+cu130",
+    "sglang": "0.5.22",
+    "transformers": "5.19.0",
+    "flashinfer-python": "0.7.1",
+    "numpy": "2.3.5"
+  },
+  "gpu_identity": "uuid, name, memory.total [MiB], memory.used [MiB]\nGPU-3c577b63-edee-57e0-9d7d-3ab8f50acfa4, NVIDIA H100 80GB HBM3, 81559 MiB, 0 MiB\n",
+  "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582",
+  "model_files": 54,
+  "model_bytes": 20048635761,
+  "arrival_seed": 20261026,
+  "schedules": {
+    "8": {
+      "sha256": "9b029f6036770adf477b388a003467a12883de18a30c819ffc42641ec5e95a8e",
+      "last_arrival_offset_seconds": 32.022214667117865,
+      "requests": 256
+    },
+    "14": {
+      "sha256": "ed1f8708f8d3cc35b2eafe569d8027149485d6d053bf6f3c7c7c07bf6d1809fa",
+      "last_arrival_offset_seconds": 18.298408381210226,
+      "requests": 256
+    },
+    "20": {
+      "sha256": "bdbafc9ffa1869dbe1b8179da04c6c76f3a7d270483589fe3dee86cb115b4bf1",
+      "last_arrival_offset_seconds": 12.808885866847142,
+      "requests": 256
+    }
+  },
+  "model_loaded": false,
+  "serving_started": false
+}

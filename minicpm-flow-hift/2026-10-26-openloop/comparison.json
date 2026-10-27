@@ -1,0 +1,302 @@
+[
+  {
+    "request_rate": 8,
+    "complete_abba": true,
+    "baseline": {
+      "requests": 512,
+      "wall_seconds": 64.87705235788599,
+      "completed_qps": 7.89185052945404,
+      "audio_seconds_per_second": 32.66486258206836,
+      "latency_mean_ms": 652.1584977090242,
+      "latency_p50_ms": 644.6698195068166,
+      "latency_p95_ms": 978.0575829208829,
+      "rtf_mean": 0.16084932316430628,
+      "total_audio_seconds": 2119.2,
+      "completion_tokens_total": 7686,
+      "dispatch_lateness_p99_ms": 1.9996549026109278,
+      "dispatch_lateness_max_ms": 2.399695571511984,
+      "planned_arrival_to_completion_mean_ms": 652.8918156454893
+    },
+    "optimized": {
+      "requests": 512,
+      "wall_seconds": 64.9121137347538,
+      "completed_qps": 7.887587855976355,
+      "audio_seconds_per_second": 32.71808415727067,
+      "latency_mean_ms": 627.2308527400128,
+      "latency_p50_ms": 625.4339630249888,
+      "latency_p95_ms": 934.9714992684311,
+      "rtf_mean": 0.15454452411784597,
+      "total_audio_seconds": 2123.8,
+      "completion_tokens_total": 7686,
+      "dispatch_lateness_p99_ms": 2.0842287549749017,
+      "dispatch_lateness_max_ms": 2.1023284643888474,
+      "planned_arrival_to_completion_mean_ms": 627.9804785372107
+    },
+    "latency_mean_reduction_percent": 3.8223292430567213,
+    "latency_p95_reduction_percent": 4.40527065122065,
+    "audio_seconds_change_percent": 0.2170630426576281,
+    "repeat_comparisons": [
+      {
+        "repeat": 1,
+        "latency_mean_reduction_percent": 2.8376995901469138,
+        "latency_p95_reduction_percent": 2.3502260447974543,
+        "audio_seconds_change_percent": 0.369755508602454
+      },
+      {
+        "repeat": 2,
+        "latency_mean_reduction_percent": 4.805017662605138,
+        "latency_p95_reduction_percent": 6.898270215866809,
+        "audio_seconds_change_percent": 0.06420909502946603
+      }
+    ],
+    "changed_audio_lengths": 282,
+    "audio_absolute_difference_mean_seconds": 0.242890625,
+    "audio_absolute_difference_max_seconds": 2.16,
+    "tail_requests": [
+      {
+        "label": "r1-baseline-rate8",
+        "sample_id": "common_voice_en_19527999-common_voice_en_19528002",
+        "audio_seconds": 4.92,
+        "same_sample_other_arm_audio_seconds": 4.92,
+        "latency_seconds": 0.4200590569525957,
+        "completion_offset_seconds": 32.443180990815804,
+        "preceding_completion_offset_seconds": 32.37111096101048,
+        "final_completion_gap_seconds": 0.07207002980532451,
+        "cohort_wall_seconds": 32.4433721199166
+      },
+      {
+        "label": "r1-optimized-rate8",
+        "sample_id": "common_voice_en_19527999-common_voice_en_19528002",
+        "audio_seconds": 4.92,
+        "same_sample_other_arm_audio_seconds": 4.92,
+        "latency_seconds": 0.4438155519310385,
+        "completion_offset_seconds": 32.46694051794772,
+        "preceding_completion_offset_seconds": 32.42691120720737,
+        "final_completion_gap_seconds": 0.04002931074035132,
+        "cohort_wall_seconds": 32.46712502790615
+      },
+      {
+        "label": "r2-baseline-rate8",
+        "sample_id": "common_voice_en_19527999-common_voice_en_19528002",
+        "audio_seconds": 4.92,
+        "same_sample_other_arm_audio_seconds": 4.92,
+        "latency_seconds": 0.4109350689686835,
+        "completion_offset_seconds": 32.43351109203947,
+        "preceding_completion_offset_seconds": 32.37632381001654,
+        "final_completion_gap_seconds": 0.05718728202293022,
+        "cohort_wall_seconds": 32.433680237969384
+      },
+      {
+        "label": "r2-optimized-rate8",
+        "sample_id": "common_voice_en_19527999-common_voice_en_19528002",
+        "audio_seconds": 4.92,
+        "same_sample_other_arm_audio_seconds": 4.92,
+        "latency_seconds": 0.4223214511293918,
+        "completion_offset_seconds": 32.44480827212398,
+        "preceding_completion_offset_seconds": 32.31164760997685,
+        "final_completion_gap_seconds": 0.13316066214712663,
+        "cohort_wall_seconds": 32.44498870684765
+      }
+    ]
+  },
+  {
+    "request_rate": 14,
+    "complete_abba": true,
+    "baseline": {
+      "requests": 512,
+      "wall_seconds": 37.817828881088644,
+      "completed_qps": 13.538587886943269,
+      "audio_seconds_per_second": 56.03706142580111,
+      "latency_mean_ms": 882.3981232230835,
+      "latency_p50_ms": 872.0652154879645,
+      "latency_p95_ms": 1266.8763130553998,
+      "rtf_mean": 0.21884874995451636,
+      "total_audio_seconds": 2119.2,
+      "completion_tokens_total": 7686,
+      "dispatch_lateness_p99_ms": 2.0541613060049704,
+      "dispatch_lateness_max_ms": 2.1110191009938717,
+      "planned_arrival_to_completion_mean_ms": 883.1406581625743
+    },
+    "optimized": {
+      "requests": 512,
+      "wall_seconds": 37.888100628042594,
+      "completed_qps": 13.513477622603416,
+      "audio_seconds_per_second": 55.89723329737191,
+      "latency_mean_ms": 852.5362602454152,
+      "latency_p50_ms": 851.8526430707425,
+      "latency_p95_ms": 1245.9459333214909,
+      "rtf_mean": 0.2120778526746522,
+      "total_audio_seconds": 2117.84,
+      "completion_tokens_total": 7686,
+      "dispatch_lateness_p99_ms": 2.051726682111621,
+      "dispatch_lateness_max_ms": 2.175859408453107,
+      "planned_arrival_to_completion_mean_ms": 853.3110992329966
+    },
+    "latency_mean_reduction_percent": 3.384171179851758,
+    "latency_p95_reduction_percent": 1.6521249563368867,
+    "audio_seconds_change_percent": -0.06417516043788485,
+    "repeat_comparisons": [
+      {
+        "repeat": 1,
+        "latency_mean_reduction_percent": 3.2589270745004506,
+        "latency_p95_reduction_percent": 0.6959762291577798,
+        "audio_seconds_change_percent": -0.861580319691635
+      },
+      {
+        "repeat": 2,
+        "latency_mean_reduction_percent": 3.507145631114661,
+        "latency_p95_reduction_percent": 2.526520944769739,
+        "audio_seconds_change_percent": 0.7316061394577078
+      }
+    ],
+    "changed_audio_lengths": 348,
+    "audio_absolute_difference_mean_seconds": 0.2996875,
+    "audio_absolute_difference_max_seconds": 3.3599999999999994,
+    "tail_requests": [
+      {
+        "label": "r1-baseline-rate14",
+        "sample_id": "common_voice_en_19527999-common_voice_en_19528002",
+        "audio_seconds": 4.72,
+        "same_sample_other_arm_audio_seconds": 4.72,
+        "latency_seconds": 0.6145263579674065,
+        "completion_offset_seconds": 18.91377617887925,
+        "preceding_completion_offset_seconds": 18.892406443784214,
+        "final_completion_gap_seconds": 0.02136973509503548,
+        "cohort_wall_seconds": 18.9139494120609
+      },
+      {
+        "label": "r1-optimized-rate14",
+        "sample_id": "common_voice_en_19496235-common_voice_en_19496229",
+        "audio_seconds": 5.64,
+        "same_sample_other_arm_audio_seconds": 5.12,
+        "latency_seconds": 0.9825485670007765,
+        "completion_offset_seconds": 18.955449409018087,
+        "preceding_completion_offset_seconds": 18.9465301967675,
+        "final_completion_gap_seconds": 0.008919212250585673,
+        "cohort_wall_seconds": 18.95563056995161
+      },
+      {
+        "label": "r2-baseline-rate14",
+        "sample_id": "common_voice_en_19527999-common_voice_en_19528002",
+        "audio_seconds": 4.72,
+        "same_sample_other_arm_audio_seconds": 4.72,
+        "latency_seconds": 0.6046338570304215,
+        "completion_offset_seconds": 18.90369319500174,
+        "preceding_completion_offset_seconds": 18.903106497086785,
+        "final_completion_gap_seconds": 0.0005866979149544704,
+        "cohort_wall_seconds": 18.903879469027743
+      },
+      {
+        "label": "r2-optimized-rate14",
+        "sample_id": "common_voice_en_19496235-common_voice_en_19496266",
+        "audio_seconds": 5.4,
+        "same_sample_other_arm_audio_seconds": 5.32,
+        "latency_seconds": 0.9285604329779744,
+        "completion_offset_seconds": 18.93228429900316,
+        "preceding_completion_offset_seconds": 18.926680742929506,
+        "final_completion_gap_seconds": 0.005603556073655369,
+        "cohort_wall_seconds": 18.932470058090985
+      }
+    ]
+  },
+  {
+    "request_rate": 20,
+    "complete_abba": true,
+    "baseline": {
+      "requests": 512,
+      "wall_seconds": 27.551484358031303,
+      "completed_qps": 18.583390765686683,
+      "audio_seconds_per_second": 79.1971848647038,
+      "latency_mean_ms": 1203.3829024708211,
+      "latency_p50_ms": 1180.8895550202578,
+      "latency_p95_ms": 1754.0388797875491,
+      "rtf_mean": 0.2959649744259961,
+      "total_audio_seconds": 2182.0,
+      "completion_tokens_total": 7686,
+      "dispatch_lateness_p99_ms": 2.0692779449746013,
+      "dispatch_lateness_max_ms": 2.1014607045799494,
+      "planned_arrival_to_completion_mean_ms": 1204.1334043565257
+    },
+    "optimized": {
+      "requests": 512,
+      "wall_seconds": 28.556568388827145,
+      "completed_qps": 17.92932515660116,
+      "audio_seconds_per_second": 77.793660980259,
+      "latency_mean_ms": 1169.0400561651586,
+      "latency_p50_ms": 1148.3430905500427,
+      "latency_p95_ms": 1667.7989212679677,
+      "rtf_mean": 0.2840708670631891,
+      "total_audio_seconds": 2221.52,
+      "completion_tokens_total": 7686,
+      "dispatch_lateness_p99_ms": 2.045346917584538,
+      "dispatch_lateness_max_ms": 2.0647768396884203,
+      "planned_arrival_to_completion_mean_ms": 1169.7934523781441
+    },
+    "latency_mean_reduction_percent": 2.853858587748659,
+    "latency_p95_reduction_percent": 4.916650338447859,
+    "audio_seconds_change_percent": 1.8111824014665379,
+    "repeat_comparisons": [
+      {
+        "repeat": 1,
+        "latency_mean_reduction_percent": 2.366311400999488,
+        "latency_p95_reduction_percent": 10.070689544283805,
+        "audio_seconds_change_percent": 3.3829147965428907
+      },
+      {
+        "repeat": 2,
+        "latency_mean_reduction_percent": 3.3572929473928537,
+        "latency_p95_reduction_percent": -1.993411482771279,
+        "audio_seconds_change_percent": 0.27545214019064623
+      }
+    ],
+    "changed_audio_lengths": 409,
+    "audio_absolute_difference_mean_seconds": 0.58671875,
+    "audio_absolute_difference_max_seconds": 27.64,
+    "tail_requests": [
+      {
+        "label": "r1-baseline-rate20",
+        "sample_id": "common_voice_en_19527999-common_voice_en_19528002",
+        "audio_seconds": 4.72,
+        "same_sample_other_arm_audio_seconds": 4.72,
+        "latency_seconds": 0.8973800370004028,
+        "completion_offset_seconds": 13.707414218062787,
+        "preceding_completion_offset_seconds": 13.706679929153747,
+        "final_completion_gap_seconds": 0.0007342889090402593,
+        "cohort_wall_seconds": 13.707592891063541
+      },
+      {
+        "label": "r1-optimized-rate20",
+        "sample_id": "common_voice_en_19277026-common_voice_en_19277029",
+        "audio_seconds": 32.88,
+        "same_sample_other_arm_audio_seconds": 5.24,
+        "latency_seconds": 2.6031059559900314,
+        "completion_offset_seconds": 14.376403918895946,
+        "preceding_completion_offset_seconds": 13.771882972087464,
+        "final_completion_gap_seconds": 0.6045209468084813,
+        "cohort_wall_seconds": 14.376592923887074
+      },
+      {
+        "label": "r2-baseline-rate20",
+        "sample_id": "common_voice_en_19277026-common_voice_en_19277029",
+        "audio_seconds": 18.0,
+        "same_sample_other_arm_audio_seconds": 5.44,
+        "latency_seconds": 2.0717686370480806,
+        "completion_offset_seconds": 13.843684408987016,
+        "preceding_completion_offset_seconds": 13.745826611133545,
+        "final_completion_gap_seconds": 0.0978577978534716,
+        "cohort_wall_seconds": 13.843891466967762
+      },
+      {
+        "label": "r2-optimized-rate20",
+        "sample_id": "common_voice_en_19083094-common_voice_en_19083091",
+        "audio_seconds": 31.72,
+        "same_sample_other_arm_audio_seconds": 6.44,
+        "latency_seconds": 2.913467142963782,
+        "completion_offset_seconds": 14.179769074129714,
+        "preceding_completion_offset_seconds": 13.75284026896129,
+        "final_completion_gap_seconds": 0.4269288051684246,
+        "cohort_wall_seconds": 14.179975464940071
+      }
+    ]
+  }
+]
