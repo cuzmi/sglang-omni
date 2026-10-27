@@ -1,0 +1,468 @@
+WARN `--no-project` was provided, but no project was found
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/stangameact/main/ap-uhPxIWLtOH4s1Hl9vpGwjl
+Building image im-TAmIUWDBkTUQPYfyKO3sbZ
+
+=> Step 0: FROM docker.io/hongccc/sglang-omni@sha256:06ed306707bcf3d9e9beb5ba7ce66f09a666cac11c23455ece50c34199c0e985
+Getting image source signatures
+Copying blob sha256:689b91d88a0f4086057ec826027b128902ecf2b516be510371c115bc55da19a6
+Copying blob sha256:adebc1576f3c07100011ce7679aef5e7bb1e4aaca050e6d8e729273d22a2442a
+Copying blob sha256:a30da298bda6986d68697bc361b9204f189616a3b7cc748c91846ecddbb873aa
+Copying blob sha256:8bd080c2e4b22c71c5058be60551a2735c1bead7341fe005313ca704578d9fa5
+Copying blob sha256:b533a7368b7da8141f98b9a2442f84b5aa5d32f2d286c2611a32f725361f84b6
+Copying blob sha256:cb3db0ad5ae089b6ae0c5b39b73e73cac40a558df052e602f8b0f24972b003b4
+Copying blob sha256:400821fd86ee1a17c460a7addf3892121cfb660a274b37e6a23cf36e7eaa931c
+Copying blob sha256:ccf9c70a85fc6158d617c85f3f719f669efb00c28fd45fa292575d351435bd2f
+Copying blob sha256:730c8029606bf4b4533d7a7159458cf5e3f348ea956ccfb10ce5da3e20adac8f
+Copying blob sha256:21e0ed254c8bac8e7e21e80b250a5dc4a92211bbc2f658f9f81ef93c7c623f03
+Copying blob sha256:95e35692d3cc347d712fd236fd2af3b1c697783518182b1ae716722f694ed616
+Copying blob sha256:f0af354daeda18f18684b23520969ef6bb3de82bb267936f867b12769be9125d
+Copying blob sha256:cc689184d8c0977f56d2da63b3a3d225dc9c7fadb9375338768cf4909b016b32
+Copying blob sha256:5e25946ba40dcbc2410bf1852d135a46cb31cc7f89c05b9ef1ab12a6ef988aeb
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:9aa3fcc3d1c6274e85f289a00b053a403e64afd6d9803006d588996bd5b5b3d6
+Copying blob sha256:6217dd078e93602927c04c36fd2be5f958ae9a9454a868d52dd60dba50a21b8b
+Copying blob sha256:56be3944eca78f2e503b2f9f4f138f7c04d85665bc124b465d7935a3250a0406
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:9acd6e847fd2bc35e1b3c180b8042a16bda8559c8a3de4591930fd665c058f2f
+Copying blob sha256:02917ae8ed11a4a39a8f86daf69bd1f09ba332ef652e218ee77140e8b1632b46
+Copying blob sha256:d1178ef40f4677f22bdd2355d002613676a3912376d678592c0f8a833cb1f52c
+Copying blob sha256:6af8cb467f1c70afc0c290d3f4f986483bf17dcd96e51a8f04e17face8872908
+Copying blob sha256:f949ba4e6dbfe59ba3f9bb77190ffb8c2d02be2083abc290246c2ab1f741c16b
+Copying blob sha256:5bf8f28ba597d3c17edfef27a85ef2a9a1660b534fe0c5aa0a227319fdd94809
+Copying blob sha256:793b08d56a66f684e2ca0354bc466a7a1a3438506efc5d57424b3a96924b52fc
+Copying blob sha256:287b53b27e665e3e5162a7b9ff97ddc1bdfa0ab0828a9ee235157d0f2b8b477a
+Copying blob sha256:30fdb7ca5f136b14fde8f661a1d15559e6527c4e60c18bb1c4732d44b236b4b6
+Copying blob sha256:d26ea0fe96f5220621b0c0b7457f8e5f628b15166a061fef3dcc81440d6a7d02
+Copying blob sha256:b2f7bd136538e3df630bfcf4813baaf49c5f47834fb0f2a90c070b2cdc9e443b
+Copying blob sha256:e3a1ffa68243eb9192a6ee99b6743763c5af4fe463303d7e563eb5ad151d9005
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:d86d256da52ae824fccef00775b0584966435719c85a84cc7267514b5a366fd9
+Copying blob sha256:b6daac9c49eec42c995b735ac860f5eb732cd21fb2e2e3b7f0a9037cc18ee6b2
+Copying blob sha256:dd12d8be94ecb7bfd11ee38167bbef1d85e87471fc49a5520adf88774cf47ba7
+Copying blob sha256:ff57be91853573c300706f8ff39c7621ff54d365560db6c2915853bdd85b1cad
+Copying blob sha256:67f2279dee0a57e3a9447a801688817714141a716d1d520e74f212e7a33e1aea
+Copying blob sha256:d40abe83109b570f21bcc7962f81ff101025a9e11c41fd16b05008690f1d58cf
+Copying blob sha256:0b5504bde9ebf2d6499c533d7bd6a8d19f565dea83c76c497356a2d0674687ef
+Copying blob sha256:3f7b9d5f648cdd8ca469cda64e10c4225f3e0bebb6067453dbb8984832f8e920
+Copying blob sha256:56a8069c1b2781f67a84782ec49b665ba42e87d40f7f5173aa8046368c446ef9
+Copying blob sha256:f2973f6318572cd2e39530bf080e391bff89cc08ca0778642b14e7a9c0b4c259
+Copying blob sha256:08e422f8ad6d1a401663a9c402e6137ec1e3ac5066ec8dff8f4b6c63b9938c63
+Copying blob sha256:e5e87d215ea470ce9641aaf7e937201a6de066000c2eb5ab0976c3ee61f1f3b8
+Copying blob sha256:3d3a6902481be872c0c9936201a587e0e71af7a1f84956aaae7172439526713b
+Copying blob sha256:80b04094673e5b294fe9300e872e1eb3b90f8b83a22bc2e22950093914b54223
+Copying blob sha256:5610161e6bad5fdd3ac6c8345f49bd3d4616219c00447a8be4d0e9f89a561fd1
+Copying blob sha256:b43a9617166c7d0a411079934dd13c12861dd2fb671608b96cbfb336f4c401be
+Copying blob sha256:483df6190b98ad704ed2e679beef908f475d83bfc2914cb9ebf61e0a8610d0fe
+Copying blob sha256:bb88b9b0f84c7b034d1c3d59a5a5a91495d902ddea33bd548f6751c308ab529b
+Copying blob sha256:129d4d79035455ddf837a9762d413f08ce94683584165c40c80633dd7b00f58d
+Copying blob sha256:4433b38b161acd1465441493acef13bc972ca7982d7f045f4c0e000adf1d108a
+Copying blob sha256:8900f0e82a2dba17a6fd34c134f9ed549b08ff997d47878583b36037db64dec1
+Copying blob sha256:88cec0a8755de10533a70438772c4ef90453ad0a5c3938912a007584902c095f
+Copying blob sha256:e5805954d648a016a75e9c6a4ec7e91220f598ec0ff9ea62424011f2f3b438f3
+Copying blob sha256:88aac20c36722e676eafb0b69fc78abcd111b846c70d96f29d7612bc4ab116b3
+Copying blob sha256:b4a5ec84e86aad8709af58d4049afe80a68cb69f2a94063e88c2d35dd49e6e04
+Copying blob sha256:a5d199131c57b865b54ee425b5b8f4c015130c949689ba045daded8a06ce6b29
+Copying blob sha256:15dcf352d5f55801a6a464cceb5437ba07d260084ba4738152845a8d151db018
+Copying blob sha256:1857c196c9a0376ac9e294e4625d978a80ad645ca5a841a859762fc406c8045e
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:79240c4350bb80908ce42839b945d7d760f873db93d63fb8cf173bc892251376
+Copying blob sha256:9d77f6d6025cd5dd992563104619a64341e65caf4e4da73d44ffeb9c93445458
+Copying blob sha256:f75d3eb013a26f9b291f2edf0d52bd30edd960243b60e2a1f28776306f64fa02
+Copying blob sha256:ed6cd7042f1b9f9143dec26254b5006940c79d3433637023702a261953484216
+Copying blob sha256:552b6359797ee0e808c77c04a83a384b8f518e57c7c53b4a2d7e0c96fc85355a
+Copying blob sha256:0d0bb7e058588a7952d1db67073eb393ab002d1534530e1b8a688bc1a134926f
+Copying blob sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+Copying blob sha256:79470083971908928636ac5347eefab7ae3e5aad61d5bd381fc9ac33cfd296e5
+Copying blob sha256:5ff98a7eb74c459e1dd9d7d728d51e5fdcbe8ec22ccae42965fa3a584bf7b1cf
+Copying blob sha256:7d135f2f9c10d28133917287a419dad1aeb30d2e11081397b0ba0f44fa0b6b80
+Copying blob sha256:ea6d87e8cc2d53d8bdea0247f686d14fdbc1ea8ee317861c672c097d1287b7a2
+Copying blob sha256:fb648c2a4c083ca6075a8a580a74ad999c0b63828273152060e6ee54a610150e
+Copying blob sha256:56c997f0a43e535719ea221c3919ee8b10152c750b541eb271afd0c6f39f6208
+Copying blob sha256:259de03cef1c0c6fce5033313451ac5ae16c4b1119c392604121f29f902d0938
+Copying config sha256:c7f826605d9b2b2afc6838094b428d037ff15e8bd9521dec659ebe7c4b5b481a
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...     
+   • ... done                 
+   • unpacked image rootfs: /tmp/task-data/ta-01M5SK8GQ1WVZ7CB10DKVTXRXB/registry-unpacklO2SNK
+Copied image in 23.84s
+Saving image...
+Image saved, took 62.70s
+
+Built image im-TAmIUWDBkTUQPYfyKO3sbZ in 283.14s
+
+
+Building image im-RVzMRETgjXAm2GbONzPvIp
+
+=> Step 0: FROM base
+
+=> Step 1: ENTRYPOINT []
+Saving image...
+Image saved, took 9.87s
+
+Built image im-RVzMRETgjXAm2GbONzPvIp in 13.71s
+
+
+Building image im-Kwb5RCaSIN5HNRRDDr7Xux
+
+=> Step 0: FROM base
+
+=> Step 1: RUN apt-get update
+Get:2 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64  InRelease [1,578 B]
+Get:1 https://developer.download.nvidia.com/devtools/repos/ubuntu2004/amd64  InRelease [1,379 B]
+Get:3 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:5 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64  Packages [1,978 kB]
+Get:6 https://developer.download.nvidia.com/devtools/repos/ubuntu2004/amd64  Packages [21.6 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2,122 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1,808 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:13 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,411 kB]
+Get:14 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,549 kB]
+Get:15 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [55.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [2,170 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [61.7 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2,231 kB]
+Get:20 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,733 kB]
+Get:21 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.0 kB]
+Get:22 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [36.0 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [669 B]
+Fetched 35.6 MB in 5s (6,495 kB/s)
+Reading package lists...
+W: http://developer.download.nvidia.com/devtools/repos/ubuntu2004/amd64/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+
+=> Step 2: RUN apt-get install -y git curl ffmpeg
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.16).
+ffmpeg is already the newest version (7:6.1.1-3ubuntu5).
+The following additional packages will be installed:
+  git-man
+Suggested packages:
+  git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb
+  git-cvs git-mediawiki git-svn
+The following packages will be upgraded:
+  git git-man
+2 upgraded, 0 newly installed, 0 to remove and 48 not upgraded.
+Need to get 4,781 kB of archives.
+After this operation, 5,120 B of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git-man all 1:2.43.0-1ubuntu7.4 [1,101 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.43.0-1ubuntu7.4 [3,681 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 4,781 kB in 2s (2,566 kB/s)
+(Reading database ... 
+[1A(Reading database ... 5%
+[1A(Reading database ... 10%
+[1A(Reading database ... 15%
+[1A(Reading database ... 20%
+[1A(Reading database ... 25%
+[1A(Reading database ... 30%
+[1A(Reading database ... 35%(Reading database ... 40%
+[1A(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+[1A(Reading database ... 65%
+[1A(Reading database ... 70%
+[1A(Reading database ... 75%(Reading database ... 80%
+[1A(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%
+[1A(Reading database ... 100%(Reading database ... 76787 files and directories currently installed.)
+Preparing to unpack .../git-man_1%3a2.43.0-1ubuntu7.4_all.deb ...
+Unpacking git-man (1:2.43.0-1ubuntu7.4) over (1:2.43.0-1ubuntu7.3) ...
+Preparing to unpack .../git_1%3a2.43.0-1ubuntu7.4_amd64.deb ...
+Unpacking git (1:2.43.0-1ubuntu7.4) over (1:2.43.0-1ubuntu7.3) ...
+Setting up git-man (1:2.43.0-1ubuntu7.4) ...
+Setting up git (1:2.43.0-1ubuntu7.4) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Saving image...
+Image saved, took 4.96s
+
+Built image im-Kwb5RCaSIN5HNRRDDr7Xux in 20.85s
+
+
+Building image im-g72TMTS91hWNineMOp2hrg
+
+=> Step 0: FROM base
+
+=> Step 1: ENV PYTHONUNBUFFERED=1
+
+=> Step 2: ENV HF_HOME=/cache/huggingface
+
+=> Step 3: ENV OMP_NUM_THREADS=4
+Saving image...
+Image saved, took 7.71s
+
+Built image im-g72TMTS91hWNineMOp2hrg in 9.94s
+
+
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/run_
+│   modal.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/expe
+│   cted_formal.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/veri
+│   fy_client.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/patc
+│   h_benchmark.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/anal
+│   yze_events.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/clie
+│   nt.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/driv
+│   er.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/prot
+│   ocol.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/data
+│   .tar.gz
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/sour
+│   ce.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/opti
+│   mized.tar
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_event256_modal_h100_20261025/base
+│   line.tar
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID: 20261025T132151Z
+Client verification passed
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+/sgl-workspace/sglang/python/sglang/srt/layers/quantization/awq/awq.py:53: UserWarning: Only CUDA, HIP and XPU support AWQ currently.
+  warnings.warn(f"Only CUDA, HIP and XPU support AWQ currently.")
+/sgl-workspace/sglang/python/sglang/srt/layers/quantization/gguf.py:69: UserWarning: Only CUDA, MUSA and NPU support GGUF quantization currently.
+  warnings.warn(f"Only CUDA, MUSA and NPU support GGUF quantization currently.")
+/sgl-workspace/sglang/python/sglang/kernels/ops/attention/fla/utils.py:223: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+Imports verified
+Downloading fixed MiniCPM model on CPU
+
+[1AFetching 54 files:   0%|          | 0/54 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[1AFetching 54 files:   2%|▏         | 1/54 [00:00<00:09,  5.52it/s]
+[1AFetching 54 files:   9%|▉         | 5/54 [00:01<00:12,  3.96it/s]
+[1AFetching 54 files:  20%|██        | 11/54 [00:01<00:04,  9.52it/s]
+[1AFetching 54 files:  26%|██▌       | 14/54 [00:02<00:05,  7.19it/s]
+[1AFetching 54 files:  35%|███▌      | 19/54 [00:02<00:03, 11.30it/s]
+[1AFetching 54 files:  41%|████      | 22/54 [00:02<00:02, 12.31it/s]
+[1AFetching 54 files:  46%|████▋     | 25/54 [00:02<00:03,  9.34it/s]
+[1AFetching 54 files:  52%|█████▏    | 28/54 [00:03<00:02, 10.70it/s]
+[1AFetching 54 files:  57%|█████▋    | 31/54 [00:03<00:01, 11.84it/s]
+[1AFetching 54 files:  63%|██████▎   | 34/54 [00:03<00:01, 14.21it/s]
+[1AFetching 54 files:  69%|██████▊   | 37/54 [00:04<00:02,  8.44it/s]
+[1AFetching 54 files:  72%|███████▏  | 39/54 [00:04<00:02,  6.32it/s]
+[1AFetching 54 files:  76%|███████▌  | 41/54 [00:05<00:02,  5.75it/s]
+[1AFetching 54 files:  78%|███████▊  | 42/54 [00:05<00:02,  4.43it/s]
+[1AFetching 54 files:  81%|████████▏ | 44/54 [00:05<00:01,  5.49it/s]
+[1AFetching 54 files:  83%|████████▎ | 45/54 [00:05<00:01,  5.44it/s]
+[1AFetching 54 files:  85%|████████▌ | 46/54 [00:06<00:01,  5.61it/s]
+[1AFetching 54 files:  87%|████████▋ | 47/54 [00:06<00:01,  5.53it/s]
+[1AFetching 54 files:  89%|████████▉ | 48/54 [00:07<00:02,  2.99it/s]
+[1AFetching 54 files:  91%|█████████ | 49/54 [00:09<00:03,  1.27it/s]
+[1AFetching 54 files:  93%|█████████▎| 50/54 [00:52<00:48, 12.05s/it]
+[1AFetching 54 files:  94%|█████████▍| 51/54 [01:04<00:36, 12.25s/it]
+[1AFetching 54 files:  96%|█████████▋| 52/54 [01:09<00:19,  9.97s/it]
+[1AFetching 54 files:  98%|█████████▊| 53/54 [01:15<00:08,  8.93s/it]
+[1AFetching 54 files: 100%|██████████| 54/54 [01:25<00:00,  9.37s/it]
+[1AFetching 54 files: 100%|██████████| 54/54 [01:25<00:00,  1.59s/it]
+CPU preparation complete: {'run_id': '20261025T132151Z', 'checkpoint': '/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582'}
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 1/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 2/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 3/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 4/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 5/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 6/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 7/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 8/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 9/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 10/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 11/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 12/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 13/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 14/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 15/16; status=running
+Completed visits: 16/16; status=complete
+{'root': '/results/20261025T132151Z', 'status': 'complete'}
+✓ App completed. View run at 
+https://modal.com/apps/stangameact/main/ap-uhPxIWLtOH4s1Hl9vpGwjl

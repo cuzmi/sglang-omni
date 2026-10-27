@@ -1,0 +1,190 @@
+{
+  "1": {
+    "preprocessing": {
+      "baseline_ms": 1.26154433984375,
+      "optimized_ms": 1.239764845703125,
+      "change_percent": -1.7264152715648962,
+      "baseline_p50_ms": 1.236845,
+      "optimized_p50_ms": 1.226854,
+      "baseline_p95_ms": 1.44527015,
+      "optimized_p95_ms": 1.4076801
+    },
+    "thinker": {
+      "baseline_ms": 124.04287099023438,
+      "optimized_ms": 124.44277818554687,
+      "change_percent": 0.3223943400535889,
+      "baseline_p50_ms": 123.0741395,
+      "optimized_p50_ms": 123.379125,
+      "baseline_p95_ms": 170.7116288,
+      "optimized_p95_ms": 172.08114450000002
+    },
+    "talker": {
+      "baseline_ms": 97.83734776171875,
+      "optimized_ms": 97.97845895898438,
+      "change_percent": 0.1442303992227112,
+      "baseline_p50_ms": 96.28676899999999,
+      "optimized_p50_ms": 96.15611799999999,
+      "baseline_p95_ms": 136.08321335,
+      "optimized_p95_ms": 137.0443105
+    },
+    "code2wav": {
+      "baseline_ms": 75.14962187304687,
+      "optimized_ms": 75.49762534570313,
+      "change_percent": 0.46308080331283197,
+      "baseline_p50_ms": 87.988922,
+      "optimized_p50_ms": 88.187746,
+      "baseline_p95_ms": 117.37328145,
+      "optimized_p95_ms": 117.91373279999999
+    },
+    "e2e": {
+      "baseline_ms": 308.32610437304254,
+      "optimized_ms": 310.02930195117904,
+      "change_percent": 0.552401354922516,
+      "baseline_p50_ms": 307.7611909999689,
+      "optimized_p50_ms": 308.52585849993375,
+      "baseline_p95_ms": 416.2258928499796,
+      "optimized_p95_ms": 418.0187798499844
+    }
+  },
+  "8": {
+    "preprocessing": {
+      "baseline_ms": 2.25075351953125,
+      "optimized_ms": 1.387832900390625,
+      "change_percent": -38.33918781654688,
+      "baseline_p50_ms": 1.6581480000000002,
+      "optimized_p50_ms": 1.258773,
+      "baseline_p95_ms": 5.1911324,
+      "optimized_p95_ms": 1.93315525
+    },
+    "thinker": {
+      "baseline_ms": 240.74973912695313,
+      "optimized_ms": 243.99512875,
+      "change_percent": 1.3480345336264188,
+      "baseline_p50_ms": 237.156125,
+      "optimized_p50_ms": 238.601319,
+      "baseline_p95_ms": 350.81546095,
+      "optimized_p95_ms": 351.85733479999993
+    },
+    "talker": {
+      "baseline_ms": 313.72802564257813,
+      "optimized_ms": 317.6242135117187,
+      "change_percent": 1.2418998465822062,
+      "baseline_p50_ms": 308.213147,
+      "optimized_p50_ms": 298.24872700000003,
+      "baseline_p95_ms": 469.50616535,
+      "optimized_p95_ms": 507.18210785
+    },
+    "code2wav": {
+      "baseline_ms": 289.2036346640625,
+      "optimized_ms": 225.93156612304688,
+      "change_percent": -21.878033661130214,
+      "baseline_p50_ms": 292.5627685,
+      "optimized_p50_ms": 224.069298,
+      "baseline_p95_ms": 458.76149845,
+      "optimized_p95_ms": 344.07946799999996
+    },
+    "e2e": {
+      "baseline_ms": 862.7961327265672,
+      "optimized_ms": 801.408830435548,
+      "change_percent": -7.114925526732019,
+      "baseline_p50_ms": 867.8544630000147,
+      "optimized_p50_ms": 774.1558310001437,
+      "baseline_p95_ms": 1126.5352838000354,
+      "optimized_p95_ms": 1102.180261549995
+    }
+  },
+  "16": {
+    "preprocessing": {
+      "baseline_ms": 3.292611177734375,
+      "optimized_ms": 1.840813373046875,
+      "change_percent": -44.09259782949753,
+      "baseline_p50_ms": 2.5657370000000004,
+      "optimized_p50_ms": 1.257128,
+      "baseline_p95_ms": 7.89511065,
+      "optimized_p95_ms": 4.407946
+    },
+    "thinker": {
+      "baseline_ms": 263.2808863203125,
+      "optimized_ms": 273.1520698125,
+      "change_percent": 3.7492974253277245,
+      "baseline_p50_ms": 258.56734,
+      "optimized_p50_ms": 272.249649,
+      "baseline_p95_ms": 371.47412755,
+      "optimized_p95_ms": 389.53196625
+    },
+    "talker": {
+      "baseline_ms": 468.6921142578125,
+      "optimized_ms": 570.6020683164063,
+      "change_percent": 21.743475291870705,
+      "baseline_p50_ms": 454.5189075,
+      "optimized_p50_ms": 546.1511909999999,
+      "baseline_p95_ms": 691.8107631999999,
+      "optimized_p95_ms": 908.0956744
+    },
+    "code2wav": {
+      "baseline_ms": 465.6421994453125,
+      "optimized_ms": 311.9142349902344,
+      "change_percent": -33.01418227089462,
+      "baseline_p50_ms": 448.3769945,
+      "optimized_p50_ms": 294.40636400000005,
+      "baseline_p95_ms": 793.0407303,
+      "optimized_p95_ms": 556.163916
+    },
+    "e2e": {
+      "baseline_ms": 1226.3539710234345,
+      "optimized_ms": 1173.2865867089783,
+      "change_percent": -4.327248540661522,
+      "baseline_p50_ms": 1210.417690000213,
+      "optimized_p50_ms": 1165.1537974998973,
+      "baseline_p95_ms": 1657.5841396000897,
+      "optimized_p95_ms": 1546.5106782499333
+    }
+  },
+  "32": {
+    "preprocessing": {
+      "baseline_ms": 6.674540947265625,
+      "optimized_ms": 2.713739666015625,
+      "change_percent": -59.34192796993223,
+      "baseline_p50_ms": 5.43013,
+      "optimized_p50_ms": 1.3456825,
+      "baseline_p95_ms": 18.28042675,
+      "optimized_p95_ms": 17.1636517
+    },
+    "thinker": {
+      "baseline_ms": 300.29837295117187,
+      "optimized_ms": 295.41270011132815,
+      "change_percent": -1.6269394974837703,
+      "baseline_p50_ms": 302.48778649999997,
+      "optimized_p50_ms": 286.4329535,
+      "baseline_p95_ms": 425.8866089,
+      "optimized_p95_ms": 445.40314775
+    },
+    "talker": {
+      "baseline_ms": 562.216018484375,
+      "optimized_ms": 1148.0946822148437,
+      "change_percent": 104.20881733499581,
+      "baseline_p50_ms": 521.2717705,
+      "optimized_p50_ms": 1109.5424625,
+      "baseline_p95_ms": 940.5860109000001,
+      "optimized_p95_ms": 1852.5471515
+    },
+    "code2wav": {
+      "baseline_ms": 981.8707689199218,
+      "optimized_ms": 412.30260540039063,
+      "change_percent": -58.00846522257383,
+      "baseline_p50_ms": 930.9630569999999,
+      "optimized_p50_ms": 396.924375,
+      "baseline_p95_ms": 1568.8237886,
+      "optimized_p95_ms": 721.1864321
+    },
+    "e2e": {
+      "baseline_ms": 1890.8142288300805,
+      "optimized_ms": 1899.3928708457047,
+      "change_percent": 0.4537009445360507,
+      "baseline_p50_ms": 1822.4815515000046,
+      "optimized_p50_ms": 1853.8759199999504,
+      "baseline_p95_ms": 2621.0703939499695,
+      "optimized_p95_ms": 2670.537192950019
+    }
+  }
+}

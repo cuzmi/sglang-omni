@@ -1,0 +1,13 @@
+{
+  "requests": 256,
+  "mean_stage_ms": {
+    "preprocessing": 1.796205234375,
+    "thinker": 272.0815730390625,
+    "talker": 572.0211757851563,
+    "code2wav": 314.0337085507812
+  },
+  "mean_e2e_ms": 1175.7407880156218,
+  "event_count": 10240,
+  "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID",
+  "scope": "Stage residence includes waiting and execution, not GPU compute alone"
+}

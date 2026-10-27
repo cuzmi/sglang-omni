@@ -4,7 +4,15 @@ Benchmark, accuracy and profiling results for MiniCPM-o readiness-aware batching
 and decoupled Flow/HiFT execution. Each dated directory preserves one experiment
 and its measurement context.
 
-## Primary results
+## October 25–26 follow-up results
+
+Unprofiled open-loop runs measure performance at fixed offered arrival rates. Event-only and Torch runs diagnose stage residence and execution; their elapsed times do not establish unprofiled speedup.
+
+| Experiment | Result and scope |
+| --- | --- |
+| [Request-event stage comparison](2026-10-25-stage-events/README.md) | 16 completed visits; stage residence includes waiting and execution. The diagnostics/ directory is an earlier 8/16-visit snapshot, not the final report. |
+
+## Earlier performance, accuracy and mechanism results
 
 | Evidence | Result | Scope |
 | --- | --- | --- |

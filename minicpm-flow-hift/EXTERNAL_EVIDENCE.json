@@ -112,5 +112,101 @@
     "path": "probe-20261020T175607Z/probe.sqlite",
     "url": "https://github.com/cuzmi/RemoteFiles/blob/fff0e25b3afd443e02ea682ce30a33a8a81ff145/research/minicpm_same_graph_sm_metrics_h100_20261020/probe-20261020T175607Z/probe.sqlite",
     "sha256": "1f4c2008e587d9b0e3be5cc396e8a89b786df88bc01f35b569082e9f26d7e5e3"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r1-baseline-c1/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r1-baseline-c1/profiler_report.json",
+    "sha256": "1fa9ccbb4dd35a424918a961a9b985603ed31e180cad70d1651d86255c1899a9"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r1-baseline-c16/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r1-baseline-c16/profiler_report.json",
+    "sha256": "cd3ed33e55adc3ab80bac305033a182054dd460975dbf660df92c2901cd0f392"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r1-baseline-c32/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r1-baseline-c32/profiler_report.json",
+    "sha256": "5723d58d7fc3ad9b6ff5466cbb9357fbbfed9d914bfe783530b9fbd0dcef06ac"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r1-baseline-c8/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r1-baseline-c8/profiler_report.json",
+    "sha256": "ab7c797e4bc5ed95239f4e8884ba81a5c288b3c69b380671c7fcd8ff7db781b0"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r1-optimized-c1/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r1-optimized-c1/profiler_report.json",
+    "sha256": "d1f5b2863bd262499c98130ce1148b8c0ae6c88eab0c75c6142afd893cda64e8"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r1-optimized-c16/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r1-optimized-c16/profiler_report.json",
+    "sha256": "ac6c57d446f0c0d121dbc044cf9f46d7ca657f440d6a1cc0ba4f77cc787e8e83"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r1-optimized-c32/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r1-optimized-c32/profiler_report.json",
+    "sha256": "e3062dcbd2f1ae4b234762e861decc0a6722aa00ab708d1e9c3ea454260b7316"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r1-optimized-c8/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r1-optimized-c8/profiler_report.json",
+    "sha256": "d946368425266285422688cdb98a49413d776d11d20583e7dcbd2bddd19cb0ac"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r2-baseline-c1/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-baseline-c1/profiler_report.json",
+    "sha256": "d8f7f40b9a42d53f1c61c106d2db1da4081783435f0a3d58c33f4a7b5debd35b"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r2-baseline-c16/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-baseline-c16/profiler_report.json",
+    "sha256": "6c9b8ab3989213a380157a0089a6e6ddab776c9a31949aa43aa1618ff528a730"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r2-baseline-c32/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-baseline-c32/profiler_report.json",
+    "sha256": "836c938dfc96d6e8c7d6bb6b16be8204585c2c5cc7fd3895c0c084f439e2145d"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r2-baseline-c8/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-baseline-c8/profiler_report.json",
+    "sha256": "2b34a41405bc1e2aaf9a83b7020a3154cc6f172773126f1a5963091251a65b1a"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r2-optimized-c1/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-optimized-c1/profiler_report.json",
+    "sha256": "1155bd531b770eaadc0e52fbd4a3a41e17731f0adeaf945241f32bc38aa159f1"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r2-optimized-c16/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-optimized-c16/profiler_report.json",
+    "sha256": "b86048aa52f80a6b38644d9a83a5ed39f5abca1f5db3e0fbd4b763535a087eff"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r2-optimized-c32/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-optimized-c32/profiler_report.json",
+    "sha256": "d76e53ce02cc62e7abc2cb07e0b7965a82f92ac71cd022f8ff7c831b62996554"
+  },
+  {
+    "experiment": "2026-10-25-stage-events",
+    "path": "artifacts/20261025T132151Z/results/r2-optimized-c8/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-optimized-c8/profiler_report.json",
+    "sha256": "e56829db788ce8d164ff26703bf3ff776c2e24b0aee304a787856d6a7806249a"
   }
 ]

@@ -1,0 +1,66 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+2026-10-25T13:25:35.301975+00:00 r1-baseline-c1: starting server
+r1-baseline-c1: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 1.29425456640625, "thinker": 124.34107405859375, "talker": 98.35183665234375, "code2wav": 75.62079458984375}, "mean_e2e_ms": 309.91941873046926, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-baseline-c1: complete
+2026-10-25T13:31:01.241747+00:00 r1-optimized-c1: starting server
+r1-optimized-c1: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 1.19392336328125, "thinker": 124.32523725, "talker": 97.52627580859375, "code2wav": 75.269582984375}, "mean_e2e_ms": 309.39823385937393, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-optimized-c1: complete
+2026-10-25T13:35:10.005435+00:00 r1-baseline-c8: starting server
+r1-baseline-c8: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 2.1794310546875, "thinker": 240.867733140625, "talker": 319.38333028125, "code2wav": 289.4426975703125}, "mean_e2e_ms": 869.5747302968778, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-baseline-c8: complete
+2026-10-25T13:38:01.515147+00:00 r1-optimized-c8: starting server
+r1-optimized-c8: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 1.39490912109375, "thinker": 248.03235561328125, "talker": 339.194229375, "code2wav": 219.53361619140625}, "mean_e2e_ms": 821.0060000039064, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-optimized-c8: complete
+2026-10-25T13:40:51.507163+00:00 r1-baseline-c16: starting server
+r1-baseline-c16: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 3.6934370625, "thinker": 265.97892351953124, "talker": 460.00966701953126, "code2wav": 498.046445796875}, "mean_e2e_ms": 1249.9649482773432, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-baseline-c16: complete
+2026-10-25T13:43:32.743116+00:00 r1-optimized-c16: starting server
+r1-optimized-c16: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 1.88542151171875, "thinker": 274.2225665859375, "talker": 569.1829608476562, "code2wav": 309.7947614296875}, "mean_e2e_ms": 1170.8323854023347, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-optimized-c16: complete
+2026-10-25T13:46:12.322003+00:00 r1-baseline-c32: starting server
+r1-baseline-c32: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 6.23053720703125, "thinker": 304.5303769921875, "talker": 568.4716604609375, "code2wav": 991.0965216445312}, "mean_e2e_ms": 1910.3506994882914, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-baseline-c32: complete
+2026-10-25T13:48:45.965643+00:00 r1-optimized-c32: starting server
+r1-optimized-c32: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 2.776027, "thinker": 287.007998, "talker": 1165.178316765625, "code2wav": 413.5533080078125}, "mean_e2e_ms": 1906.7264789179656, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-optimized-c32: complete
+2026-10-25T13:51:20.603486+00:00 r2-optimized-c1: starting server
+r2-optimized-c1: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 1.285606328125, "thinker": 124.56031912109376, "talker": 98.430642109375, "code2wav": 75.72566770703125}, "mean_e2e_ms": 310.6603700429842, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r2-optimized-c1: complete
+2026-10-25T13:55:29.464454+00:00 r2-baseline-c1: starting server
+r2-baseline-c1: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 1.22883411328125, "thinker": 123.744667921875, "talker": 97.32285887109376, "code2wav": 74.67844915625}, "mean_e2e_ms": 306.7327900156158, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r2-baseline-c1: complete
+2026-10-25T13:59:33.764498+00:00 r2-optimized-c8: starting server
+r2-optimized-c8: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 1.3807566796875, "thinker": 239.95790188671876, "talker": 296.0541976484375, "code2wav": 232.3295160546875}, "mean_e2e_ms": 781.8116608671896, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r2-optimized-c8: complete
+2026-10-25T14:02:19.562391+00:00 r2-baseline-c8: starting server
+r2-baseline-c8: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 2.322075984375, "thinker": 240.63174511328126, "talker": 308.0727210039062, "code2wav": 288.9645717578125}, "mean_e2e_ms": 856.0175351562567, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r2-baseline-c8: complete
+2026-10-25T14:05:10.316991+00:00 r2-optimized-c16: starting server
+r2-optimized-c16: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 1.796205234375, "thinker": 272.0815730390625, "talker": 572.0211757851563, "code2wav": 314.0337085507812}, "mean_e2e_ms": 1175.7407880156218, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r2-optimized-c16: complete
+2026-10-25T14:07:49.811997+00:00 r2-baseline-c16: starting server
+r2-baseline-c16: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 2.89178529296875, "thinker": 260.5828491210938, "talker": 477.37456149609375, "code2wav": 433.23795309375}, "mean_e2e_ms": 1202.742993769526, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r2-baseline-c16: complete
+2026-10-25T14:10:29.185667+00:00 r2-optimized-c32: starting server
+r2-optimized-c32: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 2.65145233203125, "thinker": 303.81740222265626, "talker": 1131.0110476640625, "code2wav": 411.05190279296875}, "mean_e2e_ms": 1892.0592627734436, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r2-optimized-c32: complete
+2026-10-25T14:13:05.722822+00:00 r2-baseline-c32: starting server
+r2-baseline-c32: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 7.1185446875, "thinker": 296.06636891015626, "talker": 555.9603765078125, "code2wav": 972.6450161953125}, "mean_e2e_ms": 1871.2777581718694, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r2-baseline-c32: complete

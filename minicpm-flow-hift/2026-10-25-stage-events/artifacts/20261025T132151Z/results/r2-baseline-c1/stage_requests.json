@@ -1,0 +1,3074 @@
+[
+  {
+    "sample_id": "common_voice_en_10119832-common_voice_en_10119840",
+    "server_request_id": "b9475114-a550-4e09-a256-ffcae580583a",
+    "e2e_ms": 256.07691699997304,
+    "audio_seconds": 2.12,
+    "stage_ms": {
+      "preprocessing": 1.255767,
+      "thinker": 95.31805,
+      "talker": 55.440276,
+      "code2wav": 94.826038
+    }
+  },
+  {
+    "sample_id": "common_voice_en_10119832-common_voice_en_10119847",
+    "server_request_id": "075a7ad7-2188-4831-ae30-e092947c9dcd",
+    "e2e_ms": 227.7007819998289,
+    "audio_seconds": 3.44,
+    "stage_ms": {
+      "preprocessing": 1.18397,
+      "thinker": 94.368319,
+      "talker": 83.382853,
+      "code2wav": 39.985988
+    }
+  },
+  {
+    "sample_id": "common_voice_en_103675-common_voice_en_103676",
+    "server_request_id": "66e582f9-2f4e-43d1-a00b-af88f0c3ce6c",
+    "e2e_ms": 429.5016389999091,
+    "audio_seconds": 4.92,
+    "stage_ms": {
+      "preprocessing": 1.220545,
+      "thinker": 182.684163,
+      "talker": 114.406412,
+      "code2wav": 119.703586
+    }
+  },
+  {
+    "sample_id": "common_voice_en_103675-common_voice_en_103677",
+    "server_request_id": "babdbca7-9262-4eed-997a-4d7b4d1e36f9",
+    "e2e_ms": 212.00773400005346,
+    "audio_seconds": 3.0,
+    "stage_ms": {
+      "preprocessing": 1.177349,
+      "thinker": 94.496814,
+      "talker": 73.904738,
+      "code2wav": 32.446661
+    }
+  },
+  {
+    "sample_id": "common_voice_en_10933823-common_voice_en_10933822",
+    "server_request_id": "21daa57e-6a95-4ade-86b1-12d7ada45e19",
+    "e2e_ms": 376.85364799995114,
+    "audio_seconds": 3.84,
+    "stage_ms": {
+      "preprocessing": 1.140707,
+      "thinker": 130.985569,
+      "talker": 90.448173,
+      "code2wav": 143.036017
+    }
+  },
+  {
+    "sample_id": "common_voice_en_10933823-common_voice_en_10933825",
+    "server_request_id": "27eb0432-b4ac-427e-b313-7de63b91975b",
+    "e2e_ms": 210.66125800007285,
+    "audio_seconds": 3.44,
+    "stage_ms": {
+      "preprocessing": 1.22121,
+      "thinker": 80.500569,
+      "talker": 82.775014,
+      "code2wav": 35.782896
+    }
+  },
+  {
+    "sample_id": "common_voice_en_120405-common_voice_en_120402",
+    "server_request_id": "feb6c238-bba5-4720-a606-2cf27913f872",
+    "e2e_ms": 531.2533159999475,
+    "audio_seconds": 7.08,
+    "stage_ms": {
+      "preprocessing": 1.142811,
+      "thinker": 233.084926,
+      "talker": 162.315138,
+      "code2wav": 122.669344
+    }
+  },
+  {
+    "sample_id": "common_voice_en_120405-common_voice_en_120406",
+    "server_request_id": "f2abc841-618a-41f3-9e48-4ae0e7ff0058",
+    "e2e_ms": 253.39973399991322,
+    "audio_seconds": 3.84,
+    "stage_ms": {
+      "preprocessing": 1.292561,
+      "thinker": 116.890412,
+      "talker": 91.256248,
+      "code2wav": 34.184859
+    }
+  },
+  {
+    "sample_id": "common_voice_en_1205005-common_voice_en_1205007",
+    "server_request_id": "3fad013c-cf3d-4e93-bd12-5c9f71f59d47",
+    "e2e_ms": 282.59160900006464,
+    "audio_seconds": 2.8,
+    "stage_ms": {
+      "preprocessing": 1.113285,
+      "thinker": 118.560564,
+      "talker": 69.600559,
+      "code2wav": 84.421617
+    }
+  },
+  {
+    "sample_id": "common_voice_en_1205005-common_voice_en_1205008",
+    "server_request_id": "b1007784-1407-4726-b493-a972e076a89e",
+    "e2e_ms": 207.1058010001252,
+    "audio_seconds": 2.52,
+    "stage_ms": {
+      "preprocessing": 1.272028,
+      "thinker": 90.200969,
+      "talker": 64.617233,
+      "code2wav": 41.226747
+    }
+  },
+  {
+    "sample_id": "common_voice_en_123125-common_voice_en_123126",
+    "server_request_id": "4317ca19-31a8-4368-8a12-2adb5c192e50",
+    "e2e_ms": 386.85804700003246,
+    "audio_seconds": 5.48,
+    "stage_ms": {
+      "preprocessing": 1.262996,
+      "thinker": 146.045552,
+      "talker": 128.128031,
+      "code2wav": 99.70303
+    }
+  },
+  {
+    "sample_id": "common_voice_en_123125-common_voice_en_123127",
+    "server_request_id": "a496d21a-dfe6-4890-ab05-1aaa8ba65f5b",
+    "e2e_ms": 337.069849000045,
+    "audio_seconds": 5.16,
+    "stage_ms": {
+      "preprocessing": 1.308923,
+      "thinker": 165.992475,
+      "talker": 119.638142,
+      "code2wav": 39.557234
+    }
+  },
+  {
+    "sample_id": "common_voice_en_125386-common_voice_en_125388",
+    "server_request_id": "4b291b95-205a-4177-8f18-be95f52592c5",
+    "e2e_ms": 355.75398600008157,
+    "audio_seconds": 4.64,
+    "stage_ms": {
+      "preprocessing": 1.189222,
+      "thinker": 146.11813,
+      "talker": 108.355346,
+      "code2wav": 90.123974
+    }
+  },
+  {
+    "sample_id": "common_voice_en_125386-common_voice_en_125389",
+    "server_request_id": "03fe422e-af1d-4fac-978a-1820b4f38b3e",
+    "e2e_ms": 257.53971900007855,
+    "audio_seconds": 4.52,
+    "stage_ms": {
+      "preprocessing": 1.21189,
+      "thinker": 108.979254,
+      "talker": 105.443456,
+      "code2wav": 32.738441
+    }
+  },
+  {
+    "sample_id": "common_voice_en_137148-common_voice_en_137152",
+    "server_request_id": "7c863f7d-2847-469b-88d6-738ab9e51233",
+    "e2e_ms": 346.32918300007987,
+    "audio_seconds": 4.2,
+    "stage_ms": {
+      "preprocessing": 1.241302,
+      "thinker": 137.143558,
+      "talker": 98.82364,
+      "code2wav": 99.104451
+    }
+  },
+  {
+    "sample_id": "common_voice_en_13900-common_voice_en_13901",
+    "server_request_id": "3cfcb8b1-799e-4cd7-8a59-f61fa7b13101",
+    "e2e_ms": 333.18671099982566,
+    "audio_seconds": 4.36,
+    "stage_ms": {
+      "preprocessing": 1.235154,
+      "thinker": 124.270622,
+      "talker": 102.196719,
+      "code2wav": 95.907924
+    }
+  },
+  {
+    "sample_id": "common_voice_en_1416089-common_voice_en_1416090",
+    "server_request_id": "15414e0b-10c5-4feb-bf03-476ab5db30e9",
+    "e2e_ms": 317.68074399997204,
+    "audio_seconds": 4.08,
+    "stage_ms": {
+      "preprocessing": 1.144899,
+      "thinker": 115.895688,
+      "talker": 96.226601,
+      "code2wav": 94.760884
+    }
+  },
+  {
+    "sample_id": "common_voice_en_1416089-common_voice_en_1416093",
+    "server_request_id": "6c68a80b-9e35-446a-a8be-5bca4c11b005",
+    "e2e_ms": 291.4133080000738,
+    "audio_seconds": 4.72,
+    "stage_ms": {
+      "preprocessing": 1.160129,
+      "thinker": 138.635196,
+      "talker": 109.439516,
+      "code2wav": 32.373525
+    }
+  },
+  {
+    "sample_id": "common_voice_en_15265-common_voice_en_15266",
+    "server_request_id": "83950666-889e-4145-a8e4-112344757b9e",
+    "e2e_ms": 297.3213020000003,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.189484,
+      "thinker": 94.360569,
+      "talker": 74.875656,
+      "code2wav": 116.649021
+    }
+  },
+  {
+    "sample_id": "common_voice_en_15265-common_voice_en_15268",
+    "server_request_id": "34ce6f69-ba80-4b83-9ff3-c4179d0907fc",
+    "e2e_ms": 239.67473499988046,
+    "audio_seconds": 3.24,
+    "stage_ms": {
+      "preprocessing": 1.200468,
+      "thinker": 109.565518,
+      "talker": 78.861949,
+      "code2wav": 39.746843
+    }
+  },
+  {
+    "sample_id": "common_voice_en_153872-common_voice_en_153873",
+    "server_request_id": "948d4f02-1244-45ab-b0b5-3bc2ddc4a4bd",
+    "e2e_ms": 253.65628400004425,
+    "audio_seconds": 2.8,
+    "stage_ms": {
+      "preprocessing": 1.129157,
+      "thinker": 94.186756,
+      "talker": 68.735112,
+      "code2wav": 81.151454
+    }
+  },
+  {
+    "sample_id": "common_voice_en_153872-common_voice_en_153874",
+    "server_request_id": "02b6e5ba-c363-47cf-9b29-269e1c9b4bd4",
+    "e2e_ms": 317.8472189999866,
+    "audio_seconds": 5.12,
+    "stage_ms": {
+      "preprocessing": 1.262662,
+      "thinker": 153.182253,
+      "talker": 118.166541,
+      "code2wav": 35.398525
+    }
+  },
+  {
+    "sample_id": "common_voice_en_155313-common_voice_en_155315",
+    "server_request_id": "1983dd18-349e-4fda-96cb-edf2cdbcad25",
+    "e2e_ms": 407.2016340001028,
+    "audio_seconds": 5.56,
+    "stage_ms": {
+      "preprocessing": 1.164081,
+      "thinker": 173.960619,
+      "talker": 127.467859,
+      "code2wav": 94.618736
+    }
+  },
+  {
+    "sample_id": "common_voice_en_15734837-common_voice_en_15734838",
+    "server_request_id": "c4fa2147-4297-437e-8c55-7d8ad6298364",
+    "e2e_ms": 339.6939409999504,
+    "audio_seconds": 4.56,
+    "stage_ms": {
+      "preprocessing": 1.194039,
+      "thinker": 116.221545,
+      "talker": 106.246114,
+      "code2wav": 106.24315
+    }
+  },
+  {
+    "sample_id": "common_voice_en_15735839-common_voice_en_15735837",
+    "server_request_id": "b7a1b59b-9c7a-4e62-a074-dfe65d818320",
+    "e2e_ms": 230.82896000005348,
+    "audio_seconds": 3.16,
+    "stage_ms": {
+      "preprocessing": 1.153948,
+      "thinker": 66.065924,
+      "talker": 76.879746,
+      "code2wav": 78.554708
+    }
+  },
+  {
+    "sample_id": "common_voice_en_15903802-common_voice_en_15903807",
+    "server_request_id": "b61b93ab-afd8-4f17-9796-454e23511e1b",
+    "e2e_ms": 346.7323639999904,
+    "audio_seconds": 4.6,
+    "stage_ms": {
+      "preprocessing": 1.288833,
+      "thinker": 123.074098,
+      "talker": 107.037975,
+      "code2wav": 104.961531
+    }
+  },
+  {
+    "sample_id": "common_voice_en_15903802-common_voice_en_15903815",
+    "server_request_id": "08c3f180-aec7-4774-b02f-152a7ad4ea41",
+    "e2e_ms": 232.4050150000403,
+    "audio_seconds": 3.28,
+    "stage_ms": {
+      "preprocessing": 1.242956,
+      "thinker": 108.871427,
+      "talker": 79.594181,
+      "code2wav": 33.079241
+    }
+  },
+  {
+    "sample_id": "common_voice_en_16666041-common_voice_en_16666040",
+    "server_request_id": "f5b56d28-119e-413b-8a68-175f45f1e1a0",
+    "e2e_ms": 323.2064180001544,
+    "audio_seconds": 3.32,
+    "stage_ms": {
+      "preprocessing": 1.125659,
+      "thinker": 130.661074,
+      "talker": 79.615848,
+      "code2wav": 102.421873
+    }
+  },
+  {
+    "sample_id": "common_voice_en_167249-common_voice_en_167246",
+    "server_request_id": "f25fb7fe-32a0-4594-900e-24f6a872e031",
+    "e2e_ms": 270.27906599983,
+    "audio_seconds": 3.0,
+    "stage_ms": {
+      "preprocessing": 1.161433,
+      "thinker": 87.053295,
+      "talker": 73.490478,
+      "code2wav": 99.373605
+    }
+  },
+  {
+    "sample_id": "common_voice_en_167249-common_voice_en_167247",
+    "server_request_id": "60394e6f-8c5d-4507-8fb8-d5e249f2c563",
+    "e2e_ms": 227.70342800004073,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.200581,
+      "thinker": 108.96734,
+      "talker": 75.097305,
+      "code2wav": 33.096746
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17147545-common_voice_en_17147546",
+    "server_request_id": "b26860d0-1609-44a4-ab39-2652530a5df8",
+    "e2e_ms": 380.4553479999413,
+    "audio_seconds": 5.12,
+    "stage_ms": {
+      "preprocessing": 1.188767,
+      "thinker": 152.692591,
+      "talker": 117.692734,
+      "code2wav": 98.536805
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17161-common_voice_en_17159",
+    "server_request_id": "3cabef28-924e-4e9f-8c70-4e0650dccf61",
+    "e2e_ms": 294.7401330000048,
+    "audio_seconds": 3.8,
+    "stage_ms": {
+      "preprocessing": 1.204385,
+      "thinker": 101.739137,
+      "talker": 90.468825,
+      "code2wav": 91.762514
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17161-common_voice_en_17160",
+    "server_request_id": "471d8877-9092-41bb-b3c7-772ec8cb3b4a",
+    "e2e_ms": 305.1877840000543,
+    "audio_seconds": 4.96,
+    "stage_ms": {
+      "preprocessing": 1.360578,
+      "thinker": 146.558851,
+      "talker": 114.711055,
+      "code2wav": 32.342361
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17249419-common_voice_en_17249428",
+    "server_request_id": "58b029b0-b78f-441c-8541-bdb7ea9e725f",
+    "e2e_ms": 435.1326420000987,
+    "audio_seconds": 5.48,
+    "stage_ms": {
+      "preprocessing": 1.211684,
+      "thinker": 189.535701,
+      "talker": 125.853086,
+      "code2wav": 107.562129
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17255102-common_voice_en_17255101",
+    "server_request_id": "c32c3af6-7d4c-4989-85b7-80f55720c52f",
+    "e2e_ms": 321.4095319999615,
+    "audio_seconds": 3.16,
+    "stage_ms": {
+      "preprocessing": 1.265774,
+      "thinker": 123.78214,
+      "talker": 76.961563,
+      "code2wav": 109.239787
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17256676-common_voice_en_17256678",
+    "server_request_id": "914efcc3-921c-42dd-8e89-60d388fdb55d",
+    "e2e_ms": 389.36472499995034,
+    "audio_seconds": 5.4,
+    "stage_ms": {
+      "preprocessing": 1.23498,
+      "thinker": 159.752834,
+      "talker": 123.630038,
+      "code2wav": 94.816672
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17259121-common_voice_en_17259122",
+    "server_request_id": "9c7cc9a4-b592-4adb-91cb-1c8d42263f49",
+    "e2e_ms": 282.8260979999868,
+    "audio_seconds": 2.96,
+    "stage_ms": {
+      "preprocessing": 1.166702,
+      "thinker": 94.468833,
+      "talker": 73.798228,
+      "code2wav": 104.005613
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17263752-common_voice_en_17263750",
+    "server_request_id": "eac4c441-a1d4-4b7e-90ee-eb0dd9dde4db",
+    "e2e_ms": 462.7059389999886,
+    "audio_seconds": 7.2,
+    "stage_ms": {
+      "preprocessing": 1.201368,
+      "thinker": 188.957457,
+      "talker": 162.625967,
+      "code2wav": 98.60066
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17263752-common_voice_en_17263755",
+    "server_request_id": "b15529da-6c97-4eaf-afcd-ded2de8a77fa",
+    "e2e_ms": 276.4020120000623,
+    "audio_seconds": 4.96,
+    "stage_ms": {
+      "preprocessing": 1.259238,
+      "thinker": 116.436218,
+      "talker": 114.650898,
+      "code2wav": 34.356337
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17263780-common_voice_en_17263781",
+    "server_request_id": "81da0b0d-4f1e-4e7b-8f0d-76abdc3ca3c6",
+    "e2e_ms": 297.4149629999374,
+    "audio_seconds": 2.92,
+    "stage_ms": {
+      "preprocessing": 1.073444,
+      "thinker": 116.934382,
+      "talker": 71.360251,
+      "code2wav": 98.591226
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17263780-common_voice_en_17263782",
+    "server_request_id": "c1b6e8c8-34e4-4e28-9cda-21ed864b14ba",
+    "e2e_ms": 326.5010349998647,
+    "audio_seconds": 5.96,
+    "stage_ms": {
+      "preprocessing": 1.330509,
+      "thinker": 145.143432,
+      "talker": 135.753665,
+      "code2wav": 34.106992
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17267923-common_voice_en_17267922",
+    "server_request_id": "b8c4b075-5fd3-4d78-95e7-aad2f229f263",
+    "e2e_ms": 220.26503500001127,
+    "audio_seconds": 2.04,
+    "stage_ms": {
+      "preprocessing": 1.108248,
+      "thinker": 72.325723,
+      "talker": 52.358907,
+      "code2wav": 86.682868
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17268075-common_voice_en_17268076",
+    "server_request_id": "d246de55-7102-4303-a8a4-31612e5cd1a5",
+    "e2e_ms": 498.27241799994226,
+    "audio_seconds": 8.28,
+    "stage_ms": {
+      "preprocessing": 1.248034,
+      "thinker": 196.958752,
+      "talker": 187.189268,
+      "code2wav": 101.972943
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17271507-common_voice_en_17271509",
+    "server_request_id": "ece78bfe-1c24-46cb-8c72-61d6ed14e33a",
+    "e2e_ms": 320.38127599980726,
+    "audio_seconds": 4.2,
+    "stage_ms": {
+      "preprocessing": 1.290292,
+      "thinker": 116.948982,
+      "talker": 98.680867,
+      "code2wav": 94.032361
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17271507-common_voice_en_17271510",
+    "server_request_id": "ea505558-e7d3-44ee-ae63-d8172ffc5dad",
+    "e2e_ms": 269.40784999987955,
+    "audio_seconds": 3.88,
+    "stage_ms": {
+      "preprocessing": 1.238398,
+      "thinker": 130.643042,
+      "talker": 91.660247,
+      "code2wav": 36.873579
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17274522-common_voice_en_17274523",
+    "server_request_id": "80c1da57-2b21-40c6-8b35-504357b7bf9c",
+    "e2e_ms": 322.1360499999264,
+    "audio_seconds": 3.28,
+    "stage_ms": {
+      "preprocessing": 1.09451,
+      "thinker": 115.508606,
+      "talker": 78.649598,
+      "code2wav": 116.682048
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17274522-common_voice_en_17274525",
+    "server_request_id": "4fa760cf-6395-4976-9607-9f9e22c9d793",
+    "e2e_ms": 245.16461600001094,
+    "audio_seconds": 3.24,
+    "stage_ms": {
+      "preprocessing": 1.28336,
+      "thinker": 123.074181,
+      "talker": 78.298663,
+      "code2wav": 32.385108
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17274533-common_voice_en_17274531",
+    "server_request_id": "3b25082d-1afe-453b-8eaf-2cfb9a0370b0",
+    "e2e_ms": 403.3317660000648,
+    "audio_seconds": 5.88,
+    "stage_ms": {
+      "preprocessing": 1.138773,
+      "thinker": 166.068308,
+      "talker": 133.626976,
+      "code2wav": 92.363114
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17275818-common_voice_en_17275816",
+    "server_request_id": "62b742e7-cf9e-4963-865d-f24212bec830",
+    "e2e_ms": 324.6427389999553,
+    "audio_seconds": 3.76,
+    "stage_ms": {
+      "preprocessing": 1.22191,
+      "thinker": 138.186095,
+      "talker": 89.86076,
+      "code2wav": 86.113212
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17275818-common_voice_en_17275817",
+    "server_request_id": "0f2d16eb-86d1-4ae5-9214-18df64a0b6f1",
+    "e2e_ms": 259.23034900006314,
+    "audio_seconds": 3.64,
+    "stage_ms": {
+      "preprocessing": 1.260267,
+      "thinker": 124.515171,
+      "talker": 86.911087,
+      "code2wav": 37.289088
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17277080-common_voice_en_17277082",
+    "server_request_id": "b607b122-69b3-4ce0-92b5-79f51d7d1eb1",
+    "e2e_ms": 306.2198399998124,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.255015,
+      "thinker": 108.586604,
+      "talker": 75.024164,
+      "code2wav": 111.233763
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17277080-common_voice_en_17277083",
+    "server_request_id": "83c06adb-e61c-428b-b3cc-b3e214558fd7",
+    "e2e_ms": 226.44665500001793,
+    "audio_seconds": 2.76,
+    "stage_ms": {
+      "preprocessing": 1.222404,
+      "thinker": 109.116826,
+      "talker": 68.176104,
+      "code2wav": 38.392228
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17278904-common_voice_en_17278905",
+    "server_request_id": "dc13ae08-965b-467d-a2eb-436bf69e6582",
+    "e2e_ms": 336.61819599979026,
+    "audio_seconds": 4.48,
+    "stage_ms": {
+      "preprocessing": 1.056485,
+      "thinker": 107.979439,
+      "talker": 103.899867,
+      "code2wav": 113.806254
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17278904-common_voice_en_17278909",
+    "server_request_id": "d5cd8be7-3e6e-4d03-9269-c267ac173a6d",
+    "e2e_ms": 250.7455340000888,
+    "audio_seconds": 3.8,
+    "stage_ms": {
+      "preprocessing": 1.18311,
+      "thinker": 115.974918,
+      "talker": 90.271502,
+      "code2wav": 33.472189
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17281385-common_voice_en_17281386",
+    "server_request_id": "bf80035e-a6d0-4866-8fd9-7800b5bf1d54",
+    "e2e_ms": 409.15411500009213,
+    "audio_seconds": 5.52,
+    "stage_ms": {
+      "preprocessing": 1.093815,
+      "thinker": 174.023948,
+      "talker": 126.220683,
+      "code2wav": 97.665602
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17281385-common_voice_en_17281393",
+    "server_request_id": "0af8836c-9468-4079-9e77-80c5bfb3a793",
+    "e2e_ms": 273.6846309999237,
+    "audio_seconds": 3.88,
+    "stage_ms": {
+      "preprocessing": 1.172671,
+      "thinker": 138.287925,
+      "talker": 91.680122,
+      "code2wav": 33.065411
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17288057-common_voice_en_17288056",
+    "server_request_id": "c8dbc29c-ae58-4fe8-a046-b27527a3db4b",
+    "e2e_ms": 242.66127900000356,
+    "audio_seconds": 2.88,
+    "stage_ms": {
+      "preprocessing": 1.151009,
+      "thinker": 72.164355,
+      "talker": 69.961056,
+      "code2wav": 90.533033
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17288057-common_voice_en_17288059",
+    "server_request_id": "601ebff6-2d07-4458-8539-e4461dab7b9a",
+    "e2e_ms": 192.54912399992463,
+    "audio_seconds": 2.28,
+    "stage_ms": {
+      "preprocessing": 1.115014,
+      "thinker": 79.795899,
+      "talker": 58.207877,
+      "code2wav": 44.883305
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17324784-common_voice_en_17324785",
+    "server_request_id": "ef74c07a-8f0f-45ff-9c74-a8ecaada0df4",
+    "e2e_ms": 321.9357789998867,
+    "audio_seconds": 3.92,
+    "stage_ms": {
+      "preprocessing": 1.15437,
+      "thinker": 115.805639,
+      "talker": 92.304173,
+      "code2wav": 102.635054
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17324784-common_voice_en_17324786",
+    "server_request_id": "6b1602ad-41ca-442e-8be5-ac923bd19724",
+    "e2e_ms": 343.12177900005736,
+    "audio_seconds": 5.68,
+    "stage_ms": {
+      "preprocessing": 1.245895,
+      "thinker": 160.044903,
+      "talker": 129.578917,
+      "code2wav": 41.833288
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17347410-common_voice_en_17347409",
+    "server_request_id": "e8b1f172-e022-4f1a-a611-967b8a38db65",
+    "e2e_ms": 290.8973899998273,
+    "audio_seconds": 3.76,
+    "stage_ms": {
+      "preprocessing": 1.12016,
+      "thinker": 101.184882,
+      "talker": 88.567981,
+      "code2wav": 91.192873
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17352169-common_voice_en_17352173",
+    "server_request_id": "2afae706-748f-4d6f-b2eb-e5f8b6d020bb",
+    "e2e_ms": 397.6333089999571,
+    "audio_seconds": 4.84,
+    "stage_ms": {
+      "preprocessing": 1.311378,
+      "thinker": 138.606988,
+      "talker": 111.861851,
+      "code2wav": 134.413154
+    }
+  },
+  {
+    "sample_id": "common_voice_en_173534-common_voice_en_173537",
+    "server_request_id": "4fb509d6-865b-40eb-bca1-2c91048386ef",
+    "e2e_ms": 361.3325699998313,
+    "audio_seconds": 5.24,
+    "stage_ms": {
+      "preprocessing": 1.234393,
+      "thinker": 130.995997,
+      "talker": 120.307913,
+      "code2wav": 98.868068
+    }
+  },
+  {
+    "sample_id": "common_voice_en_173534-common_voice_en_173540",
+    "server_request_id": "77f3529f-9fb3-4cf7-92aa-fed871469845",
+    "e2e_ms": 284.7680180000225,
+    "audio_seconds": 4.08,
+    "stage_ms": {
+      "preprocessing": 1.197958,
+      "thinker": 145.396316,
+      "talker": 95.711023,
+      "code2wav": 33.175434
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17369337-common_voice_en_17369336",
+    "server_request_id": "559908f9-c56c-4f6f-bc3f-eedaa16ce560",
+    "e2e_ms": 322.6170399998409,
+    "audio_seconds": 4.12,
+    "stage_ms": {
+      "preprocessing": 1.070437,
+      "thinker": 122.856006,
+      "talker": 96.420244,
+      "code2wav": 92.753259
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17369851-common_voice_en_17369849",
+    "server_request_id": "fbd2cf8c-f1fd-43d4-9f8d-05a1b354dc7a",
+    "e2e_ms": 285.0940550001724,
+    "audio_seconds": 3.4,
+    "stage_ms": {
+      "preprocessing": 1.172736,
+      "thinker": 95.128194,
+      "talker": 81.437718,
+      "code2wav": 98.016726
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17375252-common_voice_en_17375256",
+    "server_request_id": "c4b18cea-6a65-4b1c-82e8-fdc98092af08",
+    "e2e_ms": 307.6826459998756,
+    "audio_seconds": 4.48,
+    "stage_ms": {
+      "preprocessing": 1.237284,
+      "thinker": 108.740645,
+      "talker": 105.052032,
+      "code2wav": 83.061067
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17380945-common_voice_en_17380947",
+    "server_request_id": "103ba69e-4501-411f-8c26-6a8753153eec",
+    "e2e_ms": 361.62961600007293,
+    "audio_seconds": 4.64,
+    "stage_ms": {
+      "preprocessing": 1.471772,
+      "thinker": 159.895054,
+      "talker": 107.793375,
+      "code2wav": 82.808571
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17389076-common_voice_en_17389120",
+    "server_request_id": "37c98f7c-db8f-4758-8c0a-637019529ef2",
+    "e2e_ms": 300.2505800000108,
+    "audio_seconds": 3.28,
+    "stage_ms": {
+      "preprocessing": 1.274517,
+      "thinker": 109.302399,
+      "talker": 79.046063,
+      "code2wav": 101.499824
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17389984-common_voice_en_17389987",
+    "server_request_id": "0d11d4c5-f5ee-4335-be81-3a34aa65f253",
+    "e2e_ms": 370.5210289999741,
+    "audio_seconds": 4.92,
+    "stage_ms": {
+      "preprocessing": 1.205959,
+      "thinker": 152.362418,
+      "talker": 113.739131,
+      "code2wav": 93.144181
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17389984-common_voice_en_17389988",
+    "server_request_id": "758e2f66-6362-43f0-adca-493dbb8690ad",
+    "e2e_ms": 319.20969299994795,
+    "audio_seconds": 4.76,
+    "stage_ms": {
+      "preprocessing": 4.679809,
+      "thinker": 160.689395,
+      "talker": 110.307518,
+      "code2wav": 32.528383
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17401431-common_voice_en_17401433",
+    "server_request_id": "ae34e1b9-72d2-413b-a30b-50a02150ed50",
+    "e2e_ms": 327.605998999843,
+    "audio_seconds": 3.64,
+    "stage_ms": {
+      "preprocessing": 1.099816,
+      "thinker": 129.921792,
+      "talker": 87.28645,
+      "code2wav": 99.568976
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17406452-common_voice_en_17406455",
+    "server_request_id": "260a3f9f-27aa-43fd-96bd-ab1bcbf11b09",
+    "e2e_ms": 397.06852800009074,
+    "audio_seconds": 5.2,
+    "stage_ms": {
+      "preprocessing": 1.065952,
+      "thinker": 172.94374,
+      "talker": 119.783598,
+      "code2wav": 93.150273
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17406452-common_voice_en_17406466",
+    "server_request_id": "f7daa98c-6247-4c99-8cdf-917405a17aed",
+    "e2e_ms": 330.3585779999594,
+    "audio_seconds": 4.84,
+    "stage_ms": {
+      "preprocessing": 1.10623,
+      "thinker": 173.785765,
+      "talker": 112.706389,
+      "code2wav": 33.181198
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17406732-common_voice_en_17406734",
+    "server_request_id": "af2cfcff-1964-40de-86f6-702906501198",
+    "e2e_ms": 339.64220000007117,
+    "audio_seconds": 4.2,
+    "stage_ms": {
+      "preprocessing": 1.004871,
+      "thinker": 151.13534,
+      "talker": 98.173617,
+      "code2wav": 80.544191
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17406732-common_voice_en_17406735",
+    "server_request_id": "e1988a3f-193f-42f2-b5d0-dc3de3b37336",
+    "e2e_ms": 330.27581699980146,
+    "audio_seconds": 4.84,
+    "stage_ms": {
+      "preprocessing": 1.169348,
+      "thinker": 174.256454,
+      "talker": 111.747799,
+      "code2wav": 33.281898
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17429166-common_voice_en_17429168",
+    "server_request_id": "c4b9e9a5-56f0-430f-8d12-24b50b451d1e",
+    "e2e_ms": 224.0048820001448,
+    "audio_seconds": 2.0,
+    "stage_ms": {
+      "preprocessing": 1.116158,
+      "thinker": 65.689561,
+      "talker": 51.559367,
+      "code2wav": 96.922371
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17429166-common_voice_en_17429171",
+    "server_request_id": "b48b461f-f47c-4f4a-a072-2e705dab9269",
+    "e2e_ms": 251.6657749999922,
+    "audio_seconds": 3.88,
+    "stage_ms": {
+      "preprocessing": 1.158961,
+      "thinker": 115.805459,
+      "talker": 91.849357,
+      "code2wav": 33.161658
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17442686-common_voice_en_17442688",
+    "server_request_id": "4140f895-c071-4dda-9abd-871c707302f4",
+    "e2e_ms": 264.03987800017603,
+    "audio_seconds": 3.76,
+    "stage_ms": {
+      "preprocessing": 1.092262,
+      "thinker": 86.862801,
+      "talker": 88.879618,
+      "code2wav": 78.805308
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17444666-common_voice_en_17444667",
+    "server_request_id": "353c9667-6d26-4cea-9f55-816d23bc8e3d",
+    "e2e_ms": 506.5068769999925,
+    "audio_seconds": 7.92,
+    "stage_ms": {
+      "preprocessing": 1.331136,
+      "thinker": 224.557826,
+      "talker": 178.977706,
+      "code2wav": 90.991156
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17444666-common_voice_en_17444668",
+    "server_request_id": "078c4cd2-e1b4-4d20-bf24-68abff9e4f4c",
+    "e2e_ms": 308.0775599999015,
+    "audio_seconds": 5.4,
+    "stage_ms": {
+      "preprocessing": 1.227467,
+      "thinker": 138.495378,
+      "talker": 125.222605,
+      "code2wav": 33.875425
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17451108-common_voice_en_17451109",
+    "server_request_id": "b08bfe33-0e29-44ae-953c-ee35f76d92fd",
+    "e2e_ms": 387.58650499994474,
+    "audio_seconds": 5.36,
+    "stage_ms": {
+      "preprocessing": 1.12907,
+      "thinker": 152.28372,
+      "talker": 123.191518,
+      "code2wav": 100.970621
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17502-common_voice_en_17503",
+    "server_request_id": "6d6d5709-34bb-4834-8011-d943b316e81d",
+    "e2e_ms": 263.0385989998558,
+    "audio_seconds": 2.16,
+    "stage_ms": {
+      "preprocessing": 1.33243,
+      "thinker": 87.344524,
+      "talker": 55.477664,
+      "code2wav": 109.279736
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17519982-common_voice_en_17519985",
+    "server_request_id": "76d72f2b-d3d9-4e15-ab81-f1d000681667",
+    "e2e_ms": 337.12066499992943,
+    "audio_seconds": 5.08,
+    "stage_ms": {
+      "preprocessing": 1.181204,
+      "thinker": 110.952558,
+      "talker": 117.293554,
+      "code2wav": 97.282503
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17519982-common_voice_en_17519988",
+    "server_request_id": "c1566c54-9fc1-4b22-8990-4667d283d45a",
+    "e2e_ms": 207.94275799994466,
+    "audio_seconds": 2.6,
+    "stage_ms": {
+      "preprocessing": 1.155063,
+      "thinker": 101.534708,
+      "talker": 64.779144,
+      "code2wav": 31.845184
+    }
+  },
+  {
+    "sample_id": "common_voice_en_175348-common_voice_en_175349",
+    "server_request_id": "34399dce-0c48-4985-8429-b0dff1d4ae09",
+    "e2e_ms": 306.2357270000575,
+    "audio_seconds": 3.72,
+    "stage_ms": {
+      "preprocessing": 1.09838,
+      "thinker": 115.441786,
+      "talker": 87.987111,
+      "code2wav": 92.593198
+    }
+  },
+  {
+    "sample_id": "common_voice_en_175348-common_voice_en_175350",
+    "server_request_id": "1eb003bc-173a-4d28-b1e5-434e4ecf662e",
+    "e2e_ms": 303.2775630001652,
+    "audio_seconds": 4.24,
+    "stage_ms": {
+      "preprocessing": 1.300564,
+      "thinker": 160.241004,
+      "talker": 98.968441,
+      "code2wav": 33.186767
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17578783-common_voice_en_17578780",
+    "server_request_id": "c1dce293-e572-4710-a008-9f0e0b0e7ce4",
+    "e2e_ms": 253.06872099986322,
+    "audio_seconds": 2.52,
+    "stage_ms": {
+      "preprocessing": 1.1346,
+      "thinker": 94.149601,
+      "talker": 62.436298,
+      "code2wav": 86.949694
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17578783-common_voice_en_17578781",
+    "server_request_id": "12e212d2-5ec0-426c-b321-25a9f0e11185",
+    "e2e_ms": 174.58349000003182,
+    "audio_seconds": 2.0,
+    "stage_ms": {
+      "preprocessing": 1.185595,
+      "thinker": 80.275603,
+      "talker": 52.641908,
+      "code2wav": 32.295283
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17662945-common_voice_en_17662954",
+    "server_request_id": "b1038e26-0db1-4d32-a2cc-f6a48a97183a",
+    "e2e_ms": 365.17155000001367,
+    "audio_seconds": 4.08,
+    "stage_ms": {
+      "preprocessing": 1.065733,
+      "thinker": 130.718053,
+      "talker": 95.351655,
+      "code2wav": 127.273014
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17662945-common_voice_en_17662956",
+    "server_request_id": "887152dc-468b-4d0a-a0fb-e645693320fe",
+    "e2e_ms": 287.20119299987346,
+    "audio_seconds": 4.08,
+    "stage_ms": {
+      "preprocessing": 1.282796,
+      "thinker": 145.144412,
+      "talker": 96.180057,
+      "code2wav": 33.785685
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17718576-common_voice_en_17718578",
+    "server_request_id": "a735b44d-19a8-4c48-8616-dccfa4b0c382",
+    "e2e_ms": 308.61339700004464,
+    "audio_seconds": 4.16,
+    "stage_ms": {
+      "preprocessing": 1.062495,
+      "thinker": 115.378343,
+      "talker": 96.555929,
+      "code2wav": 86.792776
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17727889-common_voice_en_17727904",
+    "server_request_id": "1048bd87-7a75-4380-adc1-b166c4842ee1",
+    "e2e_ms": 330.9553690000939,
+    "audio_seconds": 3.84,
+    "stage_ms": {
+      "preprocessing": 1.205006,
+      "thinker": 109.797521,
+      "talker": 90.601261,
+      "code2wav": 118.565817
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17727889-common_voice_en_17727905",
+    "server_request_id": "83e31184-d842-470a-ba43-8a0f2870a5cd",
+    "e2e_ms": 199.40811700007544,
+    "audio_seconds": 3.04,
+    "stage_ms": {
+      "preprocessing": 1.157676,
+      "thinker": 81.999791,
+      "talker": 74.265115,
+      "code2wav": 32.616642
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17729945-common_voice_en_17729943",
+    "server_request_id": "cf2af6e0-427b-4c49-bbe9-81899674a15a",
+    "e2e_ms": 293.58177099993554,
+    "audio_seconds": 2.96,
+    "stage_ms": {
+      "preprocessing": 0.997867,
+      "thinker": 122.561178,
+      "talker": 71.748206,
+      "code2wav": 89.823168
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17729945-common_voice_en_17729944",
+    "server_request_id": "7ebb92eb-4c6d-4cfa-9906-93b31deec3cc",
+    "e2e_ms": 220.8986030000233,
+    "audio_seconds": 3.52,
+    "stage_ms": {
+      "preprocessing": 1.222055,
+      "thinker": 94.646749,
+      "talker": 84.12418,
+      "code2wav": 32.109121
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17736608-common_voice_en_17736610",
+    "server_request_id": "dcd1d617-f2df-4476-8028-120aa1a410b3",
+    "e2e_ms": 297.89804600000025,
+    "audio_seconds": 2.76,
+    "stage_ms": {
+      "preprocessing": 1.052105,
+      "thinker": 107.953214,
+      "talker": 68.250111,
+      "code2wav": 110.993711
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17738848-common_voice_en_17744571",
+    "server_request_id": "39c7b127-5027-476c-83c8-16b6e6643d48",
+    "e2e_ms": 380.3954549998707,
+    "audio_seconds": 5.0,
+    "stage_ms": {
+      "preprocessing": 1.399255,
+      "thinker": 153.55049,
+      "talker": 115.214326,
+      "code2wav": 99.674894
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17738848-common_voice_en_19083939",
+    "server_request_id": "e567010a-ccf7-4983-bcf5-75727ed77a77",
+    "e2e_ms": 268.5447369999565,
+    "audio_seconds": 4.28,
+    "stage_ms": {
+      "preprocessing": 1.356131,
+      "thinker": 124.105739,
+      "talker": 100.572553,
+      "code2wav": 32.456523
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17781154-common_voice_en_17781153",
+    "server_request_id": "31f9ab73-78e2-423d-9d01-8317c818cef1",
+    "e2e_ms": 268.0329069999061,
+    "audio_seconds": 3.2,
+    "stage_ms": {
+      "preprocessing": 1.090197,
+      "thinker": 94.100056,
+      "talker": 76.969602,
+      "code2wav": 86.974598
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17784-common_voice_en_17785",
+    "server_request_id": "68797bf0-4653-4b79-ade9-231711939434",
+    "e2e_ms": 291.51250499990056,
+    "audio_seconds": 3.16,
+    "stage_ms": {
+      "preprocessing": 1.194873,
+      "thinker": 109.866951,
+      "talker": 76.790568,
+      "code2wav": 93.690863
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17784-common_voice_en_17786",
+    "server_request_id": "a565f714-488d-4f5e-b9a8-8820be1ad621",
+    "e2e_ms": 191.77513699992232,
+    "audio_seconds": 2.56,
+    "stage_ms": {
+      "preprocessing": 1.257343,
+      "thinker": 79.860303,
+      "talker": 63.925459,
+      "code2wav": 38.374872
+    }
+  },
+  {
+    "sample_id": "common_voice_en_177895-common_voice_en_177894",
+    "server_request_id": "b94a0e71-49ed-478c-8e6a-844258c824ce",
+    "e2e_ms": 305.35428100006357,
+    "audio_seconds": 3.72,
+    "stage_ms": {
+      "preprocessing": 0.983684,
+      "thinker": 122.946676,
+      "talker": 87.41393,
+      "code2wav": 85.386337
+    }
+  },
+  {
+    "sample_id": "common_voice_en_177895-common_voice_en_177898",
+    "server_request_id": "effca966-3a42-48a3-89c5-c8b0f840fd23",
+    "e2e_ms": 230.62254000001303,
+    "audio_seconds": 3.12,
+    "stage_ms": {
+      "preprocessing": 1.162809,
+      "thinker": 109.2284,
+      "talker": 75.688679,
+      "code2wav": 35.904437
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17817002-common_voice_en_17817003",
+    "server_request_id": "09801038-8ae3-4ae1-8ea4-9eb60789b846",
+    "e2e_ms": 373.04964600002677,
+    "audio_seconds": 5.0,
+    "stage_ms": {
+      "preprocessing": 1.18438,
+      "thinker": 151.640266,
+      "talker": 115.62928,
+      "code2wav": 94.443817
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17817002-common_voice_en_17817005",
+    "server_request_id": "8e0491cd-3d5d-492a-993d-cc14ef2456cf",
+    "e2e_ms": 268.13263099984397,
+    "audio_seconds": 4.64,
+    "stage_ms": {
+      "preprocessing": 1.260703,
+      "thinker": 117.079352,
+      "talker": 107.909368,
+      "code2wav": 32.162373
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17830764-common_voice_en_17830762",
+    "server_request_id": "acc1de31-701a-4015-9e5e-45e7352eb09b",
+    "e2e_ms": 257.99967700004345,
+    "audio_seconds": 3.0,
+    "stage_ms": {
+      "preprocessing": 1.097424,
+      "thinker": 86.889293,
+      "talker": 73.279649,
+      "code2wav": 88.262252
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17830764-common_voice_en_17830783",
+    "server_request_id": "d56a1665-0f3a-43a5-b231-1f12e1692e03",
+    "e2e_ms": 263.2630639998297,
+    "audio_seconds": 4.08,
+    "stage_ms": {
+      "preprocessing": 1.282869,
+      "thinker": 124.024015,
+      "talker": 96.034019,
+      "code2wav": 32.683223
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17837104-common_voice_en_17837105",
+    "server_request_id": "5407cd7e-689a-4474-8db9-2bc9e739a9ea",
+    "e2e_ms": 227.4815650000619,
+    "audio_seconds": 2.12,
+    "stage_ms": {
+      "preprocessing": 1.097803,
+      "thinker": 79.959785,
+      "talker": 54.723839,
+      "code2wav": 83.151411
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17851231-common_voice_en_17851248",
+    "server_request_id": "86083dc7-78e1-4c1d-993d-0e9e5828f3ab",
+    "e2e_ms": 261.7368500000339,
+    "audio_seconds": 2.8,
+    "stage_ms": {
+      "preprocessing": 1.238397,
+      "thinker": 101.959076,
+      "talker": 68.918126,
+      "code2wav": 81.185234
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17851231-common_voice_en_17851256",
+    "server_request_id": "503acb70-b587-41b4-8b5e-7a2a3a2856d1",
+    "e2e_ms": 219.4719480000913,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.227012,
+      "thinker": 102.051492,
+      "talker": 74.845821,
+      "code2wav": 32.964714
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17854896-common_voice_en_17854894",
+    "server_request_id": "686a67f4-c86d-4fd1-8bdc-2a43187d0c5a",
+    "e2e_ms": 301.46720399989135,
+    "audio_seconds": 3.12,
+    "stage_ms": {
+      "preprocessing": 1.145939,
+      "thinker": 93.992588,
+      "talker": 75.890577,
+      "code2wav": 120.16575
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17854896-common_voice_en_17854897",
+    "server_request_id": "63931921-b798-4511-b3f7-4a708bc81a8c",
+    "e2e_ms": 216.40555899989522,
+    "audio_seconds": 3.6,
+    "stage_ms": {
+      "preprocessing": 1.152249,
+      "thinker": 80.147642,
+      "talker": 87.556558,
+      "code2wav": 37.274993
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17861335-common_voice_en_17861337",
+    "server_request_id": "cfdb5a27-6d0e-48ab-b7b3-b6a70d396407",
+    "e2e_ms": 315.79945400017095,
+    "audio_seconds": 3.92,
+    "stage_ms": {
+      "preprocessing": 1.243554,
+      "thinker": 117.168171,
+      "talker": 92.479694,
+      "code2wav": 95.278104
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17861489-common_voice_en_17861487",
+    "server_request_id": "86e87510-aa7b-4198-9607-cbf97b7d7393",
+    "e2e_ms": 263.32578799997464,
+    "audio_seconds": 2.68,
+    "stage_ms": {
+      "preprocessing": 1.16558,
+      "thinker": 101.651858,
+      "talker": 65.677095,
+      "code2wav": 86.819469
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17874600-common_voice_en_17874601",
+    "server_request_id": "918da0c6-de80-4ff3-b2e4-ad81e3f1333a",
+    "e2e_ms": 418.02558999984285,
+    "audio_seconds": 5.64,
+    "stage_ms": {
+      "preprocessing": 1.250846,
+      "thinker": 181.034636,
+      "talker": 128.837576,
+      "code2wav": 96.398233
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17874600-common_voice_en_17874602",
+    "server_request_id": "8c3c2859-4729-4fea-877b-80008355a450",
+    "e2e_ms": 347.9273390000799,
+    "audio_seconds": 6.68,
+    "stage_ms": {
+      "preprocessing": 1.263367,
+      "thinker": 145.355234,
+      "talker": 150.705497,
+      "code2wav": 39.862919
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17875915-common_voice_en_17875925",
+    "server_request_id": "9a545042-911d-49c6-86a7-5ecbad5388f1",
+    "e2e_ms": 320.69065799987584,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.217816,
+      "thinker": 131.805768,
+      "talker": 75.955619,
+      "code2wav": 101.572737
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17879420-common_voice_en_17879418",
+    "server_request_id": "097ef1bc-88dc-4622-b945-70d50a77a4fb",
+    "e2e_ms": 273.1150649999563,
+    "audio_seconds": 3.32,
+    "stage_ms": {
+      "preprocessing": 1.347706,
+      "thinker": 80.975111,
+      "talker": 80.610263,
+      "code2wav": 100.542958
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17879420-common_voice_en_17879438",
+    "server_request_id": "4383d551-8122-46fc-852f-79c90dc3c4a4",
+    "e2e_ms": 223.06808600001204,
+    "audio_seconds": 3.16,
+    "stage_ms": {
+      "preprocessing": 1.22191,
+      "thinker": 102.851175,
+      "talker": 76.698399,
+      "code2wav": 32.963723
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17880926-common_voice_en_17880932",
+    "server_request_id": "aa11c16f-275d-4acf-8153-2210bc32af88",
+    "e2e_ms": 298.1810039998436,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.081178,
+      "thinker": 100.725486,
+      "talker": 74.244387,
+      "code2wav": 112.420269
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17889905-common_voice_en_17889907",
+    "server_request_id": "2b429674-a887-48ac-b7ea-6c50d41b62c5",
+    "e2e_ms": 327.5393569999778,
+    "audio_seconds": 3.84,
+    "stage_ms": {
+      "preprocessing": 1.233031,
+      "thinker": 132.349367,
+      "talker": 90.589307,
+      "code2wav": 93.669488
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17893247-common_voice_en_17893246",
+    "server_request_id": "8075bfb0-489b-489f-93e0-d6525f071148",
+    "e2e_ms": 293.2655209999666,
+    "audio_seconds": 2.96,
+    "stage_ms": {
+      "preprocessing": 1.337578,
+      "thinker": 117.499867,
+      "talker": 72.323817,
+      "code2wav": 92.756971
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17893247-common_voice_en_17893250",
+    "server_request_id": "234e5899-3e22-4f5a-836c-e81219978a32",
+    "e2e_ms": 232.70729399996526,
+    "audio_seconds": 3.04,
+    "stage_ms": {
+      "preprocessing": 1.202069,
+      "thinker": 116.518325,
+      "talker": 74.139716,
+      "code2wav": 31.911933
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17899910-common_voice_en_17899909",
+    "server_request_id": "72bd84f9-57b9-4a67-94da-79b1420df4e7",
+    "e2e_ms": 224.97772500014435,
+    "audio_seconds": 2.8,
+    "stage_ms": {
+      "preprocessing": 1.053069,
+      "thinker": 65.105425,
+      "talker": 68.097886,
+      "code2wav": 82.444066
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17920116-common_voice_en_17920112",
+    "server_request_id": "19943796-33dd-4a75-b4d0-bbd075fc7b62",
+    "e2e_ms": 235.12322999999924,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.15218,
+      "thinker": 65.980509,
+      "talker": 75.100511,
+      "code2wav": 83.931391
+    }
+  },
+  {
+    "sample_id": "common_voice_en_17986345-common_voice_en_17986347",
+    "server_request_id": "87bcb5d9-8806-4bc2-b939-65334207b787",
+    "e2e_ms": 337.84734500000013,
+    "audio_seconds": 4.64,
+    "stage_ms": {
+      "preprocessing": 1.21549,
+      "thinker": 123.706213,
+      "talker": 107.465119,
+      "code2wav": 95.143949
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18012457-common_voice_en_18012447",
+    "server_request_id": "dc1e9140-b1b9-44a5-a881-74c342005d90",
+    "e2e_ms": 367.1982630000912,
+    "audio_seconds": 4.24,
+    "stage_ms": {
+      "preprocessing": 1.245214,
+      "thinker": 137.891171,
+      "talker": 99.040927,
+      "code2wav": 118.164743
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18012457-common_voice_en_18012464",
+    "server_request_id": "7bfbaf58-5a5d-4453-80d9-0ee4b80ef21d",
+    "e2e_ms": 313.99754099993515,
+    "audio_seconds": 5.0,
+    "stage_ms": {
+      "preprocessing": 1.254202,
+      "thinker": 145.942972,
+      "talker": 115.361713,
+      "code2wav": 40.545516
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18057869-common_voice_en_18057867",
+    "server_request_id": "6c0d30e7-cc5e-4c81-94c9-306383f9595d",
+    "e2e_ms": 389.7796250000738,
+    "audio_seconds": 5.36,
+    "stage_ms": {
+      "preprocessing": 1.138798,
+      "thinker": 159.860011,
+      "talker": 122.628276,
+      "code2wav": 95.426547
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18070362-common_voice_en_18070351",
+    "server_request_id": "20dab5c4-ee73-4a08-be44-f62936724967",
+    "e2e_ms": 289.9586610001279,
+    "audio_seconds": 3.48,
+    "stage_ms": {
+      "preprocessing": 1.155819,
+      "thinker": 116.51911,
+      "talker": 83.201629,
+      "code2wav": 80.37151
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18105426-common_voice_en_18105428",
+    "server_request_id": "0b54d7fa-ec45-4d99-94c4-8d8b923a9265",
+    "e2e_ms": 221.22620499999357,
+    "audio_seconds": 2.0,
+    "stage_ms": {
+      "preprocessing": 1.130845,
+      "thinker": 65.696951,
+      "talker": 53.284647,
+      "code2wav": 92.452002
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18105426-common_voice_en_18105430",
+    "server_request_id": "feb09a61-4ba8-45a3-8047-8a47bbc0b0d0",
+    "e2e_ms": 273.92426800020075,
+    "audio_seconds": 5.08,
+    "stage_ms": {
+      "preprocessing": 1.192643,
+      "thinker": 109.06125,
+      "talker": 117.165682,
+      "code2wav": 36.56508
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18177486-common_voice_en_18177492",
+    "server_request_id": "4e2d3244-5ab8-4672-8167-0a6fb2399683",
+    "e2e_ms": 255.97466900012478,
+    "audio_seconds": 2.32,
+    "stage_ms": {
+      "preprocessing": 1.185051,
+      "thinker": 86.492152,
+      "talker": 58.454553,
+      "code2wav": 101.131553
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18177486-common_voice_en_18177499",
+    "server_request_id": "a4a3c767-98ca-4913-b388-25cb5a1962c4",
+    "e2e_ms": 202.06231300016952,
+    "audio_seconds": 2.48,
+    "stage_ms": {
+      "preprocessing": 1.23967,
+      "thinker": 88.56526,
+      "talker": 62.110699,
+      "code2wav": 40.555136
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18187914-common_voice_en_18188853",
+    "server_request_id": "e276e090-e931-4e9d-9b20-0085bc4d6db5",
+    "e2e_ms": 307.96367700008886,
+    "audio_seconds": 2.92,
+    "stage_ms": {
+      "preprocessing": 1.221245,
+      "thinker": 116.138156,
+      "talker": 70.85894,
+      "code2wav": 109.811729
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18200641-common_voice_en_18200765",
+    "server_request_id": "bc95d872-81f6-4eda-a0ee-94d9d31de582",
+    "e2e_ms": 413.3362019999822,
+    "audio_seconds": 5.84,
+    "stage_ms": {
+      "preprocessing": 1.210524,
+      "thinker": 166.970222,
+      "talker": 132.942159,
+      "code2wav": 101.466782
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18200641-common_voice_en_18200790",
+    "server_request_id": "befa1acf-f022-4404-9e61-128a3283806a",
+    "e2e_ms": 326.65001199984545,
+    "audio_seconds": 5.52,
+    "stage_ms": {
+      "preprocessing": 1.191456,
+      "thinker": 152.66462,
+      "talker": 126.561711,
+      "code2wav": 35.861211
+    }
+  },
+  {
+    "sample_id": "common_voice_en_182275-common_voice_en_182276",
+    "server_request_id": "23355ab2-d9a3-4030-8b73-4b5fac252d78",
+    "e2e_ms": 253.13751499993487,
+    "audio_seconds": 2.36,
+    "stage_ms": {
+      "preprocessing": 1.134821,
+      "thinker": 87.17847,
+      "talker": 59.575361,
+      "code2wav": 96.189485
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18229682-common_voice_en_18229679",
+    "server_request_id": "03c146cf-b96e-4043-ab4e-2a4c40a62057",
+    "e2e_ms": 218.53337200013812,
+    "audio_seconds": 2.56,
+    "stage_ms": {
+      "preprocessing": 1.169058,
+      "thinker": 65.806317,
+      "talker": 63.817579,
+      "code2wav": 79.563354
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18229682-common_voice_en_18229695",
+    "server_request_id": "b86079e5-e977-4442-9101-ecd8cb422584",
+    "e2e_ms": 221.51021800004855,
+    "audio_seconds": 3.48,
+    "stage_ms": {
+      "preprocessing": 1.33031,
+      "thinker": 94.16332,
+      "talker": 84.039465,
+      "code2wav": 33.655245
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18234333-common_voice_en_18234353",
+    "server_request_id": "0f0aa37c-bdd9-484c-a658-fd1b110030d3",
+    "e2e_ms": 333.0449069999304,
+    "audio_seconds": 4.4,
+    "stage_ms": {
+      "preprocessing": 1.133457,
+      "thinker": 123.181036,
+      "talker": 102.143397,
+      "code2wav": 96.697718
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18240348-common_voice_en_18240305",
+    "server_request_id": "9c2d5e5d-815f-45dd-804a-02d3d2303fbe",
+    "e2e_ms": 311.61157299993647,
+    "audio_seconds": 3.32,
+    "stage_ms": {
+      "preprocessing": 1.267093,
+      "thinker": 124.158556,
+      "talker": 80.105377,
+      "code2wav": 96.469484
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18313326-common_voice_en_18313324",
+    "server_request_id": "d077dc97-7105-4e67-b954-675fd5a9e53d",
+    "e2e_ms": 307.0921180001278,
+    "audio_seconds": 4.32,
+    "stage_ms": {
+      "preprocessing": 1.20222,
+      "thinker": 117.085667,
+      "talker": 100.680013,
+      "code2wav": 79.375936
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18313326-common_voice_en_18313328",
+    "server_request_id": "50797b10-87e1-4d62-9c83-063bbde23c02",
+    "e2e_ms": 210.84648499981995,
+    "audio_seconds": 2.76,
+    "stage_ms": {
+      "preprocessing": 1.174357,
+      "thinker": 102.871318,
+      "talker": 67.531961,
+      "code2wav": 30.913597
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18336410-common_voice_en_18336411",
+    "server_request_id": "e216ec58-cc30-46fa-9f6c-73fb52202bee",
+    "e2e_ms": 305.14536900000166,
+    "audio_seconds": 3.56,
+    "stage_ms": {
+      "preprocessing": 1.099383,
+      "thinker": 123.019458,
+      "talker": 84.769657,
+      "code2wav": 86.916694
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18336410-common_voice_en_18336421",
+    "server_request_id": "ad70a823-4a24-4be6-ba7c-2a129f0ca366",
+    "e2e_ms": 168.46482599999035,
+    "audio_seconds": 2.04,
+    "stage_ms": {
+      "preprocessing": 1.184395,
+      "thinker": 72.951296,
+      "talker": 52.699531,
+      "code2wav": 33.057245
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18338543-common_voice_en_18338546",
+    "server_request_id": "947981ba-deb9-4419-8998-fcaf9f3424a2",
+    "e2e_ms": 308.8923719999457,
+    "audio_seconds": 3.84,
+    "stage_ms": {
+      "preprocessing": 1.102464,
+      "thinker": 123.255796,
+      "talker": 90.712441,
+      "code2wav": 84.511432
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18436934-common_voice_en_18436935",
+    "server_request_id": "d6306b88-50f9-41cb-b33f-f0a8ca6a79ac",
+    "e2e_ms": 340.1532430000316,
+    "audio_seconds": 4.92,
+    "stage_ms": {
+      "preprocessing": 1.207711,
+      "thinker": 123.945868,
+      "talker": 114.388153,
+      "code2wav": 90.45916
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18466098-common_voice_en_18466096",
+    "server_request_id": "09ef539c-ed6e-42ad-a3d7-04add545d4a4",
+    "e2e_ms": 212.3954590001631,
+    "audio_seconds": 2.0,
+    "stage_ms": {
+      "preprocessing": 1.218411,
+      "thinker": 65.68018,
+      "talker": 51.878828,
+      "code2wav": 85.325171
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18466098-common_voice_en_18466097",
+    "server_request_id": "7697ad54-ac52-4fd3-8d85-de643b03ca8a",
+    "e2e_ms": 159.5067860000654,
+    "audio_seconds": 2.36,
+    "stage_ms": {
+      "preprocessing": 1.177041,
+      "thinker": 59.125836,
+      "talker": 60.173311,
+      "code2wav": 30.815604
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18485041-common_voice_en_18485042",
+    "server_request_id": "b6160ff6-96ab-48ce-a549-310ca5fd4d65",
+    "e2e_ms": 244.47948300007738,
+    "audio_seconds": 2.6,
+    "stage_ms": {
+      "preprocessing": 1.103736,
+      "thinker": 86.562516,
+      "talker": 64.467206,
+      "code2wav": 84.031649
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18500600-common_voice_en_18500603",
+    "server_request_id": "bb32ca44-2cd8-4e52-a2b0-41caf7eb5baa",
+    "e2e_ms": 295.14064999989387,
+    "audio_seconds": 3.76,
+    "stage_ms": {
+      "preprocessing": 1.188941,
+      "thinker": 102.237698,
+      "talker": 89.352054,
+      "code2wav": 93.005575
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18522556-common_voice_en_18522557",
+    "server_request_id": "3e8e7b2d-bca1-48cc-b2ac-178015538e3a",
+    "e2e_ms": 310.64704499999607,
+    "audio_seconds": 3.92,
+    "stage_ms": {
+      "preprocessing": 1.222903,
+      "thinker": 123.679891,
+      "talker": 92.972149,
+      "code2wav": 83.701231
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18529345-common_voice_en_18529360",
+    "server_request_id": "5577de0f-2360-494f-a10e-2ae738ece8b7",
+    "e2e_ms": 274.6558759999971,
+    "audio_seconds": 3.16,
+    "stage_ms": {
+      "preprocessing": 1.124602,
+      "thinker": 109.159564,
+      "talker": 76.701919,
+      "code2wav": 79.1866
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18529345-common_voice_en_18529361",
+    "server_request_id": "b24db908-368b-487b-96f0-0b0bc9fdd6c1",
+    "e2e_ms": 270.37990899998476,
+    "audio_seconds": 5.08,
+    "stage_ms": {
+      "preprocessing": 1.231259,
+      "thinker": 108.956052,
+      "talker": 117.378854,
+      "code2wav": 33.303668
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18533403-common_voice_en_18533404",
+    "server_request_id": "78c1d430-5263-49fc-bf73-1fcb61fc2f12",
+    "e2e_ms": 325.67015700010415,
+    "audio_seconds": 4.64,
+    "stage_ms": {
+      "preprocessing": 1.141866,
+      "thinker": 115.763903,
+      "talker": 107.394118,
+      "code2wav": 91.655398
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18545637-common_voice_en_18545639",
+    "server_request_id": "17d41863-ade9-412c-97ad-29dfce644a6a",
+    "e2e_ms": 251.02608100019097,
+    "audio_seconds": 2.68,
+    "stage_ms": {
+      "preprocessing": 1.182416,
+      "thinker": 94.549519,
+      "talker": 66.340005,
+      "code2wav": 80.391131
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18554437-common_voice_en_18554439",
+    "server_request_id": "7dc52458-6693-48fa-a939-978224f94548",
+    "e2e_ms": 335.08052799993493,
+    "audio_seconds": 3.88,
+    "stage_ms": {
+      "preprocessing": 1.367728,
+      "thinker": 145.527015,
+      "talker": 91.743688,
+      "code2wav": 87.119457
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18557077-common_voice_en_18557074",
+    "server_request_id": "2458bb08-8ba5-4e0e-995d-b9fd7030056d",
+    "e2e_ms": 287.47246300008555,
+    "audio_seconds": 2.48,
+    "stage_ms": {
+      "preprocessing": 1.263274,
+      "thinker": 94.677955,
+      "talker": 62.134918,
+      "code2wav": 118.457143
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18557077-common_voice_en_18557192",
+    "server_request_id": "77c43ae1-e888-4a22-a726-4be9e15fdbde",
+    "e2e_ms": 245.3858339999897,
+    "audio_seconds": 3.48,
+    "stage_ms": {
+      "preprocessing": 1.303974,
+      "thinker": 116.791631,
+      "talker": 83.929756,
+      "code2wav": 32.733789
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18575865-common_voice_en_18575863",
+    "server_request_id": "5ff11934-6a0d-4ed0-b49c-2e0f4149a10c",
+    "e2e_ms": 276.84522699996705,
+    "audio_seconds": 3.12,
+    "stage_ms": {
+      "preprocessing": 1.247832,
+      "thinker": 108.999023,
+      "talker": 75.75041,
+      "code2wav": 81.942343
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18575865-common_voice_en_18575864",
+    "server_request_id": "ee157753-5a24-4962-a9d3-ffc42961a9ca",
+    "e2e_ms": 261.852097999963,
+    "audio_seconds": 4.04,
+    "stage_ms": {
+      "preprocessing": 1.199104,
+      "thinker": 123.966871,
+      "talker": 95.153407,
+      "code2wav": 32.243486
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18647546-common_voice_en_18647545",
+    "server_request_id": "e1ea91b6-7e63-436b-bf1c-f53009ad50f1",
+    "e2e_ms": 334.9599789999047,
+    "audio_seconds": 4.32,
+    "stage_ms": {
+      "preprocessing": 1.09528,
+      "thinker": 130.084102,
+      "talker": 100.49066,
+      "code2wav": 93.39224
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18647546-common_voice_en_18647550",
+    "server_request_id": "f65d82ff-9617-48dd-a084-c13fc2237216",
+    "e2e_ms": 219.20787700014444,
+    "audio_seconds": 3.12,
+    "stage_ms": {
+      "preprocessing": 1.229699,
+      "thinker": 101.578809,
+      "talker": 75.223625,
+      "code2wav": 32.134793
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18672480-common_voice_en_18672484",
+    "server_request_id": "dc05332c-e610-4cfb-a086-5692478063e6",
+    "e2e_ms": 455.2903249998508,
+    "audio_seconds": 7.64,
+    "stage_ms": {
+      "preprocessing": 1.228563,
+      "thinker": 152.276545,
+      "talker": 171.896165,
+      "code2wav": 118.189287
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18681919-common_voice_en_18681920",
+    "server_request_id": "41235c82-16bc-4b76-ad4a-2aac07f19e2e",
+    "e2e_ms": 402.3073129999375,
+    "audio_seconds": 5.72,
+    "stage_ms": {
+      "preprocessing": 4.37878,
+      "thinker": 145.926848,
+      "talker": 131.330338,
+      "code2wav": 107.560078
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18693241-common_voice_en_18693240",
+    "server_request_id": "2e747dd9-60a2-494f-aeff-33b5ed3bd390",
+    "e2e_ms": 323.6128329999701,
+    "audio_seconds": 4.72,
+    "stage_ms": {
+      "preprocessing": 1.186343,
+      "thinker": 123.907192,
+      "talker": 109.400431,
+      "code2wav": 80.0821
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18699078-common_voice_en_18699081",
+    "server_request_id": "1d7a97ae-8943-4626-8e04-5076094044e7",
+    "e2e_ms": 314.1469029999371,
+    "audio_seconds": 3.8,
+    "stage_ms": {
+      "preprocessing": 1.236162,
+      "thinker": 102.312028,
+      "talker": 89.753938,
+      "code2wav": 110.319077
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18699078-common_voice_en_18699082",
+    "server_request_id": "4375c31e-8bf4-494f-95cd-bb7974da8383",
+    "e2e_ms": 319.29686800003765,
+    "audio_seconds": 5.52,
+    "stage_ms": {
+      "preprocessing": 1.413662,
+      "thinker": 145.867462,
+      "talker": 127.073034,
+      "code2wav": 34.165186
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18707936-common_voice_en_18707937",
+    "server_request_id": "51227d2a-1c63-4411-8ae0-90ea9225159d",
+    "e2e_ms": 378.65499099984845,
+    "audio_seconds": 5.36,
+    "stage_ms": {
+      "preprocessing": 1.181348,
+      "thinker": 153.16171,
+      "talker": 123.177405,
+      "code2wav": 90.757761
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18710640-common_voice_en_18710642",
+    "server_request_id": "a077b078-facf-4949-8a2d-8a60bd1c4ec3",
+    "e2e_ms": 331.0426059999827,
+    "audio_seconds": 3.96,
+    "stage_ms": {
+      "preprocessing": 1.192945,
+      "thinker": 109.418013,
+      "talker": 93.943681,
+      "code2wav": 115.462042
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18735317-common_voice_en_18735316",
+    "server_request_id": "79391e4e-1b91-4dfc-825a-177e5bf38911",
+    "e2e_ms": 316.3966099998561,
+    "audio_seconds": 4.44,
+    "stage_ms": {
+      "preprocessing": 1.225501,
+      "thinker": 116.149786,
+      "talker": 103.688424,
+      "code2wav": 85.588536
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18735317-common_voice_en_18735372",
+    "server_request_id": "33c8ca8c-088b-47bb-807c-af6be724ab49",
+    "e2e_ms": 329.4176519998473,
+    "audio_seconds": 6.6,
+    "stage_ms": {
+      "preprocessing": 1.262331,
+      "thinker": 131.28963,
+      "talker": 149.065062,
+      "code2wav": 37.873452
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18746637-common_voice_en_18746638",
+    "server_request_id": "aed617e6-4c30-4ad0-ade7-35efec36fa01",
+    "e2e_ms": 330.4140279999501,
+    "audio_seconds": 4.36,
+    "stage_ms": {
+      "preprocessing": 1.216749,
+      "thinker": 115.862041,
+      "talker": 101.436844,
+      "code2wav": 101.507643
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18746637-common_voice_en_18746639",
+    "server_request_id": "0b42cbdb-0007-43e1-a36e-0cfc7a6bb42c",
+    "e2e_ms": 286.9209129999035,
+    "audio_seconds": 4.16,
+    "stage_ms": {
+      "preprocessing": 1.198079,
+      "thinker": 145.540927,
+      "talker": 97.930527,
+      "code2wav": 32.16925
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18754308-common_voice_en_18754311",
+    "server_request_id": "7162e1da-4ff3-441b-995d-2625bcdbc7d5",
+    "e2e_ms": 353.59620100007305,
+    "audio_seconds": 4.68,
+    "stage_ms": {
+      "preprocessing": 1.138313,
+      "thinker": 144.890665,
+      "talker": 108.250609,
+      "code2wav": 90.174171
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18754308-common_voice_en_18754312",
+    "server_request_id": "1eaa0a40-3539-4afc-9fa6-f1be1ca89cfb",
+    "e2e_ms": 218.1369340000856,
+    "audio_seconds": 3.12,
+    "stage_ms": {
+      "preprocessing": 1.224117,
+      "thinker": 101.772842,
+      "talker": 75.152757,
+      "code2wav": 31.740744
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18757805-common_voice_en_18757804",
+    "server_request_id": "385f93fa-bf95-4a00-b500-64581be94df4",
+    "e2e_ms": 312.5305560001834,
+    "audio_seconds": 3.6,
+    "stage_ms": {
+      "preprocessing": 1.059434,
+      "thinker": 129.903243,
+      "talker": 84.870519,
+      "code2wav": 87.929588
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18770703-common_voice_en_18770702",
+    "server_request_id": "f311a56f-4c48-4785-82ac-38c577c91c8f",
+    "e2e_ms": 392.04259600001024,
+    "audio_seconds": 5.36,
+    "stage_ms": {
+      "preprocessing": 1.24041,
+      "thinker": 166.919342,
+      "talker": 122.926744,
+      "code2wav": 90.588395
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18770703-common_voice_en_18770704",
+    "server_request_id": "cfe60574-03ac-45bc-bc92-e335b70aa7cc",
+    "e2e_ms": 301.8171040000652,
+    "audio_seconds": 4.88,
+    "stage_ms": {
+      "preprocessing": 1.194125,
+      "thinker": 145.878631,
+      "talker": 112.737945,
+      "code2wav": 32.153966
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18781918-common_voice_en_18781919",
+    "server_request_id": "8979e7cb-4580-4d66-be19-7fa21461cfef",
+    "e2e_ms": 356.12176800009365,
+    "audio_seconds": 5.16,
+    "stage_ms": {
+      "preprocessing": 1.160656,
+      "thinker": 130.044891,
+      "talker": 118.119196,
+      "code2wav": 96.472339
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18786931-common_voice_en_18786930",
+    "server_request_id": "3bd49010-f0d1-495a-a576-6cc14135b38f",
+    "e2e_ms": 423.65783299987925,
+    "audio_seconds": 6.04,
+    "stage_ms": {
+      "preprocessing": 1.211459,
+      "thinker": 152.771414,
+      "talker": 137.519358,
+      "code2wav": 120.504652
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18786931-common_voice_en_18786946",
+    "server_request_id": "c3589692-94cd-441a-8fea-a4e6a189803d",
+    "e2e_ms": 302.419620000137,
+    "audio_seconds": 5.12,
+    "stage_ms": {
+      "preprocessing": 1.404839,
+      "thinker": 138.182388,
+      "talker": 118.185513,
+      "code2wav": 33.752214
+    }
+  },
+  {
+    "sample_id": "common_voice_en_188092-common_voice_en_188091",
+    "server_request_id": "f835291d-dea8-4fd4-b10c-624e5180cd6e",
+    "e2e_ms": 317.0381529998849,
+    "audio_seconds": 3.72,
+    "stage_ms": {
+      "preprocessing": 1.178004,
+      "thinker": 123.630671,
+      "talker": 88.015099,
+      "code2wav": 94.642314
+    }
+  },
+  {
+    "sample_id": "common_voice_en_188092-common_voice_en_188093",
+    "server_request_id": "bb9d8bb8-3392-4617-959a-5d2cd4c3640e",
+    "e2e_ms": 290.22648900013337,
+    "audio_seconds": 3.96,
+    "stage_ms": {
+      "preprocessing": 1.269212,
+      "thinker": 152.949155,
+      "talker": 93.580962,
+      "code2wav": 32.827341
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18828571-common_voice_en_18828573",
+    "server_request_id": "1ecef2de-da89-4b85-9786-31d0107a2c27",
+    "e2e_ms": 285.5425419998028,
+    "audio_seconds": 3.04,
+    "stage_ms": {
+      "preprocessing": 1.259907,
+      "thinker": 101.353923,
+      "talker": 73.915323,
+      "code2wav": 99.347469
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18829843-common_voice_en_18829841",
+    "server_request_id": "7ee18ff2-a6cf-4752-88a3-d06b145c807d",
+    "e2e_ms": 382.8149210000902,
+    "audio_seconds": 4.8,
+    "stage_ms": {
+      "preprocessing": 1.251349,
+      "thinker": 145.712972,
+      "talker": 111.651266,
+      "code2wav": 113.329681
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18829843-common_voice_en_18829842",
+    "server_request_id": "3934f474-4dea-4f70-ace0-a2a8ea4ad57d",
+    "e2e_ms": 307.81589799994435,
+    "audio_seconds": 5.0,
+    "stage_ms": {
+      "preprocessing": 1.306932,
+      "thinker": 145.72736,
+      "talker": 115.76159,
+      "code2wav": 33.774825
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18852076-common_voice_en_18852077",
+    "server_request_id": "0df744cf-a3c7-464c-a47e-bfb750fd9186",
+    "e2e_ms": 358.4730420000142,
+    "audio_seconds": 4.32,
+    "stage_ms": {
+      "preprocessing": 1.172634,
+      "thinker": 131.273851,
+      "talker": 100.943102,
+      "code2wav": 113.930847
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18852076-common_voice_en_18852085",
+    "server_request_id": "5e91ebcf-98cb-4bf0-be62-dc764f5ab5a0",
+    "e2e_ms": 250.4895500001112,
+    "audio_seconds": 3.8,
+    "stage_ms": {
+      "preprocessing": 1.324521,
+      "thinker": 116.152625,
+      "talker": 90.472353,
+      "code2wav": 32.418387
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18877786-common_voice_en_18877788",
+    "server_request_id": "771feabe-75e9-4fcc-8380-89ff79362c5e",
+    "e2e_ms": 406.3141369999812,
+    "audio_seconds": 5.48,
+    "stage_ms": {
+      "preprocessing": 1.103969,
+      "thinker": 153.151865,
+      "talker": 125.702232,
+      "code2wav": 115.346614
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18889688-common_voice_en_18889686",
+    "server_request_id": "4ee56e71-ef89-4172-9328-4ee2140dd149",
+    "e2e_ms": 304.83701599996493,
+    "audio_seconds": 3.92,
+    "stage_ms": {
+      "preprocessing": 1.225662,
+      "thinker": 94.541857,
+      "talker": 92.876175,
+      "code2wav": 105.667421
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18889688-common_voice_en_18889687",
+    "server_request_id": "87e7203a-893c-4804-9f3f-14e3c3ed3037",
+    "e2e_ms": 324.3058220000421,
+    "audio_seconds": 5.28,
+    "stage_ms": {
+      "preprocessing": 1.241428,
+      "thinker": 152.553782,
+      "talker": 121.792057,
+      "code2wav": 38.377197
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18902273-common_voice_en_18902274",
+    "server_request_id": "3b401cff-aaec-482e-9ec9-f59e9378cc5e",
+    "e2e_ms": 426.51872200030994,
+    "audio_seconds": 6.0,
+    "stage_ms": {
+      "preprocessing": 1.309359,
+      "thinker": 166.71537,
+      "talker": 135.930563,
+      "code2wav": 112.115219
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18902273-common_voice_en_18902275",
+    "server_request_id": "4689736c-bd83-444d-ad8d-e8b27f43fdd4",
+    "e2e_ms": 314.2238219998035,
+    "audio_seconds": 5.24,
+    "stage_ms": {
+      "preprocessing": 1.150929,
+      "thinker": 145.535803,
+      "talker": 120.260678,
+      "code2wav": 36.958644
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18944281-common_voice_en_18944280",
+    "server_request_id": "e63d84d9-bea9-4b8d-be27-8c95955a56b1",
+    "e2e_ms": 302.7297529997668,
+    "audio_seconds": 3.4,
+    "stage_ms": {
+      "preprocessing": 1.295077,
+      "thinker": 115.775832,
+      "talker": 81.336507,
+      "code2wav": 94.625286
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18962809-common_voice_en_18962813",
+    "server_request_id": "7ce0b09e-6877-4356-a63a-f320cb065087",
+    "e2e_ms": 391.1031140000887,
+    "audio_seconds": 5.2,
+    "stage_ms": {
+      "preprocessing": 1.344966,
+      "thinker": 154.083603,
+      "talker": 119.719453,
+      "code2wav": 105.02925
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18962809-common_voice_en_18962814",
+    "server_request_id": "d172c39d-1ec2-4b46-8fad-5603699448c2",
+    "e2e_ms": 228.41874900041148,
+    "audio_seconds": 3.4,
+    "stage_ms": {
+      "preprocessing": 1.248504,
+      "thinker": 102.212049,
+      "talker": 81.47801,
+      "code2wav": 33.558551
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18993020-common_voice_en_18993021",
+    "server_request_id": "1f679241-afcd-4c20-87fb-e404c113c1a4",
+    "e2e_ms": 311.3061090002702,
+    "audio_seconds": 4.36,
+    "stage_ms": {
+      "preprocessing": 1.115092,
+      "thinker": 108.090375,
+      "talker": 101.725736,
+      "code2wav": 91.151651
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18993020-common_voice_en_18993067",
+    "server_request_id": "f6f6e7b5-6b59-479a-a7bf-4d08908349fa",
+    "e2e_ms": 268.6383080003907,
+    "audio_seconds": 4.0,
+    "stage_ms": {
+      "preprocessing": 1.251616,
+      "thinker": 130.667844,
+      "talker": 94.172064,
+      "code2wav": 33.526785
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18994068-common_voice_en_18994069",
+    "server_request_id": "f49bab66-acff-481e-acf3-088eb6d6ff86",
+    "e2e_ms": 319.85508600018875,
+    "audio_seconds": 4.76,
+    "stage_ms": {
+      "preprocessing": 1.16878,
+      "thinker": 108.359872,
+      "talker": 109.392188,
+      "code2wav": 91.172679
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18994734-common_voice_en_18994736",
+    "server_request_id": "25be682d-82ff-4bc8-ac99-53c5020a52d5",
+    "e2e_ms": 354.42591699984405,
+    "audio_seconds": 4.16,
+    "stage_ms": {
+      "preprocessing": 1.178153,
+      "thinker": 144.608263,
+      "talker": 97.434137,
+      "code2wav": 101.381797
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18994734-common_voice_en_18994738",
+    "server_request_id": "7a392f71-a70b-47dd-ad94-273e05cafe2e",
+    "e2e_ms": 276.88732800015714,
+    "audio_seconds": 4.0,
+    "stage_ms": {
+      "preprocessing": 1.24795,
+      "thinker": 138.35936,
+      "talker": 94.506805,
+      "code2wav": 33.085721
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18998723-common_voice_en_18998722",
+    "server_request_id": "e963f441-e5f6-4040-8d57-4e6c23ba85b8",
+    "e2e_ms": 357.77672299991536,
+    "audio_seconds": 5.2,
+    "stage_ms": {
+      "preprocessing": 1.126107,
+      "thinker": 130.711358,
+      "talker": 118.723805,
+      "code2wav": 97.178188
+    }
+  },
+  {
+    "sample_id": "common_voice_en_18998723-common_voice_en_18998724",
+    "server_request_id": "681f51f1-58d2-4a2b-9333-b7ccb04ad7f0",
+    "e2e_ms": 296.69499700003144,
+    "audio_seconds": 4.92,
+    "stage_ms": {
+      "preprocessing": 1.245428,
+      "thinker": 138.258838,
+      "talker": 113.936088,
+      "code2wav": 33.233014
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19002369-common_voice_en_19002367",
+    "server_request_id": "7c64fbcd-f676-486d-91f7-f1eccec29686",
+    "e2e_ms": 431.0322339997583,
+    "audio_seconds": 6.72,
+    "stage_ms": {
+      "preprocessing": 1.129073,
+      "thinker": 166.827964,
+      "talker": 151.359015,
+      "code2wav": 100.760736
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19017623-common_voice_en_19017624",
+    "server_request_id": "7828044f-edaf-4336-8ecf-175a8a567787",
+    "e2e_ms": 278.4540089996881,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.156338,
+      "thinker": 101.51771,
+      "talker": 74.603717,
+      "code2wav": 92.098874
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19022657-common_voice_en_19022662",
+    "server_request_id": "46363069-7549-4865-a444-7ab83b6ae358",
+    "e2e_ms": 287.89438800004064,
+    "audio_seconds": 3.32,
+    "stage_ms": {
+      "preprocessing": 1.182456,
+      "thinker": 109.177289,
+      "talker": 79.863861,
+      "code2wav": 88.67241
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19022657-common_voice_en_19022667",
+    "server_request_id": "da009952-5343-4083-a624-27d8d2bbe863",
+    "e2e_ms": 304.26618799992866,
+    "audio_seconds": 4.96,
+    "stage_ms": {
+      "preprocessing": 1.24061,
+      "thinker": 145.49107,
+      "talker": 114.311983,
+      "code2wav": 33.663135
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19043111-common_voice_en_19043109",
+    "server_request_id": "2586dcec-56c8-40d7-a07c-0e368ce95bb0",
+    "e2e_ms": 411.0034639998048,
+    "audio_seconds": 6.2,
+    "stage_ms": {
+      "preprocessing": 1.173078,
+      "thinker": 159.231555,
+      "talker": 139.982727,
+      "code2wav": 100.084651
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19043111-common_voice_en_19043119",
+    "server_request_id": "502681b2-af53-4265-b1de-3e267b077363",
+    "e2e_ms": 284.94931199975326,
+    "audio_seconds": 4.84,
+    "stage_ms": {
+      "preprocessing": 1.197975,
+      "thinker": 130.34266,
+      "talker": 111.453514,
+      "code2wav": 32.157397
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19049396-common_voice_en_19049393",
+    "server_request_id": "ec5357ab-8d63-428d-bf59-1e7a9efa2eae",
+    "e2e_ms": 394.7831909999877,
+    "audio_seconds": 5.6,
+    "stage_ms": {
+      "preprocessing": 1.186442,
+      "thinker": 144.489116,
+      "talker": 127.257821,
+      "code2wav": 111.398129
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19049396-common_voice_en_19049395",
+    "server_request_id": "9d38b9eb-cb9d-471b-a55c-0a636310268d",
+    "e2e_ms": 224.70124299979943,
+    "audio_seconds": 3.72,
+    "stage_ms": {
+      "preprocessing": 1.218422,
+      "thinker": 94.44614,
+      "talker": 88.303091,
+      "code2wav": 31.510895
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19083094-common_voice_en_19083091",
+    "server_request_id": "1c1b0f5c-e40d-4ea2-a341-54e725299573",
+    "e2e_ms": 303.4558949998427,
+    "audio_seconds": 3.64,
+    "stage_ms": {
+      "preprocessing": 1.061839,
+      "thinker": 107.863814,
+      "talker": 86.215951,
+      "code2wav": 99.26512
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19083094-common_voice_en_19083093",
+    "server_request_id": "db170e20-f7bd-42a3-b2d7-7d47bd152ed2",
+    "e2e_ms": 310.69741000010254,
+    "audio_seconds": 5.48,
+    "stage_ms": {
+      "preprocessing": 1.230972,
+      "thinker": 139.085354,
+      "talker": 126.035679,
+      "code2wav": 34.51773
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19113286-common_voice_en_19113288",
+    "server_request_id": "22af6211-a9ff-45ff-8fc0-ddf58086bb7c",
+    "e2e_ms": 374.03526900016004,
+    "audio_seconds": 5.52,
+    "stage_ms": {
+      "preprocessing": 1.16451,
+      "thinker": 152.274782,
+      "talker": 125.77424,
+      "code2wav": 85.053749
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19117097-common_voice_en_19117098",
+    "server_request_id": "a9590474-51bc-411d-96d7-539ce94f225b",
+    "e2e_ms": 331.267458000184,
+    "audio_seconds": 4.68,
+    "stage_ms": {
+      "preprocessing": 1.2336,
+      "thinker": 109.84144,
+      "talker": 108.876957,
+      "code2wav": 100.685643
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19124597-common_voice_en_19124596",
+    "server_request_id": "9309c607-b27e-4b5f-8063-b9f78e2cde5d",
+    "e2e_ms": 284.8090359998423,
+    "audio_seconds": 3.36,
+    "stage_ms": {
+      "preprocessing": 1.214183,
+      "thinker": 94.615507,
+      "talker": 81.376821,
+      "code2wav": 97.816692
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19152197-common_voice_en_19152196",
+    "server_request_id": "cfab2c38-e774-45d7-a9e0-269cb75834cb",
+    "e2e_ms": 345.00507800021296,
+    "audio_seconds": 4.4,
+    "stage_ms": {
+      "preprocessing": 1.344598,
+      "thinker": 145.424549,
+      "talker": 103.076094,
+      "code2wav": 85.732824
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19152197-common_voice_en_19152198",
+    "server_request_id": "79b4e749-2b8d-4f77-9446-2ee4991856a1",
+    "e2e_ms": 318.5382709998521,
+    "audio_seconds": 5.24,
+    "stage_ms": {
+      "preprocessing": 1.244425,
+      "thinker": 153.312663,
+      "talker": 120.475443,
+      "code2wav": 33.677705
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19176854-common_voice_en_19176853",
+    "server_request_id": "783afe6b-3106-4e2b-99dd-738eeed93f80",
+    "e2e_ms": 313.24392800024725,
+    "audio_seconds": 3.16,
+    "stage_ms": {
+      "preprocessing": 1.243869,
+      "thinker": 129.982625,
+      "talker": 75.757121,
+      "code2wav": 96.719229
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19176854-common_voice_en_19176856",
+    "server_request_id": "e42b8014-8f1b-4663-a495-cb02197c431f",
+    "e2e_ms": 303.9620819999982,
+    "audio_seconds": 4.96,
+    "stage_ms": {
+      "preprocessing": 1.215324,
+      "thinker": 145.971395,
+      "talker": 114.553403,
+      "code2wav": 32.289149
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19211875-common_voice_en_19211870",
+    "server_request_id": "2f050321-7016-4dec-ad4b-6f30a895e05e",
+    "e2e_ms": 434.7073949998048,
+    "audio_seconds": 5.12,
+    "stage_ms": {
+      "preprocessing": 1.374971,
+      "thinker": 152.228056,
+      "talker": 117.417569,
+      "code2wav": 151.607917
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19254683-common_voice_en_19254685",
+    "server_request_id": "0e9091b6-a4c5-4a5a-9b3c-9cd32e01d250",
+    "e2e_ms": 317.97038400009114,
+    "audio_seconds": 4.4,
+    "stage_ms": {
+      "preprocessing": 1.201718,
+      "thinker": 123.779752,
+      "talker": 102.931999,
+      "code2wav": 81.031829
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19254683-common_voice_en_19254687",
+    "server_request_id": "6074dab0-c0aa-42b5-9bf0-8cd276354947",
+    "e2e_ms": 205.0718999998935,
+    "audio_seconds": 3.36,
+    "stage_ms": {
+      "preprocessing": 1.178561,
+      "thinker": 81.214325,
+      "talker": 80.958306,
+      "code2wav": 33.405116
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19277026-common_voice_en_19277029",
+    "server_request_id": "af3ddc0c-cb53-4a27-99fb-03b4a5ad9976",
+    "e2e_ms": 349.34957900031804,
+    "audio_seconds": 5.4,
+    "stage_ms": {
+      "preprocessing": 1.152104,
+      "thinker": 129.787358,
+      "talker": 123.418563,
+      "code2wav": 85.378326
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19284142-common_voice_en_19284143",
+    "server_request_id": "9bb710f1-8cc1-4132-865f-9e129672170b",
+    "e2e_ms": 252.46966199983945,
+    "audio_seconds": 2.4,
+    "stage_ms": {
+      "preprocessing": 1.196507,
+      "thinker": 94.447412,
+      "talker": 60.799088,
+      "code2wav": 87.156616
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19284142-common_voice_en_19284144",
+    "server_request_id": "602e5e42-1954-409c-ac33-49e3f03cb291",
+    "e2e_ms": 254.09649299990633,
+    "audio_seconds": 4.04,
+    "stage_ms": {
+      "preprocessing": 1.139143,
+      "thinker": 116.537791,
+      "talker": 95.169943,
+      "code2wav": 32.120816
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19289713-common_voice_en_19289715",
+    "server_request_id": "42c34cb4-521b-4843-a199-0d063a918f09",
+    "e2e_ms": 325.1225379999596,
+    "audio_seconds": 4.04,
+    "stage_ms": {
+      "preprocessing": 1.159214,
+      "thinker": 137.993572,
+      "talker": 94.702684,
+      "code2wav": 81.91986
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19294198-common_voice_en_19294199",
+    "server_request_id": "c15fd7ec-4499-4e77-a1d9-8270e9582639",
+    "e2e_ms": 328.10864800012496,
+    "audio_seconds": 4.2,
+    "stage_ms": {
+      "preprocessing": 1.326616,
+      "thinker": 123.573353,
+      "talker": 98.596322,
+      "code2wav": 93.936353
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19294198-common_voice_en_19294200",
+    "server_request_id": "5bcaf999-76a1-4ac5-bbe6-5ac246c9e0a4",
+    "e2e_ms": 226.37290300008317,
+    "audio_seconds": 3.32,
+    "stage_ms": {
+      "preprocessing": 1.190158,
+      "thinker": 102.206245,
+      "talker": 80.135136,
+      "code2wav": 32.909985
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19343495-common_voice_en_19343496",
+    "server_request_id": "2f049bd0-3fd3-4199-99d5-ad8dec239b1f",
+    "e2e_ms": 333.85203399984675,
+    "audio_seconds": 4.4,
+    "stage_ms": {
+      "preprocessing": 1.168778,
+      "thinker": 122.539117,
+      "talker": 103.742692,
+      "code2wav": 96.3871
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19343495-common_voice_en_19343497",
+    "server_request_id": "f45e700f-b84c-4eee-9b0e-b54ed77d8a97",
+    "e2e_ms": 237.98447899980602,
+    "audio_seconds": 3.68,
+    "stage_ms": {
+      "preprocessing": 1.216405,
+      "thinker": 102.499952,
+      "talker": 86.917424,
+      "code2wav": 37.737659
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19345360-common_voice_en_19345358",
+    "server_request_id": "d8ccb586-b8a7-4688-809b-501939c48c65",
+    "e2e_ms": 368.4060649998173,
+    "audio_seconds": 5.0,
+    "stage_ms": {
+      "preprocessing": 1.086886,
+      "thinker": 137.105026,
+      "talker": 115.663052,
+      "code2wav": 104.006608
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19345360-common_voice_en_19345359",
+    "server_request_id": "a9cd3d28-bf2e-4e2b-ad27-1b03b0559d07",
+    "e2e_ms": 315.9590410000419,
+    "audio_seconds": 4.72,
+    "stage_ms": {
+      "preprocessing": 1.210745,
+      "thinker": 160.566295,
+      "talker": 109.444075,
+      "code2wav": 33.354512
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19361636-common_voice_en_19361634",
+    "server_request_id": "5e61f741-48be-4fed-95f5-117cc359b106",
+    "e2e_ms": 377.50409199998103,
+    "audio_seconds": 5.16,
+    "stage_ms": {
+      "preprocessing": 1.22587,
+      "thinker": 159.587078,
+      "talker": 118.652468,
+      "code2wav": 88.048256
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19361636-common_voice_en_19361635",
+    "server_request_id": "4b585e21-c2fd-45c7-a9b6-bcbe3225b682",
+    "e2e_ms": 285.7224019999194,
+    "audio_seconds": 4.16,
+    "stage_ms": {
+      "preprocessing": 1.285855,
+      "thinker": 145.430233,
+      "talker": 97.24713,
+      "code2wav": 32.530643
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19384720-common_voice_en_19384721",
+    "server_request_id": "03fda2b0-4f53-4726-b0cb-bfd8ab9e1935",
+    "e2e_ms": 317.4503340001138,
+    "audio_seconds": 3.96,
+    "stage_ms": {
+      "preprocessing": 1.101096,
+      "thinker": 115.74298,
+      "talker": 92.817237,
+      "code2wav": 97.5162
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19397397-common_voice_en_19397399",
+    "server_request_id": "46d9eb6a-c06f-4969-8d4d-9bea7f0a8320",
+    "e2e_ms": 366.88301000003776,
+    "audio_seconds": 5.08,
+    "stage_ms": {
+      "preprocessing": 1.249042,
+      "thinker": 152.62499,
+      "talker": 116.81689,
+      "code2wav": 86.873084
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19397397-common_voice_en_19397407",
+    "server_request_id": "a15f4599-b51c-4e9f-ab01-095f04b13cef",
+    "e2e_ms": 261.96521999963807,
+    "audio_seconds": 4.12,
+    "stage_ms": {
+      "preprocessing": 1.119607,
+      "thinker": 123.179681,
+      "talker": 96.869171,
+      "code2wav": 32.12591
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19401124-common_voice_en_19401123",
+    "server_request_id": "e117cdaf-9e9a-4ace-8100-24e360513563",
+    "e2e_ms": 355.610439999964,
+    "audio_seconds": 5.36,
+    "stage_ms": {
+      "preprocessing": 1.117249,
+      "thinker": 122.806976,
+      "talker": 122.599411,
+      "code2wav": 98.607175
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19401124-common_voice_en_19401125",
+    "server_request_id": "297b70eb-409a-494d-ae92-ad9f0e4f7649",
+    "e2e_ms": 287.04649900009827,
+    "audio_seconds": 4.8,
+    "stage_ms": {
+      "preprocessing": 1.302491,
+      "thinker": 131.759885,
+      "talker": 110.830263,
+      "code2wav": 33.110356
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19428391-common_voice_en_19428392",
+    "server_request_id": "25426f5c-e13e-454e-b711-4e24aeb2d2c7",
+    "e2e_ms": 333.3511420000832,
+    "audio_seconds": 4.12,
+    "stage_ms": {
+      "preprocessing": 1.171509,
+      "thinker": 115.564567,
+      "talker": 96.425291,
+      "code2wav": 109.99422
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19428391-common_voice_en_19428396",
+    "server_request_id": "f3c3b60c-2cb5-432c-98fb-a85927fe73d7",
+    "e2e_ms": 272.72190599978785,
+    "audio_seconds": 4.72,
+    "stage_ms": {
+      "preprocessing": 1.218146,
+      "thinker": 115.949527,
+      "talker": 109.594229,
+      "code2wav": 35.742988
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19449066-common_voice_en_19449075",
+    "server_request_id": "05df76fb-d0ab-482f-aceb-3e3fb48942b3",
+    "e2e_ms": 404.9879120002515,
+    "audio_seconds": 6.28,
+    "stage_ms": {
+      "preprocessing": 1.061748,
+      "thinker": 144.57969,
+      "talker": 142.359467,
+      "code2wav": 106.571702
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19449066-common_voice_en_19449076",
+    "server_request_id": "2fe0276b-b2b0-466b-b19e-dd522c97dda4",
+    "e2e_ms": 335.05848000004335,
+    "audio_seconds": 5.6,
+    "stage_ms": {
+      "preprocessing": 1.214744,
+      "thinker": 160.415757,
+      "talker": 128.121588,
+      "code2wav": 34.67471
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19455206-common_voice_en_19455208",
+    "server_request_id": "1ea62ead-b693-4eb0-9a99-0aea1608ad34",
+    "e2e_ms": 303.117745000236,
+    "audio_seconds": 3.56,
+    "stage_ms": {
+      "preprocessing": 1.144434,
+      "thinker": 116.263085,
+      "talker": 85.206761,
+      "code2wav": 90.91139
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19455206-common_voice_en_19455210",
+    "server_request_id": "68d89086-dcdd-4996-9d01-106ffcdd2d0f",
+    "e2e_ms": 256.9472010000027,
+    "audio_seconds": 4.12,
+    "stage_ms": {
+      "preprocessing": 1.311736,
+      "thinker": 116.317542,
+      "talker": 97.069651,
+      "code2wav": 32.99615
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19481268-common_voice_en_19481267",
+    "server_request_id": "f34513fc-c528-41ad-bf5b-a338995f25a3",
+    "e2e_ms": 368.92647500008025,
+    "audio_seconds": 5.44,
+    "stage_ms": {
+      "preprocessing": 1.057424,
+      "thinker": 136.734014,
+      "talker": 124.018859,
+      "code2wav": 96.937303
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19481268-common_voice_en_19481270",
+    "server_request_id": "553ccc85-5016-45ca-8d23-cd40e581e9c5",
+    "e2e_ms": 275.3751820000616,
+    "audio_seconds": 4.36,
+    "stage_ms": {
+      "preprocessing": 1.154614,
+      "thinker": 130.917483,
+      "talker": 101.41419,
+      "code2wav": 32.079607
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19496235-common_voice_en_19496229",
+    "server_request_id": "b872e7ca-624c-4a21-b36c-4ee6d368159c",
+    "e2e_ms": 410.0435899999866,
+    "audio_seconds": 6.4,
+    "stage_ms": {
+      "preprocessing": 1.085308,
+      "thinker": 158.978106,
+      "talker": 144.47285,
+      "code2wav": 95.415809
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19496235-common_voice_en_19496266",
+    "server_request_id": "4dade926-7fa1-4f13-b1ca-64e1bca8097b",
+    "e2e_ms": 335.3419669997493,
+    "audio_seconds": 5.0,
+    "stage_ms": {
+      "preprocessing": 1.217125,
+      "thinker": 174.588935,
+      "talker": 115.551923,
+      "code2wav": 34.182039
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19517720-common_voice_en_19517721",
+    "server_request_id": "b170a889-4f50-4433-ab90-473173fd35e2",
+    "e2e_ms": 311.5524359996016,
+    "audio_seconds": 3.32,
+    "stage_ms": {
+      "preprocessing": 1.200115,
+      "thinker": 108.977887,
+      "talker": 79.904683,
+      "code2wav": 111.226903
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19527999-common_voice_en_19528000",
+    "server_request_id": "edd33ba3-b3a5-4061-930f-ac0e916dd5a7",
+    "e2e_ms": 263.2196749996183,
+    "audio_seconds": 3.08,
+    "stage_ms": {
+      "preprocessing": 1.209513,
+      "thinker": 94.794401,
+      "talker": 75.299604,
+      "code2wav": 82.995689
+    }
+  },
+  {
+    "sample_id": "common_voice_en_19527999-common_voice_en_19528002",
+    "server_request_id": "f61ee32d-a361-4096-81ee-2671ec2e8082",
+    "e2e_ms": 287.78335200013316,
+    "audio_seconds": 4.92,
+    "stage_ms": {
+      "preprocessing": 2.109447,
+      "thinker": 124.269932,
+      "talker": 114.157698,
+      "code2wav": 33.352678
+    }
+  }
+]
