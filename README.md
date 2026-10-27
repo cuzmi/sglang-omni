@@ -8,6 +8,7 @@ experiment directories inside each topic.
 
 | Topic | Results |
 | --- | --- |
+| MiniCPM-o given-text streaming | [Streaming modes and chunk decoding](minicpm-given-text-stream/README.md) |
 | MiniCPM-o Flow/HiFT | [Serving performance, accuracy and overlap measurements](minicpm-flow-hift/README.md) |
 
 ## Adding results

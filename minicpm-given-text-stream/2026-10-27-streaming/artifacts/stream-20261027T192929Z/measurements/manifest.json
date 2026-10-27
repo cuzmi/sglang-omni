@@ -1,0 +1,19 @@
+{
+  "samples": [
+    {
+      "logical_sample_id": "en",
+      "language": "English",
+      "text": "Today is a good day to validate text to speech serving behavior. The quick brown fox jumps over the lazy dog while the server streams audio. Please read this sentence in a steady, clear, and natural voice."
+    },
+    {
+      "logical_sample_id": "zh",
+      "language": "Chinese",
+      "text": "这是一个用于语音合成服务测试的中文句子。我们希望在整段文字还没有全部生成完成的时候，就能听到前面的声音。两个请求同时到达时，也应该分别连续输出自己的音频，并且完整地读完最后一句话。"
+    }
+  ],
+  "seed": 20261027,
+  "voice": "default",
+  "response_format": "pcm",
+  "sampling_note": "HTTP seed is forwarded; Talker temperature/top_p/top_k use model defaults unless separately configured by server.",
+  "run_id": "6235f97d7a"
+}

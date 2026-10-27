@@ -1,0 +1,435 @@
+{
+  "remote_files_commit": "fcdbdcd2d00efb20b77549574c19b0f11f607abf",
+  "archive_url": "https://github.com/cuzmi/RemoteFiles/tree/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027",
+  "prepared_source_base_head": "67476823ae81b398626b85e368d1c6f11a832496",
+  "prepared_source_archive_sha256": "00fbf2698c3f0685510f3b39b4f0997249893c1333c4bc309a123042da2c12dd",
+  "source_version_note": "Top-level source describes preparation; executed run manifests and INVALID.json retain the historical run version. See REPORT.md.",
+  "copied_files": {
+    "README.md": {
+      "sha256": "ac827bc90ed5549a155622bb1c0a294b86e2d3bceab7f6cf144216df02e76f52",
+      "bytes": 233,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/README.md"
+    },
+    "REPORT.md": {
+      "sha256": "4f71406263dc75b5e5b40bd36d777dd8ca494e394a3b5a3794e0c927f71779d5",
+      "bytes": 2458,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/REPORT.md"
+    },
+    "artifacts/stream-20261027T192929Z/analysis.json": {
+      "sha256": "ae5815fca14e4240696b727edb2918ff9193dd6b57e3de7af9c24773fd4b62b5",
+      "bytes": 105488,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/analysis.json"
+    },
+    "artifacts/stream-20261027T192929Z/client.log": {
+      "sha256": "b43756d336514161487fdf94c1cfb20cf92a031daa54d5d81e8c0d7092fadb9c",
+      "bytes": 13257,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/client.log"
+    },
+    "artifacts/stream-20261027T192929Z/codec_evidence.jsonl": {
+      "sha256": "8180bb1d82b3ff9488c4753f23dffdb0eaa71ebdd09ee8833dfb32b5d1349fb2",
+      "bytes": 122616,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/codec_evidence.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/command.json": {
+      "sha256": "cb960d97ff67d1041ac667e774dd45d92931cb72be0a42841bd76d3a86cf5318",
+      "bytes": 1557,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/command.json"
+    },
+    "artifacts/stream-20261027T192929Z/driver.log": {
+      "sha256": "87a6bc783351bcabc97d76881c195d976520c4b661ebf92fe520649ad6c6b74b",
+      "bytes": 124,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/driver.log"
+    },
+    "artifacts/stream-20261027T192929Z/environment.json": {
+      "sha256": "cdca72ffc8c6c9e9332a3ee11c7a9117e4a6aeb5ae20eaa80d117a91494fc73c",
+      "bytes": 594,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/environment.json"
+    },
+    "artifacts/stream-20261027T192929Z/gpu_identity.csv": {
+      "sha256": "315a45bb39bbe2f5cc3c82d897dd18834476f2c7128c6dc8c56115022cbca217",
+      "bytes": 133,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/gpu_identity.csv"
+    },
+    "artifacts/stream-20261027T192929Z/input_checksums.json": {
+      "sha256": "fad05921b19c2d31bae26c9a934a9f25410a0877c9ff2a15dc101bf7d8aa81bd",
+      "bytes": 611,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/input_checksums.json"
+    },
+    "artifacts/stream-20261027T192929Z/kv_capacity.json": {
+      "sha256": "341d7dcbd548d4b9491b1d808a6f13385a9a56c9593760080753700b042a6149",
+      "bytes": 90,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/kv_capacity.json"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "f3c5b28945519b88d40cea945ec404f540808642aa72ed26c2e6012ddc868e1d",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s1-stream-en.timeline.jsonl": {
+      "sha256": "ccb2d2d4bae04286a98ef0ff47aeb782d3606699d02e04f9bb1f26e01ce254a0",
+      "bytes": 3650,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s2-stream-en.timeline.jsonl": {
+      "sha256": "3b8ab76d9efe34f61e947bd90e4c9bcf2e549eed14dcb11b54e5f9f9f5921f8f",
+      "bytes": 3644,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "837319f4f53b6f1a3cb1b34c0d3fe7f38e87f3952fd8387440a365caa8e3dbef",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "2e6d234cf6bd6bbe61483114f4420972401e02457e76290301daa87f892574c3",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s1-stream-zh.timeline.jsonl": {
+      "sha256": "eb6aeae9ba014f52b68466572cee89f9506fbe3d6447caf4783c1e1cf38ce250",
+      "bytes": 4501,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s2-stream-zh.timeline.jsonl": {
+      "sha256": "e2cde70bba0f565a7cfd507e2431dc3b9b6e31c70c3e5c8d5e882648e1c26130",
+      "bytes": 4504,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "17ffcafa3aff8d7c0ecae9fb049a1c76da9bbfd5c219babc935defa8dbc014ed",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "f7d1e244b7a0c1c783dd79c25928ae99533498bcf32e21365036fb2c7b2e9de2",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "706ef6645590dd098c40726761d1132c141abe42028ba840adb27d4beccd5dfe",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s1-stream-en.timeline.jsonl": {
+      "sha256": "c2081fc37fe1180016d6c8b7372bf1713b5e862591686d5a8bd43cc2561ee659",
+      "bytes": 3640,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s1-stream-zh.timeline.jsonl": {
+      "sha256": "43a57ef161044e2670d2496bae0e54f52362d5a57f0088a4aaea253bf271b0c4",
+      "bytes": 4482,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s2-stream-en.timeline.jsonl": {
+      "sha256": "ffbf081fdd541ba7183009e3ad11e5bd213154e22050864aeb664d48b1834faf",
+      "bytes": 3555,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s2-stream-zh.timeline.jsonl": {
+      "sha256": "d5daf3b57a822d704392c8df801f691e804f80408220d3ddc7414da035312a84",
+      "bytes": 4492,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "2d1960329d69d4494941f96f10ac3decb1dd3d3af9403446d130abf57bc0bbf5",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "fb6739a969ada7d3dc6f307ec028860062511863738c099fe4b54e8ac92878ba",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "07c00e28f5d1fe5654d7ff7494cbfe55824f528403aaa6505326b81ef9c4e95d",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "0458b6c8e528ffa9d151616dbdfa5c26457e7c37584c4c5f072f1e7068d2f0fa",
+      "bytes": 776,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s1-stream-en.timeline.jsonl": {
+      "sha256": "5098bd6facd3e35f07a92ae2142a0e52a2e959c403f2728b98e0e1665d674801",
+      "bytes": 3647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s1-stream-zh.timeline.jsonl": {
+      "sha256": "34e7c827b454a6b4828fddd7522cbed91f00e95996c49cd61d31976baf96de27",
+      "bytes": 4503,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s2-stream-en.timeline.jsonl": {
+      "sha256": "3f7cb249552081ec552d83a86cb228e7954a4b6477cc64ea229b8df91538bcf0",
+      "bytes": 3642,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s2-stream-zh.timeline.jsonl": {
+      "sha256": "d43905058d218ab045c9c37092d89d48aa1d5fc1133b895b0f92d6f34497e188",
+      "bytes": 4409,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "1373b443a02286c88b6769d7802082fe2f1fff6be040dee0003a91ccc04d6aee",
+      "bytes": 645,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "284052720d119f63c8f23613ce4066de9c241be189880675c1b2558d4ecf54e2",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "68dfa430b96dda2c9d86e03d94c0d0b9d63c116467d2a4b839a04a2c499918f0",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s1-stream-en.timeline.jsonl": {
+      "sha256": "d2471cd0ba592511a14851e4c5c42a26d05ffe79d49df4ed2ad12edba76ec159",
+      "bytes": 3560,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s2-stream-en.timeline.jsonl": {
+      "sha256": "4ec2ed17228990b2a3f57e3dff45fb7606b31264b79b29324aa0df64c88bbb72",
+      "bytes": 3638,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "9475667383cadf85c7d41c60f78082cb5b42d0e524d34cbafa3691e345de37d0",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "6723af9a2925f0b088cc2c0fcaa3a32386798fe58d875b569d473a33579bece4",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s1-stream-zh.timeline.jsonl": {
+      "sha256": "7b1c315aaadb0ab7ba92fd185d667af1668083d029932ad4024db78d6df396ff",
+      "bytes": 4503,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s2-stream-zh.timeline.jsonl": {
+      "sha256": "7ecb1e5755d91f6b8c9d955e34018417f044ca1d781c36a9745cf3a38d0bfca0",
+      "bytes": 4500,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "cec90afa354c0390d0547eea2bf596deb819bfe88db92526c459c0c3ae7b9bff",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "a6ab9fe18a03ab9cd3154f8e6f636897d512f12a86c0fdd240d20ebf1d17f489",
+      "bytes": 644,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "470b707fa4af2c6a478471f8da844d083c7e49fa44d141afbd82cad15462a95e",
+      "bytes": 778,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s1-stream-en.timeline.jsonl": {
+      "sha256": "46e0741a020d85d2c9563dbc9434175ce1878a5f67503fe0ec80b46111d6c537",
+      "bytes": 3553,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s1-stream-zh.timeline.jsonl": {
+      "sha256": "7a3c19df51c8bb170b7c8f6cadaa7fe27af75869bca321d0780fa79a837bea2b",
+      "bytes": 4502,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s2-stream-en.timeline.jsonl": {
+      "sha256": "cd1f99eb050ed54aa1193f3dc87290d2894d7fadfa5d200ed833566db4571e6d",
+      "bytes": 3561,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s2-stream-zh.timeline.jsonl": {
+      "sha256": "37247a800a0e1174ffc80f18c4dad4aeb3929490cdfe57a05b8cde849601b20b",
+      "bytes": 4498,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "d7b738a880e76a0332d912daf819907f8f594620a24d778bcde30cf06720bbae",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "62a3141ffb6825cf1c783f538e12a69d2a76a9f1d8a6964785468f6f5f8194d4",
+      "bytes": 776,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s0-nonstream-en.timeline.jsonl": {
+      "sha256": "10652f417cbe1848ffa7cac3d8be844002c8488257cbbc5c1870856edcd0047b",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s0-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s0-nonstream-zh.timeline.jsonl": {
+      "sha256": "91cfa46f480bc08fa9a3571aaaed2a504cd1e06097370dc8f49f93b6c0889d52",
+      "bytes": 776,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s0-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s1-stream-en.timeline.jsonl": {
+      "sha256": "a14d96e92375d99a71596fff0cad9acf1bff8f811a701dfb9b2f9b06cf15ad7d",
+      "bytes": 3643,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s1-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s1-stream-zh.timeline.jsonl": {
+      "sha256": "4231425d83e7ec8b0b0247a03365fa95f228e160583109c199d268d4e2412683",
+      "bytes": 4511,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s1-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s2-stream-en.timeline.jsonl": {
+      "sha256": "0b84450801e59de81d26f800d0d517d3060a7ba8ea51d54068cb5f22f8f7447e",
+      "bytes": 3544,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s2-stream-zh.timeline.jsonl": {
+      "sha256": "db44a0d24aa0c38cd3b58a79aef03ebe73a48d3a2093ee8eb3745159d73e0f1e",
+      "bytes": 4511,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s3-nonstream-en.timeline.jsonl": {
+      "sha256": "1d71ff5538c2cff50a233a0921d3b9f5675391224d679685d94b58fc3a9cc59b",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s3-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s3-nonstream-zh.timeline.jsonl": {
+      "sha256": "7bda5d98789f149e0d3e26b4c2fb4fdff833278e4b9330e30bbace6f6c3bd428",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s3-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-nonstream-en.timeline.jsonl": {
+      "sha256": "0e1b95406fe6313606ba58afb523edf0ba112d48f85a342ff02d15c1d69ed321",
+      "bytes": 647,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-nonstream-zh.timeline.jsonl": {
+      "sha256": "02c087c1a7dbb561ab1e05e7095134353b844302f82856033e4ff449c64f91a4",
+      "bytes": 773,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-stream-en.timeline.jsonl": {
+      "sha256": "c2063fd51b3ac6b57a67bc980e68a2c6b94fd222a443ecd2e2ba0e31f67a0176",
+      "bytes": 3636,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-stream-zh.timeline.jsonl": {
+      "sha256": "1a82f7fc4e076827e551b297e5441f66b8c0d960a1ec7980f5c381d228eaee79",
+      "bytes": 4485,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-nonstream-en.timeline.jsonl": {
+      "sha256": "34d4ae703135635585361dc7431b78d2a229543755f79f314472650d8b054d4c",
+      "bytes": 646,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-nonstream-zh.timeline.jsonl": {
+      "sha256": "650edc15a6170a2f375ee3a355d42ec36e767c726600cb03f26539d2466fbae1",
+      "bytes": 777,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-nonstream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-stream-en.timeline.jsonl": {
+      "sha256": "3a1a1f3a42e79b27d0e1981040db52e30451b18bb707e0097d78acf70b92f08e",
+      "bytes": 3545,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-stream-zh.timeline.jsonl": {
+      "sha256": "9ee96340db9381161cd426ab1d93ab1e50e71d5ff5741d30d69d1b6cd31cf342",
+      "bytes": 4506,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-stream-zh.timeline.jsonl"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/manifest.json": {
+      "sha256": "c141081617a51aa45595471ec65faa73c15e6258261ae8747a858e3394e9e2f2",
+      "bytes": 913,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/manifest.json"
+    },
+    "artifacts/stream-20261027T192929Z/measurements/summary.json": {
+      "sha256": "5552901ff488bfafb4b7e82974c05081ee919bf75b8ec2226e81de2d060bbf60",
+      "bytes": 233181,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/measurements/summary.json"
+    },
+    "artifacts/stream-20261027T192929Z/preflight.log": {
+      "sha256": "3e8f1dce3f878b463535547f331b6715006529bb2f649ed4628b5644c541c3b4",
+      "bytes": 817,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/preflight.log"
+    },
+    "artifacts/stream-20261027T192929Z/preflight_config.yaml": {
+      "sha256": "a53cc62b68cf4ab7a19abe1935505b77e98d43967e0d75e74a83efe834dcc5be",
+      "bytes": 19834,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/preflight_config.yaml"
+    },
+    "artifacts/stream-20261027T192929Z/preparation.json": {
+      "sha256": "736c2537dde0b262515c7935586ce213fec9f9b3c05b15cc5266eba417255f30",
+      "bytes": 672,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/preparation.json"
+    },
+    "artifacts/stream-20261027T192929Z/resolved_config.yaml": {
+      "sha256": "442e887533c69d49dd4d5f646a98177d57e4bc0302992e89ab407c80cbaec82f",
+      "bytes": 19932,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/resolved_config.yaml"
+    },
+    "artifacts/stream-20261027T192929Z/server.log": {
+      "sha256": "a93133ef049081fde1aad833d8cdf45158260bf76feac272355557e9d8ce073f",
+      "bytes": 170183,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/server.log"
+    },
+    "artifacts/stream-20261027T192929Z/status.json": {
+      "sha256": "45e22d3d66363d132a2d23350308daeb0faa493cdd00c54f6dc72aa8507eb448",
+      "bytes": 243,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/status.json"
+    },
+    "artifacts/stream-20261027T192929Z/versions.txt": {
+      "sha256": "22751d7a8bbad22ada03a16ecd98e00d53ecd39d0e1b4193041aba5ca4da527b",
+      "bytes": 9616,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/artifacts/stream-20261027T192929Z/versions.txt"
+    },
+    "latest_run.txt": {
+      "sha256": "6c5fd03e9a3b73c87e31c1744c5b45516db47fd527efdbc7e9a9552ec5734ec2",
+      "bytes": 24,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/latest_run.txt"
+    },
+    "modal.log": {
+      "sha256": "e95b324a1f8196c5c92658834353ab91bf6df81844a4e8647fbc1d5037bcd61d",
+      "bytes": 3220,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/modal.log"
+    },
+    "protocol.json": {
+      "sha256": "3b25f36078d5dc240fcf173e25779403971941d7cdf2485a75bee7f3df8d60e9",
+      "bytes": 2844,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/protocol.json"
+    },
+    "remote_result.json": {
+      "sha256": "9728075435ba3872270a00bccc4413ef433dd202be6566a83544bdff402b730d",
+      "bytes": 93,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/fcdbdcd2d00efb20b77549574c19b0f11f607abf/research/minicpm_given_text_stream_h100_20261027/remote_result.json"
+    }
+  },
+  "omitted_archive_files": [
+    ".gitattributes",
+    ".gitignore",
+    "PUBLICATION.md",
+    "PUBLICATION_SHA256.json",
+    "PUBLICATION_VALIDATION.json",
+    "SHA256SUMS.json",
+    "analyze.py",
+    "artifacts/stream-20261027T192929Z/scripts/driver.py",
+    "artifacts/stream-20261027T192929Z/scripts/measure.py",
+    "artifacts/stream-20261027T192929Z/scripts/patch_codec_probe.py",
+    "artifacts/stream-20261027T192929Z/scripts/preflight.py",
+    "artifacts/stream-20261027T192929Z/scripts/protocol.json",
+    "artifacts/stream-20261027T192929Z/scripts/source.json",
+    "candidate_tracked.patch",
+    "driver.py",
+    "measure.py",
+    "patch_codec_probe.py",
+    "preflight.py",
+    "run_modal.py",
+    "source.json"
+  ],
+  "generated_files": [
+    "PUBLICATION.md",
+    "PROVENANCE.json"
+  ]
+}

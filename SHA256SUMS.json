@@ -1,11 +1,11 @@
 {
   ".gitattributes": {
-    "bytes": 40946,
-    "sha256": "58b7fc71ab14af689f46e2e2a90f9453ffc52e2973e750c0183e013540db3d87"
+    "bytes": 41665,
+    "sha256": "e85c44bfe87edeaeb6746ac4c570ec16fb55799ba8f5cb3694086b0be776614a"
   },
   "README.md": {
-    "bytes": 1043,
-    "sha256": "8e6786c45a5ff2455a6c1dc2f87fcb14bcdfad4731df5b6ff27bf93ced821a82"
+    "bytes": 1154,
+    "sha256": "058a5aa7c34c3eb9d4a73f6fbc877e63d4e4449d94a314e3c7f4a5f43d0f6aab"
   },
   "minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/correctness.json": {
     "bytes": 1126,
@@ -243,6 +243,10 @@
     "bytes": 5107,
     "sha256": "24bd6f64d8558bdacb6a3e01a831916adc7a46b89760d320c3b72b985c1a9f47"
   },
+  "minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled.log": {
+    "bytes": 7358,
+    "sha256": "0edc788be0a23e3c308247ae018bd8d70140fea8e84fa3f92b55d28610821c31"
+  },
   "minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled/correctness.json": {
     "bytes": 894,
     "sha256": "c547fffc9fcd95babfe4877fb92cd5512d78205b5a0f106e977ce522e066fa28"
@@ -262,10 +266,6 @@
   "minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled/summary.json": {
     "bytes": 1835,
     "sha256": "023bd72a396e216c7c9d5b931c2e0963bc739638ca047942cc8bfea2550220cf"
-  },
-  "minicpm-flow-hift/2026-10-20-same-graph/20261020T171213Z/unprofiled.log": {
-    "bytes": 7358,
-    "sha256": "0edc788be0a23e3c308247ae018bd8d70140fea8e84fa3f92b55d28610821c31"
   },
   "minicpm-flow-hift/2026-10-20-same-graph/README.md": {
     "bytes": 902,
@@ -5447,6 +5447,566 @@
     "bytes": 375,
     "sha256": "5714e45e54fe162b31bc7d605b188e343f76ecc28a005acfadfdf972c1fbebc9"
   },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/EVENT_REPORT.md": {
+    "bytes": 5177,
+    "sha256": "b88aaf06549274458b646762700eff6bd45e400b17c432355efea584bdc1c815"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/PRE_PREFILL_BREAKDOWN.md": {
+    "bytes": 1989,
+    "sha256": "bf3234b93362973b374d5784c9a67671ffe47e05de957fef3aa088c1e6a77af5"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/README.md": {
+    "bytes": 887,
+    "sha256": "9ac4af3f0a8091a7b17c08d360675011598a22507d9b9559aff6d41228ece4dd"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/RUNTIME_VALIDATION.json": {
+    "bytes": 750,
+    "sha256": "ce2e735e7146334e453c4b57cb0bed82d63504c60de54aa5f000203013f9d944"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/arrival_schedules/rate30.json": {
+    "bytes": 33209,
+    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/event_analysis.json": {
+    "bytes": 1302413,
+    "sha256": "057f72eec6199a20265d98e2cfe8fceea5536a6ce09aba6303ddaf40861dbcab"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/event_validation.json": {
+    "bytes": 6199,
+    "sha256": "17bc73b7d2fe922682bac14a1ce513318cdd4d7171208e2424a76806ef76ee36"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/gpu_final.csv": {
+    "bytes": 101,
+    "sha256": "c5f868f0e6c74eee05cfd20084031673f234b6357ed80c5bd318e892886ae0ee"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/pre_prefill_breakdown.json": {
+    "bytes": 463971,
+    "sha256": "c90e4d87007aa39b9c1725de144e11b4d0f910825bd758f8972e5abc5ba59597"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/baseline_resolved_config.yaml": {
+    "bytes": 19620,
+    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/environment.json": {
+    "bytes": 972,
+    "sha256": "0ea5d8bf1fef2c916f883aad964d53b2cf9f5c2e81d32fe6d2a5cd27f3c1367b"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/gpu_identity.csv": {
+    "bytes": 134,
+    "sha256": "f7c12838364c9ecd93267ceb8ba007693e8194522b85475ad4841c2110881ec4"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/optimized_resolved_config.yaml": {
+    "bytes": 19620,
+    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/client.log": {
+    "bytes": 1494,
+    "sha256": "49c827db794a90cc2139d5c3c94e16297eda92d9f8262c432186048a39bd7c95"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/command.json": {
+    "bytes": 825,
+    "sha256": "77e11d894b602a033d94cc2abf6d364d57d6f8d34b70858e0b694fae4210d4cf"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/events_coordinator_121.jsonl": {
+    "bytes": 195584,
+    "sha256": "e058e7795e0f7502cc124dfe7327f52f5487590e6ea6c2e43ae325c5db9f27ab"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/events_preprocessing_140.jsonl": {
+    "bytes": 1357977,
+    "sha256": "5485db0483178abb52f8db98de7c5c9e3f08a0869c3266ee7bbd0e5a3804c1a3"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/events_talker_141.jsonl": {
+    "bytes": 1031936,
+    "sha256": "099b5ca72e3f82b730de55f1b04f6b6216fe64a77ec1b1094b9c8c605d231df7"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/profile_start.json": {
+    "bytes": 101,
+    "sha256": "a362dddd5121f9d73c6de72f7e23616e16524a1cd0e8b254e4f75c32a58b68a8"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/profile_stop.json": {
+    "bytes": 43,
+    "sha256": "3f3f3132e6deb92419c35e237fa60a21b37feed712f1d326254477f11f20593e"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/arrival_schedule.json": {
+    "bytes": 33209,
+    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/metrics.json": {
+    "bytes": 750,
+    "sha256": "56ad9694594edfdeb220a03b0acb571d29042d095ee5f65e44e74c3642cae171"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/requests.json": {
+    "bytes": 296082,
+    "sha256": "ad41cae124aec7e068b4c7af3f966937fe845c86ff3bbb5fd211401697068443"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/results.csv": {
+    "bytes": 44526,
+    "sha256": "29c0c956775342f3bdd91884f36784657c481a4ddc63482e6cf09f5a036b543f"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/speed_results.json": {
+    "bytes": 219554,
+    "sha256": "5c6c5aa7baed5ada0b0501f3b4435afd80b4d49ebadfd84f88570e7b3bfbdbbc"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/status.json": {
+    "bytes": 193,
+    "sha256": "19ba8de632394e4791be699ca8e679e0fbfa6624e01d0aa268473d0e3949c12e"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/server.log": {
+    "bytes": 223710,
+    "sha256": "2c4964ae19f54ebe15f4966223d6c8017f22d6f316abfae1227c972c645c97cb"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/status.json": {
+    "bytes": 74,
+    "sha256": "42161d4d8bd1384376b2ed7cd4bdd983a265a05bddee4b7b15bebe8d495a5b3b"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/metrics.json": {
+    "bytes": 636,
+    "sha256": "6f7614847c5c2c376e6f43e0ed43657e3a458ec286bf17fbbf6a118eda0f8811"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/requests.json": {
+    "bytes": 144083,
+    "sha256": "7a56a9c7acec5b63ef8dcc3ad20977b423626484505db8fe372771232bae2c58"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/results.csv": {
+    "bytes": 22445,
+    "sha256": "504ceb2139bab166bb0a3acf079810b6b02cda82e31085957f27fe141232adfb"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/speed_results.json": {
+    "bytes": 109868,
+    "sha256": "ce299f7f320167b48f578ae27f4209ca853e6cdef1687e42bfc4ae3fa80dda43"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/status.json": {
+    "bytes": 133,
+    "sha256": "d1e4286b85dced4355b910f0614f3bb827d5ccc1d2f778b236d209e717b19b61"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/client.log": {
+    "bytes": 1500,
+    "sha256": "6eae5ac7027c6bedec4470a27933f1d151f2aa7354134b16fe06be1c5ae97168"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/command.json": {
+    "bytes": 830,
+    "sha256": "07e1cef433b20eb8682f424fc5c4282aeedbeff24d711e40d71150ae83da14da"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/events_coordinator_767.jsonl": {
+    "bytes": 196352,
+    "sha256": "2cb60b11bb22216987d6bed7aa743006fd5d07197342e0f0dd1b08488ef58405"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/events_preprocessing_786.jsonl": {
+    "bytes": 1363349,
+    "sha256": "89950af0ea8239baf6bfe18c96df7d6208083320719e76b0d586391f540e221c"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/events_talker_787.jsonl": {
+    "bytes": 1036032,
+    "sha256": "a3ee35e2cd358f6c39f3c87bc3afe670b719d187d90f5ff58a326feb4be692ab"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/profile_start.json": {
+    "bytes": 103,
+    "sha256": "56dadde4918a449350113131a4bf629a6d9d862faf0f2d5cb31a970f729e6de8"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/profile_stop.json": {
+    "bytes": 44,
+    "sha256": "f2cbc1ad2128db65e51e0d1134e0278bdbd29db492e2e04ae24f9c9876a2417e"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/arrival_schedule.json": {
+    "bytes": 33209,
+    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/metrics.json": {
+    "bytes": 749,
+    "sha256": "2749a54df832d4e982f271d7faad4f24ac9f2e5559589ed878ebeb0bd40ad612"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/requests.json": {
+    "bytes": 296580,
+    "sha256": "80e938e36cd4c71f45545b942c866a9277ea39cc7eca74a7481e26c91933790e"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/results.csv": {
+    "bytes": 44777,
+    "sha256": "649af94817b00e282c53d2cd6fbb0da0016877fba62bb26c9f6c8203e9180e3d"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/speed_results.json": {
+    "bytes": 220043,
+    "sha256": "a0a044c92cfd6f4322031fff621f5038aa06de57c7e61de44ed7bc55a5f09bd6"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/status.json": {
+    "bytes": 194,
+    "sha256": "317f5e277d9270e9f25b66cfdac4a35f84ae1b30a29a79010cabcff054ccf326"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/server.log": {
+    "bytes": 253263,
+    "sha256": "54c197cb56b6edec717ab916cd117d67580673759d9671aab1baa8084fef14df"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/status.json": {
+    "bytes": 74,
+    "sha256": "f9a2b9da19b9a2a74a8f510b9253e66225c28df35fc6e990372a3dda191ac331"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/metrics.json": {
+    "bytes": 640,
+    "sha256": "82e6f0da6ffdb6252753a16f2f952f04d14294c645b3d1b42c765b4c08ac8014"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/requests.json": {
+    "bytes": 144347,
+    "sha256": "82de779bd3a4d160157b12871820e2f69d751c1ed699ac9b20ae621df1e9ac6f"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/results.csv": {
+    "bytes": 22555,
+    "sha256": "f0b42f0ecd07ebba4284e67a19b3e8dba39fbeb72d2462adff30591607219f4e"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/speed_results.json": {
+    "bytes": 110112,
+    "sha256": "2e90cf29ad69987326ccf55328cb678f779dbecd3b951603133cd665d89247fa"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/status.json": {
+    "bytes": 132,
+    "sha256": "09ee780e90f9036d39018d63d8ce3dbb7299a05750cfb2748de6561248da3e41"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/status.json": {
+    "bytes": 117,
+    "sha256": "44742472ccb2882f2f9c59f7959e8965be1e89be33d1f87900c88e6fb1f2731a"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/versions.txt": {
+    "bytes": 9547,
+    "sha256": "1b36a69616eacfe3d25fd1a04c367ac43a28dc34db13dd0b3a224dd71927e584"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/run.log": {
+    "bytes": 553,
+    "sha256": "588cc699bccf7efb917d316c6316cc308b519284c018b708473e1cc3dee7bbff"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/COMPARISON_TABLES.md": {
+    "bytes": 3966,
+    "sha256": "cf7c78522af4761ebdf79bfd8928678890d0207ca66f329c244f209a8b639ad7"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/README.md": {
+    "bytes": 828,
+    "sha256": "8462eb5e040fc4d96cddad8c5744cc29c05dd7ea2fd269225a50e5c2e4224028"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/REPORT.md": {
+    "bytes": 4086,
+    "sha256": "2cc800a7939812bb43ae047bcf010465471926c9bce24802b7822d4628459cdf"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/RUNTIME_VALIDATION.json": {
+    "bytes": 750,
+    "sha256": "ce2e735e7146334e453c4b57cb0bed82d63504c60de54aa5f000203013f9d944"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/arrival_schedules/rate30.json": {
+    "bytes": 33209,
+    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/cells.csv": {
+    "bytes": 1635,
+    "sha256": "cbdb148a83b6580d9098daeb02bf719de8ac48d04d43c28f8ec56af747738729"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison.json": {
+    "bytes": 4074,
+    "sha256": "35ea7aab082e76373a420d86e4bcbf2975786f068151b21e95da223394c5af05"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison_tables.csv": {
+    "bytes": 4159,
+    "sha256": "cb95f37a4c9a8dfd830aa97ece9418cce29395dc6ebb175c86c9edbc3d4c053b"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison_tables.json": {
+    "bytes": 11194,
+    "sha256": "d5cee28e0d17fc7952832fe7f6ab682b04399250470ac2913376e2444da03c60"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/gpu_final.csv": {
+    "bytes": 101,
+    "sha256": "c5f868f0e6c74eee05cfd20084031673f234b6357ed80c5bd318e892886ae0ee"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/baseline_resolved_config.yaml": {
+    "bytes": 19620,
+    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/environment.json": {
+    "bytes": 938,
+    "sha256": "faf06eb7ec6144e20f6d0d7e08cb73a4992f1dcfbef4364a7aeae9130ddf9c25"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/gpu_identity.csv": {
+    "bytes": 134,
+    "sha256": "f7c12838364c9ecd93267ceb8ba007693e8194522b85475ad4841c2110881ec4"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/optimized_resolved_config.yaml": {
+    "bytes": 19620,
+    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/client.log": {
+    "bytes": 1496,
+    "sha256": "8dfb1638395cf61317af8b42ad1e4e2777a673ecfb0617875c909dd4487878d2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/command.json": {
+    "bytes": 825,
+    "sha256": "77e11d894b602a033d94cc2abf6d364d57d6f8d34b70858e0b694fae4210d4cf"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/arrival_schedule.json": {
+    "bytes": 33209,
+    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/metrics.json": {
+    "bytes": 749,
+    "sha256": "944dfdd32ce00d72a7156392c7ffa645e44dc10a674bd8e20538a0ffff353b1d"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/requests.json": {
+    "bytes": 279493,
+    "sha256": "d54a066e576bf1f28a33077347a4142a3e8921a2f592fde780f6a8e45503ce82"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/results.csv": {
+    "bytes": 44523,
+    "sha256": "97fcbdd1bd3efcdec019c39bb10cb2e18806fdcd6daabed4f8f618bbec4ca685"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/speed_results.json": {
+    "bytes": 219493,
+    "sha256": "fea22f83992f442dc03d81d0d94d6b2681a39c68949afe3d67e9e5e9d4b93524"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/status.json": {
+    "bytes": 194,
+    "sha256": "2fd031b954fcdfb8b9330c7f7b72eda662bbe24ccd7d8a9bbc8813f12c2461a0"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/server.log": {
+    "bytes": 218502,
+    "sha256": "5dc95f7bd240dcb5ab0d41d5c4ad925111ae464b27575d002d256162a121e19c"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/status.json": {
+    "bytes": 74,
+    "sha256": "915d108f844f035414e5cab630dd3a69cf61490e400f7f6ff0ab86186e246e55"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/metrics.json": {
+    "bytes": 639,
+    "sha256": "8dd90582df3b8c6381087520d55c6027a162eeb20e800c40a82d2fcfd9ca459d"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/requests.json": {
+    "bytes": 135792,
+    "sha256": "ac3c2609ad157c08d08941de7b0c51a2b569b33e875065ca3ca892c4c71cf8ec"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/results.csv": {
+    "bytes": 22448,
+    "sha256": "825d27b138e93001ad89735994dc47436b1d2ee11d24c2976a136e1c241abb47"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/speed_results.json": {
+    "bytes": 109858,
+    "sha256": "3d6bad5c917e832a0294212d55f9ee1dc69ac6d73d317f6aa98f222aa1e5c9e5"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/status.json": {
+    "bytes": 133,
+    "sha256": "b7eb76577de4ea456a354265e7ed4bc62cab6154bf1bfc41df2e08cc2e012129"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/client.log": {
+    "bytes": 1497,
+    "sha256": "c198420559fe8f9c3845bab7e4dd3b1f2b95d9243f7c487da738306b00c9427c"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/command.json": {
+    "bytes": 830,
+    "sha256": "07e1cef433b20eb8682f424fc5c4282aeedbeff24d711e40d71150ae83da14da"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/arrival_schedule.json": {
+    "bytes": 33209,
+    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/metrics.json": {
+    "bytes": 748,
+    "sha256": "2c64bcad94370b23693a4d8757cc825179b147d011204b61cb563ff22faf754a"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/requests.json": {
+    "bytes": 279961,
+    "sha256": "72fc6c83b2331fb1d3776424dbfe02bdaffcd793762b453e1b4fc59654f76e3d"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/results.csv": {
+    "bytes": 44775,
+    "sha256": "1a5fa5723c3cf02ac09281be464fc390988a2eae07e9d731102166640a96afcd"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/speed_results.json": {
+    "bytes": 219996,
+    "sha256": "38720014f7388430d937f2c098762547e3908892140ac76b1919253a39a2613a"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/status.json": {
+    "bytes": 193,
+    "sha256": "7cfd982594b619ff81fb106c5dd8cf61274c51cf08b1c95534febdbc89ecbf7a"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/server.log": {
+    "bytes": 247670,
+    "sha256": "190909cc539b5741c195d1186474e2183850b355a036b4a6a63e159fc23b041d"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/status.json": {
+    "bytes": 74,
+    "sha256": "07a15a741a7cb655e53d33a90312ebf568177b18e0f82bfa47eb7cff002154c8"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/metrics.json": {
+    "bytes": 638,
+    "sha256": "9a8808b2e6d0d7b78f7e740da4c9ca3aecfef51d0d0df869a91d8ce64d4b1772"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/requests.json": {
+    "bytes": 136060,
+    "sha256": "d2158566ef2a74f2ab5b935202770a5228cf35d2b02c96987dbcea24a32908d2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/results.csv": {
+    "bytes": 22567,
+    "sha256": "1b8d4aba3bff53cdc83401bf23295680462e470c88f09528834548258336aa04"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/speed_results.json": {
+    "bytes": 110091,
+    "sha256": "108d8e0edde3fbfd7678f52174791984a3fc4b98435d622b61800fa6c7fad71f"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/status.json": {
+    "bytes": 132,
+    "sha256": "301ef1829589ed9b2dd49fbb37138b29b33d8b1b316de9451503c1286da90ec9"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/client.log": {
+    "bytes": 1495,
+    "sha256": "e2cfb13ffbcf01d62303c11d5a12ef944efe7ec333ea7b7e74e46627a974bf26"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/command.json": {
+    "bytes": 825,
+    "sha256": "ea0dd122460e949e11572119b9ebb36b13a357410530fe4347901c087fc43d16"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/arrival_schedule.json": {
+    "bytes": 33209,
+    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/metrics.json": {
+    "bytes": 749,
+    "sha256": "29dc7893c5cc70dfaef1fe12b36b9c2064cbce15617e1fec9f4af969e0b86f6b"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/requests.json": {
+    "bytes": 279503,
+    "sha256": "0ad72446763dfc6af8ea5d790d4811968171b7b6c27bc0dd3296b05b50adac94"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/results.csv": {
+    "bytes": 44530,
+    "sha256": "1a8753987f3ea6141d4a1df0a19b5ead7db3946975a2748b1d70f09d0f4b9019"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/speed_results.json": {
+    "bytes": 219479,
+    "sha256": "b44bf128bca1d982ede71b233b47642e71d405ad53c26c2362e589824c6d3b79"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/status.json": {
+    "bytes": 193,
+    "sha256": "64f4e3305fdd8b8095c2935ae9b42cba963289264b491b9da403e68d866c6e36"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/server.log": {
+    "bytes": 217209,
+    "sha256": "f02cd43d5d153b2b1df31579735a334ecf6cac5b7ea65c2bc3b5e45b28d410ec"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/status.json": {
+    "bytes": 74,
+    "sha256": "6780d0bc28c7f2f8168f1afd64e105859bf97fe296f7a9e35ae8b564272e3c21"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/metrics.json": {
+    "bytes": 639,
+    "sha256": "faf1b397b182aac8972b7df82ee42d1b126a03ab554029e935034c930b75e4d1"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/requests.json": {
+    "bytes": 135802,
+    "sha256": "5406d576b00406675c4a44fd5f8af23f75dc1873e0a3fbc7f919b25cdb1cf4b1"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/results.csv": {
+    "bytes": 22455,
+    "sha256": "8b36c823af004ac31cdd88b44dc5eb5f9d55bddd0dc49f9baf0ff9138fbc9027"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/speed_results.json": {
+    "bytes": 109859,
+    "sha256": "62d504e88509c17e2ba429ec495474adccbd5c9b31db2505b047e39dcf996bb7"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/status.json": {
+    "bytes": 132,
+    "sha256": "06890c8031cbdc779e867e114c85074311f790c987790edcae99e31a84e8c002"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/client.log": {
+    "bytes": 1498,
+    "sha256": "9c2287d0b0924e6a2897dca987cc1d2badbc05c354a7b00cc43ef469d202e92b"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/command.json": {
+    "bytes": 830,
+    "sha256": "9e92350e3b4cd25a247726862c55067087c657f575e9d8ead0bbab1ab8e27de6"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/arrival_schedule.json": {
+    "bytes": 33209,
+    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/metrics.json": {
+    "bytes": 749,
+    "sha256": "98d4ba5b149720f2684518de12b5815e93a79fd7d883ec5500c593a1631a83f4"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/requests.json": {
+    "bytes": 279935,
+    "sha256": "e55fd08ee65444bc047166286fe47000846108680b857d0dd595bc1587de05db"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/results.csv": {
+    "bytes": 44785,
+    "sha256": "6b123b83eed51e88ba91ce5f698f35acf2e8a0afd953dbbe64ed73d2835922fb"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/speed_results.json": {
+    "bytes": 219994,
+    "sha256": "0059c017fb68ca9202c501a4a7973991af1f598360c9d8fa7d1eae30bd881c74"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/status.json": {
+    "bytes": 192,
+    "sha256": "c943d84e78c76a88ad6eff3ef48c00acb954d2f84f78b2b18d2a29e78cb94bdb"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/server.log": {
+    "bytes": 250176,
+    "sha256": "507c04c067d8969a9e22c03704f12717ce15180ab68e0e07eca2e2137a84fd38"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/status.json": {
+    "bytes": 74,
+    "sha256": "b52f07270dcaa5809664887823e5e862fe996011ba490562f1de0545c220ddaa"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/metrics.json": {
+    "bytes": 638,
+    "sha256": "deeafc4280816141d48cfadceac2432cb140459a27330a91b04ec3af11182bd1"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/requests.json": {
+    "bytes": 136038,
+    "sha256": "6b766c2311db735bcdacb5c9e0ac6890ccec44318e1134aad51d4fadd36148e4"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/results.csv": {
+    "bytes": 22567,
+    "sha256": "a6425568b3f474d886f56136477848836cc81aaa7fb9e4514696364a87467c2a"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/speed_results.json": {
+    "bytes": 110089,
+    "sha256": "b1d5b7512495138d8885aca8276cb1ec8d4b9984efbdf23cedebc213100e6fe2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/status.json": {
+    "bytes": 131,
+    "sha256": "6ec930479c04112163a19c42577687a261ed71622e7950e7d16b89b41e5f94b2"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/status.json": {
+    "bytes": 170,
+    "sha256": "dd95c838c9e4229b1909bb219773022f919b84d4b4d9c32297d027c8698f46b9"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/versions.txt": {
+    "bytes": 9547,
+    "sha256": "1b36a69616eacfe3d25fd1a04c367ac43a28dc34db13dd0b3a224dd71927e584"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/run.log": {
+    "bytes": 910,
+    "sha256": "02e0fde0a8486a6a28317fc13fa1ed4353df82ad88e636a31d9f1d1fb665a550"
+  },
+  "minicpm-flow-hift/2026-10-26-openloop-rate30/validation.json": {
+    "bytes": 6246,
+    "sha256": "f8c1a667b5f174d31af3d15b65017c6fdc736d9e9d835cda054eb3fd49311a00"
+  },
   "minicpm-flow-hift/2026-10-26-openloop/README.md": {
     "bytes": 788,
     "sha256": "eccae1463f2ca2945fe7ef7acec14f0cb47d9985c2b264a3fce725e97b440c83"
@@ -6291,566 +6851,6 @@
     "bytes": 17896,
     "sha256": "2ffad5ed6bf38c7d8f42d9aac5c3b4d387c698e406b215876495aaffd5e60065"
   },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/COMPARISON_TABLES.md": {
-    "bytes": 3966,
-    "sha256": "cf7c78522af4761ebdf79bfd8928678890d0207ca66f329c244f209a8b639ad7"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/README.md": {
-    "bytes": 828,
-    "sha256": "8462eb5e040fc4d96cddad8c5744cc29c05dd7ea2fd269225a50e5c2e4224028"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/REPORT.md": {
-    "bytes": 4086,
-    "sha256": "2cc800a7939812bb43ae047bcf010465471926c9bce24802b7822d4628459cdf"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/RUNTIME_VALIDATION.json": {
-    "bytes": 750,
-    "sha256": "ce2e735e7146334e453c4b57cb0bed82d63504c60de54aa5f000203013f9d944"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/arrival_schedules/rate30.json": {
-    "bytes": 33209,
-    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/cells.csv": {
-    "bytes": 1635,
-    "sha256": "cbdb148a83b6580d9098daeb02bf719de8ac48d04d43c28f8ec56af747738729"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison.json": {
-    "bytes": 4074,
-    "sha256": "35ea7aab082e76373a420d86e4bcbf2975786f068151b21e95da223394c5af05"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison_tables.csv": {
-    "bytes": 4159,
-    "sha256": "cb95f37a4c9a8dfd830aa97ece9418cce29395dc6ebb175c86c9edbc3d4c053b"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/comparison_tables.json": {
-    "bytes": 11194,
-    "sha256": "d5cee28e0d17fc7952832fe7f6ab682b04399250470ac2913376e2444da03c60"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/gpu_final.csv": {
-    "bytes": 101,
-    "sha256": "c5f868f0e6c74eee05cfd20084031673f234b6357ed80c5bd318e892886ae0ee"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/baseline_resolved_config.yaml": {
-    "bytes": 19620,
-    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/environment.json": {
-    "bytes": 938,
-    "sha256": "faf06eb7ec6144e20f6d0d7e08cb73a4992f1dcfbef4364a7aeae9130ddf9c25"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/gpu_identity.csv": {
-    "bytes": 134,
-    "sha256": "f7c12838364c9ecd93267ceb8ba007693e8194522b85475ad4841c2110881ec4"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/optimized_resolved_config.yaml": {
-    "bytes": 19620,
-    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/client.log": {
-    "bytes": 1496,
-    "sha256": "8dfb1638395cf61317af8b42ad1e4e2777a673ecfb0617875c909dd4487878d2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/command.json": {
-    "bytes": 825,
-    "sha256": "77e11d894b602a033d94cc2abf6d364d57d6f8d34b70858e0b694fae4210d4cf"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/kv_capacity.json": {
-    "bytes": 60,
-    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/arrival_schedule.json": {
-    "bytes": 33209,
-    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/metrics.json": {
-    "bytes": 749,
-    "sha256": "944dfdd32ce00d72a7156392c7ffa645e44dc10a674bd8e20538a0ffff353b1d"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/requests.json": {
-    "bytes": 279493,
-    "sha256": "d54a066e576bf1f28a33077347a4142a3e8921a2f592fde780f6a8e45503ce82"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/results.csv": {
-    "bytes": 44523,
-    "sha256": "97fcbdd1bd3efcdec019c39bb10cb2e18806fdcd6daabed4f8f618bbec4ca685"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/speed_results.json": {
-    "bytes": 219493,
-    "sha256": "fea22f83992f442dc03d81d0d94d6b2681a39c68949afe3d67e9e5e9d4b93524"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/measured/status.json": {
-    "bytes": 194,
-    "sha256": "2fd031b954fcdfb8b9330c7f7b72eda662bbe24ccd7d8a9bbc8813f12c2461a0"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/server.log": {
-    "bytes": 218502,
-    "sha256": "5dc95f7bd240dcb5ab0d41d5c4ad925111ae464b27575d002d256162a121e19c"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/status.json": {
-    "bytes": 74,
-    "sha256": "915d108f844f035414e5cab630dd3a69cf61490e400f7f6ff0ab86186e246e55"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/metrics.json": {
-    "bytes": 639,
-    "sha256": "8dd90582df3b8c6381087520d55c6027a162eeb20e800c40a82d2fcfd9ca459d"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/requests.json": {
-    "bytes": 135792,
-    "sha256": "ac3c2609ad157c08d08941de7b0c51a2b569b33e875065ca3ca892c4c71cf8ec"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/results.csv": {
-    "bytes": 22448,
-    "sha256": "825d27b138e93001ad89735994dc47436b1d2ee11d24c2976a136e1c241abb47"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/speed_results.json": {
-    "bytes": 109858,
-    "sha256": "3d6bad5c917e832a0294212d55f9ee1dc69ac6d73d317f6aa98f222aa1e5c9e5"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-baseline-rate30/warmup/status.json": {
-    "bytes": 133,
-    "sha256": "b7eb76577de4ea456a354265e7ed4bc62cab6154bf1bfc41df2e08cc2e012129"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/client.log": {
-    "bytes": 1497,
-    "sha256": "c198420559fe8f9c3845bab7e4dd3b1f2b95d9243f7c487da738306b00c9427c"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/command.json": {
-    "bytes": 830,
-    "sha256": "07e1cef433b20eb8682f424fc5c4282aeedbeff24d711e40d71150ae83da14da"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/kv_capacity.json": {
-    "bytes": 60,
-    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/arrival_schedule.json": {
-    "bytes": 33209,
-    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/metrics.json": {
-    "bytes": 748,
-    "sha256": "2c64bcad94370b23693a4d8757cc825179b147d011204b61cb563ff22faf754a"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/requests.json": {
-    "bytes": 279961,
-    "sha256": "72fc6c83b2331fb1d3776424dbfe02bdaffcd793762b453e1b4fc59654f76e3d"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/results.csv": {
-    "bytes": 44775,
-    "sha256": "1a5fa5723c3cf02ac09281be464fc390988a2eae07e9d731102166640a96afcd"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/speed_results.json": {
-    "bytes": 219996,
-    "sha256": "38720014f7388430d937f2c098762547e3908892140ac76b1919253a39a2613a"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/measured/status.json": {
-    "bytes": 193,
-    "sha256": "7cfd982594b619ff81fb106c5dd8cf61274c51cf08b1c95534febdbc89ecbf7a"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/server.log": {
-    "bytes": 247670,
-    "sha256": "190909cc539b5741c195d1186474e2183850b355a036b4a6a63e159fc23b041d"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/status.json": {
-    "bytes": 74,
-    "sha256": "07a15a741a7cb655e53d33a90312ebf568177b18e0f82bfa47eb7cff002154c8"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/metrics.json": {
-    "bytes": 638,
-    "sha256": "9a8808b2e6d0d7b78f7e740da4c9ca3aecfef51d0d0df869a91d8ce64d4b1772"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/requests.json": {
-    "bytes": 136060,
-    "sha256": "d2158566ef2a74f2ab5b935202770a5228cf35d2b02c96987dbcea24a32908d2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/results.csv": {
-    "bytes": 22567,
-    "sha256": "1b8d4aba3bff53cdc83401bf23295680462e470c88f09528834548258336aa04"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/speed_results.json": {
-    "bytes": 110091,
-    "sha256": "108d8e0edde3fbfd7678f52174791984a3fc4b98435d622b61800fa6c7fad71f"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r1-optimized-rate30/warmup/status.json": {
-    "bytes": 132,
-    "sha256": "301ef1829589ed9b2dd49fbb37138b29b33d8b1b316de9451503c1286da90ec9"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/client.log": {
-    "bytes": 1495,
-    "sha256": "e2cfb13ffbcf01d62303c11d5a12ef944efe7ec333ea7b7e74e46627a974bf26"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/command.json": {
-    "bytes": 825,
-    "sha256": "ea0dd122460e949e11572119b9ebb36b13a357410530fe4347901c087fc43d16"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/kv_capacity.json": {
-    "bytes": 60,
-    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/arrival_schedule.json": {
-    "bytes": 33209,
-    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/metrics.json": {
-    "bytes": 749,
-    "sha256": "29dc7893c5cc70dfaef1fe12b36b9c2064cbce15617e1fec9f4af969e0b86f6b"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/requests.json": {
-    "bytes": 279503,
-    "sha256": "0ad72446763dfc6af8ea5d790d4811968171b7b6c27bc0dd3296b05b50adac94"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/results.csv": {
-    "bytes": 44530,
-    "sha256": "1a8753987f3ea6141d4a1df0a19b5ead7db3946975a2748b1d70f09d0f4b9019"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/speed_results.json": {
-    "bytes": 219479,
-    "sha256": "b44bf128bca1d982ede71b233b47642e71d405ad53c26c2362e589824c6d3b79"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/measured/status.json": {
-    "bytes": 193,
-    "sha256": "64f4e3305fdd8b8095c2935ae9b42cba963289264b491b9da403e68d866c6e36"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/server.log": {
-    "bytes": 217209,
-    "sha256": "f02cd43d5d153b2b1df31579735a334ecf6cac5b7ea65c2bc3b5e45b28d410ec"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/status.json": {
-    "bytes": 74,
-    "sha256": "6780d0bc28c7f2f8168f1afd64e105859bf97fe296f7a9e35ae8b564272e3c21"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/metrics.json": {
-    "bytes": 639,
-    "sha256": "faf1b397b182aac8972b7df82ee42d1b126a03ab554029e935034c930b75e4d1"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/requests.json": {
-    "bytes": 135802,
-    "sha256": "5406d576b00406675c4a44fd5f8af23f75dc1873e0a3fbc7f919b25cdb1cf4b1"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/results.csv": {
-    "bytes": 22455,
-    "sha256": "8b36c823af004ac31cdd88b44dc5eb5f9d55bddd0dc49f9baf0ff9138fbc9027"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/speed_results.json": {
-    "bytes": 109859,
-    "sha256": "62d504e88509c17e2ba429ec495474adccbd5c9b31db2505b047e39dcf996bb7"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-baseline-rate30/warmup/status.json": {
-    "bytes": 132,
-    "sha256": "06890c8031cbdc779e867e114c85074311f790c987790edcae99e31a84e8c002"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/client.log": {
-    "bytes": 1498,
-    "sha256": "9c2287d0b0924e6a2897dca987cc1d2badbc05c354a7b00cc43ef469d202e92b"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/command.json": {
-    "bytes": 830,
-    "sha256": "9e92350e3b4cd25a247726862c55067087c657f575e9d8ead0bbab1ab8e27de6"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/kv_capacity.json": {
-    "bytes": 60,
-    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/arrival_schedule.json": {
-    "bytes": 33209,
-    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/metrics.json": {
-    "bytes": 749,
-    "sha256": "98d4ba5b149720f2684518de12b5815e93a79fd7d883ec5500c593a1631a83f4"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/requests.json": {
-    "bytes": 279935,
-    "sha256": "e55fd08ee65444bc047166286fe47000846108680b857d0dd595bc1587de05db"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/results.csv": {
-    "bytes": 44785,
-    "sha256": "6b123b83eed51e88ba91ce5f698f35acf2e8a0afd953dbbe64ed73d2835922fb"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/speed_results.json": {
-    "bytes": 219994,
-    "sha256": "0059c017fb68ca9202c501a4a7973991af1f598360c9d8fa7d1eae30bd881c74"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/measured/status.json": {
-    "bytes": 192,
-    "sha256": "c943d84e78c76a88ad6eff3ef48c00acb954d2f84f78b2b18d2a29e78cb94bdb"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/server.log": {
-    "bytes": 250176,
-    "sha256": "507c04c067d8969a9e22c03704f12717ce15180ab68e0e07eca2e2137a84fd38"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/status.json": {
-    "bytes": 74,
-    "sha256": "b52f07270dcaa5809664887823e5e862fe996011ba490562f1de0545c220ddaa"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/metrics.json": {
-    "bytes": 638,
-    "sha256": "deeafc4280816141d48cfadceac2432cb140459a27330a91b04ec3af11182bd1"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/requests.json": {
-    "bytes": 136038,
-    "sha256": "6b766c2311db735bcdacb5c9e0ac6890ccec44318e1134aad51d4fadd36148e4"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/results.csv": {
-    "bytes": 22567,
-    "sha256": "a6425568b3f474d886f56136477848836cc81aaa7fb9e4514696364a87467c2a"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/speed_results.json": {
-    "bytes": 110089,
-    "sha256": "b1d5b7512495138d8885aca8276cb1ec8d4b9984efbdf23cedebc213100e6fe2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/r2-optimized-rate30/warmup/status.json": {
-    "bytes": 131,
-    "sha256": "6ec930479c04112163a19c42577687a261ed71622e7950e7d16b89b41e5f94b2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/status.json": {
-    "bytes": 170,
-    "sha256": "dd95c838c9e4229b1909bb219773022f919b84d4b4d9c32297d027c8698f46b9"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/results/versions.txt": {
-    "bytes": 9547,
-    "sha256": "1b36a69616eacfe3d25fd1a04c367ac43a28dc34db13dd0b3a224dd71927e584"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/run.log": {
-    "bytes": 910,
-    "sha256": "02e0fde0a8486a6a28317fc13fa1ed4353df82ad88e636a31d9f1d1fb665a550"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30/validation.json": {
-    "bytes": 6246,
-    "sha256": "f8c1a667b5f174d31af3d15b65017c6fdc736d9e9d835cda054eb3fd49311a00"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/EVENT_REPORT.md": {
-    "bytes": 5177,
-    "sha256": "b88aaf06549274458b646762700eff6bd45e400b17c432355efea584bdc1c815"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/PRE_PREFILL_BREAKDOWN.md": {
-    "bytes": 1989,
-    "sha256": "bf3234b93362973b374d5784c9a67671ffe47e05de957fef3aa088c1e6a77af5"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/README.md": {
-    "bytes": 887,
-    "sha256": "9ac4af3f0a8091a7b17c08d360675011598a22507d9b9559aff6d41228ece4dd"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/RUNTIME_VALIDATION.json": {
-    "bytes": 750,
-    "sha256": "ce2e735e7146334e453c4b57cb0bed82d63504c60de54aa5f000203013f9d944"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/arrival_schedules/rate30.json": {
-    "bytes": 33209,
-    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/event_analysis.json": {
-    "bytes": 1302413,
-    "sha256": "057f72eec6199a20265d98e2cfe8fceea5536a6ce09aba6303ddaf40861dbcab"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/event_validation.json": {
-    "bytes": 6199,
-    "sha256": "17bc73b7d2fe922682bac14a1ce513318cdd4d7171208e2424a76806ef76ee36"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/gpu_final.csv": {
-    "bytes": 101,
-    "sha256": "c5f868f0e6c74eee05cfd20084031673f234b6357ed80c5bd318e892886ae0ee"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/pre_prefill_breakdown.json": {
-    "bytes": 463971,
-    "sha256": "c90e4d87007aa39b9c1725de144e11b4d0f910825bd758f8972e5abc5ba59597"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/baseline_resolved_config.yaml": {
-    "bytes": 19620,
-    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/environment.json": {
-    "bytes": 972,
-    "sha256": "0ea5d8bf1fef2c916f883aad964d53b2cf9f5c2e81d32fe6d2a5cd27f3c1367b"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/gpu_identity.csv": {
-    "bytes": 134,
-    "sha256": "f7c12838364c9ecd93267ceb8ba007693e8194522b85475ad4841c2110881ec4"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/optimized_resolved_config.yaml": {
-    "bytes": 19620,
-    "sha256": "19c6be622c8054af2efc700e0bf2354b893b3aa4034cd7cfbb51c2c3256f1fc0"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/client.log": {
-    "bytes": 1494,
-    "sha256": "49c827db794a90cc2139d5c3c94e16297eda92d9f8262c432186048a39bd7c95"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/command.json": {
-    "bytes": 825,
-    "sha256": "77e11d894b602a033d94cc2abf6d364d57d6f8d34b70858e0b694fae4210d4cf"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/events_coordinator_121.jsonl": {
-    "bytes": 195584,
-    "sha256": "e058e7795e0f7502cc124dfe7327f52f5487590e6ea6c2e43ae325c5db9f27ab"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/events_preprocessing_140.jsonl": {
-    "bytes": 1357977,
-    "sha256": "5485db0483178abb52f8db98de7c5c9e3f08a0869c3266ee7bbd0e5a3804c1a3"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/events_talker_141.jsonl": {
-    "bytes": 1031936,
-    "sha256": "099b5ca72e3f82b730de55f1b04f6b6216fe64a77ec1b1094b9c8c605d231df7"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/profile_start.json": {
-    "bytes": 101,
-    "sha256": "a362dddd5121f9d73c6de72f7e23616e16524a1cd0e8b254e4f75c32a58b68a8"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/events/profile_stop.json": {
-    "bytes": 43,
-    "sha256": "3f3f3132e6deb92419c35e237fa60a21b37feed712f1d326254477f11f20593e"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/kv_capacity.json": {
-    "bytes": 60,
-    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/arrival_schedule.json": {
-    "bytes": 33209,
-    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/metrics.json": {
-    "bytes": 750,
-    "sha256": "56ad9694594edfdeb220a03b0acb571d29042d095ee5f65e44e74c3642cae171"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/requests.json": {
-    "bytes": 296082,
-    "sha256": "ad41cae124aec7e068b4c7af3f966937fe845c86ff3bbb5fd211401697068443"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/results.csv": {
-    "bytes": 44526,
-    "sha256": "29c0c956775342f3bdd91884f36784657c481a4ddc63482e6cf09f5a036b543f"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/speed_results.json": {
-    "bytes": 219554,
-    "sha256": "5c6c5aa7baed5ada0b0501f3b4435afd80b4d49ebadfd84f88570e7b3bfbdbbc"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/measured/status.json": {
-    "bytes": 193,
-    "sha256": "19ba8de632394e4791be699ca8e679e0fbfa6624e01d0aa268473d0e3949c12e"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/server.log": {
-    "bytes": 223710,
-    "sha256": "2c4964ae19f54ebe15f4966223d6c8017f22d6f316abfae1227c972c645c97cb"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/status.json": {
-    "bytes": 74,
-    "sha256": "42161d4d8bd1384376b2ed7cd4bdd983a265a05bddee4b7b15bebe8d495a5b3b"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/metrics.json": {
-    "bytes": 636,
-    "sha256": "6f7614847c5c2c376e6f43e0ed43657e3a458ec286bf17fbbf6a118eda0f8811"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/requests.json": {
-    "bytes": 144083,
-    "sha256": "7a56a9c7acec5b63ef8dcc3ad20977b423626484505db8fe372771232bae2c58"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/results.csv": {
-    "bytes": 22445,
-    "sha256": "504ceb2139bab166bb0a3acf079810b6b02cda82e31085957f27fe141232adfb"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/speed_results.json": {
-    "bytes": 109868,
-    "sha256": "ce299f7f320167b48f578ae27f4209ca853e6cdef1687e42bfc4ae3fa80dda43"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-baseline-rate30/warmup/status.json": {
-    "bytes": 133,
-    "sha256": "d1e4286b85dced4355b910f0614f3bb827d5ccc1d2f778b236d209e717b19b61"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/client.log": {
-    "bytes": 1500,
-    "sha256": "6eae5ac7027c6bedec4470a27933f1d151f2aa7354134b16fe06be1c5ae97168"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/command.json": {
-    "bytes": 830,
-    "sha256": "07e1cef433b20eb8682f424fc5c4282aeedbeff24d711e40d71150ae83da14da"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/events_coordinator_767.jsonl": {
-    "bytes": 196352,
-    "sha256": "2cb60b11bb22216987d6bed7aa743006fd5d07197342e0f0dd1b08488ef58405"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/events_preprocessing_786.jsonl": {
-    "bytes": 1363349,
-    "sha256": "89950af0ea8239baf6bfe18c96df7d6208083320719e76b0d586391f540e221c"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/events_talker_787.jsonl": {
-    "bytes": 1036032,
-    "sha256": "a3ee35e2cd358f6c39f3c87bc3afe670b719d187d90f5ff58a326feb4be692ab"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/profile_start.json": {
-    "bytes": 103,
-    "sha256": "56dadde4918a449350113131a4bf629a6d9d862faf0f2d5cb31a970f729e6de8"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/events/profile_stop.json": {
-    "bytes": 44,
-    "sha256": "f2cbc1ad2128db65e51e0d1134e0278bdbd29db492e2e04ae24f9c9876a2417e"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/kv_capacity.json": {
-    "bytes": 60,
-    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/arrival_schedule.json": {
-    "bytes": 33209,
-    "sha256": "6d2dd304086dd106a77ce8bd50b8c3afbefac409afa0bbe00b8040f4ed4033af"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/metrics.json": {
-    "bytes": 749,
-    "sha256": "2749a54df832d4e982f271d7faad4f24ac9f2e5559589ed878ebeb0bd40ad612"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/requests.json": {
-    "bytes": 296580,
-    "sha256": "80e938e36cd4c71f45545b942c866a9277ea39cc7eca74a7481e26c91933790e"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/results.csv": {
-    "bytes": 44777,
-    "sha256": "649af94817b00e282c53d2cd6fbb0da0016877fba62bb26c9f6c8203e9180e3d"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/speed_results.json": {
-    "bytes": 220043,
-    "sha256": "a0a044c92cfd6f4322031fff621f5038aa06de57c7e61de44ed7bc55a5f09bd6"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/measured/status.json": {
-    "bytes": 194,
-    "sha256": "317f5e277d9270e9f25b66cfdac4a35f84ae1b30a29a79010cabcff054ccf326"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/server.log": {
-    "bytes": 253263,
-    "sha256": "54c197cb56b6edec717ab916cd117d67580673759d9671aab1baa8084fef14df"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/status.json": {
-    "bytes": 74,
-    "sha256": "f9a2b9da19b9a2a74a8f510b9253e66225c28df35fc6e990372a3dda191ac331"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/metrics.json": {
-    "bytes": 640,
-    "sha256": "82e6f0da6ffdb6252753a16f2f952f04d14294c645b3d1b42c765b4c08ac8014"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/requests.json": {
-    "bytes": 144347,
-    "sha256": "82de779bd3a4d160157b12871820e2f69d751c1ed699ac9b20ae621df1e9ac6f"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/results.csv": {
-    "bytes": 22555,
-    "sha256": "f0b42f0ecd07ebba4284e67a19b3e8dba39fbeb72d2462adff30591607219f4e"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/speed_results.json": {
-    "bytes": 110112,
-    "sha256": "2e90cf29ad69987326ccf55328cb678f779dbecd3b951603133cd665d89247fa"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/r1-optimized-rate30/warmup/status.json": {
-    "bytes": 132,
-    "sha256": "09ee780e90f9036d39018d63d8ce3dbb7299a05750cfb2748de6561248da3e41"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/status.json": {
-    "bytes": 117,
-    "sha256": "44742472ccb2882f2f9c59f7959e8965be1e89be33d1f87900c88e6fb1f2731a"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/results/versions.txt": {
-    "bytes": 9547,
-    "sha256": "1b36a69616eacfe3d25fd1a04c367ac43a28dc34db13dd0b3a224dd71927e584"
-  },
-  "minicpm-flow-hift/2026-10-26-openloop-rate30-events/run.log": {
-    "bytes": 553,
-    "sha256": "588cc699bccf7efb917d316c6316cc308b519284c018b708473e1cc3dee7bbff"
-  },
   "minicpm-flow-hift/EXTERNAL_EVIDENCE.json": {
     "bytes": 22942,
     "sha256": "6d2b0ef7df1ef0ab77540dcd3bae68ae38606396fceb03d993ec602f694a674f"
@@ -6862,5 +6862,337 @@
   "minicpm-flow-hift/README.md": {
     "bytes": 4675,
     "sha256": "93bd3cb88eaa280be4c9164cfad2447442515bdcc5417d86d36408f0c349394a"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/PROVENANCE.json": {
+    "bytes": 36321,
+    "sha256": "6e823aecd32b8ae71ea7ae772d63173f41fd3161812bf3c837ce5eb2b99b3b15"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/PUBLICATION.md": {
+    "bytes": 691,
+    "sha256": "e7d594898356e4dd8e9ba30b5a597f3f69594486c3d8f11713f9ec16539f2ca9"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/README.md": {
+    "bytes": 233,
+    "sha256": "ac827bc90ed5549a155622bb1c0a294b86e2d3bceab7f6cf144216df02e76f52"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/REPORT.md": {
+    "bytes": 2458,
+    "sha256": "4f71406263dc75b5e5b40bd36d777dd8ca494e394a3b5a3794e0c927f71779d5"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/analysis.json": {
+    "bytes": 105488,
+    "sha256": "ae5815fca14e4240696b727edb2918ff9193dd6b57e3de7af9c24773fd4b62b5"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/client.log": {
+    "bytes": 13257,
+    "sha256": "b43756d336514161487fdf94c1cfb20cf92a031daa54d5d81e8c0d7092fadb9c"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/codec_evidence.jsonl": {
+    "bytes": 122616,
+    "sha256": "8180bb1d82b3ff9488c4753f23dffdb0eaa71ebdd09ee8833dfb32b5d1349fb2"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/command.json": {
+    "bytes": 1557,
+    "sha256": "cb960d97ff67d1041ac667e774dd45d92931cb72be0a42841bd76d3a86cf5318"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/driver.log": {
+    "bytes": 124,
+    "sha256": "87a6bc783351bcabc97d76881c195d976520c4b661ebf92fe520649ad6c6b74b"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/environment.json": {
+    "bytes": 594,
+    "sha256": "cdca72ffc8c6c9e9332a3ee11c7a9117e4a6aeb5ae20eaa80d117a91494fc73c"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/gpu_identity.csv": {
+    "bytes": 133,
+    "sha256": "315a45bb39bbe2f5cc3c82d897dd18834476f2c7128c6dc8c56115022cbca217"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/input_checksums.json": {
+    "bytes": 611,
+    "sha256": "fad05921b19c2d31bae26c9a934a9f25410a0877c9ff2a15dc101bf7d8aa81bd"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/kv_capacity.json": {
+    "bytes": 90,
+    "sha256": "341d7dcbd548d4b9491b1d808a6f13385a9a56c9593760080753700b042a6149"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s0-nonstream-en.timeline.jsonl": {
+    "bytes": 647,
+    "sha256": "f3c5b28945519b88d40cea945ec404f540808642aa72ed26c2e6012ddc868e1d"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s1-stream-en.timeline.jsonl": {
+    "bytes": 3650,
+    "sha256": "ccb2d2d4bae04286a98ef0ff47aeb782d3606699d02e04f9bb1f26e01ce254a0"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s2-stream-en.timeline.jsonl": {
+    "bytes": 3644,
+    "sha256": "3b8ab76d9efe34f61e947bd90e4c9bcf2e549eed14dcb11b54e5f9f9f5921f8f"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_en-s3-nonstream-en.timeline.jsonl": {
+    "bytes": 646,
+    "sha256": "837319f4f53b6f1a3cb1b34c0d3fe7f38e87f3952fd8387440a365caa8e3dbef"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s0-nonstream-zh.timeline.jsonl": {
+    "bytes": 777,
+    "sha256": "2e6d234cf6bd6bbe61483114f4420972401e02457e76290301daa87f892574c3"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s1-stream-zh.timeline.jsonl": {
+    "bytes": 4501,
+    "sha256": "eb6aeae9ba014f52b68466572cee89f9506fbe3d6447caf4783c1e1cf38ce250"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s2-stream-zh.timeline.jsonl": {
+    "bytes": 4504,
+    "sha256": "e2cde70bba0f565a7cfd507e2431dc3b9b6e31c70c3e5c8d5e882648e1c26130"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c1_zh-s3-nonstream-zh.timeline.jsonl": {
+    "bytes": 778,
+    "sha256": "17ffcafa3aff8d7c0ecae9fb049a1c76da9bbfd5c219babc935defa8dbc014ed"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s0-nonstream-en.timeline.jsonl": {
+    "bytes": 646,
+    "sha256": "f7d1e244b7a0c1c783dd79c25928ae99533498bcf32e21365036fb2c7b2e9de2"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s0-nonstream-zh.timeline.jsonl": {
+    "bytes": 777,
+    "sha256": "706ef6645590dd098c40726761d1132c141abe42028ba840adb27d4beccd5dfe"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s1-stream-en.timeline.jsonl": {
+    "bytes": 3640,
+    "sha256": "c2081fc37fe1180016d6c8b7372bf1713b5e862591686d5a8bd43cc2561ee659"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s1-stream-zh.timeline.jsonl": {
+    "bytes": 4482,
+    "sha256": "43a57ef161044e2670d2496bae0e54f52362d5a57f0088a4aaea253bf271b0c4"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s2-stream-en.timeline.jsonl": {
+    "bytes": 3555,
+    "sha256": "ffbf081fdd541ba7183009e3ad11e5bd213154e22050864aeb664d48b1834faf"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s2-stream-zh.timeline.jsonl": {
+    "bytes": 4492,
+    "sha256": "d5daf3b57a822d704392c8df801f691e804f80408220d3ddc7414da035312a84"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s3-nonstream-en.timeline.jsonl": {
+    "bytes": 647,
+    "sha256": "2d1960329d69d4494941f96f10ac3decb1dd3d3af9403446d130abf57bc0bbf5"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_simultaneous-s3-nonstream-zh.timeline.jsonl": {
+    "bytes": 778,
+    "sha256": "fb6739a969ada7d3dc6f307ec028860062511863738c099fe4b54e8ac92878ba"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s0-nonstream-en.timeline.jsonl": {
+    "bytes": 647,
+    "sha256": "07c00e28f5d1fe5654d7ff7494cbfe55824f528403aaa6505326b81ef9c4e95d"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s0-nonstream-zh.timeline.jsonl": {
+    "bytes": 776,
+    "sha256": "0458b6c8e528ffa9d151616dbdfa5c26457e7c37584c4c5f072f1e7068d2f0fa"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s1-stream-en.timeline.jsonl": {
+    "bytes": 3647,
+    "sha256": "5098bd6facd3e35f07a92ae2142a0e52a2e959c403f2728b98e0e1665d674801"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s1-stream-zh.timeline.jsonl": {
+    "bytes": 4503,
+    "sha256": "34e7c827b454a6b4828fddd7522cbed91f00e95996c49cd61d31976baf96de27"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s2-stream-en.timeline.jsonl": {
+    "bytes": 3642,
+    "sha256": "3f7cb249552081ec552d83a86cb228e7954a4b6477cc64ea229b8df91538bcf0"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s2-stream-zh.timeline.jsonl": {
+    "bytes": 4409,
+    "sha256": "d43905058d218ab045c9c37092d89d48aa1d5fc1133b895b0f92d6f34497e188"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s3-nonstream-en.timeline.jsonl": {
+    "bytes": 645,
+    "sha256": "1373b443a02286c88b6769d7802082fe2f1fff6be040dee0003a91ccc04d6aee"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r0-c2_staggered-s3-nonstream-zh.timeline.jsonl": {
+    "bytes": 777,
+    "sha256": "284052720d119f63c8f23613ce4066de9c241be189880675c1b2558d4ecf54e2"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s0-nonstream-en.timeline.jsonl": {
+    "bytes": 647,
+    "sha256": "68dfa430b96dda2c9d86e03d94c0d0b9d63c116467d2a4b839a04a2c499918f0"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s1-stream-en.timeline.jsonl": {
+    "bytes": 3560,
+    "sha256": "d2471cd0ba592511a14851e4c5c42a26d05ffe79d49df4ed2ad12edba76ec159"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s2-stream-en.timeline.jsonl": {
+    "bytes": 3638,
+    "sha256": "4ec2ed17228990b2a3f57e3dff45fb7606b31264b79b29324aa0df64c88bbb72"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_en-s3-nonstream-en.timeline.jsonl": {
+    "bytes": 647,
+    "sha256": "9475667383cadf85c7d41c60f78082cb5b42d0e524d34cbafa3691e345de37d0"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s0-nonstream-zh.timeline.jsonl": {
+    "bytes": 778,
+    "sha256": "6723af9a2925f0b088cc2c0fcaa3a32386798fe58d875b569d473a33579bece4"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s1-stream-zh.timeline.jsonl": {
+    "bytes": 4503,
+    "sha256": "7b1c315aaadb0ab7ba92fd185d667af1668083d029932ad4024db78d6df396ff"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s2-stream-zh.timeline.jsonl": {
+    "bytes": 4500,
+    "sha256": "7ecb1e5755d91f6b8c9d955e34018417f044ca1d781c36a9745cf3a38d0bfca0"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c1_zh-s3-nonstream-zh.timeline.jsonl": {
+    "bytes": 777,
+    "sha256": "cec90afa354c0390d0547eea2bf596deb819bfe88db92526c459c0c3ae7b9bff"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s0-nonstream-en.timeline.jsonl": {
+    "bytes": 644,
+    "sha256": "a6ab9fe18a03ab9cd3154f8e6f636897d512f12a86c0fdd240d20ebf1d17f489"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s0-nonstream-zh.timeline.jsonl": {
+    "bytes": 778,
+    "sha256": "470b707fa4af2c6a478471f8da844d083c7e49fa44d141afbd82cad15462a95e"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s1-stream-en.timeline.jsonl": {
+    "bytes": 3553,
+    "sha256": "46e0741a020d85d2c9563dbc9434175ce1878a5f67503fe0ec80b46111d6c537"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s1-stream-zh.timeline.jsonl": {
+    "bytes": 4502,
+    "sha256": "7a3c19df51c8bb170b7c8f6cadaa7fe27af75869bca321d0780fa79a837bea2b"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s2-stream-en.timeline.jsonl": {
+    "bytes": 3561,
+    "sha256": "cd1f99eb050ed54aa1193f3dc87290d2894d7fadfa5d200ed833566db4571e6d"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s2-stream-zh.timeline.jsonl": {
+    "bytes": 4498,
+    "sha256": "37247a800a0e1174ffc80f18c4dad4aeb3929490cdfe57a05b8cde849601b20b"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s3-nonstream-en.timeline.jsonl": {
+    "bytes": 646,
+    "sha256": "d7b738a880e76a0332d912daf819907f8f594620a24d778bcde30cf06720bbae"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_simultaneous-s3-nonstream-zh.timeline.jsonl": {
+    "bytes": 776,
+    "sha256": "62a3141ffb6825cf1c783f538e12a69d2a76a9f1d8a6964785468f6f5f8194d4"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s0-nonstream-en.timeline.jsonl": {
+    "bytes": 646,
+    "sha256": "10652f417cbe1848ffa7cac3d8be844002c8488257cbbc5c1870856edcd0047b"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s0-nonstream-zh.timeline.jsonl": {
+    "bytes": 776,
+    "sha256": "91cfa46f480bc08fa9a3571aaaed2a504cd1e06097370dc8f49f93b6c0889d52"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s1-stream-en.timeline.jsonl": {
+    "bytes": 3643,
+    "sha256": "a14d96e92375d99a71596fff0cad9acf1bff8f811a701dfb9b2f9b06cf15ad7d"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s1-stream-zh.timeline.jsonl": {
+    "bytes": 4511,
+    "sha256": "4231425d83e7ec8b0b0247a03365fa95f228e160583109c199d268d4e2412683"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s2-stream-en.timeline.jsonl": {
+    "bytes": 3544,
+    "sha256": "0b84450801e59de81d26f800d0d517d3060a7ba8ea51d54068cb5f22f8f7447e"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s2-stream-zh.timeline.jsonl": {
+    "bytes": 4511,
+    "sha256": "db44a0d24aa0c38cd3b58a79aef03ebe73a48d3a2093ee8eb3745159d73e0f1e"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s3-nonstream-en.timeline.jsonl": {
+    "bytes": 646,
+    "sha256": "1d71ff5538c2cff50a233a0921d3b9f5675391224d679685d94b58fc3a9cc59b"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-r1-c2_staggered-s3-nonstream-zh.timeline.jsonl": {
+    "bytes": 777,
+    "sha256": "7bda5d98789f149e0d3e26b4c2fb4fdff833278e4b9330e30bbace6f6c3bd428"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-nonstream-en.timeline.jsonl": {
+    "bytes": 647,
+    "sha256": "0e1b95406fe6313606ba58afb523edf0ba112d48f85a342ff02d15c1d69ed321"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-nonstream-zh.timeline.jsonl": {
+    "bytes": 773,
+    "sha256": "02c087c1a7dbb561ab1e05e7095134353b844302f82856033e4ff449c64f91a4"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-stream-en.timeline.jsonl": {
+    "bytes": 3636,
+    "sha256": "c2063fd51b3ac6b57a67bc980e68a2c6b94fd222a443ecd2e2ba0e31f67a0176"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-c2-stream-zh.timeline.jsonl": {
+    "bytes": 4485,
+    "sha256": "1a82f7fc4e076827e551b297e5441f66b8c0d960a1ec7980f5c381d228eaee79"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-nonstream-en.timeline.jsonl": {
+    "bytes": 646,
+    "sha256": "34d4ae703135635585361dc7431b78d2a229543755f79f314472650d8b054d4c"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-nonstream-zh.timeline.jsonl": {
+    "bytes": 777,
+    "sha256": "650edc15a6170a2f375ee3a355d42ec36e767c726600cb03f26539d2466fbae1"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-stream-en.timeline.jsonl": {
+    "bytes": 3545,
+    "sha256": "3a1a1f3a42e79b27d0e1981040db52e30451b18bb707e0097d78acf70b92f08e"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/6235f97d7a-warmup-stream-zh.timeline.jsonl": {
+    "bytes": 4506,
+    "sha256": "9ee96340db9381161cd426ab1d93ab1e50e71d5ff5741d30d69d1b6cd31cf342"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/manifest.json": {
+    "bytes": 913,
+    "sha256": "c141081617a51aa45595471ec65faa73c15e6258261ae8747a858e3394e9e2f2"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/measurements/summary.json": {
+    "bytes": 233181,
+    "sha256": "5552901ff488bfafb4b7e82974c05081ee919bf75b8ec2226e81de2d060bbf60"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/preflight.log": {
+    "bytes": 817,
+    "sha256": "3e8f1dce3f878b463535547f331b6715006529bb2f649ed4628b5644c541c3b4"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/preflight_config.yaml": {
+    "bytes": 19834,
+    "sha256": "a53cc62b68cf4ab7a19abe1935505b77e98d43967e0d75e74a83efe834dcc5be"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/preparation.json": {
+    "bytes": 672,
+    "sha256": "736c2537dde0b262515c7935586ce213fec9f9b3c05b15cc5266eba417255f30"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/resolved_config.yaml": {
+    "bytes": 19932,
+    "sha256": "442e887533c69d49dd4d5f646a98177d57e4bc0302992e89ab407c80cbaec82f"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/server.log": {
+    "bytes": 170183,
+    "sha256": "a93133ef049081fde1aad833d8cdf45158260bf76feac272355557e9d8ce073f"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/status.json": {
+    "bytes": 243,
+    "sha256": "45e22d3d66363d132a2d23350308daeb0faa493cdd00c54f6dc72aa8507eb448"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/artifacts/stream-20261027T192929Z/versions.txt": {
+    "bytes": 9616,
+    "sha256": "22751d7a8bbad22ada03a16ecd98e00d53ecd39d0e1b4193041aba5ca4da527b"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/latest_run.txt": {
+    "bytes": 24,
+    "sha256": "6c5fd03e9a3b73c87e31c1744c5b45516db47fd527efdbc7e9a9552ec5734ec2"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/modal.log": {
+    "bytes": 3220,
+    "sha256": "e95b324a1f8196c5c92658834353ab91bf6df81844a4e8647fbc1d5037bcd61d"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/protocol.json": {
+    "bytes": 2844,
+    "sha256": "3b25f36078d5dc240fcf173e25779403971941d7cdf2485a75bee7f3df8d60e9"
+  },
+  "minicpm-given-text-stream/2026-10-27-streaming/remote_result.json": {
+    "bytes": 93,
+    "sha256": "9728075435ba3872270a00bccc4413ef433dd202be6566a83544bdff402b730d"
+  },
+  "minicpm-given-text-stream/README.md": {
+    "bytes": 592,
+    "sha256": "49dc82b8dbda3cecb43c26bbc33a2914575dabc0d2c2709b4bc43bb19c5f5d9f"
   }
 }
