@@ -1,0 +1,6 @@
+{
+  "run_id": "r1-optimized-c32-events",
+  "trace_path_template": "/work/torch-experiment/results/r1-optimized-c32/traces/{stage}",
+  "event_dir": "/work/torch-experiment/results/r1-optimized-c32/events",
+  "enable_torch": true
+}

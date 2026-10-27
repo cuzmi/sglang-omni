@@ -1,0 +1,21 @@
+[
+  {
+    "file": "preprocessing_pid142_rank0.trace.json.gz",
+    "events": 784412,
+    "gpu_kernels": 305186,
+    "gpu_streams": [
+      7
+    ],
+    "compressed_bytes": 13431956
+  },
+  {
+    "file": "talker_pid143_rank0.trace.json.gz",
+    "events": 3820404,
+    "gpu_kernels": 1235723,
+    "gpu_streams": [
+      7,
+      14
+    ],
+    "compressed_bytes": 76647532
+  }
+]

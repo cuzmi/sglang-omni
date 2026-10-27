@@ -1,0 +1,220 @@
+{
+  "variant": "optimized",
+  "formal_stage_span_seconds": 22.167881572,
+  "window_start_epoch_ns": 1792940979294771635,
+  "window_duration_seconds": 2,
+  "selection": "Start at 40 percent of the formal stage span",
+  "workers": [
+    {
+      "source": "results/r1-optimized-c32/traces/talker_pid982_rank0.trace.json.gz",
+      "window": "analysis/optimized/talker_pid982_rank0.window.trace.json.gz",
+      "owner": "Talker + Code2Wav process",
+      "base_time_nanoseconds": 1790857026000000000,
+      "full_event_categories": {
+        "": 64,
+        "cpu_op": 7936,
+        "kernel": 1394930,
+        "ac2g": 2100557,
+        "overhead": 862,
+        "cuda_runtime": 575511,
+        "gpu_memcpy": 27677,
+        "gpu_memset": 34754,
+        "cuda_driver": 67685,
+        "Trace": 1
+      },
+      "full_gpu_stream_kernel_counts": {
+        "14": 665917,
+        "7": 594881,
+        "18": 134132
+      },
+      "full_gpu_device_kernel_counts": {
+        "0": 1394930
+      },
+      "window_events": 383865,
+      "window_gpu_kernels": 123664,
+      "window_gpu_busy_union_ms": 623.5417070762002,
+      "top_full_trace_kernels": [
+        {
+          "name": "cudnn_generated_fort_native_sdpa_sm90_flash_fprop_wgmma_f16_knob_1_64x128x64_4x1x1_cga1x1x1_kernel0_0",
+          "count": 21600,
+          "summed_duration_ms": 577.3412079999958
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<192>, cute::C<64> >, 64, cutlass::bfloat16_t, float, cutlass::arch::Sm90, false, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<192> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false>, flash::VarlenDynamicPersistentTileScheduler<64, 192, 128, 128, true, true, true, false, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<192>, cute::C<64> >, 64, cutlass::bfloat16_t, float, cutlass::arch::Sm90, false, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<192> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false>, flash::VarlenDynamicPersistentTileScheduler<64, 192, 128, 128, true, true, true, false, true, true> > >::Params)",
+          "count": 29980,
+          "summed_duration_ms": 433.55950000000115
+        },
+        {
+          "name": "sm90_xmma_fprop_implicit_gemm_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize64x64x64_warpgroupsize1x1x1_g1_execute_segment_k_off_kernel__5x_cudnn",
+          "count": 18274,
+          "summed_duration_ms": 299.141026999999
+        },
+        {
+          "name": "triton_poi_fused__to_copy_constant_pad_nd_convolution_mish_transpose_unsqueeze_8",
+          "count": 21600,
+          "summed_duration_ms": 271.67858700000085
+        },
+        {
+          "name": "triton_poi_fused__to_copy_add_constant_pad_nd_mul_native_layer_norm_split_transpose_unsqueeze_view_6",
+          "count": 21600,
+          "summed_duration_ms": 262.0007659999975
+        },
+        {
+          "name": "nvjet_sm90_tst_64x24_64x16_4x1_v_bz_TNT",
+          "count": 31940,
+          "summed_duration_ms": 223.90812100000247
+        },
+        {
+          "name": "triton_poi_fused_gelu_view_10",
+          "count": 21600,
+          "summed_duration_ms": 207.6857240000014
+        },
+        {
+          "name": "sm90_xmma_fprop_implicit_gemm_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize64x128x64_warpgroupsize1x1x1_g1_execute_segment_k_off_kernel__5x_cudnn",
+          "count": 11875,
+          "summed_duration_ms": 192.5755959999995
+        },
+        {
+          "name": "triton_per_fused__scaled_dot_product_cudnn_attention__to_copy_native_layer_norm_scalar_tensor_transpose_unsqueeze_view_where_2",
+          "count": 43200,
+          "summed_duration_ms": 180.56305200000543
+        },
+        {
+          "name": "kernel_cutlass_kernel_flashinfernormkernelsfused_add_rmsnormFusedAddRMSNormKernel_object_at__tensorptrbf16gmemalign128oi647687681_tensorptrbf16gmemalign128oi647687681_tensorptrbf16gmemali_0",
+          "count": 67240,
+          "summed_duration_ms": 160.7427700000119
+        },
+        {
+          "name": "nvjet_sm90_hsh_64x8_64x16_4x1_v_bz_bias_TNT",
+          "count": 21650,
+          "summed_duration_ms": 159.22679200000067
+        },
+        {
+          "name": "sm80_xmma_gemm_f32f32_f32f32_f32_tn_n_tilesize32x32x8_stage3_warpsize1x2x1_ffma_aligna4_alignc4_execute_kernel__5x_cublas",
+          "count": 3384,
+          "summed_duration_ms": 147.40221999999997
+        },
+        {
+          "name": "void cudnn::engines_precompiled::nchwToNhwcKernel<float, float, float, false, true, (cudnnKernelDataType_t)0>(cudnn::engines_precompiled::nchw2nhwc_params_t<float>, float const*, float*)",
+          "count": 29362,
+          "summed_duration_ms": 143.7141929999995
+        },
+        {
+          "name": "void cutlass::Kernel2<cutlass_80_simt_sgemm_128x64_8x5_tn_align1>(cutlass_80_simt_sgemm_128x64_8x5_tn_align1::Params)",
+          "count": 708,
+          "summed_duration_ms": 132.16611399999994
+        },
+        {
+          "name": "triton_per_fused__to_copy_add_constant_pad_nd_convolution_mish_mul_native_layer_norm_split_squeeze_transpose_unsqueeze_view_9",
+          "count": 21600,
+          "summed_duration_ms": 128.96202300000223
+        }
+      ]
+    },
+    {
+      "source": "results/r1-optimized-c32/traces/thinker_pid981_rank0.trace.json.gz",
+      "window": "analysis/optimized/thinker_pid981_rank0.window.trace.json.gz",
+      "owner": "Thinker process",
+      "base_time_nanoseconds": 1790857026000000000,
+      "full_event_categories": {
+        "": 60,
+        "cpu_op": 14336,
+        "cuda_runtime": 192704,
+        "ac2g": 803965,
+        "overhead": 83,
+        "gpu_memcpy": 14086,
+        "kernel": 558083,
+        "cuda_driver": 38096,
+        "gpu_memset": 996,
+        "Trace": 1
+      },
+      "full_gpu_stream_kernel_counts": {
+        "7": 558083
+      },
+      "full_gpu_device_kernel_counts": {
+        "0": 558083
+      },
+      "window_events": 165233,
+      "window_gpu_kernels": 55715,
+      "window_gpu_busy_union_ms": 923.9194942461606,
+      "top_full_trace_kernels": [
+        {
+          "name": "nvjet_sm90_tst_192x8_64x8_2x1_v_bz_TNT",
+          "count": 27036,
+          "summed_duration_ms": 2754.437525999971
+        },
+        {
+          "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_TNT",
+          "count": 54072,
+          "summed_duration_ms": 1744.1755129999449
+        },
+        {
+          "name": "nvjet_sm90_tst_384x8_64x4_2x1_v_bz_TNT",
+          "count": 946,
+          "summed_duration_ms": 1105.660700000001
+        },
+        {
+          "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_TNT",
+          "count": 27036,
+          "summed_duration_ms": 923.5644230000134
+        },
+        {
+          "name": "nvjet_sm90_tst_192x32_64x7_2x1_v_bz_TNT",
+          "count": 3924,
+          "summed_duration_ms": 296.19719400000014
+        },
+        {
+          "name": "kernel_cutlass_kernel_flashinfernormkernelsfused_add_rmsnormFusedAddRMSNormKernel_object_at__tensorptrbf16gmemalign128oi64409640961_tensorptrbf16gmemalign128oi64409640961_tensorptrbf16gme_0",
+          "count": 71712,
+          "summed_duration_ms": 294.25453199999225
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, 128, cutlass::bfloat16_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<128>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+          "count": 27936,
+          "summed_duration_ms": 274.17082899999525
+        },
+        {
+          "name": "nvjet_sm90_tst_192x24_64x7_2x1_v_bz_TNT",
+          "count": 3420,
+          "summed_duration_ms": 269.66942399999994
+        },
+        {
+          "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "count": 63432,
+          "summed_duration_ms": 217.01141000001306
+        },
+        {
+          "name": "triton_red_fused__to_copy_add_argmax_clamp_div_log_neg_2",
+          "count": 996,
+          "summed_duration_ms": 162.15364200000013
+        },
+        {
+          "name": "nvjet_sm90_tst_64x32_64x16_2x1_v_bz_splitK_TNT",
+          "count": 3924,
+          "summed_duration_ms": 154.51579500000008
+        },
+        {
+          "name": "nvjet_sm90_tst_64x24_64x16_2x1_v_bz_splitK_TNT",
+          "count": 3420,
+          "summed_duration_ms": 138.16117900000012
+        },
+        {
+          "name": "nvjet_sm90_tst_64x24_64x16_4x1_v_bz_TNT",
+          "count": 6840,
+          "summed_duration_ms": 128.08933199999973
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+          "count": 30744,
+          "summed_duration_ms": 101.52884200000088
+        },
+        {
+          "name": "void sglang::fused_rope_kernel<true, 128l, true, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+          "count": 35856,
+          "summed_duration_ms": 88.11841500000119
+        }
+      ]
+    }
+  ],
+  "overview": "analysis/optimized/gpu_overview_2s.trace.json.gz"
+}

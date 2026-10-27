@@ -1,0 +1,22 @@
+[
+  {
+    "file": "talker_pid982_rank0.trace.json.gz",
+    "events": 4209977,
+    "gpu_kernels": 1394930,
+    "gpu_streams": [
+      7,
+      14,
+      18
+    ],
+    "compressed_bytes": 80952531
+  },
+  {
+    "file": "thinker_pid981_rank0.trace.json.gz",
+    "events": 1622410,
+    "gpu_kernels": 558083,
+    "gpu_streams": [
+      7
+    ],
+    "compressed_bytes": 27380001
+  }
+]

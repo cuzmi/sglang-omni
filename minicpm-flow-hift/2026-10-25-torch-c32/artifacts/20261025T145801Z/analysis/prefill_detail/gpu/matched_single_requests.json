@@ -1,0 +1,599 @@
+{
+  "matched_single_request_sample_ids": [
+    "common_voice_en_10933823-common_voice_en_10933825",
+    "common_voice_en_120405-common_voice_en_120402",
+    "common_voice_en_15735839-common_voice_en_15735837",
+    "common_voice_en_17161-common_voice_en_17160",
+    "common_voice_en_17259121-common_voice_en_17259122",
+    "common_voice_en_17263752-common_voice_en_17263755",
+    "common_voice_en_17267923-common_voice_en_17267922",
+    "common_voice_en_173534-common_voice_en_173540",
+    "common_voice_en_17389076-common_voice_en_17389120",
+    "common_voice_en_17406732-common_voice_en_17406735",
+    "common_voice_en_17429166-common_voice_en_17429168",
+    "common_voice_en_17519982-common_voice_en_17519988",
+    "common_voice_en_17874600-common_voice_en_17874601",
+    "common_voice_en_17899910-common_voice_en_17899909",
+    "common_voice_en_18105426-common_voice_en_18105428",
+    "common_voice_en_18229682-common_voice_en_18229679",
+    "common_voice_en_18647546-common_voice_en_18647550",
+    "common_voice_en_18710640-common_voice_en_18710642",
+    "common_voice_en_18889688-common_voice_en_18889686",
+    "common_voice_en_18962809-common_voice_en_18962814",
+    "common_voice_en_19254683-common_voice_en_19254687",
+    "common_voice_en_19277026-common_voice_en_19277029",
+    "common_voice_en_19284142-common_voice_en_19284143",
+    "common_voice_en_19428391-common_voice_en_19428392",
+    "common_voice_en_19449066-common_voice_en_19449076",
+    "common_voice_en_19496235-common_voice_en_19496229"
+  ],
+  "matched_sample_count": 26,
+  "summary": {
+    "baseline": {
+      "host_interval_ms": 39.8842951566256,
+      "gpu_busy_union_ms": 1.4485431565504807,
+      "gpu_internal_gaps_ms": 36.430093872070316,
+      "kernel_gaps_before_next_launch_entry_ms": 20.592764657827523,
+      "kernel_gaps_after_next_launch_entry_ms": 15.83732921424279,
+      "cuda_runtime_union_ms": 5.77566245680589,
+      "gpu_kernel_count": 365.2692307692308
+    },
+    "optimized": {
+      "host_interval_ms": 40.87660924353966,
+      "gpu_busy_union_ms": 1.5889545616736778,
+      "gpu_internal_gaps_ms": 37.06243925593449,
+      "kernel_gaps_before_next_launch_entry_ms": 14.372053044245794,
+      "kernel_gaps_after_next_launch_entry_ms": 22.6903862116887,
+      "cuda_runtime_union_ms": 9.353805645282453,
+      "gpu_kernel_count": 365.2692307692308
+    }
+  },
+  "pairs": [
+    {
+      "sample_id": "common_voice_en_10933823-common_voice_en_10933825",
+      "baseline": {
+        "host_interval_ms": 20.154282958984375,
+        "gpu_busy_union_ms": 1.012380615234375,
+        "gpu_internal_gaps_ms": 18.224259521484377,
+        "kernel_gaps_before_next_launch_entry_ms": 4.601689697265625,
+        "kernel_gaps_after_next_launch_entry_ms": 13.62256982421875,
+        "cuda_runtime_union_ms": 9.258598876953124,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 9.156989990234376,
+        "gpu_busy_union_ms": 0.986466796875,
+        "gpu_internal_gaps_ms": 7.106676269531251,
+        "kernel_gaps_before_next_launch_entry_ms": 7.10667626953125,
+        "kernel_gaps_after_next_launch_entry_ms": 0.0,
+        "cuda_runtime_union_ms": 1.922939208984375,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_120405-common_voice_en_120402",
+      "baseline": {
+        "host_interval_ms": 8.24164794921875,
+        "gpu_busy_union_ms": 1.005715087890625,
+        "gpu_internal_gaps_ms": 6.6163137207031255,
+        "kernel_gaps_before_next_launch_entry_ms": 4.744403564453125,
+        "kernel_gaps_after_next_launch_entry_ms": 1.87191015625,
+        "cuda_runtime_union_ms": 1.697638916015625,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 24.4841611328125,
+        "gpu_busy_union_ms": 1.035880859375,
+        "gpu_internal_gaps_ms": 19.831626220703125,
+        "kernel_gaps_before_next_launch_entry_ms": 11.2810458984375,
+        "kernel_gaps_after_next_launch_entry_ms": 8.550580322265626,
+        "cuda_runtime_union_ms": 11.79472802734375,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_15735839-common_voice_en_15735837",
+      "baseline": {
+        "host_interval_ms": 13.158466064453124,
+        "gpu_busy_union_ms": 1.00181689453125,
+        "gpu_internal_gaps_ms": 11.373205322265624,
+        "kernel_gaps_before_next_launch_entry_ms": 3.320183349609375,
+        "kernel_gaps_after_next_launch_entry_ms": 8.05302197265625,
+        "cuda_runtime_union_ms": 5.570703125,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 11.845869140625,
+        "gpu_busy_union_ms": 1.001142578125,
+        "gpu_internal_gaps_ms": 9.38296044921875,
+        "kernel_gaps_before_next_launch_entry_ms": 4.9456748046875,
+        "kernel_gaps_after_next_launch_entry_ms": 4.43728564453125,
+        "cuda_runtime_union_ms": 3.773707763671875,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17161-common_voice_en_17160",
+      "baseline": {
+        "host_interval_ms": 20.78652490234375,
+        "gpu_busy_union_ms": 1.09871630859375,
+        "gpu_internal_gaps_ms": 18.700673583984376,
+        "kernel_gaps_before_next_launch_entry_ms": 15.3953359375,
+        "kernel_gaps_after_next_launch_entry_ms": 3.305337646484375,
+        "cuda_runtime_union_ms": 3.163803955078125,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 12.733990966796876,
+        "gpu_busy_union_ms": 1.034447265625,
+        "gpu_internal_gaps_ms": 9.808448974609375,
+        "kernel_gaps_before_next_launch_entry_ms": 4.7841455078125,
+        "kernel_gaps_after_next_launch_entry_ms": 5.024303466796875,
+        "cuda_runtime_union_ms": 6.158082275390625,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17259121-common_voice_en_17259122",
+      "baseline": {
+        "host_interval_ms": 22.86639794921875,
+        "gpu_busy_union_ms": 1.20274462890625,
+        "gpu_internal_gaps_ms": 19.120443359375003,
+        "kernel_gaps_before_next_launch_entry_ms": 5.182514892578125,
+        "kernel_gaps_after_next_launch_entry_ms": 13.937928466796874,
+        "cuda_runtime_union_ms": 5.3623212890625,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 61.262755859375,
+        "gpu_busy_union_ms": 1.4553974609375,
+        "gpu_internal_gaps_ms": 58.30111962890625,
+        "kernel_gaps_before_next_launch_entry_ms": 20.95672314453125,
+        "kernel_gaps_after_next_launch_entry_ms": 37.344396484375,
+        "cuda_runtime_union_ms": 15.123105224609375,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17263752-common_voice_en_17263755",
+      "baseline": {
+        "host_interval_ms": 43.664552001953126,
+        "gpu_busy_union_ms": 1.2236806640625,
+        "gpu_internal_gaps_ms": 41.275099365234375,
+        "kernel_gaps_before_next_launch_entry_ms": 18.75275390625,
+        "kernel_gaps_after_next_launch_entry_ms": 22.522345458984375,
+        "cuda_runtime_union_ms": 6.84270849609375,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 71.57742895507812,
+        "gpu_busy_union_ms": 1.3578525390625,
+        "gpu_internal_gaps_ms": 68.33707348632812,
+        "kernel_gaps_before_next_launch_entry_ms": 26.862547607421874,
+        "kernel_gaps_after_next_launch_entry_ms": 41.47452587890625,
+        "cuda_runtime_union_ms": 5.34782080078125,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17267923-common_voice_en_17267922",
+      "baseline": {
+        "host_interval_ms": 12.847412841796874,
+        "gpu_busy_union_ms": 4.070178466796875,
+        "gpu_internal_gaps_ms": 6.561780517578125,
+        "kernel_gaps_before_next_launch_entry_ms": 0.466832763671875,
+        "kernel_gaps_after_next_launch_entry_ms": 6.09494775390625,
+        "cuda_runtime_union_ms": 6.128043212890625,
+        "gpu_kernel_count": 347
+      },
+      "optimized": {
+        "host_interval_ms": 64.41773291015625,
+        "gpu_busy_union_ms": 1.382310791015625,
+        "gpu_internal_gaps_ms": 60.737312988281246,
+        "kernel_gaps_before_next_launch_entry_ms": 6.390291259765625,
+        "kernel_gaps_after_next_launch_entry_ms": 54.34702172851563,
+        "cuda_runtime_union_ms": 30.6880859375,
+        "gpu_kernel_count": 347
+      }
+    },
+    {
+      "sample_id": "common_voice_en_173534-common_voice_en_173540",
+      "baseline": {
+        "host_interval_ms": 29.896716064453123,
+        "gpu_busy_union_ms": 1.1312197265625,
+        "gpu_internal_gaps_ms": 27.9494443359375,
+        "kernel_gaps_before_next_launch_entry_ms": 24.4687197265625,
+        "kernel_gaps_after_next_launch_entry_ms": 3.480724609375,
+        "cuda_runtime_union_ms": 4.205283203125,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 21.2017451171875,
+        "gpu_busy_union_ms": 4.042273681640625,
+        "gpu_internal_gaps_ms": 14.955041259765624,
+        "kernel_gaps_before_next_launch_entry_ms": 0.474822021484375,
+        "kernel_gaps_after_next_launch_entry_ms": 14.48021923828125,
+        "cuda_runtime_union_ms": 11.4003330078125,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17389076-common_voice_en_17389120",
+      "baseline": {
+        "host_interval_ms": 109.53012109375,
+        "gpu_busy_union_ms": 1.314683349609375,
+        "gpu_internal_gaps_ms": 99.18273876953124,
+        "kernel_gaps_before_next_launch_entry_ms": 55.655002197265624,
+        "kernel_gaps_after_next_launch_entry_ms": 43.527736572265624,
+        "cuda_runtime_union_ms": 10.332791015625,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 29.2542470703125,
+        "gpu_busy_union_ms": 1.5018291015625,
+        "gpu_internal_gaps_ms": 25.333927001953125,
+        "kernel_gaps_before_next_launch_entry_ms": 0.0,
+        "kernel_gaps_after_next_launch_entry_ms": 25.333927001953125,
+        "cuda_runtime_union_ms": 8.801719970703125,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17406732-common_voice_en_17406735",
+      "baseline": {
+        "host_interval_ms": 43.61394311523438,
+        "gpu_busy_union_ms": 1.21241943359375,
+        "gpu_internal_gaps_ms": 41.14085766601562,
+        "kernel_gaps_before_next_launch_entry_ms": 37.46340234375,
+        "kernel_gaps_after_next_launch_entry_ms": 3.677455322265625,
+        "cuda_runtime_union_ms": 4.008791015625,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 56.44416796875,
+        "gpu_busy_union_ms": 1.345676513671875,
+        "gpu_internal_gaps_ms": 49.1955224609375,
+        "kernel_gaps_before_next_launch_entry_ms": 1.525967041015625,
+        "kernel_gaps_after_next_launch_entry_ms": 47.66955541992188,
+        "cuda_runtime_union_ms": 7.34602001953125,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17429166-common_voice_en_17429168",
+      "baseline": {
+        "host_interval_ms": 40.0370009765625,
+        "gpu_busy_union_ms": 1.31154345703125,
+        "gpu_internal_gaps_ms": 37.12534423828125,
+        "kernel_gaps_before_next_launch_entry_ms": 6.62946337890625,
+        "kernel_gaps_after_next_launch_entry_ms": 30.495880859375,
+        "cuda_runtime_union_ms": 6.836173095703125,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 71.16338305664063,
+        "gpu_busy_union_ms": 2.8939931640625,
+        "gpu_internal_gaps_ms": 65.51103295898439,
+        "kernel_gaps_before_next_launch_entry_ms": 1.959041015625,
+        "kernel_gaps_after_next_launch_entry_ms": 63.551991943359376,
+        "cuda_runtime_union_ms": 23.644446044921875,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17519982-common_voice_en_17519988",
+      "baseline": {
+        "host_interval_ms": 30.79560400390625,
+        "gpu_busy_union_ms": 1.27115087890625,
+        "gpu_internal_gaps_ms": 27.916541015624997,
+        "kernel_gaps_before_next_launch_entry_ms": 4.398487060546875,
+        "kernel_gaps_after_next_launch_entry_ms": 23.518053955078123,
+        "cuda_runtime_union_ms": 8.209130615234375,
+        "gpu_kernel_count": 347
+      },
+      "optimized": {
+        "host_interval_ms": 11.421773193359375,
+        "gpu_busy_union_ms": 0.9861279296875,
+        "gpu_internal_gaps_ms": 8.20553125,
+        "kernel_gaps_before_next_launch_entry_ms": 3.165373779296875,
+        "kernel_gaps_after_next_launch_entry_ms": 5.040157470703125,
+        "cuda_runtime_union_ms": 4.280951416015625,
+        "gpu_kernel_count": 347
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17874600-common_voice_en_17874601",
+      "baseline": {
+        "host_interval_ms": 29.020151123046876,
+        "gpu_busy_union_ms": 1.2462412109375,
+        "gpu_internal_gaps_ms": 26.015829833984373,
+        "kernel_gaps_before_next_launch_entry_ms": 21.67776123046875,
+        "kernel_gaps_after_next_launch_entry_ms": 4.338068603515625,
+        "cuda_runtime_union_ms": 3.32964208984375,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 52.743887939453124,
+        "gpu_busy_union_ms": 1.152533203125,
+        "gpu_internal_gaps_ms": 50.27526977539062,
+        "kernel_gaps_before_next_launch_entry_ms": 46.8247353515625,
+        "kernel_gaps_after_next_launch_entry_ms": 3.450534423828125,
+        "cuda_runtime_union_ms": 4.068840087890625,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_17899910-common_voice_en_17899909",
+      "baseline": {
+        "host_interval_ms": 35.8341630859375,
+        "gpu_busy_union_ms": 1.534006591796875,
+        "gpu_internal_gaps_ms": 32.55800927734375,
+        "kernel_gaps_before_next_launch_entry_ms": 8.877446533203125,
+        "kernel_gaps_after_next_launch_entry_ms": 23.680562744140627,
+        "cuda_runtime_union_ms": 3.800161865234375,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 43.53354907226562,
+        "gpu_busy_union_ms": 1.89973828125,
+        "gpu_internal_gaps_ms": 40.041334716796875,
+        "kernel_gaps_before_next_launch_entry_ms": 18.87501025390625,
+        "kernel_gaps_after_next_launch_entry_ms": 21.166324462890625,
+        "cuda_runtime_union_ms": 15.44543017578125,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_18105426-common_voice_en_18105428",
+      "baseline": {
+        "host_interval_ms": 10.75495703125,
+        "gpu_busy_union_ms": 1.6575029296875,
+        "gpu_internal_gaps_ms": 7.117283203125,
+        "kernel_gaps_before_next_launch_entry_ms": 0.70526416015625,
+        "kernel_gaps_after_next_launch_entry_ms": 6.41201904296875,
+        "cuda_runtime_union_ms": 3.4288232421875,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 10.346676025390625,
+        "gpu_busy_union_ms": 1.022467041015625,
+        "gpu_internal_gaps_ms": 8.454916015624999,
+        "kernel_gaps_before_next_launch_entry_ms": 0.385321044921875,
+        "kernel_gaps_after_next_launch_entry_ms": 8.069594970703125,
+        "cuda_runtime_union_ms": 3.5692646484375,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_18229682-common_voice_en_18229679",
+      "baseline": {
+        "host_interval_ms": 35.986383056640626,
+        "gpu_busy_union_ms": 3.325122314453125,
+        "gpu_internal_gaps_ms": 31.402089599609376,
+        "kernel_gaps_before_next_launch_entry_ms": 11.962638916015624,
+        "kernel_gaps_after_next_launch_entry_ms": 19.43945068359375,
+        "cuda_runtime_union_ms": 4.310793212890625,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 42.564200927734376,
+        "gpu_busy_union_ms": 2.48337353515625,
+        "gpu_internal_gaps_ms": 34.84382641601563,
+        "kernel_gaps_before_next_launch_entry_ms": 18.932285400390626,
+        "kernel_gaps_after_next_launch_entry_ms": 15.911541015625,
+        "cuda_runtime_union_ms": 7.010609619140625,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_18647546-common_voice_en_18647550",
+      "baseline": {
+        "host_interval_ms": 45.091918212890626,
+        "gpu_busy_union_ms": 1.229432861328125,
+        "gpu_internal_gaps_ms": 40.825119140625,
+        "kernel_gaps_before_next_launch_entry_ms": 15.12784912109375,
+        "kernel_gaps_after_next_launch_entry_ms": 25.69727001953125,
+        "cuda_runtime_union_ms": 4.605785400390625,
+        "gpu_kernel_count": 347
+      },
+      "optimized": {
+        "host_interval_ms": 47.49459790039062,
+        "gpu_busy_union_ms": 1.409618408203125,
+        "gpu_internal_gaps_ms": 43.85299072265625,
+        "kernel_gaps_before_next_launch_entry_ms": 9.166534912109375,
+        "kernel_gaps_after_next_launch_entry_ms": 34.686455810546875,
+        "cuda_runtime_union_ms": 11.805875244140625,
+        "gpu_kernel_count": 347
+      }
+    },
+    {
+      "sample_id": "common_voice_en_18710640-common_voice_en_18710642",
+      "baseline": {
+        "host_interval_ms": 69.169291015625,
+        "gpu_busy_union_ms": 1.21276806640625,
+        "gpu_internal_gaps_ms": 65.98048583984375,
+        "kernel_gaps_before_next_launch_entry_ms": 47.437552490234374,
+        "kernel_gaps_after_next_launch_entry_ms": 18.542933349609374,
+        "cuda_runtime_union_ms": 8.39403173828125,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 64.08980908203125,
+        "gpu_busy_union_ms": 1.289528076171875,
+        "gpu_internal_gaps_ms": 60.088632812499995,
+        "kernel_gaps_before_next_launch_entry_ms": 33.45582690429688,
+        "kernel_gaps_after_next_launch_entry_ms": 26.632805908203125,
+        "cuda_runtime_union_ms": 5.548828125,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_18889688-common_voice_en_18889686",
+      "baseline": {
+        "host_interval_ms": 82.5151240234375,
+        "gpu_busy_union_ms": 1.532343994140625,
+        "gpu_internal_gaps_ms": 77.76021484374999,
+        "kernel_gaps_before_next_launch_entry_ms": 34.0069111328125,
+        "kernel_gaps_after_next_launch_entry_ms": 43.7533037109375,
+        "cuda_runtime_union_ms": 5.670290771484375,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 27.63310009765625,
+        "gpu_busy_union_ms": 1.09196240234375,
+        "gpu_internal_gaps_ms": 24.991066650390625,
+        "kernel_gaps_before_next_launch_entry_ms": 5.59249169921875,
+        "kernel_gaps_after_next_launch_entry_ms": 19.398574951171874,
+        "cuda_runtime_union_ms": 9.879848876953124,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_18962809-common_voice_en_18962814",
+      "baseline": {
+        "host_interval_ms": 42.0692958984375,
+        "gpu_busy_union_ms": 1.2589375,
+        "gpu_internal_gaps_ms": 39.7335576171875,
+        "kernel_gaps_before_next_launch_entry_ms": 12.60947412109375,
+        "kernel_gaps_after_next_launch_entry_ms": 27.12408349609375,
+        "cuda_runtime_union_ms": 12.1700029296875,
+        "gpu_kernel_count": 347
+      },
+      "optimized": {
+        "host_interval_ms": 51.622733154296874,
+        "gpu_busy_union_ms": 1.273881591796875,
+        "gpu_internal_gaps_ms": 47.302217529296875,
+        "kernel_gaps_before_next_launch_entry_ms": 24.17825537109375,
+        "kernel_gaps_after_next_launch_entry_ms": 23.123962158203124,
+        "cuda_runtime_union_ms": 10.68065966796875,
+        "gpu_kernel_count": 347
+      }
+    },
+    {
+      "sample_id": "common_voice_en_19254683-common_voice_en_19254687",
+      "baseline": {
+        "host_interval_ms": 15.0785458984375,
+        "gpu_busy_union_ms": 2.108913330078125,
+        "gpu_internal_gaps_ms": 12.130874511718751,
+        "kernel_gaps_before_next_launch_entry_ms": 2.928188720703125,
+        "kernel_gaps_after_next_launch_entry_ms": 9.202685791015625,
+        "cuda_runtime_union_ms": 7.09067138671875,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 97.57014501953125,
+        "gpu_busy_union_ms": 1.44859716796875,
+        "gpu_internal_gaps_ms": 93.51566479492188,
+        "kernel_gaps_before_next_launch_entry_ms": 48.77904565429687,
+        "kernel_gaps_after_next_launch_entry_ms": 44.736619140625,
+        "cuda_runtime_union_ms": 10.52047216796875,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_19277026-common_voice_en_19277029",
+      "baseline": {
+        "host_interval_ms": 27.7467099609375,
+        "gpu_busy_union_ms": 1.065656494140625,
+        "gpu_internal_gaps_ms": 25.335404541015624,
+        "kernel_gaps_before_next_launch_entry_ms": 22.11484130859375,
+        "kernel_gaps_after_next_launch_entry_ms": 3.220563232421875,
+        "cuda_runtime_union_ms": 3.5577099609375,
+        "gpu_kernel_count": 347
+      },
+      "optimized": {
+        "host_interval_ms": 9.200032958984375,
+        "gpu_busy_union_ms": 3.939875732421875,
+        "gpu_internal_gaps_ms": 3.954285400390625,
+        "kernel_gaps_before_next_launch_entry_ms": 2.250046630859375,
+        "kernel_gaps_after_next_launch_entry_ms": 1.70423876953125,
+        "cuda_runtime_union_ms": 2.4886904296875,
+        "gpu_kernel_count": 347
+      }
+    },
+    {
+      "sample_id": "common_voice_en_19284142-common_voice_en_19284143",
+      "baseline": {
+        "host_interval_ms": 155.42482495117187,
+        "gpu_busy_union_ms": 1.18076171875,
+        "gpu_internal_gaps_ms": 149.93041650390626,
+        "kernel_gaps_before_next_launch_entry_ms": 128.47238818359375,
+        "kernel_gaps_after_next_launch_entry_ms": 21.4580283203125,
+        "cuda_runtime_union_ms": 4.512073486328125,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 79.82159497070313,
+        "gpu_busy_union_ms": 1.31665771484375,
+        "gpu_internal_gaps_ms": 76.22310131835937,
+        "kernel_gaps_before_next_launch_entry_ms": 40.27337353515625,
+        "kernel_gaps_after_next_launch_entry_ms": 35.94972778320312,
+        "cuda_runtime_union_ms": 11.099610107421874,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_19428391-common_voice_en_19428392",
+      "baseline": {
+        "host_interval_ms": 47.27443481445312,
+        "gpu_busy_union_ms": 1.338907958984375,
+        "gpu_internal_gaps_ms": 43.53895385742188,
+        "kernel_gaps_before_next_launch_entry_ms": 20.99428271484375,
+        "kernel_gaps_after_next_launch_entry_ms": 22.544671142578125,
+        "cuda_runtime_union_ms": 9.828316162109376,
+        "gpu_kernel_count": 372
+      },
+      "optimized": {
+        "host_interval_ms": 17.423091796875,
+        "gpu_busy_union_ms": 1.261951171875,
+        "gpu_internal_gaps_ms": 14.8722568359375,
+        "kernel_gaps_before_next_launch_entry_ms": 10.315593505859376,
+        "kernel_gaps_after_next_launch_entry_ms": 4.556663330078125,
+        "cuda_runtime_union_ms": 4.102027099609375,
+        "gpu_kernel_count": 372
+      }
+    },
+    {
+      "sample_id": "common_voice_en_19449066-common_voice_en_19449076",
+      "baseline": {
+        "host_interval_ms": 20.174241943359377,
+        "gpu_busy_union_ms": 1.1093974609375,
+        "gpu_internal_gaps_ms": 17.697844482421875,
+        "kernel_gaps_before_next_launch_entry_ms": 14.84701123046875,
+        "kernel_gaps_after_next_launch_entry_ms": 2.850833251953125,
+        "cuda_runtime_union_ms": 3.435005615234375,
+        "gpu_kernel_count": 347
+      },
+      "optimized": {
+        "host_interval_ms": 11.841695068359375,
+        "gpu_busy_union_ms": 1.412844970703125,
+        "gpu_internal_gaps_ms": 9.70849609375,
+        "kernel_gaps_before_next_launch_entry_ms": 2.398053955078125,
+        "kernel_gaps_after_next_launch_entry_ms": 7.310442138671875,
+        "cuda_runtime_union_ms": 5.673461669921875,
+        "gpu_kernel_count": 347
+      }
+    },
+    {
+      "sample_id": "common_voice_en_19496235-common_voice_en_19496229",
+      "baseline": {
+        "host_interval_ms": 25.258963134765626,
+        "gpu_busy_union_ms": 1.005880126953125,
+        "gpu_internal_gaps_ms": 21.969656005859374,
+        "kernel_gaps_before_next_launch_entry_ms": 12.571482421875,
+        "kernel_gaps_after_next_launch_entry_ms": 9.398173583984375,
+        "cuda_runtime_union_ms": 4.41792919921875,
+        "gpu_kernel_count": 347
+      },
+      "optimized": {
+        "host_interval_ms": 61.94248095703125,
+        "gpu_busy_union_ms": 1.286390625,
+        "gpu_internal_gaps_ms": 58.79308862304687,
+        "kernel_gaps_before_next_launch_entry_ms": 22.79449658203125,
+        "kernel_gaps_after_next_launch_entry_ms": 35.99859204101563,
+        "cuda_runtime_union_ms": 11.02338916015625,
+        "gpu_kernel_count": 347
+      }
+    }
+  ]
+}

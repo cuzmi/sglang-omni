@@ -1,0 +1,110 @@
+{
+  "baseline": {
+    "talker_forward_graph_count": 2564,
+    "talker_forward_span_mean_ms": 1.2824401297487444,
+    "talker_forward_span_median_ms": 0.9801539306640625,
+    "talker_forward_launch_gap_mean_ms": 8.373000195083886,
+    "talker_forward_launch_gap_median_ms": 4.725221923828125,
+    "talker_forward_launch_gap_p95_ms": 12.51839697265625,
+    "thinker_graph_replays": 492,
+    "thinker_kernel_busy_union_ms": 5555.432817382813,
+    "flow_stream_graph_replays": 170,
+    "flow_sdpa_kernel_calls": 4480,
+    "talker_forward_graph_families": {
+      "b3de64e1a328efb07a13": {
+        "count": 172,
+        "mean_span_ms": 1.0893476094090662,
+        "median_span_ms": 0.891258056640625
+      },
+      "6b46e4f44da4593e334e": {
+        "count": 79,
+        "mean_span_ms": 0.9753009141366693,
+        "median_span_ms": 0.92025
+      },
+      "0b27ff60f1b1fad42028": {
+        "count": 290,
+        "mean_span_ms": 1.5779531898235453,
+        "median_span_ms": 1.047448974609375
+      },
+      "7b8f417bdcd43c5a6860": {
+        "count": 537,
+        "mean_span_ms": 1.2266350256779563,
+        "median_span_ms": 1.002136962890625
+      },
+      "f3a8e9afac52440411c3": {
+        "count": 660,
+        "mean_span_ms": 1.3027774132930872,
+        "median_span_ms": 1.00791357421875
+      },
+      "edda64bd66d29591ff96": {
+        "count": 464,
+        "mean_span_ms": 1.1879622655408135,
+        "median_span_ms": 0.921962158203125
+      },
+      "7da351f0ec992d3ffb58": {
+        "count": 203,
+        "mean_span_ms": 1.3484180324911483,
+        "median_span_ms": 0.928825927734375
+      },
+      "36583ae78ce9f6d7b263": {
+        "count": 159,
+        "mean_span_ms": 1.4004657435387184,
+        "median_span_ms": 0.92968994140625
+      }
+    }
+  },
+  "optimized": {
+    "talker_forward_graph_count": 1499,
+    "talker_forward_span_mean_ms": 1.3062848117820736,
+    "talker_forward_span_median_ms": 0.9812099609375,
+    "talker_forward_launch_gap_mean_ms": 14.501909261013383,
+    "talker_forward_launch_gap_median_ms": 6.295325439453125,
+    "talker_forward_launch_gap_p95_ms": 57.62126000976563,
+    "thinker_graph_replays": 776,
+    "thinker_kernel_busy_union_ms": 9458.662284179687,
+    "flow_stream_graph_replays": 1320,
+    "flow_sdpa_kernel_calls": 21600,
+    "talker_forward_graph_families": {
+      "b3de64e1a328efb07a13": {
+        "count": 52,
+        "mean_span_ms": 0.8528807513897235,
+        "median_span_ms": 0.84852294921875
+      },
+      "36583ae78ce9f6d7b263": {
+        "count": 90,
+        "mean_span_ms": 0.8704517822265625,
+        "median_span_ms": 0.7568125
+      },
+      "edda64bd66d29591ff96": {
+        "count": 131,
+        "mean_span_ms": 0.9161548075202767,
+        "median_span_ms": 0.87804296875
+      },
+      "7b8f417bdcd43c5a6860": {
+        "count": 116,
+        "mean_span_ms": 1.0332502378266433,
+        "median_span_ms": 0.9615784912109375
+      },
+      "6b46e4f44da4593e334e": {
+        "count": 265,
+        "mean_span_ms": 1.341712643720519,
+        "median_span_ms": 1.0209541015625
+      },
+      "0b27ff60f1b1fad42028": {
+        "count": 764,
+        "mean_span_ms": 1.5096078069397292,
+        "median_span_ms": 1.046442138671875
+      },
+      "f3a8e9afac52440411c3": {
+        "count": 49,
+        "mean_span_ms": 1.0895844029017858,
+        "median_span_ms": 1.007130126953125
+      },
+      "7da351f0ec992d3ffb58": {
+        "count": 32,
+        "mean_span_ms": 1.03979109954834,
+        "median_span_ms": 0.9589869384765625
+      }
+    }
+  }
+}

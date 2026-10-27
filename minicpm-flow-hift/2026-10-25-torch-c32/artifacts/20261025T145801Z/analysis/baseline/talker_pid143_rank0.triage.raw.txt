@@ -1,0 +1,28 @@
+Triage View
+Mode: single-trace
+Framework: SGLang
+Input traces: /Users/cuzimi/Coding Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/baseline/talker_pid143_rank0.window.trace.json.gz
+
+Kernel Table
+| Kernel | Category | GPU time | Share | Launches | Python location (site share) | CPU op |
+| --- | --- | ---: | ---: | ---: | --- | --- |
+| nvjet_sm90_tst_64x8_64x16_4x1_v_bz_TNT | gemm | 58.26 ms | 10.1% | 12260 | unresolved | cudaGraphLaunch |
+| void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<192>, cute::C<64> >, 64, cutlass::bfloat16_t, float, cutlass::arch::Sm90, false, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<192> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, false>, flash::VarlenDynamicPersistentTileScheduler<64, 192, 128, 128, true, true, true, false, true, true> > > > | other | 41.17 ms | 7.1% | 5300 | unresolved | cudaGraphLaunch |
+| nvjet_sm90_hsh_128x192_64x5_2x1_v_bz_coopB_bias_TNN | gemm | 24.58 ms | 4.3% | 815 | unresolved | cuLaunchKernelEx |
+| cudnn_generated_fort_native_sdpa_sm90_flash_fprop_wgmma_f16_knob_1_64x128x64_4x1x1_cga1x1x1_kernel0_0 | gemm | 23.80 ms | 4.1% | 181 | unresolved | cuLaunchKernelEx |
+| sm90_xmma_fprop_implicit_gemm_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_on_kernel__5x_cudnn | gemm | 23.43 ms | 4.1% | 328 | unresolved | cudaLaunchKernelExC |
+| nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT | gemm | 22.29 ms | 3.9% | 4080 | unresolved | cudaGraphLaunch |
+| kernel_cutlass_kernel_flashinfernormkernelsfused_add_rmsnormFusedAddRMSNormKernel_object_at__tensorptrbf16gmemalign128oi647687681_tensorptrbf16gmemalign128oi647687681_tensorptrbf16gmemali_0 | norm | 19.20 ms | 3.3% | 10840 | unresolved | cudaGraphLaunch |
+| nvjet_sm90_hsh_128x256_64x4_2x1_v_bz_coopA_bias_TNN | gemm | 15.14 ms | 2.6% | 160 | unresolved | cuLaunchKernelEx |
+
+Overlap Opportunity Table
+| Priority | Verdict | Kernel | Python scope | Formal signal | Dep risk | Recommendation |
+| --- | --- | --- | --- | --- | --- | --- |
+| - | - | No rows cleared the 1.0% reporting bar. Use mapping/formal mode for overlap attribution. | - | - | - | - |
+
+Fuse Opportunity Table
+| Pattern | Confidence | Related GPU time | Share | Evidence kernels | Current kernel Python location | Candidate fused Python path | Rationale |
+| --- | --- | ---: | ---: | --- | --- | --- | --- |
+| SGLang mainline FP8 scaled MM | Confirmed | 159.12 ms | 27.5% | nvjet_sm90_tst_64x8_64x16_4x1_v_bz_TNT (10.1%)<br>nvjet_sm90_hsh_128x192_64x5_2x1_v_bz_coopB_bias_TNN (4.3%)<br>nvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT (3.9%) | unresolved | python/sglang/kernels/aot/python/sgl_kernel/gemm.py<br>python/sglang/srt/layers/quantization/fp8_utils.py | Matches an upstream path (27.5% related GPU time). Current SGLang routes eligible FP8 GEMMs through sgl_kernel.fp8_scaled_mm; diagnose nvjet and fallback bubbles against that shipped implementation. |
+| Fused QK RoPE reshape + KV cache write | Confirmed | 15.14 ms | 2.6% | void sglang::fused_rope_kernel<true, 64l, true, __nv_bfloat16, __nv_bfloat16, long, 8u> (1.4%)<br>void sglang::store_kvcache_kernel<1536l, 1536l, 64u, true, long> (1.2%) | unresolved | python/sglang/kernels/ops/kvcache/rope_cache.py | Split kernels in this family take 2.6% of GPU time. This tree already has a matching path. Attention prep already has a fused RoPE plus reshape plus cache write path. |
+| Fused residual add + RMSNorm | Confirmed | 19.20 ms | 3.3% | kernel_cutlass_kernel_flashinfernormkernelsfused_add_rmsnormFusedAddRMSNormKernel_object_at__tensorptrbf16gmemalign128oi647687681_tensorptrbf16gmemalign128oi647687681_tensorptrbf16gmemali_0 (3.3%) | unresolved | python/sglang/srt/layers/layernorm.py<br>python/sglang/srt/layers/quantization/modelslim/modelslim.py | `Fused residual add + RMSNorm` is present in this trace (3.3% related GPU time). Residual add plus RMSNorm already has fused implementations across several backends. |

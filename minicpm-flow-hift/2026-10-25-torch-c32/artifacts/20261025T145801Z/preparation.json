@@ -1,0 +1,11 @@
+{
+  "versions": {
+    "sglang": "0.5.22",
+    "torch": "2.14.1+cu130",
+    "transformers": "5.19.0",
+    "flashinfer-python": "0.7.1"
+  },
+  "checkpoint": "/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582",
+  "profile": "stangameact",
+  "image": "docker.io/hongccc/sglang-omni@sha256:06ed306707bcf3d9e9beb5ba7ce66f09a666cac11c23455ece50c34199c0e985"
+}

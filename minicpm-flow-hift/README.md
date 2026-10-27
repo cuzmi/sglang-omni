@@ -11,6 +11,7 @@ Unprofiled open-loop runs measure performance at fixed offered arrival rates. Ev
 | Experiment | Result and scope |
 | --- | --- |
 | [Request-event stage comparison](2026-10-25-stage-events/README.md) | 16 completed visits; stage residence includes waiting and execution. The diagnostics/ directory is an earlier 8/16-visit snapshot, not the final report. |
+| [C32 Torch traces and follow-up analyses](2026-10-25-torch-c32/README.md) | One capture per arm; Torch timings are diagnostic. Later full-trace, prefill and arrival analyses refine the initial capture report. Raw full traces and viewing windows remain distinct. |
 
 ## Earlier performance, accuracy and mechanism results
 

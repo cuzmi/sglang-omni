@@ -1,0 +1,182 @@
+[
+  {
+    "mode": "torch",
+    "visit": "r1-baseline-c32",
+    "admission_after_initial32_gap_ms": {
+      "n": 223,
+      "mean": 87.45265652914799,
+      "median": 1.05619,
+      "p95": 755.71619,
+      "max": 1473.514351,
+      "min": 0.305703
+    },
+    "admission_after_initial32_within5ms": 181,
+    "completion_first224_gap_ms": {
+      "n": 223,
+      "mean": 87.28410065919283,
+      "median": 0.535566,
+      "p95": 755.619003,
+      "max": 1463.709779,
+      "min": 0.230346
+    },
+    "completion_first224_within5ms": 197,
+    "ordered_completion_to_refill_ms": {
+      "n": 224,
+      "mean": 32.42855070535714,
+      "median": 31.4922585,
+      "p95": 51.180645,
+      "max": 57.522801,
+      "min": 5.800061
+    }
+  },
+  {
+    "mode": "torch",
+    "visit": "r1-optimized-c32",
+    "admission_after_initial32_gap_ms": {
+      "n": 223,
+      "mean": 88.51532560986547,
+      "median": 62.79044,
+      "p95": 218.367455,
+      "max": 1093.739759,
+      "min": 1.559826
+    },
+    "admission_after_initial32_within5ms": 5,
+    "completion_first224_gap_ms": {
+      "n": 223,
+      "mean": 88.51761052914799,
+      "median": 62.412185,
+      "p95": 218.560233,
+      "max": 1092.97225,
+      "min": 1.148681
+    },
+    "completion_first224_within5ms": 5,
+    "ordered_completion_to_refill_ms": {
+      "n": 224,
+      "mean": 6.117484491071429,
+      "median": 5.643705499999999,
+      "p95": 7.492961,
+      "max": 51.678962,
+      "min": 3.773801
+    }
+  },
+  {
+    "mode": "event",
+    "visit": "r1-baseline-c32",
+    "admission_after_initial32_gap_ms": {
+      "n": 223,
+      "mean": 59.43150993721973,
+      "median": 1.125366,
+      "p95": 557.285848,
+      "max": 853.533177,
+      "min": 0.203698
+    },
+    "admission_after_initial32_within5ms": 173,
+    "completion_first224_gap_ms": {
+      "n": 223,
+      "mean": 59.346145439461885,
+      "median": 0.330668,
+      "p95": 573.960607,
+      "max": 848.069575,
+      "min": 0.16733
+    },
+    "completion_first224_within5ms": 194,
+    "ordered_completion_to_refill_ms": {
+      "n": 224,
+      "mean": 24.07939229017857,
+      "median": 22.233361000000002,
+      "p95": 41.989921,
+      "max": 103.918488,
+      "min": 3.943721
+    }
+  },
+  {
+    "mode": "event",
+    "visit": "r1-optimized-c32",
+    "admission_after_initial32_gap_ms": {
+      "n": 223,
+      "mean": 62.09703583856502,
+      "median": 48.162385,
+      "p95": 147.960699,
+      "max": 265.210272,
+      "min": 1.086978
+    },
+    "admission_after_initial32_within5ms": 7,
+    "completion_first224_gap_ms": {
+      "n": 223,
+      "mean": 62.09820946636771,
+      "median": 48.065176,
+      "p95": 148.941445,
+      "max": 265.467115,
+      "min": 0.263201
+    },
+    "completion_first224_within5ms": 7,
+    "ordered_completion_to_refill_ms": {
+      "n": 224,
+      "mean": 4.541950388392857,
+      "median": 4.4801375,
+      "p95": 5.621372,
+      "max": 6.194945,
+      "min": 3.007197
+    }
+  },
+  {
+    "mode": "event",
+    "visit": "r2-baseline-c32",
+    "admission_after_initial32_gap_ms": {
+      "n": 223,
+      "mean": 58.5954661838565,
+      "median": 1.034542,
+      "p95": 548.07064,
+      "max": 1032.736728,
+      "min": 0.210966
+    },
+    "admission_after_initial32_within5ms": 184,
+    "completion_first224_gap_ms": {
+      "n": 223,
+      "mean": 58.59065098654708,
+      "median": 0.30995,
+      "p95": 573.149825,
+      "max": 1024.484242,
+      "min": 0.166205
+    },
+    "completion_first224_within5ms": 194,
+    "ordered_completion_to_refill_ms": {
+      "n": 224,
+      "mean": 24.524798325892856,
+      "median": 24.482142,
+      "p95": 40.870308,
+      "max": 44.178485,
+      "min": 3.984057
+    }
+  },
+  {
+    "mode": "event",
+    "visit": "r2-optimized-c32",
+    "admission_after_initial32_gap_ms": {
+      "n": 223,
+      "mean": 60.35463007174888,
+      "median": 46.316489,
+      "p95": 163.889515,
+      "max": 256.265406,
+      "min": 1.072335
+    },
+    "admission_after_initial32_within5ms": 5,
+    "completion_first224_gap_ms": {
+      "n": 223,
+      "mean": 60.35222608520179,
+      "median": 46.171447,
+      "p95": 162.467221,
+      "max": 256.3895,
+      "min": 0.360127
+    },
+    "completion_first224_within5ms": 5,
+    "ordered_completion_to_refill_ms": {
+      "n": 224,
+      "mean": 4.532550879464286,
+      "median": 4.455963499999999,
+      "p95": 5.64082,
+      "max": 6.736348,
+      "min": 3.04414
+    }
+  }
+]

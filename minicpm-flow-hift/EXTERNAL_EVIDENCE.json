@@ -208,5 +208,119 @@
     "path": "artifacts/20261025T132151Z/results/r2-optimized-c8/profiler_report.json",
     "url": "https://github.com/cuzmi/RemoteFiles/blob/b141239f34546b0ee8c04f86f4c39e162d0ba3f1/research/minicpm_serving_event256_modal_h100_20261025/artifacts/20261025T132151Z/results/r2-optimized-c8/profiler_report.json",
     "sha256": "e56829db788ce8d164ff26703bf3ff776c2e24b0aee304a787856d6a7806249a"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/baseline/gpu_overview_2s.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/baseline/gpu_overview_2s.trace.json.gz",
+    "sha256": "ce555f03ba7399b303a2580b4f8dc94ecad63ac94831f560bec262563271a758"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/baseline/preprocessing_pid142_rank0.window.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/baseline/preprocessing_pid142_rank0.window.trace.json.gz",
+    "sha256": "31267a573ebaf45cb76f73c9240933c1bf4fef3c1c255493987ae826d8cd0261"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/baseline/talker_pid143_rank0.window.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/baseline/talker_pid143_rank0.window.trace.json.gz",
+    "sha256": "eb98bc1edf1798fd21e7320db1bd7fc9c902728687045cff558656ff2448c8ec"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/causal_audit/baseline.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/causal_audit/baseline.json",
+    "sha256": "3df2e08dbe8f3ed1eebecd86b4393ff4e35ac7ad443575f3fbe0cf50e72e201c"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/full_comparison/baseline-preprocessing.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/full_comparison/baseline-preprocessing.json",
+    "sha256": "59ec39518eb5191a6f604350590de20e2c1c93c72d4a0a9f64da16ec0c13301e"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/full_comparison/baseline-talker.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/full_comparison/baseline-talker.json",
+    "sha256": "135cb0bdee268458422eee0af8eabc9df11e0d7fa36f058265165e15b4e4c7da"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/full_comparison/optimized-talker.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/full_comparison/optimized-talker.json",
+    "sha256": "c2c93b282a448ab7b3a043dfbac49417e24ef3149aa858b4cca389021612ae10"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/full_comparison/optimized-thinker.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/full_comparison/optimized-thinker.json",
+    "sha256": "3922fd2101cdfed5ebbe0cb87496fd59e77d33a038ce598ecd59b1ee7a823fa8"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/optimized/gpu_overview_2s.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/optimized/gpu_overview_2s.trace.json.gz",
+    "sha256": "a3fb9c5f8689914fffa41bb977a293cd7b6bc5586547d1c8c31b1ad3bdeaa974"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/optimized/talker_pid982_rank0.window.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/optimized/talker_pid982_rank0.window.trace.json.gz",
+    "sha256": "a74a01ede5c95f1776107dfc4fa8ddbe12adef32940e1bb8912f5794135ed24e"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/optimized/thinker_pid981_rank0.window.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/optimized/thinker_pid981_rank0.window.trace.json.gz",
+    "sha256": "51aef9ebd9989d3fe243e103b8f55d2d6e3c08cd94907e4ac4464a84ff116bdf"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/prefill_detail/gpu/baseline.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/prefill_detail/gpu/baseline.json",
+    "sha256": "5867f86ff3b599f2af4f8e3f05d3b2ed76b991c640e9da6c82de54b841d079ef"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/analysis/prefill_detail/gpu/optimized.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/analysis/prefill_detail/gpu/optimized.json",
+    "sha256": "cf13b654cda488a8f5d145a2691674769ba4cefd8be87c68786216df34ead9ac"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/results/r1-baseline-c32/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/results/r1-baseline-c32/profiler_report.json",
+    "sha256": "81cb0af20bfb8d14ee5137227763d02c4222dcf037d42ce773a5d33456621ace"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/results/r1-baseline-c32/traces/preprocessing_pid142_rank0.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/results/r1-baseline-c32/traces/preprocessing_pid142_rank0.trace.json.gz",
+    "sha256": "461578f7f176dfcbae6566510455fed26ce3c5a1f374f51de9e19016fa3403f9"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/results/r1-baseline-c32/traces/talker_pid143_rank0.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/results/r1-baseline-c32/traces/talker_pid143_rank0.trace.json.gz",
+    "sha256": "3ed4bc98d4f703bc00768a97a807384652d5016f46675a5e8da12571dacc719c"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/results/r1-optimized-c32/profiler_report.json",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/results/r1-optimized-c32/profiler_report.json",
+    "sha256": "8fe0d760c29daa72d60d71706d7ed7c26434d3819392f7e42d6d8c3fde524734"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/results/r1-optimized-c32/traces/talker_pid982_rank0.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/results/r1-optimized-c32/traces/talker_pid982_rank0.trace.json.gz",
+    "sha256": "5854606a1a9cad86223c1ac9d4d07db10c6f99c9e7554e7e230e2d88ef4fffcb"
+  },
+  {
+    "experiment": "2026-10-25-torch-c32",
+    "path": "artifacts/20261025T145801Z/results/r1-optimized-c32/traces/thinker_pid981_rank0.trace.json.gz",
+    "url": "https://github.com/cuzmi/RemoteFiles/blob/428bf60817c2c57e8443982bba591161b0868603/research/minicpm_serving_torch_c32_modal_h100_20261025/artifacts/20261025T145801Z/results/r1-optimized-c32/traces/thinker_pid981_rank0.trace.json.gz",
+    "sha256": "1feb7c656a99c723c24e4d924b31dcc92a98659c915e9964608dfb1f4c5cf414"
   }
 ]

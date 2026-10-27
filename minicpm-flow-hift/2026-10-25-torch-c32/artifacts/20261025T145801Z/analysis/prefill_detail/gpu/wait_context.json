@@ -1,0 +1,142 @@
+{
+  "baseline": {
+    "all_mean_ms": {
+      "before_launch_entry_ms": 17.442921091816213,
+      "within_launch_api_ms": 1.941074736038057,
+      "after_launch_return_ms": 12.128225423982826,
+      "thinker_overlap_after_launch_ms": 9.263727207901454,
+      "flow_path_overlap_after_launch_ms": 1.1900850382889852
+    },
+    "long_wait_examples": []
+  },
+  "optimized": {
+    "all_mean_ms": {
+      "before_launch_entry_ms": 17.998653611403245,
+      "within_launch_api_ms": 2.9669091917603883,
+      "after_launch_return_ms": 21.055380750719003,
+      "thinker_overlap_after_launch_ms": 13.487497109214027,
+      "flow_path_overlap_after_launch_ms": 4.139165060525412,
+      "hift_path_overlap_after_launch_ms": 0.5394759950742617
+    },
+    "long_wait_examples": [
+      {
+        "gap_ms": 4.704198974609375,
+        "start_us": 2083964974457.584,
+        "end_us": 2083964979161.783,
+        "kernel": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        "sample_ids": [
+          "common_voice_en_19496235-common_voice_en_19496229"
+        ],
+        "context_ms": {
+          "thinker": 4.675330322265625,
+          "flow_path": 0.006176025390625,
+          "hift_path": 0.0
+        }
+      },
+      {
+        "gap_ms": 3.68135009765625,
+        "start_us": 2083949741118.618,
+        "end_us": 2083949744799.968,
+        "kernel": "void sglang::store_kvcache_kernel<1536l, 1536l, 64u, true, long>(sglang::StoreKVCacheParams)",
+        "sample_ids": [
+          "common_voice_en_17406732-common_voice_en_17406734",
+          "common_voice_en_17442686-common_voice_en_17442688",
+          "common_voice_en_17406452-common_voice_en_17406466",
+          "common_voice_en_17429166-common_voice_en_17429171"
+        ],
+        "context_ms": {
+          "thinker": 3.660581787109375,
+          "flow_path": 1.147489013671875,
+          "hift_path": 0.0
+        }
+      },
+      {
+        "gap_ms": 3.498565185546875,
+        "start_us": 2083949611997.1528,
+        "end_us": 2083949615495.718,
+        "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        "sample_ids": [
+          "common_voice_en_17406452-common_voice_en_17406455"
+        ],
+        "context_ms": {
+          "thinker": 3.478307373046875,
+          "flow_path": 0.45058837890625,
+          "hift_path": 0.0
+        }
+      },
+      {
+        "gap_ms": 3.162260009765625,
+        "start_us": 2083948994525.541,
+        "end_us": 2083948997687.801,
+        "kernel": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+        "sample_ids": [
+          "common_voice_en_17389984-common_voice_en_17389987"
+        ],
+        "context_ms": {
+          "thinker": 3.1476015625,
+          "flow_path": 3.113791015625,
+          "hift_path": 0.0917783203125
+        }
+      },
+      {
+        "gap_ms": 3.127495849609375,
+        "start_us": 2083948490701.767,
+        "end_us": 2083948493829.263,
+        "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        "sample_ids": [
+          "common_voice_en_17369851-common_voice_en_17369849",
+          "common_voice_en_17369337-common_voice_en_17369336"
+        ],
+        "context_ms": {
+          "thinker": 3.11012548828125,
+          "flow_path": 0.062038818359375,
+          "hift_path": 0.0
+        }
+      },
+      {
+        "gap_ms": 3.120035888671875,
+        "start_us": 2083948507767.019,
+        "end_us": 2083948510887.055,
+        "kernel": "at::native::(anonymous namespace)::fill_index_and_segment_kernel(int2*, int, at::cuda::detail::IntDivider<unsigned int>)",
+        "sample_ids": [
+          "common_voice_en_17369851-common_voice_en_17369849",
+          "common_voice_en_17369337-common_voice_en_17369336"
+        ],
+        "context_ms": {
+          "thinker": 3.106370849609375,
+          "flow_path": 3.0637900390625,
+          "hift_path": 0.0
+        }
+      },
+      {
+        "gap_ms": 3.096682861328125,
+        "start_us": 2083948060799.506,
+        "end_us": 2083948063896.189,
+        "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        "sample_ids": [
+          "common_voice_en_173534-common_voice_en_173540"
+        ],
+        "context_ms": {
+          "thinker": 3.079557373046875,
+          "flow_path": 3.046555419921875,
+          "hift_path": 0.00284912109375
+        }
+      },
+      {
+        "gap_ms": 3.0186748046875,
+        "start_us": 2083948468762.287,
+        "end_us": 2083948471780.962,
+        "kernel": "nvjet_sm90_tst_64x8_64x16_2x4_h_bz_TNT",
+        "sample_ids": [
+          "common_voice_en_17369851-common_voice_en_17369849",
+          "common_voice_en_17369337-common_voice_en_17369336"
+        ],
+        "context_ms": {
+          "thinker": 3.0028017578125,
+          "flow_path": 0.113541259765625,
+          "hift_path": 0.0
+        }
+      }
+    ]
+  }
+}

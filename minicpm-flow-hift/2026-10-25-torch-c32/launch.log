@@ -1,0 +1,103 @@
+WARN `--no-project` was provided, but no project was found
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/stangameact/main/ap-PhUOlhUyIXwoEqLzTqaAPB
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/run
+│   _modal.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/exp
+│   ected_formal.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/ver
+│   ify_client.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/ana
+│   lyze_events.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/pat
+│   ch_benchmark.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/dri
+│   ver.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/cli
+│   ent.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/sou
+│   rce.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/dat
+│   a.tar.gz
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/pro
+│   tocol.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/opt
+│   imized.tar
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_serving_torch_c32_modal_h100_20261025/bas
+│   eline.tar
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID: 20261025T145801Z
+Client verification passed
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+/sgl-workspace/sglang/python/sglang/srt/layers/quantization/awq/awq.py:53: UserWarning: Only CUDA, HIP and XPU support AWQ currently.
+  warnings.warn(f"Only CUDA, HIP and XPU support AWQ currently.")
+/sgl-workspace/sglang/python/sglang/srt/layers/quantization/gguf.py:69: UserWarning: Only CUDA, MUSA and NPU support GGUF quantization currently.
+  warnings.warn(f"Only CUDA, MUSA and NPU support GGUF quantization currently.")
+/sgl-workspace/sglang/python/sglang/kernels/ops/attention/fla/utils.py:223: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  warnings.warn(
+Imports verified
+Verifying cached fixed MiniCPM model on CPU
+CPU preparation complete: {'run_id': '20261025T145801Z', 'checkpoint': '/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582'}
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Initializing first server
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 1/2; status=running
+Completed visits: 2/2; status=complete
+{'root': '/results/20261025T145801Z', 'status': 'complete'}
+✓ App completed. View run at 
+https://modal.com/apps/stangameact/main/ap-PhUOlhUyIXwoEqLzTqaAPB

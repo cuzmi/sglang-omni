@@ -1,0 +1,10 @@
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+Failed to import torchada: No module named 'torchada'. MUSA platform compatibility will not work.
+2026-10-25T15:00:06.258363+00:00 r1-baseline-c32: starting server
+r1-baseline-c32: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 8.9096956640625, "thinker": 323.2510684453125, "talker": 819.2600547929687, "code2wav": 1451.7662106054688}, "mean_e2e_ms": 2657.4592415625007, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-baseline-c32: complete
+2026-10-25T15:06:51.747823+00:00 r1-optimized-c32: starting server
+r1-optimized-c32: ready, matched KV capacities; 128 warmup then 256 measured
+{"requests": 256, "mean_stage_ms": {"preprocessing": 3.44104266015625, "thinker": 344.4422426484375, "talker": 1625.1909446445313, "code2wav": 672.6338758007812}, "mean_e2e_ms": 2689.4928879492227, "event_count": 10240, "request_id_join": "HTTP chatcmpl ID suffix equals profiler request ID", "scope": "Stage residence includes waiting and execution, not GPU compute alone"}
+r1-optimized-c32: complete

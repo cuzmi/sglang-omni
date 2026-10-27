@@ -1,0 +1,210 @@
+{
+  "baseline": {
+    "thinker": [
+      {
+        "from": "stage_input_received",
+        "to": "scheduler_request_build_start",
+        "count": 256,
+        "mean_ms": 32.85605501953125,
+        "median_ms": 33.169227
+      },
+      {
+        "from": "scheduler_request_build_start",
+        "to": "scheduler_request_build_end",
+        "count": 256,
+        "mean_ms": 0.3708548125,
+        "median_ms": 0.24005500000000002
+      },
+      {
+        "from": "scheduler_request_build_end",
+        "to": "scheduler_queue_enter",
+        "count": 256,
+        "mean_ms": 0.25627156640625,
+        "median_ms": 0.1794665
+      },
+      {
+        "from": "scheduler_queue_enter",
+        "to": "scheduler_prefill_start",
+        "count": 256,
+        "mean_ms": 8.84507962109375,
+        "median_ms": 7.7729205
+      },
+      {
+        "from": "scheduler_prefill_start",
+        "to": "scheduler_prefill_end",
+        "count": 256,
+        "mean_ms": 38.1969132421875,
+        "median_ms": 37.53232
+      },
+      {
+        "from": "scheduler_prefill_end",
+        "to": "model_path_end",
+        "count": 256,
+        "mean_ms": 239.39267403515626,
+        "median_ms": 243.7362185
+      },
+      {
+        "from": "model_path_end",
+        "to": "stage_complete",
+        "count": 256,
+        "mean_ms": 3.3332201484375,
+        "median_ms": 1.023217
+      }
+    ],
+    "talker": [
+      {
+        "from": "stage_input_received",
+        "to": "scheduler_request_build_start",
+        "count": 256,
+        "mean_ms": 41.1409638125,
+        "median_ms": 38.033148499999996
+      },
+      {
+        "from": "scheduler_request_build_start",
+        "to": "scheduler_request_build_end",
+        "count": 256,
+        "mean_ms": 3.41198583984375,
+        "median_ms": 2.386534
+      },
+      {
+        "from": "scheduler_request_build_end",
+        "to": "scheduler_queue_enter",
+        "count": 256,
+        "mean_ms": 0.37872667578125,
+        "median_ms": 0.29229700000000003
+      },
+      {
+        "from": "scheduler_queue_enter",
+        "to": "scheduler_prefill_start",
+        "count": 256,
+        "mean_ms": 10.877357125,
+        "median_ms": 8.1485715
+      },
+      {
+        "from": "scheduler_prefill_start",
+        "to": "scheduler_prefill_end",
+        "count": 256,
+        "mean_ms": 31.96255976171875,
+        "median_ms": 30.908832
+      },
+      {
+        "from": "scheduler_prefill_end",
+        "to": "model_path_end",
+        "count": 256,
+        "mean_ms": 730.1001215507813,
+        "median_ms": 707.4732165
+      },
+      {
+        "from": "model_path_end",
+        "to": "stage_complete",
+        "count": 256,
+        "mean_ms": 1.38834002734375,
+        "median_ms": 1.169067
+      }
+    ]
+  },
+  "optimized": {
+    "thinker": [
+      {
+        "from": "stage_input_received",
+        "to": "scheduler_request_build_start",
+        "count": 256,
+        "mean_ms": 14.84468232421875,
+        "median_ms": 9.0231005
+      },
+      {
+        "from": "scheduler_request_build_start",
+        "to": "scheduler_request_build_end",
+        "count": 256,
+        "mean_ms": 0.5370195,
+        "median_ms": 0.4635445
+      },
+      {
+        "from": "scheduler_request_build_end",
+        "to": "scheduler_queue_enter",
+        "count": 256,
+        "mean_ms": 0.33657213671875,
+        "median_ms": 0.256181
+      },
+      {
+        "from": "scheduler_queue_enter",
+        "to": "scheduler_prefill_start",
+        "count": 256,
+        "mean_ms": 3.8948537890625,
+        "median_ms": 2.03992
+      },
+      {
+        "from": "scheduler_prefill_start",
+        "to": "scheduler_prefill_end",
+        "count": 256,
+        "mean_ms": 31.76198559765625,
+        "median_ms": 29.396991999999997
+      },
+      {
+        "from": "scheduler_prefill_end",
+        "to": "model_path_end",
+        "count": 256,
+        "mean_ms": 291.32478381640624,
+        "median_ms": 275.7555755
+      },
+      {
+        "from": "model_path_end",
+        "to": "stage_complete",
+        "count": 256,
+        "mean_ms": 1.742345484375,
+        "median_ms": 0.8994215000000001
+      }
+    ],
+    "talker": [
+      {
+        "from": "stage_input_received",
+        "to": "scheduler_request_build_start",
+        "count": 256,
+        "mean_ms": 27.6969467421875,
+        "median_ms": 17.260537
+      },
+      {
+        "from": "scheduler_request_build_start",
+        "to": "scheduler_request_build_end",
+        "count": 256,
+        "mean_ms": 4.301709765625,
+        "median_ms": 3.581515
+      },
+      {
+        "from": "scheduler_request_build_end",
+        "to": "scheduler_queue_enter",
+        "count": 256,
+        "mean_ms": 0.39495830859375,
+        "median_ms": 0.32515700000000003
+      },
+      {
+        "from": "scheduler_queue_enter",
+        "to": "scheduler_prefill_start",
+        "count": 256,
+        "mean_ms": 6.65245590234375,
+        "median_ms": 5.3236185
+      },
+      {
+        "from": "scheduler_prefill_start",
+        "to": "scheduler_prefill_end",
+        "count": 256,
+        "mean_ms": 43.51700858984375,
+        "median_ms": 39.3533665
+      },
+      {
+        "from": "scheduler_prefill_end",
+        "to": "model_path_end",
+        "count": 256,
+        "mean_ms": 1541.1290307460938,
+        "median_ms": 1507.407733
+      },
+      {
+        "from": "model_path_end",
+        "to": "stage_complete",
+        "count": 256,
+        "mean_ms": 1.49883458984375,
+        "median_ms": 1.1168925
+      }
+    ]
+  }
+}

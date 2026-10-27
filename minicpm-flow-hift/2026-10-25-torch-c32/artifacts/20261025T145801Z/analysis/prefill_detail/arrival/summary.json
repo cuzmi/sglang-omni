@@ -1,0 +1,546 @@
+[
+  {
+    "mode": "torch",
+    "visit": "r1-baseline-c32",
+    "first_forward_batches": 101,
+    "new_requests_distribution": {
+      "1": 54,
+      "3": 10,
+      "2": 13,
+      "4": 6,
+      "6": 4,
+      "9": 1,
+      "5": 6,
+      "7": 4,
+      "8": 1,
+      "11": 1,
+      "12": 1
+    },
+    "single_request_batches": 54,
+    "ready_queue_unselected_batches": 0,
+    "ready_queue_unselected_requests_sum": 0,
+    "arrived_unready_batches": 44,
+    "batch_size_matches_members": 101,
+    "boundaries": {
+      "admission": {
+        "n": 255,
+        "mean": 80.9247552862745,
+        "median": 0.686576,
+        "p95": 717.961793,
+        "max": 1473.514351,
+        "within_1ms": 136,
+        "within_5ms": 208,
+        "within_10ms": 221
+      },
+      "thinker_complete": {
+        "n": 255,
+        "mean": 81.42495039607843,
+        "median": 14.231496,
+        "p95": 586.810807,
+        "max": 1396.573774,
+        "within_1ms": 0,
+        "within_5ms": 43,
+        "within_10ms": 102
+      },
+      "talker_input": {
+        "n": 255,
+        "mean": 81.42356047843137,
+        "median": 12.941494,
+        "p95": 592.110924,
+        "max": 1397.461471,
+        "within_1ms": 0,
+        "within_5ms": 5,
+        "within_10ms": 104
+      },
+      "talker_queue": {
+        "n": 255,
+        "mean": 81.43426183137255,
+        "median": 4.902975,
+        "p95": 550.897179,
+        "max": 1361.297029,
+        "within_1ms": 0,
+        "within_5ms": 131,
+        "within_10ms": 153
+      }
+    },
+    "transitions": {
+      "thinker_to_talker": {
+        "n": 256,
+        "mean": 9.14740377734375,
+        "median": 8.3110715,
+        "p95": 15.519357,
+        "max": 26.949328
+      },
+      "input_to_build": {
+        "n": 256,
+        "mean": 41.1409638125,
+        "median": 38.033148499999996,
+        "p95": 104.472418,
+        "max": 151.839865
+      },
+      "build": {
+        "n": 256,
+        "mean": 3.41198583984375,
+        "median": 2.386534,
+        "p95": 7.748292,
+        "max": 70.28366
+      },
+      "queue_wait": {
+        "n": 256,
+        "mean": 10.877357125,
+        "median": 8.1485715,
+        "p95": 25.561773,
+        "max": 40.58711
+      }
+    }
+  },
+  {
+    "mode": "torch",
+    "visit": "r1-optimized-c32",
+    "first_forward_batches": 182,
+    "new_requests_distribution": {
+      "1": 134,
+      "2": 31,
+      "3": 11,
+      "4": 5,
+      "7": 1
+    },
+    "single_request_batches": 134,
+    "ready_queue_unselected_batches": 0,
+    "ready_queue_unselected_requests_sum": 0,
+    "arrived_unready_batches": 34,
+    "batch_size_matches_members": 182,
+    "boundaries": {
+      "admission": {
+        "n": 255,
+        "mean": 79.85822853333333,
+        "median": 58.152428,
+        "p95": 218.367455,
+        "max": 1093.739759,
+        "within_1ms": 25,
+        "within_5ms": 31,
+        "within_10ms": 34
+      },
+      "thinker_complete": {
+        "n": 255,
+        "mean": 80.08539812156863,
+        "median": 45.325009,
+        "p95": 248.884987,
+        "max": 1127.472071,
+        "within_1ms": 0,
+        "within_5ms": 23,
+        "within_10ms": 39
+      },
+      "talker_input": {
+        "n": 255,
+        "mean": 80.09490681568627,
+        "median": 44.727718,
+        "p95": 251.214188,
+        "max": 1127.91737,
+        "within_1ms": 0,
+        "within_5ms": 2,
+        "within_10ms": 38
+      },
+      "talker_queue": {
+        "n": 255,
+        "mean": 80.22111223137254,
+        "median": 56.426721,
+        "p95": 228.09502,
+        "max": 1123.735094,
+        "within_1ms": 0,
+        "within_5ms": 57,
+        "within_10ms": 71
+      }
+    },
+    "transitions": {
+      "thinker_to_talker": {
+        "n": 256,
+        "mean": 9.3127644609375,
+        "median": 8.609949499999999,
+        "p95": 14.233285,
+        "max": 46.252522
+      },
+      "input_to_build": {
+        "n": 256,
+        "mean": 27.6969467421875,
+        "median": 17.260537,
+        "p95": 82.017173,
+        "max": 153.512654
+      },
+      "build": {
+        "n": 256,
+        "mean": 4.301709765625,
+        "median": 3.581515,
+        "p95": 9.463025,
+        "max": 16.139302
+      },
+      "queue_wait": {
+        "n": 256,
+        "mean": 6.65245590234375,
+        "median": 5.3236185,
+        "p95": 15.988114,
+        "max": 36.546934
+      }
+    }
+  },
+  {
+    "mode": "event",
+    "visit": "r1-baseline-c32",
+    "first_forward_batches": 146,
+    "new_requests_distribution": {
+      "1": 86,
+      "3": 13,
+      "4": 6,
+      "2": 35,
+      "5": 3,
+      "6": 1,
+      "7": 1,
+      "9": 1
+    },
+    "single_request_batches": 86,
+    "ready_queue_unselected_batches": 0,
+    "ready_queue_unselected_requests_sum": 0,
+    "arrived_unready_batches": 52,
+    "batch_size_matches_members": 146,
+    "boundaries": {
+      "admission": {
+        "n": 255,
+        "mean": 55.84740808627451,
+        "median": 0.912157,
+        "p95": 514.429213,
+        "max": 951.313893,
+        "within_1ms": 129,
+        "within_5ms": 201,
+        "within_10ms": 222
+      },
+      "thinker_complete": {
+        "n": 255,
+        "mean": 56.30716866666667,
+        "median": 14.452613,
+        "p95": 371.463676,
+        "max": 834.323686,
+        "within_1ms": 0,
+        "within_5ms": 72,
+        "within_10ms": 98
+      },
+      "talker_input": {
+        "n": 255,
+        "mean": 56.30394334117647,
+        "median": 13.435085,
+        "p95": 377.671757,
+        "max": 832.460881,
+        "within_1ms": 0,
+        "within_5ms": 50,
+        "within_10ms": 104
+      },
+      "talker_queue": {
+        "n": 255,
+        "mean": 56.29044770980392,
+        "median": 16.217996,
+        "p95": 364.837074,
+        "max": 822.442576,
+        "within_1ms": 15,
+        "within_5ms": 99,
+        "within_10ms": 115
+      }
+    },
+    "transitions": {
+      "thinker_to_talker": {
+        "n": 256,
+        "mean": 5.68700673828125,
+        "median": 5.1671205,
+        "p95": 9.799664,
+        "max": 16.355006
+      },
+      "input_to_build": {
+        "n": 256,
+        "mean": 17.435347328125,
+        "median": 14.384094000000001,
+        "p95": 40.642637,
+        "max": 80.233378
+      },
+      "build": {
+        "n": 256,
+        "mean": 2.82389457421875,
+        "median": 2.006934,
+        "p95": 7.855012,
+        "max": 11.377314
+      },
+      "queue_wait": {
+        "n": 256,
+        "mean": 4.70440494140625,
+        "median": 3.1731955000000003,
+        "p95": 12.867235,
+        "max": 30.397842
+      }
+    }
+  },
+  {
+    "mode": "event",
+    "visit": "r1-optimized-c32",
+    "first_forward_batches": 195,
+    "new_requests_distribution": {
+      "1": 149,
+      "3": 9,
+      "2": 34,
+      "4": 3
+    },
+    "single_request_batches": 149,
+    "ready_queue_unselected_batches": 0,
+    "ready_queue_unselected_requests_sum": 0,
+    "arrived_unready_batches": 33,
+    "batch_size_matches_members": 195,
+    "boundaries": {
+      "admission": {
+        "n": 255,
+        "mean": 56.41441481568627,
+        "median": 42.460186,
+        "p95": 147.960699,
+        "max": 271.931999,
+        "within_1ms": 25,
+        "within_5ms": 35,
+        "within_10ms": 36
+      },
+      "thinker_complete": {
+        "n": 255,
+        "mean": 56.8329836627451,
+        "median": 35.365088,
+        "p95": 160.822458,
+        "max": 344.799317,
+        "within_1ms": 0,
+        "within_5ms": 39,
+        "within_10ms": 47
+      },
+      "talker_input": {
+        "n": 255,
+        "mean": 56.83169531764706,
+        "median": 35.099199,
+        "p95": 164.161965,
+        "max": 348.651067,
+        "within_1ms": 0,
+        "within_5ms": 19,
+        "within_10ms": 49
+      },
+      "talker_queue": {
+        "n": 255,
+        "mean": 56.8377083254902,
+        "median": 44.480256,
+        "p95": 159.870768,
+        "max": 306.518469,
+        "within_1ms": 4,
+        "within_5ms": 52,
+        "within_10ms": 59
+      }
+    },
+    "transitions": {
+      "thinker_to_talker": {
+        "n": 256,
+        "mean": 6.74445507421875,
+        "median": 5.9678265,
+        "p95": 10.868489,
+        "max": 31.679459
+      },
+      "input_to_build": {
+        "n": 256,
+        "mean": 20.8913198984375,
+        "median": 12.711654,
+        "p95": 68.301423,
+        "max": 125.954357
+      },
+      "build": {
+        "n": 256,
+        "mean": 3.6273267421875,
+        "median": 3.2531985,
+        "p95": 8.594312,
+        "max": 11.667109
+      },
+      "queue_wait": {
+        "n": 256,
+        "mean": 4.1704188046875,
+        "median": 3.3244495,
+        "p95": 10.100668,
+        "max": 20.780088
+      }
+    }
+  },
+  {
+    "mode": "event",
+    "visit": "r2-baseline-c32",
+    "first_forward_batches": 147,
+    "new_requests_distribution": {
+      "1": 92,
+      "3": 12,
+      "2": 29,
+      "5": 5,
+      "6": 3,
+      "4": 5,
+      "7": 1
+    },
+    "single_request_batches": 92,
+    "ready_queue_unselected_batches": 0,
+    "ready_queue_unselected_requests_sum": 0,
+    "arrived_unready_batches": 50,
+    "batch_size_matches_members": 147,
+    "boundaries": {
+      "admission": {
+        "n": 255,
+        "mean": 54.96906319607843,
+        "median": 0.922757,
+        "p95": 523.364802,
+        "max": 1032.736728,
+        "within_1ms": 132,
+        "within_5ms": 212,
+        "within_10ms": 228
+      },
+      "thinker_complete": {
+        "n": 255,
+        "mean": 55.316566984313724,
+        "median": 14.579107,
+        "p95": 371.68375,
+        "max": 822.910481,
+        "within_1ms": 0,
+        "within_5ms": 74,
+        "within_10ms": 102
+      },
+      "talker_input": {
+        "n": 255,
+        "mean": 55.318186898039215,
+        "median": 13.568046,
+        "p95": 372.276511,
+        "max": 822.77309,
+        "within_1ms": 0,
+        "within_5ms": 46,
+        "within_10ms": 110
+      },
+      "talker_queue": {
+        "n": 255,
+        "mean": 55.33012758823529,
+        "median": 15.453366,
+        "p95": 368.078652,
+        "max": 815.101312,
+        "within_1ms": 15,
+        "within_5ms": 102,
+        "within_10ms": 111
+      }
+    },
+    "transitions": {
+      "thinker_to_talker": {
+        "n": 256,
+        "mean": 5.43568830859375,
+        "median": 5.1417365,
+        "p95": 8.549238,
+        "max": 12.435481
+      },
+      "input_to_build": {
+        "n": 256,
+        "mean": 18.2903919765625,
+        "median": 15.0276995,
+        "p95": 48.67458,
+        "max": 83.563635
+      },
+      "build": {
+        "n": 256,
+        "mean": 2.85161290234375,
+        "median": 1.5885639999999999,
+        "p95": 8.463469,
+        "max": 26.633309
+      },
+      "queue_wait": {
+        "n": 256,
+        "mean": 4.43570883203125,
+        "median": 3.09964,
+        "p95": 12.70215,
+        "max": 19.94532
+      }
+    }
+  },
+  {
+    "mode": "event",
+    "visit": "r2-optimized-c32",
+    "first_forward_batches": 199,
+    "new_requests_distribution": {
+      "1": 159,
+      "3": 12,
+      "2": 26,
+      "5": 1,
+      "4": 1
+    },
+    "single_request_batches": 159,
+    "ready_queue_unselected_batches": 0,
+    "ready_queue_unselected_requests_sum": 0,
+    "arrived_unready_batches": 37,
+    "batch_size_matches_members": 199,
+    "boundaries": {
+      "admission": {
+        "n": 255,
+        "mean": 55.23007669803921,
+        "median": 39.675372,
+        "p95": 163.889515,
+        "max": 302.411962,
+        "within_1ms": 25,
+        "within_5ms": 32,
+        "within_10ms": 35
+      },
+      "thinker_complete": {
+        "n": 255,
+        "mean": 55.364177235294115,
+        "median": 40.366124,
+        "p95": 162.235128,
+        "max": 298.662375,
+        "within_1ms": 0,
+        "within_5ms": 42,
+        "within_10ms": 49
+      },
+      "talker_input": {
+        "n": 255,
+        "mean": 55.36394732156863,
+        "median": 39.272416,
+        "p95": 162.640937,
+        "max": 303.33126,
+        "within_1ms": 0,
+        "within_5ms": 14,
+        "within_10ms": 52
+      },
+      "talker_queue": {
+        "n": 255,
+        "mean": 55.36250203137255,
+        "median": 43.519555,
+        "p95": 152.391124,
+        "max": 306.145713,
+        "within_1ms": 6,
+        "within_5ms": 48,
+        "within_10ms": 58
+      }
+    },
+    "transitions": {
+      "thinker_to_talker": {
+        "n": 256,
+        "mean": 6.42723062109375,
+        "median": 5.843198,
+        "p95": 9.866007,
+        "max": 36.868472
+      },
+      "input_to_build": {
+        "n": 256,
+        "mean": 20.57135482421875,
+        "median": 11.4827945,
+        "p95": 64.758636,
+        "max": 134.822618
+      },
+      "build": {
+        "n": 256,
+        "mean": 3.88439368359375,
+        "median": 2.9405905,
+        "p95": 8.992305,
+        "max": 39.208756
+      },
+      "queue_wait": {
+        "n": 256,
+        "mean": 3.92166412109375,
+        "median": 3.0966225,
+        "p95": 9.384007,
+        "max": 18.122943
+      }
+    }
+  }
+]

@@ -1,7 +1,7 @@
 {
   ".gitattributes": {
-    "bytes": 33324,
-    "sha256": "1c147d3b92446ea9d51a12b95d16a2ddec126706083eb951d53f7dcc9939379c"
+    "bytes": 34438,
+    "sha256": "ae489d62b3f31addba09e235bc64a22c8ee9bf16a25f6568ed7ec7b0a31e11e7"
   },
   "README.md": {
     "bytes": 1043,
@@ -5095,16 +5095,368 @@
     "bytes": 24651,
     "sha256": "18b2b2e03240535e05d14f0de714765672bcd9260256da41c2f304abf7ecf68f"
   },
+  "minicpm-flow-hift/2026-10-25-torch-c32/README.md": {
+    "bytes": 1464,
+    "sha256": "c5b7c0c4397332f7f3fd404b055e98927b372942fe2feb63fbadecbedcc980d5"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/REPORT.md": {
+    "bytes": 7206,
+    "sha256": "390cded68b46ce9104f676e22ef9dbe613a31481b437e93875b3f9e4570399e5"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/baseline/preprocessing_pid142_rank0.triage.raw.txt": {
+    "bytes": 3825,
+    "sha256": "7c0f22b25c397d15cd02be873677fd2bb23fb3dcd13819b90db9b1ad5277240a"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/baseline/summary.json": {
+    "bytes": 11617,
+    "sha256": "8360513cdaed6b2385a582e2b1145f4a835897e54a285425492d542187be914e"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/baseline/talker_pid143_rank0.triage.raw.txt": {
+    "bytes": 4343,
+    "sha256": "de75f739d97f843ba8291ff79ce4d4c3abeb32fdea4bebc4b07bdc893f468dd3"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/causal_audit/CAUSAL_AUDIT.md": {
+    "bytes": 9230,
+    "sha256": "75ef5e142fb220e5319f0ac6aeec668ece9323fcd66d1a0e230f40c690ca7284"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/causal_audit/event_only_prefill.json": {
+    "bytes": 3467,
+    "sha256": "0c0b2f9d0b3d1deaaed61c3ea8f13a9d21fe00d243a6c7bd1a840a989a1a65a1"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/causal_audit/optimized.json": {
+    "bytes": 1314661,
+    "sha256": "947aff1b565eef1f25593d815468007853195a41858e82c120efdfd66671effd"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/full_comparison/GPU_COMPARISON.md": {
+    "bytes": 8594,
+    "sha256": "d5fb8d0e56ad8d326508b11c1ceca2234287246ea421b71ca65a2b57f951fad4"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/full_comparison/comparison.json": {
+    "bytes": 3508,
+    "sha256": "c285e82148b6a33c2311ea74ddb78a6df14e117a9a8767a0594e6a03aa995a82"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/full_comparison/event_decomposition.json": {
+    "bytes": 5455,
+    "sha256": "e56cfd886ced75d55e6676a8274c32dcc94f1f260b1d85163b6258528b8403a5"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/optimized/summary.json": {
+    "bytes": 11983,
+    "sha256": "1717a2814ce73bf3a74d0873d6bf64786718e66e8a1a47a3f314938978d78176"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/optimized/talker_pid982_rank0.triage.raw.txt": {
+    "bytes": 4192,
+    "sha256": "b77f48192c4e9b794a5146e0b7e71a2864545296151a1cee91beb2a4710894ff"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/optimized/thinker_pid981_rank0.triage.raw.txt": {
+    "bytes": 3976,
+    "sha256": "a77b4594056bc1eab470a717055fc76eb3bc352ac64c1e9a040c2b06527037eb"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/PREFILL_FINDINGS.md": {
+    "bytes": 9322,
+    "sha256": "3a6b1f6bf13e671636e6fb3cfd56d225786e6d36de3df13903cd6d3531569d98"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/ARRIVAL_ANALYSIS.md": {
+    "bytes": 5086,
+    "sha256": "41792c6a0b86c968b78f7d01c6fa1028c6cbff791f57bce3c08159a2c8d1f8d8"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/event-r1-baseline-c32.json": {
+    "bytes": 70538,
+    "sha256": "2bf18d53749794086a6c57c137b98306f021fcea010c9660431c3d06e1716525"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/event-r1-optimized-c32.json": {
+    "bytes": 89206,
+    "sha256": "239bcf02c3afb6acf41623c5c12777404ed6ca5582f969ea6373b5515bc006ef"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/event-r2-baseline-c32.json": {
+    "bytes": 70871,
+    "sha256": "63d9791333749ed9a86b55111cb9c422b9ebc2657c457ea7a33aba641e22771b"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/event-r2-optimized-c32.json": {
+    "bytes": 90720,
+    "sha256": "da3e621851afc7da268cb3bba7267273e53f75f8e0bd7a6f4e0dbe94f703a49b"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/refill.json": {
+    "bytes": 4403,
+    "sha256": "e108e3cfc484abaa93e07f37b932e3f855573fd05e19f8fcbe07127bce920f6c"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/summary.json": {
+    "bytes": 12795,
+    "sha256": "66ca779e49ca7209aceb042a51733b9e9830888f2f2d550f646d0b5b8d38de3c"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/torch-r1-baseline-c32.json": {
+    "bytes": 53289,
+    "sha256": "d95f7ad3675f008488b351fef2abb9c3ab6105d2aab3102dbccd658b2de42c6e"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/arrival/torch-r1-optimized-c32.json": {
+    "bytes": 84348,
+    "sha256": "07def99d6b8d1d96010a92d0c407ee9d73e81dee09fa98814b83530547f55b2c"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/gpu/matched_single_requests.json": {
+    "bytes": 25091,
+    "sha256": "81e142849cb7312f5d0dd34669534ba3c61575f911bf5098cd4d30495394de6b"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/gpu/memory_activity.json": {
+    "bytes": 7124,
+    "sha256": "2270e6e845ff6349f78838caf5e96293ff7fca700bfac6dce072c752ab2bd119"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/analysis/prefill_detail/gpu/wait_context.json": {
+    "bytes": 8776,
+    "sha256": "1d9e2c5edf8fc219fb1364cf384474b50a4c4b5f1df6c893cd74f5006fbde7f4"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/gpu_final.csv": {
+    "bytes": 50,
+    "sha256": "f5e9679e1e12a9fa326bd5ff839fe1650eb17d0d3a4bf780dc97e00bf9a3a15e"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/preparation.json": {
+    "bytes": 431,
+    "sha256": "3731906be8f922cdc0ad17314c184c50c68468fd7d63fcbb53873b7a37877c80"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/remote_inventory.json": {
+    "bytes": 289262,
+    "sha256": "f19f21e1d591b381980aec53d16da7f7234233372200b07dd76b0f4730f1100f"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/baseline_resolved_config.yaml": {
+    "bytes": 19760,
+    "sha256": "35aeea216fcf6a315ace9440874a66da631c90453622411e9cdd2aae3366133c"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/environment.json": {
+    "bytes": 874,
+    "sha256": "d2ba6d68bae4a273a372ea0a9eb03ad9be2038f4a181da34b482272379cca1bb"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/gpu_identity.csv": {
+    "bytes": 133,
+    "sha256": "ef8e6f1934e6b701c0110b833fabbe5cd99ef5eaac65b76a5ed056f76f947038"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/optimized_resolved_config.yaml": {
+    "bytes": 19760,
+    "sha256": "35aeea216fcf6a315ace9440874a66da631c90453622411e9cdd2aae3366133c"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/client.log": {
+    "bytes": 1703,
+    "sha256": "c8ddedaa85304ac2cb30e846c9abba959ff71b70e0276a77cf0c37b048f54b3a"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/command.json": {
+    "bytes": 929,
+    "sha256": "743a05d45a68b47fe966607accd35fdebe63069cb6684c57118b97a3bb48286d"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/events/events_coordinator_90.jsonl": {
+    "bytes": 192512,
+    "sha256": "f54767fbcb17b98b32b6dc12885fab52d4df6c9577231d3bcb9a05579e047efc"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/events/events_preprocessing_142.jsonl": {
+    "bytes": 1339814,
+    "sha256": "b2e446c50a9f99d3457ecdc0135f38f86977fd60526961e9e0577a6eb6607694"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/events/events_talker_143.jsonl": {
+    "bytes": 1017623,
+    "sha256": "b3d5a4d089708e0072941ae58c81d81f212da33ebb5117df7c60e58d24c14d4f"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/measured/metrics.json": {
+    "bytes": 641,
+    "sha256": "5984510ae45724c6c1be958d690876f3b551b5917bd8eaa32ef5b63dde159505"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/measured/requests.json": {
+    "bytes": 283115,
+    "sha256": "4d2a6692611776bed4ecf37e22de87f123a1ed4823921db8f18e10e7911dd1f9"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/measured/results.csv": {
+    "bytes": 43718,
+    "sha256": "de04b9ba6c5abeeb447babaf811be8bff63ff84ffaeba3796a52e7057d648197"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/measured/speed_results.json": {
+    "bytes": 221272,
+    "sha256": "ffbcade38c9f93ef4574108bd1162da656aa66e761cf91f251cb395a58329e9b"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/measured/status.json": {
+    "bytes": 69,
+    "sha256": "a0ae52f86f8d277bff41a4c31802a387966b84ee5cb19291f0c941f23168dd25"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/profile_start.json": {
+    "bytes": 226,
+    "sha256": "e3c06361789cd0286155862dda420d01bee36ac912cee040da74dc1d3b721740"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/profile_stop.json": {
+    "bytes": 40,
+    "sha256": "2248a531502571b0520b53d8658ce71c0af7ee8e1ee5fcb33f5e6982ce75c2c9"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/server.log": {
+    "bytes": 155740,
+    "sha256": "894f872d3866243272d73b37863262fc58eb6f1e51d031dc62f8d237196638da"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/stage_requests.json": {
+    "bytes": 88988,
+    "sha256": "30cdad485943fa7c5e9b403d75ecb4a440b82eb66d7af60b428a489a636cabeb"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/stage_summary.json": {
+    "bytes": 407,
+    "sha256": "f6b34d623021f0678d7f97663ef3a853ca667b7be36543705d610860e5fb2e3e"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/status.json": {
+    "bytes": 74,
+    "sha256": "2eea91e31ebb645e26243065289f80e5ddc3606d4795078ac5b1e45699de1a4f"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/trace_summary.json": {
+    "bytes": 373,
+    "sha256": "a6266f881e430be01ad7c34cca67b213b1c403a6feec6344ef0df9acc1ff2772"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/warmup/metrics.json": {
+    "bytes": 639,
+    "sha256": "a254a87814145150ab9620af4866b1ef01320c626adeaa99e07415160c2bf76c"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/warmup/requests.json": {
+    "bytes": 141652,
+    "sha256": "5c8ca5d5e842d491f3ffea705ed6414242e7557e23a9b93a824060490c02e948"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/warmup/results.csv": {
+    "bytes": 22056,
+    "sha256": "2bb97eaf1930b0e7e6adbc518e27a4e476bd410ec2f492c951a22c87e0867944"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/warmup/speed_results.json": {
+    "bytes": 111131,
+    "sha256": "70bf16d54a2a99af1a6efd63e99cbe4d4f17d74cc2cad01e82842b26cf1ab7e7"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-baseline-c32/warmup/status.json": {
+    "bytes": 68,
+    "sha256": "e5246307bc8408aac08b40570d2dbbe0fdb996a72e3fba8383ee128fb0b91a3f"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/client.log": {
+    "bytes": 1703,
+    "sha256": "9756f5c8948b53961a6c3c89dbb05cfdb0f2e07612969af2a8a7c493e34c53a8"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/command.json": {
+    "bytes": 934,
+    "sha256": "569ddb93892356a26bc88822201cd892469d056803a480357b190e8d3a6b5de8"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/events/events_coordinator_929.jsonl": {
+    "bytes": 194048,
+    "sha256": "1909a6922c765507d146502aeff8e1578f7fa05d7ab6e3f4cf54cdfdb8c44ef1"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/events/events_talker_982.jsonl": {
+    "bytes": 1021696,
+    "sha256": "cf178932d9101e4c446a442afcf3065931f00b67abdc2f69c331a1c975515f58"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/events/events_thinker_981.jsonl": {
+    "bytes": 1345064,
+    "sha256": "b88d4deb28392e4de35e6b6924eb84a0c20e8683b3abc567eed12f5c646a54ac"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/kv_capacity.json": {
+    "bytes": 60,
+    "sha256": "18c0ef8716140886eec8af058f717c10e1ade4bf70cac69b093b68f7229d62c2"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/measured/metrics.json": {
+    "bytes": 639,
+    "sha256": "f0cda202eecbaed74156952aa267560e057ac982c6cb9a603b77984144ab0143"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/measured/requests.json": {
+    "bytes": 283614,
+    "sha256": "dc7ab6b16d40c1afb5c0f2879182ed0d2a71a9fb73fd7e72b1a15952841433a7"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/measured/results.csv": {
+    "bytes": 43969,
+    "sha256": "b85a53cdecb85933caecb485e151ca685ebfa0eded5d7a44dd55c236d94da9c9"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/measured/speed_results.json": {
+    "bytes": 221765,
+    "sha256": "82fd0fec46f7bac8cc8f7ca08ca624e7b0955034126d5f07fedf0d0626124aa4"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/measured/status.json": {
+    "bytes": 69,
+    "sha256": "9cbe82f329efc0586f4183f76dfa293ddf86d0962753f995b90d89b19a3da4a5"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/profile_start.json": {
+    "bytes": 229,
+    "sha256": "46ff2bab50466585b3947e15d0c5726c54c9a8491b9654b9102e249be9b8ab76"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/profile_stop.json": {
+    "bytes": 41,
+    "sha256": "5a5f1bf134340dd6a66dcc09ccf935e935c21f41b02cb6f57d9ca725049bb4e8"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/server.log": {
+    "bytes": 265797,
+    "sha256": "6f57f5508e3d1c38a0af947c6c1a5cca58e64efdf4ca8a609e7fcf6c7a7b48c1"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/stage_requests.json": {
+    "bytes": 88891,
+    "sha256": "883aed92cb9b50a190ec6ea8976c8a30c5bf631c8e4a6d344b4b0913110bf8a2"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/stage_summary.json": {
+    "bytes": 408,
+    "sha256": "b69042a06063b2bbb99049d22652a6cae16a07cf37cfc4bbefab196b5b8c6d0f"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/status.json": {
+    "bytes": 74,
+    "sha256": "678439f6e55f01655e10543f4c8457211f7e5531278e365a0a7ae270f16e5525"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/trace_summary.json": {
+    "bytes": 378,
+    "sha256": "0acf68fa9bd40d6d60e281cecaa83942456a0757fabea9e33bf7769e849eae85"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/warmup/metrics.json": {
+    "bytes": 638,
+    "sha256": "2169bc66a2d04d74210a605bdf449ee160376b815b6d1e1b94d34856e6693c03"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/warmup/requests.json": {
+    "bytes": 141816,
+    "sha256": "3f1fe235e041d31b2fffab42875559bbbb2ebb9916b72fd7ec5988c574a1849d"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/warmup/results.csv": {
+    "bytes": 22138,
+    "sha256": "a825c4fd524aa31394af6d11036e32f4a4d7eaeaa941897733b6640094282d23"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/warmup/speed_results.json": {
+    "bytes": 111339,
+    "sha256": "7839641673407bfa0c5b00702f0783edbb9893d9e5c2e6cdee794cddd39e84c8"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/r1-optimized-c32/warmup/status.json": {
+    "bytes": 69,
+    "sha256": "e76d306c54f1e0c7676f5e9f64d481552a948ae98ff9843636dacf2f7424c4b7"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/status.json": {
+    "bytes": 111,
+    "sha256": "5d43501392f9775e33fbe0b270aee551bd576f841f741c95fad32a1c5ea31842"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/results/versions.txt": {
+    "bytes": 9616,
+    "sha256": "22751d7a8bbad22ada03a16ecd98e00d53ecd39d0e1b4193041aba5ca4da527b"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/run.log": {
+    "bytes": 1284,
+    "sha256": "9e583aac1a7323c31bbb99f603fa9e9c5e8d896ca408c594d5333194422bfa08"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/artifacts/20261025T145801Z/validation.json": {
+    "bytes": 305,
+    "sha256": "5ea73bda6088f9efc29ac490e9b2bb6f903e6254ba6df41d9b3665cca517e0b2"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/download.log": {
+    "bytes": 127,
+    "sha256": "084c480b24885ee6b0c748cd469c7a48e0924013be05d305ccf96c60d94ee4d0"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/launch.log": {
+    "bytes": 4739,
+    "sha256": "8f277f130a7dfd49f2ad09db760f7c540934f60cecc46f6774247ce698f91c21"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/prefill_gpu_analysis.log": {
+    "bytes": 7161,
+    "sha256": "ce6731f29f655baf8992cedc0c409dff6bac8ece20d84df94d3325488c4d9361"
+  },
+  "minicpm-flow-hift/2026-10-25-torch-c32/window_extract.log": {
+    "bytes": 375,
+    "sha256": "5714e45e54fe162b31bc7d605b188e343f76ecc28a005acfadfdf972c1fbebc9"
+  },
   "minicpm-flow-hift/EXTERNAL_EVIDENCE.json": {
-    "bytes": 14197,
-    "sha256": "b8ca3ef037aaa58b23be706219ecff0ae4b6549f1c4a519d4b7daa86c5441dcf"
+    "bytes": 22942,
+    "sha256": "6d2b0ef7df1ef0ab77540dcd3bae68ae38606396fceb03d993ec602f694a674f"
   },
   "minicpm-flow-hift/PROVENANCE.json": {
-    "bytes": 575843,
-    "sha256": "65cb272ed1fed994f4259e9d8e48e56d4f81dd3ef09b6a14bbeba11977dad695"
+    "bytes": 618233,
+    "sha256": "1cd843877b3e93888ee06416bb256425166a483d688214e626eb20e928cab75c"
   },
   "minicpm-flow-hift/README.md": {
-    "bytes": 3690,
-    "sha256": "cfccfb932295a28e53b276c23bb27f5024611a325a4dbff5c8ab62236b8ca9fa"
+    "bytes": 3956,
+    "sha256": "57bf648bd81b20911d52af2f987c06353a5a697f82f31f5fb2fbe6cf8a3d5bdb"
   }
 }

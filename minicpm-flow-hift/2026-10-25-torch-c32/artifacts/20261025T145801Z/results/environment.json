@@ -1,0 +1,40 @@
+{
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "torchaudio": "2.11.0+cu130",
+    "sglang": "0.5.22",
+    "transformers": "5.19.0",
+    "flashinfer-python": "0.7.1"
+  },
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "memory_limit": "Modal memory request 131072 MiB; different host from RADIX",
+  "deadline": "2026-10-25T15:34:29.398525+00:00",
+  "warmup": 128,
+  "measured": 256,
+  "engine_options": [
+    "--thinker.engine.max_total_tokens",
+    "131072",
+    "--talker.engine.max_total_tokens",
+    "131072"
+  ],
+  "profiler": "Torch CPU/CUDA plus request events; formal cohort only; shapes/stack/memory/FLOPs off",
+  "compiler_cache": "fresh per visit",
+  "image": "docker.io/hongccc/sglang-omni@sha256:06ed306707bcf3d9e9beb5ba7ce66f09a666cac11c23455ece50c34199c0e985"
+}

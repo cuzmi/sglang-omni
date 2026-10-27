@@ -1,0 +1,2848 @@
+{
+  "mode": "event",
+  "visit": "r2-baseline-c32",
+  "first_forward_batches": 147,
+  "new_requests_distribution": {
+    "1": 92,
+    "3": 12,
+    "2": 29,
+    "5": 5,
+    "6": 3,
+    "4": 5,
+    "7": 1
+  },
+  "single_request_batches": 92,
+  "ready_queue_unselected_batches": 0,
+  "ready_queue_unselected_requests_sum": 0,
+  "arrived_unready_batches": 50,
+  "batch_size_matches_members": 147,
+  "boundaries": {
+    "admission": {
+      "n": 255,
+      "mean": 54.96906319607843,
+      "median": 0.922757,
+      "p95": 523.364802,
+      "max": 1032.736728,
+      "within_1ms": 132,
+      "within_5ms": 212,
+      "within_10ms": 228
+    },
+    "thinker_complete": {
+      "n": 255,
+      "mean": 55.316566984313724,
+      "median": 14.579107,
+      "p95": 371.68375,
+      "max": 822.910481,
+      "within_1ms": 0,
+      "within_5ms": 74,
+      "within_10ms": 102
+    },
+    "talker_input": {
+      "n": 255,
+      "mean": 55.318186898039215,
+      "median": 13.568046,
+      "p95": 372.276511,
+      "max": 822.77309,
+      "within_1ms": 0,
+      "within_5ms": 46,
+      "within_10ms": 110
+    },
+    "talker_queue": {
+      "n": 255,
+      "mean": 55.33012758823529,
+      "median": 15.453366,
+      "p95": 368.078652,
+      "max": 815.101312,
+      "within_1ms": 15,
+      "within_5ms": 102,
+      "within_10ms": 111
+    }
+  },
+  "transitions": {
+    "thinker_to_talker": {
+      "n": 256,
+      "mean": 5.43568830859375,
+      "median": 5.1417365,
+      "p95": 8.549238,
+      "max": 12.435481
+    },
+    "input_to_build": {
+      "n": 256,
+      "mean": 18.2903919765625,
+      "median": 15.0276995,
+      "p95": 48.67458,
+      "max": 83.563635
+    },
+    "build": {
+      "n": 256,
+      "mean": 2.85161290234375,
+      "median": 1.5885639999999999,
+      "p95": 8.463469,
+      "max": 26.633309
+    },
+    "queue_wait": {
+      "n": 256,
+      "mean": 4.43570883203125,
+      "median": 3.09964,
+      "p95": 12.70215,
+      "max": 19.94532
+    }
+  },
+  "rows": [
+    {
+      "index": 0,
+      "start_s": 0.186144721,
+      "host_ms": 12.118046,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.235394,
+      "members": [
+        "dd42acc1-698e-431c-a93d-67c103579efe"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 1,
+      "start_s": 0.212675645,
+      "host_ms": 15.490794,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.894134,
+      "members": [
+        "4c9b3689-25e9-4c39-bf8d-cc75b91b330c"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 2,
+      "start_s": 0.233710783,
+      "host_ms": 11.815103,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 8.020248,
+      "latest_queue_to_start_ms": 1.194444,
+      "members": [
+        "48e9d9b2-b2d7-47fc-a125-7839151641b6",
+        "5168e528-07f2-40ff-86e2-2c1db9d1b34a",
+        "f1005b68-3082-4eea-9fbf-b4cb741ab9fe"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 3,
+      "start_s": 0.250663104,
+      "host_ms": 12.015795,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 9.642076,
+      "latest_queue_to_start_ms": 1.072487,
+      "members": [
+        "07f5ea5b-aa66-44e6-9df6-08799b72f0c1",
+        "3610f6bf-deff-47fd-91f6-79855971d56e",
+        "9c46a3dd-7e5d-4e2c-961c-a335a427df94"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 4,
+      "start_s": 0.266042573,
+      "host_ms": 13.670613,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.248037,
+      "latest_queue_to_start_ms": 1.198565,
+      "members": [
+        "1a08f3a8-3d4d-45e8-9381-9514d5f9cb6b",
+        "ae07c5e0-2918-4f44-84fa-ed55a1547ccf"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 5,
+      "start_s": 0.284160957,
+      "host_ms": 14.659935,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 8.82947,
+      "latest_queue_to_start_ms": 0.963871,
+      "members": [
+        "14f3a5b6-ce38-4ea6-a312-4f45e28fa519",
+        "4fbce05e-8193-4606-93e1-20f7c7a8caa8",
+        "9cedabc9-d586-4549-a200-1a5f0d336e12"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 6,
+      "start_s": 0.305797305,
+      "host_ms": 10.874781,
+      "new_requests": 5,
+      "ready_at_first_marker": 5,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        5
+      ],
+      "arrival_spread_ms": 17.861887,
+      "latest_queue_to_start_ms": 1.263522,
+      "members": [
+        "1842e9a1-b17e-4ef9-a155-6ecb8970db4f",
+        "1adfe385-724c-48ae-a038-8bb3143c2a89",
+        "87d52bb0-38b2-4691-8d2c-d73e3a650e45",
+        "c1cb2e85-5e79-4cd1-bb0c-dc8fdde3c397",
+        "cd653ba7-4ec4-4bef-9c3a-9e76f9b69e3e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 7,
+      "start_s": 0.321511826,
+      "host_ms": 10.338945,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.374924,
+      "latest_queue_to_start_ms": 2.522604,
+      "members": [
+        "1cac50dc-90ca-4a4b-96c7-6c27e694cebf",
+        "e947ec6c-f234-4583-8b05-a5094c7f4011"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 8,
+      "start_s": 0.340710864,
+      "host_ms": 5.034044,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 2,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 4.089136,
+      "latest_queue_to_start_ms": 0.98669,
+      "members": [
+        "3ef3268d-9871-4e92-b069-c56b60f6c89a",
+        "ed5ce924-282b-48f5-9e3d-cdc22bf7f559"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 9,
+      "start_s": 0.349577763,
+      "host_ms": 9.858083,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 4.60037,
+      "latest_queue_to_start_ms": 0.974438,
+      "members": [
+        "69427498-23ae-4b81-8c2d-12198282023f",
+        "dc54c5fd-e492-4de9-a693-b35dede39889"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 10,
+      "start_s": 0.364127089,
+      "host_ms": 9.727659,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.366139,
+      "latest_queue_to_start_ms": 1.101364,
+      "members": [
+        "3c144ac3-32a5-409c-9e5b-097910ce5574",
+        "469552b1-fef4-4736-98ad-e1db2123c47b"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 11,
+      "start_s": 0.378346025,
+      "host_ms": 11.47546,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.319858,
+      "latest_queue_to_start_ms": 1.076482,
+      "members": [
+        "0d927b73-e5df-4b7b-814d-d5b716271179",
+        "f71ad50f-6e95-43da-bb8c-fef3fd4e9d96"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 12,
+      "start_s": 0.395863919,
+      "host_ms": 12.598483,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.93648,
+      "members": [
+        "5b879fcc-9c06-4947-9e0b-7e82ba704078"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 13,
+      "start_s": 0.411393282,
+      "host_ms": 12.245234,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.012477,
+      "members": [
+        "881587b9-8b49-4b28-a0e2-dac29aea1aa1"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 14,
+      "start_s": 0.430210418,
+      "host_ms": 12.221034,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.015415,
+      "members": [
+        "3a1fe402-7705-4965-8d23-2a6d74ddc37e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 15,
+      "start_s": 0.505929278,
+      "host_ms": 4.761244,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.189391,
+      "members": [
+        "ea57aa9a-f0f4-4dd7-abb6-577c5fd394ea"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 16,
+      "start_s": 1.225105268,
+      "host_ms": 32.656166,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.753803,
+      "members": [
+        "e5de2006-89bd-417c-8445-4d5cc609d383"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 17,
+      "start_s": 1.888432861,
+      "host_ms": 15.961294,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 4.00097,
+      "members": [
+        "8bcfe661-3a77-41f6-b1af-937ebd182d00"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 18,
+      "start_s": 1.951553425,
+      "host_ms": 14.949437,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.859739,
+      "members": [
+        "0b97a08e-bb1f-44fe-9453-fdc092a74add"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 19,
+      "start_s": 1.998661194,
+      "host_ms": 28.747367,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.671231,
+      "members": [
+        "a0bc7e47-5320-4391-9dd3-960526a46ca2"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 20,
+      "start_s": 2.048135379,
+      "host_ms": 23.601848,
+      "new_requests": 5,
+      "ready_at_first_marker": 5,
+      "ready_unselected": 0,
+      "arrived_unready": 2,
+      "batch_sizes": [
+        5
+      ],
+      "arrival_spread_ms": 17.561438,
+      "latest_queue_to_start_ms": 2.776178,
+      "members": [
+        "03cd9a1f-d12a-42f6-8eda-c1ec6b491e0e",
+        "7402c46d-96c8-40d7-ac27-32533723ac4f",
+        "dc9945b3-d3dd-4ce1-a9f8-d6144e3e2445",
+        "efb34ab7-9b72-4d3d-85bd-063d049fdeeb",
+        "f1e0a89e-bd79-4b4c-86f6-0006ea0fad41"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 21,
+      "start_s": 2.084956189,
+      "host_ms": 11.936812,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 28.344153,
+      "latest_queue_to_start_ms": 3.824629,
+      "members": [
+        "754d8878-aa9b-4168-8ecc-082633f5fca9",
+        "7afcb665-d07c-4ebc-9ca3-1496de05c2fa",
+        "e9db03da-dcb2-411d-8a15-f28efe13c083"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 22,
+      "start_s": 2.103633646,
+      "host_ms": 13.266949,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 5.225016,
+      "members": [
+        "14ebeeaa-622b-4677-8b7e-a593463f0470"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 23,
+      "start_s": 2.122345275,
+      "host_ms": 17.579445,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.522213,
+      "members": [
+        "6ea10149-7edd-4638-ab3b-3970c93c533c"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 24,
+      "start_s": 2.151112945,
+      "host_ms": 9.124024,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 13.540271,
+      "latest_queue_to_start_ms": 1.840296,
+      "members": [
+        "4450854e-1a4a-4884-846c-3a32c0157181",
+        "cd94e700-5028-4f74-8a1d-c34998a9703e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 25,
+      "start_s": 2.163723162,
+      "host_ms": 10.991742,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.30799,
+      "members": [
+        "91a4a85a-a2b4-43a2-8206-565f23e78aa4"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 26,
+      "start_s": 2.541407741,
+      "host_ms": 20.916451,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.242051,
+      "members": [
+        "30f94853-79c3-4e2b-9a57-a11347fc0d1e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 27,
+      "start_s": 2.565211432,
+      "host_ms": 10.524658,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.128048,
+      "members": [
+        "7731423b-544c-4d98-8445-cfcae66285fc"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 28,
+      "start_s": 2.603384532,
+      "host_ms": 39.006937,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.276985,
+      "members": [
+        "36d625be-be4d-41e3-b231-a5852bd19473"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 29,
+      "start_s": 2.662889661,
+      "host_ms": 13.562074,
+      "new_requests": 6,
+      "ready_at_first_marker": 6,
+      "ready_unselected": 0,
+      "arrived_unready": 2,
+      "batch_sizes": [
+        6
+      ],
+      "arrival_spread_ms": 28.044366,
+      "latest_queue_to_start_ms": 4.579795,
+      "members": [
+        "0b99c54b-98cd-46a9-911c-2bbf27a07ce7",
+        "2d2c237f-7712-4c01-9421-7da7c4e38044",
+        "381019db-b8dc-422d-b321-9ddabeeaff6b",
+        "a37fa293-8cea-4587-ad85-0794838f9e3e",
+        "b42bd30e-e0c7-4c1f-8949-542c7f6eca49",
+        "d2e2b091-b5ed-451b-8bbd-e33e95d483ca"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 30,
+      "start_s": 2.682022014,
+      "host_ms": 13.262301,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 15.693586,
+      "latest_queue_to_start_ms": 1.381365,
+      "members": [
+        "c5b7d53d-b854-4c5b-91f3-5a7ae84ad462",
+        "f630c109-3853-4a0b-8422-81224c36cc4b"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 31,
+      "start_s": 2.699125689,
+      "host_ms": 6.813516,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 6.789136,
+      "latest_queue_to_start_ms": 1.043931,
+      "members": [
+        "e6b897d5-9b6b-48d8-9033-7f4374a9e6c4",
+        "f7a5a624-082c-4b13-b6b9-9971b74b7707"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 32,
+      "start_s": 2.716923745,
+      "host_ms": 7.06895,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.094274,
+      "members": [
+        "da242555-7aff-43b0-9e52-b727966975c9"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 33,
+      "start_s": 2.766422329,
+      "host_ms": 9.023113,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 4.333092,
+      "latest_queue_to_start_ms": 1.133628,
+      "members": [
+        "c1aeec0b-bd60-4a1e-ba22-932334f8a61b",
+        "ddc2575d-88d0-4230-bf94-4b1f40fb15f9"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 34,
+      "start_s": 2.802944066,
+      "host_ms": 29.194928,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.585619,
+      "members": [
+        "2b5d0e32-b8c6-46b4-91a3-5dfde0671e7a"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 35,
+      "start_s": 3.356958499,
+      "host_ms": 26.455684,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 4.765667,
+      "members": [
+        "72ca724b-0c67-42d6-822c-8c535869fb83"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 36,
+      "start_s": 3.386684972,
+      "host_ms": 8.304216,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.295095,
+      "members": [
+        "cdd4c13c-6803-4e8a-ae83-08af801da496"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 37,
+      "start_s": 3.434583717,
+      "host_ms": 8.916182,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.332172,
+      "members": [
+        "7b735b75-2d03-4925-a9f1-9002cde8e215"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 38,
+      "start_s": 3.491492074,
+      "host_ms": 13.711609,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.705024,
+      "members": [
+        "2c185955-47ff-4218-bb6c-abaf5b0cc4f8"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 39,
+      "start_s": 3.515759176,
+      "host_ms": 40.002495,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 6.87438,
+      "members": [
+        "12c778f6-a264-4ddf-9639-02c047ca85bc"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 40,
+      "start_s": 3.567170531,
+      "host_ms": 16.111976,
+      "new_requests": 4,
+      "ready_at_first_marker": 4,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        4
+      ],
+      "arrival_spread_ms": 30.86523,
+      "latest_queue_to_start_ms": 2.171313,
+      "members": [
+        "4def8a56-f58d-4676-b303-176eeff08816",
+        "7fe32313-2279-4ee3-ba97-ee7aba2775e9",
+        "9d7f7851-80f4-4d85-ba93-1d2502e51c78",
+        "a929381f-6a69-4c32-82b5-01b60752b359"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 41,
+      "start_s": 4.027204003,
+      "host_ms": 31.934523,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.348732,
+      "members": [
+        "de78e776-bb4b-49dd-8460-a04cb123bc6b"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 42,
+      "start_s": 4.073434177,
+      "host_ms": 10.97781,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.410323,
+      "members": [
+        "c93f222e-6dd4-4180-b299-faab39a31340"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 43,
+      "start_s": 4.087927981,
+      "host_ms": 10.686872,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.775832,
+      "members": [
+        "3ab5b81c-be4b-4b5b-b0d1-dc403a0fcb12"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 44,
+      "start_s": 4.10310865,
+      "host_ms": 11.44856,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.593532,
+      "members": [
+        "352b2295-db05-40d2-9a1f-a41196559285"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 45,
+      "start_s": 4.120854446,
+      "host_ms": 20.929888,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.328881,
+      "members": [
+        "19eea9f0-82a5-4a48-ac9a-4d299e37b488"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 46,
+      "start_s": 4.149343263,
+      "host_ms": 19.968577,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.459138,
+      "members": [
+        "36a3ac0d-934b-4fbd-bf52-1725de7270ec"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 47,
+      "start_s": 4.196974224,
+      "host_ms": 27.149453,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.285945,
+      "members": [
+        "361d9d48-52d1-4231-b007-33909b4e4fb9"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 48,
+      "start_s": 4.233877521,
+      "host_ms": 24.511076,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 4.589081,
+      "members": [
+        "7fb98dfa-3628-494a-ad54-060574648586"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 49,
+      "start_s": 4.279246293,
+      "host_ms": 22.851764,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 4.03416,
+      "members": [
+        "b6e71535-3958-40bc-996a-23871507b7ed"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 50,
+      "start_s": 4.427093608,
+      "host_ms": 17.609157,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.541331,
+      "members": [
+        "1249b90e-844e-4f21-b3cc-18bf1b4d3b3c"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 51,
+      "start_s": 5.067403206,
+      "host_ms": 29.052751,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 4.084687,
+      "members": [
+        "6848070d-b045-4338-9709-7d41a44f600d"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 52,
+      "start_s": 5.103196371,
+      "host_ms": 22.276212,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.989501,
+      "members": [
+        "9718a679-04f8-4109-8e98-efc4b29632e0"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 53,
+      "start_s": 5.143357518,
+      "host_ms": 31.352604,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 8.763023,
+      "latest_queue_to_start_ms": 3.465688,
+      "members": [
+        "7f7a3258-d0ac-4f80-b6e7-5cc84f9cd8ae",
+        "d3a2843c-ed1a-40ba-b310-ccd4a9c62afd",
+        "e4a02e47-2bee-45dc-9395-42b230c1c43d"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 54,
+      "start_s": 5.18411461,
+      "host_ms": 34.416132,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 9.529654,
+      "latest_queue_to_start_ms": 3.541323,
+      "members": [
+        "3dbbb942-0738-493e-8cb5-6e566b218081",
+        "a286945e-f26a-4085-86e7-36aab0ea1b59",
+        "dba0ac87-8e56-4522-b163-0cab5e5917f1"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 55,
+      "start_s": 5.229628475,
+      "host_ms": 19.811444,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 27.84851,
+      "latest_queue_to_start_ms": 2.190928,
+      "members": [
+        "6e689298-d5cc-4fd0-af16-97eb618ff0b0",
+        "ac5d73f4-2b39-4adc-ba76-fb7ddb3de4e5",
+        "d3dbcde8-c26b-4c75-adbc-1ceac45133aa"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 56,
+      "start_s": 5.251511513,
+      "host_ms": 14.471174,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.911826,
+      "members": [
+        "f3e081dc-2cc0-4624-91a3-cbeed2a554f7"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 57,
+      "start_s": 5.292084451,
+      "host_ms": 13.328901,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.960154,
+      "members": [
+        "8d58cc2e-0404-46c3-b35d-4b58d6e79f55"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 58,
+      "start_s": 5.310031121,
+      "host_ms": 11.846747,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.079321,
+      "members": [
+        "e26005ba-7407-401e-8dc5-2e1996866a96"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 59,
+      "start_s": 5.324188966,
+      "host_ms": 11.36395,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.954237,
+      "members": [
+        "6a4fc1d1-137f-4641-926c-f052e48cfdc2"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 60,
+      "start_s": 6.141740419,
+      "host_ms": 20.015862,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.404378,
+      "members": [
+        "5c0eb355-ae32-4d89-a5af-6ed0d4d97aef"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 61,
+      "start_s": 6.165353238,
+      "host_ms": 17.846346,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 6.010379,
+      "latest_queue_to_start_ms": 1.127441,
+      "members": [
+        "82a24803-69d7-4454-8749-520687eaf958",
+        "c1c2b15e-c0c6-458d-a4b9-f46d6b12b32f"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 62,
+      "start_s": 6.185774771,
+      "host_ms": 10.517494,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.134629,
+      "members": [
+        "399928fe-e2f3-4786-b792-a83c7a8e70f7"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 63,
+      "start_s": 6.200565146,
+      "host_ms": 21.979155,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.125854,
+      "members": [
+        "9dbb18f9-2ca4-4646-add6-46beb2c48d60"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 64,
+      "start_s": 6.232376567,
+      "host_ms": 17.191085,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.845934,
+      "latest_queue_to_start_ms": 6.358356,
+      "members": [
+        "3f64a722-09ec-4884-b910-73e7bd11a17e",
+        "e51529cb-6e9c-45d8-9081-8d0a04aba71e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 65,
+      "start_s": 6.270616248,
+      "host_ms": 20.027742,
+      "new_requests": 5,
+      "ready_at_first_marker": 5,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        5
+      ],
+      "arrival_spread_ms": 22.679716,
+      "latest_queue_to_start_ms": 1.853112,
+      "members": [
+        "737bdfbe-bfb5-41ae-87d7-eff491636913",
+        "86dd41a8-f117-42d6-b68d-736d507dcac2",
+        "8710d081-07c6-45d6-970d-21cd1de962bd",
+        "9f059171-edc1-4d6f-bf53-20424aeb5078",
+        "f4a9c878-f7ed-4c6d-856d-e17d1605a72e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 66,
+      "start_s": 6.29917478,
+      "host_ms": 17.187826,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.882686,
+      "members": [
+        "61f8cd36-67df-4256-a7ad-012290f5db4e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 67,
+      "start_s": 6.319865667,
+      "host_ms": 11.259091,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.680823,
+      "members": [
+        "8f95fe9b-1e14-4112-89c2-8f7c47b0cd9d"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 68,
+      "start_s": 6.812229434,
+      "host_ms": 22.594611,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.204976,
+      "members": [
+        "ee8792f5-e549-4276-a54f-d5863e96c484"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 69,
+      "start_s": 6.839367503,
+      "host_ms": 22.483534,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.744062,
+      "members": [
+        "f4d42c1f-a8b0-4b65-8116-58468aba0778"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 70,
+      "start_s": 6.865757964,
+      "host_ms": 21.627707,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.649103,
+      "members": [
+        "03645403-52eb-4989-a03b-c581684f07f6"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 71,
+      "start_s": 6.893499304,
+      "host_ms": 25.328235,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.320277,
+      "members": [
+        "05f140ce-12d4-4af0-854f-52e24202b669"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 72,
+      "start_s": 6.928397623,
+      "host_ms": 23.092571,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 4.214702,
+      "latest_queue_to_start_ms": 2.644795,
+      "members": [
+        "2286ec05-94c2-4e7c-922a-8dd183442dec",
+        "abb4fe99-e8e4-454b-be39-be9c61ec9998"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 73,
+      "start_s": 6.958216568,
+      "host_ms": 21.034987,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 6.721303,
+      "latest_queue_to_start_ms": 2.254646,
+      "members": [
+        "6d6aa434-459f-4df8-bd6e-c2ce4f17e38a",
+        "f453b597-cd94-4681-9c6a-b62e9cbd5f1d"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 74,
+      "start_s": 6.98852469,
+      "host_ms": 19.741664,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 15.089674,
+      "latest_queue_to_start_ms": 1.689389,
+      "members": [
+        "0367bbbd-cf94-4e69-9d23-f4c1eaa25401",
+        "93fa35fe-a021-4203-a95a-3f39d1baed0c"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 75,
+      "start_s": 7.012732338,
+      "host_ms": 26.715969,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 17.907883,
+      "latest_queue_to_start_ms": 1.60726,
+      "members": [
+        "2cdce9a7-5f22-4f8c-901e-76372727616a",
+        "6ad2cf49-c196-4a1f-80ad-317f8886e9ce"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 76,
+      "start_s": 7.04546694,
+      "host_ms": 17.349446,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 3.260417,
+      "latest_queue_to_start_ms": 2.623038,
+      "members": [
+        "557b6835-580e-43ea-bfef-c8d7591c9468",
+        "df32f627-0487-4acf-8536-4b685486108b"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 77,
+      "start_s": 7.067350328,
+      "host_ms": 15.031061,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.02038,
+      "members": [
+        "19e00d7e-2748-493a-8890-2ace3180d920"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 78,
+      "start_s": 7.087569346,
+      "host_ms": 9.695891,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.308626,
+      "members": [
+        "8cf8233f-881c-4001-9028-090da805956a"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 79,
+      "start_s": 7.403779218,
+      "host_ms": 10.289052,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.157299,
+      "members": [
+        "adce3527-d990-4196-abd7-46d8eae32010"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 80,
+      "start_s": 7.416404085,
+      "host_ms": 14.459577,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.984338,
+      "members": [
+        "6fdfe3b1-479b-41db-b584-3228e99e301e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 81,
+      "start_s": 7.466316356,
+      "host_ms": 64.265692,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 2,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 5.855166,
+      "members": [
+        "a92ca4a9-ba7b-47ae-af1c-6321ce82addc"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 82,
+      "start_s": 7.55478943,
+      "host_ms": 19.106384,
+      "new_requests": 5,
+      "ready_at_first_marker": 5,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        5
+      ],
+      "arrival_spread_ms": 49.872477,
+      "latest_queue_to_start_ms": 1.459118,
+      "members": [
+        "01a7195e-8023-41eb-9713-834497ba53a7",
+        "4d8420f8-a567-4f69-8487-ae49a4f916a8",
+        "81a3a588-b637-469d-939b-ed14b602f3fb",
+        "af3f8834-0506-4607-8009-e9b15935ef54",
+        "eafe7461-9286-4170-b076-73c3dab61625"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 83,
+      "start_s": 7.578344211,
+      "host_ms": 22.088957,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.258169,
+      "members": [
+        "aeaac239-81aa-49dc-b3eb-64ff36fb0775"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 84,
+      "start_s": 7.604522594,
+      "host_ms": 17.289606,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.613118,
+      "members": [
+        "6b132da7-c89e-4d8d-8416-cb5efc3d26bd"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 85,
+      "start_s": 7.849957949,
+      "host_ms": 48.606637,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 4.909943,
+      "members": [
+        "43f8499f-ed04-49f9-be39-dc1d7454fd4f"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 86,
+      "start_s": 7.916965333,
+      "host_ms": 19.45674,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 2,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 40.3123,
+      "latest_queue_to_start_ms": 3.815132,
+      "members": [
+        "bdc600ea-4b56-42d8-ad61-95921591205e",
+        "dbe43fe6-6b7f-4f05-ae7e-af584a89926f",
+        "e60d3c99-8a20-4f5f-9796-a3b35017615e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 87,
+      "start_s": 7.945103875,
+      "host_ms": 19.126506,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 2.97692,
+      "latest_queue_to_start_ms": 2.400256,
+      "members": [
+        "2e4e2b7e-f251-47c4-a3a3-f663caa45b6a",
+        "36119d7b-2946-4fb4-8d95-b5eafe6d87a9"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 88,
+      "start_s": 8.226878106,
+      "host_ms": 24.920644,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.996183,
+      "members": [
+        "fb491825-e0da-4bd1-9ec0-b2e0f998e763"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 89,
+      "start_s": 8.263276058,
+      "host_ms": 8.372985,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.101362,
+      "latest_queue_to_start_ms": 1.425758,
+      "members": [
+        "b238f4ce-8244-48f2-a1a1-cb5bf830601f",
+        "f2629205-a82e-4f27-9b03-ec6a7484476a"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 90,
+      "start_s": 8.291183203,
+      "host_ms": 6.474346,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.376812,
+      "members": [
+        "b3c97f4c-fa51-488b-ac75-d1d3fdfa32a3"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 91,
+      "start_s": 8.338404364,
+      "host_ms": 5.159445,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.045179,
+      "members": [
+        "3ff2be84-47dc-47dd-b0cd-d740ffcd8dd2"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 92,
+      "start_s": 8.377949763,
+      "host_ms": 35.207927,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.535784,
+      "members": [
+        "cd760e8f-8091-452d-8f64-eaa6306019f3"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 93,
+      "start_s": 8.425196954,
+      "host_ms": 19.983984,
+      "new_requests": 4,
+      "ready_at_first_marker": 4,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        4
+      ],
+      "arrival_spread_ms": 41.971115,
+      "latest_queue_to_start_ms": 2.905312,
+      "members": [
+        "7b94f8e4-a9eb-4b5e-a06a-dc8b7e9f6caf",
+        "a7e4430c-3d54-4353-ae99-a67f42273773",
+        "cd741b8c-a807-41b3-b478-53991857fcca",
+        "fdedbd7d-a151-4860-a31e-5f058fc9f93c"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 94,
+      "start_s": 8.832403254,
+      "host_ms": 74.453782,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 5.669305,
+      "members": [
+        "82cd41aa-6d56-4cc6-a33a-759a2c9fa1ec"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 95,
+      "start_s": 8.924394095,
+      "host_ms": 29.095792,
+      "new_requests": 5,
+      "ready_at_first_marker": 5,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        5
+      ],
+      "arrival_spread_ms": 60.216347,
+      "latest_queue_to_start_ms": 2.917534,
+      "members": [
+        "15823c90-257e-44fb-9ee6-a21a0ab2a6e0",
+        "a94767f3-f2d3-4839-b805-074122a00fef",
+        "b05f2e19-add4-4637-acfe-714d4d0575f9",
+        "c01bb634-5aa9-49a0-8a93-29338520939b",
+        "dcaf19e5-bc40-4e6f-9113-c93d597f9761"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 96,
+      "start_s": 8.95898031,
+      "host_ms": 17.989866,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.297714,
+      "members": [
+        "36638f49-f730-44cd-a350-434c7aca5fab"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 97,
+      "start_s": 9.754837456,
+      "host_ms": 24.56046,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.360125,
+      "members": [
+        "5b0bbe35-fa25-4924-a6ac-f5cedddde7ad"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 98,
+      "start_s": 9.795884883,
+      "host_ms": 31.75943,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 24.605331,
+      "latest_queue_to_start_ms": 2.526596,
+      "members": [
+        "3d168959-2f2d-4ceb-875e-57184180777e",
+        "4f8e1f74-deca-46d9-bb68-4dd6bf2135f2",
+        "e842f795-9958-4abe-a11f-823cb0bd5a66"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 99,
+      "start_s": 9.841453581,
+      "host_ms": 27.782782,
+      "new_requests": 4,
+      "ready_at_first_marker": 4,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        4
+      ],
+      "arrival_spread_ms": 29.037206,
+      "latest_queue_to_start_ms": 4.61893,
+      "members": [
+        "1c25d272-a0b8-464b-99b6-bbaba192ddce",
+        "69f34de8-cd68-44ce-90cf-81558a4d947b",
+        "ea02aecf-40ca-4d33-bbb3-9a8c239dfeef",
+        "ee9fab79-0596-48a5-801e-e291f5a775a0"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 100,
+      "start_s": 9.881166447,
+      "host_ms": 17.990078,
+      "new_requests": 6,
+      "ready_at_first_marker": 6,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        6
+      ],
+      "arrival_spread_ms": 23.862484,
+      "latest_queue_to_start_ms": 2.310389,
+      "members": [
+        "0de35568-70b0-45b7-b7d4-4b9e35011f07",
+        "4ada0680-fba4-41c4-82c3-e91b91425882",
+        "68956992-6289-4eb7-83de-4e1e99a63336",
+        "6a84710d-d4d2-4d53-9732-67a3668f2d1f",
+        "c216a09f-6747-45d9-b32f-73489620017d",
+        "d2d080f9-0e23-4ea5-af68-a8122ec842f6"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 101,
+      "start_s": 10.363278818,
+      "host_ms": 26.756508,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.452926,
+      "members": [
+        "e2ada55d-c94d-4d63-a539-392dd14c51d8"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 102,
+      "start_s": 10.400060418,
+      "host_ms": 20.370222,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 14.3235,
+      "latest_queue_to_start_ms": 1.369021,
+      "members": [
+        "71ae53e1-81cd-42e7-9cfd-6529a8276f31",
+        "aef9f769-afb5-435c-bd50-c4fbf5ade948"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 103,
+      "start_s": 10.427272641,
+      "host_ms": 17.19773,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.453354,
+      "members": [
+        "8f3bb72c-c84f-4083-87cc-f2c2ebb62c99"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 104,
+      "start_s": 10.45116293,
+      "host_ms": 17.150267,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 16.767006,
+      "latest_queue_to_start_ms": 2.143959,
+      "members": [
+        "1e9e7432-8094-4bbc-b600-35b776a2c190",
+        "6f628281-e3f7-4215-825a-34f123737de3"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 105,
+      "start_s": 10.473906755,
+      "host_ms": 10.2211,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 7.068734,
+      "latest_queue_to_start_ms": 1.012585,
+      "members": [
+        "63992251-58de-4b02-b0b2-33e62a56992a",
+        "bb83f73f-5217-42f2-92fd-0431146b4242"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 106,
+      "start_s": 10.504025139,
+      "host_ms": 7.563076,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.144569,
+      "members": [
+        "11aea23f-4482-4014-a843-47af2c224680"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 107,
+      "start_s": 10.520883175,
+      "host_ms": 13.845432,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.053669,
+      "members": [
+        "dc8260df-9b11-4569-8dfd-5b7c63a70fb3"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 108,
+      "start_s": 10.537718947,
+      "host_ms": 7.571075,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.543023,
+      "latest_queue_to_start_ms": 1.062702,
+      "members": [
+        "6cac1e58-d877-4ce3-8420-1a4581a3c4a0",
+        "d8def4e5-7b3e-4be6-b685-2b8f298c63bb"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 109,
+      "start_s": 10.548384103,
+      "host_ms": 12.756359,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.024926,
+      "members": [
+        "6f24ad67-6bfb-4b75-a6ca-0c8d6dd7f002"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 110,
+      "start_s": 10.564596036,
+      "host_ms": 11.424669,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.540523,
+      "latest_queue_to_start_ms": 0.934236,
+      "members": [
+        "7d1c4b85-dac1-49a7-8276-62664155ab76",
+        "ff02ec31-3cb6-41ca-a1e6-17f750eb6e5f"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 111,
+      "start_s": 10.601751965,
+      "host_ms": 24.636701,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 2.737628,
+      "members": [
+        "02fcac90-f39f-4bd0-9cb8-eae55d2efbfb"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 112,
+      "start_s": 10.778924123,
+      "host_ms": 26.010433,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.218116,
+      "members": [
+        "ac07c4be-3fd1-4d6a-8a73-7d40632f7a16"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 113,
+      "start_s": 10.808508677,
+      "host_ms": 5.936488,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.855071,
+      "members": [
+        "3d38cbab-e170-4cd7-b1f5-b3798c613c55"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 114,
+      "start_s": 10.81703145,
+      "host_ms": 4.675011,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.975664,
+      "members": [
+        "0413bfef-89e8-437a-879c-740ca8bab7e0"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 115,
+      "start_s": 11.188166473,
+      "host_ms": 80.26842,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 6.085236,
+      "members": [
+        "8f94e69e-e98d-48a9-932c-88428de55466"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 116,
+      "start_s": 11.284277749,
+      "host_ms": 13.083427,
+      "new_requests": 7,
+      "ready_at_first_marker": 7,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        7
+      ],
+      "arrival_spread_ms": 81.366153,
+      "latest_queue_to_start_ms": 2.028595,
+      "members": [
+        "17efdcf6-d404-4af0-87a2-6d006afdefec",
+        "1805f62f-637c-4057-ba64-39a750667803",
+        "2a3029b9-c62c-4c49-9e9a-8d81f165866b",
+        "798a1661-403e-489e-af64-37a9f7f6c8e6",
+        "7cc55bff-3be9-4367-84f5-e3541a93413a",
+        "901e9781-971c-4c0e-aa20-d387add0614e",
+        "c9f8531c-2123-429b-b115-9a080d351c9b"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 117,
+      "start_s": 11.567059341,
+      "host_ms": 19.56283,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.849838,
+      "members": [
+        "c155746b-b56e-49ff-83ae-720e93f4ccd9"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 118,
+      "start_s": 11.602520698,
+      "host_ms": 17.501958,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.668854,
+      "members": [
+        "542923e5-9589-476a-9325-3e4e9e965af3"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 119,
+      "start_s": 11.622103324,
+      "host_ms": 11.052736,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.890086,
+      "members": [
+        "84d8b474-7e59-44d1-8157-6ba011625544"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 120,
+      "start_s": 11.664708403,
+      "host_ms": 17.953436,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.496518,
+      "members": [
+        "9e5365c3-b130-4343-b83d-3e91ad49de72"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 121,
+      "start_s": 11.718734582,
+      "host_ms": 13.375977,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.364561,
+      "members": [
+        "18b8eb5f-817f-47a5-ab8f-eca386cc20bc"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 122,
+      "start_s": 12.261398872,
+      "host_ms": 23.003726,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 3.200774,
+      "members": [
+        "15af1480-02e5-4f80-91a3-493d4940081e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 123,
+      "start_s": 12.288614599,
+      "host_ms": 24.292496,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.8833,
+      "members": [
+        "034e3476-eec9-4ea9-9c69-2e6e3fa6cb30"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 124,
+      "start_s": 12.323416493,
+      "host_ms": 23.337529,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 6.243814,
+      "latest_queue_to_start_ms": 4.560325,
+      "members": [
+        "59d8b50f-9086-4900-812f-31c517dc0406",
+        "e37bc3d0-27ad-45a1-9b53-cdd7738d745c"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 125,
+      "start_s": 12.372570477,
+      "host_ms": 7.481086,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.024598,
+      "members": [
+        "c596773d-8897-443f-8d85-4928c6f252ec"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 126,
+      "start_s": 12.383120857,
+      "host_ms": 10.941206,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.917446,
+      "members": [
+        "8599c81e-bdc0-4177-a7b7-977365cd70dd"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 127,
+      "start_s": 12.399539511,
+      "host_ms": 16.216957,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 5.086007,
+      "latest_queue_to_start_ms": 0.903029,
+      "members": [
+        "140a9183-3ec0-45e7-b591-d7c6975f3336",
+        "a68118d4-728e-4550-8b87-c325be3367bd"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 128,
+      "start_s": 12.420409775,
+      "host_ms": 19.86374,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 2.889459,
+      "latest_queue_to_start_ms": 1.472354,
+      "members": [
+        "bdb5ae3b-7891-4b3a-a74a-e9ebf7a5f4a2",
+        "e235d1c2-67b9-4e28-bfc6-189951b35d74"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 129,
+      "start_s": 12.445766186,
+      "host_ms": 14.788652,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 10.83625,
+      "latest_queue_to_start_ms": 1.973559,
+      "members": [
+        "07f213a7-b585-4eb6-9185-23860c66f65f",
+        "63b8d570-d8f8-4a61-bb4f-895e224c5332",
+        "ec23a60b-feaa-45da-8949-2d92d656c0f9"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 130,
+      "start_s": 13.06051932,
+      "host_ms": 8.177444,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.024673,
+      "members": [
+        "27fccaea-3b89-4a80-9d15-17f8fff95470"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 131,
+      "start_s": 13.104293992,
+      "host_ms": 13.422508,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 0.886176,
+      "members": [
+        "73502013-7e90-4891-847b-adc5d6af7b52"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 132,
+      "start_s": 13.123329148,
+      "host_ms": 13.813042,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.840855,
+      "members": [
+        "5b9149b6-ff22-49bb-896e-011fe2b2299f"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 133,
+      "start_s": 13.141268658,
+      "host_ms": 16.402879,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.22064,
+      "members": [
+        "40494f94-1faf-4c69-acd5-2a4cd92f7b7e"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 134,
+      "start_s": 13.161222277,
+      "host_ms": 18.751284,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.690183,
+      "members": [
+        "ab75ad28-c0d7-472c-b443-fdd6a1fb40a4"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 135,
+      "start_s": 13.200222755,
+      "host_ms": 21.81091,
+      "new_requests": 4,
+      "ready_at_first_marker": 4,
+      "ready_unselected": 0,
+      "arrived_unready": 2,
+      "batch_sizes": [
+        4
+      ],
+      "arrival_spread_ms": 14.387116,
+      "latest_queue_to_start_ms": 2.581861,
+      "members": [
+        "6f6e990e-613d-4641-9550-f69659ff8b6c",
+        "8bf295aa-4977-4e4c-8427-ec7390635c44",
+        "a17a50b7-7dcf-4846-8bd4-0bc0e6727c59",
+        "c99183c7-4418-40d5-aba1-405d6d021d27"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 136,
+      "start_s": 13.235011233,
+      "host_ms": 17.338895,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 8.1064,
+      "latest_queue_to_start_ms": 1.727466,
+      "members": [
+        "0f546c22-bf04-4ab6-895d-a3168d381dac",
+        "a0af3302-fc78-4198-b41c-a56f541035c3",
+        "ff6d96e0-f1ed-4259-aad8-7c86d729300c"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 137,
+      "start_s": 13.258155422,
+      "host_ms": 17.766092,
+      "new_requests": 3,
+      "ready_at_first_marker": 3,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        3
+      ],
+      "arrival_spread_ms": 18.1168,
+      "latest_queue_to_start_ms": 1.609474,
+      "members": [
+        "a0031ed6-2caa-44b4-9007-329379a1e6cb",
+        "c682411b-a0da-45ff-9e9e-8b585b48e4f1",
+        "fc189657-59e0-4bc2-931d-2089de70fcc6"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 138,
+      "start_s": 13.631714987,
+      "host_ms": 50.194406,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 4.842581,
+      "latest_queue_to_start_ms": 5.055198,
+      "members": [
+        "6e9d84b8-2305-4df6-8f81-216f3298c1e3",
+        "92f96cb1-19ca-4190-96e4-591e8684ae6d"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 139,
+      "start_s": 13.704529486,
+      "host_ms": 6.868485,
+      "new_requests": 6,
+      "ready_at_first_marker": 6,
+      "ready_unselected": 0,
+      "arrived_unready": 2,
+      "batch_sizes": [
+        6
+      ],
+      "arrival_spread_ms": 50.942901,
+      "latest_queue_to_start_ms": 2.882922,
+      "members": [
+        "02573efd-ad77-424f-9820-94e17027b081",
+        "6fe9fc58-b2e1-424f-ade4-102fceaf1484",
+        "7ec1857f-884c-45d7-9378-1d205dbf14c5",
+        "d535a1c0-5974-4830-96e9-a5f34009de8a",
+        "e556659c-9702-494b-b302-5a13d6b480b5",
+        "ed2156d1-7f98-459f-8846-c95cdc667fa3"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 140,
+      "start_s": 13.714524283,
+      "host_ms": 5.498493,
+      "new_requests": 2,
+      "ready_at_first_marker": 2,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        2
+      ],
+      "arrival_spread_ms": 14.221562,
+      "latest_queue_to_start_ms": 1.102811,
+      "members": [
+        "5b4e3b3b-848c-4214-aa15-e867637f5813",
+        "fef1c7d2-f473-42f7-8bab-2296a22c8b08"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 141,
+      "start_s": 13.975631493,
+      "host_ms": 41.372178,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 1,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 6.424451,
+      "members": [
+        "dbbd6724-157d-4d9e-80e0-05fa6aa7f1dc"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 142,
+      "start_s": 14.024573511,
+      "host_ms": 9.246829,
+      "new_requests": 4,
+      "ready_at_first_marker": 4,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        4
+      ],
+      "arrival_spread_ms": 39.094964,
+      "latest_queue_to_start_ms": 1.239211,
+      "members": [
+        "6bd5a80a-6d68-422c-b9df-1ff9f31339c3",
+        "92ed58c1-ad5b-46d2-a06b-88dff8f2a832",
+        "d18854c4-0825-4084-915f-1f194db57360",
+        "faaf2e85-5e21-4349-b6e8-800677415c77"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 143,
+      "start_s": 14.060188407,
+      "host_ms": 12.650465,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.197514,
+      "members": [
+        "329e61ce-efe7-4ecc-9e4d-f965fb9b706d"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 144,
+      "start_s": 14.105413297,
+      "host_ms": 11.724389,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.161085,
+      "members": [
+        "d41aa5cc-f16d-435f-ab4f-fac51a7e5647"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 145,
+      "start_s": 14.226367197,
+      "host_ms": 27.238985,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.783118,
+      "members": [
+        "46ba9f25-336a-4c78-923b-dce49afb98c1"
+      ],
+      "unselected_examples": []
+    },
+    {
+      "index": 146,
+      "start_s": 14.296037941,
+      "host_ms": 8.965179,
+      "new_requests": 1,
+      "ready_at_first_marker": 1,
+      "ready_unselected": 0,
+      "arrived_unready": 0,
+      "batch_sizes": [
+        1
+      ],
+      "arrival_spread_ms": 0.0,
+      "latest_queue_to_start_ms": 1.946079,
+      "members": [
+        "62eb0c67-39eb-4deb-b570-fd895678a3b7"
+      ],
+      "unselected_examples": []
+    }
+  ]
+}
