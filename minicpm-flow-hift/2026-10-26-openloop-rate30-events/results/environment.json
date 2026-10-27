@@ -1,0 +1,47 @@
+{
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "torchaudio": "2.11.0+cu130",
+    "sglang": "0.5.22",
+    "transformers": "5.19.0",
+    "flashinfer-python": "0.7.1",
+    "numpy": "2.3.5"
+  },
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "memory_limit": "not enforced: rootless cgroup resource controllers unavailable",
+  "deadline": "2026-10-27T02:01:31+00:00",
+  "warmup": 128,
+  "measured": 256,
+  "warmup_concurrency": 32,
+  "measured_max_concurrency": 0,
+  "request_rates": [
+    30
+  ],
+  "arrival_seed": 20261026,
+  "engine_options": [
+    "--thinker.engine.max_total_tokens",
+    "131072",
+    "--talker.engine.max_total_tokens",
+    "131072"
+  ],
+  "profiler": "request events only during measured cohort",
+  "compiler_cache": "fresh per visit",
+  "image": "docker.io/hongccc/sglang-omni@sha256:06ed306707bcf3d9e9beb5ba7ce66f09a666cac11c23455ece50c34199c0e985"
+}
