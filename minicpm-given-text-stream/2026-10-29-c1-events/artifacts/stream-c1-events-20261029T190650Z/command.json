@@ -1,0 +1,53 @@
+{
+  "server": [
+    "/opt/sglang/bin/python",
+    "-m",
+    "sglang_omni.cli",
+    "serve",
+    "--model-path",
+    "/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582",
+    "--model-name",
+    "MiniCPM-o-4_5",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18080",
+    "--thinker.engine.max_total_tokens",
+    "131072",
+    "--talker.engine.max_total_tokens",
+    "131072"
+  ],
+  "client": [
+    "/opt/sglang/bin/python",
+    "/work/stream-validation/measure.py",
+    "--base-url",
+    "http://127.0.0.1:18080",
+    "--output",
+    "/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-c1-events-20261029T190650Z/measurements",
+    "--repeats",
+    "1",
+    "--stagger-seconds",
+    "0.25",
+    "--timeout-seconds",
+    "180",
+    "--model",
+    "MiniCPM-o-4_5",
+    "--sample-rate",
+    "24000",
+    "--seed",
+    "20261027"
+  ],
+  "cwd": "/work/stream-validation/candidate",
+  "environment": {
+    "PYTHONPATH": "/work/stream-validation/candidate",
+    "SGLANG_OMNI_STRICT_PORT": "1",
+    "TORCHINDUCTOR_CACHE_DIR": "/work/stream-validation/compile_cache/inductor",
+    "TRITON_CACHE_DIR": "/work/stream-validation/compile_cache/triton",
+    "CUDA_CACHE_PATH": "/work/stream-validation/compile_cache/cuda",
+    "OMP_NUM_THREADS": "4",
+    "TORCHINDUCTOR_COMPILE_THREADS": "4",
+    "PYTHONUNBUFFERED": "1",
+    "MINICPM_CODEC_EVIDENCE_PATH": "/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-c1-events-20261029T190650Z/codec_evidence.jsonl",
+    "MINICPM_CODEC_EVIDENCE_INCLUDE_TOKENS": "1"
+  }
+}

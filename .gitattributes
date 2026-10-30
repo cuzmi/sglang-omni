@@ -293,3 +293,9 @@
 "minicpm-given-text-stream/2026-10-29-c1-once/*.csv" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 "minicpm-given-text-stream/2026-10-29-c1-once/**/*.yaml" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 "minicpm-given-text-stream/2026-10-29-c1-once/*.yaml" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-29-c1-events/**/*.log" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-29-c1-events/*.log" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-29-c1-events/**/*.csv" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-29-c1-events/*.csv" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-29-c1-events/**/*.yaml" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+"minicpm-given-text-stream/2026-10-29-c1-events/*.yaml" -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab

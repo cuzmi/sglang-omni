@@ -1,0 +1,14 @@
+{
+  "versions": {
+    "sglang": "0.5.22",
+    "torch": "2.14.1+cu130",
+    "transformers": "5.19.0",
+    "flashinfer-python": "0.7.1"
+  },
+  "checkpoint": "/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582",
+  "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582",
+  "reference_path": "/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582/assets/HT_ref_audio.wav",
+  "reference_sha256": "cb8f06ba5080cdf548969138881fb8ad8b04e2516108f4e08ba0363b68b613ea",
+  "profile": "stangameact",
+  "gpu_allocated": false
+}

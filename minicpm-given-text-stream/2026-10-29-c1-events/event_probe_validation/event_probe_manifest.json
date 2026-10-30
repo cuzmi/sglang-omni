@@ -1,0 +1,40 @@
+{
+  "input_sha256": {
+    "sglang_omni/models/minicpm_o/stages.py": "6ecfd8330e9ad5df2e511e621dcdc6391593d4fc67a8ca8610a315e8bd406a08",
+    "sglang_omni/models/minicpm_o/components/code2wav.py": "cf3a6bf48f5413a2238ef411b895755644b635ee4723a53f179db1191a5aaf76",
+    "sglang_omni/models/minicpm_o/streaming_vocoder.py": "10958dcc68e7c9e4ebde3c00c9200f1d28f2eb50e9b4fc6dee4e2c1f9432b5c3",
+    "sglang_omni/models/minicpm_o/components/token2wav/vocoder.py": "a229629f8636512c94c5166e8d834a23c034534558f5ef5dccd88d8557285765"
+  },
+  "output_sha256": {
+    "sglang_omni/models/minicpm_o/stages.py": "0e167486b9a0a6292f232840454492202c2004d29ef09aaf734d67174ba47e69",
+    "sglang_omni/models/minicpm_o/components/code2wav.py": "0cfcd7ab0c0e6d730cdcc0d2310903809f1f37ae4af779de0e8c5c52ad42816b",
+    "sglang_omni/models/minicpm_o/streaming_vocoder.py": "bec743c49b62dd6818c7286958beacba386b6cf1cee8ff6356de1d6fb42c9df4",
+    "sglang_omni/models/minicpm_o/components/token2wav/vocoder.py": "ffd68b8f69a5426f2b9ee15db09b008eb9b8a76f04b7e1e276b8c88ca8d4debd",
+    "sglang_omni/profiler/minicpm_event_probe.py": "87c1dc2f5efa53f7e94292165383d231543b0db482af72d657e16913fdd53a6a"
+  },
+  "ast_equivalent_without_probes": true,
+  "syntax_valid": true,
+  "clock": "host wall clock plus monotonic metadata",
+  "cuda_synchronization_added": false,
+  "span_names": [
+    "probe_span(\"nonstream_total\")",
+    "probe_span(\"reference_lookup\")",
+    "probe_span(\"reference_prepare\")",
+    "probe_span(\"nonstream_input\")",
+    "probe_span(\"nonstream_flow\")",
+    "probe_span(\"nonstream_hift\")",
+    "probe_span(\"nonstream_cpu_copy\")",
+    "probe_span(\"nonstream_output\")",
+    "probe_span(\"stream_decode\")",
+    "probe_span(\"stream_reference_ready\")",
+    "probe_span(\"stream_init\")",
+    "probe_span(\"stream_outbox\")",
+    "probe_span(\"stream_flow\")",
+    "probe_span(\"stream_history\")",
+    "probe_span(\"stream_hift_input\")",
+    "probe_span(\"stream_hift\")",
+    "probe_span(\"stream_hift_output\")",
+    "probe_span(\"stream_cpu_copy\")",
+    "probe_span(\"stream_output\")"
+  ]
+}

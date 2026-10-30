@@ -1,0 +1,70 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/stangameact/main/ap-S9Y8ydkCaDchbihHV2oRx6
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /run_modal.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /preflight.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /patch_event_probe.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /patch_codec_probe.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /measure.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /driver.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /protocol.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /source.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_events_h100_20261029
+│   /candidate.tar.gz
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID: stream-c1-events-20261029T190650Z
+Patched terminal codec evidence: /work/stream-validation/candidate/sglang_omni/models/minicpm_o/talker_request.py
+{"event_probe_files": {"sglang_omni/models/minicpm_o/stages.py": "0e167486b9a0a6292f232840454492202c2004d29ef09aaf734d67174ba47e69", "sglang_omni/models/minicpm_o/components/code2wav.py": "0cfcd7ab0c0e6d730cdcc0d2310903809f1f37ae4af779de0e8c5c52ad42816b", "sglang_omni/models/minicpm_o/streaming_vocoder.py": "bec743c49b62dd6818c7286958beacba386b6cf1cee8ff6356de1d6fb42c9df4", "sglang_omni/models/minicpm_o/components/token2wav/vocoder.py": "ffd68b8f69a5426f2b9ee15db09b008eb9b8a76f04b7e1e276b8c88ca8d4debd", "sglang_omni/profiler/minicpm_event_probe.py": "87c1dc2f5efa53f7e94292165383d231543b0db482af72d657e16913fdd53a6a"}, "ast_equivalent_without_probes": true}
+{
+  "versions": {
+    "sglang": "0.5.22",
+    "torch": "2.14.1+cu130",
+    "transformers": "5.19.0",
+    "flashinfer-python": "0.7.1"
+  },
+  "checkpoint": "/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582",
+  "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582",
+  "reference_path": "/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582/assets/HT_ref_audio.wav",
+  "reference_sha256": "cb8f06ba5080cdf548969138881fb8ad8b04e2516108f4e08ba0363b68b613ea",
+  "profile": "stangameact",
+  "gpu_allocated": false
+}
+CPU preparation complete: {'run_id': 'stream-c1-events-20261029T190650Z', 'root': '/results/stream-c1-events-20261029T190650Z'}
+Patched terminal codec evidence: /work/stream-validation/candidate/sglang_omni/models/minicpm_o/talker_request.py
+{"event_probe_files": {"sglang_omni/models/minicpm_o/stages.py": "0e167486b9a0a6292f232840454492202c2004d29ef09aaf734d67174ba47e69", "sglang_omni/models/minicpm_o/components/code2wav.py": "0cfcd7ab0c0e6d730cdcc0d2310903809f1f37ae4af779de0e8c5c52ad42816b", "sglang_omni/models/minicpm_o/streaming_vocoder.py": "bec743c49b62dd6818c7286958beacba386b6cf1cee8ff6356de1d6fb42c9df4", "sglang_omni/models/minicpm_o/components/token2wav/vocoder.py": "ffd68b8f69a5426f2b9ee15db09b008eb9b8a76f04b7e1e276b8c88ca8d4debd", "sglang_omni/profiler/minicpm_event_probe.py": "87c1dc2f5efa53f7e94292165383d231543b0db482af72d657e16913fdd53a6a"}, "ast_equivalent_without_probes": true}
+Starting one server with pinned KV capacities
+
+Starting one server with pinned KV capacities
+Server ready; exactly 2 warmup and 2 measured C1 requests
+
+Starting one server with pinned KV capacities
+Server ready; exactly 2 warmup and 2 measured C1 requests
+Streaming comparison completed
+
+Starting one server with pinned KV capacities
+Server ready; exactly 2 warmup and 2 measured C1 requests
+Streaming comparison completed
+
+{'root': '/results/stream-c1-events-20261029T190650Z', 'status': 'complete', 'exit_code': '0'}
+[modal-client] 2026-10-29T15:12:46-0400 Timed out waiting for final app logs.
+✓ App completed. View run at 
+https://modal.com/apps/stangameact/main/ap-S9Y8ydkCaDchbihHV2oRx6

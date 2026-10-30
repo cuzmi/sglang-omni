@@ -1,7 +1,7 @@
 {
   ".gitattributes": {
-    "bytes": 43103,
-    "sha256": "ae24eef1f1933721db67d06f5a29ddd8fb2b3a0faa1d94c0e36ea78535904895"
+    "bytes": 43822,
+    "sha256": "4f4347486e111603fef9946f08b2467ec81eb766e12f7d959370ae4f5977b066"
   },
   "README.md": {
     "bytes": 1154,
@@ -7667,6 +7667,158 @@
     "bytes": 93,
     "sha256": "9728075435ba3872270a00bccc4413ef433dd202be6566a83544bdff402b730d"
   },
+  "minicpm-given-text-stream/2026-10-29-c1-events/PROVENANCE.json": {
+    "bytes": 15887,
+    "sha256": "ad59d130a2889c39f2eee9e63c3e153ab63ba39227d2f63ead57a1d297a3009c"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/PUBLICATION.md": {
+    "bytes": 701,
+    "sha256": "c4906c13afc1e179e1acae68b038b664e4ebd33936a6d0b23b08ef2b939a2898"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/README.md": {
+    "bytes": 109,
+    "sha256": "b3de73432c28a5ad97c95e594ed641ab61eeb6fa4c49947b16c532ff7fe56d62"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/REPORT.md": {
+    "bytes": 3032,
+    "sha256": "1fe57860e76a03ba43d909832b09056a0347ea2398a1ca617e12818ba5e2262e"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/app_status.json": {
+    "bytes": 491,
+    "sha256": "209d9e5dc3fad564ae85972d48b66a887456247ced534b69895cc91fed7929be"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/client.log": {
+    "bytes": 915,
+    "sha256": "ed867c69c873026cf0c13c1580107aee5a60167f329e9d8b87b5d656170d6cf6"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/codec_evidence.jsonl": {
+    "bytes": 7904,
+    "sha256": "80316d6f4593e66f122e7994fbb789e5d8aa0101d85721239a7a61559f518afa"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/command.json": {
+    "bytes": 1577,
+    "sha256": "c7f68ae85324e515d66e4bdb40e72761d1663a20cf31baeac335250b840de3fb"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/driver.log": {
+    "bytes": 135,
+    "sha256": "e9fe44d190e3721804a5951fd1e27455412baa341a31493b262de628f7903fd8"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/environment.json": {
+    "bytes": 691,
+    "sha256": "77b4fb07744b4137a936eecdacdc7b67f5bf0da2706427f7a1004659001141eb"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/event_analysis.json": {
+    "bytes": 125649,
+    "sha256": "9e9dde4572fe76c95374cde9b524477d4de54d684ba2dd011f170cd64c9a9c86"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/event_probe_report/event_probe_manifest.json": {
+    "bytes": 2094,
+    "sha256": "61e2ba3ce6c0da825a4961d1760a07d5a61b1968540a5c534853bea4d2f53a0e"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/events/events_coordinator_55.jsonl": {
+    "bytes": 20212,
+    "sha256": "4160370b402fcfd90d8c8ceb79f303670e2adcca8798a059c1b3e4a6dee38cad"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/events/events_talker_108.jsonl": {
+    "bytes": 233570,
+    "sha256": "9f812a77c226d2917fb2263fbce17a7d2e47b55efc02b2bcdc0f4ca76e4d9f2e"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/events/events_thinker_107.jsonl": {
+    "bytes": 23180,
+    "sha256": "a0f00f70330cc69f66d5f6dd870fbb05f2ae4b39b57db1313f15750b55e1785f"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/gpu_identity.csv": {
+    "bytes": 133,
+    "sha256": "c154cc8a727754796e3e5327e3f4660d3ffe39edf497024cd38de8234a5544c0"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/input_checksums.json": {
+    "bytes": 705,
+    "sha256": "cd3608f7cc5bcb504c96c864e94dfc2b401d1dc12500e66c8dc3fac8ac2b878e"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/kv_capacity.json": {
+    "bytes": 90,
+    "sha256": "341d7dcbd548d4b9491b1d808a6f13385a9a56c9593760080753700b042a6149"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/measurements/1511b5d2c3-measured-nonstream-en.timeline.jsonl": {
+    "bytes": 650,
+    "sha256": "bd649a85eb3b4988932826bf1339a80ebf5220d69abebe675122fca20f085e0c"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/measurements/1511b5d2c3-measured-stream-en.timeline.jsonl": {
+    "bytes": 3649,
+    "sha256": "38b4f0031c3d84ef2cdc865d6e312bd4d55f940a69c59e17bb18512544a586f9"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/measurements/1511b5d2c3-warmup-nonstream-en.timeline.jsonl": {
+    "bytes": 645,
+    "sha256": "0431a605e06fa9c8d5dd285ae4990e84b6b21dc4aca23dafa2323bdb5af77016"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/measurements/1511b5d2c3-warmup-stream-en.timeline.jsonl": {
+    "bytes": 3564,
+    "sha256": "3369c176925effc17a2cdb2734f31e96009bc549c85e8a038d7131c84d970e0a"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/measurements/manifest.json": {
+    "bytes": 632,
+    "sha256": "bc85b428456ae795ecabc200594f3a05b853729bac246fd3d48e4fd4b88638b9"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/measurements/summary.json": {
+    "bytes": 25952,
+    "sha256": "88e6945740f5277f42cfd2d08b4c1f921be248c239fdad12da276dc110793e69"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/preflight.log": {
+    "bytes": 817,
+    "sha256": "3e8f1dce3f878b463535547f331b6715006529bb2f649ed4628b5644c541c3b4"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/preflight_config.yaml": {
+    "bytes": 19834,
+    "sha256": "a53cc62b68cf4ab7a19abe1935505b77e98d43967e0d75e74a83efe834dcc5be"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/preparation.json": {
+    "bytes": 672,
+    "sha256": "736c2537dde0b262515c7935586ce213fec9f9b3c05b15cc5266eba417255f30"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/profile_control.json": {
+    "bytes": 704,
+    "sha256": "9d1651ce60ff576bd83b07fadc98a908daad6b4eaec8c5d9e007a23882ed2e7c"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/resolved_config.yaml": {
+    "bytes": 19932,
+    "sha256": "442e887533c69d49dd4d5f646a98177d57e4bc0302992e89ab407c80cbaec82f"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/server.log": {
+    "bytes": 45630,
+    "sha256": "67699ec7415b97de8d82112084176ca14fb549607f96410e742a3f196602dcb3"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/status.json": {
+    "bytes": 243,
+    "sha256": "d5de49d2b7658b8e165e28381e8935db05210cc2e37e22ff29e4e183dbda336a"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/artifacts/stream-c1-events-20261029T190650Z/versions.txt": {
+    "bytes": 9616,
+    "sha256": "22751d7a8bbad22ada03a16ecd98e00d53ecd39d0e1b4193041aba5ca4da527b"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/comparison.json": {
+    "bytes": 1959,
+    "sha256": "4d4df9088bda8b176218baabcb5817ea15d78a8d1fccfae7f3c6e6aeb0155f7f"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/event_probe_validation/event_probe_manifest.json": {
+    "bytes": 2094,
+    "sha256": "61e2ba3ce6c0da825a4961d1760a07d5a61b1968540a5c534853bea4d2f53a0e"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/latest_run.txt": {
+    "bytes": 34,
+    "sha256": "51fc997bb801d02d4acf09caa013a073b74be4c37469cd4aa2ac46de26986378"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/modal.log": {
+    "bytes": 4796,
+    "sha256": "bd1a45b3c29a9c14085ce7046f1891e8bdb9b21ed3e5f2a741b1646ceac45726"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/protocol.json": {
+    "bytes": 3326,
+    "sha256": "63858151fbf1b4a0cbe45f2b509d28cfdfc15fb1b2547d76b22a386f96fd1e07"
+  },
+  "minicpm-given-text-stream/2026-10-29-c1-events/remote_result.json": {
+    "bytes": 103,
+    "sha256": "b5993edb19ff51bb71db01fc6094db04e863685f66e844bf06e83b19a8875cc8"
+  },
   "minicpm-given-text-stream/2026-10-29-c1-once/PROVENANCE.json": {
     "bytes": 12498,
     "sha256": "717732488e8e474b968e214b998d88e2e703f3b76443a8357175594571ee1cfb"
@@ -7792,7 +7944,7 @@
     "sha256": "97fefbf8379c0961730f526fef32285c75e35c8c121fddef4705bc80aed30aa9"
   },
   "minicpm-given-text-stream/README.md": {
-    "bytes": 967,
-    "sha256": "d200caa198400364d026ca3e45524c2f6827cb8c787a34216974dd3aedc68466"
+    "bytes": 1159,
+    "sha256": "ad385d041e4c68304263cebea522a372d14e0ca0afb6cfa958fb97c425f4fa2b"
   }
 }

@@ -1,0 +1,4473 @@
+{
+  "comparison_valid": true,
+  "codec_match": true,
+  "recorder_files": [
+    "events/events_coordinator_55.jsonl",
+    "events/events_talker_108.jsonl",
+    "events/events_thinker_107.jsonl"
+  ],
+  "total_events": 908,
+  "requests": [
+    {
+      "request_id": "speech-55cfbd5e-564a-427c-a3bf-544c32d70ad4",
+      "phase": "warmup",
+      "arm": "nonstream",
+      "first_audio_ms": 10387.25883699999,
+      "completion_ms": 10392.864070000001,
+      "audio_seconds": 14.96,
+      "generated_chunks": 0,
+      "event_count": 56,
+      "incomplete_spans": {},
+      "span_summary": {
+        "minicpm_reference_lookup": {
+          "count": 1,
+          "first_ms": 260.313782,
+          "total_ms": 260.313782
+        },
+        "minicpm_reference_prepare": {
+          "count": 1,
+          "first_ms": 233.043151,
+          "total_ms": 233.043151
+        },
+        "minicpm_nonstream_input": {
+          "count": 1,
+          "first_ms": 0.438849,
+          "total_ms": 0.438849
+        },
+        "minicpm_nonstream_flow": {
+          "count": 1,
+          "first_ms": 624.734143,
+          "total_ms": 624.734143
+        },
+        "minicpm_nonstream_hift": {
+          "count": 1,
+          "first_ms": 108.168126,
+          "total_ms": 108.168126
+        },
+        "minicpm_nonstream_cpu_copy": {
+          "count": 1,
+          "first_ms": 0.581222,
+          "total_ms": 0.581222
+        },
+        "minicpm_nonstream_output": {
+          "count": 1,
+          "first_ms": 0.253722,
+          "total_ms": 0.253722
+        },
+        "minicpm_nonstream_total": {
+          "count": 1,
+          "first_ms": 971.223815,
+          "total_ms": 971.223815
+        }
+      },
+      "spans": {
+        "minicpm_reference_lookup": [
+          {
+            "start_ms": 9146.387647,
+            "end_ms": 9406.701429,
+            "duration_ms": 260.313782,
+            "worker": "MainThread"
+          }
+        ],
+        "minicpm_reference_prepare": [
+          {
+            "start_ms": 9407.822645,
+            "end_ms": 9640.865796,
+            "duration_ms": 233.043151,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_input": [
+          {
+            "start_ms": 9641.822232,
+            "end_ms": 9642.261081,
+            "duration_ms": 0.438849,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_flow": [
+          {
+            "start_ms": 9642.426793,
+            "end_ms": 10267.160936,
+            "duration_ms": 624.734143,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_hift": [
+          {
+            "start_ms": 10268.275824,
+            "end_ms": 10376.44395,
+            "duration_ms": 108.168126,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_cpu_copy": [
+          {
+            "start_ms": 10377.013039,
+            "end_ms": 10377.594261,
+            "duration_ms": 0.581222,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_output": [
+          {
+            "start_ms": 10377.882319,
+            "end_ms": 10378.136041,
+            "duration_ms": 0.253722,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_total": [
+          {
+            "start_ms": 9407.264002,
+            "end_ms": 10378.487817,
+            "duration_ms": 971.223815,
+            "worker": "scheduler-code2wav"
+          }
+        ]
+      },
+      "first_event_timeline": [
+        {
+          "stage": "coordinator",
+          "event": "request_admission",
+          "time_ms": 2.413264,
+          "metadata": {
+            "entry_stage": "preprocessing"
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_input_received",
+          "time_ms": 3.176073,
+          "metadata": {
+            "from_stage": "coordinator",
+            "kind": "submit"
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_dispatch",
+          "time_ms": 3.517521,
+          "metadata": {}
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_complete",
+          "time_ms": 24.762376,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "thinker"
+            ]
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_hop_sent",
+          "time_ms": 24.996138,
+          "metadata": {
+            "to_stage": "thinker",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_input_received",
+          "time_ms": 25.149078,
+          "metadata": {
+            "from_stage": "preprocessing",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_aggregate_ready",
+          "time_ms": 25.325127,
+          "metadata": {
+            "from_stage": "preprocessing"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_dispatch",
+          "time_ms": 25.574201,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_request_build_start",
+          "time_ms": 25.837314,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_request_build_end",
+          "time_ms": 26.384243,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_queue_enter",
+          "time_ms": 26.596677,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "model_path_start",
+          "time_ms": 138.452163,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 225449542410
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_prefill_start",
+          "time_ms": 139.073542,
+          "metadata": {
+            "is_prefill_only": false,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_prefill_end",
+          "time_ms": 2116.103587,
+          "metadata": {
+            "batch_size": 1,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "model_path_end",
+          "time_ms": 2117.493241,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 227428583874,
+            "status": "success"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_complete",
+          "time_ms": 2118.493343,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "decode",
+              "talker"
+            ]
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_hop_sent",
+          "time_ms": 2122.545975,
+          "metadata": {
+            "to_stage": "decode",
+            "transport": "shm"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_input_received",
+          "time_ms": 2125.396279,
+          "metadata": {
+            "from_stage": "thinker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_aggregate_ready",
+          "time_ms": 2125.56379,
+          "metadata": {
+            "from_stage": "thinker"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_dispatch",
+          "time_ms": 2125.689985,
+          "metadata": {}
+        },
+        {
+          "stage": "decode",
+          "event": "stage_complete",
+          "time_ms": 2126.617897,
+          "metadata": {
+            "terminal": true
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_input_received",
+          "time_ms": 2126.65757,
+          "metadata": {
+            "from_stage": "thinker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_aggregate_ready",
+          "time_ms": 2126.870353,
+          "metadata": {
+            "from_stage": "thinker"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_dispatch",
+          "time_ms": 2127.058527,
+          "metadata": {}
+        },
+        {
+          "stage": "coordinator",
+          "event": "terminal_response",
+          "time_ms": 2127.225533,
+          "metadata": {
+            "from_stage": "decode",
+            "success": true
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_request_build_start",
+          "time_ms": 2127.518681,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_request_build_end",
+          "time_ms": 2136.338656,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_queue_enter",
+          "time_ms": 2136.587153,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "model_path_start",
+          "time_ms": 2236.159192,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 227547247747
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_prefill_start",
+          "time_ms": 2236.60706,
+          "metadata": {
+            "is_prefill_only": false,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_prefill_end",
+          "time_ms": 2685.404207,
+          "metadata": {
+            "batch_size": 1,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "model_path_end",
+          "time_ms": 9143.90626,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 234454995332,
+            "status": "success"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_complete",
+          "time_ms": 9145.158655,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "code2wav"
+            ]
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_hop_sent",
+          "time_ms": 9145.592923,
+          "metadata": {
+            "to_stage": "code2wav",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_input_received",
+          "time_ms": 9145.723552,
+          "metadata": {
+            "from_stage": "talker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_aggregate_ready",
+          "time_ms": 9145.963746,
+          "metadata": {
+            "from_stage": "talker"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_dispatch",
+          "time_ms": 9146.084042,
+          "metadata": {}
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_lookup_start",
+          "time_ms": 9146.387647,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 234457481804,
+            "worker": "MainThread",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_lookup_end",
+          "time_ms": 9406.701429,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 234717795911,
+            "worker": "MainThread",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_total_start",
+          "time_ms": 9407.264002,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 234718357756,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_prepare_start",
+          "time_ms": 9407.822645,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 234718916031,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_prepare_end",
+          "time_ms": 9640.865796,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 234951960602,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_input_start",
+          "time_ms": 9641.822232,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 234952916013,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_input_end",
+          "time_ms": 9642.261081,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 234953354606,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_flow_start",
+          "time_ms": 9642.426793,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 234953520261,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_flow_end",
+          "time_ms": 10267.160936,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235578255437,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_hift_start",
+          "time_ms": 10268.275824,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235579369620,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_hift_end",
+          "time_ms": 10376.44395,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235687538460,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_cpu_copy_start",
+          "time_ms": 10377.013039,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235688106645,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_cpu_copy_end",
+          "time_ms": 10377.594261,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235688687853,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_output_start",
+          "time_ms": 10377.882319,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235688975774,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_output_end",
+          "time_ms": 10378.136041,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235689229422,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_total_end",
+          "time_ms": 10378.487817,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235689581234,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_complete",
+          "time_ms": 10379.0336,
+          "metadata": {
+            "terminal": true
+          }
+        }
+      ]
+    },
+    {
+      "request_id": "speech-e6e1a181-d0a6-41ee-a2d5-62f42907d652",
+      "phase": "warmup",
+      "arm": "stream",
+      "first_audio_ms": 24082.459414000026,
+      "completion_ms": 25899.886647000018,
+      "audio_seconds": 15.24,
+      "generated_chunks": 15,
+      "event_count": 398,
+      "incomplete_spans": {},
+      "span_summary": {
+        "minicpm_reference_lookup": {
+          "count": 1,
+          "first_ms": 7.332586,
+          "total_ms": 7.332586
+        },
+        "minicpm_stream_reference_ready": {
+          "count": 1,
+          "first_ms": 0.374685,
+          "total_ms": 0.374685
+        },
+        "minicpm_stream_init": {
+          "count": 1,
+          "first_ms": 4225.726294,
+          "total_ms": 4225.726294
+        },
+        "minicpm_stream_flow": {
+          "count": 15,
+          "first_ms": 6267.65324,
+          "total_ms": 7900.808842
+        },
+        "minicpm_stream_history": {
+          "count": 15,
+          "first_ms": 0.278192,
+          "total_ms": 5.268507
+        },
+        "minicpm_stream_hift_input": {
+          "count": 15,
+          "first_ms": 0.299804,
+          "total_ms": 4.040521
+        },
+        "minicpm_stream_hift": {
+          "count": 15,
+          "first_ms": 13494.75103,
+          "total_ms": 13605.691577999998
+        },
+        "minicpm_stream_hift_output": {
+          "count": 15,
+          "first_ms": 0.553986,
+          "total_ms": 5.067635999999999
+        },
+        "minicpm_stream_cpu_copy": {
+          "count": 15,
+          "first_ms": 0.407637,
+          "total_ms": 4.760894
+        },
+        "minicpm_stream_output": {
+          "count": 15,
+          "first_ms": 0.327686,
+          "total_ms": 4.67033
+        },
+        "minicpm_stream_decode": {
+          "count": 15,
+          "first_ms": 19767.565967,
+          "total_ms": 21574.382542
+        },
+        "minicpm_stream_outbox": {
+          "count": 15,
+          "first_ms": 0.313847,
+          "total_ms": 3.2210109999999994
+        }
+      },
+      "spans": {
+        "minicpm_reference_lookup": [
+          {
+            "start_ms": 74.252186,
+            "end_ms": 81.584772,
+            "duration_ms": 7.332586,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_reference_ready": [
+          {
+            "start_ms": 81.906817,
+            "end_ms": 82.281502,
+            "duration_ms": 0.374685,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_init": [
+          {
+            "start_ms": 82.654362,
+            "end_ms": 4308.380656,
+            "duration_ms": 4225.726294,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_flow": [
+          {
+            "start_ms": 4309.550921,
+            "end_ms": 10577.204161,
+            "duration_ms": 6267.65324,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24080.552632,
+            "end_ms": 24486.982301,
+            "duration_ms": 406.429669,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24508.555007,
+            "end_ms": 24646.448489,
+            "duration_ms": 137.893482,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24660.930771,
+            "end_ms": 24752.875385,
+            "duration_ms": 91.944614,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24766.484733,
+            "end_ms": 24857.380804,
+            "duration_ms": 90.896071,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24870.432326,
+            "end_ms": 24959.558222,
+            "duration_ms": 89.125896,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24972.489619,
+            "end_ms": 25065.452654,
+            "duration_ms": 92.963035,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25078.184312,
+            "end_ms": 25170.04751,
+            "duration_ms": 91.863198,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25183.452635,
+            "end_ms": 25273.201661,
+            "duration_ms": 89.749026,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25285.625931,
+            "end_ms": 25373.661971,
+            "duration_ms": 88.03604,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25385.006376,
+            "end_ms": 25469.438019,
+            "duration_ms": 84.431643,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25479.789867,
+            "end_ms": 25563.440518,
+            "duration_ms": 83.650651,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25574.949578,
+            "end_ms": 25658.748822,
+            "duration_ms": 83.799244,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25668.99161,
+            "end_ms": 25750.39806,
+            "duration_ms": 81.40645,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25761.285982,
+            "end_ms": 25882.252565,
+            "duration_ms": 120.966583,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_history": [
+          {
+            "start_ms": 10577.788469,
+            "end_ms": 10578.066661,
+            "duration_ms": 0.278192,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24487.588206,
+            "end_ms": 24487.947428,
+            "duration_ms": 0.359222,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24647.624134,
+            "end_ms": 24648.186552,
+            "duration_ms": 0.562418,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24753.781581,
+            "end_ms": 24754.110553,
+            "duration_ms": 0.328972,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24858.333458,
+            "end_ms": 24858.65847,
+            "duration_ms": 0.325012,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24960.500208,
+            "end_ms": 24960.812758,
+            "duration_ms": 0.31255,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25066.429443,
+            "end_ms": 25066.728465,
+            "duration_ms": 0.299022,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25171.097981,
+            "end_ms": 25171.529155,
+            "duration_ms": 0.431174,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25273.915493,
+            "end_ms": 25274.33794,
+            "duration_ms": 0.422447,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25374.334196,
+            "end_ms": 25374.7156,
+            "duration_ms": 0.381404,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25470.365671,
+            "end_ms": 25470.772318,
+            "duration_ms": 0.406647,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25564.582205,
+            "end_ms": 25564.88266,
+            "duration_ms": 0.300455,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25659.313033,
+            "end_ms": 25659.509606,
+            "duration_ms": 0.196573,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25751.57787,
+            "end_ms": 25752.027225,
+            "duration_ms": 0.449355,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25882.825338,
+            "end_ms": 25883.040402,
+            "duration_ms": 0.215064,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_hift_input": [
+          {
+            "start_ms": 10578.320386,
+            "end_ms": 10578.62019,
+            "duration_ms": 0.299804,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24488.264557,
+            "end_ms": 24488.695038,
+            "duration_ms": 0.430481,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24648.343777,
+            "end_ms": 24648.713333,
+            "duration_ms": 0.369556,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24754.38236,
+            "end_ms": 24754.59598,
+            "duration_ms": 0.21362,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24858.812291,
+            "end_ms": 24859.021914,
+            "duration_ms": 0.209623,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24961.080234,
+            "end_ms": 24961.271613,
+            "duration_ms": 0.191379,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25066.869624,
+            "end_ms": 25067.04867,
+            "duration_ms": 0.179046,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25171.835113,
+            "end_ms": 25172.174962,
+            "duration_ms": 0.339849,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25274.512323,
+            "end_ms": 25275.058721,
+            "duration_ms": 0.546398,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25374.96224,
+            "end_ms": 25375.158489,
+            "duration_ms": 0.196249,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25470.925423,
+            "end_ms": 25471.115084,
+            "duration_ms": 0.189661,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25565.028004,
+            "end_ms": 25565.201252,
+            "duration_ms": 0.173248,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25659.644628,
+            "end_ms": 25659.85289,
+            "duration_ms": 0.208262,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25752.174763,
+            "end_ms": 25752.363529,
+            "duration_ms": 0.188766,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25883.282872,
+            "end_ms": 25883.587451,
+            "duration_ms": 0.304579,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_hift": [
+          {
+            "start_ms": 10578.884486,
+            "end_ms": 24073.635516,
+            "duration_ms": 13494.75103,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24489.150276,
+            "end_ms": 24504.072169,
+            "duration_ms": 14.921893,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24648.855736,
+            "end_ms": 24657.943156,
+            "duration_ms": 9.08742,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24754.836806,
+            "end_ms": 24763.183655,
+            "duration_ms": 8.346849,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24859.164912,
+            "end_ms": 24867.007134,
+            "duration_ms": 7.842222,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24961.495817,
+            "end_ms": 24969.560762,
+            "duration_ms": 8.064945,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25067.19199,
+            "end_ms": 25074.98234,
+            "duration_ms": 7.79035,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25172.382076,
+            "end_ms": 25180.090714,
+            "duration_ms": 7.708638,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25275.271892,
+            "end_ms": 25282.411674,
+            "duration_ms": 7.139782,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25375.511881,
+            "end_ms": 25381.665932,
+            "duration_ms": 6.154051,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25471.372859,
+            "end_ms": 25477.184496,
+            "duration_ms": 5.811637,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25565.545252,
+            "end_ms": 25571.599991,
+            "duration_ms": 6.054739,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25660.173419,
+            "end_ms": 25665.832287,
+            "duration_ms": 5.658868,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25752.601752,
+            "end_ms": 25758.650848,
+            "duration_ms": 6.049096,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25883.868601,
+            "end_ms": 25894.178659,
+            "duration_ms": 10.310058,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_hift_output": [
+          {
+            "start_ms": 24074.460096,
+            "end_ms": 24075.014082,
+            "duration_ms": 0.553986,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24504.593193,
+            "end_ms": 24505.070053,
+            "duration_ms": 0.47686,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24658.174754,
+            "end_ms": 24658.559243,
+            "duration_ms": 0.384489,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24763.431839,
+            "end_ms": 24763.886653,
+            "duration_ms": 0.454814,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24867.236626,
+            "end_ms": 24867.448759,
+            "duration_ms": 0.212133,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24969.760362,
+            "end_ms": 24969.986703,
+            "duration_ms": 0.226341,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25075.215119,
+            "end_ms": 25075.559773,
+            "duration_ms": 0.344654,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25180.304555,
+            "end_ms": 25180.669854,
+            "duration_ms": 0.365299,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25282.735336,
+            "end_ms": 25282.972835,
+            "duration_ms": 0.237499,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25381.846899,
+            "end_ms": 25382.050633,
+            "duration_ms": 0.203734,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25477.384297,
+            "end_ms": 25477.573781,
+            "duration_ms": 0.189484,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25571.956255,
+            "end_ms": 25572.266134,
+            "duration_ms": 0.309879,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25666.133735,
+            "end_ms": 25666.444413,
+            "duration_ms": 0.310678,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25758.838357,
+            "end_ms": 25759.183967,
+            "duration_ms": 0.34561,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25894.763347,
+            "end_ms": 25895.215523,
+            "duration_ms": 0.452176,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_cpu_copy": [
+          {
+            "start_ms": 24075.330106,
+            "end_ms": 24075.737743,
+            "duration_ms": 0.407637,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24505.320886,
+            "end_ms": 24505.56662,
+            "duration_ms": 0.245734,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24658.832116,
+            "end_ms": 24659.210835,
+            "duration_ms": 0.378719,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24764.377169,
+            "end_ms": 24764.79645,
+            "duration_ms": 0.419281,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24867.583763,
+            "end_ms": 24867.864718,
+            "duration_ms": 0.280955,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24970.123293,
+            "end_ms": 24970.348661,
+            "duration_ms": 0.225368,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25075.825231,
+            "end_ms": 25076.065632,
+            "duration_ms": 0.240401,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25180.81017,
+            "end_ms": 25181.068123,
+            "duration_ms": 0.257953,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25283.094542,
+            "end_ms": 25283.351914,
+            "duration_ms": 0.257372,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25382.179246,
+            "end_ms": 25382.655593,
+            "duration_ms": 0.476347,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25477.697925,
+            "end_ms": 25478.02571,
+            "duration_ms": 0.327785,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25572.492542,
+            "end_ms": 25572.707575,
+            "duration_ms": 0.215033,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25666.551854,
+            "end_ms": 25666.862525,
+            "duration_ms": 0.310671,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25759.330179,
+            "end_ms": 25759.69486,
+            "duration_ms": 0.364681,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25895.479957,
+            "end_ms": 25895.832914,
+            "duration_ms": 0.352957,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_output": [
+          {
+            "start_ms": 24076.003048,
+            "end_ms": 24076.330734,
+            "duration_ms": 0.327686,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24505.810697,
+            "end_ms": 24506.001476,
+            "duration_ms": 0.190779,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24659.342933,
+            "end_ms": 24659.763877,
+            "duration_ms": 0.420944,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24764.946483,
+            "end_ms": 24765.174271,
+            "duration_ms": 0.227788,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24868.125913,
+            "end_ms": 24868.5195,
+            "duration_ms": 0.393587,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24970.4622,
+            "end_ms": 24970.764009,
+            "duration_ms": 0.301809,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25076.194524,
+            "end_ms": 25076.501268,
+            "duration_ms": 0.306744,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25181.204984,
+            "end_ms": 25181.407905,
+            "duration_ms": 0.202921,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25283.479623,
+            "end_ms": 25283.892111,
+            "duration_ms": 0.412488,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25382.897137,
+            "end_ms": 25383.199958,
+            "duration_ms": 0.302821,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25478.259512,
+            "end_ms": 25478.612546,
+            "duration_ms": 0.353034,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25572.821058,
+            "end_ms": 25573.10239,
+            "duration_ms": 0.281332,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25667.112845,
+            "end_ms": 25667.491307,
+            "duration_ms": 0.378462,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25759.843883,
+            "end_ms": 25760.029295,
+            "duration_ms": 0.185412,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25895.973471,
+            "end_ms": 25896.357994,
+            "duration_ms": 0.384523,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_decode": [
+          {
+            "start_ms": 4309.076308,
+            "end_ms": 24076.642275,
+            "duration_ms": 19767.565967,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24079.356254,
+            "end_ms": 24506.219592,
+            "duration_ms": 426.863338,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24507.604611,
+            "end_ms": 24659.987271,
+            "duration_ms": 152.38266,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24660.58851,
+            "end_ms": 24765.420395,
+            "duration_ms": 104.831885,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24766.064343,
+            "end_ms": 24868.839913,
+            "duration_ms": 102.77557,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24869.724838,
+            "end_ms": 24970.967163,
+            "duration_ms": 101.242325,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24971.774042,
+            "end_ms": 25076.831826,
+            "duration_ms": 105.057784,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25077.520645,
+            "end_ms": 25181.598006,
+            "duration_ms": 104.077361,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25182.481551,
+            "end_ms": 25284.099153,
+            "duration_ms": 101.617602,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25285.13516,
+            "end_ms": 25383.674362,
+            "duration_ms": 98.539202,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25384.309846,
+            "end_ms": 25478.768305,
+            "duration_ms": 94.458459,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25479.438461,
+            "end_ms": 25573.26594,
+            "duration_ms": 93.827479,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25574.043314,
+            "end_ms": 25667.671445,
+            "duration_ms": 93.628131,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25668.43295,
+            "end_ms": 25760.209836,
+            "duration_ms": 91.776886,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25760.785172,
+            "end_ms": 25896.523065,
+            "duration_ms": 135.737893,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_outbox": [
+          {
+            "start_ms": 24076.809991,
+            "end_ms": 24077.123838,
+            "duration_ms": 0.313847,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24506.520841,
+            "end_ms": 24506.824808,
+            "duration_ms": 0.303967,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24660.263812,
+            "end_ms": 24660.431118,
+            "duration_ms": 0.167306,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24765.721403,
+            "end_ms": 24765.899745,
+            "duration_ms": 0.178342,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24869.144551,
+            "end_ms": 24869.321195,
+            "duration_ms": 0.176644,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 24971.248993,
+            "end_ms": 24971.425112,
+            "duration_ms": 0.176119,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25077.006159,
+            "end_ms": 25077.158815,
+            "duration_ms": 0.152656,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25181.746608,
+            "end_ms": 25182.059939,
+            "duration_ms": 0.313331,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25284.376519,
+            "end_ms": 25284.662118,
+            "duration_ms": 0.285599,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25383.870396,
+            "end_ms": 25384.025305,
+            "duration_ms": 0.154909,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25478.903787,
+            "end_ms": 25479.198923,
+            "duration_ms": 0.295136,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25573.514288,
+            "end_ms": 25573.773296,
+            "duration_ms": 0.259008,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25667.933473,
+            "end_ms": 25668.08563,
+            "duration_ms": 0.152157,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25760.366091,
+            "end_ms": 25760.516113,
+            "duration_ms": 0.150022,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 25896.651013,
+            "end_ms": 25896.792981,
+            "duration_ms": 0.141968,
+            "worker": "scheduler-code2wav"
+          }
+        ]
+      },
+      "first_event_timeline": [
+        {
+          "stage": "coordinator",
+          "event": "request_admission",
+          "time_ms": 1.459192,
+          "metadata": {
+            "entry_stage": "preprocessing"
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_input_received",
+          "time_ms": 2.111155,
+          "metadata": {
+            "from_stage": "coordinator",
+            "kind": "submit"
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_dispatch",
+          "time_ms": 2.456104,
+          "metadata": {}
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_complete",
+          "time_ms": 4.030772,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "thinker"
+            ]
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_hop_sent",
+          "time_ms": 4.22821,
+          "metadata": {
+            "to_stage": "thinker",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_input_received",
+          "time_ms": 4.370635,
+          "metadata": {
+            "from_stage": "preprocessing",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_aggregate_ready",
+          "time_ms": 4.534146,
+          "metadata": {
+            "from_stage": "preprocessing"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_dispatch",
+          "time_ms": 4.789848,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_request_build_start",
+          "time_ms": 5.133007,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_request_build_end",
+          "time_ms": 5.952176,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_queue_enter",
+          "time_ms": 6.311253,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "model_path_start",
+          "time_ms": 7.808808,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 235720512461
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_prefill_start",
+          "time_ms": 7.981987,
+          "metadata": {
+            "is_prefill_only": false,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_prefill_end",
+          "time_ms": 31.141825,
+          "metadata": {
+            "batch_size": 1,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_first_emit",
+          "time_ms": 31.751724,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_first_stream_chunk_sent",
+          "time_ms": 32.425517,
+          "metadata": {
+            "to_stage": "decode",
+            "modality": null
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_stream_chunk_sent",
+          "time_ms": 32.640129,
+          "metadata": {
+            "to_stage": "decode",
+            "chunk_id": 0,
+            "modality": null,
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_stream_chunk_received",
+          "time_ms": 32.861132,
+          "metadata": {
+            "from_stage": "thinker",
+            "chunk_id": 0
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "model_path_end",
+          "time_ms": 33.31433,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 235746017342,
+            "status": "success"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_complete",
+          "time_ms": 34.027623,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "decode",
+              "talker"
+            ]
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_hop_sent",
+          "time_ms": 35.050771,
+          "metadata": {
+            "to_stage": "decode",
+            "transport": "shm"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_input_received",
+          "time_ms": 37.22298,
+          "metadata": {
+            "from_stage": "thinker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_input_received",
+          "time_ms": 37.337607,
+          "metadata": {
+            "from_stage": "thinker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_aggregate_ready",
+          "time_ms": 37.37633,
+          "metadata": {
+            "from_stage": "thinker"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_dispatch",
+          "time_ms": 37.504535,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "stage_aggregate_ready",
+          "time_ms": 37.516318,
+          "metadata": {
+            "from_stage": "thinker"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_dispatch",
+          "time_ms": 37.834428,
+          "metadata": {}
+        },
+        {
+          "stage": "decode",
+          "event": "stage_complete",
+          "time_ms": 37.961889,
+          "metadata": {
+            "terminal": true
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_request_build_start",
+          "time_ms": 38.252467,
+          "metadata": {}
+        },
+        {
+          "stage": "coordinator",
+          "event": "terminal_response",
+          "time_ms": 38.465294,
+          "metadata": {
+            "from_stage": "decode",
+            "success": true
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_request_build_end",
+          "time_ms": 39.565694,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_queue_enter",
+          "time_ms": 39.780454,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "model_path_start",
+          "time_ms": 41.191649,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 235753894896
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_prefill_start",
+          "time_ms": 41.367347,
+          "metadata": {
+            "is_prefill_only": false,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_prefill_end",
+          "time_ms": 47.571003,
+          "metadata": {
+            "batch_size": 1,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_first_emit",
+          "time_ms": 72.060306,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "stage_first_stream_chunk_sent",
+          "time_ms": 73.125585,
+          "metadata": {
+            "to_stage": "code2wav",
+            "modality": "audio_codes"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_stream_chunk_sent",
+          "time_ms": 73.369221,
+          "metadata": {
+            "to_stage": "code2wav",
+            "chunk_id": 0,
+            "modality": "audio_codes",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_stream_chunk_received",
+          "time_ms": 73.739202,
+          "metadata": {
+            "from_stage": "talker",
+            "chunk_id": 0
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_lookup_start",
+          "time_ms": 74.252186,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235786958154,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_lookup_end",
+          "time_ms": 81.584772,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235794291420,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_reference_ready_start",
+          "time_ms": 81.906817,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235794612868,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_reference_ready_end",
+          "time_ms": 82.281502,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235794987153,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_init_start",
+          "time_ms": 82.654362,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 235795360148,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "model_path_end",
+          "time_ms": 3370.54864,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 239083250885,
+            "status": "success"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_complete",
+          "time_ms": 3371.156796,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "code2wav"
+            ]
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_hop_sent",
+          "time_ms": 3371.498077,
+          "metadata": {
+            "to_stage": "code2wav",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_input_received",
+          "time_ms": 3371.835936,
+          "metadata": {
+            "from_stage": "talker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_aggregate_ready",
+          "time_ms": 3372.03064,
+          "metadata": {
+            "from_stage": "talker"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_dispatch",
+          "time_ms": 3372.1752,
+          "metadata": {}
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_init_end",
+          "time_ms": 4308.380656,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 240021087368,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_decode_start",
+          "time_ms": 4309.076308,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 240021782147,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_flow_start",
+          "time_ms": 4309.550921,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 240022256591,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_flow_end",
+          "time_ms": 10577.204161,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 246289910443,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_history_start",
+          "time_ms": 10577.788469,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 246290494140,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_history_end",
+          "time_ms": 10578.066661,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 246290772296,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_input_start",
+          "time_ms": 10578.320386,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 246291025970,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_input_end",
+          "time_ms": 10578.62019,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 246291325800,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_start",
+          "time_ms": 10578.884486,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 246291590088,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_end",
+          "time_ms": 24073.635516,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259786342316,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_output_start",
+          "time_ms": 24074.460096,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259787166033,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_output_end",
+          "time_ms": 24075.014082,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259787720093,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_cpu_copy_start",
+          "time_ms": 24075.330106,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259788035790,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_cpu_copy_end",
+          "time_ms": 24075.737743,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259788443402,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_output_start",
+          "time_ms": 24076.003048,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259788708642,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_output_end",
+          "time_ms": 24076.330734,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259789036355,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_decode_end",
+          "time_ms": 24076.642275,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259789348012,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_outbox_start",
+          "time_ms": 24076.809991,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259789515581,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_outbox_end",
+          "time_ms": 24077.123838,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 259789829474,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_first_stream_chunk_sent",
+          "time_ms": 24077.405,
+          "metadata": {
+            "to_stage": "coordinator",
+            "chunk_id": 0,
+            "modality": "audio"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_stream_chunk_sent",
+          "time_ms": 24079.631529,
+          "metadata": {
+            "to_stage": "coordinator",
+            "chunk_id": 0,
+            "modality": "audio"
+          }
+        },
+        {
+          "stage": "coordinator",
+          "event": "coordinator_stream_received",
+          "time_ms": 24080.393244,
+          "metadata": {
+            "from_stage": "code2wav",
+            "chunk_id": 0,
+            "modality": "audio"
+          }
+        },
+        {
+          "stage": "coordinator",
+          "event": "stage_stream_chunk_received",
+          "time_ms": 24080.579248,
+          "metadata": {
+            "from_stage": "code2wav",
+            "chunk_id": 0,
+            "modality": "audio"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_complete",
+          "time_ms": 25897.428436,
+          "metadata": {
+            "terminal": true
+          }
+        }
+      ]
+    },
+    {
+      "request_id": "speech-37546540-2f0a-4d32-bbac-0f9e9829b8f5",
+      "phase": "measured",
+      "arm": "nonstream",
+      "first_audio_ms": 483.8925619999941,
+      "completion_ms": 488.17232499999363,
+      "audio_seconds": 14.96,
+      "generated_chunks": 0,
+      "event_count": 56,
+      "incomplete_spans": {},
+      "span_summary": {
+        "minicpm_reference_lookup": {
+          "count": 1,
+          "first_ms": 2.799604,
+          "total_ms": 2.799604
+        },
+        "minicpm_reference_prepare": {
+          "count": 1,
+          "first_ms": 2.455374,
+          "total_ms": 2.455374
+        },
+        "minicpm_nonstream_input": {
+          "count": 1,
+          "first_ms": 0.417633,
+          "total_ms": 0.417633
+        },
+        "minicpm_nonstream_flow": {
+          "count": 1,
+          "first_ms": 71.880271,
+          "total_ms": 71.880271
+        },
+        "minicpm_nonstream_hift": {
+          "count": 1,
+          "first_ms": 10.20579,
+          "total_ms": 10.20579
+        },
+        "minicpm_nonstream_cpu_copy": {
+          "count": 1,
+          "first_ms": 0.335044,
+          "total_ms": 0.335044
+        },
+        "minicpm_nonstream_output": {
+          "count": 1,
+          "first_ms": 0.275791,
+          "total_ms": 0.275791
+        },
+        "minicpm_nonstream_total": {
+          "count": 1,
+          "first_ms": 88.550597,
+          "total_ms": 88.550597
+        }
+      },
+      "spans": {
+        "minicpm_reference_lookup": [
+          {
+            "start_ms": 384.083771,
+            "end_ms": 386.883375,
+            "duration_ms": 2.799604,
+            "worker": "MainThread"
+          }
+        ],
+        "minicpm_reference_prepare": [
+          {
+            "start_ms": 387.763726,
+            "end_ms": 390.2191,
+            "duration_ms": 2.455374,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_input": [
+          {
+            "start_ms": 390.435468,
+            "end_ms": 390.853101,
+            "duration_ms": 0.417633,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_flow": [
+          {
+            "start_ms": 390.978246,
+            "end_ms": 462.858517,
+            "duration_ms": 71.880271,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_hift": [
+          {
+            "start_ms": 463.705858,
+            "end_ms": 473.911648,
+            "duration_ms": 10.20579,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_cpu_copy": [
+          {
+            "start_ms": 474.504552,
+            "end_ms": 474.839596,
+            "duration_ms": 0.335044,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_output": [
+          {
+            "start_ms": 474.986304,
+            "end_ms": 475.262095,
+            "duration_ms": 0.275791,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_nonstream_total": [
+          {
+            "start_ms": 387.175801,
+            "end_ms": 475.726398,
+            "duration_ms": 88.550597,
+            "worker": "scheduler-code2wav"
+          }
+        ]
+      },
+      "first_event_timeline": [
+        {
+          "stage": "coordinator",
+          "event": "request_admission",
+          "time_ms": 1.34969,
+          "metadata": {
+            "entry_stage": "preprocessing"
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_input_received",
+          "time_ms": 1.871627,
+          "metadata": {
+            "from_stage": "coordinator",
+            "kind": "submit"
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_dispatch",
+          "time_ms": 2.06846,
+          "metadata": {}
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_complete",
+          "time_ms": 3.57473,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "thinker"
+            ]
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_hop_sent",
+          "time_ms": 4.150358,
+          "metadata": {
+            "to_stage": "thinker",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_input_received",
+          "time_ms": 4.403594,
+          "metadata": {
+            "from_stage": "preprocessing",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_aggregate_ready",
+          "time_ms": 4.553642,
+          "metadata": {
+            "from_stage": "preprocessing"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_dispatch",
+          "time_ms": 4.677266,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_request_build_start",
+          "time_ms": 5.029675,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_request_build_end",
+          "time_ms": 5.45315,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_queue_enter",
+          "time_ms": 5.58944,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "model_path_start",
+          "time_ms": 6.741002,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 261626498365
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_prefill_start",
+          "time_ms": 7.013583,
+          "metadata": {
+            "is_prefill_only": false,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_prefill_end",
+          "time_ms": 26.18987,
+          "metadata": {
+            "batch_size": 1,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "model_path_end",
+          "time_ms": 27.0643,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 261646822481,
+            "status": "success"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_complete",
+          "time_ms": 27.940889,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "decode",
+              "talker"
+            ]
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_hop_sent",
+          "time_ms": 28.814277,
+          "metadata": {
+            "to_stage": "decode",
+            "transport": "shm"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_input_received",
+          "time_ms": 30.587046,
+          "metadata": {
+            "from_stage": "thinker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_input_received",
+          "time_ms": 30.707907,
+          "metadata": {
+            "from_stage": "thinker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_aggregate_ready",
+          "time_ms": 30.891775,
+          "metadata": {
+            "from_stage": "thinker"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_aggregate_ready",
+          "time_ms": 30.990064,
+          "metadata": {
+            "from_stage": "thinker"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_dispatch",
+          "time_ms": 31.230392,
+          "metadata": {}
+        },
+        {
+          "stage": "decode",
+          "event": "stage_dispatch",
+          "time_ms": 31.236833,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_request_build_start",
+          "time_ms": 31.525084,
+          "metadata": {}
+        },
+        {
+          "stage": "decode",
+          "event": "stage_complete",
+          "time_ms": 32.218777,
+          "metadata": {
+            "terminal": true
+          }
+        },
+        {
+          "stage": "coordinator",
+          "event": "terminal_response",
+          "time_ms": 32.706946,
+          "metadata": {
+            "from_stage": "decode",
+            "success": true
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_request_build_end",
+          "time_ms": 33.28769,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_queue_enter",
+          "time_ms": 33.584949,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "model_path_start",
+          "time_ms": 34.730351,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 261654488250
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_prefill_start",
+          "time_ms": 34.882127,
+          "metadata": {
+            "is_prefill_only": false,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_prefill_end",
+          "time_ms": 40.524401,
+          "metadata": {
+            "batch_size": 1,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "model_path_end",
+          "time_ms": 382.548829,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 262002305238,
+            "status": "success"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_complete",
+          "time_ms": 383.138282,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "code2wav"
+            ]
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_hop_sent",
+          "time_ms": 383.41295,
+          "metadata": {
+            "to_stage": "code2wav",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_input_received",
+          "time_ms": 383.552206,
+          "metadata": {
+            "from_stage": "talker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_aggregate_ready",
+          "time_ms": 383.665072,
+          "metadata": {
+            "from_stage": "talker"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_dispatch",
+          "time_ms": 383.914576,
+          "metadata": {}
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_lookup_start",
+          "time_ms": 384.083771,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262003843984,
+            "worker": "MainThread",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_lookup_end",
+          "time_ms": 386.883375,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262006643497,
+            "worker": "MainThread",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_total_start",
+          "time_ms": 387.175801,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262006935824,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_prepare_start",
+          "time_ms": 387.763726,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262007523746,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_prepare_end",
+          "time_ms": 390.2191,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262009979255,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_input_start",
+          "time_ms": 390.435468,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262010195489,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_input_end",
+          "time_ms": 390.853101,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262010613234,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_flow_start",
+          "time_ms": 390.978246,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262010738207,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_flow_end",
+          "time_ms": 462.858517,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262082618921,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_hift_start",
+          "time_ms": 463.705858,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262083466129,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_hift_end",
+          "time_ms": 473.911648,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262093671961,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_cpu_copy_start",
+          "time_ms": 474.504552,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262094264563,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_cpu_copy_end",
+          "time_ms": 474.839596,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262094599759,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_output_start",
+          "time_ms": 474.986304,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262094746310,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_output_end",
+          "time_ms": 475.262095,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262095022123,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_nonstream_total_end",
+          "time_ms": 475.726398,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262095486619,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_complete",
+          "time_ms": 476.083753,
+          "metadata": {
+            "terminal": true
+          }
+        }
+      ]
+    },
+    {
+      "request_id": "speech-f474648f-99d6-40b8-882e-25bb89035156",
+      "phase": "measured",
+      "arm": "stream",
+      "first_audio_ms": 928.711278000037,
+      "completion_ms": 2287.8320190000068,
+      "audio_seconds": 15.24,
+      "generated_chunks": 15,
+      "event_count": 398,
+      "incomplete_spans": {},
+      "span_summary": {
+        "minicpm_reference_lookup": {
+          "count": 1,
+          "first_ms": 4.278281,
+          "total_ms": 4.278281
+        },
+        "minicpm_stream_reference_ready": {
+          "count": 1,
+          "first_ms": 0.331014,
+          "total_ms": 0.331014
+        },
+        "minicpm_stream_init": {
+          "count": 1,
+          "first_ms": 400.166077,
+          "total_ms": 400.166077
+        },
+        "minicpm_stream_flow": {
+          "count": 15,
+          "first_ms": 410.195158,
+          "total_ms": 1604.2493140000001
+        },
+        "minicpm_stream_history": {
+          "count": 15,
+          "first_ms": 0.19392,
+          "total_ms": 5.4859990000000005
+        },
+        "minicpm_stream_hift_input": {
+          "count": 15,
+          "first_ms": 0.682085,
+          "total_ms": 3.6680189999999997
+        },
+        "minicpm_stream_hift": {
+          "count": 15,
+          "first_ms": 34.636013,
+          "total_ms": 130.318265
+        },
+        "minicpm_stream_hift_output": {
+          "count": 15,
+          "first_ms": 0.276941,
+          "total_ms": 3.5814999999999997
+        },
+        "minicpm_stream_cpu_copy": {
+          "count": 15,
+          "first_ms": 0.445129,
+          "total_ms": 4.7046399999999995
+        },
+        "minicpm_stream_output": {
+          "count": 15,
+          "first_ms": 1.440561,
+          "total_ms": 5.786052
+        },
+        "minicpm_stream_decode": {
+          "count": 15,
+          "first_ms": 451.486276,
+          "total_ms": 1800.035206
+        },
+        "minicpm_stream_outbox": {
+          "count": 15,
+          "first_ms": 0.178935,
+          "total_ms": 3.1104540000000003
+        }
+      },
+      "spans": {
+        "minicpm_reference_lookup": [
+          {
+            "start_ms": 66.762658,
+            "end_ms": 71.040939,
+            "duration_ms": 4.278281,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_reference_ready": [
+          {
+            "start_ms": 71.285472,
+            "end_ms": 71.616486,
+            "duration_ms": 0.331014,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_init": [
+          {
+            "start_ms": 71.851415,
+            "end_ms": 472.017492,
+            "duration_ms": 400.166077,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_flow": [
+          {
+            "start_ms": 473.187663,
+            "end_ms": 883.382821,
+            "duration_ms": 410.195158,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 926.730935,
+            "end_ms": 1010.986114,
+            "duration_ms": 84.255179,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1023.112772,
+            "end_ms": 1108.614834,
+            "duration_ms": 85.502062,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1120.266515,
+            "end_ms": 1203.703878,
+            "duration_ms": 83.437363,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1214.380005,
+            "end_ms": 1296.876611,
+            "duration_ms": 82.496606,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1308.048649,
+            "end_ms": 1394.065721,
+            "duration_ms": 86.017072,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1403.921212,
+            "end_ms": 1485.250553,
+            "duration_ms": 81.329341,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1496.341514,
+            "end_ms": 1582.021472,
+            "duration_ms": 85.679958,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1593.679754,
+            "end_ms": 1679.021944,
+            "duration_ms": 85.34219,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1690.765443,
+            "end_ms": 1773.535498,
+            "duration_ms": 82.770055,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1785.41923,
+            "end_ms": 1871.362795,
+            "duration_ms": 85.943565,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1885.176007,
+            "end_ms": 1973.291395,
+            "duration_ms": 88.115388,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1985.417939,
+            "end_ms": 2074.032102,
+            "duration_ms": 88.614163,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2086.062283,
+            "end_ms": 2170.899185,
+            "duration_ms": 84.836902,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2183.930276,
+            "end_ms": 2273.644588,
+            "duration_ms": 89.714312,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_history": [
+          {
+            "start_ms": 884.008635,
+            "end_ms": 884.202555,
+            "duration_ms": 0.19392,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1011.843697,
+            "end_ms": 1011.987509,
+            "duration_ms": 0.143812,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1109.586555,
+            "end_ms": 1109.995801,
+            "duration_ms": 0.409246,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1204.191108,
+            "end_ms": 1204.547239,
+            "duration_ms": 0.356131,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1297.842972,
+            "end_ms": 1298.163988,
+            "duration_ms": 0.321016,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1394.875286,
+            "end_ms": 1395.139372,
+            "duration_ms": 0.264086,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1486.075355,
+            "end_ms": 1486.368256,
+            "duration_ms": 0.292901,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1582.838384,
+            "end_ms": 1583.259504,
+            "duration_ms": 0.42112,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1679.643045,
+            "end_ms": 1679.954462,
+            "duration_ms": 0.311417,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1774.328322,
+            "end_ms": 1774.742585,
+            "duration_ms": 0.414263,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1872.164253,
+            "end_ms": 1872.583988,
+            "duration_ms": 0.419735,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1973.871004,
+            "end_ms": 1974.112988,
+            "duration_ms": 0.241984,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2074.571651,
+            "end_ms": 2074.757503,
+            "duration_ms": 0.185852,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2171.933497,
+            "end_ms": 2173.034893,
+            "duration_ms": 1.101396,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2274.444295,
+            "end_ms": 2274.853415,
+            "duration_ms": 0.40912,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_hift_input": [
+          {
+            "start_ms": 884.66179,
+            "end_ms": 885.343875,
+            "duration_ms": 0.682085,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1012.241302,
+            "end_ms": 1012.456512,
+            "duration_ms": 0.21521,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1110.130808,
+            "end_ms": 1110.308706,
+            "duration_ms": 0.177898,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1204.847568,
+            "end_ms": 1205.016843,
+            "duration_ms": 0.169275,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1298.321648,
+            "end_ms": 1298.513004,
+            "duration_ms": 0.191356,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1395.396416,
+            "end_ms": 1395.578264,
+            "duration_ms": 0.181848,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1486.514408,
+            "end_ms": 1486.684421,
+            "duration_ms": 0.170013,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1583.398013,
+            "end_ms": 1583.560969,
+            "duration_ms": 0.162956,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1680.20977,
+            "end_ms": 1680.372682,
+            "duration_ms": 0.162912,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1775.053143,
+            "end_ms": 1775.347888,
+            "duration_ms": 0.294745,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1872.741023,
+            "end_ms": 1872.929662,
+            "duration_ms": 0.188639,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1974.219369,
+            "end_ms": 1974.385298,
+            "duration_ms": 0.165929,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2074.886547,
+            "end_ms": 2075.187731,
+            "duration_ms": 0.301184,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2173.220735,
+            "end_ms": 2173.540783,
+            "duration_ms": 0.320048,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2274.978491,
+            "end_ms": 2275.262412,
+            "duration_ms": 0.283921,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_hift": [
+          {
+            "start_ms": 885.569271,
+            "end_ms": 920.205284,
+            "duration_ms": 34.636013,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1012.58298,
+            "end_ms": 1020.122657,
+            "duration_ms": 7.539677,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1110.695152,
+            "end_ms": 1117.290841,
+            "duration_ms": 6.595689,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1205.132334,
+            "end_ms": 1211.556051,
+            "duration_ms": 6.423717,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1298.745881,
+            "end_ms": 1305.383892,
+            "duration_ms": 6.638011,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1395.824578,
+            "end_ms": 1401.523163,
+            "duration_ms": 5.698585,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1487.169727,
+            "end_ms": 1493.287386,
+            "duration_ms": 6.117659,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1583.681777,
+            "end_ms": 1590.038793,
+            "duration_ms": 6.357016,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1680.862096,
+            "end_ms": 1687.245386,
+            "duration_ms": 6.38329,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1775.571571,
+            "end_ms": 1782.262926,
+            "duration_ms": 6.691355,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1873.37979,
+            "end_ms": 1881.113033,
+            "duration_ms": 7.733243,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1974.489631,
+            "end_ms": 1982.185743,
+            "duration_ms": 7.696112,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2075.549973,
+            "end_ms": 2082.93813,
+            "duration_ms": 7.388157,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2173.732464,
+            "end_ms": 2181.121853,
+            "duration_ms": 7.389389,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2275.456355,
+            "end_ms": 2282.486707,
+            "duration_ms": 7.030352,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_hift_output": [
+          {
+            "start_ms": 920.821813,
+            "end_ms": 921.098754,
+            "duration_ms": 0.276941,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1020.425428,
+            "end_ms": 1020.704956,
+            "duration_ms": 0.279528,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1117.462573,
+            "end_ms": 1117.64245,
+            "duration_ms": 0.179877,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1211.761654,
+            "end_ms": 1212.010973,
+            "duration_ms": 0.249319,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1305.574348,
+            "end_ms": 1305.77991,
+            "duration_ms": 0.205562,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1401.820333,
+            "end_ms": 1402.021049,
+            "duration_ms": 0.200716,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1493.47784,
+            "end_ms": 1493.67745,
+            "duration_ms": 0.19961,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1590.225119,
+            "end_ms": 1590.577993,
+            "duration_ms": 0.352874,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1687.543041,
+            "end_ms": 1687.756147,
+            "duration_ms": 0.213106,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1782.579591,
+            "end_ms": 1782.782893,
+            "duration_ms": 0.203302,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1881.422155,
+            "end_ms": 1881.657325,
+            "duration_ms": 0.23517,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1982.514981,
+            "end_ms": 1982.854768,
+            "duration_ms": 0.339787,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2083.139084,
+            "end_ms": 2083.356773,
+            "duration_ms": 0.217689,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2181.321391,
+            "end_ms": 2181.541433,
+            "duration_ms": 0.220042,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2282.656289,
+            "end_ms": 2282.864266,
+            "duration_ms": 0.207977,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_cpu_copy": [
+          {
+            "start_ms": 921.478028,
+            "end_ms": 921.923157,
+            "duration_ms": 0.445129,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1020.813055,
+            "end_ms": 1021.05723,
+            "duration_ms": 0.244175,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1117.742599,
+            "end_ms": 1118.088109,
+            "duration_ms": 0.34551,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1212.159082,
+            "end_ms": 1212.399829,
+            "duration_ms": 0.240747,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1305.919289,
+            "end_ms": 1306.274701,
+            "duration_ms": 0.355412,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1402.134409,
+            "end_ms": 1402.336465,
+            "duration_ms": 0.202056,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1493.80657,
+            "end_ms": 1494.162046,
+            "duration_ms": 0.355476,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1590.693608,
+            "end_ms": 1591.038041,
+            "duration_ms": 0.344433,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1687.989896,
+            "end_ms": 1688.36418,
+            "duration_ms": 0.374284,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1782.885597,
+            "end_ms": 1783.101837,
+            "duration_ms": 0.21624,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1881.903286,
+            "end_ms": 1882.301694,
+            "duration_ms": 0.398408,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1982.958675,
+            "end_ms": 1983.187221,
+            "duration_ms": 0.228546,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2083.611522,
+            "end_ms": 2083.988482,
+            "duration_ms": 0.37696,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2181.655074,
+            "end_ms": 2181.878226,
+            "duration_ms": 0.223152,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2283.102507,
+            "end_ms": 2283.456619,
+            "duration_ms": 0.354112,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_output": [
+          {
+            "start_ms": 922.214632,
+            "end_ms": 923.655193,
+            "duration_ms": 1.440561,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1021.151171,
+            "end_ms": 1021.559883,
+            "duration_ms": 0.408712,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1118.33694,
+            "end_ms": 1118.692689,
+            "duration_ms": 0.355749,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1212.69506,
+            "end_ms": 1212.957259,
+            "duration_ms": 0.262199,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1306.398467,
+            "end_ms": 1306.595866,
+            "duration_ms": 0.197399,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1402.579188,
+            "end_ms": 1402.818352,
+            "duration_ms": 0.239164,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1494.403158,
+            "end_ms": 1494.590596,
+            "duration_ms": 0.187438,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1591.163397,
+            "end_ms": 1591.725928,
+            "duration_ms": 0.562531,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1688.501699,
+            "end_ms": 1688.692588,
+            "duration_ms": 0.190889,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1783.213551,
+            "end_ms": 1783.7467,
+            "duration_ms": 0.533149,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1882.526233,
+            "end_ms": 1883.139561,
+            "duration_ms": 0.613328,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1983.406401,
+            "end_ms": 1983.620523,
+            "duration_ms": 0.214122,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2084.252745,
+            "end_ms": 2084.45105,
+            "duration_ms": 0.198305,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2182.092916,
+            "end_ms": 2182.291216,
+            "duration_ms": 0.1983,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2283.688957,
+            "end_ms": 2283.873163,
+            "duration_ms": 0.184206,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_decode": [
+          {
+            "start_ms": 472.726239,
+            "end_ms": 924.212515,
+            "duration_ms": 451.486276,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 925.720266,
+            "end_ms": 1021.72781,
+            "duration_ms": 96.007544,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1022.655903,
+            "end_ms": 1118.842487,
+            "duration_ms": 96.186584,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1119.648899,
+            "end_ms": 1213.130084,
+            "duration_ms": 93.481185,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1213.891445,
+            "end_ms": 1306.778019,
+            "duration_ms": 92.886574,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1307.427614,
+            "end_ms": 1402.988194,
+            "duration_ms": 95.56058,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1403.605119,
+            "end_ms": 1494.782601,
+            "duration_ms": 91.177482,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1495.628695,
+            "end_ms": 1592.112933,
+            "duration_ms": 96.484238,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1592.882107,
+            "end_ms": 1688.997238,
+            "duration_ms": 96.115131,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1689.784129,
+            "end_ms": 1783.933922,
+            "duration_ms": 94.149793,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1784.728184,
+            "end_ms": 1883.412303,
+            "duration_ms": 98.684119,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1884.270849,
+            "end_ms": 1983.824071,
+            "duration_ms": 99.553222,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1984.59975,
+            "end_ms": 2084.652601,
+            "duration_ms": 100.052851,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2085.302762,
+            "end_ms": 2182.468575,
+            "duration_ms": 97.165813,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2183.213032,
+            "end_ms": 2284.256846,
+            "duration_ms": 101.043814,
+            "worker": "scheduler-code2wav"
+          }
+        ],
+        "minicpm_stream_outbox": [
+          {
+            "start_ms": 925.127658,
+            "end_ms": 925.306593,
+            "duration_ms": 0.178935,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1021.882337,
+            "end_ms": 1022.158427,
+            "duration_ms": 0.27609,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1119.096892,
+            "end_ms": 1119.377183,
+            "duration_ms": 0.280291,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1213.408212,
+            "end_ms": 1213.57846,
+            "duration_ms": 0.170248,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1306.937193,
+            "end_ms": 1307.111432,
+            "duration_ms": 0.174239,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1403.146912,
+            "end_ms": 1403.415968,
+            "duration_ms": 0.269056,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1495.048938,
+            "end_ms": 1495.21242,
+            "duration_ms": 0.163482,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1592.328631,
+            "end_ms": 1592.508003,
+            "duration_ms": 0.179372,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1689.155161,
+            "end_ms": 1689.318633,
+            "duration_ms": 0.163472,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1784.089183,
+            "end_ms": 1784.405712,
+            "duration_ms": 0.316529,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1883.674797,
+            "end_ms": 1883.947311,
+            "duration_ms": 0.272514,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 1983.978559,
+            "end_ms": 1984.172451,
+            "duration_ms": 0.193892,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2084.801544,
+            "end_ms": 2084.961086,
+            "duration_ms": 0.159542,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2182.606736,
+            "end_ms": 2182.774565,
+            "duration_ms": 0.167829,
+            "worker": "scheduler-code2wav"
+          },
+          {
+            "start_ms": 2284.564208,
+            "end_ms": 2284.709171,
+            "duration_ms": 0.144963,
+            "worker": "scheduler-code2wav"
+          }
+        ]
+      },
+      "first_event_timeline": [
+        {
+          "stage": "coordinator",
+          "event": "request_admission",
+          "time_ms": 1.35361,
+          "metadata": {
+            "entry_stage": "preprocessing"
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_input_received",
+          "time_ms": 2.143933,
+          "metadata": {
+            "from_stage": "coordinator",
+            "kind": "submit"
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_dispatch",
+          "time_ms": 2.328909,
+          "metadata": {}
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_complete",
+          "time_ms": 3.796018,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "thinker"
+            ]
+          }
+        },
+        {
+          "stage": "preprocessing",
+          "event": "stage_hop_sent",
+          "time_ms": 3.947317,
+          "metadata": {
+            "to_stage": "thinker",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_input_received",
+          "time_ms": 4.079465,
+          "metadata": {
+            "from_stage": "preprocessing",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_aggregate_ready",
+          "time_ms": 4.221165,
+          "metadata": {
+            "from_stage": "preprocessing"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_dispatch",
+          "time_ms": 4.461661,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_request_build_start",
+          "time_ms": 4.743207,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_request_build_end",
+          "time_ms": 5.343993,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_queue_enter",
+          "time_ms": 5.504182,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "model_path_start",
+          "time_ms": 6.77603,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 262122593408
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_prefill_start",
+          "time_ms": 6.937757,
+          "metadata": {
+            "is_prefill_only": false,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_prefill_end",
+          "time_ms": 26.871505,
+          "metadata": {
+            "batch_size": 1,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "scheduler_first_emit",
+          "time_ms": 27.5528,
+          "metadata": {}
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_first_stream_chunk_sent",
+          "time_ms": 28.325692,
+          "metadata": {
+            "to_stage": "decode",
+            "modality": null
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "model_path_end",
+          "time_ms": 28.847077,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 262144664215,
+            "status": "success"
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_stream_chunk_sent",
+          "time_ms": 28.917597,
+          "metadata": {
+            "to_stage": "decode",
+            "chunk_id": 0,
+            "modality": null,
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_stream_chunk_received",
+          "time_ms": 29.096834,
+          "metadata": {
+            "from_stage": "thinker",
+            "chunk_id": 0
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_complete",
+          "time_ms": 30.252274,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "decode",
+              "talker"
+            ]
+          }
+        },
+        {
+          "stage": "thinker",
+          "event": "stage_hop_sent",
+          "time_ms": 31.268086,
+          "metadata": {
+            "to_stage": "decode",
+            "transport": "shm"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_input_received",
+          "time_ms": 33.32591,
+          "metadata": {
+            "from_stage": "thinker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_input_received",
+          "time_ms": 33.398496,
+          "metadata": {
+            "from_stage": "thinker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_aggregate_ready",
+          "time_ms": 33.478961,
+          "metadata": {
+            "from_stage": "thinker"
+          }
+        },
+        {
+          "stage": "decode",
+          "event": "stage_aggregate_ready",
+          "time_ms": 33.542163,
+          "metadata": {
+            "from_stage": "thinker"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_dispatch",
+          "time_ms": 33.701091,
+          "metadata": {}
+        },
+        {
+          "stage": "decode",
+          "event": "stage_dispatch",
+          "time_ms": 33.711772,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_request_build_start",
+          "time_ms": 34.03375,
+          "metadata": {}
+        },
+        {
+          "stage": "decode",
+          "event": "stage_complete",
+          "time_ms": 34.311007,
+          "metadata": {
+            "terminal": true
+          }
+        },
+        {
+          "stage": "coordinator",
+          "event": "terminal_response",
+          "time_ms": 34.727649,
+          "metadata": {
+            "from_stage": "decode",
+            "success": true
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_request_build_end",
+          "time_ms": 35.062527,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_queue_enter",
+          "time_ms": 35.435165,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "model_path_start",
+          "time_ms": 36.450917,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 262152269130
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_prefill_start",
+          "time_ms": 36.604073,
+          "metadata": {
+            "is_prefill_only": false,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_prefill_end",
+          "time_ms": 41.891926,
+          "metadata": {
+            "batch_size": 1,
+            "is_extend_in_batch": false
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "scheduler_first_emit",
+          "time_ms": 64.166788,
+          "metadata": {}
+        },
+        {
+          "stage": "talker",
+          "event": "stage_first_stream_chunk_sent",
+          "time_ms": 65.628471,
+          "metadata": {
+            "to_stage": "code2wav",
+            "modality": "audio_codes"
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_stream_chunk_sent",
+          "time_ms": 65.8529,
+          "metadata": {
+            "to_stage": "code2wav",
+            "chunk_id": 0,
+            "modality": "audio_codes",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_stream_chunk_received",
+          "time_ms": 66.37329,
+          "metadata": {
+            "from_stage": "talker",
+            "chunk_id": 0
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_lookup_start",
+          "time_ms": 66.762658,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262182582669,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_reference_lookup_end",
+          "time_ms": 71.040939,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262186861097,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_reference_ready_start",
+          "time_ms": 71.285472,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262187105456,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_reference_ready_end",
+          "time_ms": 71.616486,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262187436302,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_init_start",
+          "time_ms": 71.851415,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262187671694,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_init_end",
+          "time_ms": 472.017492,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262587837663,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_decode_start",
+          "time_ms": 472.726239,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262588546208,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_flow_start",
+          "time_ms": 473.187663,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262589007594,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_flow_end",
+          "time_ms": 883.382821,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262999203084,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_history_start",
+          "time_ms": 884.008635,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 262999828558,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_history_end",
+          "time_ms": 884.202555,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263000022405,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_input_start",
+          "time_ms": 884.66179,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263000481997,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_input_end",
+          "time_ms": 885.343875,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263001164175,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_start",
+          "time_ms": 885.569271,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263001389189,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_end",
+          "time_ms": 920.205284,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263036025480,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_output_start",
+          "time_ms": 920.821813,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263036641730,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_hift_output_end",
+          "time_ms": 921.098754,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263036918639,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_cpu_copy_start",
+          "time_ms": 921.478028,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263037297799,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_cpu_copy_end",
+          "time_ms": 921.923157,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263037743047,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "model_path_end",
+          "time_ms": 922.039793,
+          "metadata": {
+            "clock": "CLOCK_MONOTONIC",
+            "host_boot_id": "6820e9ed-c47c-493f-a79c-bdcd73fdb9ab",
+            "monotonic_ns": 263037857952,
+            "status": "success"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_output_start",
+          "time_ms": 922.214632,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263038034604,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_complete",
+          "time_ms": 923.450559,
+          "metadata": {
+            "terminal": false,
+            "next": [
+              "code2wav"
+            ]
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_output_end",
+          "time_ms": 923.655193,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263039475770,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "talker",
+          "event": "stage_hop_sent",
+          "time_ms": 923.828887,
+          "metadata": {
+            "to_stage": "code2wav",
+            "transport": "local_object"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_decode_end",
+          "time_ms": 924.212515,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263040032803,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_input_received",
+          "time_ms": 924.339934,
+          "metadata": {
+            "from_stage": "talker",
+            "kind": "payload"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_aggregate_ready",
+          "time_ms": 924.613048,
+          "metadata": {
+            "from_stage": "talker"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_dispatch",
+          "time_ms": 924.726275,
+          "metadata": {}
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_outbox_start",
+          "time_ms": 925.127658,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263040947826,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "minicpm_stream_outbox_end",
+          "time_ms": 925.306593,
+          "metadata": {
+            "clock": "host_wall",
+            "monotonic_ns": 263041126443,
+            "worker": "scheduler-code2wav",
+            "request_count": 1
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_first_stream_chunk_sent",
+          "time_ms": 925.461836,
+          "metadata": {
+            "to_stage": "coordinator",
+            "chunk_id": 0,
+            "modality": "audio"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_stream_chunk_sent",
+          "time_ms": 925.914628,
+          "metadata": {
+            "to_stage": "coordinator",
+            "chunk_id": 0,
+            "modality": "audio"
+          }
+        },
+        {
+          "stage": "coordinator",
+          "event": "coordinator_stream_received",
+          "time_ms": 926.739929,
+          "metadata": {
+            "from_stage": "code2wav",
+            "chunk_id": 0,
+            "modality": "audio"
+          }
+        },
+        {
+          "stage": "coordinator",
+          "event": "stage_stream_chunk_received",
+          "time_ms": 927.066725,
+          "metadata": {
+            "from_stage": "code2wav",
+            "chunk_id": 0,
+            "modality": "audio"
+          }
+        },
+        {
+          "stage": "code2wav",
+          "event": "stage_complete",
+          "time_ms": 2285.520548,
+          "metadata": {
+            "terminal": true
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": "Host phase spans include submission and blocking. CPU copy can include unfinished prior GPU work. Nested spans must not be summed twice. This diagnostic pass is separate from unprofiled latency measurements."
+}

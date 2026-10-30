@@ -1,0 +1,19 @@
+{
+  "sample": {
+    "logical_sample_id": "en",
+    "language": "English",
+    "text": "Today is a good day to validate text to speech serving behavior. The quick brown fox jumps over the lazy dog while the server streams audio. Please read this sentence in a steady, clear, and natural voice."
+  },
+  "seed": 20261027,
+  "voice": "default",
+  "response_format": "pcm",
+  "run_id": "1511b5d2c3",
+  "schedule": [
+    "warmup/nonstream",
+    "warmup/stream",
+    "measured/nonstream",
+    "measured/stream"
+  ],
+  "total_speech_requests": 4,
+  "profile": "request events enabled for both warmup and measured arms; no torch profiler"
+}

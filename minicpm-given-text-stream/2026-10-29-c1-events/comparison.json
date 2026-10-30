@@ -1,0 +1,71 @@
+{
+  "run_id": "stream-c1-events-20261029T190650Z",
+  "app": {
+    "app_id": "ap-S9Y8ydkCaDchbihHV2oRx6",
+    "description": "minicpm-given-text-stream-c1-events",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-29 15:06:48-04:00",
+    "stopped_at": "2026-10-29 15:13:29-04:00"
+  },
+  "comparison": "Same frozen source and settings, stream=false vs stream=true, both with request event recorder",
+  "total_speech_requests": 4,
+  "warmup_speech_requests": 2,
+  "measured_speech_requests": 2,
+  "valid": true,
+  "codec_match": true,
+  "codec_count": [
+    374,
+    374
+  ],
+  "first_audio_ms": {
+    "nonstream": 483.8925619999941,
+    "stream": 928.711278000037,
+    "difference": 444.81871600004297
+  },
+  "codec_available_ms": {
+    "nonstream_all": 383.552206,
+    "stream_first": 66.37329
+  },
+  "first_audio_phase_host_ms": {
+    "nonstream": {
+      "flow": 71.880271,
+      "hift": 10.20579,
+      "cpu_copy": 0.335044
+    },
+    "stream": {
+      "init": 400.166077,
+      "flow": 410.195158,
+      "hift": 34.636013,
+      "cpu_copy": 0.445129
+    }
+  },
+  "init_plus_first_flow_percent_of_stream_first_audio": 87.25653001060763,
+  "completion_ms": {
+    "nonstream": 488.17232499999363,
+    "stream": 2287.8320190000068
+  },
+  "stream_chunk_flow_host_ms": [
+    410.195158,
+    84.255179,
+    85.502062,
+    83.437363,
+    82.496606,
+    86.017072,
+    81.329341,
+    85.679958,
+    85.34219,
+    82.770055,
+    85.943565,
+    88.115388,
+    88.614163,
+    84.836902,
+    89.714312
+  ],
+  "limitations": [
+    "Single diagnostic pair, not repeated performance evidence.",
+    "Host function intervals include CPU submission, thread competition and internal blocking, not isolated GPU compute.",
+    "No added CUDA synchronization, no Torch/CUPTI trace.",
+    "First Flow overlaps Talker execution; subsequent chunks run after Talker completion. This correlation does not distinguish GPU contention from CPU/GIL contention."
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "action": "start",
+    "response": {
+      "run_id": "1511b5d2c3-events",
+      "event_dir": "/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-c1-events-20261029T190650Z/events"
+    }
+  },
+  {
+    "action": "activated",
+    "files": [
+      "/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-c1-events-20261029T190650Z/events/events_coordinator_55.jsonl",
+      "/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-c1-events-20261029T190650Z/events/events_talker_108.jsonl",
+      "/__modal/volumes/vo-ePrdOKXZO9IoxKmNluhdmz/stream-c1-events-20261029T190650Z/events/events_thinker_107.jsonl"
+    ]
+  },
+  {
+    "action": "stop",
+    "response": {
+      "run_id": "1511b5d2c3-events"
+    }
+  }
+]
