@@ -1,0 +1,64 @@
+✓ Initialized. View run at 
+https://modal.com/apps/stangameact/main/ap-DpHoBG96D5fXlf8srPt4tO
+✓ Created objects.
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_once_h100_20261029/r
+│   un_modal.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_once_h100_20261029/p
+│   reflight.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_once_h100_20261029/p
+│   atch_codec_probe.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_once_h100_20261029/m
+│   easure.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_once_h100_20261029/d
+│   river.py
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_once_h100_20261029/p
+│   rotocol.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_once_h100_20261029/s
+│   ource.json
+├── ✓ Uploaded /Users/cuzimi/Coding 
+│   Works/RemoteFiles/research/minicpm_given_text_stream_c1_once_h100_20261029/c
+│   andidate.tar.gz
+├── ✓ Created Function prepare.
+└── ✓ Created Function run.
+Run ID: stream-c1-once-20261029T183642Z
+Patched terminal codec evidence: /work/stream-validation/candidate/sglang_omni/models/minicpm_o/talker_request.py
+{
+  "versions": {
+    "sglang": "0.5.22",
+    "torch": "2.14.1+cu130",
+    "transformers": "5.19.0",
+    "flashinfer-python": "0.7.1"
+  },
+  "checkpoint": "/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582",
+  "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582",
+  "reference_path": "/__modal/volumes/vo-cvfk37lbXEJlV3ghWv5npA/hub/models--openbmb--MiniCPM-o-4_5/snapshots/503e754207c94da6bb26850b4469f367c9ea3582/assets/HT_ref_audio.wav",
+  "reference_sha256": "cb8f06ba5080cdf548969138881fb8ad8b04e2516108f4e08ba0363b68b613ea",
+  "profile": "stangameact",
+  "gpu_allocated": false
+}
+CPU preparation complete: {'run_id': 'stream-c1-once-20261029T183642Z', 'root': '/results/stream-c1-once-20261029T183642Z'}
+Patched terminal codec evidence: /work/stream-validation/candidate/sglang_omni/models/minicpm_o/talker_request.py
+Starting one server with pinned KV capacities
+
+Starting one server with pinned KV capacities
+Server ready; exactly 2 warmup and 2 measured C1 requests
+
+Starting one server with pinned KV capacities
+Server ready; exactly 2 warmup and 2 measured C1 requests
+Streaming comparison completed
+
+{'root': '/results/stream-c1-once-20261029T183642Z', 'status': 'complete', 'exit_code': '0'}
+Starting one server with pinned KV capacities
+Server ready; exactly 2 warmup and 2 measured C1 requests
+Streaming comparison completed
+
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/stangameact/main/ap-DpHoBG96D5fXlf8srPt4tO

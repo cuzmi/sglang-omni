@@ -1,0 +1,178 @@
+{
+  "remote_files_commit": "b29132a4bb2be2ad18805222661e31c64a741aaa",
+  "archive_url": "https://github.com/cuzmi/RemoteFiles/tree/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029",
+  "source_base_head": "67476823ae81b398626b85e368d1c6f11a832496",
+  "source_archive_sha256": "b57f7fadaa93f39b7f335fcbf1a908a24d9f2f25c0208becdab57075470c7afc",
+  "source_version_note": "Both arms use the same recorded source snapshot. The base HEAD does not include the dirty snapshot; archive SHA256 identifies that snapshot.",
+  "copied_files": {
+    "README.md": {
+      "sha256": "a854c8b25d1ffb4e504f145bc9a653a54caecb9e0abdb8ddc7125d2b01f2273f",
+      "bytes": 114,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/README.md"
+    },
+    "REPORT.md": {
+      "sha256": "24855f2d4b60dab2b9657803bbf653d2cf0fccbb1f67116167d77c1366e48011",
+      "bytes": 2215,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/REPORT.md"
+    },
+    "app_status.json": {
+      "sha256": "5dbe9e01eaabb77b540a1521e50302e4d47472a3bc423e8f0ae8f4a093b7b565",
+      "bytes": 125,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/app_status.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/client.log": {
+      "sha256": "82e2d92bcf42f079131a5648c9d77b440c19130672f253a4654d6eb3c820db6f",
+      "bytes": 907,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/client.log"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/codec_evidence.jsonl": {
+      "sha256": "292d7735347fca1b7f0889ef89e3762a8d07ccc54c9ed1a7c5bb17b7023eaa41",
+      "bytes": 7904,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/codec_evidence.jsonl"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/command.json": {
+      "sha256": "19478dca55b9340b2951438d233df397c3bb165f7e08e9aa845c87a1ca4e0fee",
+      "bytes": 1573,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/command.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/driver.log": {
+      "sha256": "e9fe44d190e3721804a5951fd1e27455412baa341a31493b262de628f7903fd8",
+      "bytes": 135,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/driver.log"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/environment.json": {
+      "sha256": "cdca72ffc8c6c9e9332a3ee11c7a9117e4a6aeb5ae20eaa80d117a91494fc73c",
+      "bytes": 594,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/environment.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/gpu_identity.csv": {
+      "sha256": "e5a0f92dd34c6d288c7e55ff4cab3a757b8a2fd6598ab8cddf91d3b2bcca1aab",
+      "bytes": 133,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/gpu_identity.csv"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/input_checksums.json": {
+      "sha256": "76a06ca19f427d30975ebab05c3263112fea57d49a1c32bd82529663028d659a",
+      "bytes": 611,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/input_checksums.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/kv_capacity.json": {
+      "sha256": "341d7dcbd548d4b9491b1d808a6f13385a9a56c9593760080753700b042a6149",
+      "bytes": 90,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/kv_capacity.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/measurements/42b3519d6e-measured-nonstream-en.timeline.jsonl": {
+      "sha256": "0ebf25fd6a595edc9bee14af8c0e91aca59153014ca88f7a358496a9c25d702c",
+      "bytes": 649,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/measurements/42b3519d6e-measured-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/measurements/42b3519d6e-measured-stream-en.timeline.jsonl": {
+      "sha256": "404cc2f16644fa082a4a9854cff24953677df3bdda317fef6dbaeb55e97c4b2c",
+      "bytes": 3558,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/measurements/42b3519d6e-measured-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/measurements/42b3519d6e-warmup-nonstream-en.timeline.jsonl": {
+      "sha256": "00dec1741eb62342958117be5ccd8096b1ccf1354e1a62ac140f6bd68d032699",
+      "bytes": 641,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/measurements/42b3519d6e-warmup-nonstream-en.timeline.jsonl"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/measurements/42b3519d6e-warmup-stream-en.timeline.jsonl": {
+      "sha256": "dde25c61979a5ceacc7efae386037e2666d49e2de647d8a9e6daadd664544b67",
+      "bytes": 3566,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/measurements/42b3519d6e-warmup-stream-en.timeline.jsonl"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/measurements/manifest.json": {
+      "sha256": "1f8a356473c7a8e7daed08a88acda69ae325c4e372d49b195e7769ba70fef306",
+      "bytes": 540,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/measurements/manifest.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/measurements/summary.json": {
+      "sha256": "28bfc1844359915dfb158c1375fff135118d1d02923e81ee563853302d3c6030",
+      "bytes": 25665,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/measurements/summary.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/preflight.log": {
+      "sha256": "3e8f1dce3f878b463535547f331b6715006529bb2f649ed4628b5644c541c3b4",
+      "bytes": 817,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/preflight.log"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/preflight_config.yaml": {
+      "sha256": "a53cc62b68cf4ab7a19abe1935505b77e98d43967e0d75e74a83efe834dcc5be",
+      "bytes": 19834,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/preflight_config.yaml"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/preparation.json": {
+      "sha256": "736c2537dde0b262515c7935586ce213fec9f9b3c05b15cc5266eba417255f30",
+      "bytes": 672,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/preparation.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/resolved_config.yaml": {
+      "sha256": "442e887533c69d49dd4d5f646a98177d57e4bc0302992e89ab407c80cbaec82f",
+      "bytes": 19932,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/resolved_config.yaml"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/server.log": {
+      "sha256": "8cf6aead2d0798f7494a1f20be813028d57aff2233ba219bf219fa7110d5d309",
+      "bytes": 43745,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/server.log"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/status.json": {
+      "sha256": "f0ac197f83c5446797196fe8b81ccfd4f77a57aa5932d28d956ea57c216bc2f1",
+      "bytes": 243,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/status.json"
+    },
+    "artifacts/stream-c1-once-20261029T183642Z/versions.txt": {
+      "sha256": "22751d7a8bbad22ada03a16ecd98e00d53ecd39d0e1b4193041aba5ca4da527b",
+      "bytes": 9616,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/artifacts/stream-c1-once-20261029T183642Z/versions.txt"
+    },
+    "comparison.json": {
+      "sha256": "1747c43b130df8184f3802c312c1d508c2d5c3181ebf8171bb5c7a2f3dcc2553",
+      "bytes": 1769,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/comparison.json"
+    },
+    "latest_run.txt": {
+      "sha256": "f22ce19b7ad233b90d19247d46997a457e87d3e7a88bbf017db08a5d31bc7d6d",
+      "bytes": 32,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/latest_run.txt"
+    },
+    "modal.log": {
+      "sha256": "2b7c5b93cad53e11b9dfc08a6780ec0ff0dde9fc863a0761d0197f69e0da5a51",
+      "bytes": 3090,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/modal.log"
+    },
+    "protocol.json": {
+      "sha256": "b753bed36e586f3c4113eaea35bd3883b1079162d641555d1f6a1a61022d7206",
+      "bytes": 2797,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/protocol.json"
+    },
+    "remote_result.json": {
+      "sha256": "97fefbf8379c0961730f526fef32285c75e35c8c121fddef4705bc80aed30aa9",
+      "bytes": 101,
+      "source": "https://github.com/cuzmi/RemoteFiles/blob/b29132a4bb2be2ad18805222661e31c64a741aaa/research/minicpm_given_text_stream_c1_once_h100_20261029/remote_result.json"
+    }
+  },
+  "omitted_archive_files": [
+    ".gitattributes",
+    ".gitignore",
+    "PUBLICATION.md",
+    "PUBLICATION_SHA256.json",
+    "PUBLICATION_VALIDATION.json",
+    "SHA256SUMS.json",
+    "artifacts/stream-c1-once-20261029T183642Z/scripts/driver.py",
+    "artifacts/stream-c1-once-20261029T183642Z/scripts/measure.py",
+    "artifacts/stream-c1-once-20261029T183642Z/scripts/patch_codec_probe.py",
+    "artifacts/stream-c1-once-20261029T183642Z/scripts/preflight.py",
+    "artifacts/stream-c1-once-20261029T183642Z/scripts/protocol.json",
+    "artifacts/stream-c1-once-20261029T183642Z/scripts/source.json",
+    "driver.py",
+    "measure.py",
+    "patch_codec_probe.py",
+    "preflight.py",
+    "run_modal.py",
+    "source.json"
+  ],
+  "generated_files": [
+    "PUBLICATION.md",
+    "PROVENANCE.json"
+  ]
+}

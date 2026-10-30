@@ -1,0 +1,61 @@
+{
+  "objective": "One C1 nonstream vs stream comparison on the current source, after one warmup per mode.",
+  "profile": "stangameact",
+  "gpu": "H100!",
+  "gpu_count": 1,
+  "cpu_count": 16,
+  "memory_mib": 131072,
+  "gpu_timeout_seconds": 1800,
+  "driver_timeout_seconds": 1650,
+  "retries": 0,
+  "source": "Same current candidate snapshot for both arms; stream=false versus stream=true. This is a mode comparison, not a comparison of old and new scheduler versions.",
+  "image": "docker.io/hongccc/sglang-omni@sha256:06ed306707bcf3d9e9beb5ba7ce66f09a666cac11c23455ece50c34199c0e985",
+  "model": "openbmb/MiniCPM-o-4_5",
+  "model_revision": "503e754207c94da6bb26850b4469f367c9ea3582",
+  "reference": "Pinned checkpoint assets/HT_ref_audio.wav, SHA256 recorded by CPU preflight; same default voice for the sample and both arms.",
+  "configuration": {
+    "thinker_max_total_tokens": 131072,
+    "talker_max_total_tokens": 131072,
+    "codec_stream_chunk_tokens": 25,
+    "code2wav_codec_chunk_size": 25,
+    "graph_compile": "Current candidate defaults",
+    "OMP_NUM_THREADS": 4,
+    "TORCHINDUCTOR_COMPILE_THREADS": 4
+  },
+  "endpoint": "/v1/audio/speech over localhost; PCM16 mono 24kHz; stream mode uses SSE to identify generated chunks.",
+  "scenarios": [
+    "c1_en"
+  ],
+  "schedule": "Single server; sequential warmup/nonstream, warmup/stream, measured/nonstream, measured/stream. No repetitions, C2 or ABBA.",
+  "planned_measured_requests": 2,
+  "warmup_requests": 2,
+  "sampling_seed": 20261027,
+  "primary_metric": "Meaningful-audio arrival time: first received10ms PCM window with RMS>=0.001 fullscale.",
+  "secondary_metrics": [
+    "first generated audio arrival",
+    "generated chunk intervals",
+    "completion time",
+    "audio duration",
+    "simulated playback stall count/time with100ms buffer reserve"
+  ],
+  "output_work": "Experiment-only adapter writes full codec count, SHA256 and token IDs from existing CPU tensor once per request, shared in both modes.",
+  "validity": [
+    "Stop on first failure; no retries or extra requests.",
+    "Exactly4 successful requests, exactly2 measured.",
+    "Exact measured input and codec hashes must match; otherwise no matched-work speedup claim.",
+    "Meaningful audio must exist; streamed audio has at least2 deltas.",
+    "Duration mismatch above10percent invalidates comparison."
+  ],
+  "exclusions": [
+    "No profiler during timings",
+    "No claimed GPU overlap without GPU traces",
+    "No ASR/MOS or speaker similarity evaluation",
+    "No cancel/fault injection during measured timing cohorts"
+  ],
+  "total_speech_requests": 4,
+  "limitations": [
+    "Only one timed request per mode; no variability estimate.",
+    "SSE serialization is part of the stream path.",
+    "C1 cannot validate multi-request fairness."
+  ]
+}

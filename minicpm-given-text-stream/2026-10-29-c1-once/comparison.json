@@ -1,0 +1,55 @@
+{
+  "run_id": "stream-c1-once-20261029T183642Z",
+  "app_status": {
+    "app_id": "ap-DpHoBG96D5fXlf8srPt4tO",
+    "state": "stopped",
+    "tasks": 0,
+    "stopped_at": "2026-10-29T14:42:29-04:00"
+  },
+  "source_archive_sha256": "b57f7fadaa93f39b7f335fcbf1a908a24d9f2f25c0208becdab57075470c7afc",
+  "comparison": "same current source, stream=false versus stream=true",
+  "requests_total": 4,
+  "requests_warmup": 2,
+  "requests_measured": 2,
+  "concurrency": 1,
+  "valid": true,
+  "identical_codec": true,
+  "codec_tokens": [
+    374,
+    374
+  ],
+  "audio_duration_seconds": [
+    14.96,
+    15.24
+  ],
+  "streamed_audio_chunks": 15,
+  "metrics": {
+    "first_audio_seconds": {
+      "baseline_seconds": 0.45285123800002225,
+      "streaming_seconds": 0.7686558089999949,
+      "delta_seconds": 0.3158045709999726,
+      "streaming_over_baseline": 1.697369344499743,
+      "change_percent": 69.73693444997431
+    },
+    "meaningful_audio_seconds": {
+      "baseline_seconds": 0.45285123800002225,
+      "streaming_seconds": 0.7686558089999949,
+      "delta_seconds": 0.3158045709999726,
+      "streaming_over_baseline": 1.697369344499743,
+      "change_percent": 69.73693444997431
+    },
+    "completion_seconds": {
+      "baseline_seconds": 0.4560104910000007,
+      "streaming_seconds": 1.939258916,
+      "delta_seconds": 1.4832484249999993,
+      "streaming_over_baseline": 4.252662941476048,
+      "change_percent": 325.2662941476048
+    }
+  },
+  "limitations": [
+    "Single C1 measured pair after one warmup per mode; no repeatability claim.",
+    "Same source and server; stream=false vs stream=true, not two source revisions.",
+    "Stream mode includes SSE/base64 overhead.",
+    "C1 does not validate multi-request scheduling fairness or GPU overlap."
+  ]
+}

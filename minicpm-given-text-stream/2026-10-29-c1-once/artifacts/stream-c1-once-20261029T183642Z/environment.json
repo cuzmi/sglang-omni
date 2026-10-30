@@ -1,0 +1,32 @@
+{
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "torchaudio": "2.11.0+cu130",
+    "sglang": "0.5.22",
+    "transformers": "5.19.0",
+    "flashinfer-python": "0.7.1"
+  },
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "memory_limit_mib": 131072,
+  "compiler_cache": "fresh directory for one server lifetime",
+  "comparison": "same source and server; nonstreaming versus streaming",
+  "instrumentation": "one CPU codec hash and token list per completed Talker request",
+  "profiler": "disabled"
+}
