@@ -51,18 +51,18 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'developer_reference/full_duplex_guide';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
-    <script src="../_static/js/sidebar_company_toggle.js?v=1646c162"></script>
+    <script src="../_static/js/sidebar_company_toggle.js?v=7622d557"></script>
     <script src="../_static/js/qwen3_omni_server_generator.js?v=d7738e8a"></script>
     <script src="../_static/js/ming_omni_server_generator.js?v=7979a72f"></script>
     <link rel="icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="TTS benchmark runbook" href="tts_bench.html" />
+    <link rel="next" title="Duplex Load Generator Pacing" href="duplex_load_generator_pacing.html" />
     <link rel="prev" title="Qwen3-ASR High-Concurrency Benchmark and Bottleneck Profile" href="qwen3_asr_concurrency_profile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.2.0" />
-    <meta name="docbuild:last-update" content="Oct 31, 2026"/>
+    <meta name="docbuild:last-update" content="Nov 06, 2026"/>
   
     
     <script src="../_static/searchtools.js"></script>
@@ -207,13 +207,25 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">Installation — CUDA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_apple_silicon.html">Installation — Apple Silicon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_npu.html">Installation — NPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_xpu.html">Installation — Intel XPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_cpu.html">Installation — Intel CPU</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_musa.html">Installation — MUSA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to SGLang-Omni</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/apiserver_quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../get_started/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../get_started/installation_apple_silicon.html">Apple Silicon</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mlx/index.html">Native MLX / Voxt</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mlx/long_audio.html">Qwen3-ASR long-recording measurements</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_npu.html">Ascend NPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_xpu.html">Intel XPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_cpu.html">Intel CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation_musa.html">Moore Threads MUSA</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cookbook</span></p>
 <ul class="nav bd-sidenav">
@@ -308,10 +320,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/mps_dp.html">Same-GPU Data Parallelism with CUDA MPS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_usage/native_media_routes.html">Native Media Routes</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">MLX</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../mlx/index.html">MLX Path</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Reference</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="main.html">Architecture</a></li>
@@ -324,6 +332,7 @@
 <li class="toctree-l1"><a class="reference internal" href="profiler.html">Request-level profiler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qwen3_asr_concurrency_profile.html">Qwen3-ASR High-Concurrency Benchmark and Bottleneck Profile</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Full-Duplex Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="duplex_load_generator_pacing.html">Duplex Load Generator Pacing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tts_bench.html">TTS benchmark runbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tts_model_integration.html">TTS Model Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="asr_bench.html">ASR benchmark runbook</a></li>
@@ -723,12 +732,20 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">MiniCPMODuplexVision</span></code> in the same file</p></td>
 <td><p>Camera-frame limits per unit (1 s of audio); <code class="docutils literal notranslate"><span class="pre">--vision.&lt;field&gt;</span></code> changes one, such as <code class="docutils literal notranslate"><span class="pre">--vision.max_frames_per_unit</span> <span class="pre">2</span></code></p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">window.sliding_window_mode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">basic</span></code></p></td>
+<td><p>The checkpoint’s <code class="docutils literal notranslate"><span class="pre">DuplexWindowConfig</span></code> mode: <code class="docutils literal notranslate"><span class="pre">basic</span></code> drops the oldest units of a long conversation; <code class="docutils literal notranslate"><span class="pre">off</span></code> keeps every unit and closes the session when its history fills</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">window.basic_window_high_tokens</span></code> / <code class="docutils literal notranslate"><span class="pre">window.basic_window_low_tokens</span></code></p></td>
+<td><p>8000 / 6000</p></td>
+<td><p>History length that starts a drop, and the length the drop goes down to</p></td>
+</tr>
 </tbody>
 </table>
 </div>
 <p>While the server starts, the speech stage records the voice decoder as CUDA graphs for up to 8 conversations decoded together, or <code class="docutils literal notranslate"><span class="pre">max_sessions</span></code> if lower; the graphs hold GPU memory and add to startup time, and a voice whose reference audio is longer than the default voice’s is decoded without them. <code class="docutils literal notranslate"><span class="pre">speech.enable_chunk_cuda_graph:</span> <span class="pre">false</span></code> turns them off.</p>
 <p>Speech settings also accept dotted CLI flags, such as <code class="docutils literal notranslate"><span class="pre">--speech.dtype</span> <span class="pre">float16</span> <span class="pre">--speech.n_timesteps</span> <span class="pre">10</span></code>. Stage settings use <code class="docutils literal notranslate"><span class="pre">--speech.factory.&lt;field&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">--speech.process</span></code>. The automatic thinker KV budget follows <code class="docutils literal notranslate"><span class="pre">thinker.engine.dtype</span></code> and <code class="docutils literal notranslate"><span class="pre">thinker.engine.kv_cache_dtype</span></code>; block-quantized KV caches require an explicit <code class="docutils literal notranslate"><span class="pre">thinker.engine.kv_cache_bytes</span></code> budget.</p>
-<p>A session holds at most 8192 tokens of history, which is the model’s trained context length. When that fills, the server sends <code class="docutils literal notranslate"><span class="pre">context_exhausted</span></code> and closes the session.</p>
+<p>A session holds at most 8192 tokens of history, which is the model’s trained context length. With the default <code class="docutils literal notranslate"><span class="pre">basic</span></code> window, once the history passes <code class="docutils literal notranslate"><span class="pre">basic_window_high_tokens</span></code> the server drops the oldest one-second units until at most <code class="docutils literal notranslate"><span class="pre">basic_window_low_tokens</span></code> tokens remain, and it drops units early when the next unit would not fit; the system prompt and the reference audio always stay. With <code class="docutils literal notranslate"><span class="pre">--window.sliding_window_mode</span> <span class="pre">off</span></code>, the server sends <code class="docutils literal notranslate"><span class="pre">context_exhausted</span></code> and closes the session when the history fills. A cut moves the retained KV in place, so the window needs the default bf16 or an fp8 KV cache; with an FP4 KV recipe or an HND KV layout, the server refuses to start unless the window is off.</p>
 <p>The realtime activity timeout closes an inactive session with <code class="docutils literal notranslate"><span class="pre">idle_timeout</span></code>; the pipeline’s separate idle fallback reports <code class="docutils literal notranslate"><span class="pre">session_idle_timeout</span></code>. A session whose pending server events outgrow the server’s output buffers is closed with <code class="docutils literal notranslate"><span class="pre">output_budget_exhausted</span></code>; this happens when the client stops reading events. A single response whose transcript outgrows <code class="docutils literal notranslate"><span class="pre">max_history_chars</span></code> is closed with <code class="docutils literal notranslate"><span class="pre">context_limit</span></code>.</p>
 <p>The full-duplex server is ready when this returns JSON containing <code class="docutils literal notranslate"><span class="pre">&quot;native_full_duplex&quot;:true</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>--fail<span class="w"> </span>http://localhost:8000/v1/realtime/capabilities
@@ -1002,7 +1019,7 @@ hf<span class="w"> </span>download<span class="w"> </span>pipecat-ai/smart-turn-
 <p>One command starts everything: the profile’s <code class="docutils literal notranslate"><span class="pre">services</span></code> are started in order and waited for, a service already answering on its port is reused, and the cascade starts once every service and the worker answer; stopping the server stops the services it started. The profile’s <code class="docutils literal notranslate"><span class="pre">turn_detection</span></code> node ends a turn only when Smart Turn takes a pause for its end, so a pause in the middle of a sentence does not cut it, as Turn Detection describes. When an interrupted reply is cut, the profile’s aligner keeps the words the listener heard: the forced aligner’s word ends for the sentences whose audio was complete, and its own recognizer’s transcript of the delivered audio for the sentence it was cut in. The page sends the position it played with <code class="docutils literal notranslate"><span class="pre">conversation.item.truncate</span></code> and marks the heard part of the reply. Profiles lists the other bundled profiles, such as <code class="docutils literal notranslate"><span class="pre">qwen3-asr-qwen3.8-27b-vivian</span></code> with Qwen3.8-27B on two GPUs.</p>
 <p>To use services you already run, drop their <code class="docutils literal notranslate"><span class="pre">services</span></code> entries and point the nodes’ <code class="docutils literal notranslate"><span class="pre">base_url</span></code> at them; a command-line override such as <code class="docutils literal notranslate"><span class="pre">--session_nodes.llm.base_url</span> <span class="pre">http://127.0.0.1:9000/v1</span></code> changes one field without editing the file. The rest of this section lists every launch mode and what each profile needs started beforehand; Configuration, Node Reference and Compatibility and Constraints list every setting and the settings that cannot be combined.</p>
 <p id="one-command-with-a-profile"><strong>One command with a profile</strong></p>
-<p>The default CustomVoice cascade uses Qwen3.8-27B with thinking off on GPU 0 and Qwen3-ASR/Qwen3-TTS on GPU 1. The audio-file example in <code class="docutils literal notranslate"><span class="pre">examples/streaming_cascade/run.py</span></code> uses this profile when <code class="docutils literal notranslate"><span class="pre">--config</span></code> is omitted.</p>
+<p>The default Vivian cascade profile uses Qwen3.8-27B with thinking off on GPU 0 and Qwen3-ASR/Qwen3-TTS Base on GPU 1. The audio-file example in <code class="docutils literal notranslate"><span class="pre">examples/streaming_cascade/run.py</span></code> uses this profile when <code class="docutils literal notranslate"><span class="pre">--config</span></code> is omitted.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sgl-omni<span class="w"> </span>serve<span class="w"> </span>--config<span class="w"> </span>examples/streaming_cascade/profiles/qwen3-asr-qwen3-tts-vivian/launch.yaml<span class="w"> </span>--enable-realtime<span class="w"> </span>--port<span class="w"> </span><span class="m">8765</span>
 </pre></div>
 </div>
@@ -1641,6 +1658,7 @@ hf<span class="w"> </span>download<span class="w"> </span>pipecat-ai/smart-turn-
 <p id="openai-speech"><strong><code class="docutils literal notranslate"><span class="pre">openai_speech</span></code></strong></p>
 <p>Cuts the reply text into sentences and sends one streaming request per sentence to <code class="docutils literal notranslate"><span class="pre">&lt;base_url&gt;/audio/speech</span></code> with <code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">voice</span></code>, <code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">response_format:</span> <span class="pre">pcm</span></code>, <code class="docutils literal notranslate"><span class="pre">stream:</span> <span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">language</span></code> when <code class="docutils literal notranslate"><span class="pre">language</span></code> is set, and <code class="docutils literal notranslate"><span class="pre">references:</span> <span class="pre">[{audio_path,</span> <span class="pre">text}]</span></code> when <code class="docutils literal notranslate"><span class="pre">reference_audio_path</span></code> is set. A sentence ends after a word ending in <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">;</span></code> or <code class="docutils literal notranslate"><span class="pre">…</span></code> (closing quotes and brackets included), after Chinese end punctuation followed by more text, or at a line end; a sentence longer than <code class="docutils literal notranslate"><span class="pre">max_sentence_words</span></code> is cut as that setting describes.</p>
 <p>Every sentence is its own request, and Qwen3-TTS samples each request with a fresh seed. A CustomVoice speaker given by <code class="docutils literal notranslate"><span class="pre">voice</span></code> is held only by its speaker token, so its timbre moves from sentence to sentence and from turn to turn; a Base model cloning one <code class="docutils literal notranslate"><span class="pre">reference_audio_path</span></code> for every request keeps one voice, which is why the English profiles clone <code class="docutils literal notranslate"><span class="pre">examples/streaming_cascade/voices/vivian.wav</span></code>, a recording of the CustomVoice speaker Vivian. They leave <code class="docutils literal notranslate"><span class="pre">reference_text</span></code> empty, so Base clones from the recording’s speaker embedding alone: with the transcript it continues the recording itself and opens each sentence with a pause of about half a second, which a listener hears as a later reply.</p>
+<p><strong>TTS quality.</strong> In a controlled, single-reviewer comparison, the 1.7B Base profile with <code class="docutils literal notranslate"><span class="pre">voices/vivian.wav</span></code> and no reference transcript reduced unacceptable timing-related anomalies from 5/60 CustomVoice/Vivian outputs to 0/60 Base outputs. This supports the tested configuration as a mitigation for slowdowns and abnormal pauses.</p>
 <p><code class="docutils literal notranslate"><span class="pre">openai_speech</span></code> sends each sentence without its emoji, asterisks and backticks, a markdown link as its text alone, a bare URL as its host alone, and a markdown line without its heading, list or quote marker and with its table cells separated by commas, because a speech service reads them as stray sounds or a spelled-out URL, and can run on for 40 s or more after a marker or a table row. A sentence with no word left, such as one of only emoji or punctuation or a table’s separator row, is not sent because the speech service answers it with an error, and its end still counts in <code class="docutils literal notranslate"><span class="pre">reply.progress</span></code>. A sentence tagged <code class="docutils literal notranslate"><span class="pre">English</span></code> is sent with its numbers written out as words, the way the forced-alignment worker reads them: a year as two pairs, spaced digit groups such as a phone number digit by digit, a decimal with <code class="docutils literal notranslate"><span class="pre">point</span></code>, and an ordinal such as <code class="docutils literal notranslate"><span class="pre">21st</span></code> as <code class="docutils literal notranslate"><span class="pre">twenty</span> <span class="pre">first</span></code>. The reply text and the <code class="docutils literal notranslate"><span class="pre">reply.progress</span></code> offsets keep everything the model wrote. The profiles’ system prompts also tell the language model to use neither markdown nor emoji.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -2184,6 +2202,7 @@ interruption or reply-boundary detection to VoiceChat.</p>
 </table>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">JUDGE=gpt</span></code> needs <code class="docutils literal notranslate"><span class="pre">OPENAI_API_KEY</span></code>. With <code class="docutils literal notranslate"><span class="pre">JUDGE=qwen</span></code> the labels and ratings are not the paper’s, but the judge is local and pinned, so runs with the same settings stay comparable with each other. The semantic judge sends six control cases (<code class="docutils literal notranslate"><span class="pre">benchmarks/duplex/semantic/</span></code>) together with its first grading batches and keeps the grades only if all 18 control axis statuses match <code class="docutils literal notranslate"><span class="pre">control-expected.json</span></code>; otherwise it discards them and stops. The controls check the rubric, not the judge’s accuracy.</p>
+<p><code class="docutils literal notranslate"><span class="pre">--skip-semantic-judge</span></code> on <code class="docutils literal notranslate"><span class="pre">judge</span></code>, or on <code class="docutils literal notranslate"><span class="pre">generate</span></code> with <code class="docutils literal notranslate"><span class="pre">--all-stages</span></code>, leaves the semantic judge out because it is the slowest judge phase, ~5 minutes for 20 pairs on one H100.</p>
 <p>A judge starts only when the step has a request for it: the v1.5 pairs and the v1.0 interruption subset need one, while the other v1.0 subsets are scored without an LLM. A run with only those subsets starts no judge server and needs no API key.</p>
 </section>
 <section id="run-the-benchmark">
@@ -2550,28 +2569,31 @@ python<span class="w"> </span>-m<span class="w"> </span>benchmarks.duplex.fdb<sp
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">recording/shard-*/</span></code>, <code class="docutils literal notranslate"><span class="pre">v10/recording/shard-*/</span></code></p></td>
 <td><p>Raw session traces, input and output audio, protocol reports</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">logs/</span></code>, <code class="docutils literal notranslate"><span class="pre">v10/logs/</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">warmup/</span></code></p></td>
+<td><p>The unscored warmup sessions recorded before them, with their recorder logs; nothing reads them</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">logs/</span></code>, <code class="docutils literal notranslate"><span class="pre">v10/logs/</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">logs/</span></code> has the server logs and the v1.5 recorder logs, <code class="docutils literal notranslate"><span class="pre">v10/logs/</span></code> the v1.0 recorder logs; the v1.5 ASR and timing logs are in <code class="docutils literal notranslate"><span class="pre">scores/logs/</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">reference-audio/</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reference-audio/</span></code></p></td>
 <td><p>v1.5 fixed-window WAVs and <code class="docutils literal notranslate"><span class="pre">reference-manifest.json</span></code> with eligibility</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scores/summary.json</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scores/summary.json</span></code></p></td>
 <td><p>v1.5 timing, ASR coverage and, with <code class="docutils literal notranslate"><span class="pre">JUDGE=gpt</span></code>, behavior labels</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">judge-qwen/summary.json</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">judge-qwen/summary.json</span></code></p></td>
 <td><p>v1.5 behavior labels with <code class="docutils literal notranslate"><span class="pre">JUDGE=qwen</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">semantic-qwen/</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">semantic-qwen/</span></code></p></td>
 <td><p>Semantic judge: control comparison, the exact packets sent, raw responses, per-pair outcomes and <code class="docutils literal notranslate"><span class="pre">summary.json</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">report.txt</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">report.txt</span></code></p></td>
 <td><p>Readable v1.5 report: coverage, timing and semantic quality</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">listening/</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">listening/</span></code></p></td>
 <td><p>One 16 kHz WAV per reply in <code class="docutils literal notranslate"><span class="pre">wav/</span></code> and its scored 3 s window in <code class="docutils literal notranslate"><span class="pre">voice-window/</span></code>, <code class="docutils literal notranslate"><span class="pre">replies.json</span></code> with each reply’s status, transcript and Parakeet text, <code class="docutils literal notranslate"><span class="pre">scores.json</span></code> with each reply’s scores, and the per-category <code class="docutils literal notranslate"><span class="pre">summary.json</span></code> with the checkpoint hashes</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">v10/reference/</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">v10/reference/</span></code></p></td>
 <td><p>v1.0 windows (<code class="docutils literal notranslate"><span class="pre">&lt;subset&gt;/&lt;id&gt;/output.wav</span></code>), <code class="docutils literal notranslate"><span class="pre">manifest.json</span></code>, the ASR receipt <code class="docutils literal notranslate"><span class="pre">asr.json</span></code>, per-repeat <code class="docutils literal notranslate"><span class="pre">unified.json</span></code> and <code class="docutils literal notranslate"><span class="pre">unified-samples.jsonl</span></code>, official <code class="docutils literal notranslate"><span class="pre">summary.json</span></code>, the judge ledger in <code class="docutils literal notranslate"><span class="pre">judge/</span></code> and evaluator logs in <code class="docutils literal notranslate"><span class="pre">logs/</span></code></p></td>
 </tr>
 </tbody>
@@ -2782,6 +2804,7 @@ python<span class="w"> </span>-m<span class="w"> </span>benchmarks.eval.benchmar
 <li><p><strong>Keep the settings fixed across the repeats of a run.</strong> Mixing repeats with different selections, <code class="docutils literal notranslate"><span class="pre">--num-shards</span></code> or judges makes their mean meaningless; use a new run name instead.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">--num-shards</span></code> changes what you measure.</strong> With <code class="docutils literal notranslate"><span class="pre">--num-shards</span> <span class="pre">2</span></code>, two sessions share the GPU, so the latencies are measured under load and do not compare with one shard. The model server keeps <code class="docutils literal notranslate"><span class="pre">max_sessions</span></code> at 2, so <code class="docutils literal notranslate"><span class="pre">generate</span></code> refuses more than 2 shards per server up front.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">--gpus</span></code> spreads the shards over GPUs.</strong> <code class="docutils literal notranslate"><span class="pre">--gpus</span> <span class="pre">0,1</span></code> starts one model server on each listed GPU, each with its own port (<code class="docutils literal notranslate"><span class="pre">8097</span> <span class="pre">+</span> <span class="pre">10×GPU</span></code>) and caches, and sends shard i to the i-th server modulo their count. With as many shards as GPUs every session has a GPU to itself, so the timing compares with one shard. <code class="docutils literal notranslate"><span class="pre">asr</span></code> and <code class="docutils literal notranslate"><span class="pre">judge</span></code> still run on the job GPU, the first index of <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES</span></code>, so <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES=0,1</span></code> with <code class="docutils literal notranslate"><span class="pre">--gpus</span> <span class="pre">0,1</span></code> records on both GPUs and transcribes on GPU 0.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">generate</span></code> warms the model servers up first.</strong> Once the servers are ready, every shard records the first selected sample, the first v1.5 pair or, with v1.5 left out, the first v1.0 sample, before any scored session starts. A fresh server pays its first-use costs in its first sessions, and with every shard starting at once those sessions answered seconds late, after the overlap they were meant to test had ended. These sessions go to <code class="docutils literal notranslate"><span class="pre">warmup/</span></code> and are never scored, and a failed one only logs a warning. <code class="docutils literal notranslate"><span class="pre">--skip-warmup</span></code> leaves them out, for example to compare a cold start with a warm one; keep that choice the same across the repeats of a run.</p></li>
 <li><p><strong>The first N samples are not a random sample.</strong> They give fast numbers that compare between runs, not estimates for the full dataset.</p></li>
 <li><p><strong>Failed sessions are never dropped.</strong> They stay in the denominators as ineligible, and an empty set of intervals shows as <code class="docutils literal notranslate"><span class="pre">n/a</span></code>, not as zero.</p></li>
 </ul>
@@ -3273,11 +3296,11 @@ python<span class="w"> </span>-m<span class="w"> </span>benchmarks.eval.benchmar
       </div>
     </a>
     <a class="right-next"
-       href="tts_bench.html"
+       href="duplex_load_generator_pacing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">TTS benchmark runbook</p>
+        <p class="prev-next-title">Duplex Load Generator Pacing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -3362,7 +3385,7 @@ By SGLang-Omni Team
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Oct 31, 2026.
+  Last updated on Nov 06, 2026.
   <br/>
 </p>
   </div>
