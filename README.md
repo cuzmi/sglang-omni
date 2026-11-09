@@ -8,6 +8,7 @@ experiment directories inside each topic.
 
 | Topic | Results |
 | --- | --- |
+| Realtime display | [Caption visibility and response scrolling](realtime-display/README.md) |
 | MiniCPM-o given-text streaming | [Streaming modes and chunk decoding](minicpm-given-text-stream/README.md) |
 | MiniCPM-o Flow/HiFT | [Serving performance, accuracy and overlap measurements](minicpm-flow-hift/README.md) |
 

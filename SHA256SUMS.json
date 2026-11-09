@@ -1,11 +1,11 @@
 {
   ".gitattributes": {
-    "bytes": 43822,
-    "sha256": "4f4347486e111603fef9946f08b2467ec81eb766e12f7d959370ae4f5977b066"
+    "bytes": 43933,
+    "sha256": "59b0b5b0813165737fd489bcce2d31696bb692f83b4bfd751857ff21b255235b"
   },
   "README.md": {
-    "bytes": 1154,
-    "sha256": "058a5aa7c34c3eb9d4a73f6fbc877e63d4e4449d94a314e3c7f4a5f43d0f6aab"
+    "bytes": 1249,
+    "sha256": "f3db144e276156bdb636999df10e05bb6e2b7758c90bd4359630e9ba807073d7"
   },
   "minicpm-flow-hift/2026-10-20-fixed-batches/20261020T135144Z/correctness.json": {
     "bytes": 1126,
@@ -7946,5 +7946,85 @@
   "minicpm-given-text-stream/README.md": {
     "bytes": 1159,
     "sha256": "ad385d041e4c68304263cebea522a372d14e0ca0afb6cfa958fb97c425f4fa2b"
+  },
+  "realtime-display/2026-11-07-captions/CLOSEOUT.json": {
+    "bytes": 682,
+    "sha256": "08ed8a3e0ce2db951c61ff0d5a571d668756b91db6f64d76972f87b4f73aab89"
+  },
+  "realtime-display/2026-11-07-captions/PROVENANCE.json": {
+    "bytes": 6264,
+    "sha256": "8c281b9d8d3c3b99a74e16849b0fc2d7f418c66272ce172a6611dcb93713d028"
+  },
+  "realtime-display/2026-11-07-captions/REPORT.md": {
+    "bytes": 3935,
+    "sha256": "260523ebdde9a5468913eff7967dc97b03c85009b5923a2d53ebf2db1036c801"
+  },
+  "realtime-display/2026-11-07-captions/modal/minicpm/ready-verification.json": {
+    "bytes": 2186,
+    "sha256": "6f06d5bfd5b3d887ddc8053b822460f09ded4816f4fd95f09be857adc44ea87d"
+  },
+  "realtime-display/2026-11-07-captions/modal/minicpm/source.json": {
+    "bytes": 712,
+    "sha256": "e6b19ff653b37dbdef45eca174246f07504531844181fec15e3b663bf60011c3"
+  },
+  "realtime-display/2026-11-07-captions/modal/minicpm/websocket-verification.json": {
+    "bytes": 100,
+    "sha256": "63f129d18c29bf5ec464040371ab8f95be013b98ee9f7b36d2cf4893a6b18b79"
+  },
+  "realtime-display/2026-11-07-captions/modal/qwen/after-manifest.json": {
+    "bytes": 335,
+    "sha256": "0d1aab8b7e8fd9e0d71b06c63afae57fc2d6b8ece892a622f5e009a66327786d"
+  },
+  "realtime-display/2026-11-07-captions/modal/qwen/after-ready-verification.json": {
+    "bytes": 523,
+    "sha256": "50c7f22edbda0b7a1fc3abcd117cf57918c37810f1e9c3668ba3eaea15992a8d"
+  },
+  "realtime-display/2026-11-07-captions/modal/qwen/ready-verification.json": {
+    "bytes": 530,
+    "sha256": "725639a8fda0c4aab35ff922dc3f98a9a4bd65473a08f4972ea94841c504de87"
+  },
+  "realtime-display/2026-11-07-captions/modal/qwen/reopen-verification.json": {
+    "bytes": 166,
+    "sha256": "2000fde76b60d0185adef8d861f9f000cabb5a06f06436311619aff1db442afd"
+  },
+  "realtime-display/2026-11-07-captions/modal/qwen/source.json": {
+    "bytes": 660,
+    "sha256": "f48a627853bafc7a3b8f1fd41802616a55307fb7673c1352ee7ebb37a72e9ae8"
+  },
+  "realtime-display/2026-11-07-captions/orb/after-browser.png": {
+    "bytes": 45562,
+    "sha256": "32589e9530e43663e23243c0fc18cb275c1a45eae30cfc8e1bef7ed62ad137e9"
+  },
+  "realtime-display/2026-11-07-captions/orb/after-results.json": {
+    "bytes": 1217,
+    "sha256": "8afeaf69b7adad5109dbd5b99ce4f5aa5afcb65fefefc19101e6aee0c650c92f"
+  },
+  "realtime-display/2026-11-07-captions/orb/before-browser.png": {
+    "bytes": 51713,
+    "sha256": "fc841ead9e07ac82863aa2de000539bfbab7220649b88302e24acc8c81e97a27"
+  },
+  "realtime-display/2026-11-07-captions/orb/before-results.json": {
+    "bytes": 1212,
+    "sha256": "a8895411f92e80d0e39f3c4f17cab098dd09bfac37148be9069c6268a81c7ddf"
+  },
+  "realtime-display/2026-11-07-captions/orb/comparison.json": {
+    "bytes": 392,
+    "sha256": "c1b8fe1bf6b919f1a07a9d4068e44a2c3653980d7f95f284746d25498be36dd7"
+  },
+  "realtime-display/2026-11-07-captions/orb/pre-commit-python312.log": {
+    "bytes": 2303,
+    "sha256": "0aafe9962d6f5f5cdd3a6511521f67ba9c8598434aed2eabd1fa0d693c40b781"
+  },
+  "realtime-display/2026-11-07-captions/qwen/manual-results.json": {
+    "bytes": 48984,
+    "sha256": "3115170736f5547227262e022774d1ccd353c6fee54edcda10c0d1f86bc74af9"
+  },
+  "realtime-display/2026-11-07-captions/qwen/pre-commit-display-python312.log": {
+    "bytes": 2303,
+    "sha256": "0aafe9962d6f5f5cdd3a6511521f67ba9c8598434aed2eabd1fa0d693c40b781"
+  },
+  "realtime-display/README.md": {
+    "bytes": 472,
+    "sha256": "15723ed6e5a972d1b095de84af5411fd0ae740c47795f6e8dce39f8479e9f6fb"
   }
 }

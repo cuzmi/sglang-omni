@@ -1,0 +1,12 @@
+{
+  "frontend_state": "before-qwen-caption-fix",
+  "commit": "2b57b14060896a1a2686dab48e3219b86672d3bd",
+  "verified_files": {
+    "app.js": "f09845d5ecf20feb3782626c85de2a2ba8f34afb299c2017e1ea4aa806637db5",
+    "styles.css": "bb841dc7adbad5af36adaac79753d11996c00c55120db4ad1525000379e0ce6d",
+    "playback.js": "64124652fc1f59d02d5fbe5ab12d099973639ffd21158e5ce0900685cd264b1d"
+  },
+  "websocket": "session.created and session.updated",
+  "gpu": "NVIDIA H200, 143771 MiB",
+  "expires_utc": "2026-11-07T21:07:07.576670+00:00"
+}

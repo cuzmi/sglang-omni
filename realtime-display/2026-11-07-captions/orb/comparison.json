@@ -1,0 +1,22 @@
+{
+  "before": {
+    "passed": 7,
+    "failed": [
+      "Chinese 600px streamed tail",
+      "English 600px streamed tail",
+      "Chinese 320px streamed tail",
+      "English 320px streamed tail",
+      "resize after stream ends"
+    ],
+    "caption_heights_px": [
+      55.4375
+    ]
+  },
+  "after": {
+    "passed": 12,
+    "failed": [],
+    "caption_heights_px": [
+      55.4375
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "base_commit": "67476823ae81b398626b85e368d1c6f11a832496",
+  "branch": "codex/realtime-caption-follow-tail",
+  "model_revision": "eb4141de24550a3a1a4082f718be58f46b761728",
+  "image": "docker.io/hongccc/sglang-omni@sha256:06ed306707bcf3d9e9beb5ba7ce66f09a666cac11c23455ece50c34199c0e985",
+  "archive_sha256": "75816f8cdaa07fed14cd38a1342f86b344aa96b3fc75c30f3168162b306345c9",
+  "frontend_sha256": {
+    "playground/realtime/frontend/orb/app.js": "fa56f8d17e12992c2dfa601599c49bcc114c78dde9c56193119f7e904f91e175",
+    "playground/realtime/frontend/orb/index.html": "b0851ba5d9277b636a5a389b8c79c8184918bcd87bc05950c6b2a75253594927"
+  },
+  "gpu": "H100",
+  "max_sessions": 1,
+  "gpu_timeout_seconds": 3600
+}

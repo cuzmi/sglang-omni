@@ -1,0 +1,22 @@
+{
+  "verified_at_utc": "2026-11-07T20:52:20.225074+00:00",
+  "apps": [
+    {
+      "app_id": "ap-eaiTHpi7ds5BQwUABCd6dW",
+      "description": "qwen-caption-before-demo-20261107",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-07 15:02:19-05:00",
+      "stopped_at": "2026-11-07 15:51:17-05:00"
+    },
+    {
+      "app_id": "ap-XGrO1peS7bArJXjTBXStdy",
+      "description": "minicpm-caption-demo-20261107",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-11-07 14:13:09-05:00",
+      "stopped_at": "2026-11-07 14:22:17-05:00"
+    }
+  ],
+  "action": "Qwen H200 app stopped during closeout; MiniCPM H100 app was already stopped."
+}
