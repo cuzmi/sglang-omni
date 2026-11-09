@@ -1,0 +1,146 @@
+{
+  "case_id": "zh_audio_activity_memory_v1",
+  "metadata": {
+    "usage": "Offline evaluation only. Do not send this file to the tested model or include it in summarization prompts.",
+    "content_origin": "Expected facts refer to the synthetic authored scenario, not to real events."
+  },
+  "facts": [
+    {
+      "id": "project_name",
+      "expected": "活动代号是松塔七十三号。",
+      "source_turn_ids": ["initial_project"]
+    },
+    {
+      "id": "current_budget",
+      "expected": "当前全部采购的总预算上限是人民币五百四十元。",
+      "source_turn_ids": ["initial_budget", "initial_budget_correction"],
+      "obsolete_values": ["七百八十元", "780 元"]
+    },
+    {
+      "id": "no_open_flame",
+      "expected": "现场禁止明火，不能使用点燃的蜡烛或酒精灯。",
+      "source_turn_ids": ["initial_constraint"]
+    },
+    {
+      "id": "room_reserved",
+      "expected": "活动室已经预订，不是待办事项。",
+      "source_turn_ids": ["initial_progress"]
+    },
+    {
+      "id": "registration_checked",
+      "expected": "报名名单已经核对，不是待办事项。",
+      "source_turn_ids": ["initial_progress"]
+    },
+    {
+      "id": "materials_pending",
+      "expected": "桌面材料还没采购，仍是待办事项。",
+      "source_turn_ids": ["initial_progress"]
+    },
+    {
+      "id": "seating_pending",
+      "expected": "座位图还没画，仍是待办事项。",
+      "source_turn_ids": ["initial_progress"]
+    }
+  ],
+  "probes": [
+    {
+      "id": "factual_recall",
+      "checks": [
+        {
+          "id": "recall_project",
+          "fact_ids": ["project_name"],
+          "pass_condition": "明确说出松塔七十三号。数字写法不同可以接受；转录中的同音字必须回听音频确认，不因单个转录错字直接判记忆失败。"
+        },
+        {
+          "id": "recall_corrected_budget",
+          "fact_ids": ["current_budget"],
+          "pass_condition": "把五百四十元明确作为当前总预算上限；提到七百八十元时必须明确它已经作废。不得同时保留两个有效上限。"
+        },
+        {
+          "id": "recall_constraint",
+          "fact_ids": ["no_open_flame"],
+          "pass_condition": "明确表达禁止明火。仅说注意安全或选择安全材料不算通过；不要求逐一复述示例。"
+        },
+        {
+          "id": "recall_completed_room",
+          "fact_ids": ["room_reserved"],
+          "pass_condition": "把预订活动室明确归为已完成。"
+        },
+        {
+          "id": "recall_completed_registration",
+          "fact_ids": ["registration_checked"],
+          "pass_condition": "把核对报名名单明确归为已完成。"
+        },
+        {
+          "id": "recall_pending_materials",
+          "fact_ids": ["materials_pending"],
+          "pass_condition": "把采购桌面材料明确归为未完成。"
+        },
+        {
+          "id": "recall_pending_seating",
+          "fact_ids": ["seating_pending"],
+          "pass_condition": "把绘制座位图明确归为未完成。"
+        }
+      ]
+    },
+    {
+      "id": "applied_planning",
+      "checks": [
+        {
+          "id": "plan_identity",
+          "fact_ids": ["project_name"],
+          "pass_condition": "计划明确对应松塔七十三号，允许数字写法差异；转录有歧义时以实际音频为准。"
+        },
+        {
+          "id": "plan_current_budget",
+          "fact_ids": ["current_budget"],
+          "pass_condition": "明确以五百四十元为当前总采购上限，且所有建议金额之和不超限；可以不虚构具体报价。只碰巧提出少于五百四十元的采购，不说明有效上限，不算记住预算。"
+        },
+        {
+          "id": "plan_constraint_applied",
+          "fact_ids": ["no_open_flame"],
+          "pass_condition": "明确依据禁止明火的限制选择无需明火的材料或工具，不安排点燃蜡烛、酒精灯等活动。仅碰巧选择纸张等材料而未表达该限制，不算证明约束被保留。"
+        },
+        {
+          "id": "plan_preserves_room_status",
+          "fact_ids": ["room_reserved"],
+          "pass_condition": "承认活动室已预订，不把首次预订列为尚未完成的必做任务。可提出复查已完成事项，但必须标清复查性质。"
+        },
+        {
+          "id": "plan_preserves_registration_status",
+          "fact_ids": ["registration_checked"],
+          "pass_condition": "承认报名名单已核对，不把首次核对列为尚未完成的必做任务。可提出复查已完成事项，但必须标清复查性质。"
+        },
+        {
+          "id": "plan_material_purchase",
+          "fact_ids": ["materials_pending"],
+          "pass_condition": "安排采购桌面材料作为下一步，不声称材料已经买好。"
+        },
+        {
+          "id": "plan_seating_chart",
+          "fact_ids": ["seating_pending"],
+          "pass_condition": "安排绘制座位图作为下一步，不声称座位图已经完成。"
+        },
+        {
+          "id": "plan_no_invented_history",
+          "fact_ids": [],
+          "pass_condition": "不把未提供的日期、人数、负责人、现成报价或进度当作已知事实。明确标为建议、假设或待确认的信息可以接受。"
+        }
+      ]
+    }
+  ],
+  "validity_checks": [
+    "每个 probe 从独立的新用户会话开始，按相同顺序播放全部 initial_turns 和相同次数的 filler_turns，最后仅播放该 probe。不能先做 factual_recall 再在同一会话做 applied_planning。",
+    "所有被比较策略使用相同音频文件、同样的采样配置和明确记录的版本；每次运行使用唯一会话标识，并保存音频文件哈希和完整输入时间线。",
+    "rubric 只用于离线评分，不能发送给被测模型，也不能作为摘要提示词的一部分；filler 和 probe 不携带事实的期望值。",
+    "先在独立短会话中跳过 filler 验证同一初始音频和 probe，确认模型能听清代号、金额与状态；此短会话的回答不能拼入长会话。短会话失败时，长会话错误不能单独归因于历史压缩。",
+    "必须从运行时记录确认 probe 前实际触发目标机制，并记录每次处理前后上下文 token 数、保留历史边界和耗时。音频时长、filler 数量及配置值不能单独证明已触发。",
+    "对 basic window，需确认相关初始事实及其更正所在输入 unit 已离开保留窗口；对摘要重建，需确认这些内容进入摘要覆盖范围且旧原始 units 未继续保留。否则只能报告近距离回忆，不能判定跨压缩记忆。",
+    "保存整个会话的模型输出，检查是否在 filler 中自行复述关键事实。若出现复述，应记录它与最后裁剪边界的关系；仍留在近期窗口中的复述属于信息被刷新，不能作为旧事实经摘要保留的证据。",
+    "固定 response_gap_seconds 只是输入排程参数，不证明上一轮已说完。记录输入、模型输出及实际播放时间；出现非预期重叠、截断、漏送、取消或请求失败时，标记运行无效，不计为记忆失败。",
+    "最终 probe 的回答必须完整采集到响应结束或预先约定的超时；不能用十二秒输入间隔截断最终回答。若摘要或重建期间发生排队，记录新增等待时间和队列中的输入是否完整送达。",
+    "每项 check 分别记为 pass、omitted、contradicted 或 unscorable。明确承认不记得属于 omitted，不等同于编造；音频缺失、截断或听辨不清属于 unscorable。",
+    "分别报告功能正确性、事实遗漏与矛盾、约束执行以及额外延迟，不将它们合并成单一成功结论。摘要生成、重建 prefill 和用户可感知等待时间分开记录。",
+    "单个脚本的一次运行仅是一个案例；策略比较需重复运行并保留逐次结果。若需增加 filler_cycles 以覆盖实际裁剪边界，先固定新工作量，再对所有策略用完全相同的输入重跑。"
+  ]
+}

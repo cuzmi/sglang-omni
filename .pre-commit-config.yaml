@@ -25,6 +25,8 @@ repos:
       - id: check-toml
       - id: check-ast
       - id: check-added-large-files
+        # Frozen audio fixtures have per-file hashes in audio_v1/SHA256SUMS.
+        exclude: ^benchmarks/duplex/context_memory/audio_v1/.*\.wav$
       - id: check-merge-conflict
       - id: check-shebang-scripts-are-executable
         exclude: (?:^\.claude/skills/|^sglang_omni_router/tests/.*\.rs$|^Voxt/(?!backend/|Config/OmniDev\.xcconfig$|Voxt/VoxtOmniDev\.entitlements$|Voxt/Transcription/Omni))
