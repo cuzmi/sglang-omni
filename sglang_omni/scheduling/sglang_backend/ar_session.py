@@ -479,6 +479,17 @@ class ARSessionBridge:
         )
         if history_cut is not None:
             self.drop_history(session, native_session, history_cut)
+            logger.info(
+                f"history_cut session_id={unit.session_identity.id} "
+                f"session_open_index={unit.session_identity.open_index} "
+                f"request_id={unit.request_id} "
+                f"input_seq={unit.chunk.seq} "
+                f"input_t_start_ms={unit.chunk.t_start_ms} "
+                f"history_tokens_before={history_length} "
+                f"history_tokens_after={retained_history_length(native_session)} "
+                f"dropped_tokens={history_cut.length} "
+                f"dropped_token_ranges={history_cut.ranges}"
+            )
             history_length -= history_cut.length
         else:
             pass
@@ -589,13 +600,6 @@ class ARSessionBridge:
             for span in session.embedding_spans
             if not cut.drops(span.start, span.end)
         ]
-        logger.info(
-            "Session %s: dropped %d history tokens in %d ranges, %d kept",
-            native_session.session_id,
-            cut.length,
-            len(cut.ranges),
-            native_session.committed_origin_len,
-        )
 
     def release_append_unit(self, request_id: str) -> None:
         unit = self.units_by_request_id.pop(request_id, None)

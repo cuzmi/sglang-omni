@@ -28,7 +28,19 @@ Both policies use the same clip list, sampling settings, response completion rul
 
 First run the short control to check initial comprehension. Then use the long list for both policies. Confirm actual cut/rebuild events before the probe, including token counts, retained history boundaries, and maintenance latency. Verify that the initial facts and any assistant repetitions have left the basic window. Clip count or elapsed time alone does not prove a cut occurred. Report protocol failures separately from memory errors, and report correctness, information loss, and added latency separately.
 
-This package does not implement the replay driver, compaction, or scoring. The existing `benchmark_duplex.py` CLI consumes a single WAV, has a 230-second limit, and does not consume these playlists. A playlist driver needs sufficient client and server session lifetimes. The current checkout predates the basic-window implementation in PR #2973; the baseline deployment must contain it.
+This package does not implement the replay driver, compaction, or scoring. The existing `benchmark_duplex.py` CLI consumes a single WAV, has a 230-second limit, and does not consume these playlists. A playlist driver needs sufficient client and server session lifetimes. This checkout includes the basic history window.
+
+## Observe history cuts
+
+With INFO logging enabled, the session bridge emits one `history_cut` line after each successful cut. For example:
+
+```text
+history_cut session_id=native session_open_index=7 request_id=next input_seq=42 input_t_start_ms=42000 history_tokens_before=23 history_tokens_after=18 dropped_tokens=5 dropped_token_ranges=((2, 5), (10, 12))
+```
+
+The before/after counts include the previous unit's output retained for the next append and exclude the incoming unit. `input_seq` and `input_t_start_ms` identify the incoming audio unit that triggered the cut; they are not playlist question numbers or wall-clock timestamps. The half-open `dropped_token_ranges` use coordinates immediately before that cut, not coordinates in the original conversation. Join the session ID, open index, and input position with the replay record when investigating an answer.
+
+This event confirms that the cut completed; the next append or generation can still fail. Check subsequent responses for continued interaction and judge answers against the fixture separately. No event is emitted when no cut is requested or when the cut raises an error.
 
 ## Integrity and evidence
 
