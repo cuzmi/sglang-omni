@@ -1,5 +1,6 @@
 {
   "version": 1,
+  "fixture_revision": 2,
   "case_id": "zh_audio_activity_memory_v1",
   "audio_origin": "Locally synthesized speech; not a human recording.",
   "synthesizer": "macOS say",
@@ -9,38 +10,40 @@
   "sample_rate_hz": 16000,
   "channels": 1,
   "sample_width_bytes": 2,
-  "response_gap_seconds": 12,
-  "final_silence_seconds": 35,
-  "initial_prefix_frames": 2185174,
-  "scenario_sha256": "1343555362c99860077233047537330658f19d3936f99c0da8bf347b9126d6c0",
-  "rubric_sha256": "f5bf0d00b1e38fc5d39b7e8fd24d4062b26e8d2555a3384109703ef54e63c6a9",
+  "response_gap_seconds": 30,
+  "final_silence_seconds": 60,
+  "initial_prefix_frames": 3860789,
+  "scenario_sha256": "17dca0b599e323f557ab09e300ad21c5733a682d75b869f2973021599d810f0d",
+  "rubric_sha256": "51ee6cf871c6967e62d0ce1b83137f013edcc7a3fee2e6115aa44de7eb91e08f",
   "model_run_performed": false,
   "context_cut_observed": null,
   "artifacts": [
     {
       "file": "short-control.wav",
-      "duration_seconds": 186.86325,
+      "duration_seconds": 316.5891875,
       "filler_turns": 0,
-      "probe_start_seconds": 136.573375,
+      "probe_start_seconds": 241.2993125,
       "timeline_file": "short-control.timeline.json",
-      "sha256": "709ad0b2371ca8548d6a791d515b0355a2d2e749f8af75b562477d138550a4f2"
+      "sha256": "0cfc72d46c2b3512573e80bfb0f914a4a7ac701ac29916c74aec950fb72eb766",
+      "role": "listening_preview"
     },
     {
       "file": "long.wav",
-      "duration_seconds": 1250.363125,
+      "duration_seconds": 2585.72325,
       "filler_turns": 63,
-      "probe_start_seconds": 1200.07325,
+      "probe_start_seconds": 2510.433375,
       "timeline_file": "long.timeline.json",
-      "sha256": "20d563b46a0bc491870214f686c89478abb5a87441bc84a52547a1b1e20200ec"
+      "sha256": "240d09187a64bef0e9742812bd53f49596a62e48ab339bea28dcb7b03ec2b6a9",
+      "role": "listening_preview"
     }
   ],
   "clips": [
     {
       "id": "initial_ack",
       "file": "clips/initial_ack.wav",
-      "duration_seconds": 15.3768125,
+      "duration_seconds": 12.10275,
       "peak_absolute_pcm16": 21966,
-      "sha256": "d0c77713a9cacb3e176b4ccb0d96e2d3fdece4cecaa27524805487d24c49d121"
+      "sha256": "2ee37fdeb6fc24679ec667328788342d7a7901b48f1f03ebc9efdcd16980b99c"
     },
     {
       "id": "initial_project",
@@ -80,212 +83,212 @@
     {
       "id": "filler_01",
       "file": "clips/filler_01.wav",
-      "duration_seconds": 5.854125,
-      "peak_absolute_pcm16": 20764,
-      "sha256": "a4a947d6247923c0f68ea895089494760cdaf0ddaa0ea82e61be500a24c03998"
+      "duration_seconds": 6.991875,
+      "peak_absolute_pcm16": 20673,
+      "sha256": "7262a5ede3962ba6812a1d250e63a12744e2b81e6d1c17416f8189856abeb3d5"
     },
     {
       "id": "filler_02",
       "file": "clips/filler_02.wav",
-      "duration_seconds": 5.0189375,
+      "duration_seconds": 6.1566875,
       "peak_absolute_pcm16": 22642,
-      "sha256": "0d3b932a0424dbcc63c2101f0a675885238fb895caf32a982d39102dd68371b1"
+      "sha256": "07496200d1110022db8ea3c294f49610bff907a76f52545a24d32ebd132b2bfc"
     },
     {
       "id": "filler_03",
       "file": "clips/filler_03.wav",
-      "duration_seconds": 5.2064375,
+      "duration_seconds": 6.34425,
       "peak_absolute_pcm16": 23377,
-      "sha256": "c8b9d5671041f589c16f2a1991f567a8308a92cf9824cf509709aa8eb209bdd4"
+      "sha256": "86943709a055d774d4d0c376459501f61906f36d17c478b46298fe8a22664ab2"
     },
     {
       "id": "filler_04",
       "file": "clips/filler_04.wav",
-      "duration_seconds": 4.3560625,
+      "duration_seconds": 5.493875,
       "peak_absolute_pcm16": 21233,
-      "sha256": "120c044f80f12a8b0d4cf0db6af16f13613213410653200bcf2e46679b777c7f"
+      "sha256": "fc3e2b644582cf4507d35f7f8ee8e009028a4d24cdf5f67c7c805e8950db4513"
     },
     {
       "id": "filler_05",
       "file": "clips/filler_05.wav",
-      "duration_seconds": 4.7983125,
+      "duration_seconds": 5.936125,
       "peak_absolute_pcm16": 22582,
-      "sha256": "ef7730fa5fd9ec4361a2925b407aa0d71c421dcb49c64a6501fe2353f101fa11"
+      "sha256": "0ef0a5f7c7b633449fc55b47de89b1bdc15f26c86eb4d3d620051dbf9348c5b4"
     },
     {
       "id": "filler_06",
       "file": "clips/filler_06.wav",
-      "duration_seconds": 4.6370625,
-      "peak_absolute_pcm16": 21802,
-      "sha256": "c5f081a636f75168abe5ed2e528cb5c26bf64563ee5341bab0c351ea3c734194"
+      "duration_seconds": 5.774875,
+      "peak_absolute_pcm16": 20646,
+      "sha256": "52a925c46dcf8b63f9e1ea27d372595343f449a6c008ef30b12c544c54cdbadc"
     },
     {
       "id": "filler_07",
       "file": "clips/filler_07.wav",
-      "duration_seconds": 4.78675,
-      "peak_absolute_pcm16": 20520,
-      "sha256": "43eafb66961520065a29d4f76e56ea662144c5d18cc5d06e5199296f9fc9f718"
+      "duration_seconds": 5.9245,
+      "peak_absolute_pcm16": 19905,
+      "sha256": "04a997e17da17a549dc84fdd84b6a1c889d7ef8f3f9725cc8b4a316dcfd907e4"
     },
     {
       "id": "filler_08",
       "file": "clips/filler_08.wav",
-      "duration_seconds": 3.262375,
-      "peak_absolute_pcm16": 20177,
-      "sha256": "3970bf7a14a3d7f6ca368fcdc78367ef2d5dd6ac3b2ab2840d96ad8b8a46d61c"
+      "duration_seconds": 4.3885625,
+      "peak_absolute_pcm16": 18877,
+      "sha256": "d9498d9ffe83582127f9052129bd0529db081fd04828629589ea1a61ed0b4e91"
     },
     {
       "id": "filler_09",
       "file": "clips/filler_09.wav",
-      "duration_seconds": 5.1001875,
+      "duration_seconds": 6.238,
       "peak_absolute_pcm16": 22670,
-      "sha256": "8b2dca7dc11fc731d6e8e33b326b70a01ada94ce70c7007f294c1046b0a3c43d"
+      "sha256": "7b64b1377a92bc4e55fe6cbafc5159a12cf0832efe75594f1308741be0b24215"
     },
     {
       "id": "filler_10",
       "file": "clips/filler_10.wav",
-      "duration_seconds": 3.5948125,
-      "peak_absolute_pcm16": 20767,
-      "sha256": "2779d861d8a7a8b975a1322d316e8f77c828bfa067f60908376a608f8f583472"
+      "duration_seconds": 4.7325625,
+      "peak_absolute_pcm16": 20106,
+      "sha256": "8ab47d9c243d062121643fcfb11cb74576bf447d818773dcc300e7e07b570bc9"
     },
     {
       "id": "filler_11",
       "file": "clips/filler_11.wav",
-      "duration_seconds": 5.5058125,
+      "duration_seconds": 6.643625,
       "peak_absolute_pcm16": 21051,
-      "sha256": "c61a91719e1155bca8be952a88946d69fb8af77f43fbe6fd368c15cc778e434b"
+      "sha256": "ad24affe4414d19069794d79082a2e4c2151ff964f1c8b48b450d5590818a308"
     },
     {
       "id": "filler_12",
       "file": "clips/filler_12.wav",
-      "duration_seconds": 5.6806875,
+      "duration_seconds": 6.8185,
       "peak_absolute_pcm16": 20853,
-      "sha256": "4012121e3d0d2c426de177eba0203b437ef906dbc3309e9a7f71c7d20e24505d"
+      "sha256": "fdf98c343807d4320f21ab70a52dbc9befbe06e5877f14d886b98bfee807eebd"
     },
     {
       "id": "filler_13",
       "file": "clips/filler_13.wav",
-      "duration_seconds": 4.2823125,
-      "peak_absolute_pcm16": 20734,
-      "sha256": "3512c0a847bfc1de9cd4674e65c4a104b7608de6cc78e722350b62871fe3996a"
+      "duration_seconds": 5.420125,
+      "peak_absolute_pcm16": 18377,
+      "sha256": "d5f234f13a8282cbfdd2d5a39ff633a8a8ee21e212c9f926d6708cf76d44b9fd"
     },
     {
       "id": "filler_14",
       "file": "clips/filler_14.wav",
-      "duration_seconds": 4.7054375,
+      "duration_seconds": 5.84325,
       "peak_absolute_pcm16": 20718,
-      "sha256": "d03e797e6ec8721073e3cec93d1f745d3b1a6a4babbcb7be9184e307233e4045"
+      "sha256": "d72ac51b16bf931f75219e6bd5ffdc02ac7968df67ceebb7c5d32badd1a0752d"
     },
     {
       "id": "filler_15",
       "file": "clips/filler_15.wav",
-      "duration_seconds": 5.475625,
+      "duration_seconds": 6.613375,
       "peak_absolute_pcm16": 22622,
-      "sha256": "3cae8ce406cf9c3883940908da2f163f9257086b8ca385ccbd7a3516d75e6bdb"
+      "sha256": "df19280fd30e46665cda2c573d6797fe4ac133c5cb67df6bba236a8c3afe1ea9"
     },
     {
       "id": "filler_16",
       "file": "clips/filler_16.wav",
-      "duration_seconds": 4.6241875,
+      "duration_seconds": 5.7619375,
       "peak_absolute_pcm16": 21832,
-      "sha256": "5aefa1741f086d023131d13ae21b8cf4dcb852810881b666a4de34d865a1e9cd"
+      "sha256": "a70ba04329ddc65f49fa46a16a575bc0b536f4b53a83aa4ee2d19cb37ab71786"
     },
     {
       "id": "filler_17",
       "file": "clips/filler_17.wav",
-      "duration_seconds": 4.4393125,
+      "duration_seconds": 5.5654375,
       "peak_absolute_pcm16": 23454,
-      "sha256": "eede053a2338176e12a604b3ed12898d22549af179b6af133803b60f593b2a56"
+      "sha256": "c1314b42e57dbb9ea4b2f1cbfaa9a2cdb926c0f81569e27dea78962110533aec"
     },
     {
       "id": "filler_18",
       "file": "clips/filler_18.wav",
-      "duration_seconds": 5.5315625,
-      "peak_absolute_pcm16": 20632,
-      "sha256": "404ade287a40113ad07253f27f999afa4cae1ef231a7c715217a122152b6e812"
+      "duration_seconds": 6.669375,
+      "peak_absolute_pcm16": 20560,
+      "sha256": "ac49687a6864199882527b507ae3396f7b789972aa1628597e27419dd184aa71"
     },
     {
       "id": "filler_19",
       "file": "clips/filler_19.wav",
-      "duration_seconds": 4.7983125,
-      "peak_absolute_pcm16": 20837,
-      "sha256": "237965049020c30e25c930e8150da88cc67909fe67e843e32e17528116438b8c"
+      "duration_seconds": 5.936125,
+      "peak_absolute_pcm16": 20382,
+      "sha256": "92d90e08a81ad4b4c51c391d7e9e70384a59c4441780629cb88cec20ed65f402"
     },
     {
       "id": "filler_20",
       "file": "clips/filler_20.wav",
-      "duration_seconds": 4.7233125,
+      "duration_seconds": 5.861125,
       "peak_absolute_pcm16": 24292,
-      "sha256": "35910014fd14591c8cc3943504472b57b5ebda277b668181ef6216cd7a7f305e"
+      "sha256": "676c497be97bdd68c5bd8f36525d2048bf1f891755eb41256280113cca4c1091"
     },
     {
       "id": "filler_21",
       "file": "clips/filler_21.wav",
-      "duration_seconds": 5.645875,
+      "duration_seconds": 6.783625,
       "peak_absolute_pcm16": 22892,
-      "sha256": "aa651451048257a24d269ba7acfd7d944ab8a5dcad9e521789b0a919bb3e5a75"
+      "sha256": "8ceb6f3d0e9017cb6a56d9958c90e87a4bdffceb42d46d2e4f0b8573dce94abe"
     },
     {
       "id": "filler_22",
       "file": "clips/filler_22.wav",
-      "duration_seconds": 4.1201875,
-      "peak_absolute_pcm16": 20416,
-      "sha256": "91d5036bd101ffa0d1e2b02b4daa942c0a63972589293fb46a582720413b8fb3"
+      "duration_seconds": 5.258,
+      "peak_absolute_pcm16": 19404,
+      "sha256": "6752d52a7bdc0cd92bfe99750f4fa898b75edc679d728732b2ef1028622144a4"
     },
     {
       "id": "filler_23",
       "file": "clips/filler_23.wav",
-      "duration_seconds": 5.26275,
-      "peak_absolute_pcm16": 20660,
-      "sha256": "f95f41cfa09970123e984b3c68db3104283958dd05fdfc5a367719f319641832"
+      "duration_seconds": 6.4005,
+      "peak_absolute_pcm16": 19041,
+      "sha256": "0ff2e70a006ccab672d3214597a76462169ba1a60135873e1f00ac16d0bb2e53"
     },
     {
       "id": "filler_24",
       "file": "clips/filler_24.wav",
-      "duration_seconds": 4.842625,
-      "peak_absolute_pcm16": 20713,
-      "sha256": "2fc88a744f120293fa496c898aa86d3db1009ba9092f347455f25aa47b2e69e5"
+      "duration_seconds": 5.980375,
+      "peak_absolute_pcm16": 19985,
+      "sha256": "4d14a109d856238600764c89baa724cba8c5131aaa3839a8553971074eb0d737"
     },
     {
       "id": "filler_25",
       "file": "clips/filler_25.wav",
-      "duration_seconds": 5.436875,
+      "duration_seconds": 6.5746875,
       "peak_absolute_pcm16": 21175,
-      "sha256": "28ca8aa7a194e95596d19c90ee751da0a524f350b7f70d218addc87c165d210b"
+      "sha256": "d2867a3d0cde9b37ed4a6a4cdd5c57de3749f95fa94e2148509838ea1d1eb5b6"
     },
     {
       "id": "filler_26",
       "file": "clips/filler_26.wav",
-      "duration_seconds": 4.5468125,
+      "duration_seconds": 5.684625,
       "peak_absolute_pcm16": 23966,
-      "sha256": "bd6ee79756557db58bd1aefaab48e7ebff0e3489e522c5b3e252d3e4cf5d3ba3"
+      "sha256": "eb7c3c6818b94bfc32190049b5505ff998d753fbecf42cbb02c704779beb7d4f"
     },
     {
       "id": "filler_27",
       "file": "clips/filler_27.wav",
-      "duration_seconds": 4.879625,
+      "duration_seconds": 6.017375,
       "peak_absolute_pcm16": 22862,
-      "sha256": "ccbe39e169411d1093f5cbcf953e82fb5f858b22a58f226199fbd613d7927c65"
+      "sha256": "5fe4309b6b3ee772235060dae506430cca4cca3e92c7834de66add7b0f926a7b"
     },
     {
       "id": "filler_28",
       "file": "clips/filler_28.wav",
-      "duration_seconds": 4.6601875,
+      "duration_seconds": 5.798,
       "peak_absolute_pcm16": 21417,
-      "sha256": "03704bfa03088d62499c04e64fa7b450901ad52f1e2f39918ffa60538424ad6f"
+      "sha256": "ee9cbdbed16a17b5d7dc1923fd5445216245f668c2d0eeb97dc7fa9a74478ede"
     },
     {
       "id": "filler_29",
       "file": "clips/filler_29.wav",
-      "duration_seconds": 5.42525,
+      "duration_seconds": 6.5630625,
       "peak_absolute_pcm16": 23531,
-      "sha256": "48fc470516619feb055c27d91e88d25ea4c4ac5fa5f1609cd4dce2e7801b9512"
+      "sha256": "b92e2a854cd5abae79268adaf3e3357fc67360f2932a4e50e7026abe8bfd4cfb"
     },
     {
       "id": "filler_30",
       "file": "clips/filler_30.wav",
-      "duration_seconds": 4.508375,
-      "peak_absolute_pcm16": 22028,
-      "sha256": "3eda5c8217af3c0462f5e593a4aee5eb193cf107cd9bac95a6baacbf2b72e6e1"
+      "duration_seconds": 5.6461875,
+      "peak_absolute_pcm16": 21758,
+      "sha256": "a7bc18507687beeefeae5dddf062768bd263b1d5d26dc7ecb5d0dacdff9675d2"
     },
     {
       "id": "factual_recall",
@@ -297,15 +300,14 @@
     {
       "id": "applied_planning",
       "file": "clips/applied_planning.wav",
-      "duration_seconds": 18.459375,
+      "duration_seconds": 17.008125,
       "peak_absolute_pcm16": 21717,
-      "sha256": "7958bbcc1ddcab3d7f89684805066f3feccdd3f3a262b9c96004d57cf6ec6e75"
+      "sha256": "db5cbbc7822118b478075faa7e22983a704327c2fb345c1fa47a0eb88e35315b"
     }
   ],
   "filler_schedule": {
-    "order": "Repeat filler_turns in listed order; stop only at a completed turn boundary.",
-    "stop_condition": "First filler boundary at or after 1200 seconds from the start of the recording, including initial turns and gaps.",
-    "minimum_probe_start_seconds": 1200,
+    "order": "Repeat filler_turns in listed order for exactly 63 filler turns.",
+    "stop_condition": "Stop after 63 completed filler turns; elapsed silence does not reduce the turn count.",
     "rendered_filler_turn_count": 63
   },
   "verification": {
@@ -316,6 +318,10 @@
     "identical_initial_pcm_between_variants": "passed",
     "identical_probe_pcm_between_variants": "passed",
     "human_listening_review": false,
-    "model_evaluation": false
-  }
+    "model_evaluation": false,
+    "unchanged_fact_and_factual_probe_clips": "passed",
+    "preserved_63_turn_sequence": "passed"
+  },
+  "replay_driver_implemented": false,
+  "supersedes_commit": "6212c0df986e80d74a7a98817372a65b62a3927b"
 }

@@ -8,16 +8,17 @@
       "applied_planning"
     ],
     "probe_execution": "Run each probe in a separate session. The short control uses all initial turns followed by the selected probe, without fillers.",
-    "timing_note": "speech_rate is the macOS say rate argument. response_gap_seconds schedules silence after user utterances; it does not guarantee that an assistant response has finished."
+    "timing_note": "speech_rate is the macOS say rate argument. response_gap_seconds and final_silence_seconds apply only to merged listening previews. Benchmark replay uses clips in one persistent session, sends silence while waiting, and advances after the current response.done has status completed.",
+    "revision_note": "Revision 2 removes spoken answer-length restrictions and extends response gaps; the 63-turn filler sequence and expected facts are preserved."
   },
   "language": "zh-CN",
   "voice": "Tingting",
   "speech_rate": 180,
-  "response_gap_seconds": 12,
+  "response_gap_seconds": 30,
   "initial_turns": [
     {
       "id": "initial_ack",
-      "text": "接下来五条消息介绍同一个活动，请记住它们。对这五条消息，每次只回复收到，不要复述。之后我开始提问时，再正常回答。现在也只回复收到。"
+      "text": "接下来五条消息介绍同一个活动，请记住这些信息。你可以正常回应。之后我们会聊些别的话题，最后再回到这个活动。"
     },
     {
       "id": "initial_project",
@@ -43,123 +44,123 @@
   "filler_turns": [
     {
       "id": "filler_01",
-      "text": "现在开始聊些别的话题。鲸鱼是鱼类吗？请用一句话回答。"
+      "text": "现在开始聊些别的话题。鲸鱼是鱼类吗？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_02",
-      "text": "为什么月亮看起来有时圆有时弯？请用一句话回答。"
+      "text": "为什么月亮看起来有时圆有时弯？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_03",
-      "text": "企鹅一般生活在北极还是南半球？请用一句话回答。"
+      "text": "企鹅一般生活在北极还是南半球？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_04",
-      "text": "骆驼的驼峰主要储存什么？请用一句话回答。"
+      "text": "骆驼的驼峰主要储存什么？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_05",
-      "text": "为什么下雨后有时能看到彩虹？请用一句话回答。"
+      "text": "为什么下雨后有时能看到彩虹？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_06",
-      "text": "地球自转一周大约需要多久？请用一句话回答。"
+      "text": "地球自转一周大约需要多久？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_07",
-      "text": "为什么肥皂泡常常接近球形？请用一句话回答。"
+      "text": "为什么肥皂泡常常接近球形？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_08",
-      "text": "蝙蝠是鸟类吗？请用一句话回答。"
+      "text": "蝙蝠是鸟类吗？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_09",
-      "text": "为什么冬天呼气有时会出现白雾？请用一句话回答。"
+      "text": "为什么冬天呼气有时会出现白雾？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_10",
-      "text": "海水为什么是咸的？请用一句话回答。"
+      "text": "海水为什么是咸的？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_11",
-      "text": "向日葵的种子通常长在植株的什么部位？请用一句话回答。"
+      "text": "向日葵的种子通常长在植株的什么部位？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_12",
-      "text": "为什么声音在空山里有时会产生回声？请用一句话回答。"
+      "text": "为什么声音在空山里有时会产生回声？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_13",
-      "text": "蜘蛛和昆虫的腿数一样吗？请用一句话回答。"
+      "text": "蜘蛛和昆虫的腿数一样吗？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_14",
-      "text": "为什么轮船可以浮在水面上？请用一句话回答。"
+      "text": "为什么轮船可以浮在水面上？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_15",
-      "text": "蚕吐出的丝可以制成哪一种常见织物？请用一句话回答。"
+      "text": "蚕吐出的丝可以制成哪一种常见织物？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_16",
-      "text": "为什么人在镜子里能看到自己？请用一句话回答。"
+      "text": "为什么人在镜子里能看到自己？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_17",
-      "text": "袋鼠的育儿袋主要有什么作用？请用一句话回答。"
+      "text": "袋鼠的育儿袋主要有什么作用？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_18",
-      "text": "雪花的基本对称形状通常有几个角？请用一句话回答。"
+      "text": "雪花的基本对称形状通常有几个角？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_19",
-      "text": "为什么有些鸟会在秋天迁徙？请用一句话回答。"
+      "text": "为什么有些鸟会在秋天迁徙？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_20",
-      "text": "竹子是草本植物还是木本植物？请用一句话回答。"
+      "text": "竹子是草本植物还是木本植物？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_21",
-      "text": "为什么晴天的天空通常看起来是蓝色的？请用一句话回答。"
+      "text": "为什么晴天的天空通常看起来是蓝色的？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_22",
-      "text": "章鱼通常有多少条腕？请用一句话回答。"
+      "text": "章鱼通常有多少条腕？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_23",
-      "text": "为什么雨后的泥土常有一种特殊气味？请用一句话回答。"
+      "text": "为什么雨后的泥土常有一种特殊气味？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_24",
-      "text": "树木的年轮可以帮助人们估计什么？请用一句话回答。"
+      "text": "树木的年轮可以帮助人们估计什么？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_25",
-      "text": "为什么气球摩擦头发以后会吸引纸屑？请用一句话回答。"
+      "text": "为什么气球摩擦头发以后会吸引纸屑？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_26",
-      "text": "海豚主要用鳃还是肺呼吸？请用一句话回答。"
+      "text": "海豚主要用鳃还是肺呼吸？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_27",
-      "text": "为什么指南针能帮助人辨认方向？请用一句话回答。"
+      "text": "为什么指南针能帮助人辨认方向？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_28",
-      "text": "蜗牛背上的壳主要有什么作用？请用一句话回答。"
+      "text": "蜗牛背上的壳主要有什么作用？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_29",
-      "text": "为什么远处的山有时看起来颜色很淡？请用一句话回答。"
+      "text": "为什么远处的山有时看起来颜色很淡？请展开解释，并举一个例子。"
     },
     {
       "id": "filler_30",
-      "text": "萤火虫发光主要是为了什么？请用一句话回答。"
+      "text": "萤火虫发光主要是为了什么？请展开解释，并举一个例子。"
     }
   ],
   "probes": [
@@ -169,13 +170,14 @@
     },
     {
       "id": "applied_planning",
-      "text": "回到我们最开始讨论的活动。请给我一个能直接执行的后续计划，说明活动代号、经费安排、材料选择和下一步任务。区分已完成事项与待办事项，最多四句话；信息不够时不要编造。"
+      "text": "回到我们最开始讨论的活动。请给我一个能直接执行的后续计划，说明活动代号、经费安排、材料选择和下一步任务。区分已完成事项与待办事项；信息不够时不要编造。"
     }
   ],
   "filler_schedule": {
-    "order": "Repeat filler_turns in listed order; stop only at a completed turn boundary.",
-    "stop_condition": "First filler boundary at or after 1200 seconds from the start of the recording, including initial turns and gaps.",
-    "minimum_probe_start_seconds": 1200,
+    "order": "Repeat filler_turns in listed order for exactly 63 filler turns.",
+    "stop_condition": "Stop after 63 completed filler turns; elapsed silence does not reduce the turn count.",
     "rendered_filler_turn_count": 63
-  }
+  },
+  "fixture_revision": 2,
+  "final_silence_seconds": 60
 }
