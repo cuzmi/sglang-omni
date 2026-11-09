@@ -8,13 +8,12 @@
       "applied_planning"
     ],
     "probe_execution": "Run each probe in a separate session. The short control uses all initial turns followed by the selected probe, without fillers.",
-    "timing_note": "speech_rate is the macOS say rate argument. response_gap_seconds and final_silence_seconds apply only to merged listening previews. Benchmark replay uses clips in one persistent session, sends silence while waiting, and advances after the current response.done has status completed.",
-    "revision_note": "Revision 2 removes spoken answer-length restrictions and extends response gaps; the 63-turn filler sequence and expected facts are preserved."
+    "timing_note": "Each clip is one user utterance. Reuse one session, wait for the current completed response before sending the next clip, and record actual input times. No fixed inter-turn gaps or merged recording are provided.",
+    "revision_note": "Revision 3 supplies separate clips and explicit playback lists. Clip bytes, expected facts, and the 63-turn filler sequence are unchanged from revision 2."
   },
   "language": "zh-CN",
   "voice": "Tingting",
   "speech_rate": 180,
-  "response_gap_seconds": 30,
   "initial_turns": [
     {
       "id": "initial_ack",
@@ -176,8 +175,7 @@
   "filler_schedule": {
     "order": "Repeat filler_turns in listed order for exactly 63 filler turns.",
     "stop_condition": "Stop after 63 completed filler turns; elapsed silence does not reduce the turn count.",
-    "rendered_filler_turn_count": 63
+    "filler_turn_count": 63
   },
-  "fixture_revision": 2,
-  "final_silence_seconds": 60
+  "fixture_revision": 3
 }

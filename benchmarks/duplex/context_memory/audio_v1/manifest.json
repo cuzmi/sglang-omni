@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "fixture_revision": 2,
+  "fixture_revision": 3,
   "case_id": "zh_audio_activity_memory_v1",
   "audio_origin": "Locally synthesized speech; not a human recording.",
   "synthesizer": "macOS say",
@@ -10,31 +10,24 @@
   "sample_rate_hz": 16000,
   "channels": 1,
   "sample_width_bytes": 2,
-  "response_gap_seconds": 30,
-  "final_silence_seconds": 60,
-  "initial_prefix_frames": 3860789,
-  "scenario_sha256": "17dca0b599e323f557ab09e300ad21c5733a682d75b869f2973021599d810f0d",
-  "rubric_sha256": "51ee6cf871c6967e62d0ce1b83137f013edcc7a3fee2e6115aa44de7eb91e08f",
+  "scenario_sha256": "fd8ce84306a8c8a0ebeb50143dc7ac4452fb0da8fde91c7e3721fb2ac9453462",
+  "rubric_sha256": "4761a287d31fd0573a922a4d22782d34e649137c64e5e34f66f388ca5db787bb",
   "model_run_performed": false,
   "context_cut_observed": null,
   "artifacts": [
     {
-      "file": "short-control.wav",
-      "duration_seconds": 316.5891875,
-      "filler_turns": 0,
-      "probe_start_seconds": 241.2993125,
-      "timeline_file": "short-control.timeline.json",
-      "sha256": "0cfc72d46c2b3512573e80bfb0f914a4a7ac701ac29916c74aec950fb72eb766",
-      "role": "listening_preview"
+      "file": "long.playlist.json",
+      "role": "playback_order",
+      "turn_count": 70,
+      "filler_turn_count": 63,
+      "sha256": "8a6bcb945f667f9f991c61c04f33fb02f6d43d05155d779330b5847c2677e24f"
     },
     {
-      "file": "long.wav",
-      "duration_seconds": 2585.72325,
-      "filler_turns": 63,
-      "probe_start_seconds": 2510.433375,
-      "timeline_file": "long.timeline.json",
-      "sha256": "240d09187a64bef0e9742812bd53f49596a62e48ab339bea28dcb7b03ec2b6a9",
-      "role": "listening_preview"
+      "file": "short-control.playlist.json",
+      "role": "playback_order",
+      "turn_count": 7,
+      "filler_turn_count": 0,
+      "sha256": "1016fe2bfd302a73f5d6377590b75b11a355f28cac9a7b71909361a0b4cfa2f1"
     }
   ],
   "clips": [
@@ -308,20 +301,17 @@
   "filler_schedule": {
     "order": "Repeat filler_turns in listed order for exactly 63 filler turns.",
     "stop_condition": "Stop after 63 completed filler turns; elapsed silence does not reduce the turn count.",
-    "rendered_filler_turn_count": 63
+    "filler_turn_count": 63
   },
   "verification": {
     "wav_format": "passed",
     "nonempty_unclipped_speech_clips": "passed",
-    "all_timeline_spans_match_source_clips": "passed",
-    "inter_turn_silence": "passed",
-    "identical_initial_pcm_between_variants": "passed",
-    "identical_probe_pcm_between_variants": "passed",
+    "unchanged_clip_bytes_from_revision_2": "passed",
+    "playlists_preserve_previous_turn_order": "passed",
+    "shared_initial_and_probe_clips": "passed",
     "human_listening_review": false,
-    "model_evaluation": false,
-    "unchanged_fact_and_factual_probe_clips": "passed",
-    "preserved_63_turn_sequence": "passed"
+    "model_evaluation": false
   },
   "replay_driver_implemented": false,
-  "supersedes_commit": "6212c0df986e80d74a7a98817372a65b62a3927b"
+  "supersedes_commit": "15d73bb4444d00f522f0a6ce652eb11e6c72de03"
 }

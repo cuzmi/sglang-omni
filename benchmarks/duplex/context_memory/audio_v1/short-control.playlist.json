@@ -1,0 +1,49 @@
+{
+  "case_id": "zh_audio_activity_memory_v1",
+  "fixture_revision": 3,
+  "variant": "short-control",
+  "turns": [
+    {
+      "turn_number": 1,
+      "phase": "initial",
+      "clip_id": "initial_ack",
+      "file": "clips/initial_ack.wav"
+    },
+    {
+      "turn_number": 2,
+      "phase": "initial",
+      "clip_id": "initial_project",
+      "file": "clips/initial_project.wav"
+    },
+    {
+      "turn_number": 3,
+      "phase": "initial",
+      "clip_id": "initial_budget",
+      "file": "clips/initial_budget.wav"
+    },
+    {
+      "turn_number": 4,
+      "phase": "initial",
+      "clip_id": "initial_constraint",
+      "file": "clips/initial_constraint.wav"
+    },
+    {
+      "turn_number": 5,
+      "phase": "initial",
+      "clip_id": "initial_progress",
+      "file": "clips/initial_progress.wav"
+    },
+    {
+      "turn_number": 6,
+      "phase": "initial",
+      "clip_id": "initial_budget_correction",
+      "file": "clips/initial_budget_correction.wav"
+    },
+    {
+      "turn_number": 7,
+      "phase": "probe",
+      "clip_id": "factual_recall",
+      "file": "clips/factual_recall.wav"
+    }
+  ]
+}
