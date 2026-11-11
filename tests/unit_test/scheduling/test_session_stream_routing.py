@@ -26,6 +26,7 @@ def scheduler_with_unit(stages: tuple[str, ...]):
         chunk=TimedChunk("text", 0, 0, 0, {"text": "hi"}, format="text_delta"),
     )
     scheduler.session_bridge = Mock()
+    scheduler.session_bridge.compactions = {}
     scheduler.session_bridge.units_by_request_id = {"unit-1": unit}
     scheduler.session_bridge.stream_messages = Mock(
         return_value=[OutgoingMessage("unit-1", "stream", "from-bridge")]

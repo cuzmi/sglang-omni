@@ -318,6 +318,19 @@ def speech_append(
     )
 
 
+def fresh_speech_pcm(
+    session_identity: SessionIdentity, codec_tokens: list[int]
+) -> bytes:
+    hooks = speech_hooks(open_runtime([]))
+    hooks.open(session_identity, SimpleNamespace(params={}))
+    chunks: list[TimedChunk] = []
+    append = speech_append(
+        session_identity, chunks, codec_tokens=codec_tokens, is_listen=False
+    )
+    hooks.append_batch([append])
+    return chunks[0].payload["pcm"]
+
+
 @pytest.mark.parametrize(
     ("is_listen", "codec_tokens", "end_of_turn", "eos", "gathers"),
     [
@@ -488,6 +501,95 @@ def test_speech_hooks_stamp_voice_chunks_with_the_reply_turn(
     assert [chunk.turn for chunk in chunks] == expected_turns
 
 
+def test_handoff_flush_keeps_the_buffered_reply_identity() -> None:
+    """Old buffered speech and a new reply first delivered on the same input unit must retain distinct control identities."""
+    hooks = speech_hooks(open_runtime([]))
+    session_identity = SessionIdentity("s")
+    hooks.open(session_identity, SimpleNamespace(params={}))
+    chunks: list[TimedChunk] = []
+    old = speech_append(session_identity, chunks, codec_tokens=[7], is_listen=False)
+    old.payload.data["text"] = ""
+    old.payload.data["reply_start_unit"] = 0
+    hooks.append_batch([old])
+    assert not chunks[0].payload["pcm"]
+    assert not chunks[0].payload["text"]
+
+    handoff = speech_append(
+        session_identity, chunks, codec_tokens=SPEAKING_TOKENS, is_listen=False
+    )
+    handoff = SessionAppend(
+        chunk=TimedChunk("text", 1000, 1000, 1, None),
+        payload=handoff.payload,
+        context=handoff.context,
+    )
+    handoff.payload.data["ends_previous_turn"] = True
+    handoff.payload.data["reply_start_unit"] = 1
+    hooks.append_batch([handoff])
+
+    assert [
+        (chunk.seq, chunk.payload["reply_start_unit"], chunk.payload["end_of_turn"])
+        for chunk in chunks[1:]
+    ] == [(1, 0, True), (1, 1, False)]
+    assert all(chunk.payload["pcm"] for chunk in chunks[1:])
+    ending = speech_append(
+        session_identity, chunks, codec_tokens=[], is_listen=True, end_of_turn=True
+    )
+    hooks.append_batch([ending])
+    assert chunks[-1].payload["reply_start_unit"] == 1
+    assert hooks.states[session_identity].reply_start_unit is None
+    listening = speech_append(session_identity, chunks, codec_tokens=[], is_listen=True)
+    listening.payload.data["text"] = ""
+    listening.payload.data["reply_start_unit"] = 1
+    hooks.append_batch([listening])
+    assert chunks[-1].payload["reply_start_unit"] is None
+    following = speech_append(
+        session_identity, chunks, codec_tokens=SPEAKING_TOKENS, is_listen=False
+    )
+    following.payload.data["reply_start_unit"] = 2
+    hooks.append_batch([following])
+    assert chunks[-1].payload["reply_start_unit"] == 2
+
+
+def test_listening_after_rebuild_flushes_old_speech_before_the_next_reply() -> None:
+    """A listening handoff must flush the old reply and leave the next reply's audio independent of the old vocoder state."""
+    hooks = speech_hooks(open_runtime([]))
+    session_identity = SessionIdentity("s")
+    hooks.open(session_identity, SimpleNamespace(params={}))
+    chunks: list[TimedChunk] = []
+    hooks.append_batch(
+        [
+            speech_append(
+                session_identity, chunks, codec_tokens=SPEAKING_TOKENS, is_listen=False
+            )
+        ]
+    )
+    handoff = speech_append(session_identity, chunks, codec_tokens=[], is_listen=True)
+    handoff.payload.data["text"] = ""
+    handoff.payload.data["ends_previous_turn"] = True
+    assert hooks.gathers_peers(handoff.payload, handoff.chunk)
+    hooks.append_batch([handoff])
+    new_reply_tokens = list(range(100, 100 + CODEC_CHUNK_SIZE))
+    hooks.append_batch(
+        [
+            speech_append(
+                session_identity,
+                chunks,
+                codec_tokens=new_reply_tokens,
+                is_listen=False,
+            )
+        ]
+    )
+
+    assert [
+        (chunk.turn, chunk.payload["end_of_turn"], bool(chunk.payload["pcm"]))
+        for chunk in chunks
+    ] == [(0, False, True), (0, True, True), (1, False, False), (1, False, True)]
+    assert chunks[1].payload["is_speech_cut"] is True
+    assert chunks[-1].payload["pcm"] == fresh_speech_pcm(
+        session_identity, new_reply_tokens
+    )
+
+
 def test_speech_after_the_model_ends_its_turn_stays_in_that_turn_until_a_new_reply_closes_it() -> (
     None
 ):
@@ -510,19 +612,6 @@ def test_speech_after_the_model_ends_its_turn_stays_in_that_turn_until_a_new_rep
         append.payload.data["speech_turn_start"] = speech_turn_start
         append.payload.data["ends_previous_turn"] = ends_previous_turn
         hooks.append_batch([append])
-    fresh_hooks = speech_hooks(open_runtime([]))
-    fresh_hooks.open(session_identity, SimpleNamespace(params={}))
-    fresh_chunks: list[TimedChunk] = []
-    fresh_hooks.append_batch(
-        [
-            speech_append(
-                session_identity,
-                fresh_chunks,
-                codec_tokens=new_reply_tokens,
-                is_listen=False,
-            )
-        ]
-    )
 
     assert [
         (chunk.turn, chunk.payload["end_of_turn"], bool(chunk.payload["pcm"]))
@@ -535,4 +624,6 @@ def test_speech_after_the_model_ends_its_turn_stays_in_that_turn_until_a_new_rep
         (1, False, True),
     ]
     assert chunks[3].payload["is_speech_cut"] is True
-    assert chunks[4].payload["pcm"] == fresh_chunks[0].payload["pcm"]
+    assert chunks[4].payload["pcm"] == fresh_speech_pcm(
+        session_identity, new_reply_tokens
+    )

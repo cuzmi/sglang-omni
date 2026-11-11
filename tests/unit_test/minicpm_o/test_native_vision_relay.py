@@ -2,14 +2,19 @@
 """Native relay of unit images and audio from perception into the thinker session."""
 
 from types import SimpleNamespace
-from unittest.mock import Mock, call
+from unittest.mock import Mock, call, patch
 
 import numpy as np
 import pytest
 import torch
 from PIL import Image
+from transformers import WhisperFeatureExtractor
 
 from sglang_omni.models.minicpm_o.components.streaming_perception import (
+    SAMPLE_RATE,
+    SUMMARY_AUDIO_MAX_UNITS,
+    UNIT_SAMPLES,
+    LogMelFilterBank,
     MiniCPMOPerceptionState,
     PerceptionStepPlan,
 )
@@ -166,6 +171,67 @@ def test_append_and_thinker_splice(
         pass
 
 
+def test_summary_audio_cache_consumes_last_samples_without_changing_live_stream(
+    perception: MiniCPMOPerceptionState, hooks: PerceptionHooks
+) -> None:
+    """A 990 ms instruction's tail reaches the encoder in unit two despite leaving the raw buffer in unit one."""
+    instruction = np.zeros(SAMPLE_RATE * 990 // 1000, dtype=np.float32)
+    instruction[-1] = 0.5
+    mel_filter_bank = LogMelFilterBank.from_feature_extractor(WhisperFeatureExtractor())
+    silence_state = MiniCPMOPerceptionState(
+        tokenizer=perception.tokenizer,
+        processor=perception.processor,
+        audio_encoder=perception.audio_encoder,
+        image_encoder=perception.image_encoder,
+        max_slice_nums=1,
+        mel_filter_bank=mel_filter_bank,
+    )
+    silence_window = silence_state.prepare_audio(
+        np.zeros(UNIT_SAMPLES, dtype=np.float32)
+    )
+    silence_chunk = silence_state.mel_chunk(
+        mel_filter_bank.log_mel(torch.from_numpy(silence_window[None]))[0]
+    )
+    silence_state.close()
+    with (
+        patch.object(hooks, "mel_filter_bank", mel_filter_bank),
+        patch(
+            "sglang_omni.models.minicpm_o.native_stages.AudioMediaIO.load_bytes",
+            return_value=(instruction, SAMPLE_RATE),
+        ),
+    ):
+        hooks.summary_audio = hooks.encode_summary_audio(b"instruction")
+
+    first_chunk = perception.audio_encoder.forward_streaming_batch.call_args_list[
+        0
+    ].args[0][0]
+    second_chunk = perception.audio_encoder.forward_streaming_batch.call_args_list[
+        1
+    ].args[0][0]
+    torch.testing.assert_close(first_chunk.audio_features, silence_chunk.audio_features)
+    assert second_chunk.audio_features.max() > silence_chunk.audio_features.max()
+    assert hooks.summary_audio["instruction_units"] == 2
+    assert len(hooks.summary_audio["plans"]) == SUMMARY_AUDIO_MAX_UNITS
+    assert all(
+        plan["token_ids"] == [perception.unit_token_id] + [0] * 10
+        and "summary_audio" not in plan
+        for plan in hooks.summary_audio["plans"]
+    )
+    assert perception.audio_chunk_index == 0
+    assert perception.is_open
+    perception.prepare_audio.assert_not_called()
+    perception.finish_audio.assert_not_called()
+
+    perception.finish_audio = MiniCPMOPerceptionState.finish_audio.__get__(perception)
+    first = append_unit(hooks, TimedChunk("audio", 0, 1000, 0, b"\0\0"), unit_payload())
+    second = append_unit(
+        hooks, TimedChunk("audio", 1000, 1000, 1, b"\0\0"), unit_payload()
+    )
+    assert first.data["summary_audio"] is hooks.summary_audio
+    assert "summary_audio" not in second.data
+    assert perception.audio_chunk_index == 2
+
+
 def test_batched_sessions_keep_vision_and_audio_associated(
     perception: MiniCPMOPerceptionState, hooks: PerceptionHooks
 ) -> None:
@@ -279,7 +345,9 @@ def test_image_audio_commit_atomically(
     unit = SimpleNamespace(
         session_identity=IDENTITY, session_request=None, embedding_spans=[]
     )
-    session = SimpleNamespace(unit=unit, embedding_spans=[history])
+    session = SimpleNamespace(
+        unit=unit, embedding_spans=[history], native_session_id=IDENTITY.id
+    )
     native = Mock(session_id=IDENTITY.id, req_nodes={})
     native.create_req.return_value = Mock(
         origin_input_ids=[7] * 12 + list(request.req.origin_input_ids), to_finish=None

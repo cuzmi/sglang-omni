@@ -169,6 +169,36 @@ def stub_stage_models(monkeypatch: pytest.MonkeyPatch) -> None:
     )
 
 
+def test_cli_summary_audio_path_completes_yaml_config(
+    tmp_path: Path, stub_stage_models: None
+) -> None:
+    """A YAML summary mode must accept its audio path from CLI before stage validation."""
+    reference_path = tmp_path / "reference.wav"
+    reference_path.write_bytes(b"reference")
+    summary_path = tmp_path / "summary.flac"
+    summary_path.write_bytes(b"summary instruction")
+    config_path = tmp_path / "duplex.yaml"
+    config_path.write_text(
+        "config_cls: MiniCPMODuplexPipelineConfig\n"
+        f"model_path: unused\nreference_audio: {reference_path}\n"
+        "window:\n  sliding_window_mode: summary\n"
+    )
+    manager = ConfigManager.from_file(str(config_path))
+    with pytest.raises(ValueError, match="summary_audio_path"):
+        manager.config.stage_factory_kwargs("perception")
+    config = manager.merge_config(
+        manager.parse_extra_args(["--summary_audio_path", str(summary_path)])
+    )
+
+    native_stages.create_perception_scheduler(
+        config.model_path, device="cpu", **config.stage_factory_kwargs("perception")
+    )
+
+    hooks = native_stages.PerceptionHooks.return_value
+    hooks.encode_summary_audio.assert_called_once_with(b"summary instruction")
+    assert hooks.summary_audio is hooks.encode_summary_audio.return_value
+
+
 @pytest.mark.parametrize(
     ("settings", "sessions", "state_bytes", "thinker", "talker", "talker_compile"),
     [

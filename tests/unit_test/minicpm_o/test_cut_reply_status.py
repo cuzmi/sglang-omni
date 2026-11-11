@@ -27,6 +27,7 @@ class Unit(NamedTuple):
     is_input_end: bool = False
     is_interrupted: bool = False
     hears_user: bool = False
+    starts_new_context: bool = False
 
 
 class Spoken(NamedTuple):
@@ -83,6 +84,7 @@ def run_talker(units: list[Unit]) -> list[Spoken]:
                 or (unit.is_input_end and not unit.is_speaking),
                 is_interrupted=unit.is_interrupted,
                 hears_user=unit.hears_user,
+                starts_new_context=unit.starts_new_context,
             ),
         )
         chunk = TimedChunk("text", 0, 1000, 0, None, eos=unit.is_input_end)
@@ -250,6 +252,59 @@ def test_a_reply_the_model_ends_speaks_the_text_the_talker_still_owes(
     units: list[Unit], expected: list[Spoken]
 ) -> None:
     """When the model ended its turn, or the input ended, while the talker still owed text, the talker dropped that text and the reply ended mid-sentence."""
+    assert run_talker(units) == expected
+
+
+@pytest.mark.parametrize(
+    ("units", "expected"),
+    [
+        (
+            [REPLY, Unit(False, starts_new_context=True), Unit(False)],
+            [
+                Spoken(True, 1, False, False),
+                Spoken(
+                    False, 0, False, False, ends_previous_turn=True, reset_history=True
+                ),
+                Spoken(False, 0, False, False),
+            ],
+        ),
+        (
+            [REPLY, Unit(True, FULL, starts_new_context=True)],
+            [
+                Spoken(True, 1, False, False),
+                Spoken(
+                    True, 1, False, False, ends_previous_turn=True, reset_history=True
+                ),
+            ],
+        ),
+        (
+            [
+                REPLY,
+                Unit(True, 10, is_model_turn_end=True),
+                Unit(False, starts_new_context=True),
+            ],
+            [
+                Spoken(True, 1, False, False),
+                Spoken(True, 1, True, False),
+                SILENT_RESET,
+            ],
+        ),
+        (
+            [Unit(False, starts_new_context=True)],
+            [Spoken(False, 0, False, False)],
+        ),
+    ],
+    ids=[
+        "listen-after-rebuild",
+        "speech-after-rebuild",
+        "already-ended",
+        "session-open",
+    ],
+)
+def test_rebuilt_context_closes_only_an_unfinished_talker_reply(
+    units: list[Unit], expected: list[Spoken]
+) -> None:
+    """Rebuilding mid-reply must close the old speech even when the next unit only listens, without closing an already-ended reply twice."""
     assert run_talker(units) == expected
 
 
