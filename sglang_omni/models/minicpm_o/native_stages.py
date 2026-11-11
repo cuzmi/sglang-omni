@@ -4,7 +4,6 @@
 import logging
 from collections import OrderedDict, defaultdict
 from dataclasses import dataclass
-from importlib.resources import files
 from pathlib import Path
 from typing import Literal
 
@@ -509,8 +508,13 @@ def create_perception_scheduler(
     reference_audio: str | None = None,
     max_open_sessions: int = DEFAULT_MAX_SESSIONS,
     batch_sessions: bool,
-    enable_summary_audio: bool,
+    summary_audio_path: str | None,
 ) -> SessionScheduler:
+    instruction_audio = (
+        Path(summary_audio_path).read_bytes()
+        if summary_audio_path is not None
+        else None
+    )
     device = str(resolve_concrete_device(device, gpu_id))
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
     encoder = MiniCPMOAudioEncoder(model_path, device=device, dtype=dtype)
@@ -532,12 +536,8 @@ def create_perception_scheduler(
     )
     # note (Junnan Li): The scheduler hands one call every ready session, so batches go up to the session limit.
     hooks.warm_up(max_open_sessions)
-    if enable_summary_audio:
-        hooks.summary_audio = hooks.encode_summary_audio(
-            files("playground.realtime.assets.minicpmo")
-            .joinpath("summary_instruction.wav")
-            .read_bytes()
-        )
+    if instruction_audio is not None:
+        hooks.summary_audio = hooks.encode_summary_audio(instruction_audio)
     else:
         pass
     return SessionScheduler(

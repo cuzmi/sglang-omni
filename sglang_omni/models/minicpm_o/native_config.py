@@ -164,6 +164,7 @@ class MiniCPMODuplexPipelineConfig(PipelineConfig):
     }
     model_path: str
     reference_audio: str | None = None
+    summary_audio_path: str | None = None
     max_sessions: int = Field(default=DEFAULT_MAX_SESSIONS, ge=1)
     batch_sessions: bool = True
     "Perception and speech run one unit of every ready session in one call; false runs each session's unit in a call of its own."
@@ -206,9 +207,16 @@ class MiniCPMODuplexPipelineConfig(PipelineConfig):
                 kwargs["n_timesteps"] = self.speech.n_timesteps
                 kwargs["enable_chunk_cuda_graph"] = self.speech.enable_chunk_cuda_graph
                 kwargs["gather_window_ms"] = self.speech.gather_window_ms
+            elif (
+                self.window.sliding_window_mode == "summary"
+                and not self.summary_audio_path
+            ):
+                raise ValueError("summary_audio_path is required for summary mode")
             else:
-                kwargs["enable_summary_audio"] = (
-                    self.window.sliding_window_mode == "summary"
+                kwargs["summary_audio_path"] = (
+                    self.summary_audio_path
+                    if self.window.sliding_window_mode == "summary"
+                    else None
                 )
             return kwargs
         elif stage_name == "thinker":
