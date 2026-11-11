@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from io import BytesIO
-from typing import Literal, Protocol, TypedDict
+from typing import Literal, NotRequired, Protocol, TypedDict
 
 import numpy as np
 import torch
@@ -22,6 +22,7 @@ from sglang_omni.scheduling.speaker_cache import estimate_cache_bytes
 
 SAMPLE_RATE = 16000
 UNIT_MS = 1000
+SUMMARY_AUDIO_MAX_UNITS = 128
 FIRST_CHUNK_MS = 1035
 IMAGE_TOKENS = 64
 MAX_FRAME_PIXELS = 4096 * 4096
@@ -89,6 +90,12 @@ class PerceptionStepPlan(TypedDict):
     token_ids: list[int]
     input_embeds: torch.Tensor
     embedding_spans: list[EmbeddingSpanPlan]
+    summary_audio: NotRequired[SummaryAudioTask]
+
+
+class SummaryAudioTask(TypedDict):
+    instruction_units: int
+    plans: list[PerceptionStepPlan]
 
 
 @dataclass(kw_only=True)

@@ -4,10 +4,12 @@
 from __future__ import annotations
 
 import logging
+import time
 from array import array
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass, field
-from typing import Protocol
+from queue import Queue
+from typing import Literal, Protocol
 
 import torch
 from sglang.srt.managers.io_struct import (
@@ -99,8 +101,19 @@ class BridgeScheduler(Protocol):
     chunked_req: Req | None
     max_running_requests: int
     max_req_len: int
+    outbox: Queue[OutgoingMessage]
+    deferred_request_payloads: dict[str, StagePayload]
+    dirty_deferred_request_ids: set[str]
 
-    def abort(self, request_id: str) -> None:
+    def enqueue_built_request(
+        self,
+        payload: StagePayload,
+        pending_stream_done: bool,
+        req_data: SGLangARRequestData,
+    ) -> None:
+        pass
+
+    def abort(self, request_id: str, *, defer_running_cleanup: bool = True) -> None:
         pass
 
     def release_request_kv_cache(self, req: Req) -> None:
@@ -133,8 +146,34 @@ class ARSessionPreparation:
     kept_token_count: int | None = None
 
 
+@dataclass(frozen=True, kw_only=True)
+class ARSessionHistory:
+    token_ids: list[int]
+    embedding_spans: list[EmbeddingSpan]
+
+
+@dataclass(frozen=True, kw_only=True)
+class ARSessionCompactionPlan:
+    request_data: SGLangARRequestData
+    timeout_seconds: float
+    continuation_tokens: int
+
+
+@dataclass(kw_only=True)
+class ARSessionCompaction:
+    payload: StagePayload
+    request_data: SGLangARRequestData
+    deadline: float
+    continuation_tokens: int
+    phase: Literal["summary", "rebuild"] = "summary"
+    shadow_session_id: str | None = None
+    is_invalidated: bool = False
+
+
 class ARSessionAdapter:
     """Convert unit inputs and outputs without mutating streaming session state."""
+
+    compaction_enabled: bool = False
 
     def open(self, session_identity: SessionIdentity, request: OmniRequest) -> None:
         """Initialize auxiliary model history after the streaming session is created."""
@@ -201,6 +240,39 @@ class ARSessionAdapter:
         """
         return None
 
+    def plan_compaction(
+        self,
+        session_identity: SessionIdentity,
+        payload: StagePayload,
+        history: ARSessionHistory,
+        context_limit: int,
+    ) -> ARSessionCompactionPlan | None:
+        return None
+
+    def continue_compaction(
+        self,
+        session_identity: SessionIdentity,
+        summary: SGLangARRequestData,
+        context_limit: int,
+    ) -> SGLangARRequestData | None:
+        return None
+
+    def build_compacted_history(
+        self,
+        session_identity: SessionIdentity,
+        summary: SGLangARRequestData,
+        context_limit: int,
+    ) -> SGLangARRequestData:
+        raise NotImplementedError
+
+    def finish_compaction(
+        self,
+        session_identity: SessionIdentity,
+        *,
+        status: Literal["completed", "invalidated", "failed"],
+    ) -> None:
+        """Update model bookkeeping after a compaction commits or rolls back."""
+
     def shift_key_positions(
         self, keys: torch.Tensor, distances: torch.Tensor
     ) -> torch.Tensor:
@@ -242,6 +314,7 @@ class SessionUnit:
     # Note (Junnan Li): A deferred payload passes through routing again; the unit is prepared once.
     is_prepared: bool = False
     is_enqueued: bool = False
+    compaction_attempted: bool = False
     # note (Junnan Li): Only completed units commit their spans to retained history.
     embedding_spans: list[EmbeddingSpan] = field(default_factory=list)
     native_offset: int = 0
@@ -251,11 +324,16 @@ class SessionUnit:
 @dataclass(kw_only=True)
 class BridgeSession:
     session_identity: SessionIdentity
+    native_session_id: str = field(init=False)
     unit: SessionUnit | None = None
     # note (Junnan Li): KV rebuilds need embeddings from every completed unit.
     embedding_spans: list[EmbeddingSpan] = field(default_factory=list)
     # The session's read; an AR stage emits only inside appends, so the close answers it.
     output_read: StagePayload | None = None
+    compaction: ARSessionCompaction | None = None
+
+    def __post_init__(self) -> None:
+        self.native_session_id = self.session_identity.id
 
 
 class ARSessionBridge:
@@ -269,6 +347,7 @@ class ARSessionBridge:
         self.sessions: dict[str, BridgeSession] = {}
         self.units_by_request_id: dict[str, SessionUnit] = {}
         self.cancelling_request_id: str | None = None
+        self.compactions: dict[str, BridgeSession] = {}
 
     def drain(self) -> None:
         self.bridge_scheduler.synchronize_launched_decode()
@@ -293,7 +372,7 @@ class ARSessionBridge:
                 raise QueueFullError()
             elif self.open_streaming_session(session_identity.id):
                 self.sessions[session_identity.id] = BridgeSession(
-                    session_identity=session_identity
+                    session_identity=session_identity,
                 )
                 self.adapter.open(session_identity, payload.request)
                 payload.data = {"opened": True}
@@ -322,6 +401,10 @@ class ARSessionBridge:
             else:
                 pass
             self.adapter.control(session_identity, operation.chunk)
+            if session.compaction is not None:
+                session.compaction.is_invalidated = True
+            else:
+                pass
             payload.data = {"controlled": True}
             return [payload]
         else:
@@ -360,8 +443,9 @@ class ARSessionBridge:
             unit.session_identity, unit.chunk, payload
         )
         if preparation.reset_history:
-            session_id = unit.session_identity.id
-            self.sessions[session_id].embedding_spans.clear()
+            session = self.sessions[unit.session_identity.id]
+            session_id = session.native_session_id
+            session.embedding_spans.clear()
             self.release_streaming_session(session_id)
             if not self.open_streaming_session(session_id):
                 raise RuntimeError("native session reset failed")
@@ -374,6 +458,233 @@ class ARSessionBridge:
         else:
             pass
         return preparation.bypass_generation
+
+    def start_compaction(self, unit: SessionUnit, payload: StagePayload) -> bool:
+        session = self.sessions[unit.session_identity.id]
+        if not self.adapter.compaction_enabled:
+            return False
+        elif session.compaction is not None:
+            return True
+        elif unit.compaction_attempted:
+            return False
+        else:
+            pass
+        self.drain()
+        native_session = self.bridge_scheduler.session_controller.get(
+            session.native_session_id
+        )
+        if not native_session.req_nodes:
+            return False
+        else:
+            [last_node] = native_session.req_nodes.values()
+            last_request = last_node.req
+        history = ARSessionHistory(
+            token_ids=[
+                *last_request.origin_input_ids[: native_session.committed_origin_len],
+                *last_request.output_ids[: last_request.sampling_params.max_new_tokens],
+            ],
+            embedding_spans=list(session.embedding_spans),
+        )
+        plan = self.adapter.plan_compaction(
+            unit.session_identity, payload, history, self.bridge_scheduler.max_req_len
+        )
+        if plan is None:
+            return False
+        else:
+            pass
+        unit.compaction_attempted = True
+        session.compaction = ARSessionCompaction(
+            payload=payload,
+            request_data=plan.request_data,
+            deadline=time.monotonic() + plan.timeout_seconds,
+            continuation_tokens=plan.continuation_tokens,
+        )
+        self.compactions[plan.request_data.req.rid] = session
+        try:
+            self.bridge_scheduler.enqueue_built_request(
+                plan.request_data.stage_payload, False, plan.request_data
+            )
+        except Exception as error:
+            self.fail_compaction(plan.request_data.req.rid, str(error), resume=False)
+            raise
+        return True
+
+    def finish_internal_request(
+        self, request_id: str, request_data: SGLangARRequestData
+    ) -> None:
+        session = self.compactions[request_id]
+        transaction = session.compaction
+        assert transaction is not None
+        if transaction.is_invalidated:
+            self.fail_compaction(request_id, "history changed during compaction")
+            return
+        elif time.monotonic() >= transaction.deadline:
+            self.fail_compaction(request_id, "context compaction timed out")
+            return
+        else:
+            pass
+        try:
+            if transaction.phase == "summary":
+                continuation = self.adapter.continue_compaction(
+                    session.session_identity,
+                    request_data,
+                    self.bridge_scheduler.max_req_len,
+                )
+                if continuation is not None:
+                    transaction.request_data = continuation
+                    self.compactions.pop(request_id)
+                    self.compactions[continuation.req.rid] = session
+                    self.bridge_scheduler.enqueue_built_request(
+                        continuation.stage_payload, False, continuation
+                    )
+                    return
+                else:
+                    pass
+                rebuild = self.adapter.build_compacted_history(
+                    session.session_identity,
+                    request_data,
+                    self.bridge_scheduler.max_req_len,
+                )
+                if (
+                    len(rebuild.req.origin_input_ids) + transaction.continuation_tokens
+                    >= self.bridge_scheduler.max_req_len
+                ):
+                    raise ValueError(
+                        "compacted history and pending input exceed context budget"
+                    )
+                else:
+                    pass
+                shadow_session_id = f"{transaction.payload.request_id}:context"
+                if not self.open_streaming_session(shadow_session_id):
+                    raise RuntimeError("compacted session open failed")
+                else:
+                    transaction.shadow_session_id = shadow_session_id
+                native_session = self.bridge_scheduler.session_controller.get(
+                    shadow_session_id
+                )
+                adapter_request = rebuild.req
+                rebuild.req = native_session.create_req(
+                    TokenizedGenerateReqInput(
+                        rid=adapter_request.rid,
+                        input_text=None,
+                        input_ids=array("q", adapter_request.origin_input_ids),
+                        input_embeds=None,
+                        mm_inputs=None,
+                        token_type_ids=None,
+                        sampling_params=adapter_request.sampling_params,
+                        return_logprob=False,
+                        logprob_start_len=-1,
+                        top_logprobs_num=0,
+                        token_ids_logprob=None,
+                        stream=False,
+                        session_params=SessionParams(id=shadow_session_id),
+                    ),
+                    adapter_request.tokenizer,
+                    self.bridge_scheduler.model_config.vocab_size,
+                    eos_token_ids=adapter_request.eos_token_ids,
+                )
+                if rebuild.req.to_finish is not None:
+                    raise RuntimeError("compacted session rejected prefill")
+                else:
+                    pass
+                rebuild.req.skip_radix_cache_insert = True
+                rebuild.session_embedding_spans = list(rebuild.unit_embedding_spans)
+                transaction.phase = "rebuild"
+                transaction.request_data = rebuild
+                self.compactions.pop(request_id)
+                self.compactions[rebuild.req.rid] = session
+                self.bridge_scheduler.enqueue_built_request(
+                    rebuild.stage_payload, False, rebuild
+                )
+            else:
+                if request_data.finish_reason not in {"stop", "length"}:
+                    raise RuntimeError("compacted session prefill failed")
+                else:
+                    pass
+                shadow_session_id = transaction.shadow_session_id
+                assert shadow_session_id is not None
+                native_session = self.bridge_scheduler.session_controller.get(
+                    shadow_session_id
+                )
+                if (
+                    native_session.committed_origin_len
+                    != len(request_data.req.origin_input_ids)
+                    or request_id not in native_session.req_nodes
+                ):
+                    raise RuntimeError("compacted session prefill did not commit")
+                else:
+                    pass
+                request_data.req.output_ids = request_data.req.output_ids[:0]
+                old_session_id = session.native_session_id
+                self.adapter.finish_compaction(
+                    session.session_identity, status="completed"
+                )
+                session.native_session_id = shadow_session_id
+                session.embedding_spans = list(request_data.unit_embedding_spans)
+                self.compactions.pop(request_id)
+                session.compaction = None
+                self.release_streaming_session(old_session_id)
+                self.bridge_scheduler.deferred_request_payloads[
+                    transaction.payload.request_id
+                ] = transaction.payload
+                self.bridge_scheduler.dirty_deferred_request_ids.add(
+                    transaction.payload.request_id
+                )
+        except Exception as error:
+            active_request_id = transaction.request_data.req.rid
+            if active_request_id in self.compactions:
+                self.fail_compaction(active_request_id, str(error))
+            else:
+                logger.exception(
+                    f"Compacted session cleanup failed for {session.session_identity.id}"
+                )
+                self.bridge_scheduler.outbox.put(
+                    OutgoingMessage(
+                        request_id=transaction.payload.request_id,
+                        type="error",
+                        data=error,
+                    )
+                )
+
+    def fail_compaction(
+        self, request_id: str, reason: str, *, resume: bool = True
+    ) -> None:
+        session = self.compactions.pop(request_id)
+        transaction = session.compaction
+        assert transaction is not None
+        self.bridge_scheduler.abort(request_id, defer_running_cleanup=False)
+        self.drain()
+        if self.bridge_scheduler.chunked_req is transaction.request_data.req:
+            self.bridge_scheduler.chunked_req = None
+        else:
+            pass
+        if transaction.shadow_session_id is not None:
+            self.bridge_scheduler.session_controller.get(
+                transaction.shadow_session_id
+            ).abort_req()
+            self.release_streaming_session(transaction.shadow_session_id)
+        else:
+            pass
+        self.adapter.finish_compaction(
+            session.session_identity,
+            status="invalidated" if transaction.is_invalidated else "failed",
+        )
+        logger.warning(
+            f"context_compaction rolled back session_id={session.session_identity.id}: {reason}"
+        )
+        session.compaction = None
+        if resume:
+            assert session.unit is not None
+            session.unit.is_prepared = False
+            session.unit.compaction_attempted = not transaction.is_invalidated
+            self.bridge_scheduler.deferred_request_payloads[
+                transaction.payload.request_id
+            ] = transaction.payload
+            self.bridge_scheduler.dirty_deferred_request_ids.add(
+                transaction.payload.request_id
+            )
+        else:
+            pass
 
     def open_streaming_session(self, session_id: str) -> bool:
         result = self.bridge_scheduler.session_controller.open(
@@ -401,10 +712,12 @@ class ARSessionBridge:
 
     def rewind_streaming_session(self, session_id: str, kept_token_count: int) -> None:
         """Rewind the native session to its first kept_token_count tokens, a prefix of the last unit's prompt that ends between units: the last request's generated tokens, the session's committed array lengths, its KV record and the retained spans shrink together, so the next unit extends the kept tokens without a re-prefill."""
-        native_session = self.bridge_scheduler.session_controller.get(session_id)
+        session = self.sessions[session_id]
+        native_session = self.bridge_scheduler.session_controller.get(
+            session.native_session_id
+        )
         [last_request_node] = native_session.req_nodes.values()
         last_request = last_request_node.req
-        session = self.sessions[session_id]
         # note (ruoyu): The shared token array may still hold an aborted append's tokens until the next create_req trims it, so the finished prompt's length is the committed one.
         committed_token_count = native_session.committed_origin_len
         if committed_token_count is None or not (
@@ -423,7 +736,9 @@ class ARSessionBridge:
             native_session.committed_origin_len = kept_token_count
             native_session.committed_unpadded_len = kept_token_count
             native_session.committed_fill_len = kept_token_count
-            record = self.bridge_scheduler.tree_cache.session_records()[session_id]
+            record = self.bridge_scheduler.tree_cache.session_records()[
+                session.native_session_id
+            ]
             record.kv_committed_len = min(record.kv_committed_len, kept_token_count)
             session.embedding_spans = [
                 span for span in session.embedding_spans if span.end <= kept_token_count
@@ -462,10 +777,10 @@ class ARSessionBridge:
                 request_data.prefill_input_embeds = None
         else:
             pass
-        native_session = self.bridge_scheduler.session_controller.get(
-            unit.session_identity.id
-        )
         session = self.sessions[unit.session_identity.id]
+        native_session = self.bridge_scheduler.session_controller.get(
+            session.native_session_id
+        )
         history_length = retained_history_length(native_session)
         # note (0xtoward): SGLang grants the whole max_new_tokens only while input plus output stays below max_req_len.
         history_capacity = (
@@ -602,7 +917,7 @@ class ARSessionBridge:
         if unit is not None:
             self.adapter.on_abort(unit.session_identity, unit)
             streaming_session = self.bridge_scheduler.session_controller.get(
-                unit.session_identity.id
+                self.sessions[unit.session_identity.id].native_session_id
             )
             if streaming_session is not None and unit.session_request is not None:
                 streaming_session.abort_req()
@@ -614,6 +929,13 @@ class ARSessionBridge:
 
     def cancel(self, request_id: str) -> None:
         unit = self.units_by_request_id[request_id]
+        transaction = self.sessions[unit.session_identity.id].compaction
+        if transaction is not None:
+            self.fail_compaction(
+                transaction.request_data.req.rid, "session cancelled", resume=False
+            )
+        else:
+            pass
         session_request = unit.session_request
         previous_cancelling_request_id = self.cancelling_request_id
         self.cancelling_request_id = request_id
@@ -663,14 +985,15 @@ class ARSessionBridge:
         ), f"session capacity check {request_id} requires a session request"
         cache = self.bridge_scheduler.tree_cache
         records = cache.session_records()
-        record = records.get(unit.session_identity.id)
+        record = records.get(self.sessions[unit.session_identity.id].native_session_id)
         retained_kv_tokens = record.kv_allocated_len if record is not None else 0
         free_request_slots = self.bridge_scheduler.req_to_token_pool.free_slots
         unallocated_request_count = sum(
             active_append_unit is not unit
             and active_append_unit.session_request is not None
             and not active_append_unit.session_request.kv.holds_kv
-            and active_append_unit.session_identity.id not in records
+            and self.sessions[active_append_unit.session_identity.id].native_session_id
+            not in records
             for active_append_unit in self.units_by_request_id.values()
         )
         if (
@@ -776,7 +1099,7 @@ class ARSessionBridge:
             recorder = get_recorder()
             if recorder.is_active():
                 record = self.bridge_scheduler.tree_cache.session_records().get(
-                    unit.session_identity.id
+                    self.sessions[unit.session_identity.id].native_session_id
                 )
                 allocator = self.bridge_scheduler.token_to_kv_pool_allocator
                 available_kv_positions = int(allocator.available_size())
@@ -845,7 +1168,7 @@ class ARSessionBridge:
             self.bridge_scheduler.abort(session.unit.request_id)
         else:
             pass
-        self.release_streaming_session(session.session_identity.id)
+        self.release_streaming_session(session.native_session_id)
 
     def close_session(self, session: BridgeSession) -> list[StagePayload]:
         """Release the session; returns its read, answered."""

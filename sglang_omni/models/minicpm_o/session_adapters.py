@@ -3,6 +3,8 @@
 
 from array import array
 from dataclasses import dataclass, field
+from typing import Literal
+from uuid import uuid4
 
 import torch
 from sglang.srt.layers.rotary_embedding.base import RotaryEmbedding
@@ -10,6 +12,7 @@ from sglang.srt.managers.schedule_batch import Req
 from sglang.srt.sampling.sampling_params import SamplingParams
 from transformers import PreTrainedTokenizerBase
 
+from sglang_omni.admission import ContextExhaustedError
 from sglang_omni.audio.vad import StatelessVAD
 from sglang_omni.client.client import Client
 from sglang_omni.models.minicpm_o.components.code2wav import OUTPUT_SAMPLE_RATE
@@ -17,6 +20,14 @@ from sglang_omni.models.minicpm_o.components.streaming_perception import (
     SAMPLE_RATE,
     UNIT_MS,
     PerceptionStepPlan,
+    SummaryAudioTask,
+)
+from sglang_omni.models.minicpm_o.context_compaction import (
+    MEMORY_HEADER,
+    MiniCPMOContextMemory,
+    MiniCPMOContextSummary,
+    build_internal_request,
+    build_summary_request,
 )
 from sglang_omni.models.minicpm_o.native_config import (
     MAX_DRAIN_UNITS,
@@ -25,6 +36,7 @@ from sglang_omni.models.minicpm_o.native_config import (
     MiniCPMODuplexWindow,
 )
 from sglang_omni.models.minicpm_o.special_tokens import (
+    REQUIRED_SPECIAL_TOKENS,
     MiniCPMOSpecialTokenIds,
     resolve_special_token_ids,
 )
@@ -45,10 +57,15 @@ from sglang_omni.proto.streams import (
 )
 from sglang_omni.scheduling.sglang_backend.ar_session import (
     ARSessionAdapter,
+    ARSessionCompactionPlan,
+    ARSessionHistory,
     ARSessionPreparation,
 )
 from sglang_omni.scheduling.sglang_backend.history_cut import HistoryCut
-from sglang_omni.scheduling.sglang_backend.request_data import EmbeddingSpan
+from sglang_omni.scheduling.sglang_backend.request_data import (
+    EmbeddingSpan,
+    SGLangARRequestData,
+)
 from sglang_omni.serve.realtime.adapters import CoordinatorAdapter
 from sglang_omni.serve.realtime.manager import (
     RealtimeDeployment,
@@ -100,6 +117,14 @@ class ThinkerAdapter(ARSessionAdapter):
             tokenizer, bad_token_ids=tuple(tokenizer.bad_token_ids)
         )
         self.states: dict[SessionIdentity, MiniCPMOThinkerSessionState] = {}
+        self.compaction_enabled = window.sliding_window_mode == "summary"
+        self.context_memories: dict[SessionIdentity, MiniCPMOContextMemory] = {}
+        self.summary_control_token_ids: set[int] = (
+            set(tokenizer.all_special_ids)
+            | set(tokenizer.convert_tokens_to_ids(list(REQUIRED_SPECIAL_TOKENS)))
+            if self.compaction_enabled
+            else set()
+        )
 
     def open(self, session_identity: SessionIdentity, request: OmniRequest) -> None:
         self.states[session_identity] = MiniCPMOThinkerSessionState(
@@ -112,10 +137,33 @@ class ThinkerAdapter(ARSessionAdapter):
             speech_detector=StatelessVAD(),
         )
 
+        if self.compaction_enabled:
+            self.context_memories[session_identity] = MiniCPMOContextMemory()
+        else:
+            pass
+
     def close(self, session_identity: SessionIdentity) -> None:
         self.states.pop(session_identity, None)
+        self.context_memories.pop(session_identity, None)
 
     def control(self, session_identity: SessionIdentity, event: TimedChunk) -> None:
+        if (
+            control_type(event) in (INTERRUPT, TRUNCATE)
+            and "reply_start_unit" in event.payload
+        ):
+            reply_start_unit = event.payload["reply_start_unit"]
+            state = self.states[session_identity]
+            if type(reply_start_unit) is not int or reply_start_unit < 0:
+                raise ValueError("reply_start_unit must be a nonnegative integer")
+            elif self.compaction_enabled and (
+                not state.reply_units
+                or state.reply_units[0].unit_index != reply_start_unit
+            ):
+                return
+            else:
+                pass
+        else:
+            pass
         if control_type(event) == INTERRUPT:
             state = self.states[session_identity]
             state.is_interrupt_pending = True
@@ -216,6 +264,27 @@ class ThinkerAdapter(ARSessionAdapter):
     ) -> DuplexUnitRequestData:
         state = self.states[session_identity]
         plan: PerceptionStepPlan = payload.data
+        if self.compaction_enabled and "summary_audio" in plan:
+            memory = self.context_memories[session_identity]
+            if memory.summary_audio is None:
+                task = plan["summary_audio"]
+                memory.summary_audio = SummaryAudioTask(
+                    instruction_units=task["instruction_units"],
+                    plans=[
+                        PerceptionStepPlan(
+                            token_ids=list(audio_plan["token_ids"]),
+                            input_embeds=audio_plan["input_embeds"].detach().clone(),
+                            embedding_spans=[
+                                span.copy() for span in audio_plan["embedding_spans"]
+                            ],
+                        )
+                        for audio_plan in task["plans"]
+                    ],
+                )
+            else:
+                pass
+        else:
+            pass
         is_interrupted = state.is_interrupt_pending
         state.is_interrupt_pending = False
         if state.is_listen_held or state.drain_units_left > 0:
@@ -330,7 +399,7 @@ class ThinkerAdapter(ARSessionAdapter):
         # note (0xtoward): The checkpoint checks its cache length after </unit>, which here comes with the next unit, so that length is the next <unit>'s position.
         next_unit_start = history_length + request_data.unit_token_index
         fitting_start = history_capacity + request_data.unit_token_index
-        if window.sliding_window_mode == "off" or (
+        if window.sliding_window_mode in {"off", "summary"} or (
             next_unit_start <= window.basic_window_high_tokens
             and next_unit_start <= fitting_start
         ):
@@ -342,6 +411,263 @@ class ThinkerAdapter(ARSessionAdapter):
                 next_unit_start,
                 min(window.basic_window_low_tokens, fitting_start),
             )
+
+    def plan_compaction(
+        self,
+        session_identity: SessionIdentity,
+        payload: StagePayload,
+        history: ARSessionHistory,
+        context_limit: int,
+    ) -> ARSessionCompactionPlan | None:
+        state = self.states[session_identity]
+        memory = self.context_memories[session_identity]
+        if memory.prefix is None:
+            prefix_tokens = state.unit_starts[0]
+            memory.prefix = ARSessionHistory(
+                token_ids=history.token_ids[:prefix_tokens],
+                embedding_spans=[
+                    EmbeddingSpan(
+                        start=span.start,
+                        end=span.end,
+                        input_embeds=span.input_embeds.detach().clone(),
+                    )
+                    for span in history.embedding_spans
+                    if span.end <= prefix_tokens
+                ],
+            )
+        else:
+            pass
+        plan: PerceptionStepPlan = payload.data
+        next_unit_tokens = (
+            len(plan["token_ids"])
+            + (0 if state.is_prefix_pending else len(state.refill_token_ids) + 1)
+            + int(state.is_interrupt_pending and not state.is_turn_ended)
+            + state.sampling.max_new_tokens_per_unit
+        )
+        task = memory.summary_audio
+        if task is None:
+            raise ValueError("context summary requires encoded instruction audio")
+        else:
+            pass
+        summary_reserve = (
+            sum(1 + len(audio_plan["token_ids"]) for audio_plan in task["plans"])
+            + int(not state.is_turn_ended)
+            + self.window.summary_max_tokens
+        )
+        history_tokens = len(history.token_ids)
+        if memory.has_failed:
+            if history_tokens + next_unit_tokens >= context_limit:
+                raise ContextExhaustedError(
+                    "context_exhausted: compaction failed and retained history is full"
+                )
+            else:
+                return None
+        elif self.window.summary_trigger_tokens + summary_reserve >= context_limit:
+            raise ValueError(
+                "summary trigger plus instruction and output reserve must fit the context"
+            )
+        else:
+            pass
+        memory.is_compaction_pending = (
+            memory.is_compaction_pending
+            or history_tokens >= self.window.summary_trigger_tokens
+            or history_tokens + next_unit_tokens + summary_reserve >= context_limit
+        )
+        if not memory.is_compaction_pending:
+            return None
+        else:
+            pass
+        repaired_history = ARSessionHistory(
+            token_ids=[
+                *history.token_ids,
+                *state.refill_token_ids,
+            ],
+            embedding_spans=[
+                *history.embedding_spans,
+                *(
+                    EmbeddingSpan(
+                        start=history_tokens + span.start,
+                        end=history_tokens + span.end,
+                        input_embeds=span.input_embeds,
+                    )
+                    for span in state.refill_embedding_spans
+                ),
+            ],
+        )
+        if (
+            history_tokens + len(state.refill_token_ids) + summary_reserve
+            >= context_limit
+        ):
+            raise ContextExhaustedError(
+                "context_exhausted: summary request would exceed context"
+            )
+        else:
+            summary = MiniCPMOContextSummary(
+                thinker_state=MiniCPMOThinkerSessionState(
+                    sampling=state.sampling,
+                    speech_detector=state.speech_detector,
+                    generated_history=list(state.generated_history),
+                    force_listen_counter=state.force_listen_counter,
+                    is_turn_ended=state.is_turn_ended,
+                    is_prefix_pending=False,
+                ),
+                audio_task=task,
+            )
+            memory.summary = summary
+            request_data = build_summary_request(
+                f"{payload.request_id}:summary:{uuid4().hex}",
+                repaired_history,
+                self.tokenizer,
+                self.vocab_size,
+                min(
+                    state.sampling.max_new_tokens_per_unit,
+                    self.window.summary_max_tokens,
+                ),
+                summary,
+                self.special,
+                context_limit,
+                is_interrupted=state.is_interrupt_pending or not state.is_turn_ended,
+            )
+            return ARSessionCompactionPlan(
+                request_data=request_data,
+                timeout_seconds=self.window.summary_timeout_seconds,
+                continuation_tokens=len(plan["token_ids"])
+                + state.sampling.max_new_tokens_per_unit,
+            )
+
+    def continue_compaction(
+        self,
+        session_identity: SessionIdentity,
+        summary: SGLangARRequestData,
+        context_limit: int,
+    ) -> SGLangARRequestData | None:
+        assert isinstance(summary, DuplexUnitRequestData)
+        collected = self.context_memories[session_identity].summary
+        assert collected is not None
+        output_token_ids = list(summary.output_ids)
+        collected.generated_tokens += len(output_token_ids)
+        if (
+            summary.finish_reason not in {"stop", "length"}
+            or not output_token_ids
+            or output_token_ids[-1] not in self.special.chunk_terminators
+        ):
+            raise ValueError("context summary did not finish its native unit")
+        elif collected.generated_tokens > self.window.summary_max_tokens:
+            raise ValueError("context summary exceeded its output budget")
+        else:
+            collected.audio_units_consumed += 1
+        instruction_units = collected.audio_task["instruction_units"]
+        if collected.audio_units_consumed < instruction_units:
+            collected.token_ids.clear()
+        else:
+            collected.token_ids.extend(
+                token_id
+                for token_id in summary.generated_unit_ids
+                if token_id not in self.summary_control_token_ids
+            )
+        if (
+            collected.audio_units_consumed >= instruction_units
+            and self.special.turn_eos in output_token_ids
+            and collected.token_ids
+        ):
+            collected.is_complete = True
+            return None
+        else:
+            pass
+        if collected.generated_tokens >= self.window.summary_max_tokens:
+            raise ValueError(
+                "context summary exhausted its output budget before turn end"
+            )
+        elif collected.audio_units_consumed >= len(collected.audio_task["plans"]):
+            raise ValueError(
+                "context summary exhausted its audio units before turn end"
+            )
+        else:
+            pass
+        remaining_tokens = self.window.summary_max_tokens - collected.generated_tokens
+        return build_summary_request(
+            f"{summary.req.rid}:continue:{uuid4().hex}",
+            ARSessionHistory(
+                token_ids=[*summary.req.origin_input_ids, *output_token_ids],
+                embedding_spans=list(summary.session_embedding_spans),
+            ),
+            self.tokenizer,
+            self.vocab_size,
+            min(
+                collected.thinker_state.sampling.max_new_tokens_per_unit,
+                remaining_tokens,
+            ),
+            collected,
+            self.special,
+            context_limit,
+        )
+
+    def build_compacted_history(
+        self,
+        session_identity: SessionIdentity,
+        summary: SGLangARRequestData,
+        context_limit: int,
+    ) -> SGLangARRequestData:
+        memory = self.context_memories[session_identity]
+        collected = memory.summary
+        assert collected is not None
+        if (
+            not collected.is_complete
+            or not self.tokenizer.decode(
+                collected.token_ids, skip_special_tokens=True
+            ).strip()
+        ):
+            raise ValueError("context summary did not finish with nonempty text")
+        else:
+            pass
+        prefix = memory.prefix
+        assert prefix is not None
+        token_ids = [
+            *prefix.token_ids,
+            *self.tokenizer.encode(MEMORY_HEADER, add_special_tokens=False),
+            *collected.token_ids,
+            *self.tokenizer.encode("<|im_end|>\n", add_special_tokens=False),
+        ]
+        if len(token_ids) + 1 >= min(context_limit, self.window.summary_trigger_tokens):
+            raise ValueError("compacted history does not leave continuation budget")
+        else:
+            return build_internal_request(
+                f"{summary.req.rid}:rebuild",
+                token_ids,
+                prefix.embedding_spans,
+                self.tokenizer,
+                self.vocab_size,
+                1,
+                collected.thinker_state,
+                self.special,
+            )
+
+    def finish_compaction(
+        self,
+        session_identity: SessionIdentity,
+        *,
+        status: Literal["completed", "invalidated", "failed"],
+    ) -> None:
+        memory = self.context_memories[session_identity]
+        memory.summary = None
+        if status == "completed":
+            state = self.states[session_identity]
+            memory.is_compaction_pending = False
+            state.unit_starts.clear()
+            state.generated_history.clear()
+            # shortcut: A committed summary closes the old reply's truncate window; revising summarized speech requires retaining and replaying the old history.
+            state.reply_units.clear()
+            state.is_latest_reply_ended = False
+            state.units_since_last_spoken = 0
+            state.is_prefix_pending = True
+            state.is_turn_ended = True
+            state.refill_token_ids.clear()
+            state.refill_embedding_spans.clear()
+        elif status == "failed":
+            memory.is_compaction_pending = False
+            memory.has_failed = True
+        else:
+            pass
 
     def shift_key_positions(
         self, keys: torch.Tensor, distances: torch.Tensor
@@ -365,6 +691,7 @@ class ThinkerAdapter(ARSessionAdapter):
         self, session_identity: SessionIdentity, data: DuplexUnitRequestData
     ) -> StagePayload:
         state = self.states[session_identity]
+        starts_new_context = state.is_prefix_pending
         state.is_prefix_pending = False
         state.unit_starts.append(data.session_history_length + data.unit_token_index)
         if data.is_interrupted:
@@ -417,6 +744,10 @@ class ThinkerAdapter(ARSessionAdapter):
         else:
             pass
         data.stage_payload.data = dict(
+            starts_new_context=starts_new_context,
+            reply_start_unit=(
+                state.reply_units[0].unit_index if state.reply_units else None
+            ),
             talker_conditions=data.talker_conditions,
             text=self.tokenizer.decode(
                 data.generated_unit_ids, skip_special_tokens=True
@@ -437,6 +768,7 @@ class KeptReply:
 
     turn: int | None
     keep_through_unit: int
+    reply_start_unit: int
 
 
 @dataclass(frozen=True, kw_only=True)
@@ -454,6 +786,7 @@ class Reply:
     response_id: str
     item_id: str
     turn: int | None
+    reply_start_unit: int
     text: str = ""
     has_audio: bool = False
     audio_samples: int = 0
@@ -492,7 +825,11 @@ class OutputConverter:
         else:
             reply.is_cancelled = True
             reply.keep_through_unit = reply.last_delivered_unit
-            return KeptReply(turn=reply.turn, keep_through_unit=reply.keep_through_unit)
+            return KeptReply(
+                turn=reply.turn,
+                keep_through_unit=reply.keep_through_unit,
+                reply_start_unit=reply.reply_start_unit,
+            )
 
     def truncate(self, item_id: str, audio_end_ms: float) -> KeptReply | None:
         """Keep the latest reply, when item_id names it and the client stopped it or the model ended it, through the last unit the client had played at audio_end_ms, never past a unit it received or a unit already kept; None when the position does not move back."""
@@ -513,7 +850,11 @@ class OutputConverter:
                 return None
             else:
                 reply.keep_through_unit = keep_through_unit
-                return KeptReply(turn=reply.turn, keep_through_unit=keep_through_unit)
+                return KeptReply(
+                    turn=reply.turn,
+                    keep_through_unit=keep_through_unit,
+                    reply_start_unit=reply.reply_start_unit,
+                )
 
     def finish(self, is_speech_cut: bool) -> list[OutputEvent]:
         """End the open response: cancelled when the client stopped it, incomplete when the talker's budget cut its speech."""
@@ -565,10 +906,13 @@ class OutputConverter:
         elif value["text"] or value["pcm"]:
             if reply is None or not reply.is_open:
                 response_id = f"{output.session_identity.id}-response-{self.serial}"
+                reply_start_unit = value.get("reply_start_unit", output.input_seq)
+                assert isinstance(reply_start_unit, int)
                 reply = Reply(
                     response_id=response_id,
                     item_id=response_id + "-message",
                     turn=output.turn,
+                    reply_start_unit=reply_start_unit,
                 )
                 self.reply = reply
                 self.serial += 1
@@ -615,6 +959,7 @@ class RealtimeAdapter(CoordinatorAdapter):
     """The coordinator adapter with the client stop and the client truncate of a native duplex reply."""
 
     output_converter: OutputConverter
+    is_compaction_enabled: bool = False
 
     async def cancel(self) -> None:
         """Interrupt the open reply's turn: the turn's later audio is dropped, and the thinker forgets the units the client did not receive, then listens until the user speaks again."""
@@ -633,10 +978,12 @@ class RealtimeAdapter(CoordinatorAdapter):
                     {
                         "type": INTERRUPT,
                         "keep_through_unit": kept_reply.keep_through_unit,
+                        "reply_start_unit": kept_reply.reply_start_unit,
                     },
                     format=SESSION_CONTROL,
                     turn=kept_reply.turn,
                 ),
+                is_ordered=not self.is_compaction_enabled,
             )
 
     async def truncate(self, item_id: str, audio_end_ms: float) -> None:
@@ -657,10 +1004,12 @@ class RealtimeAdapter(CoordinatorAdapter):
                         "type": TRUNCATE,
                         "t_ms": audio_end_ms,
                         "keep_through_unit": kept_reply.keep_through_unit,
+                        "reply_start_unit": kept_reply.reply_start_unit,
                     },
                     format=SESSION_CONTROL,
                     turn=kept_reply.turn,
                 ),
+                is_ordered=not self.is_compaction_enabled,
             )
 
 
@@ -669,7 +1018,7 @@ def build_realtime_deployment(
 ) -> RealtimeDeployment:
 
     def factory() -> RealtimeAdapter:
-        return RealtimeAdapter(
+        adapter = RealtimeAdapter(
             client,
             request_builder=lambda session: OmniRequest(
                 None,
@@ -693,6 +1042,8 @@ def build_realtime_deployment(
             input_sample_rate_hz=SAMPLE_RATE,
             atomic_consumption=True,
         )
+        adapter.is_compaction_enabled = config.window.sliding_window_mode == "summary"
+        return adapter
 
     return RealtimeDeployment(
         Capabilities(

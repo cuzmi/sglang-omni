@@ -27,6 +27,7 @@ class Unit(NamedTuple):
     is_input_end: bool = False
     is_interrupted: bool = False
     hears_user: bool = False
+    starts_new_context: bool = False
 
 
 class Spoken(NamedTuple):
@@ -83,6 +84,7 @@ def run_talker(units: list[Unit]) -> list[Spoken]:
                 or (unit.is_input_end and not unit.is_speaking),
                 is_interrupted=unit.is_interrupted,
                 hears_user=unit.hears_user,
+                starts_new_context=unit.starts_new_context,
             ),
         )
         chunk = TimedChunk("text", 0, 1000, 0, None, eos=unit.is_input_end)
@@ -251,6 +253,23 @@ def test_a_reply_the_model_ends_speaks_the_text_the_talker_still_owes(
 ) -> None:
     """When the model ended its turn, or the input ended, while the talker still owed text, the talker dropped that text and the reply ended mid-sentence."""
     assert run_talker(units) == expected
+
+
+@pytest.mark.parametrize("is_speaking", [False, True])
+def test_rebuilt_context_closes_the_previous_talker_reply(is_speaking: bool) -> None:
+    """Listening and speaking after a rebuild must both close the previous reply."""
+    next_unit = Unit(is_speaking, FULL if is_speaking else 0, starts_new_context=True)
+    assert run_talker([REPLY, next_unit]) == [
+        Spoken(True, 1, False, False),
+        Spoken(
+            is_speaking,
+            int(is_speaking),
+            False,
+            False,
+            ends_previous_turn=True,
+            reset_history=True,
+        ),
+    ]
 
 
 def voice(text: str, *, end_of_turn: bool, is_speech_cut: bool) -> OutputChunk:

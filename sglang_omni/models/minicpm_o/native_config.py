@@ -12,6 +12,7 @@ from sglang_omni.config import (
     PipelineConfig,
     StageConfig,
 )
+from sglang_omni.proto.session import DEFAULT_OPERATION_TIMEOUT_S
 
 PKG = "sglang_omni.models.minicpm_o.native_stages"
 DEFAULT_MAX_SESSIONS = 2
@@ -131,13 +132,16 @@ DEFAULT_SPEECH_SETTINGS = MiniCPMODuplexSpeech()
 
 
 class MiniCPMODuplexWindow(BaseModel):
-    """The checkpoint's DuplexWindowConfig for thinker history; of its modes, off and basic are served."""
-
     model_config = ConfigDict(extra="forbid")
 
-    sliding_window_mode: Literal["off", "basic"] = "basic"
+    sliding_window_mode: Literal["off", "basic", "summary"] = "basic"
     basic_window_high_tokens: int = Field(default=8000, ge=1)
     basic_window_low_tokens: int = Field(default=6000, ge=1)
+    summary_trigger_tokens: int = Field(default=5500, ge=1)
+    summary_max_tokens: int = Field(default=1000, ge=1)
+    summary_timeout_seconds: float = Field(
+        default=20.0, gt=0, lt=DEFAULT_OPERATION_TIMEOUT_S
+    )
 
     @model_validator(mode="after")
     def check_watermarks(self) -> "MiniCPMODuplexWindow":
@@ -160,6 +164,7 @@ class MiniCPMODuplexPipelineConfig(PipelineConfig):
     }
     model_path: str
     reference_audio: str | None = None
+    summary_audio_path: str | None = None
     max_sessions: int = Field(default=DEFAULT_MAX_SESSIONS, ge=1)
     batch_sessions: bool = True
     "Perception and speech run one unit of every ready session in one call; false runs each session's unit in a call of its own."
@@ -202,8 +207,17 @@ class MiniCPMODuplexPipelineConfig(PipelineConfig):
                 kwargs["n_timesteps"] = self.speech.n_timesteps
                 kwargs["enable_chunk_cuda_graph"] = self.speech.enable_chunk_cuda_graph
                 kwargs["gather_window_ms"] = self.speech.gather_window_ms
+            elif (
+                self.window.sliding_window_mode == "summary"
+                and not self.summary_audio_path
+            ):
+                raise ValueError("summary_audio_path is required for summary mode")
             else:
-                pass
+                kwargs["summary_audio_path"] = (
+                    self.summary_audio_path
+                    if self.window.sliding_window_mode == "summary"
+                    else None
+                )
             return kwargs
         elif stage_name == "thinker":
             kwargs = {

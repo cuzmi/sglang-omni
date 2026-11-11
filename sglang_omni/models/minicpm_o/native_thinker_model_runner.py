@@ -162,7 +162,11 @@ class MiniCPMOThinkerModelRunner(OfflineThinkerModelRunner):
             sampled_token_id = int(request_output.data)
             special_tokens = self.resolve_special_tokens(data)
             pending_token_id = data.pending_unit_token
-            if pending_token_id is not None and data.generation_steps >= 2:
+            if (
+                data.generate_audio
+                and pending_token_id is not None
+                and data.generation_steps >= 2
+            ):
                 hidden_state = request_output.extra["hidden_states"]
                 hidden_state = (
                     hidden_state.reshape(-1, hidden_state.shape[-1])[-1]

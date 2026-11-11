@@ -864,6 +864,8 @@ def test_a_stop_holds_the_listen_through_silence_until_the_user_speaks(
     ]
     assert [result.data for _, result in finished_units] == [
         dict(
+            starts_new_context=index == 0,
+            reply_start_unit=None,
             talker_conditions=[],
             text="",
             is_listen=True,
@@ -871,11 +873,13 @@ def test_a_stop_holds_the_listen_through_silence_until_the_user_speaks(
             is_interrupted=end_of_turn,
             hears_user=hears_user,
         )
-        for end_of_turn, hears_user in (
-            (True, False),
-            (False, False),
-            (False, True),
-            (False, False),
+        for index, (end_of_turn, hears_user) in enumerate(
+            (
+                (True, False),
+                (False, False),
+                (False, True),
+                (False, False),
+            )
         )
     ]
     assert state.is_turn_ended is True

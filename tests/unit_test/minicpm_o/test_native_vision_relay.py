@@ -279,7 +279,9 @@ def test_image_audio_commit_atomically(
     unit = SimpleNamespace(
         session_identity=IDENTITY, session_request=None, embedding_spans=[]
     )
-    session = SimpleNamespace(unit=unit, embedding_spans=[history])
+    session = SimpleNamespace(
+        unit=unit, embedding_spans=[history], native_session_id=IDENTITY.id
+    )
     native = Mock(session_id=IDENTITY.id, req_nodes={})
     native.create_req.return_value = Mock(
         origin_input_ids=[7] * 12 + list(request.req.origin_input_ids), to_finish=None

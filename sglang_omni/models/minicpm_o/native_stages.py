@@ -26,12 +26,16 @@ from sglang_omni.models.minicpm_o.components.code2wav import (
 )
 from sglang_omni.models.minicpm_o.components.image_encoder import MiniCPMOImageEncoder
 from sglang_omni.models.minicpm_o.components.streaming_perception import (
+    FIRST_CHUNK_MS,
     SAMPLE_RATE,
+    SUMMARY_AUDIO_MAX_UNITS,
     UNIT_SAMPLES,
     LogMelFilterBank,
     MiniCPMOPerceptionState,
+    PerceptionStepPlan,
     PreparedImageFeatures,
     StreamingAudioProcessor,
+    SummaryAudioTask,
     audio_feature_batch,
 )
 from sglang_omni.models.minicpm_o.components.tts_runtime import (
@@ -110,6 +114,7 @@ class PerceptionHooks(BatchedSessionHooks):
         self.reference_cache_capacity = reference_cache_capacity
         self.reference_embeds_cache: OrderedDict[str, torch.Tensor] = OrderedDict()
         self.states: dict[SessionIdentity, MiniCPMOPerceptionState] = {}
+        self.summary_audio: SummaryAudioTask | None = None
 
     def reference_embeds(self, reference_audio: bytes) -> torch.Tensor:
         """The thinker embeddings of one reference audio, encoded once per distinct reference."""
@@ -136,6 +141,51 @@ class PerceptionHooks(BatchedSessionHooks):
             else:
                 pass
         return self.reference_embeds_cache[reference_key]
+
+    @torch.inference_mode()
+    def encode_summary_audio(self, instruction_audio: bytes) -> SummaryAudioTask:
+        """Encode a bounded instruction and silence stream without a live session's prefix or encoder state."""
+        waveform, _ = AudioMediaIO(target_sr=SAMPLE_RATE).load_bytes(instruction_audio)
+        waveform = np.asarray(waveform, dtype=np.float32).reshape(-1)
+        # note (Codex): Front padding occupies encoder core time, so draining the raw buffer does not finish the instruction.
+        front_padding_samples = FIRST_CHUNK_MS * SAMPLE_RATE // 1000 - UNIT_SAMPLES
+        instruction_units = (
+            waveform.size + front_padding_samples + UNIT_SAMPLES - 1
+        ) // UNIT_SAMPLES
+        if waveform.size == 0 or instruction_units >= SUMMARY_AUDIO_MAX_UNITS:
+            raise ValueError("Summary instruction must leave at least one silence unit")
+        else:
+            pass
+        state = MiniCPMOPerceptionState(
+            tokenizer=self.tokenizer,
+            processor=self.processor,
+            audio_encoder=self.audio_encoder,
+            image_encoder=self.image_encoder,
+            max_slice_nums=1,
+            mel_filter_bank=self.mel_filter_bank,
+        )
+        plans: list[PerceptionStepPlan] = []
+        try:
+            for unit_index in range(SUMMARY_AUDIO_MAX_UNITS):
+                unit_waveform = np.zeros(UNIT_SAMPLES, dtype=np.float32)
+                samples = waveform[
+                    unit_index * UNIT_SAMPLES : (unit_index + 1) * UNIT_SAMPLES
+                ]
+                unit_waveform[: samples.size] = samples
+                mel_window = state.prepare_audio(unit_waveform)
+                (window_log_mel,) = self.mel_filter_bank.log_mel(
+                    torch.from_numpy(mel_window[None])
+                )
+                ((audio_embeds, audio_encoder_state),) = (
+                    self.audio_encoder.forward_streaming_batch(
+                        [state.mel_chunk(window_log_mel)]
+                    )
+                )
+                state.finish_audio(audio_encoder_state)
+                plans.append(state.build_step_plan(audio_embeds))
+        finally:
+            state.close()
+        return SummaryAudioTask(instruction_units=instruction_units, plans=plans)
 
     def open(self, session_identity: SessionIdentity, request: OmniRequest) -> None:
         self.states[session_identity] = MiniCPMOPerceptionState.open(
@@ -213,9 +263,12 @@ class PerceptionHooks(BatchedSessionHooks):
                 group, encoded, strict=True
             ):
                 unit.state.finish_audio(audio_encoder_state)
-                unit.payload.data = unit.state.build_step_plan(
-                    audio_embeds, unit.image_embeds
-                )
+                plan = unit.state.build_step_plan(audio_embeds, unit.image_embeds)
+                if self.summary_audio is not None and unit.state.audio_chunk_index == 1:
+                    plan["summary_audio"] = self.summary_audio
+                else:
+                    pass
+                unit.payload.data = plan
         return [append.payload for append in appends]
 
     def warm_up(self, max_batch_size: int) -> None:
@@ -268,13 +321,15 @@ class SpeechState:
     session_id: str
     clock_ms: float = 0
     turn: int = 0
+    reply_start_unit: int | None = None
 
 
 def vocoder_runs_unit(payload: StagePayload, chunk: TimedChunk) -> bool:
-    """A listening unit carries no codec tokens unless it speaks a turn the model ended; only a turn or input end flushes the vocoder."""
+    """Listening units also flush speech when a rebuilt context closes the previous turn."""
     talker_result = payload.data
     return bool(
         talker_result["end_of_turn"]
+        or talker_result["ends_previous_turn"]
         or chunk.eos
         or talker_result["codec_tokens"]
         or (not talker_result["is_listen"] and talker_result["talker_conditions"])
@@ -346,6 +401,7 @@ class SpeechHooks(BatchedSessionHooks):
                     ),
                     model_end_of_turn=end_of_turn,
                     is_speech_cut=is_speech_cut,
+                    reply_start_unit=state.reply_start_unit,
                 ),
                 eos=eos,
                 turn=state.turn,
@@ -354,6 +410,7 @@ class SpeechHooks(BatchedSessionHooks):
         state.clock_ms += duration_ms
         if end_of_turn:
             state.turn += 1
+            state.reply_start_unit = None
         else:
             pass
 
@@ -393,6 +450,15 @@ class SpeechHooks(BatchedSessionHooks):
 
         def emit(index: int, waveform: np.ndarray | None) -> None:
             talker_result = appends[index].payload.data
+            state = self.states[appends[index].context.session_identity]
+            if state.reply_start_unit is None and (
+                talker_result["codec_tokens"] or talker_result["text"]
+            ):
+                state.reply_start_unit = talker_result.get(
+                    "reply_start_unit", appends[index].chunk.seq
+                )
+            else:
+                pass
             self.emit_voice(
                 appends[index],
                 waveform,
@@ -442,7 +508,13 @@ def create_perception_scheduler(
     reference_audio: str | None = None,
     max_open_sessions: int = DEFAULT_MAX_SESSIONS,
     batch_sessions: bool,
+    summary_audio_path: str | None,
 ) -> SessionScheduler:
+    instruction_audio = (
+        Path(summary_audio_path).read_bytes()
+        if summary_audio_path is not None
+        else None
+    )
     device = str(resolve_concrete_device(device, gpu_id))
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
     encoder = MiniCPMOAudioEncoder(model_path, device=device, dtype=dtype)
@@ -464,6 +536,10 @@ def create_perception_scheduler(
     )
     # note (Junnan Li): The scheduler hands one call every ready session, so batches go up to the session limit.
     hooks.warm_up(max_open_sessions)
+    if instruction_audio is not None:
+        hooks.summary_audio = hooks.encode_summary_audio(instruction_audio)
+    else:
+        pass
     return SessionScheduler(
         hooks,
         max_open_sessions=max_open_sessions,
@@ -481,16 +557,22 @@ def create_thinker_scheduler(
     total_gpu_memory_fraction: float | None = None,
     kv_cache_tokens: int | None = None,
     sliding_window_mode: Literal[
-        "off", "basic"
+        "off", "basic", "summary"
     ] = DEFAULT_WINDOW_SETTINGS.sliding_window_mode,
     basic_window_high_tokens: int = DEFAULT_WINDOW_SETTINGS.basic_window_high_tokens,
     basic_window_low_tokens: int = DEFAULT_WINDOW_SETTINGS.basic_window_low_tokens,
+    summary_trigger_tokens: int = DEFAULT_WINDOW_SETTINGS.summary_trigger_tokens,
+    summary_max_tokens: int = DEFAULT_WINDOW_SETTINGS.summary_max_tokens,
+    summary_timeout_seconds: float = DEFAULT_WINDOW_SETTINGS.summary_timeout_seconds,
 ) -> OmniScheduler:
     builder = MiniCPMOThinkerEngineBuilder(
         window=MiniCPMODuplexWindow(
             sliding_window_mode=sliding_window_mode,
             basic_window_high_tokens=basic_window_high_tokens,
             basic_window_low_tokens=basic_window_low_tokens,
+            summary_trigger_tokens=summary_trigger_tokens,
+            summary_max_tokens=summary_max_tokens,
+            summary_timeout_seconds=summary_timeout_seconds,
         )
     )
     if kv_cache_tokens is None:
