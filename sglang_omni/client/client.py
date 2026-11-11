@@ -164,9 +164,14 @@ class Client:
         *,
         stages: list[str] | None = None,
         should_preempt: bool = False,
+        is_ordered: bool = True,
     ) -> None:
         await self.coordinator.control_session(
-            session_identity, event, stages=stages, should_preempt=should_preempt
+            session_identity,
+            event,
+            stages=stages,
+            should_preempt=should_preempt,
+            is_ordered=is_ordered,
         )
 
     async def close_session(self, session_identity: SessionIdentity) -> None:
