@@ -34,7 +34,7 @@ from sglang_omni.scheduling.sglang_backend.output_processor import SGLangOutputP
 def check_window_kv_cache(window: MiniCPMODuplexWindow, kv_cache: KVCache) -> None:
     """Refuse a thinker window over a KV cache whose token rows a cut cannot move in place."""
     # note (0xtoward): A quantized KV recipe reads back a dequantized copy, and other layouts or pools hold no token rows to move.
-    if window.sliding_window_mode != "off" and (
+    if window.sliding_window_mode == "basic" and (
         type(kv_cache) is not MHATokenToKVPool
         or kv_cache.is_quantized_kv_cache
         or kv_cache.kv_cache_layout != "nhd"
@@ -110,6 +110,12 @@ class MiniCPMOThinkerEngineBuilder(SGLangGenerationEngineBuilder):
         server_args: ServerArgs,
         model_config: ModelConfig,
     ) -> tuple[OmniScheduler, MiniCPMOThinkerModelRunner]:
+        if self.window.sliding_window_mode == "summary" and server_args.tp_size != 1:
+            raise ValueError(
+                "MiniCPM summary compaction currently requires tensor parallel size 1"
+            )
+        else:
+            pass
         check_window_kv_cache(self.window, token_to_kv_pool_allocator.get_kvcache())
         output_proc = SGLangOutputProcessor(capture_hidden=True)
         return super().build_runtime(

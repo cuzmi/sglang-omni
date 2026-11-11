@@ -69,7 +69,11 @@ class TalkerAdapter(ARSessionAdapter):
         has_text = bool(thinker_result["talker_conditions"]) and (
             not thinker_result["is_listen"] or thinker_result["end_of_turn"]
         )
-        ends_previous_turn = state.drain_units_left > 0 and has_text
+        ends_previous_turn = (state.drain_units_left > 0 and has_text) or (
+            thinker_result.get("starts_new_context", False)
+            and not state.is_turn_start
+            and not state.is_reset_pending
+        )
         if ends_previous_turn:
             state.drain_units_left = 0
             state.is_reset_pending = True

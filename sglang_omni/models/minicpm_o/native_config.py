@@ -12,6 +12,7 @@ from sglang_omni.config import (
     PipelineConfig,
     StageConfig,
 )
+from sglang_omni.proto.session import DEFAULT_OPERATION_TIMEOUT_S
 
 PKG = "sglang_omni.models.minicpm_o.native_stages"
 DEFAULT_MAX_SESSIONS = 2
@@ -131,13 +132,16 @@ DEFAULT_SPEECH_SETTINGS = MiniCPMODuplexSpeech()
 
 
 class MiniCPMODuplexWindow(BaseModel):
-    """The checkpoint's DuplexWindowConfig for thinker history; of its modes, off and basic are served."""
-
     model_config = ConfigDict(extra="forbid")
 
-    sliding_window_mode: Literal["off", "basic"] = "basic"
+    sliding_window_mode: Literal["off", "basic", "summary"] = "basic"
     basic_window_high_tokens: int = Field(default=8000, ge=1)
     basic_window_low_tokens: int = Field(default=6000, ge=1)
+    summary_trigger_tokens: int = Field(default=5500, ge=1)
+    summary_max_tokens: int = Field(default=1000, ge=1)
+    summary_timeout_seconds: float = Field(
+        default=20.0, gt=0, lt=DEFAULT_OPERATION_TIMEOUT_S
+    )
 
     @model_validator(mode="after")
     def check_watermarks(self) -> "MiniCPMODuplexWindow":
@@ -203,7 +207,9 @@ class MiniCPMODuplexPipelineConfig(PipelineConfig):
                 kwargs["enable_chunk_cuda_graph"] = self.speech.enable_chunk_cuda_graph
                 kwargs["gather_window_ms"] = self.speech.gather_window_ms
             else:
-                pass
+                kwargs["enable_summary_audio"] = (
+                    self.window.sliding_window_mode == "summary"
+                )
             return kwargs
         elif stage_name == "thinker":
             kwargs = {

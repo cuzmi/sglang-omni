@@ -108,6 +108,7 @@ class DuplexUnitRequestData(SGLangARRequestData):
     talker_conditions: list[tuple[int, torch.Tensor, bool]] = field(
         default_factory=list
     )
+    generate_audio: bool = True
     generated_unit_ids: list[int] = field(default_factory=list)
     pending_unit_token: int | None = None
     is_listen_forced: bool = False
