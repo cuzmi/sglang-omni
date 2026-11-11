@@ -4,6 +4,7 @@
 import logging
 from collections import OrderedDict, defaultdict
 from dataclasses import dataclass
+from importlib.resources import files
 from pathlib import Path
 from typing import Literal
 
@@ -533,7 +534,9 @@ def create_perception_scheduler(
     hooks.warm_up(max_open_sessions)
     if enable_summary_audio:
         hooks.summary_audio = hooks.encode_summary_audio(
-            (Path(__file__).parent / "assets" / "summary_instruction.wav").read_bytes()
+            files("playground.realtime.assets.minicpmo")
+            .joinpath("summary_instruction.wav")
+            .read_bytes()
         )
     else:
         pass

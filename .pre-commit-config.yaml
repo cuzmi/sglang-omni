@@ -24,7 +24,7 @@ repos:
       - id: check-ast
       - id: check-added-large-files
         # note (Codex): The bundled spoken instruction exceeds the default size limit.
-        exclude: ^sglang_omni/models/minicpm_o/assets/summary_instruction\.wav$
+        exclude: ^playground/realtime/assets/minicpmo/summary_instruction\.wav$
       - id: check-merge-conflict
       - id: check-shebang-scripts-are-executable
         exclude: (?:^\.claude/skills/|^sglang_omni_router/tests/.*\.rs$)
