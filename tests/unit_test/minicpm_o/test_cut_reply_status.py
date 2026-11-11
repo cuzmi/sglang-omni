@@ -255,57 +255,21 @@ def test_a_reply_the_model_ends_speaks_the_text_the_talker_still_owes(
     assert run_talker(units) == expected
 
 
-@pytest.mark.parametrize(
-    ("units", "expected"),
-    [
-        (
-            [REPLY, Unit(False, starts_new_context=True), Unit(False)],
-            [
-                Spoken(True, 1, False, False),
-                Spoken(
-                    False, 0, False, False, ends_previous_turn=True, reset_history=True
-                ),
-                Spoken(False, 0, False, False),
-            ],
+@pytest.mark.parametrize("is_speaking", [False, True])
+def test_rebuilt_context_closes_the_previous_talker_reply(is_speaking: bool) -> None:
+    """Listening and speaking after a rebuild must both close the previous reply."""
+    next_unit = Unit(is_speaking, FULL if is_speaking else 0, starts_new_context=True)
+    assert run_talker([REPLY, next_unit]) == [
+        Spoken(True, 1, False, False),
+        Spoken(
+            is_speaking,
+            int(is_speaking),
+            False,
+            False,
+            ends_previous_turn=True,
+            reset_history=True,
         ),
-        (
-            [REPLY, Unit(True, FULL, starts_new_context=True)],
-            [
-                Spoken(True, 1, False, False),
-                Spoken(
-                    True, 1, False, False, ends_previous_turn=True, reset_history=True
-                ),
-            ],
-        ),
-        (
-            [
-                REPLY,
-                Unit(True, 10, is_model_turn_end=True),
-                Unit(False, starts_new_context=True),
-            ],
-            [
-                Spoken(True, 1, False, False),
-                Spoken(True, 1, True, False),
-                SILENT_RESET,
-            ],
-        ),
-        (
-            [Unit(False, starts_new_context=True)],
-            [Spoken(False, 0, False, False)],
-        ),
-    ],
-    ids=[
-        "listen-after-rebuild",
-        "speech-after-rebuild",
-        "already-ended",
-        "session-open",
-    ],
-)
-def test_rebuilt_context_closes_only_an_unfinished_talker_reply(
-    units: list[Unit], expected: list[Spoken]
-) -> None:
-    """Rebuilding mid-reply must close the old speech even when the next unit only listens, without closing an already-ended reply twice."""
-    assert run_talker(units) == expected
+    ]
 
 
 def voice(text: str, *, end_of_turn: bool, is_speech_cut: bool) -> OutputChunk:

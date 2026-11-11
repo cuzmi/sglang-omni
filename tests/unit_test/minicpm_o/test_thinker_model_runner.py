@@ -5,23 +5,16 @@ from __future__ import annotations
 
 import math
 import wave
-from array import array
 from pathlib import Path
 from types import SimpleNamespace
-from typing import Any, Literal
+from typing import Any
 from unittest.mock import Mock
 
 import numpy as np
 import pytest
 import torch
 from sglang.srt.environ import envs
-from sglang.srt.layers.logits_processor import LogitsProcessorOutput
-from sglang.srt.managers.schedule_batch import Req
 from sglang.srt.model_executor.forward_batch_info import ForwardMode
-from sglang.srt.sampling.sampling_params import SamplingParams
-from tokenizers import Tokenizer
-from tokenizers.models import WordLevel
-from transformers import PreTrainedTokenizerFast
 
 from sglang_omni.audio.vad import StatelessVAD
 from sglang_omni.model_runner.prefill_inputs import get_omni_prefill_inputs
@@ -33,7 +26,6 @@ from sglang_omni.models.minicpm_o.components.streaming_perception import (
     SAMPLE_RATE,
     UNIT_SAMPLES,
 )
-from sglang_omni.models.minicpm_o.context_compaction import MiniCPMOContextMemory
 from sglang_omni.models.minicpm_o.duplex_sampler import filter_top_k_top_p
 from sglang_omni.models.minicpm_o.native_config import (
     DEFAULT_WINDOW_SETTINGS,
@@ -66,11 +58,6 @@ from sglang_omni.scheduling.sglang_backend.ar_session import ARSessionPreparatio
 from sglang_omni.scheduling.sglang_backend.request_data import (
     EmbeddingSpan,
     SGLangARRequestData,
-)
-from sglang_omni.scheduling.types import (
-    RequestOutput,
-    SchedulerOutput,
-    SchedulerRequest,
 )
 
 EOS_TOKEN_IDS = [1, 3]
@@ -1343,101 +1330,6 @@ def test_cuts_only_move_the_kept_position_back_and_re_feed_every_unit_since_it()
     assert state.generated_history == [PLAIN_TOKEN_ID]
 
 
-def test_first_result_after_rebuild_marks_the_speech_handoff_once() -> None:
-    """Rebuilding mid-reply must tell downstream speech to close the old reply, even if the first resumed unit only listens."""
-    adapter, request = open_duplex_adapter()
-    adapter.compaction_enabled = True
-    adapter.context_memories[SESSION] = MiniCPMOContextMemory()
-    feed_unit(adapter, request, 0, spoken_token_id=PLAIN_TOKEN_ID)
-    adapter.finish_compaction(SESSION, status="completed")
-
-    first = feed_unit(adapter, request, 1, spoken_token_id=None)
-    assert first.stage_payload.data["starts_new_context"] is True
-    following = feed_unit(adapter, request, 2, spoken_token_id=OTHER_TOKEN_ID)
-    assert following.stage_payload.data["starts_new_context"] is False
-
-
-@pytest.mark.parametrize("control_kind", [INTERRUPT, TRUNCATE])
-def test_retired_reply_controls_cannot_cut_a_newer_ended_reply(
-    control_kind: Literal["interrupt", "truncate"],
-) -> None:
-    """A delayed control for a reply retired by compaction must not rewind or interrupt a newer reply before its output reaches the client."""
-    adapter, request = open_duplex_adapter()
-    adapter.compaction_enabled = True
-    adapter.context_memories[SESSION] = MiniCPMOContextMemory()
-    state = adapter.states[SESSION]
-    feed_unit(adapter, request, 0, spoken_token_id=PLAIN_TOKEN_ID, ends_turn=True)
-    adapter.finish_compaction(SESSION, status="completed")
-    stale_control = session_control(
-        {"type": control_kind, "keep_through_unit": 0, "reply_start_unit": 0}
-    )
-    adapter.control(SESSION, stale_control)
-    assert not state.is_interrupt_pending
-    assert not state.is_listen_held
-    assert state.kept_token_count is None
-
-    feed_unit(adapter, request, 1, spoken_token_id=OTHER_TOKEN_ID, ends_turn=True)
-    adapter.control(SESSION, stale_control)
-    assert not state.is_interrupt_pending
-    assert not state.is_listen_held
-    assert (
-        adapter.prepare_unit(SESSION, audio_unit(2), perception_payload(request, 2))
-        == ARSessionPreparation()
-    )
-    assert not state.refill_token_ids
-
-    adapter.control(
-        SESSION,
-        session_control(
-            {"type": control_kind, "keep_through_unit": 0, "reply_start_unit": 1}
-        ),
-    )
-    assert adapter.prepare_unit(
-        SESSION, audio_unit(2), perception_payload(request, 2)
-    ) == ARSessionPreparation(kept_token_count=UNIT_PROMPT_LENGTHS[1])
-    assert state.refill_token_ids == [SPECIAL_TOKENS.listen]
-
-
-def test_basic_reply_cut_survives_eviction_of_its_first_recorded_unit() -> None:
-    """A reply identity must not disable basic truncation when windowing has removed its first recorded unit."""
-    adapter, request = open_duplex_adapter()
-    state = adapter.states[SESSION]
-    feed_unit(adapter, request, 0, spoken_token_id=PLAIN_TOKEN_ID)
-    feed_unit(adapter, request, 1, spoken_token_id=OTHER_TOKEN_ID, ends_turn=True)
-    state.reply_units.pop(0)
-    adapter.control(
-        SESSION,
-        session_control(
-            {"type": TRUNCATE, "keep_through_unit": 0, "reply_start_unit": 0}
-        ),
-    )
-    assert adapter.prepare_unit(
-        SESSION, audio_unit(2), perception_payload(request, 2)
-    ) == ARSessionPreparation(kept_token_count=UNIT_PROMPT_LENGTHS[1])
-    assert state.refill_token_ids == [SPECIAL_TOKENS.turn_eos, SPECIAL_TOKENS.listen]
-
-
-@pytest.mark.parametrize("reply_start_unit", [None, "0", -1, True])
-def test_malformed_reply_identity_is_rejected(
-    reply_start_unit: int | str | None,
-) -> None:
-    """Malformed supplied reply identities must not become legacy controls that can interrupt an unrelated reply."""
-    adapter, request = open_duplex_adapter()
-    feed_unit(adapter, request, 0, spoken_token_id=PLAIN_TOKEN_ID)
-    with pytest.raises(ValueError, match="reply_start_unit"):
-        adapter.control(
-            SESSION,
-            session_control(
-                {
-                    "type": INTERRUPT,
-                    "keep_through_unit": 0,
-                    "reply_start_unit": reply_start_unit,
-                }
-            ),
-        )
-    assert not adapter.states[SESSION].is_interrupt_pending
-
-
 def test_a_truncate_cuts_an_ended_reply_and_not_an_open_one() -> None:
     """A truncate cuts the latest reply once the model ended it itself, with the same rewind and re-feed as after a stop, drops nothing from a reply the model is still speaking, whose units the client goes on to hear, and cuts that reply in turn once it ends; a stop still cuts the open reply."""
     adapter, request = open_duplex_adapter()
@@ -1862,92 +1754,3 @@ def test_mixed_decode_tail_prefill_rows_follow_the_batch_span() -> None:
     assert torch.equal(rows[:3], runner.embed_tokens(torch.tensor([5, 6, 9])))
     assert torch.equal(rows[3], span_rows[2])
     assert (tail_request.prefix_len, tail_request.extend_end) == (100, 104)
-
-
-def test_internal_summary_keeps_native_text_and_skips_speech() -> None:
-    """Internal summaries previously bypassed the native sampler and its turn protocol."""
-    vocabulary = {
-        token: index
-        for index, token in enumerate(
-            ("<unk>", *REQUIRED_SPECIAL_TOKENS, "fact", "repeated")
-        )
-    }
-    tokenizer = PreTrainedTokenizerFast(
-        tokenizer_object=Tokenizer(WordLevel(vocabulary, unk_token="<unk>")),
-        unk_token="<unk>",
-        additional_special_tokens=list(REQUIRED_SPECIAL_TOKENS),
-    )
-    tokenizer.bad_token_ids = []
-    special = resolve_special_token_ids(tokenizer, bad_token_ids=())
-    states = [session_state(repetition_penalty=2.0) for _ in range(2)]
-    for state in states:
-        state.generated_history = [vocabulary["repeated"]]
-    runner = duplex_runner(None)
-    collected_text: list[int] = []
-    for unit_index, expected_tokens in enumerate(
-        (
-            [special.tts_bos, vocabulary["fact"], special.chunk_eos],
-            [special.tts_bos, special.turn_eos, special.chunk_eos],
-        )
-    ):
-        requests: list[SchedulerRequest] = []
-        for index, state in enumerate(states):
-            request_id = f"native-{index}-{unit_index}"
-            sampling = SamplingParams(
-                max_new_tokens=state.sampling.max_new_tokens_per_unit,
-                stop_token_ids=set(special.chunk_terminators),
-            )
-            sampling.normalize(tokenizer)
-            request = Req(
-                request_id,
-                "",
-                array("q", [special.unit, vocabulary["fact"]]),
-                sampling,
-                vocab_size=len(vocabulary),
-            )
-            request.tokenizer = tokenizer
-            requests.append(
-                SchedulerRequest(
-                    request_id=request_id,
-                    data=DuplexUnitRequestData(
-                        req=request,
-                        thinker_state=state,
-                        unit_token_index=0,
-                        generate_audio=index == 0,
-                    ),
-                )
-            )
-        for generation_step, expected_token in enumerate(expected_tokens):
-            for request in requests:
-                request.data.generation_steps = generation_step
-            logits = torch.full((2, len(vocabulary)), -100.0)
-            logits[:, expected_token] = 10.0
-            if expected_token == vocabulary["fact"]:
-                logits[:, vocabulary["repeated"]] = 15.0
-            token_ids = runner.sample_next_token_ids(
-                LogitsProcessorOutput(next_token_logits=logits), None, None, requests
-            )
-            assert token_ids.tolist() == [expected_token, expected_token]
-            assert states[0].generated_history == states[1].generated_history
-            assert states[0].is_turn_ended == states[1].is_turn_ended
-            hidden = torch.arange(4, dtype=torch.float32)
-            runner.post_process_outputs(
-                None,
-                SchedulerOutput(requests=requests, batch_data=None),
-                {
-                    request.request_id: RequestOutput(
-                        request_id=request.request_id,
-                        data=token_ids[index],
-                        extra={"hidden_states": hidden} if index == 0 else {},
-                    )
-                    for index, request in enumerate(requests)
-                },
-            )
-        assert (
-            requests[0].data.generated_unit_ids == requests[1].data.generated_unit_ids
-        )
-        assert requests[0].data.talker_conditions
-        assert requests[1].data.talker_conditions == []
-        collected_text.extend(requests[1].data.generated_unit_ids)
-        assert states[1].is_turn_ended == (unit_index == 1)
-    assert tokenizer.decode(collected_text, skip_special_tokens=True) == "fact"

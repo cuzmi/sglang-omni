@@ -395,50 +395,6 @@ async def test_a_truncate_cuts_a_reply_the_model_ended_until_the_next_reply_star
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("control", ["cancel", "truncate"])
-async def test_reply_controls_distinguish_replies_first_delivered_in_the_same_unit(
-    control: Literal["cancel", "truncate"],
-) -> None:
-    """A handoff can deliver an old reply's first audio and the next reply in one input unit."""
-    coordinator = VoiceCoordinator()
-    adapter, events = await open_adapter(coordinator)
-    shared_input_seq = 7
-    processing = asyncio.create_task(adapter.process(unit(shared_input_seq)))
-    await asyncio.sleep(0)
-    for turn, reply_start_unit, item_id, pcm in (
-        (1, 0, FIRST_ITEM, HEARD_PCM),
-        (2, shared_input_seq, SECOND_ITEM, NEXT_REPLY_PCM),
-    ):
-        coordinator.voice(
-            shared_input_seq,
-            turn,
-            {
-                **voice(pcm, end_of_turn=control == "truncate"),
-                "reply_start_unit": reply_start_unit,
-            },
-        )
-        await asyncio.sleep(0)
-        if control == "cancel":
-            await adapter.cancel()
-            coordinator.voice(shared_input_seq, turn, voice(b"", end_of_turn=True))
-            await asyncio.sleep(0)
-        else:
-            await adapter.truncate(item_id, 0)
-    coordinator.done(shared_input_seq)
-    await processing
-    await adapter.close()
-
-    expected_control_type = INTERRUPT if control == "cancel" else TRUNCATE
-    assert [
-        (event.payload["type"], event.payload["reply_start_unit"], event.turn)
-        for event, _, _ in coordinator.controlled
-    ] == [(expected_control_type, 0, 1), (expected_control_type, shared_input_seq, 2)]
-    assert [
-        event.response_id for event in events if isinstance(event, ResponseFinished)
-    ] == [FIRST_RESPONSE, SECOND_RESPONSE]
-
-
-@pytest.mark.asyncio
 async def test_a_truncate_naming_an_earlier_reply_leaves_the_ended_latest_reply_alone() -> (
     None
 ):

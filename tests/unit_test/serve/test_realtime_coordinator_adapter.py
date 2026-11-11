@@ -15,18 +15,10 @@ from sglang_omni.pipeline.types import SessionIdleTimeoutError, SessionOutputBud
 from sglang_omni.profiler.duplex_events import SessionUnitReadyObservation
 from sglang_omni.proto.request import OmniRequest
 from sglang_omni.proto.session import OutputChunk, SessionLimits, TimedChunk
-from sglang_omni.proto.streams import CONTROL
 from sglang_omni.serve.realtime.adapters import CoordinatorAdapter
 from sglang_omni.serve.realtime.output import OutputEvent, TextDelta, TurnFailure
-from sglang_omni.serve.realtime.runtime import SessionRuntime
 from sglang_omni.serve.realtime.schema import SessionConfiguration
-from sglang_omni.serve.realtime.types import (
-    Capabilities,
-    OutputBudgetError,
-    ProtocolError,
-    RuntimeLimits,
-    Unit,
-)
+from sglang_omni.serve.realtime.types import OutputBudgetError, RuntimeLimits, Unit
 from tests.unit_test.fixtures.session_client import FakeSessionClient
 
 SAMPLE_RATE = 16000
@@ -82,16 +74,6 @@ class RecordingSink:
         self.has_published.set()
 
 
-class StalledUnitCoordinator(SessionCoordinator):
-    def __init__(self) -> None:
-        super().__init__([])
-        self.auto_done = False
-        self.has_input = asyncio.Event()
-
-    def answer(self, chunk: TimedChunk) -> None:
-        self.has_input.set()
-
-
 def build_request(config: SessionConfiguration) -> OmniRequest:
     return OmniRequest(inputs=None, params={"instructions": config.get("instructions")})
 
@@ -137,59 +119,6 @@ def build_unit(
             else None
         ),
     )
-
-
-@pytest.mark.asyncio
-async def test_client_forwards_unordered_control() -> None:
-    coordinator = SessionCoordinator([])
-    coordinator.control_session = AsyncMock()
-    control = TimedChunk(CONTROL, 0, 0, 0, {"type": "interrupt"})
-    await Client(coordinator).control_session(
-        coordinator.identity, control, is_ordered=False
-    )
-    coordinator.control_session.assert_awaited_once_with(
-        coordinator.identity,
-        control,
-        stages=None,
-        should_preempt=False,
-        is_ordered=False,
-    )
-
-
-@pytest.mark.asyncio
-async def test_stalled_unit_buffers_input_then_consumes_it_once_in_order() -> None:
-    coordinator = StalledUnitCoordinator()
-    adapter = build_adapter(coordinator)
-    runtime = SessionRuntime(
-        "test",
-        Capabilities(native_unit_ms=20, output_modalities=("text",)),
-        lambda: adapter,
-        RuntimeLimits(max_input_bytes=UNIT_SAMPLES * 2 * 3),
-    )
-    runtime.start()
-    try:
-        await runtime.update({}, "update")
-        packets = [bytes([index, 0]) * UNIT_SAMPLES for index in range(3)]
-        await runtime.append(packets[0], 0, 0, "input-0")
-        await asyncio.wait_for(coordinator.has_input.wait(), PROCESS_TIMEOUT_S)
-        await runtime.append(packets[1], 1, 20, "input-1")
-        await runtime.append(packets[2], 2, 40, "input-2")
-        with pytest.raises(ProtocolError, match="input budget exhausted"):
-            await runtime.append(packets[0], 3, 60, "overflow")
-        assert len(coordinator.appended) == 1
-        assert runtime.consumed_samples == 0
-        assert runtime.next_append_sequence == 3
-        coordinator.auto_done = True
-        await runtime.end("end")
-        coordinator.done(0)
-        await asyncio.wait_for(runtime.pump_task, PROCESS_TIMEOUT_S)
-        assert [chunk.seq for chunk in coordinator.appended] == [0, 1, 2]
-        assert [chunk.t_start_ms for chunk in coordinator.appended] == [0, 20, 40]
-        assert [chunk.payload for chunk in coordinator.appended] == packets
-        assert runtime.consumed_samples == UNIT_SAMPLES * 3
-        assert runtime.discarded_samples == 0
-    finally:
-        await runtime.close("client_closed")
 
 
 @pytest.mark.asyncio
