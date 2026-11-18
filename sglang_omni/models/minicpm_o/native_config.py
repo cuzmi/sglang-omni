@@ -131,13 +131,17 @@ DEFAULT_SPEECH_SETTINGS = MiniCPMODuplexSpeech()
 
 
 class MiniCPMODuplexWindow(BaseModel):
-    """The checkpoint's DuplexWindowConfig for thinker history; of its modes, off and basic are served."""
+    """Bound thinker history by unit trimming or native audio-guided summarization."""
 
     model_config = ConfigDict(extra="forbid")
 
-    sliding_window_mode: Literal["off", "basic"] = "basic"
+    sliding_window_mode: Literal["off", "basic", "summary"] = "basic"
     basic_window_high_tokens: int = Field(default=8000, ge=1)
     basic_window_low_tokens: int = Field(default=6000, ge=1)
+    summary_trigger_tokens: int = Field(default=5500, ge=1)
+    summary_max_tokens: int = Field(default=1000, ge=1)
+    summary_max_audio_units: int = Field(default=128, ge=1)
+    summary_audio_path: str | None = Field(default=None, min_length=1)
 
     @model_validator(mode="after")
     def check_watermarks(self) -> "MiniCPMODuplexWindow":
@@ -145,8 +149,25 @@ class MiniCPMODuplexWindow(BaseModel):
             raise ValueError(
                 "window.basic_window_low_tokens must be below window.basic_window_high_tokens"
             )
+        elif self.sliding_window_mode == "summary" and self.summary_audio_path is None:
+            raise ValueError("window.summary_audio_path is required in summary mode")
         else:
             return self
+
+    def check_summary_budget(
+        self, summary_input_tokens: int, context_limit: int
+    ) -> None:
+        required_tokens = (
+            self.summary_trigger_tokens + summary_input_tokens + self.summary_max_tokens
+        )
+        if required_tokens >= context_limit:
+            raise ValueError(
+                f"Summary budget needs {required_tokens} tokens below context limit "
+                f"{context_limit}: trigger={self.summary_trigger_tokens}, "
+                f"input={summary_input_tokens}, output={self.summary_max_tokens}"
+            )
+        else:
+            pass
 
 
 DEFAULT_WINDOW_SETTINGS = MiniCPMODuplexWindow()
@@ -203,7 +224,11 @@ class MiniCPMODuplexPipelineConfig(PipelineConfig):
                 kwargs["enable_chunk_cuda_graph"] = self.speech.enable_chunk_cuda_graph
                 kwargs["gather_window_ms"] = self.speech.gather_window_ms
             else:
-                pass
+                kwargs.update(
+                    sliding_window_mode=self.window.sliding_window_mode,
+                    summary_audio_path=self.window.summary_audio_path,
+                    summary_max_audio_units=self.window.summary_max_audio_units,
+                )
             return kwargs
         elif stage_name == "thinker":
             kwargs = {

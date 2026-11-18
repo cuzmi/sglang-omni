@@ -18,8 +18,12 @@ from sglang.srt.mem_cache.memory_pool import (
 from sglang.srt.sampling.sampling_params import SamplingParams
 from sglang.srt.session.session_controller import Session
 
-from sglang_omni.audio.vad import StatelessVAD
+from sglang_omni.audio.vad import ScoredFrame, StatelessVAD, VADConfig
 from sglang_omni.config.manager import ConfigManager
+from sglang_omni.models.minicpm_o.components.streaming_perception import (
+    PerceptionStepPlan,
+)
+from sglang_omni.models.minicpm_o.context_compaction import MEMORY_FOOTER, MEMORY_HEADER
 from sglang_omni.models.minicpm_o.engine_builder import check_window_kv_cache
 from sglang_omni.models.minicpm_o.native_config import (
     MiniCPMODuplexPipelineConfig,
@@ -29,7 +33,9 @@ from sglang_omni.models.minicpm_o.native_config import (
 from sglang_omni.models.minicpm_o.session_adapters import ThinkerAdapter
 from sglang_omni.models.minicpm_o.special_tokens import REQUIRED_SPECIAL_TOKENS
 from sglang_omni.models.minicpm_o.thinker_state import MiniCPMOThinkerSessionState
-from sglang_omni.proto.session import SessionIdentity
+from sglang_omni.proto.request import OmniRequest, StagePayload
+from sglang_omni.proto.session import SessionIdentity, TimedChunk
+from sglang_omni.proto.streams import AUDIO, CONTROL, INTERRUPT, SESSION_CONTROL
 from sglang_omni.scheduling.sglang_backend.history_cut import (
     HistoryCut,
     cut_retained_kv,
@@ -368,3 +374,279 @@ def test_window_settings_reach_the_thinker_stage() -> None:
         MiniCPMODuplexWindow(
             basic_window_high_tokens=6000, basic_window_low_tokens=6000
         )
+
+
+def summary_adapter() -> ThinkerAdapter:
+    adapter = make_adapter(
+        MiniCPMODuplexWindow(
+            sliding_window_mode="summary",
+            summary_audio_path="summary.wav",
+            summary_trigger_tokens=128,
+            summary_max_tokens=12,
+            summary_max_audio_units=3,
+        )
+    )
+    adapter.tokenizer.all_special_ids = list(range(1, len(REQUIRED_SPECIAL_TOKENS) + 1))
+    adapter.tokenizer.encode.side_effect = lambda text, **kwargs: {
+        MEMORY_HEADER: [50, 51],
+        MEMORY_FOOTER: [52],
+    }[text]
+    adapter.tokenizer.decode.side_effect = lambda tokens, **kwargs: (
+        "memory" if tokens else ""
+    )
+    adapter.states[IDENTITY].sampling = MiniCPMODuplexSampling(
+        force_listen_count=0, max_new_tokens_per_unit=4
+    )
+    return adapter
+
+
+def summary_payload(
+    adapter: ThinkerAdapter, request_id: str, *, first: bool
+) -> StagePayload:
+    plan = PerceptionStepPlan(
+        token_ids=[adapter.special.unit, 63],
+        input_embeds=torch.full((1, 4), 7.0),
+        embedding_spans=[
+            dict(
+                modality="audio",
+                token_start=1,
+                token_end=2,
+                embedding_start=0,
+                embedding_end=1,
+            )
+        ],
+    )
+    if first:
+        plan = PerceptionStepPlan(
+            token_ids=[60, 61, 62, adapter.special.unit, 63],
+            input_embeds=torch.tensor([[1.0] * 4, [2.0] * 4]),
+            embedding_spans=[
+                dict(
+                    modality="audio",
+                    token_start=1,
+                    token_end=2,
+                    embedding_start=0,
+                    embedding_end=1,
+                ),
+                dict(
+                    modality="audio",
+                    token_start=4,
+                    token_end=5,
+                    embedding_start=1,
+                    embedding_end=2,
+                ),
+            ],
+            summary_audio_plans=[plan, plan, plan],
+            summary_prompt_audio_units=2,
+        )
+    else:
+        pass
+    return StagePayload(request_id, OmniRequest(None), plan)
+
+
+def test_summary_vad_checks_only_new_speech_and_survives_reply_end_and_stop() -> None:
+    """Continuous VAD consumes each real unit once, including all frames after an onset; reply lifecycle events do not create another onset."""
+    adapter = summary_adapter()
+    state = adapter.states[IDENTITY]
+    detector = StatelessVAD(VADConfig(silence_duration_ms=32), model=Mock())
+    detector.score = Mock(
+        side_effect=[
+            [ScoredFrame(0, 0.0)],
+            [ScoredFrame(512, 0.9), ScoredFrame(1024, 0.9)],
+            [ScoredFrame(1536, 0.9)],
+            [ScoredFrame(2048, 0.0), ScoredFrame(2560, 0.9), ScoredFrame(3072, 0.0)],
+        ]
+    )
+    state.speech_detector = detector
+    first = summary_payload(adapter, "silence", first=True)
+    chunk = TimedChunk(AUDIO, 0, 0, 1000, b"")
+    adapter.prepare_unit(IDENTITY, chunk, first)
+    assert not adapter.start_compaction(IDENTITY, chunk, first, 128, 512)
+    assert not state.user_speech_started
+
+    onset = summary_payload(adapter, "onset", first=False)
+    adapter.prepare_unit(IDENTITY, chunk, onset)
+    adapter.prepare_unit(IDENTITY, chunk, onset)
+    assert detector.score.call_count == 2
+    assert state.user_speech_started and state.is_user_speaking
+    assert not adapter.start_compaction(IDENTITY, chunk, onset, 127, 512)
+    request_data = adapter.build(IDENTITY, chunk, onset)
+    assert not request_data.hears_user
+    request_data.output_ids = [adapter.special.turn_eos]
+    adapter.result(IDENTITY, request_data)
+    assert state.is_user_speaking
+    adapter.control(
+        IDENTITY,
+        TimedChunk(CONTROL, 0, 0, 0, {"type": INTERRUPT}, format=SESSION_CONTROL),
+    )
+    assert state.is_user_speaking
+    detector.model.reset.assert_not_called()
+
+    continuation = summary_payload(adapter, "continuation", first=False)
+    adapter.prepare_unit(IDENTITY, chunk, continuation)
+    assert state.has_user_speech and not state.user_speech_started
+    assert not adapter.start_compaction(IDENTITY, chunk, continuation, 128, 512)
+    assert adapter.build(IDENTITY, chunk, continuation).hears_user
+
+    restarted = summary_payload(adapter, "restarted", first=False)
+    adapter.prepare_unit(IDENTITY, chunk, restarted)
+    assert state.user_speech_started and not state.is_user_speaking
+    assert adapter.start_compaction(IDENTITY, chunk, restarted, 128, 512)
+    assert detector.score.call_count == 4
+
+
+def test_summary_uses_incremental_audio_then_replaces_history_and_preserves_vad() -> (
+    None
+):
+    """Only generated body after the complete guide enters memory; refill is appended once and the resumed unit retains its VAD result."""
+    adapter = summary_adapter()
+    state = adapter.states[IDENTITY]
+    chunk = TimedChunk(AUDIO, 0, 0, 1000, b"")
+    first = summary_payload(adapter, "first", first=True)
+    assert not adapter.start_compaction(IDENTITY, chunk, first, 0, 512)
+    payload = summary_payload(adapter, "suspended", first=False)
+    state.prepared_request_id = payload.request_id
+    state.user_speech_started = True
+    state.has_user_speech = True
+    state.is_user_speaking = True
+    state.is_turn_ended = False
+    state.is_prefix_pending = False
+    state.generated_history = [30, 31]
+    state.refill_token_ids = [32, 33]
+    detector = StatelessVAD(VADConfig(silence_duration_ms=32), model=Mock())
+    detector.score = Mock(
+        side_effect=[
+            [ScoredFrame(0, 0.9)],
+            [ScoredFrame(512, 0.0)],
+            [ScoredFrame(1024, 0.9)],
+        ]
+    )
+    state.speech_detector = detector
+    assert adapter.start_compaction(IDENTITY, chunk, payload, 128, 512)
+
+    first_summary = adapter.build_compaction_request(
+        IDENTITY, "internal-1", payload, 128, 512
+    )
+    assert list(first_summary.req.origin_input_ids) == [
+        32,
+        33,
+        adapter.special.unit_end,
+        adapter.special.unit,
+        63,
+    ]
+    assert not first_summary.generate_audio
+    assert not first_summary.thinker_state.is_turn_ended
+    assert first_summary.thinker_state.speech_detector is None
+    first_summary.thinker_state.generated_history.append(34)
+    assert state.generated_history == [30, 31]
+    first_summary.output_ids = [
+        adapter.special.speak,
+        40,
+        adapter.special.turn_eos,
+        adapter.special.chunk_eos,
+    ]
+    assert adapter.complete_compaction_request(IDENTITY, first_summary) == "continue"
+
+    second_summary = adapter.build_compaction_request(
+        IDENTITY, "internal-2", payload, 137, 512
+    )
+    assert list(second_summary.req.origin_input_ids) == [
+        adapter.special.unit_end,
+        adapter.special.unit,
+        63,
+    ]
+    assert second_summary.unit_embedding_spans[0].start == 2
+    second_summary.output_ids = [adapter.special.speak, 41, adapter.special.chunk_eos]
+    assert adapter.complete_compaction_request(IDENTITY, second_summary) == "continue"
+    third_summary = adapter.build_compaction_request(
+        IDENTITY, "internal-3", payload, 143, 512
+    )
+    third_summary.output_ids = [42, adapter.special.turn_eos, adapter.special.chunk_eos]
+    assert adapter.complete_compaction_request(IDENTITY, third_summary) == "rebuild"
+
+    rebuild = adapter.build_rebuild_request(IDENTITY, "rebuild", payload, 512)
+    assert list(rebuild.req.origin_input_ids) == [60, 61, 62, 50, 51, 41, 42, 52]
+    assert rebuild.max_new_tokens == 1 and not rebuild.generate_audio
+    assert len(rebuild.unit_embedding_spans) == 1
+    torch.testing.assert_close(
+        rebuild.unit_embedding_spans[0].input_embeds, torch.ones(1, 4)
+    )
+    assert rebuild.thinker_state is not state
+    state.unit_starts = [3, 20]
+    state.drain_units_left = 3
+    adapter.finish_compaction(IDENTITY)
+    resumed = adapter.build(IDENTITY, chunk, payload)
+    assert list(resumed.req.origin_input_ids) == [adapter.special.unit, 63]
+    assert state.generated_history == state.refill_token_ids == state.unit_starts == []
+    assert state.drain_units_left == 0
+    assert state.is_user_speaking and state.has_user_speech
+    assert (
+        state.prepared_request_id == "suspended" and state.speech_detector is detector
+    )
+    for request_id, should_compact in [
+        ("same-utterance", False),
+        ("silence", False),
+        ("next-utterance", True),
+    ]:
+        next_payload = summary_payload(adapter, request_id, first=False)
+        adapter.prepare_unit(IDENTITY, chunk, next_payload)
+        assert (
+            adapter.start_compaction(IDENTITY, chunk, next_payload, 128, 512)
+            is should_compact
+        )
+    assert adapter.context_compaction.memories[IDENTITY].fixed_token_ids == [60, 61, 62]
+
+
+@pytest.mark.parametrize(
+    "failure", ["reserve", "output", "audio", "hard_limit", "rebuild"]
+)
+def test_summary_budget_failures_never_fall_back_to_basic_or_commit_truncation(
+    failure: str,
+) -> None:
+    """Insufficient context or an incomplete generated summary errors instead of silently cutting or committing partial memory."""
+    adapter = summary_adapter()
+    state = adapter.states[IDENTITY]
+    first = summary_payload(adapter, "first", first=True)
+    payload = summary_payload(adapter, "next", first=False)
+    chunk = TimedChunk(AUDIO, 0, 0, 1000, b"")
+    assert not adapter.start_compaction(IDENTITY, chunk, first, 0, 512)
+    state.user_speech_started = True
+    if failure == "reserve":
+        state.refill_token_ids = [30] * 363
+        with pytest.raises(ValueError, match="summary needs"):
+            adapter.start_compaction(IDENTITY, chunk, payload, 128, 512)
+    elif failure == "hard_limit":
+        state.unit_starts = [3, 20, 40]
+        with pytest.raises(ValueError, match="next unit permits"):
+            adapter.plan_history_cut(
+                IDENTITY, SimpleNamespace(unit_token_index=1), 128, 127
+            )
+        assert state.unit_starts == [3, 20, 40]
+    else:
+        assert adapter.start_compaction(IDENTITY, chunk, payload, 128, 512)
+        if failure == "rebuild":
+            compaction = adapter.context_compaction.compactions[IDENTITY]
+            compaction.rebuild_token_ids = [40] * 128
+            with pytest.raises(ValueError, match="below the summary trigger"):
+                adapter.build_rebuild_request(IDENTITY, "rebuild", payload, 512)
+        else:
+            for unit_index in range(3):
+                request_data = adapter.build_compaction_request(
+                    IDENTITY, f"internal-{unit_index}", payload, 128, 512
+                )
+                request_data.output_ids = (
+                    [41, 42, 43, adapter.special.chunk_eos]
+                    if failure == "output"
+                    else [adapter.special.listen]
+                )
+                if unit_index == 2:
+                    with pytest.raises(ValueError, match="exhausted"):
+                        adapter.complete_compaction_request(IDENTITY, request_data)
+                else:
+                    assert (
+                        adapter.complete_compaction_request(IDENTITY, request_data)
+                        == "continue"
+                    )
+            assert not adapter.context_compaction.compactions[
+                IDENTITY
+            ].rebuild_token_ids

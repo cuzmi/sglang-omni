@@ -79,6 +79,21 @@ Those pixel options do not bound the initial native-resolution allocation.
 
 MiniCPM-o 4.5 also serves live full-duplex voice and video calls on `/v1/realtime`. Launching, settings, the browser demo, the protocol and benchmarking are in [Full-Duplex Guide](../developer_reference/full_duplex_guide.md#native-full-duplex-minicpm-o).
 
+### Context summarization
+
+The native duplex pipeline defaults to `window.sliding_window_mode=basic`. To replace older conversation history with a text summary, select `summary` and supply an instruction recording:
+
+```bash
+python -m sglang_omni.cli serve --model-path openbmb/MiniCPM-o-4_5 \
+  --variant session --enable-realtime --port 8000 \
+  --window.sliding_window_mode summary \
+  --window.summary_audio_path sglang_omni/models/minicpm_o/assets/summary_instruction.wav
+```
+
+The initial settings are `summary_trigger_tokens=5500`, `summary_max_tokens=1000`, and `summary_max_audio_units=128`. The input recording asks the model to recap the conversation in detail. At a new VAD-detected utterance, history at the trigger threshold starts an internal summary in the same native session. The user's pending audio waits in the existing input buffer, and resumes after the original system/reference prefix and the new summary have been rebuilt. Summary text and speech are not sent to the client.
+
+Startup checks the full internal audio and generation budget against the scheduler's actual request limit. If the summary cannot fit, does not finish within its limits, or leaves insufficient room to resume the pending input, the session reports an error. A long utterance can exhaust context because summarization is checked only when speech starts; there is no mid-utterance compression or automatic fallback to `basic`.
+
 ## Realtime-Venus
 
 [Realtime-Venus](https://huggingface.co/inclusionAI/Realtime-Venus) is a pair of MiniCPM-o 4.5 fine-tunes from inclusionAI: Realtime-Venus-Omni for audio-visual full-duplex calls and Realtime-Venus-Audio for audio-only chat and calls. Both keep the MiniCPM-o weight layout and serve with the commands on this page.

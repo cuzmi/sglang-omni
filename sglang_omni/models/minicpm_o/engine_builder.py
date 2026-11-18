@@ -16,7 +16,11 @@ from sglang_omni.model_runner.model_worker import ModelWorker
 from sglang_omni.models.minicpm_o.components.sglang_thinker import (
     MiniCPMOThinkerForCausalLM,
 )
-from sglang_omni.models.minicpm_o.hf_config import register_minicpm_o_hf_config
+from sglang_omni.models.minicpm_o.components.streaming_perception import UNIT_FRAMES
+from sglang_omni.models.minicpm_o.hf_config import (
+    MiniCPMOConfig,
+    register_minicpm_o_hf_config,
+)
 from sglang_omni.models.minicpm_o.native_config import (
     DEFAULT_WINDOW_SETTINGS,
     THINKER_CONTEXT_LENGTH,
@@ -34,7 +38,7 @@ from sglang_omni.scheduling.sglang_backend.output_processor import SGLangOutputP
 def check_window_kv_cache(window: MiniCPMODuplexWindow, kv_cache: KVCache) -> None:
     """Refuse a thinker window over a KV cache whose token rows a cut cannot move in place."""
     # note (0xtoward): A quantized KV recipe reads back a dequantized copy, and other layouts or pools hold no token rows to move.
-    if window.sliding_window_mode != "off" and (
+    if window.sliding_window_mode == "basic" and (
         type(kv_cache) is not MHATokenToKVPool
         or kv_cache.is_quantized_kv_cache
         or kv_cache.kv_cache_layout != "nhd"
@@ -56,6 +60,7 @@ class MiniCPMOThinkerEngineBuilder(SGLangGenerationEngineBuilder):
     tokenizer: PreTrainedTokenizerBase
     adapter: ThinkerAdapter
     window: MiniCPMODuplexWindow
+    summary_audio_tokens_per_unit: int = 0
 
     def __init__(
         self, *, window: MiniCPMODuplexWindow = DEFAULT_WINDOW_SETTINGS
@@ -80,6 +85,14 @@ class MiniCPMOThinkerEngineBuilder(SGLangGenerationEngineBuilder):
         register_minicpm_o_hf_config()
         ModelRegistry.models["MiniCPMO"] = MiniCPMOThinkerForCausalLM
         self.tokenizer = get_tokenizer(checkpoint_dir, trust_remote_code=True)
+        if self.window.sliding_window_mode == "summary":
+            config = MiniCPMOConfig.from_pretrained(checkpoint_dir)
+            # note (Codex): Streaming removes convolution context before pooling, leaving 50 core frames in every one-second unit.
+            self.summary_audio_tokens_per_unit = (
+                UNIT_FRAMES // 2 // config.audio_pool_step
+            )
+        else:
+            pass
 
     def make_model_runner(
         self, model_worker: ModelWorker, output_proc: SGLangOutputProcessor
@@ -111,8 +124,11 @@ class MiniCPMOThinkerEngineBuilder(SGLangGenerationEngineBuilder):
         model_config: ModelConfig,
     ) -> tuple[OmniScheduler, MiniCPMOThinkerModelRunner]:
         check_window_kv_cache(self.window, token_to_kv_pool_allocator.get_kvcache())
-        output_proc = SGLangOutputProcessor(capture_hidden=True)
-        return super().build_runtime(
+        output_proc = SGLangOutputProcessor(
+            capture_hidden=True,
+            should_emit_hidden=lambda request: request.data.generate_audio,
+        )
+        scheduler, model_runner = super().build_runtime(
             model_worker=model_worker,
             model=model,
             output_proc=output_proc,
@@ -122,3 +138,15 @@ class MiniCPMOThinkerEngineBuilder(SGLangGenerationEngineBuilder):
             server_args=server_args,
             model_config=model_config,
         )
+        if self.window.sliding_window_mode == "summary":
+            boundary_token_count = len(
+                (self.adapter.special.unit, self.adapter.special.unit_end)
+            )
+            self.window.check_summary_budget(
+                self.window.summary_max_audio_units
+                * (self.summary_audio_tokens_per_unit + boundary_token_count),
+                scheduler.max_req_len,
+            )
+        else:
+            pass
+        return scheduler, model_runner

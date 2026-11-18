@@ -39,7 +39,11 @@ class MiniCPMOThinkerSessionState:
     # Note (ruoyu): After a client stop the model, hearing only silence, resumes the stopped answer, so every unit listens until one carries the user's voice.
     is_listen_held: bool = False
     # note (luojiaxuan): One detector per session, since silero carries its recurrent state from one frame to the next.
-    speech_detector: StatelessVAD
+    speech_detector: StatelessVAD | None = None
+    is_user_speaking: bool = False
+    prepared_request_id: str | None = None
+    has_user_speech: bool = False
+    user_speech_started: bool = False
     drain_units_left: int = 0
     force_listen_counter: int = 0
     generated_history: list[int] = field(default_factory=list)
@@ -102,6 +106,7 @@ class DuplexUnitRequestData(SGLangARRequestData):
     """One bounded generated unit appended to an SGLang streaming session."""
 
     thinker_state: MiniCPMOThinkerSessionState
+    generate_audio: bool = True
     # note (0xtoward): Index of the unit's <unit> among its own token ids.
     unit_token_index: int
     # note (Junnan Li): Each entry is (token id, thinker hidden state, ends the turn).

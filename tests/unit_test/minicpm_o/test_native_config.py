@@ -34,6 +34,7 @@ from sglang_omni.models.minicpm_o.native_config import (
     THINKER_CONTEXT_LENGTH,
     MiniCPMODuplexPipelineConfig,
     MiniCPMODuplexVision,
+    MiniCPMODuplexWindow,
 )
 from sglang_omni.models.minicpm_o.native_stages import SpeechHooks
 from sglang_omni.models.minicpm_o.session_adapters import build_realtime_deployment
@@ -586,3 +587,46 @@ def test_each_duplex_session_optimization_turns_off_alone(
     native_stages.MiniCPMOVocoderRuntime.return_value.warm_up.assert_called_once_with(
         b"reference", capture_chunk_graphs=captures_chunk_graphs
     )
+
+
+def test_summary_audio_configuration_reaches_perception_and_thinker(
+    tmp_path: Path, stub_stage_models: None, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    reference_path = tmp_path / "reference.wav"
+    reference_path.write_bytes(b"reference")
+    summary_path = tmp_path / "summary.wav"
+    summary_path.write_bytes(b"summary instruction")
+    with pytest.raises(ValidationError, match="summary_audio_path"):
+        MiniCPMODuplexWindow(sliding_window_mode="summary")
+    config = MiniCPMODuplexPipelineConfig(
+        model_path="unused",
+        reference_audio=str(reference_path),
+        window=MiniCPMODuplexWindow(
+            sliding_window_mode="summary",
+            summary_audio_path=str(summary_path),
+            summary_max_audio_units=64,
+        ),
+    )
+    builder = Mock()
+    monkeypatch.setattr(native_stages, "MiniCPMOThinkerEngineBuilder", builder)
+    native_stages.create_perception_scheduler(
+        config.model_path, device="cpu", **config.stage_factory_kwargs("perception")
+    )
+    native_stages.create_thinker_scheduler(
+        config.model_path,
+        device="cpu",
+        **{**config.stage_factory_kwargs("thinker"), "kv_cache_tokens": None},
+    )
+    native_stages.PerceptionHooks.return_value.prepare_summary_audio.assert_called_once_with(
+        b"summary instruction", 64
+    )
+    assert builder.call_args.kwargs["window"] == config.window
+
+
+def test_summary_budget_reserves_every_audio_unit_and_generated_token() -> None:
+    window = MiniCPMODuplexWindow(
+        sliding_window_mode="summary", summary_audio_path="summary.wav"
+    )
+    window.check_summary_budget(summary_input_tokens=1536, context_limit=8191)
+    with pytest.raises(ValueError, match="input=1536, output=1000"):
+        window.check_summary_budget(summary_input_tokens=1536, context_limit=8036)

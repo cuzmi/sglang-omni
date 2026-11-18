@@ -14,10 +14,10 @@ import msgpack
 import pytest
 import torch
 from sglang.srt.managers.io_struct import SessionParams, TokenizedGenerateReqInput
-from sglang.srt.managers.schedule_batch import Req, ReqKvInfo
+from sglang.srt.managers.schedule_batch import FINISH_LENGTH, Req, ReqKvInfo
 from sglang.srt.mem_cache.base_prefix_cache import MatchPrefixParams, MatchResult
 from sglang.srt.sampling.sampling_params import SamplingParams
-from sglang.srt.session.session_controller import Session
+from sglang.srt.session.session_controller import Session, SessionController
 from sglang.srt.session.streaming_session import SessionSlot, StreamingSession
 
 from sglang_omni.admission import ContextExhaustedError, QueueFullError
@@ -1036,3 +1036,312 @@ def test_ar_bridge_refuses_a_rewind_that_does_not_land_between_units(
     assert session.committed_origin_len == prompt_length
     assert record.kv_committed_len == prompt_length + COMMITTED_PAST_PROMPT
     assert bridge.sessions[NATIVE_SESSION_ID].embedding_spans == embedding_spans
+
+
+class CompactionAdapter(ARSessionAdapter):
+    is_compaction_enabled = True
+
+    def __init__(self) -> None:
+        self.prepared_count = 0
+        self.checked_count = 0
+        self.internal_unit_count = 0
+        self.finished_count = 0
+        self.bound_requests: list[str] = []
+
+    def prepare_unit(
+        self,
+        session_identity: SessionIdentity,
+        chunk: TimedChunk,
+        payload: StagePayload,
+    ) -> ARSessionPreparation:
+        self.prepared_count += 1
+        return ARSessionPreparation()
+
+    def start_compaction(
+        self,
+        session_identity: SessionIdentity,
+        chunk: TimedChunk,
+        payload: StagePayload,
+        history_length: int,
+        context_limit: int,
+    ) -> bool:
+        self.checked_count += 1
+        return True
+
+    def build_compaction_request(
+        self,
+        session_identity: SessionIdentity,
+        request_id: str,
+        payload: StagePayload,
+        history_length: int,
+        context_limit: int,
+    ) -> SGLangARRequestData:
+        token_ids = [30, 31] if self.internal_unit_count == 0 else [40, 41]
+        self.internal_unit_count += 1
+        return SGLangARRequestData(
+            req=Req(
+                request_id,
+                "",
+                token_ids,
+                SamplingParams(max_new_tokens=2),
+                vocab_size=NATIVE_VOCAB_SIZE,
+            ),
+            unit_embedding_spans=[audio_span(0, 1)],
+        )
+
+    def complete_compaction_request(
+        self, session_identity: SessionIdentity, request_data: SGLangARRequestData
+    ) -> Literal["continue", "rebuild"]:
+        return "continue" if self.internal_unit_count == 1 else "rebuild"
+
+    def build_rebuild_request(
+        self,
+        session_identity: SessionIdentity,
+        request_id: str,
+        payload: StagePayload,
+        context_limit: int,
+    ) -> SGLangARRequestData:
+        return SGLangARRequestData(
+            req=Req(
+                request_id,
+                "",
+                [*FIRST_UNIT_IDS, 88, 89],
+                SamplingParams(max_new_tokens=1),
+                vocab_size=NATIVE_VOCAB_SIZE,
+            ),
+            unit_embedding_spans=[FIRST_UNIT_AUDIO_SPAN],
+        )
+
+    def finish_compaction(self, session_identity: SessionIdentity) -> None:
+        self.finished_count += 1
+
+    def bind_request(
+        self,
+        session_identity: SessionIdentity,
+        request_data: SGLangARRequestData,
+        unit: SessionUnit,
+    ) -> None:
+        self.bound_requests.append(unit.request_id)
+
+
+def compaction_bridge() -> tuple[ARSessionBridge, SessionUnit, StagePayload]:
+    native, _ = spoken_native_session()
+    [last_node] = native.req_nodes.values()
+    last_node.req.finished_reason = FINISH_LENGTH(len(SECOND_UNIT_OUTPUT_IDS))
+    records = {}
+    cache = Mock()
+    cache.session_records.side_effect = lambda: records
+    cache.release_session.side_effect = lambda session_id: records.pop(session_id, None)
+    scheduler = Mock(max_req_len=1000)
+    scheduler.model_config.vocab_size = NATIVE_VOCAB_SIZE
+    scheduler.session_controller = SessionController(cache)
+    scheduler.session_controller.sessions[NATIVE_SESSION_ID] = native
+    scheduler.tree_cache = cache
+    bridge = ARSessionBridge(scheduler, CompactionAdapter())
+    identity = SessionIdentity(NATIVE_SESSION_ID)
+    bridge.sessions[identity.id] = BridgeSession(
+        session_identity=identity,
+        embedding_spans=[FIRST_UNIT_AUDIO_SPAN, SECOND_UNIT_AUDIO_SPAN],
+    )
+    payload = StagePayload("held-real-unit", OmniRequest(None), {})
+    unit = bridge.accept(
+        payload,
+        SessionOperation(
+            "append", identity, ("thinker",), TimedChunk("audio", 2000, 1000, 2, b"")
+        ),
+    )
+    bridge.prepare_unit(unit, payload)
+    return bridge, unit, payload
+
+
+def commit_internal_unit(
+    bridge: ARSessionBridge,
+    request_data: SGLangARRequestData,
+    output_ids: list[int],
+) -> None:
+    native = bridge.bridge_scheduler.session_controller.get(NATIVE_SESSION_ID)
+    request = request_data.req
+    finish_unit(native, request, output_ids)
+    request.finished_reason = FINISH_LENGTH(len(output_ids))
+    bridge.bridge_scheduler.tree_cache.session_records()[NATIVE_SESSION_ID] = ReqKvInfo(
+        req_pool_idx=0,
+        kv_committed_len=len(request.full_untruncated_fill_ids),
+        kv_allocated_len=len(request.full_untruncated_fill_ids),
+    )
+
+
+def test_compaction_appends_incrementally_rebuilds_and_resumes_the_prepared_unit() -> (
+    None
+):
+    """Internal appends must retain prior outputs and shifted spans; rebuild must discard its sampled token before the held real unit resumes once."""
+    bridge, unit, payload = compaction_bridge()
+    original_native = bridge.bridge_scheduler.session_controller.get(NATIVE_SESSION_ID)
+    first = bridge.start_compaction(unit, payload)
+    expected_history = [
+        *FIRST_UNIT_IDS,
+        *FIRST_UNIT_OUTPUT_IDS,
+        *SECOND_UNIT_IDS,
+        *SECOND_UNIT_OUTPUT_IDS,
+    ]
+    assert list(first.req.origin_input_ids) == [*expected_history, 30, 31]
+    assert first.req.session is original_native
+    assert first.req.skip_radix_cache_insert
+    assert first.session_embedding_spans[-1].start == len(expected_history)
+    assert first.req.rid not in bridge.units_by_request_id
+    with pytest.raises(AssertionError, match="has not committed"):
+        bridge.complete_internal_request(first.req.rid, first)
+    commit_internal_unit(bridge, first, [70, 71])
+    second, resumed = bridge.complete_internal_request(first.req.rid, first)
+    assert resumed is None
+    assert list(second.req.origin_input_ids) == [
+        *expected_history,
+        30,
+        31,
+        70,
+        71,
+        40,
+        41,
+    ]
+    assert second.req.session is original_native
+    assert [span.start for span in second.session_embedding_spans[-2:]] == [
+        len(expected_history),
+        len(expected_history) + 4,
+    ]
+    commit_internal_unit(bridge, second, [72])
+    rebuild, resumed = bridge.complete_internal_request(second.req.rid, second)
+    assert resumed is None
+    assert rebuild.req.session is not original_native
+    assert rebuild.req.session.session_id == NATIVE_SESSION_ID
+    assert list(rebuild.req.origin_input_ids) == [*FIRST_UNIT_IDS, 88, 89]
+    assert rebuild.session_embedding_spans == [FIRST_UNIT_AUDIO_SPAN]
+    assert bridge.sessions[NATIVE_SESSION_ID].unit is unit
+    commit_internal_unit(bridge, rebuild, [99])
+    next_request, resumed = bridge.complete_internal_request(rebuild.req.rid, rebuild)
+    assert next_request is None and resumed is payload
+    assert not rebuild.req.output_ids
+    assert not bridge.internal_requests
+    assert bridge.sessions[NATIVE_SESSION_ID].compaction is None
+    assert bridge.adapter.bound_requests == []
+    assert bridge.prepare_unit(unit, resumed) is False
+    assert bridge.start_compaction(unit, resumed) is None
+    assert bridge.adapter.prepared_count == bridge.adapter.checked_count == 1
+    real_request = SGLangARRequestData(
+        req=Req(
+            payload.request_id,
+            "",
+            [50, 51],
+            SamplingParams(max_new_tokens=1),
+            vocab_size=NATIVE_VOCAB_SIZE,
+        )
+    )
+    bridge.create_session_request(resumed, real_request)
+    assert list(real_request.req.origin_input_ids) == [*FIRST_UNIT_IDS, 88, 89, 50, 51]
+    assert bridge.adapter.bound_requests == [payload.request_id]
+    commit_internal_unit(bridge, real_request, [77])
+    bridge.complete(payload.request_id, real_request)
+    next_payload = replace(payload, request_id="next-real-unit")
+    next_unit = bridge.accept(
+        next_payload,
+        SessionOperation("append", unit.session_identity, unit.stages, unit.chunk),
+    )
+    bridge.prepare_unit(next_unit, next_payload)
+    assert bridge.start_compaction(next_unit, next_payload) is not None
+    assert bridge.adapter.checked_count == 2
+
+
+@pytest.mark.parametrize("unexpected_kv_tokens", [0, 1])
+def test_compaction_rebuild_requires_exact_prefix_kv(unexpected_kv_tokens: int) -> None:
+    """Missing prefix KV or an auxiliary token that received decode must fail instead of resuming a poisoned session."""
+    bridge, unit, payload = compaction_bridge()
+    request_data = bridge.start_compaction(unit, payload)
+    for output_ids in ([70, 71], [72]):
+        commit_internal_unit(bridge, request_data, output_ids)
+        request_data, _ = bridge.complete_internal_request(
+            request_data.req.rid, request_data
+        )
+    commit_internal_unit(bridge, request_data, [99])
+    record = bridge.bridge_scheduler.tree_cache.session_records()[NATIVE_SESSION_ID]
+    record.kv_committed_len = (
+        len(request_data.req.origin_input_ids) + unexpected_kv_tokens
+        if unexpected_kv_tokens
+        else 0
+    )
+    with pytest.raises(RuntimeError, match="more than its prefix"):
+        bridge.complete_internal_request(request_data.req.rid, request_data)
+    assert bridge.adapter.finished_count == 0
+    assert bridge.sessions[NATIVE_SESSION_ID].unit is unit
+    external_request_id, _ = bridge.fail_compaction(request_data.req.rid)
+    assert external_request_id == payload.request_id
+    assert NATIVE_SESSION_ID not in bridge.sessions
+    assert not bridge.internal_requests
+
+
+@pytest.mark.parametrize("is_enqueued", [False, True])
+def test_preemption_during_compaction_fails_the_held_unit_and_releases_only_its_session(
+    is_enqueued: bool,
+) -> None:
+    """Stop cannot leave the held append waiting or resume ordinary state over a partial internal summary."""
+    bridge, unit, payload = compaction_bridge()
+    peer_identity = SessionIdentity("peer")
+    assert bridge.open_streaming_session(peer_identity.id)
+    bridge.sessions[peer_identity.id] = BridgeSession(session_identity=peer_identity)
+    peer_native = bridge.bridge_scheduler.session_controller.get(peer_identity.id)
+    read = StagePayload("read", OmniRequest(None), {})
+    bridge.sessions[NATIVE_SESSION_ID].output_read = read
+    request_data = bridge.start_compaction(unit, payload)
+    internal_request = bridge.internal_requests[request_data.req.rid]
+    internal_request.is_enqueued = is_enqueued
+    bridge.bridge_scheduler.waiting_queue = [request_data.req] if is_enqueued else []
+    with pytest.raises(ValueError, match="interrupted; session closed"):
+        bridge.apply_operation(
+            StagePayload("stop", OmniRequest(None), {}),
+            SessionOperation(
+                "control",
+                unit.session_identity,
+                unit.stages,
+                control_chunk("interrupt"),
+                should_preempt=True,
+            ),
+        )
+    errors = bridge.bridge_scheduler.emit_request_error.call_args_list
+    assert [call.args[0] for call in errors] == [payload.request_id, read.request_id]
+    assert not bridge.internal_requests and not bridge.units_by_request_id
+    assert list(bridge.sessions) == [peer_identity.id]
+    assert (
+        bridge.bridge_scheduler.session_controller.get(peer_identity.id) is peer_native
+    )
+
+
+def test_internal_compaction_requests_reserve_capacity_for_peer_sessions() -> None:
+    """Internal requests consume rows and future KV capacity while their external append remains suspended."""
+    bridge, unit, payload = compaction_bridge()
+    request_data = bridge.start_compaction(unit, payload)
+    scheduler = bridge.bridge_scheduler
+    scheduler.req_to_token_pool.free_slots = [0, 1]
+    scheduler.token_to_kv_pool_allocator.available_size.return_value = 20
+    scheduler.tree_cache.evictable_size.return_value = 0
+    assert bridge.check_session_capacity(request_data.req.rid) is None
+    peer_identity = SessionIdentity("peer")
+    assert bridge.open_streaming_session(peer_identity.id)
+    bridge.sessions[peer_identity.id] = BridgeSession(session_identity=peer_identity)
+    peer_payload = replace(payload, request_id="peer-real-unit")
+    peer_unit = bridge.accept(
+        peer_payload,
+        SessionOperation("append", peer_identity, unit.stages, unit.chunk),
+    )
+    bridge.prepare_unit(peer_unit, peer_payload)
+    peer_request_data = bridge.start_compaction(peer_unit, peer_payload)
+    assert "request-to-token slots exhausted" in bridge.check_session_capacity(
+        request_data.req.rid
+    )
+    scheduler.req_to_token_pool.free_slots = [0, 1, 2]
+    assert bridge.check_session_capacity(request_data.req.rid) is None
+    scheduler.token_to_kv_pool_allocator.available_size.return_value = 19
+    assert (
+        bridge.check_session_capacity(request_data.req.rid)
+        == "session KV capacity exhausted"
+    )
+    assert (
+        bridge.check_session_capacity(peer_request_data.req.rid)
+        == "session KV capacity exhausted"
+    )

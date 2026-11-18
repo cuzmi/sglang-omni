@@ -698,6 +698,30 @@ def duplex_runner(
     return runner
 
 
+@pytest.mark.parametrize("generate_audio", [False, True])
+def test_internal_text_generation_does_not_retain_talker_hidden_states(
+    generate_audio: bool,
+) -> None:
+    request_data = DuplexUnitRequestData(
+        thinker_state=session_state(),
+        unit_token_index=0,
+        generate_audio=generate_audio,
+        generation_steps=2,
+        pending_unit_token=PLAIN_TOKEN_ID,
+    )
+    extra = {"hidden_states": torch.ones(1, 4)} if generate_audio else {}
+    duplex_runner(SPECIAL_TOKENS).post_process_outputs(
+        None,
+        SimpleNamespace(
+            requests=[SimpleNamespace(request_id="unit", data=request_data)]
+        ),
+        {"unit": SimpleNamespace(data=OTHER_TOKEN_ID, extra=extra)},
+    )
+    assert request_data.generated_unit_ids == [OTHER_TOKEN_ID]
+    assert request_data.pending_unit_token == OTHER_TOKEN_ID
+    assert len(request_data.talker_conditions) == int(generate_audio)
+
+
 def session_state(
     **sampling_overrides: float | int | bool,
 ) -> MiniCPMOThinkerSessionState:

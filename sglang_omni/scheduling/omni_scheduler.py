@@ -1324,7 +1324,16 @@ class OmniScheduler(Generic[RequestDataT]):
                 )
                 return False
             elif not is_empty_eos:
-                return True
+                try:
+                    internal_request = bridge.start_compaction(unit, payload)
+                    if internal_request is None:
+                        return True
+                    else:
+                        self.enqueue_compaction_request(internal_request)
+                        return False
+                except Exception as error:
+                    self.fail_context_compaction(payload.request_id, error)
+                    return False
             else:
                 try:
                     eos_payload = bridge.adapter.finish_input(
@@ -1352,6 +1361,53 @@ class OmniScheduler(Generic[RequestDataT]):
                         )
                     )
                     return False
+
+    def enqueue_compaction_request(self, request_data: SGLangARRequestData) -> None:
+        """Queue an internal native append without consuming a pipeline unit."""
+        bridge = self.session_bridge
+        assert bridge is not None
+        request = request_data.req
+        self.normalize_req_token_arrays(request)
+        capacity_error = bridge.check_session_capacity(request.rid)
+        if capacity_error is not None:
+            raise ValueError(capacity_error)
+        elif self.waiting_queue_is_full():
+            raise QueueFullError()
+        else:
+            pass
+        admission_error = self.select_decode_path(request, request_data)
+        admission_error = admission_error or self.request_kv_capacity_error(
+            request,
+            session_capacity_checked=True,
+            decode_path=request_data.decode_path,
+        )
+        if admission_error is not None:
+            raise ValueError(admission_error)
+        elif request_data.decode_path != "plain":
+            raise ValueError("context compaction requires non-speculative decoding")
+        else:
+            pass
+        with self.request_admission_lock:
+            if not self._set_or_validate_priority(request):  # noqa: leading-underscore
+                raise ValueError("context compaction request priority was rejected")
+            else:
+                pass
+            request._omni_terminal_claimed = False  # noqa: leading-underscore
+            request._coalesce_enqueue_t = (
+                time.perf_counter()
+            )  # noqa: leading-underscore
+            request.omni_data = request_data
+            self.waiting_queue.append(request)
+            bridge.internal_requests[request.rid].is_enqueued = True
+
+    def fail_context_compaction(self, request_id: str, error: Exception) -> None:
+        """Fail the suspended append and close only its owning session."""
+        bridge = self.session_bridge
+        assert bridge is not None
+        external_request_id, read_payloads = bridge.fail_compaction(request_id)
+        self.emit_request_error(external_request_id, error)
+        for payload in read_payloads:
+            self.emit_request_error(payload.request_id, error)
 
     def process_input_requests(self, recv_reqs: list[StagePayload]) -> None:
         """Convert incoming payloads to SGLang Reqs and enqueue."""
@@ -2221,6 +2277,15 @@ class OmniScheduler(Generic[RequestDataT]):
             return None
 
     def emit_request_error(self, request_id: str, error: Exception) -> None:
+        bridge = self.session_bridge
+        if bridge is not None and request_id in bridge.internal_requests:
+            if request_id != bridge.cancelling_request_id:
+                self.fail_context_compaction(request_id, error)
+            else:
+                pass
+            return
+        else:
+            pass
         if not self.is_entry_rank:
             return
         else:
@@ -2855,7 +2920,11 @@ class OmniScheduler(Generic[RequestDataT]):
         step_messages: list[OutgoingMessage] = []
         for sched_req in sched_output.requests:
             rid = sched_req.request_id
-            if rid in skip_rids or rid in self.aborted_request_ids:
+            if (
+                rid in skip_rids
+                or rid in self.aborted_request_ids
+                or (bridge is not None and rid in bridge.internal_requests)
+            ):
                 continue
             else:
                 pass
@@ -2912,6 +2981,11 @@ class OmniScheduler(Generic[RequestDataT]):
         put_messages(self.outbox, staged)
 
     def flush_stream_output(self, request_id: str, req_data: ARRequestData) -> None:
+        bridge = self.session_bridge
+        if bridge is not None and request_id in bridge.internal_requests:
+            return
+        else:
+            pass
         session_unit = self.active_session_unit(request_id)
         if session_unit is not None and _get_active_stage() == session_unit.stages[-1]:
             bridge = self.session_bridge
@@ -3118,6 +3192,8 @@ class OmniScheduler(Generic[RequestDataT]):
                 pass
 
             rid = req.rid
+            bridge = self.session_bridge
+            is_internal = bridge is not None and rid in bridge.internal_requests
             data = None
             with self.request_admission_lock:
                 is_aborted = isinstance(req.finished_reason, FINISH_ABORT) or (
@@ -3159,6 +3235,12 @@ class OmniScheduler(Generic[RequestDataT]):
                 self.first_emit_done.discard(rid)
                 self.emit_model_path_end_once(rid, status="aborted")
                 detach_request_data(req)
+                if is_internal and rid != bridge.cancelling_request_id:
+                    self.fail_context_compaction(
+                        rid, RuntimeError("context compaction request was aborted")
+                    )
+                else:
+                    pass
                 continue
             else:
                 pass
@@ -3221,14 +3303,18 @@ class OmniScheduler(Generic[RequestDataT]):
                     data.spec_tokens_details = spec_tokens_details
                 else:
                     pass
-                self.flush_stream_output(rid, data)
-                session_unit = self.active_session_unit(rid)
-                if session_unit is None:
-                    result = self.result_adapter(data)
+                if is_internal:
+                    pass
                 else:
-                    bridge = self.session_bridge
-                    assert bridge is not None
-                    result = bridge.adapter.result(session_unit.session_identity, data)
+                    self.flush_stream_output(rid, data)
+                    session_unit = self.active_session_unit(rid)
+                    if session_unit is None:
+                        result = self.result_adapter(data)
+                    else:
+                        assert bridge is not None
+                        result = bridge.adapter.result(
+                            session_unit.session_identity, data
+                        )
             except Exception as exc:
                 terminal_error = exc
                 logger.exception(
@@ -3260,12 +3346,39 @@ class OmniScheduler(Generic[RequestDataT]):
 
             if terminal_error is not None:
                 self.first_emit_done.discard(rid)
-                self.emit_request_error(rid, terminal_error)
+                if is_internal:
+                    self.fail_context_compaction(rid, terminal_error)
+                else:
+                    self.emit_request_error(rid, terminal_error)
                 continue
             else:
                 pass
 
             self.first_emit_done.discard(rid)
+            if is_internal:
+                assert bridge is not None
+                session_id = bridge.internal_requests[rid].session_identity.id
+                suspended_unit = bridge.sessions[session_id].unit
+                assert suspended_unit is not None
+                external_request_id = suspended_unit.request_id
+                try:
+                    internal_request, resumed_payload = (
+                        bridge.complete_internal_request(rid, data)
+                    )
+                    if internal_request is not None:
+                        self.enqueue_compaction_request(internal_request)
+                    elif resumed_payload is not None:
+                        self.deferred_request_payloads[resumed_payload.request_id] = (
+                            resumed_payload
+                        )
+                        self.dirty_deferred_request_ids.add(resumed_payload.request_id)
+                    else:
+                        pass
+                except Exception as error:
+                    self.fail_context_compaction(external_request_id, error)
+                continue
+            else:
+                pass
             self.outbox.put(
                 OutgoingMessage(
                     request_id=rid,
@@ -3529,6 +3642,14 @@ class OmniScheduler(Generic[RequestDataT]):
             pass
         if bridge is not None:
             if (
+                request_id != bridge.cancelling_request_id
+                and request_id in bridge.internal_requests
+            ):
+                self.fail_context_compaction(
+                    request_id, ValueError("context compaction request was aborted")
+                )
+                return
+            elif (
                 request_id != bridge.cancelling_request_id
                 and self.active_session_unit(request_id) is not None
             ):

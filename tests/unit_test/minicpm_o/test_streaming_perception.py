@@ -491,9 +491,9 @@ def test_batched_perception_matches_each_session_alone(reference: str) -> None:
 REFERENCE_MEL_FRAMES = 200
 
 
-def wav_bytes(seed: int) -> bytes:
-    """One second of 16 kHz mono PCM noise as a WAV file."""
-    samples = (np.random.default_rng(seed).standard_normal(SAMPLE_RATE) * 3000).astype(
+def wav_bytes(seed: int, sample_count: int = SAMPLE_RATE) -> bytes:
+    """16 kHz mono PCM noise as a WAV file."""
+    samples = (np.random.default_rng(seed).standard_normal(sample_count) * 3000).astype(
         "<i2"
     )
     encoded = BytesIO()
@@ -570,3 +570,70 @@ def test_warm_up_keeps_no_session_state() -> None:
     hooks.warm_up(2)
     assert hooks.states == {}
     assert list(hooks.reference_embeds_cache) == [hash_bytes(hooks.reference_audio)]
+
+
+def test_summary_audio_uses_separate_encoder_history_and_transfers_once(
+    state: MiniCPMOPerceptionState,
+) -> None:
+    """Preparing synthetic audio must preserve real streaming history and omit the fixed prefix."""
+    encoder = tiny_audio_encoder(pool_step=5)
+    mel_filter_bank = LogMelFilterBank.from_feature_extractor(
+        WhisperFeatureExtractor(feature_size=80)
+    )
+    hooks = PerceptionHooks(
+        state.tokenizer,
+        reference_processor(),
+        encoder,
+        reference_audio=b"",
+        image_encoder=Mock(),
+        mel_filter_bank=mel_filter_bank,
+        reference_cache_capacity=1,
+    )
+    state.audio_encoder = encoder
+    state.mel_filter_bank = mel_filter_bank
+    state.prefix_token_ids = [7, 8]
+    state.prefix_schema = [("token", 2)]
+    identity = SessionIdentity("real")
+    hooks.states[identity] = state
+    instruction = wav_bytes(seed=7, sample_count=UNIT_SAMPLES + 17)
+    with pytest.raises(ValueError, match="exceeding summary_max_audio_units"):
+        hooks.prepare_summary_audio(instruction, summary_max_audio_units=1)
+    hooks.prepare_summary_audio(instruction, summary_max_audio_units=4)
+    assert hooks.summary_prompt_audio_units == 2
+    assert len(hooks.summary_audio_plans) == 4
+    for plan in hooks.summary_audio_plans:
+        assert plan["token_ids"] == [1, *([0] * 10)]
+        assert plan["input_embeds"].shape[0] == 10
+    assert state.audio_chunk_index == 0
+    assert state.audio_encoder_state is None
+    first_payload = StagePayload("first", OmniRequest(None), None)
+    hooks.append_batch(
+        [
+            SessionAppend(
+                chunk=TimedChunk("audio", 0, UNIT_MS, 0, bytes(UNIT_SAMPLES * 2)),
+                payload=first_payload,
+                context=SimpleNamespace(session_identity=identity),
+            )
+        ]
+    )
+    assert first_payload.data["token_ids"][:3] == [7, 8, 1]
+    assert first_payload.data["summary_audio_plans"] is hooks.summary_audio_plans
+    assert first_payload.data["summary_prompt_audio_units"] == 2
+    real_audio_history = state.audio_encoder_state
+    real_mel_samples = state.mel_samples.copy()
+    hooks.prepare_summary_audio(wav_bytes(seed=9), summary_max_audio_units=4)
+    assert state.audio_chunk_index == 1
+    assert state.audio_encoder_state is real_audio_history
+    np.testing.assert_array_equal(state.mel_samples, real_mel_samples)
+    next_payload = StagePayload("next", OmniRequest(None), None)
+    hooks.append_batch(
+        [
+            SessionAppend(
+                chunk=TimedChunk("audio", UNIT_MS, UNIT_MS, 1, bytes(UNIT_SAMPLES * 2)),
+                payload=next_payload,
+                context=SimpleNamespace(session_identity=identity),
+            )
+        ]
+    )
+    assert "summary_audio_plans" not in next_payload.data
+    assert "summary_prompt_audio_units" not in next_payload.data

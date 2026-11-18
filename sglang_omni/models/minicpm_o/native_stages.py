@@ -26,10 +26,12 @@ from sglang_omni.models.minicpm_o.components.code2wav import (
 )
 from sglang_omni.models.minicpm_o.components.image_encoder import MiniCPMOImageEncoder
 from sglang_omni.models.minicpm_o.components.streaming_perception import (
+    FIRST_CHUNK_MS,
     SAMPLE_RATE,
     UNIT_SAMPLES,
     LogMelFilterBank,
     MiniCPMOPerceptionState,
+    PerceptionStepPlan,
     PreparedImageFeatures,
     StreamingAudioProcessor,
     audio_feature_batch,
@@ -110,6 +112,60 @@ class PerceptionHooks(BatchedSessionHooks):
         self.reference_cache_capacity = reference_cache_capacity
         self.reference_embeds_cache: OrderedDict[str, torch.Tensor] = OrderedDict()
         self.states: dict[SessionIdentity, MiniCPMOPerceptionState] = {}
+        self.summary_audio_plans: list[PerceptionStepPlan] = []
+        self.summary_prompt_audio_units: int = 0
+
+    def prepare_summary_audio(
+        self, summary_audio: bytes, summary_max_audio_units: int
+    ) -> None:
+        waveform, _ = AudioMediaIO(target_sr=SAMPLE_RATE).load_bytes(summary_audio)
+        samples = np.asarray(waveform, dtype=np.float32).reshape(-1)
+        first_padding_samples = FIRST_CHUNK_MS * SAMPLE_RATE // 1000 - UNIT_SAMPLES
+        prompt_audio_units = (
+            samples.size + first_padding_samples + UNIT_SAMPLES - 1
+        ) // UNIT_SAMPLES
+        if samples.size == 0:
+            raise ValueError("Summary instruction audio must not be empty")
+        elif prompt_audio_units > summary_max_audio_units:
+            raise ValueError(
+                f"Summary instruction needs {prompt_audio_units} audio units, "
+                f"exceeding summary_max_audio_units={summary_max_audio_units}"
+            )
+        else:
+            pass
+        samples = np.pad(
+            samples, (0, summary_max_audio_units * UNIT_SAMPLES - samples.size)
+        )
+        state = MiniCPMOPerceptionState(
+            tokenizer=self.tokenizer,
+            processor=self.processor,
+            audio_encoder=self.audio_encoder,
+            image_encoder=self.image_encoder,
+            max_slice_nums=1,
+            mel_filter_bank=self.mel_filter_bank,
+        )
+        plans: list[PerceptionStepPlan] = []
+        try:
+            for sample_start in range(0, samples.size, UNIT_SAMPLES):
+                mel_window = state.prepare_audio(
+                    samples[sample_start : sample_start + UNIT_SAMPLES]
+                )
+                log_mel = self.mel_filter_bank.log_mel(
+                    torch.from_numpy(mel_window[None])
+                )[0]
+                ((audio_embeds, audio_encoder_state),) = (
+                    self.audio_encoder.forward_streaming_batch(
+                        [state.mel_chunk(log_mel)]
+                    )
+                )
+                state.finish_audio(audio_encoder_state)
+                plan = state.build_step_plan(audio_embeds)
+                plan["input_embeds"] = plan["input_embeds"].cpu()
+                plans.append(plan)
+        finally:
+            state.close()
+        self.summary_audio_plans = plans
+        self.summary_prompt_audio_units = prompt_audio_units
 
     def reference_embeds(self, reference_audio: bytes) -> torch.Tensor:
         """The thinker embeddings of one reference audio, encoded once per distinct reference."""
@@ -213,9 +269,13 @@ class PerceptionHooks(BatchedSessionHooks):
                 group, encoded, strict=True
             ):
                 unit.state.finish_audio(audio_encoder_state)
-                unit.payload.data = unit.state.build_step_plan(
-                    audio_embeds, unit.image_embeds
-                )
+                plan = unit.state.build_step_plan(audio_embeds, unit.image_embeds)
+                if unit.state.audio_chunk_index == 1 and self.summary_audio_plans:
+                    plan["summary_audio_plans"] = self.summary_audio_plans
+                    plan["summary_prompt_audio_units"] = self.summary_prompt_audio_units
+                else:
+                    pass
+                unit.payload.data = plan
         return [append.payload for append in appends]
 
     def warm_up(self, max_batch_size: int) -> None:
@@ -442,6 +502,11 @@ def create_perception_scheduler(
     reference_audio: str | None = None,
     max_open_sessions: int = DEFAULT_MAX_SESSIONS,
     batch_sessions: bool,
+    sliding_window_mode: Literal[
+        "off", "basic", "summary"
+    ] = DEFAULT_WINDOW_SETTINGS.sliding_window_mode,
+    summary_audio_path: str | None = DEFAULT_WINDOW_SETTINGS.summary_audio_path,
+    summary_max_audio_units: int = DEFAULT_WINDOW_SETTINGS.summary_max_audio_units,
 ) -> SessionScheduler:
     register_minicpm_o_hf_config()
     device = str(resolve_concrete_device(device, gpu_id))
@@ -463,6 +528,15 @@ def create_perception_scheduler(
         ),
         reference_cache_capacity=max_open_sessions,
     )
+    if sliding_window_mode == "summary":
+        if summary_audio_path is None:
+            raise ValueError("summary_audio_path is required in summary mode")
+        else:
+            hooks.prepare_summary_audio(
+                Path(summary_audio_path).read_bytes(), summary_max_audio_units
+            )
+    else:
+        pass
     # note (Junnan Li): The scheduler hands one call every ready session, so batches go up to the session limit.
     hooks.warm_up(max_open_sessions)
     return SessionScheduler(
@@ -482,16 +556,24 @@ def create_thinker_scheduler(
     total_gpu_memory_fraction: float | None = None,
     kv_cache_tokens: int | None = None,
     sliding_window_mode: Literal[
-        "off", "basic"
+        "off", "basic", "summary"
     ] = DEFAULT_WINDOW_SETTINGS.sliding_window_mode,
     basic_window_high_tokens: int = DEFAULT_WINDOW_SETTINGS.basic_window_high_tokens,
     basic_window_low_tokens: int = DEFAULT_WINDOW_SETTINGS.basic_window_low_tokens,
+    summary_trigger_tokens: int = DEFAULT_WINDOW_SETTINGS.summary_trigger_tokens,
+    summary_max_tokens: int = DEFAULT_WINDOW_SETTINGS.summary_max_tokens,
+    summary_max_audio_units: int = DEFAULT_WINDOW_SETTINGS.summary_max_audio_units,
+    summary_audio_path: str | None = DEFAULT_WINDOW_SETTINGS.summary_audio_path,
 ) -> OmniScheduler:
     builder = MiniCPMOThinkerEngineBuilder(
         window=MiniCPMODuplexWindow(
             sliding_window_mode=sliding_window_mode,
             basic_window_high_tokens=basic_window_high_tokens,
             basic_window_low_tokens=basic_window_low_tokens,
+            summary_trigger_tokens=summary_trigger_tokens,
+            summary_max_tokens=summary_max_tokens,
+            summary_max_audio_units=summary_max_audio_units,
+            summary_audio_path=summary_audio_path,
         )
     )
     if kv_cache_tokens is None:

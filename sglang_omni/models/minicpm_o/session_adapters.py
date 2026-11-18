@@ -1,13 +1,11 @@
 # SPDX-License-Identifier: Apache-2.0
 """MiniCPM-o unit conversion for the shared session runtime."""
 
-from array import array
 from dataclasses import dataclass, field
+from typing import Literal
 
 import torch
 from sglang.srt.layers.rotary_embedding.base import RotaryEmbedding
-from sglang.srt.managers.schedule_batch import Req
-from sglang.srt.sampling.sampling_params import SamplingParams
 from transformers import PreTrainedTokenizerBase
 
 from sglang_omni.audio.vad import StatelessVAD
@@ -17,6 +15,11 @@ from sglang_omni.models.minicpm_o.components.streaming_perception import (
     SAMPLE_RATE,
     UNIT_MS,
     PerceptionStepPlan,
+)
+from sglang_omni.models.minicpm_o.context_compaction import (
+    MiniCPMOContextCompaction,
+    build_duplex_request,
+    perception_embedding_spans,
 )
 from sglang_omni.models.minicpm_o.native_config import (
     MAX_DRAIN_UNITS,
@@ -100,6 +103,10 @@ class ThinkerAdapter(ARSessionAdapter):
             tokenizer, bad_token_ids=tuple(tokenizer.bad_token_ids)
         )
         self.states: dict[SessionIdentity, MiniCPMOThinkerSessionState] = {}
+        self.is_compaction_enabled: bool = window.sliding_window_mode == "summary"
+        self.context_compaction: MiniCPMOContextCompaction = MiniCPMOContextCompaction(
+            tokenizer, vocab_size, self.special, window
+        )
 
     def open(self, session_identity: SessionIdentity, request: OmniRequest) -> None:
         self.states[session_identity] = MiniCPMOThinkerSessionState(
@@ -114,6 +121,8 @@ class ThinkerAdapter(ARSessionAdapter):
 
     def close(self, session_identity: SessionIdentity) -> None:
         self.states.pop(session_identity, None)
+        self.context_compaction.memories.pop(session_identity, None)
+        self.cancel_compaction(session_identity)
 
     def control(self, session_identity: SessionIdentity, event: TimedChunk) -> None:
         if control_type(event) == INTERRUPT:
@@ -121,7 +130,11 @@ class ThinkerAdapter(ARSessionAdapter):
             state.is_interrupt_pending = True
             state.is_listen_held = True
             # note (luojiaxuan): The detector hears no unit between holds, so each hold starts it afresh.
-            state.speech_detector.reset()
+            if self.is_compaction_enabled:
+                pass
+            else:
+                assert state.speech_detector is not None
+                state.speech_detector.reset()
             state.drain_units_left = 0
             state.is_latest_reply_ended = True
             self.cut_reply(state, keep_through_unit_of(event))
@@ -193,7 +206,93 @@ class ThinkerAdapter(ARSessionAdapter):
             ]
         else:
             pass
+        if (
+            self.is_compaction_enabled
+            and state.prepared_request_id != payload.request_id
+        ):
+            assert state.speech_detector is not None
+            pcm = (
+                chunk.payload["pcm"]
+                if isinstance(chunk.payload, dict)
+                else chunk.payload
+            )
+            state.has_user_speech = False
+            state.user_speech_started = False
+            for frame in state.speech_detector.score(
+                pcm, round(chunk.t_start_ms * SAMPLE_RATE / 1000)
+            ):
+                state.has_user_speech |= (
+                    frame.probability >= state.speech_detector.config.threshold
+                )
+                boundary = state.speech_detector.step(
+                    frame, in_speech=state.is_user_speaking
+                )
+                if boundary is not None:
+                    state.is_user_speaking = boundary.started
+                    state.user_speech_started |= boundary.started
+                else:
+                    pass
+            state.prepared_request_id = payload.request_id
+        else:
+            pass
         return ARSessionPreparation(kept_token_count=kept_token_count)
+
+    def start_compaction(
+        self,
+        session_identity: SessionIdentity,
+        chunk: TimedChunk,
+        payload: StagePayload,
+        history_length: int,
+        context_limit: int,
+    ) -> bool:
+        return self.context_compaction.start(
+            session_identity,
+            self.states[session_identity],
+            payload,
+            history_length,
+            context_limit,
+        )
+
+    def build_compaction_request(
+        self,
+        session_identity: SessionIdentity,
+        request_id: str,
+        payload: StagePayload,
+        history_length: int,
+        context_limit: int,
+    ) -> DuplexUnitRequestData:
+        return self.context_compaction.build_summary(
+            session_identity,
+            request_id,
+            payload,
+            history_length,
+            context_limit,
+        )
+
+    def complete_compaction_request(
+        self, session_identity: SessionIdentity, request_data: DuplexUnitRequestData
+    ) -> Literal["continue", "rebuild"]:
+        return self.context_compaction.complete_summary(session_identity, request_data)
+
+    def build_rebuild_request(
+        self,
+        session_identity: SessionIdentity,
+        request_id: str,
+        payload: StagePayload,
+        context_limit: int,
+    ) -> DuplexUnitRequestData:
+        return self.context_compaction.build_rebuild(
+            session_identity,
+            request_id,
+            payload,
+            context_limit,
+        )
+
+    def finish_compaction(self, session_identity: SessionIdentity) -> None:
+        self.context_compaction.finish(session_identity, self.states[session_identity])
+
+    def cancel_compaction(self, session_identity: SessionIdentity) -> None:
+        self.context_compaction.compactions.pop(session_identity, None)
 
     def finish_input(
         self, session_identity: SessionIdentity, payload: StagePayload
@@ -218,7 +317,13 @@ class ThinkerAdapter(ARSessionAdapter):
         plan: PerceptionStepPlan = payload.data
         is_interrupted = state.is_interrupt_pending
         state.is_interrupt_pending = False
-        if state.is_listen_held or state.drain_units_left > 0:
+        if self.is_compaction_enabled:
+            assert state.prepared_request_id == payload.request_id
+            hears_user = state.has_user_speech and (
+                state.is_listen_held or state.drain_units_left > 0
+            )
+        elif state.is_listen_held or state.drain_units_left > 0:
+            assert state.speech_detector is not None
             pcm = (
                 chunk.payload["pcm"]
                 if isinstance(chunk.payload, dict)
@@ -248,16 +353,7 @@ class ThinkerAdapter(ARSessionAdapter):
         else:
             suffix = []
         token_ids = [*prefix, *plan["token_ids"], *suffix]
-        perception_embedding_spans = [
-            EmbeddingSpan(
-                start=span["token_start"],
-                end=span["token_end"],
-                input_embeds=plan["input_embeds"][
-                    span["embedding_start"] : span["embedding_end"]
-                ],
-            )
-            for span in plan["embedding_spans"]
-        ]
+        perception_spans = perception_embedding_spans(plan)
         spans = [
             *refill_embedding_spans,
             *(
@@ -266,54 +362,39 @@ class ThinkerAdapter(ARSessionAdapter):
                     end=span.end + len(prefix),
                     input_embeds=span.input_embeds,
                 )
-                for span in perception_embedding_spans
+                for span in perception_spans
             ),
         ]
         sampling = state.sampling
-        sampling_params = SamplingParams(
-            max_new_tokens=sampling.max_new_tokens_per_unit,
-            temperature=1.0,
-            top_p=1.0,
-            top_k=-1,
-            repetition_penalty=1.0,
-            stop_token_ids=set(self.special.chunk_terminators),
-            no_stop_trim=True,
-            skip_special_tokens=False,
-        )
-        sampling_params.normalize(self.tokenizer)
-        adapter_request = Req(
-            payload.request_id,
-            "",
-            array("q", token_ids),
-            sampling_params,
+        request_data = build_duplex_request(
+            tokenizer=self.tokenizer,
             vocab_size=self.vocab_size,
-        )
-        adapter_request.tokenizer = self.tokenizer
-        adapter_request.return_hidden_states = True
-        return DuplexUnitRequestData(
-            req=adapter_request,
-            input_ids=torch.tensor(token_ids),
-            max_new_tokens=sampling.max_new_tokens_per_unit,
-            stage_payload=payload,
-            thinker_state=state,
+            special=self.special,
+            request_id=payload.request_id,
+            payload=payload,
+            state=state,
+            token_ids=token_ids,
+            embedding_spans=spans,
             # note (0xtoward): The last <unit> is the unit's own; a system prompt ahead of it may spell one.
             unit_token_index=max(
                 index
                 for index, token_id in enumerate(token_ids)
                 if token_id == self.special.unit
             ),
-            unit_embedding_spans=spans,
-            is_listen_forced=is_interrupted
-            or state.is_listen_held
-            or state.force_listen_counter < sampling.force_listen_count,
-            is_interrupted=is_interrupted,
-            hears_user=hears_user,
-            unit_index=chunk.seq,
-            perception_token_ids=plan["token_ids"],
-            perception_embedding_spans=perception_embedding_spans,
-            is_turn_ended_at_start=state.is_turn_ended,
-            generated_history_at_start=list(state.generated_history),
+            max_new_tokens=sampling.max_new_tokens_per_unit,
+            generate_audio=True,
         )
+        request_data.is_listen_forced = (
+            is_interrupted
+            or state.is_listen_held
+            or state.force_listen_counter < sampling.force_listen_count
+        )
+        request_data.is_interrupted = is_interrupted
+        request_data.hears_user = hears_user
+        request_data.unit_index = chunk.seq
+        request_data.perception_token_ids = plan["token_ids"]
+        request_data.perception_embedding_spans = perception_spans
+        return request_data
 
     def plan_history_cut(
         self,
@@ -330,7 +411,15 @@ class ThinkerAdapter(ARSessionAdapter):
         # note (0xtoward): The checkpoint checks its cache length after </unit>, which here comes with the next unit, so that length is the next <unit>'s position.
         next_unit_start = history_length + request_data.unit_token_index
         fitting_start = history_capacity + request_data.unit_token_index
-        if window.sliding_window_mode == "off" or (
+        if window.sliding_window_mode == "summary":
+            if history_length > history_capacity:
+                raise ValueError(
+                    f"summary session history has {history_length} tokens, "
+                    f"but the next unit permits at most {history_capacity}"
+                )
+            else:
+                return None
+        elif window.sliding_window_mode == "off" or (
             next_unit_start <= window.basic_window_high_tokens
             and next_unit_start <= fitting_start
         ):
@@ -380,7 +469,11 @@ class ThinkerAdapter(ARSessionAdapter):
         is_turn_ending = data.is_interrupted or ends_own_turn
         if ends_own_turn:
             state.drain_units_left = MAX_DRAIN_UNITS
-            state.speech_detector.reset()
+            if self.is_compaction_enabled:
+                pass
+            else:
+                assert state.speech_detector is not None
+                state.speech_detector.reset()
         else:
             pass
         if data.generated_unit_ids and data.is_turn_ended_at_start:

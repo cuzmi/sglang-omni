@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from io import BytesIO
-from typing import Literal, Protocol, TypedDict
+from typing import Literal, NotRequired, Protocol, TypedDict
 
 import numpy as np
 import torch
@@ -89,6 +89,8 @@ class PerceptionStepPlan(TypedDict):
     token_ids: list[int]
     input_embeds: torch.Tensor
     embedding_spans: list[EmbeddingSpanPlan]
+    summary_audio_plans: NotRequired[list[PerceptionStepPlan]]
+    summary_prompt_audio_units: NotRequired[int]
 
 
 @dataclass(kw_only=True)

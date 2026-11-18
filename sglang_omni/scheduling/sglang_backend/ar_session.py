@@ -7,7 +7,8 @@ import logging
 from array import array
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass, field
-from typing import Protocol
+from typing import Literal, Protocol
+from uuid import uuid4
 
 import torch
 from sglang.srt.managers.io_struct import (
@@ -103,6 +104,9 @@ class BridgeScheduler(Protocol):
     def abort(self, request_id: str) -> None:
         pass
 
+    def emit_request_error(self, request_id: str, error: Exception) -> None:
+        pass
+
     def release_request_kv_cache(self, req: Req) -> None:
         pass
 
@@ -135,6 +139,8 @@ class ARSessionPreparation:
 
 class ARSessionAdapter:
     """Convert unit inputs and outputs without mutating streaming session state."""
+
+    is_compaction_enabled: bool = False
 
     def open(self, session_identity: SessionIdentity, request: OmniRequest) -> None:
         """Initialize auxiliary model history after the streaming session is created."""
@@ -188,6 +194,46 @@ class ARSessionAdapter:
     ) -> SGLangARRequestData:
         raise NotImplementedError
 
+    def start_compaction(
+        self,
+        session_identity: SessionIdentity,
+        chunk: TimedChunk,
+        payload: StagePayload,
+        history_length: int,
+        context_limit: int,
+    ) -> bool:
+        return False
+
+    def build_compaction_request(
+        self,
+        session_identity: SessionIdentity,
+        request_id: str,
+        payload: StagePayload,
+        history_length: int,
+        context_limit: int,
+    ) -> SGLangARRequestData:
+        raise NotImplementedError
+
+    def complete_compaction_request(
+        self, session_identity: SessionIdentity, request_data: SGLangARRequestData
+    ) -> Literal["continue", "rebuild"]:
+        raise NotImplementedError
+
+    def build_rebuild_request(
+        self,
+        session_identity: SessionIdentity,
+        request_id: str,
+        payload: StagePayload,
+        context_limit: int,
+    ) -> SGLangARRequestData:
+        raise NotImplementedError
+
+    def finish_compaction(self, session_identity: SessionIdentity) -> None:
+        raise NotImplementedError
+
+    def cancel_compaction(self, session_identity: SessionIdentity) -> None:
+        """Discard model-side temporary compaction state during session teardown."""
+
     def plan_history_cut(
         self,
         session_identity: SessionIdentity,
@@ -227,31 +273,41 @@ class ARSessionAdapter:
 
 
 @dataclass(kw_only=True)
-class SessionUnit:
+class NativeSessionRequest:
     request_id: str
     session_identity: SessionIdentity
-    stages: tuple[str, ...]
-    chunk: TimedChunk
-    # Note (chenyang):
-    # There are multiple requests in SGLang Omni. Let's make a distinction between them.
-    # payload.request is the user's OmniRequest: inputs, params, and metadata. It is not queued.
-    # The session scheduler creates session_request with Session.create_req and queues that same
-    # SGLang Req. create_req builds it from token ids produced from the OmniRequest, joins tokens
-    # from earlier turns, and binds it to the streaming session.
     session_request: Req | None = None
-    # Note (Junnan Li): A deferred payload passes through routing again; the unit is prepared once.
-    is_prepared: bool = False
     is_enqueued: bool = False
-    # note (Junnan Li): Only completed units commit their spans to retained history.
     embedding_spans: list[EmbeddingSpan] = field(default_factory=list)
     native_offset: int = 0
     prompt_length: int = 0
 
 
 @dataclass(kw_only=True)
+class SessionUnit(NativeSessionRequest):
+    stages: tuple[str, ...]
+    chunk: TimedChunk
+    is_prepared: bool = False
+    is_compaction_checked: bool = False
+
+
+@dataclass(kw_only=True)
+class InternalSessionRequest(NativeSessionRequest):
+    pass
+
+
+@dataclass(kw_only=True)
+class SessionCompaction:
+    payload: StagePayload
+    phase: Literal["summary", "rebuild"] = "summary"
+    request_id: str | None = None
+
+
+@dataclass(kw_only=True)
 class BridgeSession:
     session_identity: SessionIdentity
     unit: SessionUnit | None = None
+    compaction: SessionCompaction | None = None
     # note (Junnan Li): KV rebuilds need embeddings from every completed unit.
     embedding_spans: list[EmbeddingSpan] = field(default_factory=list)
     # The session's read; an AR stage emits only inside appends, so the close answers it.
@@ -268,6 +324,7 @@ class ARSessionBridge:
         self.adapter = adapter
         self.sessions: dict[str, BridgeSession] = {}
         self.units_by_request_id: dict[str, SessionUnit] = {}
+        self.internal_requests: dict[str, InternalSessionRequest] = {}
         self.cancelling_request_id: str | None = None
 
     def drain(self) -> None:
@@ -321,7 +378,10 @@ class ARSessionBridge:
                 self.cancel(session.unit.request_id)
             else:
                 pass
-            self.adapter.control(session_identity, operation.chunk)
+            if session_identity.id not in self.sessions:
+                raise ValueError("context compaction interrupted; session closed")
+            else:
+                self.adapter.control(session_identity, operation.chunk)
             payload.data = {"controlled": True}
             return [payload]
         else:
@@ -432,12 +492,26 @@ class ARSessionBridge:
     def create_session_request(
         self, payload: StagePayload, request_data: SGLangARRequestData
     ) -> None:
-        self.drain()
         unit = self.units_by_request_id[payload.request_id]
-        adapter_request = request_data.req
         assert (
-            adapter_request.rid == payload.request_id
-        ), f"session adapter changed request ID: expected {payload.request_id}, got {adapter_request.rid}"
+            request_data.req.rid == payload.request_id
+        ), "session adapter changed request ID"
+        self.append_native_request(unit, request_data, should_cut_history=True)
+        if request_data.stage_payload is None:
+            request_data.stage_payload = payload
+        else:
+            pass
+        self.adapter.bind_request(unit.session_identity, request_data, unit)
+
+    def append_native_request(
+        self,
+        unit: NativeSessionRequest,
+        request_data: SGLangARRequestData,
+        *,
+        should_cut_history: bool,
+    ) -> None:
+        self.drain()
+        adapter_request = request_data.req
         if (
             adapter_request.input_embeds is not None
             or adapter_request.multimodal_inputs is not None
@@ -474,9 +548,14 @@ class ARSessionBridge:
             - len(adapter_request.origin_input_ids)
             - int(adapter_request.sampling_params.max_new_tokens or 0)
         )
-        history_cut = self.adapter.plan_history_cut(
-            unit.session_identity, request_data, history_length, history_capacity
-        )
+        if should_cut_history:
+            history_cut = self.adapter.plan_history_cut(
+                unit.session_identity, request_data, history_length, history_capacity
+            )
+        elif history_length > history_capacity:
+            raise ValueError("context compaction request exceeds the context budget")
+        else:
+            history_cut = None
         if history_cut is not None:
             self.drop_history(session, native_session, history_cut)
             history_length -= history_cut.length
@@ -554,12 +633,152 @@ class ARSessionBridge:
             adapter_request, "_omni_prompt_cache_key", None
         )  # noqa: leading-underscore
         request_data.req = session_request
-        if request_data.stage_payload is None:
-            request_data.stage_payload = payload
+
+    def start_compaction(
+        self, unit: SessionUnit, payload: StagePayload
+    ) -> SGLangARRequestData | None:
+        if not self.adapter.is_compaction_enabled or unit.is_compaction_checked:
+            return None
         else:
-            # Note (Junnan Li): An adapter that rewrote the unit's request keeps its payload; the stream builder reads the params from it.
+            unit.is_compaction_checked = True
+        session = self.sessions[unit.session_identity.id]
+        if session.compaction is not None:
+            return None
+        else:
             pass
-        self.adapter.bind_request(unit.session_identity, request_data, unit)
+        native_session = self.bridge_scheduler.session_controller.get(
+            unit.session_identity.id
+        )
+        history_length = retained_history_length(native_session)
+        if not self.adapter.start_compaction(
+            unit.session_identity,
+            unit.chunk,
+            payload,
+            history_length,
+            self.bridge_scheduler.max_req_len,
+        ):
+            return None
+        else:
+            session.compaction = SessionCompaction(payload=payload)
+            request_data = self.adapter.build_compaction_request(
+                unit.session_identity,
+                uuid4().hex,
+                payload,
+                history_length,
+                self.bridge_scheduler.max_req_len,
+            )
+            self.create_internal_request(session, request_data)
+            return request_data
+
+    def create_internal_request(
+        self, session: BridgeSession, request_data: SGLangARRequestData
+    ) -> None:
+        compaction = session.compaction
+        assert compaction is not None
+        request_id = request_data.req.rid
+        internal_request = InternalSessionRequest(
+            request_id=request_id, session_identity=session.session_identity
+        )
+        self.internal_requests[request_id] = internal_request
+        compaction.request_id = request_id
+        self.append_native_request(
+            internal_request, request_data, should_cut_history=False
+        )
+
+    def complete_internal_request(
+        self, request_id: str, request_data: SGLangARRequestData
+    ) -> tuple[SGLangARRequestData | None, StagePayload | None]:
+        internal_request = self.internal_requests[request_id]
+        session_identity = internal_request.session_identity
+        session = self.sessions[session_identity.id]
+        compaction = session.compaction
+        assert compaction is not None and compaction.request_id == request_id
+        native_session = self.bridge_scheduler.session_controller.get(
+            session_identity.id
+        )
+        [last_node] = native_session.req_nodes.values()
+        assert last_node.req is request_data.req, "internal request has not committed"
+        session.embedding_spans.extend(internal_request.embedding_spans)
+        if compaction.phase == "rebuild":
+            prefix_token_count = internal_request.prompt_length
+            request = request_data.req
+            record = self.bridge_scheduler.tree_cache.session_records()[
+                session_identity.id
+            ]
+            if (
+                len(request.output_ids) != 1
+                or native_session.committed_origin_len != prefix_token_count
+                or native_session.committed_unpadded_len != prefix_token_count
+                or native_session.committed_fill_len != prefix_token_count
+                or record.kv_committed_len != prefix_token_count
+                or list(request.full_untruncated_fill_ids)
+                != list(request.origin_input_ids)
+            ):
+                raise RuntimeError("context rebuild committed more than its prefix")
+            else:
+                request.output_ids = request.output_ids[:0]
+                assert retained_history_length(native_session) == prefix_token_count
+            self.adapter.finish_compaction(session_identity)
+            session.compaction = None
+            self.internal_requests.pop(request_id)
+            return None, compaction.payload
+        else:
+            outcome = self.adapter.complete_compaction_request(
+                session_identity, request_data
+            )
+            if outcome == "continue":
+                next_request_data = self.adapter.build_compaction_request(
+                    session_identity,
+                    uuid4().hex,
+                    compaction.payload,
+                    retained_history_length(native_session),
+                    self.bridge_scheduler.max_req_len,
+                )
+            else:
+                next_request_data = self.adapter.build_rebuild_request(
+                    session_identity,
+                    uuid4().hex,
+                    compaction.payload,
+                    self.bridge_scheduler.max_req_len,
+                )
+                self.release_streaming_session(session_identity.id)
+                session.embedding_spans.clear()
+                if not self.open_streaming_session(session_identity.id):
+                    raise RuntimeError("native context rebuild session open failed")
+                else:
+                    compaction.phase = "rebuild"
+            self.create_internal_request(session, next_request_data)
+            self.internal_requests.pop(request_id)
+            return next_request_data, None
+
+    def fail_compaction(self, request_id: str) -> tuple[str, list[StagePayload]]:
+        if request_id in self.internal_requests:
+            session_identity = self.internal_requests[request_id].session_identity
+        else:
+            session_identity = self.units_by_request_id[request_id].session_identity
+        session = self.sessions[session_identity.id]
+        assert session.unit is not None
+        external_request_id = session.unit.request_id
+        self.discard_compaction(session)
+        self.cancel(external_request_id)
+        return external_request_id, self.close_session(session)
+
+    def discard_compaction(self, session: BridgeSession) -> None:
+        for internal_request in list(self.internal_requests.values()):
+            if internal_request.session_identity == session.session_identity:
+                self.cancel_native_request(internal_request)
+                native_session = self.bridge_scheduler.session_controller.get(
+                    session.session_identity.id
+                )
+                if native_session is not None:
+                    native_session.abort_req()
+                else:
+                    pass
+                self.internal_requests.pop(internal_request.request_id)
+            else:
+                pass
+        self.adapter.cancel_compaction(session.session_identity)
+        session.compaction = None
 
     def drop_history(
         self, session: BridgeSession, native_session: Session, cut: HistoryCut
@@ -614,24 +833,49 @@ class ARSessionBridge:
 
     def cancel(self, request_id: str) -> None:
         unit = self.units_by_request_id[request_id]
+        if self.sessions[unit.session_identity.id].compaction is not None:
+            error = ValueError("context compaction interrupted; session closed")
+            self.bridge_scheduler.emit_request_error(request_id, error)
+            _, reads = self.fail_compaction(request_id)
+            for payload in reads:
+                self.bridge_scheduler.emit_request_error(payload.request_id, error)
+        else:
+            self.cancel_native_request(unit)
+            self.release_append_unit(request_id)
+
+    def cancel_native_request(self, unit: NativeSessionRequest) -> None:
+        request_id = unit.request_id
         session_request = unit.session_request
+        if (
+            isinstance(unit, InternalSessionRequest)
+            and session_request is not None
+            and session_request.finished()
+        ):
+            return
+        else:
+            pass
         previous_cancelling_request_id = self.cancelling_request_id
         self.cancelling_request_id = request_id
         try:
             if not unit.is_enqueued:
-                # note (Junnan Li): Before enqueue, release_append_unit must preserve the prior unit's KV.
                 self.bridge_scheduler.abort(request_id)
-                self.release_append_unit(request_id)
+                if (
+                    isinstance(unit, InternalSessionRequest)
+                    and session_request is not None
+                ):
+                    native_session = self.bridge_scheduler.session_controller.get(
+                        unit.session_identity.id
+                    )
+                    native_session.abort_req()
+                else:
+                    pass
             else:
-                assert (
-                    session_request is not None
-                ), f"enqueued session request {request_id} has no Req"
+                assert session_request is not None
                 is_queued = any(
                     queued_request is session_request
                     for queued_request in self.bridge_scheduler.waiting_queue
                 )
                 if is_queued:
-                    # note (Junnan Li): Failed prefill admission may have restored the prior slot.
                     session_request.detach_kv()
                     session_request.session = None
                     self.bridge_scheduler.abort(request_id)
@@ -641,7 +885,6 @@ class ARSessionBridge:
                     self.drain()
                     session_request.finished_reason = FINISH_ABORT()
                     self.bridge_scheduler.release_request_kv_cache(session_request)
-                    # note (Junnan Li): Batch selection must filter rows and tensors together.
                     if self.bridge_scheduler.chunked_req is session_request:
                         self.bridge_scheduler.chunked_req = None
                     else:
@@ -651,12 +894,18 @@ class ARSessionBridge:
                         session_request.omni_data = None
                     else:
                         pass
-                self.release_append_unit(request_id)
         finally:
             self.cancelling_request_id = previous_cancelling_request_id
 
     def check_session_capacity(self, request_id: str) -> str | None:
-        unit = self.units_by_request_id[request_id]
+        if request_id in self.internal_requests:
+            unit = self.internal_requests[request_id]
+        else:
+            unit = self.units_by_request_id[request_id]
+        requests = [
+            *self.units_by_request_id.values(),
+            *self.internal_requests.values(),
+        ]
         session_request = unit.session_request
         assert (
             session_request is not None
@@ -671,7 +920,7 @@ class ARSessionBridge:
             and active_append_unit.session_request is not None
             and not active_append_unit.session_request.kv.holds_kv
             and active_append_unit.session_identity.id not in records
-            for active_append_unit in self.units_by_request_id.values()
+            for active_append_unit in requests
         )
         if (
             not retained_kv_tokens
@@ -688,7 +937,7 @@ class ARSessionBridge:
                 session_request.sampling_params.max_new_tokens or 0
             )
             reserved_kv_tokens = 0
-            for active_append_unit in self.units_by_request_id.values():
+            for active_append_unit in requests:
                 if (
                     active_append_unit is unit
                     or active_append_unit.session_request is None
@@ -841,6 +1090,10 @@ class ARSessionBridge:
             pass
 
     def close_streaming_session(self, session: BridgeSession) -> None:
+        if session.compaction is not None:
+            self.discard_compaction(session)
+        else:
+            pass
         if session.unit is not None:
             self.bridge_scheduler.abort(session.unit.request_id)
         else:

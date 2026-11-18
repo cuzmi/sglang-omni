@@ -27,6 +27,7 @@ seedtts_testset/
 .coverage
 htmlcov/
 *.wav
+!sglang_omni/models/minicpm_o/assets/summary_instruction.wav
 
 # Logs
 *.log
