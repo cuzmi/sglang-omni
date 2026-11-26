@@ -16,6 +16,7 @@ pip install -r requirements.txt
 Edit the Markdown (or RST) under `docs/`.
 
 - Run `pre-commit run --all-files` before opening a PR. Re-run once if the first pass auto-fixes files.
+- If the pull request changes `docs/` or claims a performance difference, paste the checklist from [CONTRIBUTING.md](../CONTRIBUTING.md). The fields are self-reported. Missing evidence is a follow-up, not an automatic rejection.
 - Preview locally:
 
 ```bash
@@ -30,6 +31,7 @@ PORT=8080 make serve
 - Prefer **Markdown** for cookbooks and usage guides. Use notebooks only when the example must be executed in docs CI.
 - Prefer relative links (`../get_started/installation.md`), not absolute docs URLs.
 - Match existing launch / request examples in neighboring cookbooks.
+- Put shared TTS HTTP, Python, and streaming usage in [TTS Model Usage](basic_usage/tts.md). Cookbooks should link to it and keep examples that demonstrate model-specific inputs, capabilities, or behavior.
 
 ## Documentation checks
 
